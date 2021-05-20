@@ -114,7 +114,6 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
-
             }
         }
 
@@ -138,13 +137,13 @@ namespace SchoolManagementSystem
                     course = txtCourse.Text,
                     gender = txtGender.Text,
                     date = txtDateOfRegistration.Text,
-                    schedID = dgvStudentSched.Rows[i].Cells[0].Value.ToString(),
-                    subjectCode = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
-                    room = dgvStudentSched.Rows[i].Cells[2].FormattedValue.ToString(),
-                    mergeTime = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString(),
-                    capacity = dgvStudentSched.Rows[i].Cells[6].Value.ToString(),
-                    status = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
-                    lablec = dgvStudentSched.Rows[i].Cells[8].Value.ToString()
+                    schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
+                    subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
+                    room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
+                    mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
+                    capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
+                    status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
+                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
                 });
 
                 rs.Name = "DataSet1";

@@ -8,14 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Report1.rdlc" />
     <None Remove="Report2.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Report1.rdlc">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

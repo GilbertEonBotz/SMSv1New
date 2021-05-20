@@ -43,7 +43,6 @@ namespace SchoolManagementSystem
             this.pnlSlide1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlSlide2 = new System.Windows.Forms.Panel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlUsername = new System.Windows.Forms.Panel();
@@ -53,6 +52,7 @@ namespace SchoolManagementSystem
             this.btnLeft = new FontAwesome.Sharp.IconButton();
             this.btnSignin = new FontAwesome.Sharp.IconButton();
             this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +93,7 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.label1.Location = new System.Drawing.Point(359, 235);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(682, 36);
@@ -113,7 +113,7 @@ namespace SchoolManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(0, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(240, 25);
@@ -134,7 +134,7 @@ namespace SchoolManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(34, 154);
             this.label4.Name = "label4";
@@ -145,7 +145,7 @@ namespace SchoolManagementSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(0, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 25);
@@ -180,9 +180,9 @@ namespace SchoolManagementSystem
             this.pnlSlide1.Controls.Add(this.panel3);
             this.pnlSlide1.Controls.Add(this.panel2);
             this.pnlSlide1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSlide1.Location = new System.Drawing.Point(699, 59);
+            this.pnlSlide1.Location = new System.Drawing.Point(0, 59);
             this.pnlSlide1.Name = "pnlSlide1";
-            this.pnlSlide1.Size = new System.Drawing.Size(159, 395);
+            this.pnlSlide1.Size = new System.Drawing.Size(858, 395);
             this.pnlSlide1.TabIndex = 7;
             // 
             // panel5
@@ -211,24 +211,9 @@ namespace SchoolManagementSystem
             this.pnlSlide2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSlide2.Location = new System.Drawing.Point(0, 0);
             this.pnlSlide2.Name = "pnlSlide2";
-            this.pnlSlide2.Size = new System.Drawing.Size(699, 454);
+            this.pnlSlide2.Size = new System.Drawing.Size(0, 454);
             this.pnlSlide2.TabIndex = 0;
             this.pnlSlide2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSlide2_Paint);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPassword.Location = new System.Drawing.Point(277, 272);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(315, 31);
-            this.txtPassword.TabIndex = 36;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
             // 
@@ -242,7 +227,7 @@ namespace SchoolManagementSystem
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(397, 238);
             this.label5.Name = "label5";
@@ -293,7 +278,7 @@ namespace SchoolManagementSystem
             // 
             this.username_label.AutoSize = true;
             this.username_label.BackColor = System.Drawing.Color.Transparent;
-            this.username_label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.username_label.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.username_label.ForeColor = System.Drawing.Color.DimGray;
             this.username_label.Location = new System.Drawing.Point(394, 112);
             this.username_label.Name = "username_label";
@@ -328,7 +313,7 @@ namespace SchoolManagementSystem
             this.btnSignin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(7)))), ((int)(((byte)(66)))));
             this.btnSignin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(66)))));
             this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSignin.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnSignin.ForeColor = System.Drawing.Color.White;
             this.btnSignin.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSignin.IconColor = System.Drawing.Color.Black;
@@ -345,7 +330,7 @@ namespace SchoolManagementSystem
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtUsername.Location = new System.Drawing.Point(277, 152);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -354,6 +339,21 @@ namespace SchoolManagementSystem
             this.txtUsername.Size = new System.Drawing.Size(315, 31);
             this.txtUsername.TabIndex = 35;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtPassword.Location = new System.Drawing.Point(277, 272);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(315, 31);
+            this.txtPassword.TabIndex = 36;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer
             // 
@@ -373,12 +373,11 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 24F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectionForm";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.SelectionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

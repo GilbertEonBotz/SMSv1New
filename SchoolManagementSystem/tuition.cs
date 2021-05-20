@@ -46,8 +46,8 @@ namespace SchoolManagementSystem
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            tuitionStructure tui = new tuitionStructure();
-            tui.ShowDialog();
+            //tuitionStructure tui = new tuitionStructure();
+            //tui.ShowDialog();
         }
 
         private void dgvTuition_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -48,7 +48,7 @@ namespace SchoolManagementSystem
         {
             int i;
             for (i = 0; i < dgvStudentSched.Rows.Count; i++)
-            {
+            { 
 
                 wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString() };
 

@@ -88,11 +88,17 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvStudentSched.Rows.Clear();
-            sched.category = cmbSubjects.Text;
+            var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
+            string getid = value.tuitionCatID.ToString();
 
-            dgvStudentSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
+
+
+            dgvStudentSched.Rows.Clear();
+
+            sched.category = getid;
+
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
             sched.display();
 
             foreach (DataRow Drow in sched.dt.Rows)
@@ -102,9 +108,9 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
                 dgvStudentSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
                 dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
-                dgvStudentSched.Rows[num].Cells[4].Value = Drow["Timestart"].ToString();
-                dgvStudentSched.Rows[num].Cells[5].Value = Drow["Timeend"].ToString();
-                dgvStudentSched.Rows[num].Cells[6].Value = Drow["Day"].ToString();
+                dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
                 dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();

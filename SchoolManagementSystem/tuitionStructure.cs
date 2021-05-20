@@ -13,9 +13,10 @@ namespace SchoolManagementSystem
     {
         tuitionfee tuit = new tuitionfee();
         int catid;
-        public tuitionStructure()
+        public tuitionStructure(string val)
         {
             InitializeComponent();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

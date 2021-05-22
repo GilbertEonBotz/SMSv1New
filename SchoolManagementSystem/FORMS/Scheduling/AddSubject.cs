@@ -23,7 +23,6 @@ namespace SchoolManagementSystem
 
         private void btnAddSubjects_Click(object sender, EventArgs e)
         {
-        
             TextBox[] inputs = { txtSubjectCode , txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits };
 
             if (btnAddSubjects.Text.Equals("Update"))
@@ -43,8 +42,11 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
+                    var value = DBContext.GetContext().Query("course").Where("courseCode", cmbCourseCode.Text).First();
+                    int courseId = value.courseId;
                     DBContext.GetContext().Query("subjects").Insert(new
                     {
+
                         subjectCode = txtSubjectCode.Text,
                         subjectTitle = txtDescriptiveTitle.Text,
                         lec = txtLec.Text,
@@ -104,8 +106,6 @@ namespace SchoolManagementSystem
             }
             else
             {
-
-
                 int result = Convert.ToInt32(txtLab.Text) + Convert.ToInt32(txtLec.Text);
                 txtTotalUnits.Text = result.ToString();
 
@@ -119,21 +119,18 @@ namespace SchoolManagementSystem
 
         private void AddSubject_Load(object sender, EventArgs e)
         {
+            displayCourseCode();
         }
 
-        private void txtLec_MouseLeave(object sender, EventArgs e)
+        public void displayCourseCode()
         {
-           
-        }
+            var values = DBContext.GetContext().Query("course").Get();
 
-        private void txtLab_MouseLeave(object sender, EventArgs e)
-        {
+            foreach(var value in values)
+            {
+                cmbCourseCode.Items.Add(value.courseCode);
+            }
         }
-
-        private void txtLec_Leave(object sender, EventArgs e)
-        {
-        }
-
         private void txtLab_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

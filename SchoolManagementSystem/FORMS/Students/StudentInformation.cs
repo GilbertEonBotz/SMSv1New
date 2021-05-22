@@ -7,13 +7,19 @@ using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
 using SqlKata.Execution;
-
+using MySql.Data.MySqlClient;
 
 namespace SchoolManagementSystem
 {
 
     public partial class StudentInformation : Form
     {
+        Connection connect = new Connection();
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader mdr;
+        MySqlDataAdapter msda;
+
         public StudentInformation()
         {
             InitializeComponent();
@@ -26,20 +32,20 @@ namespace SchoolManagementSystem
         }
         private void StudentInformation_Load(object sender, EventArgs e)
         {
+
             displayData();
         }
 
 
         public void displayData()
         {
-         
             var values = DBContext.GetContext().Query("student").Get();
             dgvStudents.Rows.Clear();
             foreach (var value in values)
             {
                 string id = value.course;
                 var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
-                dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.description);
+                dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
             }
         }
 
@@ -79,6 +85,50 @@ namespace SchoolManagementSystem
 
             myfrm.btnAddStudent.Text = "Update";
             myfrm.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            var values = DBContext.GetContext().Query("student").WhereLike("studentId", $"%{txtSearch.Text}%").OrWhereLike("firstname", $"%{txtSearch.Text}%").OrWhereLike("lastname", $"%{txtSearch.Text}%").OrWhereLike("presentAddress", $"%{txtSearch.Text}%").Get();
+
+            dt.Columns.Clear();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("NAME");
+            dt.Columns.Add("GENDER");
+            dt.Columns.Add("ADDRESS");
+            dt.Columns.Add("COURSE");
+
+            foreach (var value in values)
+            {
+                string id = value.course;
+                var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
+                dt.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
+            }
+
+            dgvStudents.Rows.Clear();
+            foreach(DataRow drow in dt.Rows)
+            {
+                int num = dgvStudents.Rows.Add();
+
+                dgvStudents.Rows[num].Cells[0].Value = drow["ID"].ToString();
+                dgvStudents.Rows[num].Cells[1].Value = drow["NAME"].ToString();
+                dgvStudents.Rows[num].Cells[2].Value = drow["GENDER"].ToString();
+                dgvStudents.Rows[num].Cells[3].Value = drow["ADDRESS"].ToString();
+                dgvStudents.Rows[num].Cells[4].Value = drow["COURSE"].ToString();
+            }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
         }
     }
 }

@@ -490,5 +490,25 @@ namespace SchoolManagementSystem
         {
             Application.Exit();
         }
+
+        private void iconButton11_Click(object sender, EventArgs e)
+        {
+            var myForm = new teacherSched();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void iconButton14_Click(object sender, EventArgs e)
+        {
+            var myForm = new viewTeacherSched();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }

@@ -42,8 +42,10 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("course").Where("courseId", lblIDD.Text).Update(new
                     {
+                        courseCode = txtCourseCode.Text,
                         description = txtDescription.Text,
                         abbreviation = txtAbbreviation.Text,
+                        
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -55,9 +57,11 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("course").Insert(new
                     {
+                        courseCode = txtCourseCode.Text,
                         description = txtDescription.Text,
                         abbreviation = txtAbbreviation.Text,
                         deptID = value.deptID,
+                        status = "enable"
                     });
                     reloadDatagrid.displayData();
                     this.Close();

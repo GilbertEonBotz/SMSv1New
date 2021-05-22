@@ -15,6 +15,7 @@ namespace SchoolManagementSystem
     {
         string storeID;
         studentSched sched = new studentSched();
+        feeStruc struc = new feeStruc();
         public StudentScheduling()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace SchoolManagementSystem
 
         private void StudentScheduling_Load(object sender, EventArgs e)
         {
+            pnlBilling.SetBounds(0, 0, 0, 0);
             displayDataCmb();
         }
 
@@ -37,6 +39,8 @@ namespace SchoolManagementSystem
             {
                 cmbStudentNo.Items.Add(value.lastname);
             }
+
+
         }
 
         public void displayDataCmb()
@@ -48,13 +52,21 @@ namespace SchoolManagementSystem
             {
                 cmbSubjects.Items.Add(value.category);
             }
-            var wew = DBContext.GetContext().Query("student").Get();
 
+            var wew = DBContext.GetContext().Query("student").Get();
 
             foreach (var value in wew)
             {
                 cmbStudentNo.Items.Add(value.studentId);
             }
+
+            var fee = DBContext.GetContext().Query("feestructure").Get();
+
+            foreach (var value in fee)
+            {
+                cmbCategoryFee.Items.Add(value.structureName);
+            }
+
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -71,7 +83,7 @@ namespace SchoolManagementSystem
                 var desc = DBContext.GetContext().Query("course").Where("courseId", id).First();
                 txtName.Text = $"{value.firstname} {value.lastname}";
                 txtGender.Text = value.gender;
-                txtCourse.Text = desc.description;
+                txtCourse.Text = desc.abbreviation;
                 txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             }
         }
@@ -123,45 +135,68 @@ namespace SchoolManagementSystem
         }
         public string[] wew;
         ReportDataSource rs = new ReportDataSource();
+        ReportDataSource rsBill = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
+
             List<Schedulings> lst = new List<Schedulings>();
             lst.Clear();
-            StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
+          
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
-                lst.Add(new Schedulings
-                {
-                    studentNo = cmbStudentNo.Text,
-                    name = txtName.Text,
-                    course = txtCourse.Text,
-                    gender = txtGender.Text,
-                    date = txtDateOfRegistration.Text,
-                    schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
-                    subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
-                    room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
-                    mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
-                    capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
-                    status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
-                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
-                });
-
-                rs.Name = "DataSet1";
-                rs.Value = lst;
-
-                frm.reportViewer1.LocalReport.DataSources.Clear();
-                frm.reportViewer1.LocalReport.DataSources.Add(rs);
-                frm.reportViewer1.ZoomMode = ZoomMode.PageWidth;
-                frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-
+                    
+                    lst.Add(new Schedulings
+                    {
+                        studentNo = cmbStudentNo.Text,
+                        name = txtName.Text,
+                        course = txtCourse.Text,
+                        gender = txtGender.Text,
+                        date = txtDateOfRegistration.Text,
+                        schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
+                        subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
+                        room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
+                        mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
+                        capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
+                        status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
+                        lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
+                    });
+                
+                
             }
+
+            List<feeBillings> bills = new List<feeBillings>();
+            bills.Clear();
+
+            for (int i = 0; i < dgvCategories.Rows.Count; i++)
+            {
+                bills.Add(new feeBillings
+                {
+                    total = lblTotal.Text,
+                    category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
+                    amount = dgvCategories.Rows[i].Cells[1].Value.ToString()
+                }); 
+            }
+
+
+            rsBill.Name = "DataSet2";
+            rsBill.Value = bills;
+            rs.Name = "DataSet1";
+            rs.Value = lst;
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
+            frm.reportViewer1.ZoomMode = ZoomMode.PageWidth;
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+
             if (Validator.AddConfirmation())
             {
                 int i;
                 for (i = 0; i < dgvStudentSched.Rows.Count; i++)
                 {
 
-                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString() };
+                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+    };
 
                     foreach (string aa in wew)
                     {
@@ -187,13 +222,48 @@ namespace SchoolManagementSystem
             }
 
             frm.ShowDialog();
+        }
+
+        private void cmbCategoryFee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvCategories.Rows.Clear();
+
+            var value = DBContext.GetContext().Query("feestructure").Where("structureName", cmbCategoryFee.Text).First();
+
+            string feeId = value.structureID.ToString();
+
+            struc.structureID = feeId;
+            struc.dt.Clear();
 
 
+            struc.viewfees();
+            
+            foreach (DataRow Drow in struc.dt.Rows)
+            {
+                
+                int num = dgvCategories.Rows.Add();
 
+                dgvCategories.Rows[num].Cells[0].Value = Drow["category"].ToString();
+                dgvCategories.Rows[num].Cells[1].Value = Drow["amount"].ToString();
+            }
+
+            lblTotal.Text = struc.total;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
 
+        private void btnEnroll_Click(object sender, EventArgs e)
+        {
+            pnlBilling.SetBounds(203, 100, 795, 462);
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            pnlBilling.SetBounds(0, 0, 0, 0);
+        }
     }
 
 
@@ -213,7 +283,15 @@ namespace SchoolManagementSystem
         public string capacity { get; set; }
         public string status { get; set; }
         public string lablec { get; set; }
+        public string category { get; set; }
+        public string amount { get; set; }
 
     }
 
+    public class feeBillings
+    {
+        public string category { get; set; }
+        public string amount { get; set; }
+        public string total { get; set; }
+    }
 }

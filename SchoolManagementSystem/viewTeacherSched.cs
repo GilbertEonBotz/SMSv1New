@@ -32,20 +32,19 @@ namespace SchoolManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           dgvSched.Rows.Clear();
+            teacherScheds sched = new teacherScheds();
+            dgvSched.Rows.Clear();
 
 
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
 
             string str = values.schedId;
-            int name = values.teacherId;
-            int aa = values.teacherSchedID;
             var words = str.Split(' ');
 
             for (int i = 1; i < words.Length; i++)
             {
                 // dataGridView1.Rows.Add(words[i],aa,name);
-                teacherScheds sched = new teacherScheds();
+                
                 sched.subjectcode = (words[i].ToString());
                 //  MessageBox.Show(words[i]);
                 dgvSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";

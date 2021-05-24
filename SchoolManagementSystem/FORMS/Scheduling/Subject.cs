@@ -30,13 +30,13 @@ namespace SchoolManagementSystem
             var value = DBContext.GetContext().Query("subjects").Where("subjectId", id).First();
 
             myfrm.lblIDD.Text = id.ToString();
+            myfrm.cmbCourseCode.Text = value.courseCode;
             myfrm.txtSubjectCode.Text = value.subjectCode;
             myfrm.txtDescriptiveTitle.Text = value.subjectTitle;
             myfrm.txtLec.Text = Convert.ToString(value.lec);
             myfrm.txtLab.Text = Convert.ToString(value.lab);
             myfrm.txtTotalUnits.Text = Convert.ToString(value.unit);
             myfrm.cmbPreReq.Text = value.prereq;
-
             myfrm.btnAddSubjects.Text = "Update";
             myfrm.ShowDialog();
         }

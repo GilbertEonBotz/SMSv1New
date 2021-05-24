@@ -31,6 +31,7 @@ namespace SchoolManagementSystem
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SchedulingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,10 +39,13 @@ namespace SchoolManagementSystem
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SchedulingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // SchedulingsBindingSource
+            // 
+            this.SchedulingsBindingSource.DataSource = typeof(SchoolManagementSystem.Schedulings);
             // 
             // reportViewer1
             // 
@@ -50,11 +54,13 @@ namespace SchoolManagementSystem
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 65);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1035, 786);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.reportViewer1.Print += new Microsoft.Reporting.WinForms.ReportPrintEventHandler(this.reportViewer1_Print);
             // 
             // panel1
             // 
@@ -122,10 +128,6 @@ namespace SchoolManagementSystem
             this.panel3.Size = new System.Drawing.Size(7, 804);
             this.panel3.TabIndex = 24;
             // 
-            // SchedulingsBindingSource
-            // 
-            this.SchedulingsBindingSource.DataSource = typeof(SchoolManagementSystem.Schedulings);
-            // 
             // StudentSchedulesReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -138,14 +140,14 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.reportViewer1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StudentSchedulesReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentSchedulesReportViewer";
             this.Load += new System.EventHandler(this.StudentSchedulesReportViewer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

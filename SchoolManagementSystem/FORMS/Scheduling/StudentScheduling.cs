@@ -134,48 +134,74 @@ namespace SchoolManagementSystem
 
         }
         public string[] wew;
+
+        StudentTuition stud = new StudentTuition();
+        Double amount = 0;
+        string TOTAL;
+
         ReportDataSource rs = new ReportDataSource();
         ReportDataSource rsBill = new ReportDataSource();
+        ReportDataSource rsTuition = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
             StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
 
             List<Schedulings> lst = new List<Schedulings>();
             lst.Clear();
-          
+
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
-                    
-                    lst.Add(new Schedulings
-                    {
-                        studentNo = cmbStudentNo.Text,
-                        name = txtName.Text,
-                        course = txtCourse.Text,
-                        gender = txtGender.Text,
-                        date = txtDateOfRegistration.Text,
-                        schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
-                        subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
-                        room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
-                        mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
-                        capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
-                        status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
-                        lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
-                    });
-                
-                
+
+                lst.Add(new Schedulings
+                {
+                    studentNo = cmbStudentNo.Text,
+                    name = txtName.Text,
+                    course = txtCourse.Text,
+                    gender = txtGender.Text,
+                    date = txtDateOfRegistration.Text,
+                    schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
+                    subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
+                    room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
+                    mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
+                    capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
+                    status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
+                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
+                });
+
+
             }
 
             List<feeBillings> bills = new List<feeBillings>();
             bills.Clear();
 
+            amount = 0;
+
+            var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
+            string str = values.schedId;
+
+            var words = str.Split(' ');
+
+            for (int i = 1; i < words.Length; i++)
+            {
+                string individualSubj = words[i];
+                stud.indsub = individualSubj;
+
+                stud.viewSubj();
+                foreach (DataRow Drow in stud.dt.Rows)
+                {
+                    amount += Convert.ToDouble(Drow["Amount"].ToString());
+                }
+            }
+
             for (int i = 0; i < dgvCategories.Rows.Count; i++)
             {
                 bills.Add(new feeBillings
                 {
-                    total = lblTotal.Text,
+                    total = Convert.ToDouble(lblTotal.Text),
                     category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
-                    amount = dgvCategories.Rows[i].Cells[1].Value.ToString()
-                }); 
+                    amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
+                    tuitionTotal = Convert.ToDouble(amount.ToString()),
+                }) ;
             }
 
 
@@ -186,7 +212,6 @@ namespace SchoolManagementSystem
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
             frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
-            frm.reportViewer1.ZoomMode = ZoomMode.PageWidth;
             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
 
             if (Validator.AddConfirmation())
@@ -196,7 +221,7 @@ namespace SchoolManagementSystem
                 {
 
                     wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-    };
+                };
 
                     foreach (string aa in wew)
                     {
@@ -216,12 +241,11 @@ namespace SchoolManagementSystem
                         studentID = cmbStudentNo.Text,
                         schedId = storeID
                     });
-                    MessageBox.Show("success");
                     storeID = "";
                 }
             }
 
-            frm.ShowDialog();
+            frm.reportViewer1.LocalReport
         }
 
         private void cmbCategoryFee_SelectedIndexChanged(object sender, EventArgs e)
@@ -237,10 +261,10 @@ namespace SchoolManagementSystem
 
 
             struc.viewfees();
-            
+
             foreach (DataRow Drow in struc.dt.Rows)
             {
-                
+
                 int num = dgvCategories.Rows.Add();
 
                 dgvCategories.Rows[num].Cells[0].Value = Drow["category"].ToString();
@@ -248,11 +272,6 @@ namespace SchoolManagementSystem
             }
 
             lblTotal.Text = struc.total;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEnroll_Click(object sender, EventArgs e)
@@ -264,6 +283,7 @@ namespace SchoolManagementSystem
         {
             pnlBilling.SetBounds(0, 0, 0, 0);
         }
+
     }
 
 
@@ -291,7 +311,8 @@ namespace SchoolManagementSystem
     public class feeBillings
     {
         public string category { get; set; }
-        public string amount { get; set; }
-        public string total { get; set; }
+        public double amount { get; set; }
+        public double total { get; set; }
+        public double tuitionTotal { get; set; }
     }
 }

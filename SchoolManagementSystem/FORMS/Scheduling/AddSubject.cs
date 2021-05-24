@@ -31,8 +31,18 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("subjects").Where("subjectId", lblIDD.Text).Update(new
                     {
-                         subjectCode = txtSubjectCode.Text,
-                         subjectTitle = txtDescriptiveTitle.Text,
+                        courseCode = cmbCourseCode.Text,
+                        subjectCode = txtSubjectCode.Text,
+                        subjectTitle = txtDescriptiveTitle.Text,
+                        lec = txtLec.Text,
+                        lab = txtLab.Text,
+                        totalUnits = txtTotalUnits.Text,
+                        prereq = cmbPreReq.Text,
+                        totalLecprice = lblLectotal.Text,
+                        totalLabprice = lblabTotal.Text,
+                        labprice = txtLabprice.Text,
+                        lecprice = txtLecPrice.Text,
+                        totalprice = TotalPrice.Text
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -42,11 +52,10 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    var value = DBContext.GetContext().Query("course").Where("courseCode", cmbCourseCode.Text).First();
-                    int courseId = value.courseId;
+                    
                     DBContext.GetContext().Query("subjects").Insert(new
                     {
-
+                        courseCode = cmbCourseCode.Text,
                         subjectCode = txtSubjectCode.Text,
                         subjectTitle = txtDescriptiveTitle.Text,
                         lec = txtLec.Text,
@@ -60,9 +69,8 @@ namespace SchoolManagementSystem
                         lecprice = txtLecPrice.Text,
                         totalprice = TotalPrice.Text
                     });
-                    MessageBox.Show("success");
-                 //   reloadDatagrid.displayData();
-                    //this.Close();
+                    reloadDatagrid.displayData();
+                    this.Close();
                 }
             }
         }
@@ -119,10 +127,10 @@ namespace SchoolManagementSystem
 
         private void AddSubject_Load(object sender, EventArgs e)
         {
-            displayCourseCode();
+            displayCourse();
         }
 
-        public void displayCourseCode()
+        public void displayCourse()
         {
             var values = DBContext.GetContext().Query("course").Get();
 
@@ -204,6 +212,19 @@ namespace SchoolManagementSystem
 
 
             }
+        }
+
+        private void cmbCourseCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var values = DBContext.GetContext().Query("subjects").Join("course", "course.courseCode", "subjects.courseCode").Where("subjects.courseCode", cmbCourseCode.Text).Get();
+
+            cmbPreReq.Items.Clear();
+            foreach(var value in values)
+            {
+                cmbPreReq.Items.Add(value.subjectCode);
+            }
+
         }
     }
 }

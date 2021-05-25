@@ -174,9 +174,9 @@ namespace SchoolManagementSystem
             this.cbsat.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbsat.Location = new System.Drawing.Point(397, 265);
             this.cbsat.Name = "cbsat";
-            this.cbsat.Size = new System.Drawing.Size(125, 26);
+            this.cbsat.Size = new System.Drawing.Size(61, 26);
             this.cbsat.TabIndex = 42;
-            this.cbsat.Text = "SATURDAY";
+            this.cbsat.Text = "SAT";
             this.cbsat.UseVisualStyleBackColor = true;
             this.cbsat.CheckedChanged += new System.EventHandler(this.cbsat_CheckedChanged);
             // 
@@ -186,9 +186,9 @@ namespace SchoolManagementSystem
             this.cbfri.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbfri.Location = new System.Drawing.Point(397, 233);
             this.cbfri.Name = "cbfri";
-            this.cbfri.Size = new System.Drawing.Size(95, 26);
+            this.cbfri.Size = new System.Drawing.Size(55, 26);
             this.cbfri.TabIndex = 41;
-            this.cbfri.Text = "FRIDAY";
+            this.cbfri.Text = "FRI";
             this.cbfri.UseVisualStyleBackColor = true;
             this.cbfri.CheckedChanged += new System.EventHandler(this.cbfri_CheckedChanged);
             // 
@@ -198,9 +198,9 @@ namespace SchoolManagementSystem
             this.cbthu.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbthu.Location = new System.Drawing.Point(242, 265);
             this.cbthu.Name = "cbthu";
-            this.cbthu.Size = new System.Drawing.Size(123, 26);
+            this.cbthu.Size = new System.Drawing.Size(62, 26);
             this.cbthu.TabIndex = 40;
-            this.cbthu.Text = "THURSDAY";
+            this.cbthu.Text = "THU";
             this.cbthu.UseVisualStyleBackColor = true;
             this.cbthu.CheckedChanged += new System.EventHandler(this.cbthu_CheckedChanged);
             // 
@@ -210,9 +210,9 @@ namespace SchoolManagementSystem
             this.cbwed.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbwed.Location = new System.Drawing.Point(242, 233);
             this.cbwed.Name = "cbwed";
-            this.cbwed.Size = new System.Drawing.Size(143, 26);
+            this.cbwed.Size = new System.Drawing.Size(70, 26);
             this.cbwed.TabIndex = 39;
-            this.cbwed.Text = "WEDNESDAY";
+            this.cbwed.Text = "WED";
             this.cbwed.UseVisualStyleBackColor = true;
             this.cbwed.CheckedChanged += new System.EventHandler(this.cbwed_CheckedChanged);
             // 
@@ -222,9 +222,9 @@ namespace SchoolManagementSystem
             this.cbtues.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbtues.Location = new System.Drawing.Point(112, 265);
             this.cbtues.Name = "cbtues";
-            this.cbtues.Size = new System.Drawing.Size(108, 26);
+            this.cbtues.Size = new System.Drawing.Size(59, 26);
             this.cbtues.TabIndex = 38;
-            this.cbtues.Text = "TUESDAY";
+            this.cbtues.Text = "TUE";
             this.cbtues.UseVisualStyleBackColor = true;
             this.cbtues.CheckedChanged += new System.EventHandler(this.cbtues_CheckedChanged);
             // 
@@ -234,9 +234,9 @@ namespace SchoolManagementSystem
             this.cbmon.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbmon.Location = new System.Drawing.Point(112, 233);
             this.cbmon.Name = "cbmon";
-            this.cbmon.Size = new System.Drawing.Size(117, 26);
+            this.cbmon.Size = new System.Drawing.Size(77, 26);
             this.cbmon.TabIndex = 37;
-            this.cbmon.Text = "MONDAY";
+            this.cbmon.Text = "MON";
             this.cbmon.UseVisualStyleBackColor = true;
             this.cbmon.CheckedChanged += new System.EventHandler(this.cbmon_CheckedChanged);
             // 
@@ -304,11 +304,11 @@ namespace SchoolManagementSystem
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label8.Location = new System.Drawing.Point(26, 357);
+            this.label8.Location = new System.Drawing.Point(5, 357);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.Size = new System.Drawing.Size(109, 20);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Enrollees";
+            this.label8.Text = "Max Enrollees";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label5

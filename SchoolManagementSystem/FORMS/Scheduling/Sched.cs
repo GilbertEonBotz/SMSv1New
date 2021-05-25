@@ -57,7 +57,7 @@ namespace SchoolManagementSystem
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             addSchedule s = new addSchedule();
-            s.Show();
+            s.ShowDialog();
         }
     }
 }

@@ -491,7 +491,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!tuitionTotal.Value, "DataSet2")</Value>
+                <Value>=Sum(Fields!tuitionTotal.Value, "DataSet3")</Value>
                 <Style>
                   <FontFamily>CENTURY GOthic</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -1707,6 +1707,23 @@
         <rd:ObjectDataSourceType>SchoolManagementSystem.Schedulings, SchoolManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="DataSet3">
+      <Query>
+        <DataSourceName>SchoolManagementSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="tuitionTotal">
+          <DataField>tuitionTotal</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>SchoolManagementSystem</rd:DataSetName>
+        <rd:TableName>tuitionBilling</rd:TableName>
+        <rd:ObjectDataSourceType>SchoolManagementSystem.tuitionBilling, SchoolManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
     <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>SchoolManagementSystem</DataSourceName>
@@ -1723,10 +1740,6 @@
         </Field>
         <Field Name="total">
           <DataField>total</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="tuitionTotal">
-          <DataField>tuitionTotal</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>

@@ -22,12 +22,10 @@ namespace SchoolManagementSystem
         {
             var values = DBContext.GetContext().Query("teachers").Get();
 
-
             foreach (var value in values)
             {
                 comboBox1.Items.Add(value.teacherId);
             }
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -112,6 +112,7 @@ namespace SchoolManagementSystem
             this.label11.Size = new System.Drawing.Size(54, 23);
             this.label11.TabIndex = 20;
             this.label11.Text = "Total";
+            this.label11.Visible = false;
             // 
             // cmbCourseCode
             // 
@@ -163,6 +164,7 @@ namespace SchoolManagementSystem
             this.TotalPrice.Size = new System.Drawing.Size(103, 22);
             this.TotalPrice.TabIndex = 14;
             this.TotalPrice.Text = "total price";
+            this.TotalPrice.Visible = false;
             // 
             // txtLabprice
             // 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SqlKata.Execution;
 namespace SchoolManagementSystem
 {
     public partial class addSchedule : Form
@@ -32,14 +33,36 @@ namespace SchoolManagementSystem
 
         private void addSchedule_Load(object sender, EventArgs e)
         {
+            DateTime dt1 = DateTime.Now;
+            TimeSpan ts = new TimeSpan(7, 00, 0);
+            dt1 = dt1.Date + ts;
 
+            DateTime dt2 = DateTime.Now;
+            TimeSpan ts2 = new TimeSpan(8, 00, 0);
+            dt2 = dt2.Date + ts2;
+
+            dateTimePicker1.Value = dt1;
+            dateTimePicker2.Value = dt2;
+
+
+            displayCourseCode();
             scheds.Schedule();
-            
-            cbSubjCode.DataSource = scheds.datafill;
-            CbRoomNO.DataSource = scheds.datafillroom;
-            cbCourse.DataSource = scheds.datafillcourse;
 
-            cbSubjCode.DataSource.Equals("");
+
+            CbRoomNO.DataSource = scheds.datafillroom;
+
+
+
+        }
+
+        private void displayCourseCode()
+        {
+            var values = DBContext.GetContext().Query("course").Get();
+
+            foreach (var value in values)
+            {
+                cbCourse.Items.Add(value.courseCode);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +112,7 @@ namespace SchoolManagementSystem
                 if (scheds.timediff == null || scheds.timediff == "")
                 {
                     save();
-                    Validator.AlertSuccess("Schedule saved");
+                    Validator.AlertSuccess(" saved");
 
                 }
                 else if (scheds.timeEnd == dtpTimstart)
@@ -102,13 +125,13 @@ namespace SchoolManagementSystem
                     Validator.AlertDanger("Schedule existed");
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Validator.AlertDanger("Please fill up the following fields");
             }
-            
+
             scheds.timediff = "";
-          
+
             scheds.date = "";
             scheds.timeStart = "";
             scheds.timeEnd = "";
@@ -116,27 +139,31 @@ namespace SchoolManagementSystem
 
         private void save()
         {
-                CbRoomNO.Text = scheds.roomdesc;
-                //  scheds.date = txtDate.Text;
-                scheds.date = dateequal;
-                scheds.timeEnd = dtpTimeEnd;
-                scheds.timeStart = dtpTimstart;
-                scheds.maxStudent = txtMax.Text;
-                cbSubjCode.Text = scheds.subjcode;
-                cbCourse.Text = scheds.course;
-                scheds.insertSched();
+            CbRoomNO.Text = scheds.roomdesc;
+            //  scheds.date = txtDate.Text;
+            scheds.date = dateequal;
+            scheds.timeEnd = dtpTimeEnd;
+            scheds.timeStart = dtpTimstart;
+            scheds.maxStudent = txtMax.Text;
+            cbSubjCode.Text = scheds.subjcode;
+            scheds.course = cbCourse.Text;
+            scheds.insertSched();
         }
 
         private void CbRoomNO_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-                scheds.roomdesc= CbRoomNO.Text;
-
+            scheds.roomdesc = CbRoomNO.Text;
         }
 
         private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
-            scheds.course = cbCourse.Text;
+            var values = DBContext.GetContext().Query("subjects").Where("courseCode", cbCourse.Text).Get();
+            cbSubjCode.Text = "";
+            cbSubjCode.Items.Clear();
+            foreach(var value in values)
+            {
+                cbSubjCode.Items.Add(value.subjectCode);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -147,7 +174,7 @@ namespace SchoolManagementSystem
 
 
         }
-     
+
 
         private void btnAddAccountant_Click(object sender, EventArgs e)
         {
@@ -156,13 +183,13 @@ namespace SchoolManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-        
-           dtpTimstart= dateTimePicker1.Value.ToString("H:mm:ss");
+
+            dtpTimstart = dateTimePicker1.Value.ToString("H:mm:ss");
         }
 
         private void cbmon_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbmon.Checked)
+            if (cbmon.Checked)
             {
                 monday = "1";
             }

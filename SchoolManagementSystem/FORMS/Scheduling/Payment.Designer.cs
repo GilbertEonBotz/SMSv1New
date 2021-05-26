@@ -60,7 +60,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -203,7 +202,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.textBox9);
             this.panel3.Controls.Add(this.textBox8);
             this.panel3.Controls.Add(this.textBox7);
@@ -366,7 +364,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(163, 331);
+            this.textBox5.Location = new System.Drawing.Point(179, 331);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(370, 32);
@@ -403,16 +401,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(370, 32);
             this.textBox9.TabIndex = 18;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(396, 341);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 22);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "O.R. Number";
             // 
             // Payment
             // 
@@ -464,15 +452,14 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

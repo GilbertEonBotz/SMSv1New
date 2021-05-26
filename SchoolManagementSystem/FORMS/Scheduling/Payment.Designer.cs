@@ -51,7 +51,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -194,6 +193,16 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.textBox9);
+            this.panel3.Controls.Add(this.textBox8);
+            this.panel3.Controls.Add(this.textBox7);
+            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.textBox3);
@@ -306,16 +315,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label6.TabIndex = 1;
             this.label6.Text = "Date";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(998, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "[ CLOSE ]";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -367,6 +366,5 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

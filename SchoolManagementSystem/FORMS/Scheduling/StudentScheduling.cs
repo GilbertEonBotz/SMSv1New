@@ -232,8 +232,8 @@ namespace SchoolManagementSystem
 
                     List<tuitionBilling> tuit = new List<tuitionBilling>();
                     tuit.Clear();
-                    
-                    
+
+
                     var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
                     string str = values.schedId;
 
@@ -271,7 +271,41 @@ namespace SchoolManagementSystem
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                    localReport.Print();
+                    //    localReport.Print();
+
+
+                    string structureid = struc.structureID;
+                    double total = amount + Convert.ToDouble(lblTotal.Text);
+                    MessageBox.Show(total.ToString());
+
+                    ledgerPercent led = new ledgerPercent();
+
+                    led.selectstudentid = cmbStudentNo.Text;
+                    led.selectSchedID();
+                    led.percent();
+                    double prelim = total * Convert.ToDouble(led.prelim);
+                    double midterm = total * Convert.ToDouble(led.midterm);
+                    double semi = total * Convert.ToDouble(led.semi);
+                    double finals = total * Convert.ToDouble(led.finals);
+                    MessageBox.Show(prelim.ToString());
+                    MessageBox.Show(midterm.ToString());
+
+                    MessageBox.Show(semi.ToString());
+                    MessageBox.Show(finals.ToString());
+
+
+                    DBContext.GetContext().Query("Billing").Insert(new
+                    {
+                        studentSchedid = led.selectStudentSchedid,
+                        structureid = structureid,
+                        total= total ,
+                        prelim = prelim, midterm = midterm, semi = semi,finals = finals
+
+
+                    });
+                    MessageBox.Show("succes bllling");
+
+
                 }
             }
 
@@ -399,6 +433,7 @@ namespace SchoolManagementSystem
                             total = Convert.ToDouble(lblTotal.Text),
                             category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
                             amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
+                           
                         });
                     }
 

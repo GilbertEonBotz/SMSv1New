@@ -12,6 +12,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 {
     public partial class Payment : Form
     {
+        
         public Payment()
         {
             InitializeComponent();
@@ -20,6 +21,21 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void Payment_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //var myForm = new StudentPaymentShow();
+            //display.pnlShow.Controls.Clear();
+            //myForm.TopLevel = false;
+            //myForm.AutoScroll = false;
+            //display.pnlShow.Controls.Add(myForm);
+            //myForm.Show();
         }
     }
 }

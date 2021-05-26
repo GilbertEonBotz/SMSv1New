@@ -39,6 +39,11 @@ namespace SchoolManagementSystem
             this.pnlShow = new System.Windows.Forms.Panel();
             this.pnlSideMenu = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.iconButton14 = new FontAwesome.Sharp.IconButton();
+            this.iconButton11 = new FontAwesome.Sharp.IconButton();
+            this.iconButton12 = new FontAwesome.Sharp.IconButton();
+            this.iconButton13 = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
@@ -76,14 +81,11 @@ namespace SchoolManagementSystem
             this.btnManageSession = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.iconButton13 = new FontAwesome.Sharp.IconButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.iconButton11 = new FontAwesome.Sharp.IconButton();
-            this.iconButton12 = new FontAwesome.Sharp.IconButton();
-            this.iconButton14 = new FontAwesome.Sharp.IconButton();
+            this.iconButton15 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.pnlSideMenu.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnlFeeMenu.SuspendLayout();
             this.pnlTuitionMenu.SuspendLayout();
@@ -92,7 +94,6 @@ namespace SchoolManagementSystem
             this.pnlDept.SuspendLayout();
             this.pnlEmployees.SuspendLayout();
             this.pnlStudentMenu.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -211,6 +212,7 @@ namespace SchoolManagementSystem
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.iconButton15);
             this.pnlMenu.Controls.Add(this.panel6);
             this.pnlMenu.Controls.Add(this.iconButton13);
             this.pnlMenu.Controls.Add(this.panel5);
@@ -237,6 +239,111 @@ namespace SchoolManagementSystem
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(221, 1442);
             this.pnlMenu.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.iconButton14);
+            this.panel6.Controls.Add(this.iconButton11);
+            this.panel6.Controls.Add(this.iconButton12);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 1154);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(221, 125);
+            this.panel6.TabIndex = 61;
+            // 
+            // iconButton14
+            // 
+            this.iconButton14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton14.FlatAppearance.BorderSize = 0;
+            this.iconButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton14.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.iconButton14.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton14.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
+            this.iconButton14.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton14.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton14.IconSize = 10;
+            this.iconButton14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton14.Location = new System.Drawing.Point(0, 78);
+            this.iconButton14.Name = "iconButton14";
+            this.iconButton14.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.iconButton14.Size = new System.Drawing.Size(221, 39);
+            this.iconButton14.TabIndex = 4;
+            this.iconButton14.Text = "Handled";
+            this.iconButton14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton14.UseVisualStyleBackColor = true;
+            this.iconButton14.Click += new System.EventHandler(this.iconButton14_Click);
+            // 
+            // iconButton11
+            // 
+            this.iconButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton11.FlatAppearance.BorderSize = 0;
+            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton11.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.iconButton11.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
+            this.iconButton11.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton11.IconSize = 10;
+            this.iconButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton11.Location = new System.Drawing.Point(0, 39);
+            this.iconButton11.Name = "iconButton11";
+            this.iconButton11.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.iconButton11.Size = new System.Drawing.Size(221, 39);
+            this.iconButton11.TabIndex = 3;
+            this.iconButton11.Text = "Subject Loads";
+            this.iconButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton11.UseVisualStyleBackColor = true;
+            this.iconButton11.Click += new System.EventHandler(this.iconButton11_Click);
+            // 
+            // iconButton12
+            // 
+            this.iconButton12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton12.FlatAppearance.BorderSize = 0;
+            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.iconButton12.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
+            this.iconButton12.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton12.IconSize = 10;
+            this.iconButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton12.Location = new System.Drawing.Point(0, 0);
+            this.iconButton12.Name = "iconButton12";
+            this.iconButton12.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.iconButton12.Size = new System.Drawing.Size(221, 39);
+            this.iconButton12.TabIndex = 2;
+            this.iconButton12.Text = "Add Teacher";
+            this.iconButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton12.UseVisualStyleBackColor = true;
+            // 
+            // iconButton13
+            // 
+            this.iconButton13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton13.FlatAppearance.BorderSize = 0;
+            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton13.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.iconButton13.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
+            this.iconButton13.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton13.IconSize = 20;
+            this.iconButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton13.Location = new System.Drawing.Point(0, 1115);
+            this.iconButton13.Name = "iconButton13";
+            this.iconButton13.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
+            this.iconButton13.Size = new System.Drawing.Size(221, 39);
+            this.iconButton13.TabIndex = 60;
+            this.iconButton13.Text = "Manage Teacher";
+            this.iconButton13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton13.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -1000,110 +1107,29 @@ namespace SchoolManagementSystem
             this.panel3.Size = new System.Drawing.Size(221, 65);
             this.panel3.TabIndex = 0;
             // 
-            // iconButton13
+            // iconButton15
             // 
-            this.iconButton13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton13.FlatAppearance.BorderSize = 0;
-            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton13.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.iconButton13.ForeColor = System.Drawing.Color.Gray;
-            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
-            this.iconButton13.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton13.IconSize = 20;
-            this.iconButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton13.Location = new System.Drawing.Point(0, 1115);
-            this.iconButton13.Name = "iconButton13";
-            this.iconButton13.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
-            this.iconButton13.Size = new System.Drawing.Size(221, 39);
-            this.iconButton13.TabIndex = 60;
-            this.iconButton13.Text = "Manage Teacher";
-            this.iconButton13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton13.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.iconButton14);
-            this.panel6.Controls.Add(this.iconButton11);
-            this.panel6.Controls.Add(this.iconButton12);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 1154);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(221, 125);
-            this.panel6.TabIndex = 61;
-            // 
-            // iconButton11
-            // 
-            this.iconButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton11.FlatAppearance.BorderSize = 0;
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton11.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.iconButton11.ForeColor = System.Drawing.Color.Gray;
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
-            this.iconButton11.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton11.IconSize = 10;
-            this.iconButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton11.Location = new System.Drawing.Point(0, 39);
-            this.iconButton11.Name = "iconButton11";
-            this.iconButton11.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.iconButton11.Size = new System.Drawing.Size(221, 39);
-            this.iconButton11.TabIndex = 3;
-            this.iconButton11.Text = "Subject Loads";
-            this.iconButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton11.UseVisualStyleBackColor = true;
-            this.iconButton11.Click += new System.EventHandler(this.iconButton11_Click);
-            // 
-            // iconButton12
-            // 
-            this.iconButton12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton12.FlatAppearance.BorderSize = 0;
-            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.iconButton12.ForeColor = System.Drawing.Color.Gray;
-            this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
-            this.iconButton12.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton12.IconSize = 10;
-            this.iconButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton12.Location = new System.Drawing.Point(0, 0);
-            this.iconButton12.Name = "iconButton12";
-            this.iconButton12.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.iconButton12.Size = new System.Drawing.Size(221, 39);
-            this.iconButton12.TabIndex = 2;
-            this.iconButton12.Text = "Add Teacher";
-            this.iconButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton12.UseVisualStyleBackColor = true;
-            // 
-            // iconButton14
-            // 
-            this.iconButton14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton14.FlatAppearance.BorderSize = 0;
-            this.iconButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton14.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.iconButton14.ForeColor = System.Drawing.Color.Gray;
-            this.iconButton14.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
-            this.iconButton14.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton14.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton14.IconSize = 10;
-            this.iconButton14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton14.Location = new System.Drawing.Point(0, 78);
-            this.iconButton14.Name = "iconButton14";
-            this.iconButton14.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.iconButton14.Size = new System.Drawing.Size(221, 39);
-            this.iconButton14.TabIndex = 4;
-            this.iconButton14.Text = "Handled";
-            this.iconButton14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton14.UseVisualStyleBackColor = true;
-            this.iconButton14.Click += new System.EventHandler(this.iconButton14_Click);
+            this.iconButton15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton15.FlatAppearance.BorderSize = 0;
+            this.iconButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton15.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.iconButton15.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton15.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
+            this.iconButton15.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton15.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton15.IconSize = 20;
+            this.iconButton15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton15.Location = new System.Drawing.Point(0, 1279);
+            this.iconButton15.Name = "iconButton15";
+            this.iconButton15.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
+            this.iconButton15.Size = new System.Drawing.Size(221, 39);
+            this.iconButton15.TabIndex = 62;
+            this.iconButton15.Text = "Payment";
+            this.iconButton15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton15.UseVisualStyleBackColor = true;
+            this.iconButton15.Click += new System.EventHandler(this.iconButton15_Click);
             // 
             // Form1
             // 
@@ -1124,6 +1150,7 @@ namespace SchoolManagementSystem
             this.panel1.PerformLayout();
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnlFeeMenu.ResumeLayout(false);
             this.pnlTuitionMenu.ResumeLayout(false);
@@ -1132,7 +1159,6 @@ namespace SchoolManagementSystem
             this.pnlDept.ResumeLayout(false);
             this.pnlEmployees.ResumeLayout(false);
             this.pnlStudentMenu.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1192,6 +1218,7 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton iconButton11;
         private FontAwesome.Sharp.IconButton iconButton12;
         private FontAwesome.Sharp.IconButton iconButton13;
+        private FontAwesome.Sharp.IconButton iconButton15;
     }
 }
 

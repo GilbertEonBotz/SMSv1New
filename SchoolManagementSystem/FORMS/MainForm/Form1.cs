@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using SchoolManagementSystem.FORMS.Scheduling;
 
 namespace SchoolManagementSystem
 {
@@ -504,6 +505,16 @@ namespace SchoolManagementSystem
         private void iconButton14_Click(object sender, EventArgs e)
         {
             var myForm = new viewTeacherSched();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void iconButton15_Click(object sender, EventArgs e)
+        {
+            var myForm = new StudentPaymentShow(this);
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;

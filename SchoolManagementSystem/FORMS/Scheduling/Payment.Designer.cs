@@ -51,6 +51,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -193,16 +194,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.textBox3);
@@ -315,12 +306,23 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label6.TabIndex = 1;
             this.label6.Text = "Date";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(968, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 21);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "[ Close ]";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 650);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -339,6 +341,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -366,5 +369,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label11;
     }
 }

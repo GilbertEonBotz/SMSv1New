@@ -100,6 +100,8 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+
             var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
             string getid = value.tuitionCatID.ToString();
 
@@ -125,6 +127,42 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
             }
+
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            {
+                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+                };
+
+                foreach (string aa in wew)
+                {
+                    storeID += (" " + aa);
+
+                }
+            }
+            if (storeID == "")
+            {
+            }
+            else
+            {
+                
+                string str = storeID;
+                var words = str.Split(' ');
+               
+                for (int i = 1; i < words.Length; i++)
+                {
+                    string individualSubj = words[i];
+                    stud.indsub = individualSubj;
+                    amount = 0;
+                    stud.viewSubj();
+
+                    foreach (DataRow Drow in stud.dt.Rows)
+                    {
+                        amount += Convert.ToDouble(Drow["Amount"].ToString());
+                    }
+                }
+
+                lblTuition.Text = amount.ToString();
+            }
         }
 
         private void dgvStudentSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -134,7 +172,7 @@ namespace SchoolManagementSystem
         public string[] wew;
 
         StudentTuition stud = new StudentTuition();
-        Double amount = 0;
+        Double amount;
 
         ReportDataSource rs = new ReportDataSource();
         ReportDataSource rsBill = new ReportDataSource();
@@ -233,7 +271,7 @@ namespace SchoolManagementSystem
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                    //localReport.Print();
+                    localReport.Print();
                 }
             }
 
@@ -389,25 +427,27 @@ namespace SchoolManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            amount = 0;
+            //amount = 0;
 
-            var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
-            string str = values.schedId;
+            //var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
+            //string str = values.schedId;
 
-            var words = str.Split(' ');
+            //var words = str.Split(' ');
 
-            for (int i = 1; i < words.Length; i++)
-            {
-                string individualSubj = words[i];
-                stud.indsub = individualSubj;
+            //for (int i = 1; i < words.Length; i++)
+            //{
+            //    string individualSubj = words[i];
+            //    stud.indsub = individualSubj;
 
-                stud.viewSubj();
-                foreach (DataRow Drow in stud.dt.Rows)
-                {
-                    amount += Convert.ToDouble(Drow["Amount"].ToString());
-                }
-            }
-            MessageBox.Show(amount.ToString());
+            //    stud.viewSubj();
+            //    foreach (DataRow Drow in stud.dt.Rows)
+            //    {
+            //        amount += Convert.ToDouble(Drow["Amount"].ToString());
+            //    }
+            //}
+            //MessageBox.Show(amount.ToString());
+
+
         }
     }
 

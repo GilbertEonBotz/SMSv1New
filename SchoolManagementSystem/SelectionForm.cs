@@ -85,8 +85,6 @@ namespace SchoolManagementSystem
         }
         private void btnSignin_Click(object sender, EventArgs e)
         {
-
-
             //kini mao ning tinuod nga source code
             try
             {

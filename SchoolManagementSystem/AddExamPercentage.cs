@@ -15,9 +15,11 @@ namespace SchoolManagementSystem
 {
     public partial class AddExamPercentage : Form
     {
-        public AddExamPercentage()
+        ExamPercentage reloadDatagrid;
+        public AddExamPercentage(ExamPercentage reloadDatagrid)
         {
             InitializeComponent();
+            this.reloadDatagrid = reloadDatagrid;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -33,6 +35,8 @@ namespace SchoolManagementSystem
                 finals = txtFinal.Text
             });
             MessageBox.Show("Inserted");
+            reloadDatagrid.displayData();
+            this.Close();
         }
     }
 }

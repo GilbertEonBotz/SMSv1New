@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SqlKata.Execution;
 
 namespace SchoolManagementSystem
 {
@@ -25,12 +26,7 @@ namespace SchoolManagementSystem
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            var myForm = new Payment(display);
-            display.pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            display.pnlShow.Controls.Add(myForm);
-            myForm.Show();
+        
         }
 
         private void StudentPaymentShow_Load(object sender, EventArgs e)
@@ -51,5 +47,23 @@ namespace SchoolManagementSystem
                 dgvStudents.Rows[num].Cells[2].Value = DROW["Total"].ToString();
             }
         }
+
+        private void dgvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var myForm = new Payment(display);
+            display.pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            display.pnlShow.Controls.Add(myForm);
+            myForm.Show();
+       myForm.textBox1.Text = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+
+            var values = DBContext.GetContext().Query("student").Where("studentId", myForm.textBox1.Text).First();
+            
+               myForm.txtLastname.Text = values.lastname;
+      
+
+        }
     }
 }
+

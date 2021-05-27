@@ -30,7 +30,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,8 +40,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -51,8 +48,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-           
+            this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,30 +66,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1614, 0);
             this.panel2.TabIndex = 31;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.btnAdmin.IconColor = System.Drawing.Color.Black;
-            this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdmin.IconSize = 20;
-            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(-13, 12);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(416, 42);
-            this.btnAdmin.TabIndex = 32;
-            this.btnAdmin.Text = "Student Payment Information";
-            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmin.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -195,18 +170,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.textBox2);
@@ -221,24 +184,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel3.Size = new System.Drawing.Size(625, 578);
             this.panel3.TabIndex = 34;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(189, 224);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(370, 32);
-            this.textBox4.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 234);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 22);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Notes";
             // 
             // textBox3
             // 
@@ -317,6 +262,24 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label6.TabIndex = 1;
             this.label6.Text = "Date";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(189, 224);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(370, 32);
+            this.textBox4.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(19, 234);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 22);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Notes";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -328,55 +291,29 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label11.Text = "[ Close ]";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // textBox5
+            // btnAdmin
             // 
-            this.textBox5.Location = new System.Drawing.Point(163, 331);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(370, 32);
-            this.textBox5.TabIndex = 15;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(126, 262);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(370, 32);
-            this.textBox6.TabIndex = 16;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(163, 382);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(370, 32);
-            this.textBox7.TabIndex = 16;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(163, 420);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(370, 32);
-            this.textBox8.TabIndex = 17;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(163, 472);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(370, 32);
-            this.textBox9.TabIndex = 18;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(396, 341);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 22);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "O.R. Number";
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.btnAdmin.IconColor = System.Drawing.Color.Black;
+            this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdmin.IconSize = 20;
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(-13, 12);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(416, 42);
+            this.btnAdmin.TabIndex = 32;
+            this.btnAdmin.Text = "Student Payment Information";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmin.UseVisualStyleBackColor = true;
             // 
             // Payment
             // 
@@ -412,8 +349,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtLastname;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
@@ -440,5 +375,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtLastname;
     }
 }

@@ -36,6 +36,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void label11_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
             var myForm = new StudentPaymentShow(display);
             display.pnlShow.Controls.Clear();
             myForm.TopLevel = false;

@@ -195,16 +195,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.textBox3);
@@ -328,55 +319,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label11.Text = "[ Close ]";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(163, 331);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(370, 32);
-            this.textBox5.TabIndex = 15;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(126, 262);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(370, 32);
-            this.textBox6.TabIndex = 16;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(163, 382);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(370, 32);
-            this.textBox7.TabIndex = 16;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(163, 420);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(370, 32);
-            this.textBox8.TabIndex = 17;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(163, 472);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(370, 32);
-            this.textBox9.TabIndex = 18;
-            // 
+          
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(396, 341);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 22);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "O.R. Number";
             // 
             // Payment
             // 

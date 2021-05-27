@@ -45,7 +45,7 @@ namespace SchoolManagementSystem
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -137,7 +137,7 @@ namespace SchoolManagementSystem
             this.Column1,
             this.Column3,
             this.Column4,
-            this.Column8});
+            this.Column5});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,6 +156,7 @@ namespace SchoolManagementSystem
             this.dgvPercentage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPercentage.Size = new System.Drawing.Size(1090, 482);
             this.dgvPercentage.TabIndex = 0;
+            this.dgvPercentage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPercentage_CellContentClick);
             // 
             // panel3
             // 
@@ -235,13 +236,15 @@ namespace SchoolManagementSystem
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // Column8
+            // Column5
             // 
-            this.Column8.HeaderText = "";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Text = "Activate";
-            this.Column8.UseColumnTextForLinkValue = true;
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.Text = "Activate";
+            this.Column5.UseColumnTextForLinkValue = true;
             // 
             // ExamPercentage
             // 
@@ -283,6 +286,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewLinkColumn Column8;
+        private System.Windows.Forms.DataGridViewLinkColumn Column5;
     }
 }

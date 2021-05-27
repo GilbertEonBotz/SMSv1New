@@ -44,26 +44,51 @@ namespace SchoolManagementSystem
 
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < dgvPercentage.Rows.Count; i++)
+
+            if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
             {
-                if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
+                int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
+                DBContext.GetContext().Query("percentage").Where("id", id).Update(new
                 {
-                    MessageBox.Show("wew");
-                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    linkCell.Value = "Deactivate";
-                    dgvPercentage.SelectedRows[0].Cells[5] = linkCell;
-                }
-                else
+                    status = "CLOSE"
+                });
+
+                DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+                linkCell.Value = "Activate";
+                dgvPercentage.SelectedRows[0].Cells[5] = linkCell;
+            }
+            else
+            {
+                for (int i = 0; i < dgvPercentage.Rows.Count; i++)
                 {
-                    MessageBox.Show("bbb");
-                    foreach (DataGridViewRow row in dgvPercentage.Rows)
+                    if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
                     {
-                        DataGridViewLinkCell linkCells = new DataGridViewLinkCell();
-                        linkCells.Value = "Activate";
-                        row.Cells[5] = linkCells;
+                        DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+                        linkCell.Value = "Deactivate";
+                        dgvPercentage.SelectedRows[0].Cells[5] = linkCell;
+
+                        DBContext.GetContext().Query("percentage").Update(new
+                        {
+                            status = "CLOSE"
+                        });
+
+                        int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
+                        DBContext.GetContext().Query("percentage").Where("id", id).Update(new
+                        {
+                            status = "OPEN"
+                        });
+                    }
+
+                    else
+                    {
+                        foreach (DataGridViewRow row in dgvPercentage.Rows)
+                        {
+                            DataGridViewLinkCell linkCells = new DataGridViewLinkCell();
+                            linkCells.Value = "Activate";
+                            row.Cells[5] = linkCells;
+                        }
                     }
                 }
-                MessageBox.Show("aaa");
             }
         }
     }

@@ -25,14 +25,14 @@ namespace SchoolManagementSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             DBContext.GetContext().Query("percentage").Update(new { 
-                status = "CLOSE"
+                status = "Activate"
             });
 
             var values = DBContext.GetContext().Query("percentage").Insert(new { 
-                prelim = txtPrelim.Text,
-                midterm = txtMidterm.Text,
-                semiFinals = txtSemi.Text,
-                finals = txtFinal.Text
+                prelim = $"0.{txtPrelim.Text}",
+                midterm = $"0.{txtMidterm.Text}",
+                semiFinals = $"0.{txtSemi.Text}",
+                finals = $"0.{txtFinal.Text}"
             });
             MessageBox.Show("Inserted");
             reloadDatagrid.displayData();

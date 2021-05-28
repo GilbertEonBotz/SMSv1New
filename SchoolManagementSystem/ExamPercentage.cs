@@ -22,19 +22,36 @@ namespace SchoolManagementSystem
         private void ExamPercentage_Load(object sender, EventArgs e)
         {
             displayData();
-
-
         }
-
         public void displayData()
         {
-            var values = DBContext.GetContext().Query("percentage").Get();
+            dgvPercentage.Rows.Clear();
 
+
+            var values = DBContext.GetContext().Query("percentage").Get();
             foreach (var value in values)
             {
-                dgvPercentage.Rows.Add(value.id, value.prelim, value.midterm, value.semiFinals, value.finals);
+                dgvPercentage.Rows.Add(value.id, value.prelim, value.midterm, value.semiFinals, value.finals, value.status);
             }
+
+            foreach (DataGridViewRow row in dgvPercentage.Rows)
+            {
+                if (Convert.ToString(row.Cells[5].Value) == "Activate")
+                {
+                    row.Cells[5].Style.ForeColor = Color.Blue;
+                    row.Cells[5].Style.SelectionForeColor = Color.Blue;
+                }
+                else
+                {
+                    row.Cells[5].Style.ForeColor = Color.Red;
+                    row.Cells[5].Style.SelectionForeColor = Color.Red;
+                }
+            }
+
         }
+
+
+
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
@@ -45,51 +62,36 @@ namespace SchoolManagementSystem
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
+            string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
+
+            if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
             {
+                DBContext.GetContext().Query("percentage").Update(new
+                {
+                    status = "Activate"
+                });
+
                 int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
                 DBContext.GetContext().Query("percentage").Where("id", id).Update(new
                 {
-                    status = "CLOSE"
+                    status = "Deactivate"
                 });
-
-                DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                linkCell.Value = "Activate";
-                dgvPercentage.SelectedRows[0].Cells[5] = linkCell;
+                displayData();
             }
-            else
+            else if(dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
             {
-                for (int i = 0; i < dgvPercentage.Rows.Count; i++)
+                DBContext.GetContext().Query("percentage").Update(new
                 {
-                    if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
-                    {
-                        DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                        linkCell.Value = "Deactivate";
-                        dgvPercentage.SelectedRows[0].Cells[5] = linkCell;
-
-                        DBContext.GetContext().Query("percentage").Update(new
-                        {
-                            status = "CLOSE"
-                        });
-
-                        int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
-                        DBContext.GetContext().Query("percentage").Where("id", id).Update(new
-                        {
-                            status = "OPEN"
-                        });
-                    }
-
-                    else
-                    {
-                        foreach (DataGridViewRow row in dgvPercentage.Rows)
-                        {
-                            DataGridViewLinkCell linkCells = new DataGridViewLinkCell();
-                            linkCells.Value = "Activate";
-                            row.Cells[5] = linkCells;
-                        }
-                    }
-                }
+                    status = "Activate"
+                });
+                displayData();
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

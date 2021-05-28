@@ -277,57 +277,53 @@ namespace SchoolManagementSystem
 
                     string structureid = struc.structureID;
                     double total = amount + Convert.ToDouble(lblTotal.Text);
-                    MessageBox.Show(total.ToString());
+                    MessageBox.Show("total" + total.ToString());
 
                     ledgerPercent led = new ledgerPercent();
-                    double fracts = 0;
+             
                     led.selectstudentid = cmbStudentNo.Text;
                     led.selectSchedID();
                     led.percent();
 
-                
-
-                    double prelim = total * Convert.ToDouble(led.prelim);
-                    double midterm = total * Convert.ToDouble(led.midterm);
-                    double semi = total * Convert.ToDouble(led.semi);
-                    double finals = total * Convert.ToDouble(led.finals);
 
 
 
+                    double tuitions; 
+                    tuitions = total;
+                    double extractPrelim = total * Convert.ToDouble(led.prelim);
+                    double extractMidterm = total * Convert.ToDouble(led.midterm);
+                    double extractSemi = total * Convert.ToDouble(led.semi);
+                    double extractFinal = total * Convert.ToDouble(led.finals);
+
+                    // KUHAON WHOLE NUMBER EACH EXAM
+                    var prelim = ComputePercentage(extractPrelim, "", "", 0);
+                    var midterm = ComputePercentage(extractMidterm, "", "", 0);
+                    var semi = ComputePercentage(extractSemi, "", "", 0);
+                    var final = ComputePercentage(extractFinal, "", "", 0);
 
 
-                    var fraction1 = SubstringReverse(Math.Round(prelim, 2).ToString(), -1, 4);
-                    var frac1 = Reverse(fraction1);
+                    //KUHAON UG I ADD TANAN DECIMAL
+                    var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
+                    var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+                    var semiDec = ComputeDecimals(extractSemi, "", "", 0);
+                    var finalDec = ComputeDecimals(extractFinal, "", "", 0);
+                    var totalDec = prelimDec + midtermDec + semiDec + finalDec;
 
-                    var fraction2 = SubstringReverse(Math.Round(midterm, 2).ToString(), -1, 4);
-                    var frac2 = Reverse(fraction2);
+                    //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+                    var amt1 = prelim + totalDec;
 
-                    var fraction3 = SubstringReverse(Math.Round(semi, 2).ToString(), -1, 4);
-                    var frac3 = Reverse(fraction3);
+                    MessageBox.Show(Math.Round(amt1, 2).ToString());
+                    MessageBox.Show(midterm.ToString());
+                    MessageBox.Show(semi.ToString());
+                    MessageBox.Show(final.ToString());
 
-                    var fraction4 = SubstringReverse(Math.Round(finals, 2).ToString(), -1, 4);
-                    var frac4 = Reverse(fraction4);
-            
-            
+                    var amt2 = amt1 + midterm + semi + final;
+                    MessageBox.Show(Math.Round(amt2, 2).ToString());
 
-                    double amt1 = prelim - Convert.ToDouble(frac1);
-                    double amts1 = amt1 + (Convert.ToDouble(frac1) / prelim);
 
-                    double amt2 = midterm - Convert.ToDouble(frac2);
-                    double amts2 = amt1 + (Convert.ToDouble(frac2) / midterm);
 
-                    double amt3 = semi - Convert.ToDouble(frac3);
-                    double amts3 = amt1 + (Convert.ToDouble(frac3) / semi);
 
-                    double amt4 = finals - Convert.ToDouble(frac4);
-                    double amts4 = amt1 + (Convert.ToDouble(frac4) / finals);
 
-            
-
-                    fracts = Convert.ToDouble(frac1) + Convert.ToDouble(frac2) + Convert.ToDouble(frac3) + Convert.ToDouble(frac4);
-            
-                    amts1 = fracts + amts1;
-                    MessageBox.Show(Math.Round(amts1, 2).ToString("N2"));
                     //  MessageBox.Show(amts1.ToString() + "b");
 
                     //MessageBox.Show(prelim.ToString());
@@ -337,21 +333,89 @@ namespace SchoolManagementSystem
                     //MessageBox.Show(finals.ToString());
 
 
-                    //DBContext.GetContext().Query("Billing").Insert(new
-                    //{
-                    //    studentSchedid = led.selectStudentSchedid,
-                    //    structureid = structureid,
-                    //    total= total ,
-                    //    prelim = prelim, midterm = midterm, semi = semi,finals = finals
+                    DBContext.GetContext().Query("Billing").Insert(new
+                    {
+                        studentSchedid = led.selectStudentSchedid,
+                        structureid = structureid,
+                        total = total,
+                        prelim = amt1,
+                        midterm = midterm,
+                        semi = semi,
+                        finals = final
 
 
-                    //});
-                    //MessageBox.Show("succes bllling");
+                    });
+                    MessageBox.Show("succes bllling");
 
 
                 }
             }
 
+        }
+        public static double ComputePercentage(double _tuition, string bDecimal, string calFraction, double wholeNum)
+        {
+
+            string result = Convert.ToString(_tuition);
+
+            var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
+            if (regex.IsMatch(result))
+            {
+                string decimalPlaces = regex.Match(result).Value;
+
+                if (Convert.ToInt64(decimalPlaces) > 0)
+                {
+                    for (int i = 0; i < result.Length; i++)
+                    {
+                        if (result[i] == '.')
+                        {
+                            bDecimal += result[i - 1];
+                        }
+
+                    }
+                    calFraction = $"{bDecimal}.{decimalPlaces}";
+                }
+                else
+                {
+                }
+            }
+            else
+            {
+                calFraction = "0";
+            }
+
+            //return Convert.ToDouble(calFraction);
+            return wholeNum = Convert.ToDouble(result) - Convert.ToDouble(calFraction);
+        }
+        public static double ComputeDecimals(double _tuition, string bDecimal, string calFraction, double wholeNum)
+        {
+
+            string result = Convert.ToString(_tuition);
+
+            var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
+            if (regex.IsMatch(result))
+            {
+                string decimalPlaces = regex.Match(result).Value;
+
+                if (Convert.ToInt64(decimalPlaces) > 0)
+                {
+                    for (int i = 0; i < result.Length; i++)
+                    {
+                        if (result[i] == '.')
+                        {
+                            bDecimal += result[i - 1];
+                        }
+                    }
+                    calFraction = $"{bDecimal}.{decimalPlaces}";
+                }
+                else
+                {
+                }
+            }
+            else
+            {
+                calFraction = "0";
+            }
+            return Convert.ToDouble(calFraction);
         }
 
         private void cmbCategoryFee_SelectedIndexChanged(object sender, EventArgs e)
@@ -502,27 +566,7 @@ namespace SchoolManagementSystem
                 }
             }
         }
-        public static string Reverse(string input)
-        {
-            var inputArray = input.ToCharArray();
-            var end = inputArray.Length / 2;
 
-            for (int i = 0; i < end; i++)
-            {
-                var temp = inputArray[i];
-                inputArray[i] = inputArray[inputArray.Length - i - 1];
-                inputArray[inputArray.Length - i - 1] = temp;
-            }
-
-            var result = new string(inputArray);
-
-            return result;
-        }
-
-        public static string SubstringReverse(string str, int reverseIndex, int length)
-        {
-            return string.Join("", str.Reverse().Skip(reverseIndex - 1).Take(length));
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             //amount = 0;

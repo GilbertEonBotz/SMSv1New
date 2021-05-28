@@ -272,7 +272,7 @@ namespace SchoolManagementSystem
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                    //    localReport.Print();
+                     localReport.Print();
 
 
                     string structureid = struc.structureID;

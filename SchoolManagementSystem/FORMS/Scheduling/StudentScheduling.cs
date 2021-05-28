@@ -101,7 +101,8 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+         
+            amount = 0;
 
             var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
             string getid = value.tuitionCatID.ToString();
@@ -112,10 +113,12 @@ namespace SchoolManagementSystem
 
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+       
             sched.display();
-
+       
             foreach (DataRow Drow in sched.dt.Rows)
             {
+        
                 int num = dgvStudentSched.Rows.Add();
                 dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                 dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
@@ -127,10 +130,13 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
+
             }
+       
 
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
+
                 wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
                 };
 
@@ -145,25 +151,37 @@ namespace SchoolManagementSystem
             }
             else
             {
-                
+              
                 string str = storeID;
                 var words = str.Split(' ');
-               
+
                 for (int i = 1; i < words.Length; i++)
                 {
                     string individualSubj = words[i];
                     stud.indsub = individualSubj;
-                    amount = 0;
+                
                     stud.viewSubj();
 
                     foreach (DataRow Drow in stud.dt.Rows)
                     {
                         amount += Convert.ToDouble(Drow["Amount"].ToString());
-                    }
-                }
 
-                lblTuition.Text = amount.ToString();
+                    }
+
+
+                   
+
+                  
+                }
+               
+
+                storeID = "";
+                MessageBox.Show(amount.ToString());
             }
+           
+
+        
+           
         }
 
         private void dgvStudentSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -205,54 +223,15 @@ namespace SchoolManagementSystem
 
             if (Validator.AddConfirmation())
             {
-                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-                {
-                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
 
-                    foreach (string aa in wew)
-                    {
-                        storeID += (" " + aa);
+                List<feeBillings> bills = new List<feeBillings>();
+                bills.Clear();
 
-                    }
-                }
-                if (storeID == "")
-                {
-                }
-                else
-                {
-                    DBContext.GetContext().Query("studentSched").Insert(new
-                    {
-                        studentID = cmbStudentNo.Text,
-                        schedId = storeID
-                    });
-                    storeID = "";
-                    amount = 0;
-                    List<feeBillings> bills = new List<feeBillings>();
-                    bills.Clear();
-
-                    List<tuitionBilling> tuit = new List<tuitionBilling>();
-                    tuit.Clear();
+                List<tuitionBilling> tuit = new List<tuitionBilling>();
+                tuit.Clear();
 
 
-                    var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
-                    string str = values.schedId;
-
-                    var words = str.Split(' ');
-
-                    for (int i = 1; i < words.Length; i++)
-                    {
-                        string individualSubj = words[i];
-                        stud.indsub = individualSubj;
-
-                        stud.viewSubj();
-                        foreach (DataRow Drow in stud.dt.Rows)
-                        {
-                            amount += Convert.ToDouble(Drow["Amount"].ToString());
-                        }
-                    }
-
-                    for (int i = 0; i < dgvCategories.Rows.Count; i++)
+                for (int i = 0; i < dgvCategories.Rows.Count; i++)
                     {
                         bills.Add(new feeBillings
                         {
@@ -272,7 +251,7 @@ namespace SchoolManagementSystem
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                     localReport.Print();
+                    localReport.Print();
 
 
                     string structureid = struc.structureID;
@@ -280,7 +259,7 @@ namespace SchoolManagementSystem
                     MessageBox.Show("total" + total.ToString());
 
                     ledgerPercent led = new ledgerPercent();
-             
+
                     led.selectstudentid = cmbStudentNo.Text;
                     led.selectSchedID();
                     led.percent();
@@ -288,7 +267,7 @@ namespace SchoolManagementSystem
 
 
 
-                    double tuitions; 
+                    double tuitions;
                     tuitions = total;
                     double extractPrelim = total * Convert.ToDouble(led.prelim);
                     double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -348,7 +327,7 @@ namespace SchoolManagementSystem
                     MessageBox.Show("succes bllling");
 
 
-                }
+                
             }
 
         }
@@ -481,32 +460,7 @@ namespace SchoolManagementSystem
                 });
             }
 
-            if (Validator.AddPreview())
-            {
-                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-                {
-
-                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
-
-                    foreach (string aa in wew)
-                    {
-                        storeID += (" " + aa);
-
-                    }
-                }
-                if (storeID == "")
-                {
-                }
-                else
-                {
-
-                    DBContext.GetContext().Query("studentSched").Insert(new
-                    {
-                        studentID = cmbStudentNo.Text,
-                        schedId = storeID
-                    });
-                    storeID = "";
+         
 
                     List<feeBillings> bills = new List<feeBillings>();
                     bills.Clear();
@@ -514,25 +468,10 @@ namespace SchoolManagementSystem
                     List<tuitionBilling> tuit = new List<tuitionBilling>();
 
 
-                    amount = 0;
 
-                    var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
-                    string str = values.schedId;
 
-                    var words = str.Split(' ');
+        
 
-                    for (int i = 1; i < words.Length; i++)
-                    {
-                        string individualSubj = words[i];
-                        stud.indsub = individualSubj;
-
-                        stud.viewSubj();
-                        foreach (DataRow Drow in stud.dt.Rows)
-                        {
-                            amount += Convert.ToDouble(Drow["Amount"].ToString());
-                        }
-                    }
-                    
                     for (int i = 0; i < dgvCategories.Rows.Count; i++)
                     {
                         bills.Add(new feeBillings
@@ -540,7 +479,7 @@ namespace SchoolManagementSystem
                             total = Convert.ToDouble(lblTotal.Text),
                             category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
                             amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
-                           
+
                         });
                     }
 
@@ -563,67 +502,43 @@ namespace SchoolManagementSystem
                     frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
                     frm.ShowDialog();
 
-                }
+                
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+
+
+
+        public class Schedulings
         {
-            //amount = 0;
-
-            //var values = DBContext.GetContext().Query("studentSched").Where("studentId", cmbStudentNo.Text).First();
-            //string str = values.schedId;
-
-            //var words = str.Split(' ');
-
-            //for (int i = 1; i < words.Length; i++)
-            //{
-            //    string individualSubj = words[i];
-            //    stud.indsub = individualSubj;
-
-            //    stud.viewSubj();
-            //    foreach (DataRow Drow in stud.dt.Rows)
-            //    {
-            //        amount += Convert.ToDouble(Drow["Amount"].ToString());
-            //    }
-            //}
-            //MessageBox.Show(amount.ToString());
-
+            public string studentNo { get; set; }
+            public string name { get; set; }
+            public string course { get; set; }
+            public string gender { get; set; }
+            public string date { get; set; }
+            public string schedID { get; set; }
+            public string mergeTime { get; set; }
+            public string subjectCode { get; set; }
+            public string room { get; set; }
+            public string capacity { get; set; }
+            public string status { get; set; }
+            public string lablec { get; set; }
+            public string category { get; set; }
+            public string amount { get; set; }
 
         }
+
+        public class feeBillings
+        {
+            public string category { get; set; }
+            public double amount { get; set; }
+            public double total { get; set; }
+        }
+
+        public class tuitionBilling
+        {
+            public double tuitionTotal { get; set; }
+        }
     }
-
-  
-
-
-    public class Schedulings
-    {
-        public string studentNo { get; set; }
-        public string name { get; set; }
-        public string course { get; set; }
-        public string gender { get; set; }
-        public string date { get; set; }
-        public string schedID { get; set; }
-        public string mergeTime { get; set; }
-        public string subjectCode { get; set; }
-        public string room { get; set; }
-        public string capacity { get; set; }
-        public string status { get; set; }
-        public string lablec { get; set; }
-        public string category { get; set; }
-        public string amount { get; set; }
-
-    }
-
-    public class feeBillings
-    {
-        public string category { get; set; }
-        public double amount { get; set; }
-        public double total { get; set; }
-    }
-
-    public class tuitionBilling
-    {
-        public double tuitionTotal { get; set; }
-    }
-}

@@ -45,7 +45,7 @@ namespace SchoolManagementSystem
             // 
             // SchedulingsBindingSource
             // 
-            this.SchedulingsBindingSource.DataSource = typeof(SchoolManagementSystem.Schedulings);
+            //this.SchedulingsBindingSource.DataSource = typeof(SchoolManagementSystem.Schedulings);
             // 
             // reportViewer1
             // 

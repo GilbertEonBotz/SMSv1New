@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using EonBotzLibrary;
 using SqlKata.Execution;
 using Microsoft.Reporting.WinForms;
+using System.Linq;
 
 namespace SchoolManagementSystem
 {
@@ -279,31 +280,73 @@ namespace SchoolManagementSystem
                     MessageBox.Show(total.ToString());
 
                     ledgerPercent led = new ledgerPercent();
-
+                    double fracts = 0;
                     led.selectstudentid = cmbStudentNo.Text;
                     led.selectSchedID();
                     led.percent();
+
+                
+
                     double prelim = total * Convert.ToDouble(led.prelim);
                     double midterm = total * Convert.ToDouble(led.midterm);
                     double semi = total * Convert.ToDouble(led.semi);
                     double finals = total * Convert.ToDouble(led.finals);
-                    MessageBox.Show(prelim.ToString());
-                    MessageBox.Show(midterm.ToString());
-
-                    MessageBox.Show(semi.ToString());
-                    MessageBox.Show(finals.ToString());
 
 
-                    DBContext.GetContext().Query("Billing").Insert(new
-                    {
-                        studentSchedid = led.selectStudentSchedid,
-                        structureid = structureid,
-                        total= total ,
-                        prelim = prelim, midterm = midterm, semi = semi,finals = finals
 
 
-                    });
-                    MessageBox.Show("succes bllling");
+
+                    var fraction1 = SubstringReverse(Math.Round(prelim, 2).ToString(), -1, 4);
+                    var frac1 = Reverse(fraction1);
+
+                    var fraction2 = SubstringReverse(Math.Round(midterm, 2).ToString(), -1, 4);
+                    var frac2 = Reverse(fraction2);
+
+                    var fraction3 = SubstringReverse(Math.Round(semi, 2).ToString(), -1, 4);
+                    var frac3 = Reverse(fraction3);
+
+                    var fraction4 = SubstringReverse(Math.Round(finals, 2).ToString(), -1, 4);
+                    var frac4 = Reverse(fraction4);
+            
+            
+
+                    double amt1 = prelim - Convert.ToDouble(frac1);
+                    double amts1 = amt1 + (Convert.ToDouble(frac1) / prelim);
+
+                    double amt2 = midterm - Convert.ToDouble(frac2);
+                    double amts2 = amt1 + (Convert.ToDouble(frac2) / midterm);
+
+                    double amt3 = semi - Convert.ToDouble(frac3);
+                    double amts3 = amt1 + (Convert.ToDouble(frac3) / semi);
+
+                    double amt4 = finals - Convert.ToDouble(frac4);
+                    double amts4 = amt1 + (Convert.ToDouble(frac4) / finals);
+
+            
+
+                    fracts = Convert.ToDouble(frac1) + Convert.ToDouble(frac2) + Convert.ToDouble(frac3) + Convert.ToDouble(frac4);
+            
+                    amts1 = fracts + amts1;
+                    MessageBox.Show(Math.Round(amts1, 2).ToString("N2"));
+                    //  MessageBox.Show(amts1.ToString() + "b");
+
+                    //MessageBox.Show(prelim.ToString());
+                    //MessageBox.Show(midterm.ToString());
+
+                    //MessageBox.Show(semi.ToString());
+                    //MessageBox.Show(finals.ToString());
+
+
+                    //DBContext.GetContext().Query("Billing").Insert(new
+                    //{
+                    //    studentSchedid = led.selectStudentSchedid,
+                    //    structureid = structureid,
+                    //    total= total ,
+                    //    prelim = prelim, midterm = midterm, semi = semi,finals = finals
+
+
+                    //});
+                    //MessageBox.Show("succes bllling");
 
 
                 }
@@ -459,7 +502,27 @@ namespace SchoolManagementSystem
                 }
             }
         }
+        public static string Reverse(string input)
+        {
+            var inputArray = input.ToCharArray();
+            var end = inputArray.Length / 2;
 
+            for (int i = 0; i < end; i++)
+            {
+                var temp = inputArray[i];
+                inputArray[i] = inputArray[inputArray.Length - i - 1];
+                inputArray[inputArray.Length - i - 1] = temp;
+            }
+
+            var result = new string(inputArray);
+
+            return result;
+        }
+
+        public static string SubstringReverse(string str, int reverseIndex, int length)
+        {
+            return string.Join("", str.Reverse().Skip(reverseIndex - 1).Take(length));
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //amount = 0;
@@ -486,7 +549,7 @@ namespace SchoolManagementSystem
         }
     }
 
-
+  
 
 
     public class Schedulings

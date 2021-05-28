@@ -18,7 +18,7 @@ namespace SchoolManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamPercentage());
+            Application.Run(new Form1());
         }
     }
 }

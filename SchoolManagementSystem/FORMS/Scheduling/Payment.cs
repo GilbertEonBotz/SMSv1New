@@ -22,14 +22,22 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void Payment_Load(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("rooms").Get();
+            displayData();
 
-            foreach(var value in values)
-            {
-                dgv.Rows.Add(value.name);
-            }
         }
 
+        public void displayData()
+        {
+            studentPaymentDisplay disp = new studentPaymentDisplay();
+            disp.studentID = textBox1.Text;
+            disp.viewPayment();
+
+            lblpre.Text = disp.prelim;
+            lblmid.Text = disp.midterm;
+            lblsemi.Text = disp.semi;
+            lblfin.Text = disp.final;
+            lbltotal.Text = disp.total;
+        }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -42,13 +50,28 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void label11_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            var myForm = new StudentPaymentShow(display);
-            display.pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            display.pnlShow.Controls.Add(myForm);
-            myForm.Show();
+       
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            studentPaymentDisplay disp = new studentPaymentDisplay();
+            disp.studentID = textBox1.Text;
+            disp.viewPayment();
+
+            lblpre.Text = disp.prelim;
+            lblmid.Text = disp.midterm;
+            lblsemi.Text = disp.semi;
+            lblfin.Text = disp.final;
+            lbltotal.Text = disp.total;
+
         }
     }
 }

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using EonBotzLibrary;
+using SqlKata.Execution;
 namespace SchoolManagementSystem.FORMS.Scheduling
 {
     public partial class Payment : Form
@@ -21,7 +22,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void Payment_Load(object sender, EventArgs e)
         {
+            var values = DBContext.GetContext().Query("rooms").Get();
 
+            foreach(var value in values)
+            {
+                dgv.Rows.Add(value.name);
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

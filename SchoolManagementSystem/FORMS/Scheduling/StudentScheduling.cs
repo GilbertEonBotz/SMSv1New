@@ -223,8 +223,32 @@ namespace SchoolManagementSystem
 
             if (Validator.AddConfirmation())
             {
+                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+                {
+                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+                };
 
-                List<feeBillings> bills = new List<feeBillings>();
+                    foreach (string aa in wew)
+                    {
+                        storeID += (" " + aa);
+
+                    }
+                }
+                if (storeID == "")
+                {
+                }
+                else
+                {
+                    DBContext.GetContext().Query("studentSched").Insert(new
+                    {
+                        studentID = cmbStudentNo.Text,
+                        schedId = storeID
+                    });
+                }
+
+
+
+                    List<feeBillings> bills = new List<feeBillings>();
                 bills.Clear();
 
                 List<tuitionBilling> tuit = new List<tuitionBilling>();
@@ -232,103 +256,104 @@ namespace SchoolManagementSystem
 
 
                 for (int i = 0; i < dgvCategories.Rows.Count; i++)
+                {
+                    bills.Add(new feeBillings
                     {
-                        bills.Add(new feeBillings
-                        {
-                            total = Convert.ToDouble(lblTotal.Text),
-                            category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
-                            amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
-                        });
-                    }
-
-                    tuit.Add(new tuitionBilling
-                    {
-                        tuitionTotal = Convert.ToDouble(amount.ToString()),
+                        total = Convert.ToDouble(lblTotal.Text),
+                        category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
+                        amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
                     });
+                }
 
-                    LocalReport localReport = new LocalReport();
-                    localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                    localReport.Print();
+                tuit.Add(new tuitionBilling
+                {
+                    tuitionTotal = Convert.ToDouble(amount.ToString()),
+                });
 
-
-                    string structureid = struc.structureID;
-                    double total = amount + Convert.ToDouble(lblTotal.Text);
-                    MessageBox.Show("total" + total.ToString());
-
-                    ledgerPercent led = new ledgerPercent();
-
-                    led.selectstudentid = cmbStudentNo.Text;
-                    led.selectSchedID();
-                    led.percent();
+                //LocalReport localReport = new LocalReport();
+                //localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
+                //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
+                //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
+                //localReport.Print();
 
 
+                string structureid = struc.structureID;
+            double total = amount + Convert.ToDouble(lblTotal.Text);
+            MessageBox.Show("total" + total.ToString());
 
+            ledgerPercent led = new ledgerPercent();
 
-                    double tuitions;
-                    tuitions = total;
-                    double extractPrelim = total * Convert.ToDouble(led.prelim);
-                    double extractMidterm = total * Convert.ToDouble(led.midterm);
-                    double extractSemi = total * Convert.ToDouble(led.semi);
-                    double extractFinal = total * Convert.ToDouble(led.finals);
-
-                    // KUHAON WHOLE NUMBER EACH EXAM
-                    var prelim = ComputePercentage(extractPrelim, "", "", 0);
-                    var midterm = ComputePercentage(extractMidterm, "", "", 0);
-                    var semi = ComputePercentage(extractSemi, "", "", 0);
-                    var final = ComputePercentage(extractFinal, "", "", 0);
-
-
-                    //KUHAON UG I ADD TANAN DECIMAL
-                    var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-                    var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
-                    var semiDec = ComputeDecimals(extractSemi, "", "", 0);
-                    var finalDec = ComputeDecimals(extractFinal, "", "", 0);
-                    var totalDec = prelimDec + midtermDec + semiDec + finalDec;
-
-                    //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-                    var amt1 = prelim + totalDec;
-
-                    MessageBox.Show(Math.Round(amt1, 2).ToString());
-                    MessageBox.Show(midterm.ToString());
-                    MessageBox.Show(semi.ToString());
-                    MessageBox.Show(final.ToString());
-
-                    var amt2 = amt1 + midterm + semi + final;
-                    MessageBox.Show(Math.Round(amt2, 2).ToString());
+            led.selectstudentid = cmbStudentNo.Text;
+            led.selectSchedID();
+            led.percent();
 
 
 
 
+            double tuitions;
+            tuitions = total;
+            double extractPrelim = total * Convert.ToDouble(led.prelim);
+            double extractMidterm = total * Convert.ToDouble(led.midterm);
+            double extractSemi = total * Convert.ToDouble(led.semi);
+            double extractFinal = total * Convert.ToDouble(led.finals);
 
-                    //  MessageBox.Show(amts1.ToString() + "b");
-
-                    //MessageBox.Show(prelim.ToString());
-                    //MessageBox.Show(midterm.ToString());
-
-                    //MessageBox.Show(semi.ToString());
-                    //MessageBox.Show(finals.ToString());
-
-
-                    DBContext.GetContext().Query("Billing").Insert(new
-                    {
-                        studentSchedid = led.selectStudentSchedid,
-                        structureid = structureid,
-                        total = total,
-                        prelim = amt1,
-                        midterm = midterm,
-                        semi = semi,
-                        finals = final
+            // KUHAON WHOLE NUMBER EACH EXAM
+            var prelim = ComputePercentage(extractPrelim, "", "", 0);
+            var midterm = ComputePercentage(extractMidterm, "", "", 0);
+            var semi = ComputePercentage(extractSemi, "", "", 0);
+            var final = ComputePercentage(extractFinal, "", "", 0);
 
 
-                    });
-                    MessageBox.Show("succes bllling");
+            //KUHAON UG I ADD TANAN DECIMAL
+            var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
+            var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+            var semiDec = ComputeDecimals(extractSemi, "", "", 0);
+            var finalDec = ComputeDecimals(extractFinal, "", "", 0);
+            var totalDec = prelimDec + midtermDec + semiDec + finalDec;
+
+            //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+            var amt1 = prelim + totalDec;
+
+            MessageBox.Show(Math.Round(amt1, 2).ToString());
+            MessageBox.Show(midterm.ToString());
+            MessageBox.Show(semi.ToString());
+            MessageBox.Show(final.ToString());
+
+            var amt2 = amt1 + midterm + semi + final;
+            MessageBox.Show(Math.Round(amt2, 2).ToString());
 
 
-                
-            }
+
+
+
+            //    //  MessageBox.Show(amts1.ToString() + "b");
+
+            //    //MessageBox.Show(prelim.ToString());
+            //    //MessageBox.Show(midterm.ToString());
+
+            //    //MessageBox.Show(semi.ToString());
+            //    //MessageBox.Show(finals.ToString());
+
+
+
+
+            DBContext.GetContext().Query("Billing").Insert(new
+                {
+                    studentSchedid = led.selectStudentSchedid,
+                    structureid = structureid,
+                    total = total,
+                    prelim = amt1,
+                    midterm = midterm,
+                    semi = semi,
+                    finals = final
+
+
+                });
+                MessageBox.Show("succes bllling");
+
+           }
+
 
         }
         public static double ComputePercentage(double _tuition, string bDecimal, string calFraction, double wholeNum)

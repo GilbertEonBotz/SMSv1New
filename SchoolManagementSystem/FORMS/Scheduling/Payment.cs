@@ -73,38 +73,44 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+
+
+
+            
+                conn = connect.getcon();
+                conn.Open();
+                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+                dr = cmd.ExecuteReader();
          
-
-
-
-
-            conn = connect.getcon();
-            conn.Open();
-            cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
-            dr = cmd.ExecuteReader();
-            while(dr.Read())
-            {
-              double number =  Convert.ToDouble(dr[0].ToString()) + Convert.ToDouble(txtAmount.Text);
-
-                if(number > Convert.ToDouble(dr[1].ToString()))
+        
+            
+                while (dr.Read())
+                    
+        
+          
                 {
-                    MessageBox.Show("please input only equal or less than the total amount");
-                }
-                else
-                {
-                    disp.billingid = billingid;
-                    MessageBox.Show(billingid);
-                    disp.amount = txtAmount.Text;
-                    disp.remarks = txtRemarks.Text;
-                    disp.status = "paid";
-                    disp.paymentMethod = cmbpaymentMethod.Text;
+                    double number = Convert.ToDouble(dr[0].ToString()) + Convert.ToDouble(txtAmount.Text);
 
-                    disp.insertpayment();
-                    MessageBox.Show("success");
+                    if (number > Convert.ToDouble(dr[1].ToString()))
+                    {
+                        MessageBox.Show("please input only equal or less than the total amount");
+                    }
+                    else
+                    {
+                        disp.billingid = billingid;
+                        MessageBox.Show(billingid);
+                        disp.amount = txtAmount.Text;
+                        disp.remarks = txtRemarks.Text;
+                        disp.status = "paid";
+                        disp.paymentMethod = cmbpaymentMethod.Text;
+
+                        disp.insertpayment();
+                        MessageBox.Show("success");
+
+                    }
                 
-                }
             }
-
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)

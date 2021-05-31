@@ -98,61 +98,72 @@ namespace SchoolManagementSystem
             Convert.ToDouble(spd.prelim);
             Convert.ToDouble(spd.midterm);
             Convert.ToDouble(spd.semi);
-            double finalss = Convert.ToDouble(spd.totalpaid);
-            Convert.ToDouble(spd.final);
-
-
-            for (double i = 0; i <= finalss; i++)
+            try
             {
-                if (Convert.ToDouble(spd.prelim) <= finalss)
+                double finalss = Convert.ToDouble(spd.totalpaid);
+
+
+                Convert.ToDouble(spd.final);
+
+
+                for (double i = 0; i <= finalss; i++)
                 {
-                    amount = finalss - Convert.ToDouble(spd.prelim);
-
-                    if (Convert.ToDouble(spd.midterm) <= amount)
+                    if (Convert.ToDouble(spd.prelim) <= finalss)
                     {
+                        amount = finalss - Convert.ToDouble(spd.prelim);
 
-                        amount = amount - Convert.ToDouble(spd.midterm);
-                        if (Convert.ToDouble(spd.semi) <= amount)
+                        if (Convert.ToDouble(spd.midterm) <= amount)
                         {
-                            amount = amount - Convert.ToDouble(spd.semi);
-                            if (Convert.ToDouble(spd.final) <= amount)
-                            {
-                                amount = amount - Convert.ToDouble(spd.final);
-                                myForm.lblpre.Text = "paid";
-                                myForm.lblmid.Text = "paid";
-                                myForm.lblsemi.Text = "paid";
-                                myForm.lblfin.Text = "paid";
 
+                            amount = amount - Convert.ToDouble(spd.midterm);
+                            if (Convert.ToDouble(spd.semi) <= amount)
+                            {
+                                amount = amount - Convert.ToDouble(spd.semi);
+                                if (Convert.ToDouble(spd.final) <= amount)
+                                {
+                                    amount = amount - Convert.ToDouble(spd.final);
+                                    myForm.lblpre.Text = "paid";
+                                    myForm.lblmid.Text = "paid";
+                                    myForm.lblsemi.Text = "paid";
+                                    myForm.lblfin.Text = "paid";
+
+                                }
+                                else
+                                {
+                                    myForm.lblpre.Text = "paid";
+                                    myForm.lblmid.Text = "paid";
+                                    myForm.lblsemi.Text = "paid";
+                                    myForm.lblfin.Text = Convert.ToString(amount);
+                                }
                             }
                             else
                             {
                                 myForm.lblpre.Text = "paid";
                                 myForm.lblmid.Text = "paid";
-                                myForm.lblsemi.Text = "paid";
-                                myForm.lblfin.Text = Convert.ToString(amount);
+                                myForm.lblsemi.Text = Convert.ToString(amount);
                             }
                         }
                         else
                         {
                             myForm.lblpre.Text = "paid";
-                            myForm.lblmid.Text = "paid";
-                            myForm.lblsemi.Text = Convert.ToString(amount);
+                            myForm.lblmid.Text = Convert.ToString(amount);
                         }
                     }
                     else
                     {
-                        myForm.lblpre.Text = "paid";
-                        myForm.lblmid.Text = Convert.ToString(amount);
+
+                        myForm.lblpre.Text = Convert.ToString(finalss);
                     }
+
+
                 }
-                else
-                {
-
-                    myForm.lblpre.Text = Convert.ToString(finalss);
-                }
-
-
             }
+            catch(Exception)
+            {
+                MessageBox.Show("aa");
+                myForm.txtcurrentBal.Text = spd.total;
+            }
+            
 
 
         }

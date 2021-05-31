@@ -283,10 +283,10 @@ namespace SchoolManagementSystem
 
                 double tuitions;
                 tuitions = total;
-                double extractPrelim = total * Convert.ToDouble(led.prelim);
-                double extractMidterm = total * Convert.ToDouble(led.midterm);
-                double extractSemi = total * Convert.ToDouble(led.semi);
-                double extractFinal = total * Convert.ToDouble(led.finals);
+                double extractPrelim = tuitions * Convert.ToDouble(led.prelim);
+                double extractMidterm = tuitions * Convert.ToDouble(led.midterm);
+                double extractSemi = tuitions * Convert.ToDouble(led.semi);
+                double extractFinal = tuitions * Convert.ToDouble(led.finals);
 
                 // KUHAON WHOLE NUMBER EACH EXAM
                 var prelim = ComputePercentage(extractPrelim, "", "", 0);
@@ -445,7 +445,6 @@ namespace SchoolManagementSystem
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-
             StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
 
             List<Schedulings> lst = new List<Schedulings>();
@@ -492,22 +491,19 @@ namespace SchoolManagementSystem
             });
 
             double total = amount + Convert.ToDouble(lblTotal.Text);
-
+            MessageBox.Show(total.ToString());
             ledgerPercent led = new ledgerPercent();
 
             led.selectstudentid = cmbStudentNo.Text;
             led.selectSchedID();
             led.percent();
 
+            double tuitions = 1150;
 
-
-
-            double tuitions;
-            tuitions = total;
-            double extractPrelim = total * Convert.ToDouble(led.prelim);
-            double extractMidterm = total * Convert.ToDouble(led.midterm);
-            double extractSemi = total * Convert.ToDouble(led.semi);
-            double extractFinal = total * Convert.ToDouble(led.finals);
+            double extractPrelim = 550 * Convert.ToDouble(led.prelim);
+            double extractMidterm = 510 * Convert.ToDouble(led.midterm);
+            double extractSemi = 310 * Convert.ToDouble(led.semi);
+            double extractFinal = 310 * Convert.ToDouble(led.finals);
 
             // KUHAON WHOLE NUMBER EACH EXAM
             var prelim = ComputePercentage(extractPrelim, "", "", 0);
@@ -525,6 +521,8 @@ namespace SchoolManagementSystem
 
             //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
             var amt1 = prelim + totalDec;
+
+            MessageBox.Show(amt1.ToString());
 
             List<examDivision> exams = new List<examDivision>();
             exams.Clear();

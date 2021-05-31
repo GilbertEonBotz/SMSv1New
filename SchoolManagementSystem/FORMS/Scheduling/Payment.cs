@@ -78,5 +78,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             lbltotal.Text = disp.total;
 
         }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

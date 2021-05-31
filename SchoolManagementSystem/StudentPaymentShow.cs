@@ -56,12 +56,20 @@ namespace SchoolManagementSystem
             myForm.AutoScroll = false;
             display.pnlShow.Controls.Add(myForm);
             myForm.Show();
-       myForm.textBox1.Text = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+            myForm.textBox1.Text = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
 
-            var values = DBContext.GetContext().Query("student").Where("studentId", myForm.textBox1.Text).First();
-            
-               myForm.txtLastname.Text = values.lastname;
-      
+            spd.studentID = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+            spd.viewPayment();
+
+            myForm.lblpre.Text = spd.prelim;
+            myForm.lblmid.Text = spd.midterm;
+            myForm.lblsemi.Text = spd.semi;
+            myForm.lblfin.Text = spd.final;
+            myForm.lbltotal.Text = spd.total;
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -52,7 +52,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +77,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.txtLastname);
-            this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Location = new System.Drawing.Point(1, 69);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
@@ -272,22 +270,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(968, 33);
+            this.label11.Location = new System.Drawing.Point(1024, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 21);
             this.label11.TabIndex = 11;
             this.label11.Text = "[ Close ]";
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAdmin.IconColor = System.Drawing.Color.Black;
-            this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdmin.Location = new System.Drawing.Point(155, 125);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdmin.TabIndex = 34;
             // 
             // dgv
             // 
@@ -320,7 +308,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.Color.White;
-            this.dgv.Location = new System.Drawing.Point(478, 158);
+            this.dgv.Location = new System.Drawing.Point(478, 322);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
@@ -379,7 +367,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;

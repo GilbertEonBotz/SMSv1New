@@ -9,16 +9,16 @@
               <Width>1.47917in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.47917in</Width>
+              <Width>1.79166in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.95834in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.47917in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.47917in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.47917in</Width>
+              <Width>0.78695in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -36,7 +36,8 @@
                             <TextRun>
                               <Value>SUBJECT CODE</Value>
                               <Style>
-                                <FontFamily>CENTURY GOTHIC</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -69,7 +70,8 @@
                             <TextRun>
                               <Value>DESCRIPTIVE TITLE</Value>
                               <Style>
-                                <FontFamily>CENTURY GOTHIC</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -102,7 +104,8 @@
                             <TextRun>
                               <Value>SCHEDULE</Value>
                               <Style>
-                                <FontFamily>CENTURY GOThic</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -135,7 +138,8 @@
                             <TextRun>
                               <Value>ROOM #</Value>
                               <Style>
-                                <FontFamily>CENTURY Gothic</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -166,9 +170,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>LEC/LAB UNITS</Value>
+                              <Value>LEC/LAB</Value>
                               <Style>
-                                <FontFamily>CENTURY Gothic</FontFamily>
+                                <FontFamily>COURIER New</FontFamily>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -205,7 +210,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!schedID.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>COURIer New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -235,7 +242,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!subjectCode.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>COURIer New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -265,7 +274,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!mergeTime.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>COURIer New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -295,7 +306,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!room.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>COURIer New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -325,7 +338,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!lablec.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>COURier New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -370,9 +385,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.01389in</Top>
-        <Left>0.04167in</Left>
         <Height>0.5in</Height>
-        <Width>7.39585in</Width>
+        <Width>7.49529in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -389,7 +403,7 @@
               <TextRun>
                 <Value>:: FEE DETAILS ::</Value>
                 <Style>
-                  <FontFamily>CENTURY GOTHIc</FontFamily>
+                  <FontFamily>courier New</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -404,7 +418,7 @@
         <Top>1.10292in</Top>
         <Left>0.29042in</Left>
         <Height>0.25in</Height>
-        <Width>2.60766in</Width>
+        <Width>2.57293in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -425,7 +439,8 @@
               <TextRun>
                 <Value>TOTAL CHARGES</Value>
                 <Style>
-                  <FontFamily>CENTURY GOTHIc</FontFamily>
+                  <FontFamily>COURIer New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -434,10 +449,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>2.20014in</Top>
+        <Top>2.3146in</Top>
         <Left>0.04167in</Left>
         <Height>0.19792in</Height>
-        <Width>1.03125in</Width>
+        <Width>1.74652in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -458,7 +473,8 @@
               <TextRun>
                 <Value>TUITION FEE</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
+                  <FontFamily>COURIer New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -469,10 +485,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.40848in</Top>
+        <Top>1.47444in</Top>
         <Left>0.04167in</Left>
         <Height>0.19792in</Height>
-        <Width>1.17709in</Width>
+        <Width>1.33333in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -493,22 +509,23 @@
               <TextRun>
                 <Value>=Sum(Fields!tuitionTotal.Value, "DataSet3")</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Format>'PHP'#,0.00;('PHP'#,0.00)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.42236in</Top>
-        <Left>2.04515in</Left>
+        <Top>1.47444in</Top>
+        <Left>2.04341in</Left>
         <Height>0.19792in</Height>
-        <Width>1.43057in</Width>
+        <Width>1.39584in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -524,20 +541,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.85244in</Width>
+              <Width>2.00174in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.58161in</Width>
+              <Width>1.39758in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.25834in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox4">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -545,7 +561,8 @@
                             <TextRun>
                               <Value>CHARGES</Value>
                               <Style>
-                                <FontFamily>CENTURY Gothic</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -563,6 +580,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <Direction>LTR</Direction>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -570,7 +588,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox6">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -578,7 +595,8 @@
                             <TextRun>
                               <Value>AMOUNT</Value>
                               <Style>
-                                <FontFamily>CENTURY GOTHIC</FontFamily>
+                                <FontFamily>courier New</FontFamily>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -595,7 +613,7 @@
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <Direction>LTR</Direction>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -603,19 +621,20 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.20834in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="category">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!category.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>courier New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -631,6 +650,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <Direction>LTR</Direction>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -638,17 +658,20 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="amount">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!amount.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>courier New</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>amount</rd:DefaultName>
@@ -660,7 +683,7 @@
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <Direction>LTR</Direction>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -686,10 +709,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet2</DataSetName>
-        <Top>1.67236in</Top>
+        <Top>1.79736in</Top>
         <Left>0.04167in</Left>
-        <Height>0.5in</Height>
-        <Width>3.43405in</Width>
+        <Height>0.46668in</Height>
+        <Width>3.39932in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -706,19 +729,23 @@
               <TextRun>
                 <Value>=Sum(Fields!amount.Value, "DataSet2")</Value>
                 <Style>
+                  <FontFamily>COURIEr New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Format>'PHP'#,0.00;('PHP'#,0.00)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>2.21403in</Top>
+        <Top>2.32849in</Top>
         <Left>2.04515in</Left>
         <Height>0.18403in</Height>
-        <Width>1.43057in</Width>
+        <Width>1.39584in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -739,19 +766,23 @@
               <TextRun>
                 <Value>=ReportItems!Textbox2.Value + ReportItems!Textbox10.Value</Value>
                 <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Format>'PHP'#,0.00;('PHP'#,0.00)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>2.67236in</Top>
+        <Top>2.53347in</Top>
         <Left>2.04515in</Left>
         <Height>0.18403in</Height>
-        <Width>1.43057in</Width>
+        <Width>1.39584in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -764,10 +795,10 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>2.4675in</Top>
+        <Top>2.52306in</Top>
         <Left>0.04167in</Left>
         <Height>0in</Height>
-        <Width>3.43405in</Width>
+        <Width>3.22916in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -784,7 +815,8 @@
               <TextRun>
                 <Value>TOTAL ASSESSMENT</Value>
                 <Style>
-                  <FontFamily>CENTURY GOTHIc</FontFamily>
+                  <FontFamily>COURIer New</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -793,10 +825,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>2.65847in</Top>
+        <Top>2.53347in</Top>
         <Left>0.04167in</Left>
         <Height>0.19792in</Height>
-        <Width>1.78475in</Width>
+        <Width>1.74652in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -904,7 +936,8 @@
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
+            <Width>1.5pt</Width>
           </Border>
         </Style>
       </Line>
@@ -949,7 +982,7 @@
               <TextRun>
                 <Value>:: PAYMENT DETAILS ::</Value>
                 <Style>
-                  <FontFamily>CENTURY GOTHIc</FontFamily>
+                  <FontFamily>courier New</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -962,9 +995,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
         <Top>1.10292in</Top>
-        <Left>4.25222in</Left>
+        <Left>4.26736in</Left>
         <Height>0.25in</Height>
-        <Width>2.60766in</Width>
+        <Width>3.17016in</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -983,9 +1016,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PAYMENT MODE</Value>
+                <Value>PRELIM</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                 </Style>
               </TextRun>
@@ -996,10 +1030,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.42236in</Top>
-        <Left>4.25222in</Left>
+        <Top>1.40848in</Top>
+        <Left>4.70486in</Left>
         <Height>0.19792in</Height>
-        <Width>1.17709in</Width>
+        <Width>1.09723in</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -1018,10 +1052,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>AMOUNT PAID</Value>
+                <Value>MIDTERM</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
-                  <FontWeight>Normal</FontWeight>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1031,10 +1065,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.63417in</Top>
-        <Left>4.25222in</Left>
+        <Top>1.6064in</Top>
+        <Left>4.70486in</Left>
         <Height>0.19792in</Height>
-        <Width>1.17709in</Width>
+        <Width>1.09723in</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -1053,9 +1087,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DATE PAID</Value>
+                <Value>SEMI-FINAL</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                 </Style>
               </TextRun>
@@ -1066,10 +1101,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.85987in</Top>
-        <Left>4.25222in</Left>
+        <Top>1.80432in</Top>
+        <Left>4.70486in</Left>
         <Height>0.19792in</Height>
-        <Width>1.17709in</Width>
+        <Width>1.09723in</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -1088,10 +1123,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PAYMENT TYPE</Value>
+                <Value>FINAL</Value>
                 <Style>
-                  <FontFamily>CENTURY GOthic</FontFamily>
-                  <FontWeight>Normal</FontWeight>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1101,10 +1136,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.07168in</Top>
-        <Left>4.25222in</Left>
+        <Top>2.00224in</Top>
+        <Left>4.70486in</Left>
         <Height>0.19792in</Height>
-        <Width>1.17709in</Width>
+        <Width>1.09723in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -1138,6 +1173,227 @@
         <Height>0.25in</Height>
         <Width>2.15626in</Width>
         <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!prelim.Value, "DataSet4")</Value>
+                <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.40848in</Top>
+        <Left>5.92834in</Left>
+        <Height>0.19792in</Height>
+        <Width>1.29959in</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!midterm.Value, "DataSet4")</Value>
+                <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.81821in</Top>
+        <Left>5.92834in</Left>
+        <Height>0.19792in</Height>
+        <Width>1.29959in</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!semi.Value, "DataSet4")</Value>
+                <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.6064in</Top>
+        <Left>5.92834in</Left>
+        <Height>0.19792in</Height>
+        <Width>1.29959in</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!final.Value, "DataSet4")</Value>
+                <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.00224in</Top>
+        <Left>5.92834in</Left>
+        <Height>0.19792in</Height>
+        <Width>1.29959in</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TOTAL</Value>
+                <Style>
+                  <FontFamily>COURIer New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.20016in</Top>
+        <Left>4.70486in</Left>
+        <Height>0.19792in</Height>
+        <Width>1.09723in</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=ReportItems!Textbox9.Value + ReportItems!Textbox19.Value + ReportItems!Textbox12.Value + ReportItems!Textbox21.Value</Value>
+                <Style>
+                  <FontFamily>courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>'PHP'#,0.00;('PHP'#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>2.21405in</Top>
+        <Left>5.92834in</Left>
+        <Height>0.18403in</Height>
+        <Width>1.29959in</Width>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1332,7 +1588,7 @@
           <Top>1.47792in</Top>
           <Left>1.12847in</Left>
           <Height>0.17708in</Height>
-          <Width>1.91667in</Width>
+          <Width>1.73959in</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -1362,7 +1618,7 @@
           <Top>1.27306in</Top>
           <Left>1.22569in</Left>
           <Height>0.17708in</Height>
-          <Width>1.94445in</Width>
+          <Width>1.64237in</Width>
           <ZIndex>6</ZIndex>
           <Style>
             <Border>
@@ -1450,7 +1706,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.25917in</Top>
-          <Left>4.26736in</Left>
+          <Left>3.89236in</Left>
           <Height>0.17708in</Height>
           <Width>0.96181in</Width>
           <ZIndex>9</ZIndex>
@@ -1480,7 +1736,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.25917in</Top>
-          <Left>3.55555in</Left>
+          <Left>3.18055in</Left>
           <Height>0.17708in</Height>
           <Width>0.60764in</Width>
           <ZIndex>10</ZIndex>
@@ -1510,7 +1766,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.49181in</Top>
-          <Left>3.55208in</Left>
+          <Left>3.17708in</Left>
           <Height>0.17708in</Height>
           <Width>0.61111in</Width>
           <ZIndex>11</ZIndex>
@@ -1540,7 +1796,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.49181in</Top>
-          <Left>4.23264in</Left>
+          <Left>3.89236in</Left>
           <Height>0.17708in</Height>
           <Width>0.68403in</Width>
           <ZIndex>12</ZIndex>
@@ -1570,7 +1826,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.25917in</Top>
-          <Left>5.34375in</Left>
+          <Left>4.96875in</Left>
           <Height>0.17708in</Height>
           <Width>0.46181in</Width>
           <ZIndex>13</ZIndex>
@@ -1600,9 +1856,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>1.25917in</Top>
-          <Left>5.80556in</Left>
+          <Left>5.43056in</Left>
           <Height>0.17708in</Height>
-          <Width>1.49306in</Width>
+          <Width>2.00696in</Width>
           <ZIndex>14</ZIndex>
           <Style>
             <Border>
@@ -1747,6 +2003,35 @@
         <rd:DataSetName>SchoolManagementSystem</rd:DataSetName>
         <rd:TableName>feeBillings</rd:TableName>
         <rd:ObjectDataSourceType>SchoolManagementSystem.feeBillings, SchoolManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet4">
+      <Query>
+        <DataSourceName>SchoolManagementSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="final">
+          <DataField>final</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="midterm">
+          <DataField>midterm</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="prelim">
+          <DataField>prelim</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="semi">
+          <DataField>semi</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>SchoolManagementSystem</rd:DataSetName>
+        <rd:TableName>examDivision</rd:TableName>
+        <rd:ObjectDataSourceType>SchoolManagementSystem.examDivision, SchoolManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -31,7 +31,8 @@ namespace SchoolManagementSystem
             var values = DBContext.GetContext().Query("percentage").Get();
             foreach (var value in values)
             {
-                dgvPercentage.Rows.Add(value.id, value.prelim, value.midterm, value.semiFinals, value.finals, value.status);
+                dgvPercentage.Rows.Add(value.id, $"{strDisplayPercentage(value.prelim).ToString("N0")} %", $"{strDisplayPercentage(value.midterm).ToString("N0")} %"
+                    , $"{strDisplayPercentage(value.semiFinals).ToString("N0")} %", $"{strDisplayPercentage(value.finals).ToString("N0")} %", value.status);
             }
 
             foreach (DataGridViewRow row in dgvPercentage.Rows)
@@ -47,10 +48,12 @@ namespace SchoolManagementSystem
                     row.Cells[5].Style.SelectionForeColor = Color.Red;
                 }
             }
-
         }
 
-
+        public decimal strDisplayPercentage(decimal value)
+        {
+            return value * 100;
+        }
 
 
         private void btnAddRoom_Click(object sender, EventArgs e)

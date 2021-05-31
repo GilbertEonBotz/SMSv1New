@@ -43,10 +43,6 @@ namespace SchoolManagementSystem
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SchedulingsBindingSource
-            // 
-            //this.SchedulingsBindingSource.DataSource = typeof(SchoolManagementSystem.Schedulings);
-            // 
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
@@ -59,7 +55,6 @@ namespace SchoolManagementSystem
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1035, 786);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Print += new Microsoft.Reporting.WinForms.ReportPrintEventHandler(this.reportViewer1_Print);
             // 
             // panel1

@@ -1227,7 +1227,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!midterm.Value, "DataSet4")</Value>
+                <Value>=Sum(Fields!semi.Value, "DataSet4")</Value>
                 <Style>
                   <FontFamily>courier New</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -1264,7 +1264,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!semi.Value, "DataSet4")</Value>
+                <Value>=Sum(Fields!midterm.Value, "DataSet4")</Value>
                 <Style>
                   <FontFamily>courier New</FontFamily>
                   <FontSize>11pt</FontSize>

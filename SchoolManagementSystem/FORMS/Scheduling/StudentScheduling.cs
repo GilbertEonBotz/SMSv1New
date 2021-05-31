@@ -274,76 +274,77 @@ namespace SchoolManagementSystem
                 string structureid = struc.structureID;
                 double total = amount + Convert.ToDouble(lblTotal.Text);
 
-                ledgerPercent led = new ledgerPercent();
-
-                led.selectstudentid = cmbStudentNo.Text;
-                led.selectSchedID();
-                led.percent();
-
-
-                double tuitions;
-                tuitions = total;
-                double extractPrelim = tuitions * Convert.ToDouble(led.prelim);
-                double extractMidterm = tuitions * Convert.ToDouble(led.midterm);
-                double extractSemi = tuitions * Convert.ToDouble(led.semi);
-                double extractFinal = tuitions * Convert.ToDouble(led.finals);
-
-                // KUHAON WHOLE NUMBER EACH EXAM
-                var prelim = ComputePercentage(extractPrelim, "", "", 0);
-                var midterm = ComputePercentage(extractMidterm, "", "", 0);
-                var semi = ComputePercentage(extractSemi, "", "", 0);
-                var final = ComputePercentage(extractFinal, "", "", 0);
-
-                //KUHAON UG I ADD TANAN DECIMAL
-                var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-                var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
-                var semiDec = ComputeDecimals(extractSemi, "", "", 0);
-                var finalDec = ComputeDecimals(extractFinal, "", "", 0);
-                var totalDec = prelimDec + midtermDec + semiDec + finalDec;
-
-                //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-                var amt1 = prelim + totalDec;
-
-                List<examDivision> exams = new List<examDivision>();
-                exams.Clear();
-
-                exams.Add(new examDivision
+                try
                 {
-                    prelim = amt1,
-                    midterm = midterm,
-                    semi = semi,
-                    final = final
-                });
+                    DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
-                LocalReport localReport = new LocalReport();
-                localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-                localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
-                localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
-                localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
-                localReport.Print();
+                    ledgerPercent led = new ledgerPercent();
 
-                DBContext.GetContext().Query("Billing").Insert(new
+                    led.selectstudentid = cmbStudentNo.Text;
+                    led.selectSchedID();
+                    led.percent();
+
+
+                    double extractPrelim = total * Convert.ToDouble(led.prelim);
+                    double extractMidterm = total * Convert.ToDouble(led.midterm);
+                    double extractSemi = total * Convert.ToDouble(led.semi);
+                    double extractFinal = total * Convert.ToDouble(led.finals);
+
+                    // KUHAON WHOLE NUMBER EACH EXAM
+                    var prelim = ComputePercentage(extractPrelim, "", "", 0);
+                    var midterm = ComputePercentage(extractMidterm, "", "", 0);
+                    var semi = ComputePercentage(extractSemi, "", "", 0);
+                    var final = ComputePercentage(extractFinal, "", "", 0);
+
+                    //KUHAON UG I ADD TANAN DECIMAL
+                    var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
+                    var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+                    var semiDec = ComputeDecimals(extractSemi, "", "", 0);
+                    var finalDec = ComputeDecimals(extractFinal, "", "", 0);
+                    var totalDec = prelimDec + midtermDec + semiDec + finalDec;
+
+                    //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+                    var amt1 = prelim + totalDec;
+
+                    List<examDivision> exams = new List<examDivision>();
+                    exams.Clear();
+
+                    exams.Add(new examDivision
+                    {
+                        prelim = amt1,
+                        midterm = midterm,
+                        semi = semi,
+                        final = final
+                    });
+
+                    LocalReport localReport = new LocalReport();
+                    localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
+                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
+                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
+                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
+                    localReport.Print();
+
+                    DBContext.GetContext().Query("Billing").Insert(new
+                    {
+                        studentSchedid = led.selectStudentSchedid,
+                        structureid = structureid,
+                        total = total,
+                        prelim = amt1,
+                        midterm = midterm,
+                        semi = semi,
+                        finals = final
+                    });
+                    MessageBox.Show("succes bllling");
+                }
+                catch (Exception)
                 {
-                    studentSchedid = led.selectStudentSchedid,
-                    structureid = structureid,
-                    total = total,
-                    prelim = amt1,
-                    midterm = midterm,
-                    semi = semi,
-                    finals = final
-
-
-                });
-                MessageBox.Show("succes bllling");
-
+                    Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
+                }
             }
-
-
         }
         public static double ComputePercentage(double _tuition, string bDecimal, string calFraction, double wholeNum)
         {
-
             string result = Convert.ToString(_tuition);
 
             var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
@@ -377,7 +378,6 @@ namespace SchoolManagementSystem
         }
         public static double ComputeDecimals(double _tuition, string bDecimal, string calFraction, double wholeNum)
         {
-
             string result = Convert.ToString(_tuition);
 
             var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
@@ -491,70 +491,75 @@ namespace SchoolManagementSystem
             });
 
             double total = amount + Convert.ToDouble(lblTotal.Text);
-            MessageBox.Show(total.ToString());
-            ledgerPercent led = new ledgerPercent();
 
-            led.selectstudentid = cmbStudentNo.Text;
-            led.selectSchedID();
-            led.percent();
-
-            double tuitions = 1150;
-
-            double extractPrelim = 550 * Convert.ToDouble(led.prelim);
-            double extractMidterm = 510 * Convert.ToDouble(led.midterm);
-            double extractSemi = 310 * Convert.ToDouble(led.semi);
-            double extractFinal = 310 * Convert.ToDouble(led.finals);
-
-            // KUHAON WHOLE NUMBER EACH EXAM
-            var prelim = ComputePercentage(extractPrelim, "", "", 0);
-            var midterm = ComputePercentage(extractMidterm, "", "", 0);
-            var semi = ComputePercentage(extractSemi, "", "", 0);
-            var final = ComputePercentage(extractFinal, "", "", 0);
-
-
-            //KUHAON UG I ADD TANAN DECIMAL
-            var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-            var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
-            var semiDec = ComputeDecimals(extractSemi, "", "", 0);
-            var finalDec = ComputeDecimals(extractFinal, "", "", 0);
-            var totalDec = prelimDec + midtermDec + semiDec + finalDec;
-
-            //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-            var amt1 = prelim + totalDec;
-
-            MessageBox.Show(amt1.ToString());
-
-            List<examDivision> exams = new List<examDivision>();
-            exams.Clear();
-
-
-            exams.Add(new examDivision
+            try
             {
-                prelim = amt1,
-                midterm = midterm,
-                semi = semi,
-                final = final
-            });
+                DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
-            rs.Name = "DataSet1";
-            rs.Value = lst;
-            rsBill.Name = "DataSet2";
-            rsBill.Value = bills;
-            rsTuition.Name = "DataSet3";
-            rsTuition.Value = tuit;
-            rsExams.Name = "DataSet4";
-            rsExams.Value = exams;
+                ledgerPercent led = new ledgerPercent();
 
-            frm.reportViewer1.LocalReport.DataSources.Clear();
-            frm.reportViewer1.LocalReport.DataSources.Add(rs);
-            frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
-            frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
-            frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
-            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-            frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            frm.reportViewer1.ZoomMode = ZoomMode.Percent;
-            frm.reportViewer1.ZoomPercent = 100;
-            frm.ShowDialog();
+                led.selectstudentid = cmbStudentNo.Text;
+                led.selectSchedID();
+                led.percent();
+
+                double extractPrelim = total * Convert.ToDouble(led.prelim);
+                double extractMidterm = total * Convert.ToDouble(led.midterm);
+                double extractSemi = total * Convert.ToDouble(led.semi);
+                double extractFinal = total * Convert.ToDouble(led.finals);
+
+                // KUHAON WHOLE NUMBER EACH EXAM
+                var prelim = ComputePercentage(extractPrelim, "", "", 0);
+                var midterm = ComputePercentage(extractMidterm, "", "", 0);
+                var semi = ComputePercentage(extractSemi, "", "", 0);
+                var final = ComputePercentage(extractFinal, "", "", 0);
+
+
+                //KUHAON UG I ADD TANAN DECIMAL
+                var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
+                var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+                var semiDec = ComputeDecimals(extractSemi, "", "", 0);
+                var finalDec = ComputeDecimals(extractFinal, "", "", 0);
+                var totalDec = prelimDec + midtermDec + semiDec + finalDec;
+
+                //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+                var amt1 = prelim + totalDec;
+
+                List<examDivision> exams = new List<examDivision>();
+                exams.Clear();
+
+
+                exams.Add(new examDivision
+                {
+                    prelim = amt1,
+                    midterm = midterm,
+                    semi = semi,
+                    final = final
+                });
+
+                rs.Name = "DataSet1";
+                rs.Value = lst;
+                rsBill.Name = "DataSet2";
+                rsBill.Value = bills;
+                rsTuition.Name = "DataSet3";
+                rsTuition.Value = tuit;
+                rsExams.Name = "DataSet4";
+                rsExams.Value = exams;
+
+                frm.reportViewer1.LocalReport.DataSources.Clear();
+                frm.reportViewer1.LocalReport.DataSources.Add(rs);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
+                frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+                frm.reportViewer1.ZoomMode = ZoomMode.Percent;
+                frm.reportViewer1.ZoomPercent = 100;
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
+            }
 
 
         }

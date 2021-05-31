@@ -61,11 +61,15 @@ namespace SchoolManagementSystem
             spd.studentID = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
             spd.viewPayment();
 
-            myForm.lblpre.Text = spd.prelim;
-            myForm.lblmid.Text = spd.midterm;
-            myForm.lblsemi.Text = spd.semi;
-            myForm.lblfin.Text = spd.final;
+
             myForm.lbltotal.Text = spd.total;
+
+            myForm.txt1.Text = spd.prelim;
+            myForm.txt2.Text = spd.midterm;
+            myForm.txt3.Text = spd.semi;
+            myForm.txt4.Text = spd.final;
+
+
         }
 
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)

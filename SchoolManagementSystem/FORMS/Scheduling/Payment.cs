@@ -32,10 +32,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             disp.studentID = textBox1.Text;
             disp.viewPayment();
 
-            lblpre.Text = disp.prelim;
-            lblmid.Text = disp.midterm;
-            lblsemi.Text = disp.semi;
-            lblfin.Text = disp.final;
+            txt1.Text = disp.prelim;
+
+            txt2.Text = disp.midterm;
+
+            txt3.Text = disp.semi;
+
+            txt4.Text = disp.final;
+
+         
             lbltotal.Text = disp.total;
         }
         private void panel3_Paint(object sender, PaintEventArgs e)

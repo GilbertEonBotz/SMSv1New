@@ -40,14 +40,11 @@ namespace SchoolManagementSystem
             {
                 cmbStudentNo.Items.Add(value.lastname);
             }
-
-
         }
 
         public void displayDataCmb()
         {
             var values = DBContext.GetContext().Query("tuitioncategory").Get();
-
 
             foreach (var value in values)
             {
@@ -151,7 +148,6 @@ namespace SchoolManagementSystem
             }
             else
             {
-
                 string str = storeID;
                 var words = str.Split(' ');
 
@@ -167,21 +163,10 @@ namespace SchoolManagementSystem
                         amount += Convert.ToDouble(Drow["Amount"].ToString());
 
                     }
-
-
-
-
-
                 }
-
-
                 storeID = "";
                 MessageBox.Show(amount.ToString());
             }
-
-
-
-
         }
 
         private void dgvStudentSched_CellContentClick(object sender, DataGridViewCellEventArgs e)

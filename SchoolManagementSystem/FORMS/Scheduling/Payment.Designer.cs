@@ -29,18 +29,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.txtcurrentBal = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentid = new System.Windows.Forms.TextBox();
+            this.txtLastname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -69,10 +66,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lbltotal = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.cmbpaymentMethod = new System.Windows.Forms.ComboBox();
+            this.txtRemarks = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox18 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -88,8 +86,14 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox18 = new System.Windows.Forms.TextBox();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblpaymentfor = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -111,22 +115,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel1.Size = new System.Drawing.Size(639, 374);
             this.panel1.TabIndex = 33;
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(336, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "100048790";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DimGray;
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.textBox14);
+            this.panel4.Controls.Add(this.txtcurrentBal);
             this.panel4.Location = new System.Drawing.Point(3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(629, 45);
@@ -143,31 +136,20 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label5.TabIndex = 4;
             this.label5.Text = "Current Balance:";
             // 
-            // textBox14
+            // txtcurrentBal
             // 
-            this.textBox14.BackColor = System.Drawing.Color.DimGray;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.Color.White;
-            this.textBox14.Location = new System.Drawing.Point(261, 4);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(353, 38);
-            this.textBox14.TabIndex = 42;
-            this.textBox14.Text = "Php 18,200.00";
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastname.Location = new System.Drawing.Point(232, 6);
-            this.txtLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(398, 30);
-            this.txtLastname.TabIndex = 0;
-            this.txtLastname.Text = "Acosta,";
+            this.txtcurrentBal.BackColor = System.Drawing.Color.DimGray;
+            this.txtcurrentBal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcurrentBal.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcurrentBal.ForeColor = System.Drawing.Color.White;
+            this.txtcurrentBal.Location = new System.Drawing.Point(261, 4);
+            this.txtcurrentBal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtcurrentBal.Multiline = true;
+            this.txtcurrentBal.Name = "txtcurrentBal";
+            this.txtcurrentBal.Size = new System.Drawing.Size(353, 38);
+            this.txtcurrentBal.TabIndex = 42;
+            this.txtcurrentBal.Text = "Php 18,200.00";
+            this.txtcurrentBal.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // dgv
             // 
@@ -176,28 +158,28 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.AllowUserToResizeRows = false;
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.ColumnHeadersHeight = 45;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
             this.dataGridViewTextBoxColumn1,
+            this.Column10,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.Color.White;
@@ -211,25 +193,27 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.Size = new System.Drawing.Size(635, 319);
             this.dgv.TabIndex = 34;
             // 
-            // Column10
+            // studentid
             // 
-            this.Column10.HeaderText = "ID";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
+            this.studentid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.studentid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentid.Location = new System.Drawing.Point(336, 70);
+            this.studentid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.studentid.Name = "studentid";
+            this.studentid.Size = new System.Drawing.Size(296, 20);
+            this.studentid.TabIndex = 1;
+            this.studentid.Text = "100048790";
             // 
-            // dataGridViewTextBoxColumn1
+            // txtLastname
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "amount";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "payment method";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Location = new System.Drawing.Point(232, 6);
+            this.txtLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(398, 30);
+            this.txtLastname.TabIndex = 0;
+            this.txtLastname.Text = "Acosta,";
             // 
             // button1
             // 
@@ -434,9 +418,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lblpre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpre.Location = new System.Drawing.Point(339, 43);
             this.lblpre.Name = "lblpre";
-            this.lblpre.Size = new System.Drawing.Size(55, 21);
+            this.lblpre.Size = new System.Drawing.Size(41, 21);
             this.lblpre.TabIndex = 42;
-            this.lblpre.Text = "Prelim";
+            this.lblpre.Text = "0.00";
             // 
             // lblmid
             // 
@@ -444,9 +428,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lblmid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmid.Location = new System.Drawing.Point(339, 88);
             this.lblmid.Name = "lblmid";
-            this.lblmid.Size = new System.Drawing.Size(55, 21);
+            this.lblmid.Size = new System.Drawing.Size(41, 21);
             this.lblmid.TabIndex = 43;
-            this.lblmid.Text = "Prelim";
+            this.lblmid.Text = "0.00";
             // 
             // lblsemi
             // 
@@ -454,9 +438,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lblsemi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsemi.Location = new System.Drawing.Point(339, 132);
             this.lblsemi.Name = "lblsemi";
-            this.lblsemi.Size = new System.Drawing.Size(55, 21);
+            this.lblsemi.Size = new System.Drawing.Size(41, 21);
             this.lblsemi.TabIndex = 44;
-            this.lblsemi.Text = "Prelim";
+            this.lblsemi.Text = "0.00";
             // 
             // lblfin
             // 
@@ -464,9 +448,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lblfin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfin.Location = new System.Drawing.Point(339, 176);
             this.lblfin.Name = "lblfin";
-            this.lblfin.Size = new System.Drawing.Size(55, 21);
+            this.lblfin.Size = new System.Drawing.Size(41, 21);
             this.lblfin.TabIndex = 45;
-            this.lblfin.Text = "Prelim";
+            this.lblfin.Text = "0.00";
             // 
             // label25
             // 
@@ -494,11 +478,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(339, 219);
+            this.lbltotal.Location = new System.Drawing.Point(334, 221);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(55, 21);
+            this.lbltotal.Size = new System.Drawing.Size(46, 21);
             this.lbltotal.TabIndex = 48;
-            this.lbltotal.Text = "Prelim";
+            this.lbltotal.Text = "1000";
             // 
             // label27
             // 
@@ -520,54 +504,77 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label28.TabIndex = 50;
             this.label28.Text = "Amount Paid";
             // 
-            // textBox16
+            // txtAmount
             // 
-            this.textBox16.Location = new System.Drawing.Point(165, 84);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(284, 48);
-            this.textBox16.TabIndex = 51;
+            this.txtAmount.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(165, 125);
+            this.txtAmount.Multiline = true;
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(284, 48);
+            this.txtAmount.TabIndex = 51;
+            this.txtAmount.Text = "0.00";
+            this.txtAmount.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
-            // comboBox2
+            // cmbpaymentMethod
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(165, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 29);
-            this.comboBox2.TabIndex = 52;
+            this.cmbpaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbpaymentMethod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbpaymentMethod.FormattingEnabled = true;
+            this.cmbpaymentMethod.Items.AddRange(new object[] {
+            "CASH",
+            "CHEQUE"});
+            this.cmbpaymentMethod.Location = new System.Drawing.Point(165, 77);
+            this.cmbpaymentMethod.Name = "cmbpaymentMethod";
+            this.cmbpaymentMethod.Size = new System.Drawing.Size(284, 29);
+            this.cmbpaymentMethod.TabIndex = 52;
             // 
-            // textBox17
+            // txtRemarks
             // 
-            this.textBox17.Location = new System.Drawing.Point(165, 138);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(284, 55);
-            this.textBox17.TabIndex = 53;
+            this.txtRemarks.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.Location = new System.Drawing.Point(165, 179);
+            this.txtRemarks.Multiline = true;
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(284, 55);
+            this.txtRemarks.TabIndex = 53;
+            this.txtRemarks.Text = "N/A";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblpaymentfor);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.textBox18);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox17);
+            this.panel3.Controls.Add(this.txtRemarks);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.textBox16);
+            this.panel3.Controls.Add(this.cmbpaymentMethod);
+            this.panel3.Controls.Add(this.txtAmount);
             this.panel3.Location = new System.Drawing.Point(642, 310);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(463, 287);
             this.panel3.TabIndex = 54;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
+            // textBox18
+            // 
+            this.textBox18.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(165, 239);
+            this.textBox18.Multiline = true;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
+            this.textBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox18.Size = new System.Drawing.Size(284, 27);
+            this.textBox18.TabIndex = 60;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(29, 199);
+            this.label11.Location = new System.Drawing.Point(50, 245);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 21);
             this.label11.TabIndex = 59;
@@ -577,7 +584,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 138);
+            this.label3.Location = new System.Drawing.Point(29, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 57;
@@ -587,7 +594,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 84);
+            this.label2.Location = new System.Drawing.Point(29, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 56;
@@ -597,7 +604,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Location = new System.Drawing.Point(8, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 21);
             this.label1.TabIndex = 55;
@@ -613,7 +620,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(398, 24);
             this.textBox10.TabIndex = 44;
-            this.textBox10.Text = "Markeric Padada.";
             // 
             // label20
             // 
@@ -658,7 +664,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::SchoolManagementSystem.Properties.Resources.Capture;
             this.pictureBox1.Location = new System.Drawing.Point(3, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(224, 204);
@@ -706,8 +711,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.lbltotal);
             this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.lbltotal);
             this.panel2.Controls.Add(this.textBox15);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.lblfin);
@@ -729,11 +734,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.textBox13);
             this.panel5.Controls.Add(this.txtLastname);
             this.panel5.Controls.Add(this.textBox12);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.studentid);
             this.panel5.Controls.Add(this.textBox11);
             this.panel5.Controls.Add(this.label20);
             this.panel5.Controls.Add(this.label21);
@@ -744,16 +750,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(634, 216);
             this.panel5.TabIndex = 54;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(165, 199);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox18.Size = new System.Drawing.Size(284, 67);
-            this.textBox18.TabIndex = 60;
             // 
             // btnAdmin
             // 
@@ -777,6 +773,72 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.btnAdmin.Text = "Payment Information";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "amount";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "REMARKS";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "DATE";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "PRELIM",
+            "MIDTERM",
+            "SEMI-FINAL",
+            "FINAL"});
+            this.comboBox2.Location = new System.Drawing.Point(165, 14);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(284, 29);
+            this.comboBox2.TabIndex = 61;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "pay for :";
+            // 
+            // lblpaymentfor
+            // 
+            this.lblpaymentfor.AutoSize = true;
+            this.lblpaymentfor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpaymentfor.Location = new System.Drawing.Point(408, 46);
+            this.lblpaymentfor.Name = "lblpaymentfor";
+            this.lblpaymentfor.Size = new System.Drawing.Size(41, 21);
+            this.lblpaymentfor.TabIndex = 51;
+            this.lblpaymentfor.Text = "0.00";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(503, 39);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(46, 21);
+            this.label24.TabIndex = 54;
+            this.label24.Text = "1000";
             // 
             // Payment
             // 
@@ -834,13 +896,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox studentid;
         public System.Windows.Forms.TextBox txtLastname;
         public System.Windows.Forms.DataGridView dgv;
-        public System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public System.Windows.Forms.TextBox txtcurrentBal;
         public System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -859,9 +918,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         public System.Windows.Forms.Label lblsemi;
         public System.Windows.Forms.Label lblfin;
         public System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.ComboBox cmbpaymentMethod;
+        private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label label3;
@@ -881,5 +940,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox18;
         private FontAwesome.Sharp.IconButton btnAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label lblpaymentfor;
+        public System.Windows.Forms.Label label24;
     }
 }

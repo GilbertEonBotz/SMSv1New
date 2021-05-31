@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
 using SqlKata.Execution;
+using MySql.Data.MySqlClient;
 namespace SchoolManagementSystem.FORMS.Scheduling
 {
     public partial class Payment : Form
     {
+        studentPaymentDisplay disp = new studentPaymentDisplay();
+        public string billingid;
         Form1 display;
+        MySqlCommand cmd;
+        MySqlDataReader dr;
+        MySqlConnection conn;
+        Connection connect = new Connection();
         public Payment(Form1 display)
         {
             InitializeComponent();
@@ -28,8 +35,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         public void displayData()
         {
-            studentPaymentDisplay disp = new studentPaymentDisplay();
-            disp.studentID = textBox1.Text;
+     
+            disp.studentID = studentid.Text;
             disp.viewPayment();
 
             txt1.Text = disp.prelim;
@@ -66,16 +73,37 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+         
 
-            studentPaymentDisplay disp = new studentPaymentDisplay();
-            disp.studentID = textBox1.Text;
-            disp.viewPayment();
 
-            lblpre.Text = disp.prelim;
-            lblmid.Text = disp.midterm;
-            lblsemi.Text = disp.semi;
-            lblfin.Text = disp.final;
-            lbltotal.Text = disp.total;
+
+
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+              double number =  Convert.ToDouble(dr[0].ToString()) + Convert.ToDouble(txtAmount.Text);
+
+                if(number > Convert.ToDouble(dr[1].ToString()))
+                {
+                    MessageBox.Show("please input only equal or less than the total amount");
+                }
+                else
+                {
+                    disp.billingid = billingid;
+                    MessageBox.Show(billingid);
+                    disp.amount = txtAmount.Text;
+                    disp.remarks = txtRemarks.Text;
+                    disp.status = "paid";
+                    disp.paymentMethod = cmbpaymentMethod.Text;
+
+                    disp.insertpayment();
+                    MessageBox.Show("success");
+                
+                }
+            }
 
         }
 
@@ -87,6 +115,23 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void panel3_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {   
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+      
+         if (comboBox2.Text =="PRELIM")
+
+            {
+                
+            }            
+            
+            
         }
     }
 }

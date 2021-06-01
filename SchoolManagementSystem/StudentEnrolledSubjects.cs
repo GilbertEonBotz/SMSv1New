@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SqlKata.Execution;
 
 namespace SchoolManagementSystem
 {
@@ -15,6 +16,11 @@ namespace SchoolManagementSystem
         public StudentEnrolledSubjects()
         {
             InitializeComponent();
+        }
+
+        private void StudentEnrolledSubjects_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

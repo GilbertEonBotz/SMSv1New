@@ -101,6 +101,7 @@ namespace SchoolManagementSystem
                 scheds.timeStart = dtpTimstart;
                 scheds.timeEnd = dtpTimeEnd;
                 scheds.subjcode = cbSubjCode.Text;
+                scheds.subjTitle = txtDescrip.Text;
                 scheds.date = dateequal;
 
                 scheds.viewCourseID();

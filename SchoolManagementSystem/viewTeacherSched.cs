@@ -33,7 +33,6 @@ namespace SchoolManagementSystem
             teacherScheds sched = new teacherScheds();
             dgvSched.Rows.Clear();
 
-
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
 
             string str = values.schedId;

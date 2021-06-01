@@ -14,6 +14,7 @@ namespace SchoolManagementSystem
 {
     public partial class StudentScheduling : Form
     {
+        double aa;
         string storeID;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
@@ -98,6 +99,8 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            aa = 0;
+
             amount = 0;
 
             var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
@@ -107,6 +110,8 @@ namespace SchoolManagementSystem
 
             sched.category = getid;
 
+
+
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
 
@@ -115,6 +120,10 @@ namespace SchoolManagementSystem
             foreach (DataRow Drow in sched.dt.Rows)
             {
 
+          
+           
+
+                
                 int num = dgvStudentSched.Rows.Add();
                 dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                 dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
@@ -126,10 +135,16 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
+              aa +=   Convert.ToDouble(Drow["total"].ToString());
+       
+
+
+
 
             }
 
 
+            MessageBox.Show(aa.ToString());
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
 
@@ -164,7 +179,13 @@ namespace SchoolManagementSystem
                     }
                 }
                 storeID = "";
-                MessageBox.Show(amount.ToString());
+        
+
+
+
+
+
+
             }
         }
 
@@ -544,6 +565,37 @@ namespace SchoolManagementSystem
             }
 
 
+        }
+
+        public string[] waw;
+
+        public void DisplayStringUnits(string value)
+        {
+            var regex = new System.Text.RegularExpressions.Regex($@"(?<=[\\/])[0-9]+");
+            string units = "";
+
+            if (regex.IsMatch(value))
+            {
+                string result = regex.Match(value).Value;
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if (value[i].Equals('/'))
+                    {
+                        units += value[i - 1];
+                    }
+                }
+                var fResult = $"{units}.{result}";
+
+                MessageBox.Show(fResult);
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            {
+                string waw = dgvStudentSched.Rows[i].Cells[9].Value.ToString();
+                DisplayStringUnits(waw);
+            }
         }
     }
 

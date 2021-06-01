@@ -46,6 +46,7 @@ namespace SchoolManagementSystem
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNew = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@ namespace SchoolManagementSystem
             this.btnEnroll = new FontAwesome.Sharp.IconButton();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTuition = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).BeginInit();
@@ -137,7 +139,8 @@ namespace SchoolManagementSystem
             this.Column8,
             this.Column6,
             this.Column9,
-            this.Column3});
+            this.Column3,
+            this.Column11});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,6 +229,12 @@ namespace SchoolManagementSystem
             this.Column3.HeaderText = "Lec/Lab";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
             // 
             // btnNew
             // 
@@ -663,6 +672,7 @@ namespace SchoolManagementSystem
             this.button1.TabIndex = 33;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTuition
             // 
@@ -674,12 +684,21 @@ namespace SchoolManagementSystem
             this.lblTuition.TabIndex = 34;
             this.lblTuition.Text = "Gender";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(462, 225);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 35;
+            // 
             // StudentScheduling
             // 
             this.AcceptButton = this.btnSearchStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 1165);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblTuition);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEnroll);
@@ -773,5 +792,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Button button1;
         public FontAwesome.Sharp.IconButton btnPreview;
         private System.Windows.Forms.Label lblTuition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

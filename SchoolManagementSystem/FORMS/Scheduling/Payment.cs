@@ -112,6 +112,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                     disp.paymentMethod = cmbpaymentMethod.Text;
 
                     disp.insertpayment();
+                    MessageBox.Show("success");
 
                 }
                 else
@@ -130,7 +131,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.paymentMethod = cmbpaymentMethod.Text;
 
                         disp.insertpayment();
-                  
+                        MessageBox.Show("success");
+
                     }
                 else
                     {

@@ -94,6 +94,11 @@ namespace SchoolManagementSystem
          
             myForm.txtcurrentBal.Text = spd.currentbalance;
 
+            if(myForm.txtcurrentBal.Text =="0.00")
+            {
+                myForm.button1.Enabled = false;
+            }
+
             Convert.ToDouble(spd.prelim);
             Convert.ToDouble(spd.midterm);
             Convert.ToDouble(spd.semi);

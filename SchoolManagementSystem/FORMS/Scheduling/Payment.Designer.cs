@@ -29,13 +29,16 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtcurrentBal = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentid = new System.Windows.Forms.TextBox();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -70,7 +73,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.cmbpaymentMethod = new System.Windows.Forms.ComboBox();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.lblpaymentfor = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtchange = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,14 +92,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new FontAwesome.Sharp.IconButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblpaymentfor = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -101,6 +102,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -158,28 +160,28 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.AllowUserToResizeRows = false;
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.ColumnHeadersHeight = 45;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Column10,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.Color.White;
@@ -192,6 +194,26 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(635, 319);
             this.dgv.TabIndex = 34;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "amount";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "REMARKS";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "DATE";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // studentid
             // 
@@ -455,8 +477,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.DimGray;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(8, 221);
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(3, 17);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(45, 19);
             this.label25.TabIndex = 46;
@@ -464,9 +488,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             // textBox15
             // 
+            this.textBox15.BackColor = System.Drawing.Color.DimGray;
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(157, 220);
+            this.textBox15.ForeColor = System.Drawing.Color.White;
+            this.textBox15.Location = new System.Drawing.Point(158, 11);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
@@ -477,8 +503,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
+            this.lbltotal.BackColor = System.Drawing.Color.DimGray;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(334, 221);
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(340, 17);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(46, 21);
             this.lbltotal.TabIndex = 48;
@@ -513,6 +541,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.txtAmount.Size = new System.Drawing.Size(284, 48);
             this.txtAmount.TabIndex = 51;
             this.txtAmount.Text = "0.00";
+            this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
             this.txtAmount.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // cmbpaymentMethod
@@ -545,7 +574,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel3.Controls.Add(this.lblpaymentfor);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.textBox18);
+            this.panel3.Controls.Add(this.txtchange);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.txtRemarks);
             this.panel3.Controls.Add(this.label3);
@@ -559,16 +588,52 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel3.TabIndex = 54;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
-            // textBox18
+            // lblpaymentfor
             // 
-            this.textBox18.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(165, 239);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox18.Size = new System.Drawing.Size(284, 27);
-            this.textBox18.TabIndex = 60;
+            this.lblpaymentfor.AutoSize = true;
+            this.lblpaymentfor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpaymentfor.Location = new System.Drawing.Point(408, 46);
+            this.lblpaymentfor.Name = "lblpaymentfor";
+            this.lblpaymentfor.Size = new System.Drawing.Size(41, 21);
+            this.lblpaymentfor.TabIndex = 51;
+            this.lblpaymentfor.Text = "0.00";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "pay for :";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "PRELIM",
+            "MIDTERM",
+            "SEMI-FINAL",
+            "FINAL"});
+            this.comboBox2.Location = new System.Drawing.Point(165, 14);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(284, 29);
+            this.comboBox2.TabIndex = 61;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // txtchange
+            // 
+            this.txtchange.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtchange.Location = new System.Drawing.Point(165, 239);
+            this.txtchange.Multiline = true;
+            this.txtchange.Name = "txtchange";
+            this.txtchange.ReadOnly = true;
+            this.txtchange.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtchange.Size = new System.Drawing.Size(284, 27);
+            this.txtchange.TabIndex = 60;
             // 
             // label11
             // 
@@ -708,17 +773,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.lbltotal);
-            this.panel2.Controls.Add(this.textBox15);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.lblfin);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.lblsemi);
-            this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.lblmid);
             this.panel2.Controls.Add(this.txt3);
             this.panel2.Controls.Add(this.lblpre);
@@ -751,6 +814,16 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel5.Size = new System.Drawing.Size(634, 216);
             this.panel5.TabIndex = 54;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(503, 39);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(46, 21);
+            this.label24.TabIndex = 54;
+            this.label24.Text = "1000";
+            // 
             // btnAdmin
             // 
             this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -774,71 +847,17 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // panel6
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "amount";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "REMARKS";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "DATE";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "PRELIM",
-            "MIDTERM",
-            "SEMI-FINAL",
-            "FINAL"});
-            this.comboBox2.Location = new System.Drawing.Point(165, 14);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 29);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 21);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "pay for :";
-            // 
-            // lblpaymentfor
-            // 
-            this.lblpaymentfor.AutoSize = true;
-            this.lblpaymentfor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpaymentfor.Location = new System.Drawing.Point(408, 46);
-            this.lblpaymentfor.Name = "lblpaymentfor";
-            this.lblpaymentfor.Size = new System.Drawing.Size(41, 21);
-            this.lblpaymentfor.TabIndex = 51;
-            this.lblpaymentfor.Text = "0.00";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(503, 39);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(46, 21);
-            this.label24.TabIndex = 54;
-            this.label24.Text = "1000";
+            this.panel6.BackColor = System.Drawing.Color.DimGray;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.lbltotal);
+            this.panel6.Controls.Add(this.textBox15);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Location = new System.Drawing.Point(-2, 199);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(463, 48);
+            this.panel6.TabIndex = 44;
             // 
             // Payment
             // 
@@ -870,6 +889,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -938,14 +959,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         public System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtchange;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
         public System.Windows.Forms.Label lblpaymentfor;
         public System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.ComboBox comboBox2;
     }
 }

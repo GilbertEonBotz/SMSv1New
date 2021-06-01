@@ -43,6 +43,7 @@ namespace SchoolManagementSystem
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +98,7 @@ namespace SchoolManagementSystem
             this.dgvSched.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column10,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -231,6 +233,12 @@ namespace SchoolManagementSystem
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Title";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -322,6 +330,7 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;

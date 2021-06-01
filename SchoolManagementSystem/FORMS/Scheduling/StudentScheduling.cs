@@ -98,7 +98,6 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             amount = 0;
 
             var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
@@ -213,11 +212,9 @@ namespace SchoolManagementSystem
                 {
                     wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
                 };
-
                     foreach (string aa in wew)
                     {
                         storeID += (" " + aa);
-
                     }
                 }
                 if (storeID == "")

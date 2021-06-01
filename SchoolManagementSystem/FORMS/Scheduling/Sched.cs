@@ -19,8 +19,8 @@ namespace SchoolManagementSystem
         {
             schedule sched = new schedule();
 
-            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
             dgvSched.Columns[7].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[8].DefaultCellStyle.Format = "hh:mm tt";
             sched.viewsched();
 
             dgvSched.Rows.Clear();
@@ -30,13 +30,14 @@ namespace SchoolManagementSystem
 
                 dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                 dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                dgvSched.Rows[num].Cells[2].Value = Drow["roomID"].ToString();
-                dgvSched.Rows[num].Cells[3].Value = Drow["courseID"].ToString();
-                dgvSched.Rows[num].Cells[4].Value = Drow["date"].ToString();
-                dgvSched.Rows[num].Cells[5].Value = Drow["maxStudent"].ToString();
-                dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["time start"].ToString());
-                dgvSched.Rows[num].Cells[7].Value = Convert.ToDateTime(Drow["time end"].ToString());
-                dgvSched.Rows[num].Cells[8].Value = Drow["status"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["SubjTitle"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["roomID"].ToString();
+                dgvSched.Rows[num].Cells[4].Value = Drow["courseID"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Drow["date"].ToString();
+                dgvSched.Rows[num].Cells[6].Value = Drow["maxStudent"].ToString();
+                dgvSched.Rows[num].Cells[7].Value = Convert.ToDateTime(Drow["time start"].ToString());
+                dgvSched.Rows[num].Cells[8].Value = Convert.ToDateTime(Drow["time end"].ToString());
+                dgvSched.Rows[num].Cells[9].Value = Drow["status"].ToString();
             }
 
             foreach (DataGridViewRow Myrow in dgvSched.Rows)

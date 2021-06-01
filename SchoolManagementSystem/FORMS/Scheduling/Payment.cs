@@ -21,6 +21,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         MySqlDataReader dr;
         MySqlConnection conn;
         Connection connect = new Connection();
+
+        double amount = 0;
+        double amountprelim=0 ;
+        double amountmid = 0;
+        double amountsemi = 0;
+        double amountfinal = 0;
         public Payment(Form1 display)
         {
             InitializeComponent();
@@ -76,28 +82,29 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
 
 
+            double number = 0;
 
-            
-                conn = connect.getcon();
-                conn.Open();
-                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
-                dr = cmd.ExecuteReader();
+
+                //conn = connect.getcon();
+                //conn.Open();
+                //cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+                //dr = cmd.ExecuteReader();
          
         
             
-                while (dr.Read())
+                //while (dr.Read())
                     
         
           
-                {
-                    double number = Convert.ToDouble(dr[0].ToString()) + Convert.ToDouble(txtAmount.Text);
-
-                    if (number > Convert.ToDouble(dr[1].ToString()))
-                    {
-                        MessageBox.Show("please input only equal or less than the total amount");
-                    }
-                    else
-                    {
+                //{
+                //  number = Convert.ToDouble(dr[0].ToString()+0) + Convert.ToDouble(txtAmount.Text);
+   
+                //    if (number > Convert.ToDouble(dr[1].ToString()))
+                //    {
+                //        MessageBox.Show("please input only equal or less than the total amount");
+                //    }
+               //     else
+               //     {
                         disp.billingid = billingid;
                         MessageBox.Show(billingid);
                         disp.amount = txtAmount.Text;
@@ -108,9 +115,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.insertpayment();
                         MessageBox.Show("success");
 
-                    }
+               //     }
                 
-            }
+           // }
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
@@ -124,20 +131,110 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
-        {   
-
+        {
+            
+            if (txtAmount.Text == "")
+            {
+                txtchange.Text = "";
+            }
+            else
+            {
+                //if (Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
+                //{
+                //    txtAmount.Text = lblpaymentfor.Text;
+                //}    
+                double aa = Convert.ToDouble(lblpaymentfor.Text) - Convert.ToDouble(txtAmount.Text);
+                txtchange.Text = aa.ToString();
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-      
-         if (comboBox2.Text =="PRELIM")
+          
 
+            
+
+            for (int i = 0; i < Convert.ToDouble(textBox15.Text); i++)
             {
+            
+                if (comboBox2.Text == "PRELIM")
+                {
+                    if (Convert.ToDouble(txt1.Text) > Convert.ToDouble(lblpre.Text))
+                    {
+                        amountprelim = Convert.ToDouble(txt1.Text) - Convert.ToDouble(lblpre.Text);
+                        lblpaymentfor.Text = amountprelim.ToString();
+        
+                    }
+                    else
+                        {
+                            lblpaymentfor.Text = 0.ToString();
+                        }
+                }
+            else if (comboBox2.Text == "MIDTERM")
+                {
+                    if (Convert.ToDouble(txt1.Text)+ Convert.ToDouble(txt2.Text)  > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)))
+                    {
+                        //amountmid = amount -Convert.ToDouble(lblmid.Text);
+                     
+                        //amount = amountmid;
+                        amountmid = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text));
                 
-            }            
+                        lblpaymentfor.Text = amountmid.ToString();
+                    }
+                    else
+                    {
+                        lblpaymentfor.Text = "0";
+                    }
+                    
+                }
+
+                else if (comboBox2.Text == "SEMI-FINAL")
+                {
+                    if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) ))
+                    {
+                        //amountmid = amount -Convert.ToDouble(lblmid.Text);
+
+                        //amount = amountmid;
+                        amountsemi = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text));
+                     
+
+                        lblpaymentfor.Text = amountsemi.ToString();
+                    }
+                    else
+                    {
+                        lblpaymentfor.Text = "0";
+                    }
+
+                }
+                else if (comboBox2.Text == "FINAL")
+                {
+                    if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) +Convert.ToDouble(txt4.Text) > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text)+ Convert.ToDouble(lblfin.Text)))
+                    {
+                        //amountmid = amount -Convert.ToDouble(lblmid.Text);
+
+                        //amount = amountmid;
+                        amountfinal = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text));
+
+
+                        lblpaymentfor.Text = amountfinal.ToString();
+                    }
+                    else
+                    {
+                        lblpaymentfor.Text = "0";
+                    }
+
+                }
+
+
+            }
             
-            
+          
+
+        }
+
+        private void txtAmount_Click(object sender, EventArgs e)
+        {
+            txtAmount.Text = "";
         }
     }
 }

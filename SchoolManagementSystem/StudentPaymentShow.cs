@@ -1,4 +1,4 @@
-﻿using SchoolManagementSystem.FORMS.Scheduling;
+﻿    using SchoolManagementSystem.FORMS.Scheduling;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,8 +73,7 @@ namespace SchoolManagementSystem
             myForm.txt3.Text = spd.semi;
             myForm.txt4.Text = spd.final;
             myForm.billingid = spd.billingid;
-     
-    
+         
   
           
             spd.viewtransaction();
@@ -92,7 +91,7 @@ namespace SchoolManagementSystem
 
             spd.viewPaymentDetailed();
             myForm.lbltotal.Text = spd.totalpaid;
-            MessageBox.Show(spd.totalpaid);
+         
             myForm.txtcurrentBal.Text = spd.currentbalance;
 
             Convert.ToDouble(spd.prelim);
@@ -122,30 +121,30 @@ namespace SchoolManagementSystem
                                 if (Convert.ToDouble(spd.final) <= amount)
                                 {
                                     amount = amount - Convert.ToDouble(spd.final);
-                                    myForm.lblpre.Text = "paid";
-                                    myForm.lblmid.Text = "paid";
-                                    myForm.lblsemi.Text = "paid";
-                                    myForm.lblfin.Text = "paid";
+                                    myForm.lblpre.Text = spd.prelim;
+                                    myForm.lblmid.Text = spd.midterm;
+                                    myForm.lblsemi.Text = spd.semi;
+                                    myForm.lblfin.Text = spd.final;
 
                                 }
                                 else
                                 {
-                                    myForm.lblpre.Text = "paid";
-                                    myForm.lblmid.Text = "paid";
-                                    myForm.lblsemi.Text = "paid";
+                                    myForm.lblpre.Text = spd.prelim;
+                                    myForm.lblmid.Text = spd.midterm;
+                                    myForm.lblsemi.Text = spd.semi;
                                     myForm.lblfin.Text = Convert.ToString(amount);
                                 }
                             }
                             else
                             {
-                                myForm.lblpre.Text = "paid";
-                                myForm.lblmid.Text = "paid";
+                                myForm.lblpre.Text = spd.prelim;
+                                myForm.lblmid.Text = spd.midterm;
                                 myForm.lblsemi.Text = Convert.ToString(amount);
                             }
                         }
                         else
                         {
-                            myForm.lblpre.Text = "paid";
+                            myForm.lblpre.Text = spd.prelim;
                             myForm.lblmid.Text = Convert.ToString(amount);
                         }
                     }
@@ -160,7 +159,7 @@ namespace SchoolManagementSystem
             }
             catch(Exception)
             {
-                MessageBox.Show("aa");
+         
                 myForm.txtcurrentBal.Text = spd.total;
             }
             

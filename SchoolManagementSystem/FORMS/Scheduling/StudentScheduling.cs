@@ -609,7 +609,6 @@ namespace SchoolManagementSystem
         public string category { get; set; }
         public string amount { get; set; }
         public string totalUnits { get; set; }
-
     }
 
     public class feeBillings

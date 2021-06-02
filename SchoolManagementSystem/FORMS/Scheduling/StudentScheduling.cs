@@ -119,11 +119,6 @@ namespace SchoolManagementSystem
 
             foreach (DataRow Drow in sched.dt.Rows)
             {
-
-          
-           
-
-                
                 int num = dgvStudentSched.Rows.Add();
                 dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                 dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
@@ -135,12 +130,8 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                 dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                 dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
-              aa +=   Convert.ToDouble(Drow["total"].ToString());
+                aa +=   Convert.ToDouble(Drow["total"].ToString());
        
-
-
-
-
             }
 
 
@@ -223,7 +214,8 @@ namespace SchoolManagementSystem
                     mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
                     capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
                     status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
-                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
+                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
+                    totalUnits = Convert.ToString($"{aa}.0")
                 });
             }
 
@@ -468,8 +460,9 @@ namespace SchoolManagementSystem
                     mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
                     capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
                     status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
-                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString()
-                });
+                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
+                    totalUnits = Convert.ToString($"{aa}.0")
+                }) ;
             }
 
             List<feeBillings> bills = new List<feeBillings>();
@@ -591,12 +584,8 @@ namespace SchoolManagementSystem
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-            {
-                string waw = dgvStudentSched.Rows[i].Cells[9].Value.ToString();
-                DisplayStringUnits(waw);
-            }
-        }
+            MessageBox.Show(aa.ToString());
+;        }
 
    
 
@@ -619,6 +608,7 @@ namespace SchoolManagementSystem
         public string lablec { get; set; }
         public string category { get; set; }
         public string amount { get; set; }
+        public string totalUnits { get; set; }
 
     }
 

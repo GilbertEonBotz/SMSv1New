@@ -39,7 +39,13 @@ namespace SchoolManagementSystem
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-           
+            var myForm = new reports();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+
             dash.CountStudent();
             lblStudent.Text = dash.count.ToString();
             
@@ -52,6 +58,11 @@ namespace SchoolManagementSystem
 
             dash.CountAccountants();
             lblAccountant.Text = dash.count.ToString();
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

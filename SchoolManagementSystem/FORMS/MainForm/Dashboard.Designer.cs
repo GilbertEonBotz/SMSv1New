@@ -47,6 +47,7 @@ namespace SchoolManagementSystem
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblAccountant = new System.Windows.Forms.Label();
+            this.pnlShow = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -265,12 +266,21 @@ namespace SchoolManagementSystem
             this.lblAccountant.TabIndex = 3;
             this.lblAccountant.Text = "0";
             // 
+            // pnlShow
+            // 
+            this.pnlShow.Location = new System.Drawing.Point(11, 271);
+            this.pnlShow.Name = "pnlShow";
+            this.pnlShow.Size = new System.Drawing.Size(799, 315);
+            this.pnlShow.TabIndex = 13;
+            this.pnlShow.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -313,5 +323,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblAccountant;
+        private System.Windows.Forms.Panel pnlShow;
     }
 }

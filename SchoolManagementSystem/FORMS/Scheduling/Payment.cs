@@ -79,50 +79,36 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-
-
-            double number = 0;
-
-
-            conn = connect.getcon();
-            conn.Open();
-            cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
-            dr = cmd.ExecuteReader();
-
-
-
-            while (dr.Read())
-
-
-
+            if (txtAmount.Text == "")
             {
-                number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(txtAmount.Text);
+                MessageBox.Show("please input an amount");
+            }
+            else
+            {
 
-                if (number > Convert.ToDouble(dr[1].ToString()))
+
+                double number = 0;
+
+
+                conn = connect.getcon();
+                conn.Open();
+                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+                dr = cmd.ExecuteReader();
+
+
+
+                while (dr.Read())
+
+
+
                 {
-    
-                    disp.billingid = billingid;
-                
-                    double total = Convert.ToDouble(txtAmount.Text)-Convert.ToDouble(lblpaymentfor.Text);
-                  
-                    disp.amount = lblpaymentfor.Text.ToString();
-                    disp.remarks = txtRemarks.Text;
-                    disp.status = "paid";
-                    disp.paymentMethod = cmbpaymentMethod.Text;
+                    number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(txtAmount.Text);
 
-                    disp.insertpayment();
-                    MessageBox.Show("success");
-
-                }
-                else
-                {
-
-                    if(checkBox1.Checked)
+                    if (number > Convert.ToDouble(dr[1].ToString()))
                     {
 
                         disp.billingid = billingid;
-                  
+
                         double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
 
                         disp.amount = lblpaymentfor.Text.ToString();
@@ -134,24 +120,43 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         MessageBox.Show("success");
 
                     }
-                else
+                    else
                     {
-                        disp.billingid = billingid;
-         
 
-                        disp.amount = txtAmount.Text;
-                        disp.remarks = txtRemarks.Text;
-                        disp.status = "paid";
-                        disp.paymentMethod = cmbpaymentMethod.Text;
+                        if (checkBox1.Checked)
+                        {
 
-                        disp.insertpayment();
-                        MessageBox.Show("success");
+                            disp.billingid = billingid;
+
+                            double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
+
+                            disp.amount = lblpaymentfor.Text.ToString();
+                            disp.remarks = txtRemarks.Text;
+                            disp.status = "paid";
+                            disp.paymentMethod = cmbpaymentMethod.Text;
+
+                            disp.insertpayment();
+                            MessageBox.Show("success");
+
+                        }
+                        else
+                        {
+                            disp.billingid = billingid;
+
+
+                            disp.amount = txtAmount.Text;
+                            disp.remarks = txtRemarks.Text;
+                            disp.status = "paid";
+                            disp.paymentMethod = cmbpaymentMethod.Text;
+
+                            disp.insertpayment();
+                            MessageBox.Show("success");
+                        }
+
+
+
                     }
-
-                 
-
-                }
-
+                } 
             }
         }
 

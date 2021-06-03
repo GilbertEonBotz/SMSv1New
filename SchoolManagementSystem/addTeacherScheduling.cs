@@ -66,17 +66,17 @@ namespace SchoolManagementSystem
 
         private void dgvSched_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            foreach (DataGridViewRow row in teachDgv.dgvStudentSched.Rows)
-            {
-                if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
-                {
-                    Validator.AlertDanger("Subject existed");
-                    return;
-                }
-            }
-            teachDgv.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(), dgvSched.SelectedRows[0].Cells[2].Value.ToString()
-                ,dgvSched.SelectedRows[0].Cells[3].Value.ToString(), dgvSched.SelectedRows[0].Cells[4].Value.ToString(), dgvSched.SelectedRows[0].Cells[5].Value.ToString(), dgvSched.SelectedRows[0].Cells[6].Value.ToString()
-              );
+            //foreach (DataGridViewRow row in teachDgv.dgvStudentSched.Rows)
+            //{
+            //    if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+            //    {
+            //        Validator.AlertDanger("Subject existed");
+            //        return;
+            //    }
+            //}
+            //teachDgv.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(), dgvSched.SelectedRows[0].Cells[2].Value.ToString()
+            //    ,dgvSched.SelectedRows[0].Cells[3].Value.ToString(), dgvSched.SelectedRows[0].Cells[4].Value.ToString(), dgvSched.SelectedRows[0].Cells[5].Value.ToString(), dgvSched.SelectedRows[0].Cells[6].Value.ToString()
+            //  );
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -87,6 +87,21 @@ namespace SchoolManagementSystem
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvSched_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //foreach (DataGridViewRow row in teachDgv.dgvStudentSched.Rows)
+            //{
+            //    if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+            //    {
+            //        Validator.AlertDanger("Subject existed");
+            //        return; 
+            //    }
+            //}
+            teachDgv.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(), dgvSched.SelectedRows[0].Cells[2].Value.ToString()
+                
+              );
         }
     }
 }

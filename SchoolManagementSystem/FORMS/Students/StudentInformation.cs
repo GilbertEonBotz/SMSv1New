@@ -39,13 +39,20 @@ namespace SchoolManagementSystem
 
         public void displayData()
         {
-            var values = DBContext.GetContext().Query("student").Get();
-            dgvStudents.Rows.Clear();
-            foreach (var value in values)
+            try
             {
-                string id = value.course;
-                var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
-                dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
+                var values = DBContext.GetContext().Query("student").Get();
+                dgvStudents.Rows.Clear();
+                foreach (var value in values)
+                {
+                    string id = value.course;
+                    var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
+                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
+                }
+            }
+            catch (Exception)
+            {
+                Validator.AlertDanger("Data conflicts for student course. Please contact your MSID");
             }
         }
 

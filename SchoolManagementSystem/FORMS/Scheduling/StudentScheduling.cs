@@ -110,8 +110,6 @@ namespace SchoolManagementSystem
 
             sched.category = getid;
 
-
-
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
 
@@ -311,7 +309,7 @@ namespace SchoolManagementSystem
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
                     localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
-                    localReport.Print();
+                   // localReport.Print();
 
                     DBContext.GetContext().Query("Billing").Insert(new
                     {
@@ -321,15 +319,16 @@ namespace SchoolManagementSystem
                         prelim = amt1,
                         midterm = midterm,
                         semi = semi,
-                        finals = final
+                        finals = final,
+                        date = DateTime.Now
                     });
                     MessageBox.Show("succes bllling");
-                }
-                catch (Exception)
-                {
-                    Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
-                }
             }
+                catch (Exception)
+            {
+                Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
+            }
+        }
         }
         public static double ComputePercentage(double _tuition, string bDecimal, string calFraction, double wholeNum)
         {

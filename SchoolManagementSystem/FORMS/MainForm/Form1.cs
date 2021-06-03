@@ -521,5 +521,15 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
+
+        private void btnExamPercent_Click(object sender, EventArgs e)
+        {
+            var myForm = new ExamPercentage();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }

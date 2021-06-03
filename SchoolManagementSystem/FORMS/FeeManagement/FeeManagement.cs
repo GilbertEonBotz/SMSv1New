@@ -51,5 +51,17 @@ namespace SchoolManagementSystem
         {
 
         }
+
+        private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string aaa = dgvCategories.SelectedRows[0].Cells[2].Value.ToString();
+
+            if (aaa.Equals("Delete") && Validator.DeleteConfirmation())
+            {
+                DBContext.GetContext().Query("categoryfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
+                DBContext.GetContext().Query("totalfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
+                MessageBox.Show("aa");
+            }
+        }
     }
 }

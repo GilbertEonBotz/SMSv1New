@@ -672,6 +672,7 @@ namespace SchoolManagementSystem
             this.button1.TabIndex = 33;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTuition
@@ -683,6 +684,7 @@ namespace SchoolManagementSystem
             this.lblTuition.Size = new System.Drawing.Size(70, 21);
             this.lblTuition.TabIndex = 34;
             this.lblTuition.Text = "Gender";
+            this.lblTuition.Visible = false;
             // 
             // comboBox1
             // 

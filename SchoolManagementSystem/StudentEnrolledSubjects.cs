@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using EonBotzLibrary;
 using SqlKata.Execution;
 using MySql.Data.MySqlClient;
+using Microsoft.Reporting.WinForms;
 namespace SchoolManagementSystem
 {
     public partial class StudentEnrolledSubjects : Form
@@ -29,7 +30,7 @@ namespace SchoolManagementSystem
         {
 
         }
-
+        ReportDataSource test = new ReportDataSource();
         private void button1_Click(object sender, EventArgs e)
         {
             var getSched = DBContext.GetContext().Query("studentSched").Where("studentID", "43").First();
@@ -53,10 +54,16 @@ namespace SchoolManagementSystem
 
                 foreach (var value in values)
                 {
+                    int courseID = Convert.ToInt32(value.course);
                     strucID = value.structureID;
+
+                    var courseName = DBContext.GetContext().Query("course").Where("courseId", courseID).First();
                     var aa = DBContext.GetContext().Query("feestructure").Where("structureID", strucID).First();
 
                     txtName.Text = $"{value.firstname} {value.lastname}";
+                    txtCourse.Text = courseName.abbreviation;
+                    txtGender.Text = value.gender;
+                    txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
                     dgvStudentSched.Rows.Add(allScheds, value.subjectCode, value.subjectTitle, value.date, value.roomID, value.timeStart, value.timeEnd, $"{value.lec}/{value.lab}");
                 }
             }
@@ -69,37 +76,60 @@ namespace SchoolManagementSystem
                 getCategoryID = tblFees.categoryID;
                 var assCategoryID = DBContext.GetContext().Query("categoryfee").Where("categoryID", getCategoryID).Get();
 
-                foreach(var getIds in assCategoryID)
+                foreach (var getIds in assCategoryID)
                 {
                     MessageBox.Show(getIds.category);
                 }
             }
-        }
 
-        public class EnrolledSchedulings
-        {
-            public string studentNo { get; set; }
-            public string name { get; set; }
-            public string course { get; set; }
-            public string gender { get; set; }
-            public string date { get; set; }
-            public string schedID { get; set; }
-            public string mergeTime { get; set; }
-            public string subjectCode { get; set; }
-            public string room { get; set; }
-            public string capacity { get; set; }
-            public string status { get; set; }
-            public string lablec { get; set; }
-            public string category { get; set; }
-            public string amount { get; set; }
-            public string totalUnits { get; set; }
-        }
+            
 
-        public class feeBillings
-        {
-            public string category { get; set; }
-            public double amount { get; set; }
-            public double total { get; set; }
+            List<EnrolledSubjects> erTest = new List<EnrolledSubjects>();
+            erTest.Clear();
+
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            erTest.Add(new EnrolledSubjects
+            {
+                name = txtName.Text,
+                course = txtCourse.Text,
+                gender = txtGender.Text,
+                date = DateTime.Now.ToString("dddd, dd MMMM yyyy"),
+                schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
+                subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
+                room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
+            });
+
+
+            test.Name = "DataSet1";
+            test.Value = erTest;
+
+            var frm = new StudentEnrolledViewer();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(test);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report1.rdlc";
+            frm.ShowDialog();
+
         }
     }
+
+    public class EnrolledSubjects
+    {
+        public string studentNo { get; set; }
+        public string name { get; set; }
+        public string course { get; set; }
+        public string gender { get; set; }
+        public string date { get; set; }
+        public string schedID { get; set; }
+        public string mergeTime { get; set; }
+        public string subjectCode { get; set; }
+        public string room { get; set; }
+        public string capacity { get; set; }
+        public string status { get; set; }
+        public string lablec { get; set; }
+        public string category { get; set; }
+        public string amount { get; set; }
+        public string totalUnitss { get; set; }
+
+    }
+   
 }

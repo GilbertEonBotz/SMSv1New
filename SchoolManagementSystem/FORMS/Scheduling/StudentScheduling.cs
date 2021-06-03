@@ -170,13 +170,6 @@ namespace SchoolManagementSystem
                     }
                 }
                 storeID = "";
-        
-
-
-
-
-
-
             }
         }
 
@@ -523,7 +516,6 @@ namespace SchoolManagementSystem
                 List<examDivision> exams = new List<examDivision>();
                 exams.Clear();
 
-
                 exams.Add(new examDivision
                 {
                     prelim = amt1,
@@ -531,6 +523,7 @@ namespace SchoolManagementSystem
                     semi = semi,
                     final = final
                 });
+
 
                 rs.Name = "DataSet1";
                 rs.Value = lst;
@@ -556,8 +549,6 @@ namespace SchoolManagementSystem
             {
                 Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
             }
-
-
         }
 
         public string[] waw;

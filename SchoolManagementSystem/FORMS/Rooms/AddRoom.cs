@@ -41,14 +41,22 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-
-                    DBContext.GetContext().Query("rooms").Insert(new
+                    try
                     {
-                        name = txtName.Text,
-                        description = txtDescription.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        DBContext.GetContext().Query("rooms").Where("description", txtDescription.Text).First();
+                        Validator.AlertDanger("Room is already existed");
+                    }
+                    catch (Exception)
+                    {
+                        DBContext.GetContext().Query("rooms").Insert(new
+                        {
+                            name = txtName.Text,
+                            description = txtDescription.Text,
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
+                        
+                    }
 
                 }
             }

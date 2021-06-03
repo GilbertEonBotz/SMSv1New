@@ -38,5 +38,15 @@ namespace SchoolManagementSystem
             reloadDatagrid.displayData();
             this.Close();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace SchoolManagementSystem
 
         public void displayDataCmb()
         {
-            var values = DBContext.GetContext().Query("tuitioncategory").Get();
+            var values = DBContext.GetContext().Query("tuitioncategory").Join("tuition", "tuition.tuitionCatID", "tuitioncategory.tuitionCatID").Get();
 
             foreach (var value in values)
             {
@@ -99,78 +99,85 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            aa = 0;
+            try {
+                aa = 0;
 
-            amount = 0;
+                amount = 0;
 
-            var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
-            string getid = value.tuitionCatID.ToString();
+                var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
+                string getid = value.tuitionCatID.ToString();
 
-            dgvStudentSched.Rows.Clear();
+                dgvStudentSched.Rows.Clear();
 
-            sched.category = getid;
+                sched.category = getid;
 
+                dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+                dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
 
+                sched.display();
 
-            dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
-            dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-
-            sched.display();
-
-            foreach (DataRow Drow in sched.dt.Rows)
-            {
-                int num = dgvStudentSched.Rows.Add();
-                dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
-                dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                dgvStudentSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
-                dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
-                dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
-                dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
-                dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
-                dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
-                dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
-                dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
-                aa +=   Convert.ToDouble(Drow["total"].ToString());
-       
-            }
-
-
-            MessageBox.Show(aa.ToString());
-            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-            {
-
-                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
-
-                foreach (string aa in wew)
+                foreach (DataRow Drow in sched.dt.Rows)
                 {
-                    storeID += (" " + aa);
+                    int num = dgvStudentSched.Rows.Add();
+                    dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                    dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                    dgvStudentSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                    dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                    dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                    dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                    dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
+                    dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
+                    dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
+                    aa += Convert.ToDouble(Drow["total"].ToString());
 
                 }
-            }
-            if (storeID == "")
-            {
-            }
-            else
-            {
-                string str = storeID;
-                var words = str.Split(' ');
 
-                for (int i = 1; i < words.Length; i++)
+                MessageBox.Show(aa.ToString());
+                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
                 {
-                    string individualSubj = words[i];
-                    stud.indsub = individualSubj;
 
-                    stud.viewSubj();
+                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+                };
 
-                    foreach (DataRow Drow in stud.dt.Rows)
+                    foreach (string aa in wew)
                     {
-                        amount += Convert.ToDouble(Drow["Amount"].ToString());
+                        storeID += (" " + aa);
 
                     }
                 }
-                storeID = "";
+                if (storeID == " ")
+                {
+                }
+                else
+                {
+
+
+                    string str = storeID;
+                    var words = str.Split(' ');
+
+                    for (int i = 1; i < words.Length; i++)
+                    {
+                        string individualSubj = words[i];
+                        stud.indsub = individualSubj;
+
+                        stud.viewSubj();
+
+                        foreach (DataRow Drow in stud.dt.Rows)
+                        {
+                            amount += Convert.ToDouble(Drow["Amount"].ToString());
+
+                        }
+                    }
+                    storeID = " ";
+                }
             }
+            catch (NullReferenceException)
+            {
+                Validator.AlertDanger("Please add tuition charges!");
+            }
+
+
         }
 
         private void dgvStudentSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -214,121 +221,131 @@ namespace SchoolManagementSystem
 
             if (Validator.AddConfirmation())
             {
-                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-                {
-                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
-                    foreach (string aa in wew)
-                    {
-                        storeID += (" " + aa);
-                    }
-                }
-                if (storeID == "")
-                {
-                }
-                else
-                {
-                    DBContext.GetContext().Query("studentSched").Insert(new
-                    {
-                        studentID = cmbStudentNo.Text,
-                        schedId = storeID
-                    });
-                }
-
-
-
-                List<feeBillings> bills = new List<feeBillings>();
-                bills.Clear();
-
-                List<tuitionBilling> tuit = new List<tuitionBilling>();
-                tuit.Clear();
-
-
-                for (int i = 0; i < dgvCategories.Rows.Count; i++)
-                {
-                    bills.Add(new feeBillings
-                    {
-                        total = Convert.ToDouble(lblTotal.Text),
-                        category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
-                        amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
-                    });
-                }
-
-                tuit.Add(new tuitionBilling
-                {
-                    tuitionTotal = Convert.ToDouble(amount.ToString()),
-                });
-
-                string structureid = struc.structureID;
-                double total = amount + Convert.ToDouble(lblTotal.Text);
-
                 try
                 {
-                    DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
-
-                    ledgerPercent led = new ledgerPercent();
-
-                    led.selectstudentid = cmbStudentNo.Text;
-                    led.selectSchedID();
-                    led.percent();
-
-
-                    double extractPrelim = total * Convert.ToDouble(led.prelim);
-                    double extractMidterm = total * Convert.ToDouble(led.midterm);
-                    double extractSemi = total * Convert.ToDouble(led.semi);
-                    double extractFinal = total * Convert.ToDouble(led.finals);
-
-                    // KUHAON WHOLE NUMBER EACH EXAM
-                    var prelim = ComputePercentage(extractPrelim, "", "", 0);
-                    var midterm = ComputePercentage(extractMidterm, "", "", 0);
-                    var semi = ComputePercentage(extractSemi, "", "", 0);
-                    var final = ComputePercentage(extractFinal, "", "", 0);
-
-                    //KUHAON UG I ADD TANAN DECIMAL
-                    var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-                    var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
-                    var semiDec = ComputeDecimals(extractSemi, "", "", 0);
-                    var finalDec = ComputeDecimals(extractFinal, "", "", 0);
-                    var totalDec = prelimDec + midtermDec + semiDec + finalDec;
-
-                    //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-                    var amt1 = prelim + totalDec;
-
-                    List<examDivision> exams = new List<examDivision>();
-                    exams.Clear();
-
-                    exams.Add(new examDivision
-                    {
-                        prelim = amt1,
-                        midterm = midterm,
-                        semi = semi,
-                        final = final
-                    });
-
-                    LocalReport localReport = new LocalReport();
-                    localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                    localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
-                    localReport.Print();
-
-                    DBContext.GetContext().Query("Billing").Insert(new
-                    {
-                        studentSchedid = led.selectStudentSchedid,
-                        structureid = structureid,
-                        total = total,
-                        prelim = amt1,
-                        midterm = midterm,
-                        semi = semi,
-                        finals = final
-                    });
-                    MessageBox.Show("succes bllling");
+                    DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).First();
+                    Validator.AlertDanger("Student is already enrolled in this semester");
                 }
                 catch (Exception)
                 {
-                    Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
+                    for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+                    {
+                        wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+                    };
+                        foreach (string aa in wew)
+                        {
+                            storeID += (" " + aa);
+                        }
+                    }
+                    if (storeID == "")
+                    {
+                    }
+                    else
+                    {
+                        DBContext.GetContext().Query("studentSched").Insert(new
+                        {
+                            studentID = cmbStudentNo.Text,
+                            schedId = storeID
+                        });
+                    }
+
+
+
+                    List<feeBillings> bills = new List<feeBillings>();
+                    bills.Clear();
+
+                    List<tuitionBilling> tuit = new List<tuitionBilling>();
+                    tuit.Clear();
+
+
+                    for (int i = 0; i < dgvCategories.Rows.Count; i++)
+                    {
+                        bills.Add(new feeBillings
+                        {
+                            total = Convert.ToDouble(lblTotal.Text),
+                            category = dgvCategories.Rows[i].Cells[0].Value.ToString(),
+                            amount = Convert.ToDouble(dgvCategories.Rows[i].Cells[1].Value.ToString()),
+                        });
+                    }
+
+                    tuit.Add(new tuitionBilling
+                    {
+                        tuitionTotal = Convert.ToDouble(amount.ToString()),
+                    });
+
+                    string structureid = struc.structureID;
+                    double total = amount + Convert.ToDouble(lblTotal.Text);
+
+                    try
+                    {
+                        DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+
+                        ledgerPercent led = new ledgerPercent();
+
+                        led.selectstudentid = cmbStudentNo.Text;
+                        led.selectSchedID();
+                        led.percent();
+
+
+                        double extractPrelim = total * Convert.ToDouble(led.prelim);
+                        double extractMidterm = total * Convert.ToDouble(led.midterm);
+                        double extractSemi = total * Convert.ToDouble(led.semi);
+                        double extractFinal = total * Convert.ToDouble(led.finals);
+
+                        // KUHAON WHOLE NUMBER EACH EXAM
+                        var prelim = ComputePercentage(extractPrelim, "", "", 0);
+                        var midterm = ComputePercentage(extractMidterm, "", "", 0);
+                        var semi = ComputePercentage(extractSemi, "", "", 0);
+                        var final = ComputePercentage(extractFinal, "", "", 0);
+
+                        //KUHAON UG I ADD TANAN DECIMAL
+                        var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
+                        var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+                        var semiDec = ComputeDecimals(extractSemi, "", "", 0);
+                        var finalDec = ComputeDecimals(extractFinal, "", "", 0);
+                        var totalDec = prelimDec + midtermDec + semiDec + finalDec;
+
+                        //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+                        var amt1 = prelim + totalDec;
+
+                        List<examDivision> exams = new List<examDivision>();
+                        exams.Clear();
+
+                        exams.Add(new examDivision
+                        {
+                            prelim = amt1,
+                            midterm = midterm,
+                            semi = semi,
+                            final = final
+                        });
+
+                        LocalReport localReport = new LocalReport();
+                        localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
+                        // localReport.Print();
+
+                        DBContext.GetContext().Query("Billing").Insert(new
+                        {
+                            studentSchedid = led.selectStudentSchedid,
+                            structureid = structureid,
+                            total = total,
+                            prelim = amt1,
+                            midterm = midterm,
+                            semi = semi,
+                            finals = final,
+                            date = DateTime.Now
+                        });
+                        MessageBox.Show("succes bllling");
+                    }
+                    catch (Exception)
+                    {
+                        Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
+                    }
                 }
+
             }
         }
         public static double ComputePercentage(double _tuition, string bDecimal, string calFraction, double wholeNum)
@@ -455,7 +472,7 @@ namespace SchoolManagementSystem
                     status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
                     lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
                     totalUnits = Convert.ToString($"{aa}.0")
-                }) ;
+                });
             }
 
             List<feeBillings> bills = new List<feeBillings>();
@@ -576,11 +593,12 @@ namespace SchoolManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(aa.ToString());
-;        }
+            ;
+        }
 
-   
-
-        
+        private void cmbSubjects_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
     }
 
     public class Schedulings

@@ -39,7 +39,7 @@ namespace SchoolManagementSystem
             var honorable = (chkHonorable.Checked) ? 1 : 0;
 
 
-            
+
 
             if (btnAddStudent.Text.Equals("Update"))
             {
@@ -84,43 +84,59 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation() && Validator.ValidateDate(dtpDateofbirth))
                 {
-                    var value = DBContext.GetContext().Query("course").Where("description", cmbCourse.Text).First();
-                    int studentId = value.courseId;
-                    DBContext.GetContext().Query("student").Insert(new
+                    try
                     {
-                        lastname = txtLastname.Text,
-                        firstname = txtFirstname.Text,
-                        middlename = txtMiddlename.Text,
-                        suffix = cmbSuffix.Text,
-                        dateofbirth = dtpDateofbirth.Value.ToString("MM/dd/yyyy"),
-                        placeofbirth = txtPlaceofbirth.Text,
-                        religion = txtReligion.Text,
-                        gender = cmbGender.Text,
-                        maritalstatus = cmbMaritalStatus.Text,
-                        citizenship = txtCitizen.Text,
-                        contactno = txtContactNo.Text,
-                        emailAddress = txtEmailAddress.Text,
-                        course = studentId,
-                        presentAddress = txtAddress.Text,
-                        homeAddress = txtHomeAddress.Text,
-                        fatherLastname = txtFatherLname.Text,
-                        fatherFirstname = txtFatherFname.Text,
-                        fatherMiddlename = txtFatherMname.Text,
-                        fatherOccupation = txtFatherOccupation.Text,
-                        motherLastname = txtMotherLname.Text,
-                        motherFirstname = txtMotherFname.Text,
-                        motherMiddlename = txtMotherMname.Text,
-                        motherOccupation = txtMotherOccupation.Text,
-                        schoolLastAttended = txtSchooLast.Text,
-                        dateLastAttended = dtpLast.Value.ToString("MM/dd/yyyy"),
-                        psa = birth,
-                        reportCard = card,
-                        honorableDismissal = honorable,
+                        try
+                        {
+                            DBContext.GetContext().Query("student").Where("lastname", txtLastname.Text).Where("firstname", txtFirstname.Text).Where("middlename", txtMiddlename.Text).First();
+                            Validator.AlertDanger("Student already existed");
+                        }
+                        catch (Exception)
+                        {
+                            var value = DBContext.GetContext().Query("course").Where("description", cmbCourse.Text).First();
+                            int studentId = value.courseId;
+                            DBContext.GetContext().Query("student").Insert(new
+                            {
+                                lastname = txtLastname.Text,
+                                firstname = txtFirstname.Text,
+                                middlename = txtMiddlename.Text,
+                                suffix = cmbSuffix.Text,
+                                dateofbirth = dtpDateofbirth.Value.ToString("MM/dd/yyyy"),
+                                placeofbirth = txtPlaceofbirth.Text,
+                                religion = txtReligion.Text,
+                                gender = cmbGender.Text,
+                                maritalstatus = cmbMaritalStatus.Text,
+                                citizenship = txtCitizen.Text,
+                                contactno = txtContactNo.Text,
+                                emailAddress = txtEmailAddress.Text,
+                                course = studentId,
+                                presentAddress = txtAddress.Text,
+                                homeAddress = txtHomeAddress.Text,
+                                fatherLastname = txtFatherLname.Text,
+                                fatherFirstname = txtFatherFname.Text,
+                                fatherMiddlename = txtFatherMname.Text,
+                                fatherOccupation = txtFatherOccupation.Text,
+                                motherLastname = txtMotherLname.Text,
+                                motherFirstname = txtMotherFname.Text,
+                                motherMiddlename = txtMotherMname.Text,
+                                motherOccupation = txtMotherOccupation.Text,
+                                schoolLastAttended = txtSchooLast.Text,
+                                dateLastAttended = dtpLast.Value.ToString("MM/dd/yyyy"),
+                                psa = birth,
+                                reportCard = card,
+                                honorableDismissal = honorable,
 
-                    });
-                    Validator.AlertSuccess("Success");
-                    reloadDatagrid.displayData();
-                    this.Close();
+                            });
+                            Validator.AlertSuccess("Success");
+                            reloadDatagrid.displayData();
+                            this.Close();
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        Validator.AlertDanger("The course field is empty. Please select or add course!");
+                    }
 
                 }
             }
@@ -141,7 +157,7 @@ namespace SchoolManagementSystem
         {
             var values = DBContext.GetContext().Query("course").Get();
 
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cmbCourse.Items.Add(value.description);
             }
@@ -159,6 +175,11 @@ namespace SchoolManagementSystem
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

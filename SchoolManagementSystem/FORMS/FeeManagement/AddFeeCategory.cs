@@ -33,13 +33,22 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    DBContext.GetContext().Query("categoryfee").Insert(new
+                    try
                     {
-                        category = txtCategory.Text,
-                    });
-                    Validator.AlertSuccess("successfully added");
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        DBContext.GetContext().Query("categoryfee").Where("category", txtCategory.Text).First();
+                        Validator.AlertDanger("Category fee existed");
+                    }
+                    catch (Exception)
+                    {
+                        DBContext.GetContext().Query("categoryfee").Insert(new
+                        {
+                            category = txtCategory.Text,
+                        });
+                        Validator.AlertSuccess("successfully added");
+                        reloadDatagrid.displayData();
+                        this.Close();
+                    }
+                  
                 }
             }
         }

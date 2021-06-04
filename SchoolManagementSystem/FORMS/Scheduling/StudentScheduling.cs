@@ -26,6 +26,9 @@ namespace SchoolManagementSystem
 
         private void StudentScheduling_Load(object sender, EventArgs e)
         {
+
+
+            panel1.Enabled = false;
             //pnlBilling.SetBounds(0, 0, 0, 0);
             displayDataCmb();
         }
@@ -45,7 +48,7 @@ namespace SchoolManagementSystem
 
         public void displayDataCmb()
         {
-            var values = DBContext.GetContext().Query("tuitioncategory").Join("tuition", "tuition.tuitionCatID", "tuitioncategory.tuitionCatID").Get();
+            var values = DBContext.GetContext().Query("tuitioncategory").Join("tuition", "tuition.tuitionCatID", "tuitioncategory.tuitionCatID").GroupBy("tuitioncategory.tuitionCatID").Get();
 
             foreach (var value in values)
             {
@@ -74,17 +77,33 @@ namespace SchoolManagementSystem
         }
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).Get();
-
-            foreach (var value in values)
+            //0, 229
+            try
             {
-                string id = value.course;
-                var desc = DBContext.GetContext().Query("course").Where("courseId", id).First();
-                txtName.Text = $"{value.firstname} {value.lastname}";
-                txtGender.Text = value.gender;
-                txtCourse.Text = desc.abbreviation;
-                txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                if (string.IsNullOrWhiteSpace(cmbStudentNo.Text))
+                {
+                    Validator.AlertDanger("Please enter student number");
+                }
+                else
+                {
+                    var value = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).First();
+                    string id = value.course;
+                    var desc = DBContext.GetContext().Query("course").Where("courseId", id).First();
+                    txtName.Text = $"{value.firstname} {value.lastname}";
+                    txtGender.Text = value.gender;
+                    txtCourse.Text = desc.abbreviation;
+                    txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                    panel1.Enabled = true;
+                }
             }
+
+            catch (Exception)
+            {
+                Validator.AlertDanger("Student number doesn't exist");
+            }
+
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,7 +118,8 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 aa = 0;
 
                 amount = 0;
@@ -130,10 +150,8 @@ namespace SchoolManagementSystem
                     dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                     dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
                     aa += Convert.ToDouble(Drow["total"].ToString());
-
                 }
 
-                MessageBox.Show(aa.ToString());
                 for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
                 {
 
@@ -143,7 +161,6 @@ namespace SchoolManagementSystem
                     foreach (string aa in wew)
                     {
                         storeID += (" " + aa);
-
                     }
                 }
                 if (storeID == " ")
@@ -151,8 +168,6 @@ namespace SchoolManagementSystem
                 }
                 else
                 {
-
-
                     string str = storeID;
                     var words = str.Split(' ');
 
@@ -169,7 +184,7 @@ namespace SchoolManagementSystem
 
                         }
                     }
-                    storeID = " ";
+                    storeID = "";
                 }
             }
             catch (NullReferenceException)
@@ -428,7 +443,6 @@ namespace SchoolManagementSystem
 
             foreach (DataRow Drow in struc.dt.Rows)
             {
-
                 int num = dgvCategories.Rows.Add();
 
                 dgvCategories.Rows[num].Cells[0].Value = Drow["category"].ToString();
@@ -598,6 +612,40 @@ namespace SchoolManagementSystem
 
         private void cmbSubjects_KeyPress(object sender, KeyPressEventArgs e)
         {
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvStudentSched_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvStudentSched_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvStudentSched.Rows.Count != 0)
+            {
+                btnEnroll.Enabled = true;
+            }
+        }
+
+        private void dgvStudentSched_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgvStudentSched.SelectedRows)
+            {
+                dgvStudentSched.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void dgvStudentSched_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvStudentSched.Rows.Count == 0)
+            {
+                btnEnroll.Enabled = false;
+            }
         }
     }
 

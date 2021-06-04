@@ -21,7 +21,7 @@ namespace SchoolManagementSystem
 
         private void btnAddFeeStruc_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddFeeStructure();
+            var myfrm = new AddFeeStructure(this);
             myfrm.ShowDialog();
         }
 
@@ -48,7 +48,7 @@ namespace SchoolManagementSystem
         private void dgvFee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var add = new addfees(dgvFee.SelectedRows[0].Cells[0].Value.ToString(), dgvFee.SelectedRows[0].Cells[1].Value.ToString(), this);
-            add.Show();
+            add.ShowDialog();
         }
     }
 }

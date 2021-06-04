@@ -29,10 +29,10 @@ namespace SchoolManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvStudentSched = new System.Windows.Forms.DataGridView();
@@ -71,8 +71,6 @@ namespace SchoolManagementSystem
             this.btnPreview = new FontAwesome.Sharp.IconButton();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCategoryFee = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -83,20 +81,23 @@ namespace SchoolManagementSystem
             this.btnEnroll = new FontAwesome.Sharp.IconButton();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTuition = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).BeginInit();
             this.pnlBilling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 229);
+            this.tabControl1.Location = new System.Drawing.Point(2, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1108, 381);
@@ -119,14 +120,14 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.AllowUserToResizeColumns = false;
             this.dgvStudentSched.AllowUserToResizeRows = false;
             this.dgvStudentSched.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentSched.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentSched.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStudentSched.ColumnHeadersHeight = 45;
             this.dgvStudentSched.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStudentSched.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -141,14 +142,14 @@ namespace SchoolManagementSystem
             this.Column9,
             this.Column3,
             this.Column11});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentSched.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentSched.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudentSched.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudentSched.EnableHeadersVisualStyles = false;
             this.dgvStudentSched.Location = new System.Drawing.Point(3, 3);
@@ -161,6 +162,10 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.Size = new System.Drawing.Size(1094, 346);
             this.dgvStudentSched.TabIndex = 3;
             this.dgvStudentSched.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentSched_CellContentClick);
+            this.dgvStudentSched.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentSched_CellMouseDoubleClick);
+            this.dgvStudentSched.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentSched_CellValueChanged);
+            this.dgvStudentSched.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStudentSched_RowsAdded);
+            this.dgvStudentSched.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvStudentSched_RowsRemoved);
             // 
             // Column10
             // 
@@ -243,7 +248,7 @@ namespace SchoolManagementSystem
             this.btnNew.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNew.IconSize = 20;
-            this.btnNew.Location = new System.Drawing.Point(102, 226);
+            this.btnNew.Location = new System.Drawing.Point(103, 13);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(95, 27);
             this.btnNew.TabIndex = 3;
@@ -420,7 +425,7 @@ namespace SchoolManagementSystem
             this.cmbSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbSubjects.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubjects.FormattingEnabled = true;
-            this.cmbSubjects.Location = new System.Drawing.Point(813, 225);
+            this.cmbSubjects.Location = new System.Drawing.Point(812, 6);
             this.cmbSubjects.Name = "cmbSubjects";
             this.cmbSubjects.Size = new System.Drawing.Size(288, 29);
             this.cmbSubjects.TabIndex = 21;
@@ -480,14 +485,15 @@ namespace SchoolManagementSystem
             // 
             // pnlBilling
             // 
+            this.pnlBilling.BackColor = System.Drawing.Color.White;
             this.pnlBilling.Controls.Add(this.btnPreview);
+            this.pnlBilling.Controls.Add(this.btnPrint);
             this.pnlBilling.Controls.Add(this.lblTotal);
-            this.pnlBilling.Controls.Add(this.dgvCategories);
             this.pnlBilling.Controls.Add(this.cmbCategoryFee);
+            this.pnlBilling.Controls.Add(this.dgvCategories);
             this.pnlBilling.Controls.Add(this.panel6);
             this.pnlBilling.Controls.Add(this.panel5);
             this.pnlBilling.Controls.Add(this.panel4);
-            this.pnlBilling.Controls.Add(this.btnPrint);
             this.pnlBilling.Controls.Add(this.panel3);
             this.pnlBilling.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBilling.Location = new System.Drawing.Point(7, 688);
@@ -529,27 +535,27 @@ namespace SchoolManagementSystem
             this.dgvCategories.AllowUserToResizeColumns = false;
             this.dgvCategories.AllowUserToResizeRows = false;
             this.dgvCategories.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCategories.ColumnHeadersHeight = 45;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
             this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCategories.EnableHeadersVisualStyles = false;
             this.dgvCategories.Location = new System.Drawing.Point(14, 121);
             this.dgvCategories.Name = "dgvCategories";
@@ -559,19 +565,6 @@ namespace SchoolManagementSystem
             this.dgvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategories.Size = new System.Drawing.Size(768, 291);
             this.dgvCategories.TabIndex = 27;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Category";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // cmbCategoryFee
             // 
@@ -652,6 +645,7 @@ namespace SchoolManagementSystem
             // btnEnroll
             // 
             this.btnEnroll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnEnroll.Enabled = false;
             this.btnEnroll.FlatAppearance.BorderSize = 0;
             this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnroll.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -660,7 +654,7 @@ namespace SchoolManagementSystem
             this.btnEnroll.IconColor = System.Drawing.Color.White;
             this.btnEnroll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEnroll.IconSize = 30;
-            this.btnEnroll.Location = new System.Drawing.Point(994, 612);
+            this.btnEnroll.Location = new System.Drawing.Point(996, 396);
             this.btnEnroll.Name = "btnEnroll";
             this.btnEnroll.Size = new System.Drawing.Size(107, 32);
             this.btnEnroll.TabIndex = 32;
@@ -690,13 +684,30 @@ namespace SchoolManagementSystem
             this.lblTuition.Text = "Gender";
             this.lblTuition.Visible = false;
             // 
-            // comboBox1
+            // panel1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(462, 225);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 35;
+            this.panel1.Controls.Add(this.btnNew);
+            this.panel1.Controls.Add(this.cmbSubjects);
+            this.panel1.Controls.Add(this.btnEnroll);
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Location = new System.Drawing.Point(1, 205);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1107, 439);
+            this.panel1.TabIndex = 35;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "Category";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // StudentScheduling
             // 
@@ -704,22 +715,17 @@ namespace SchoolManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 1165);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pnlBilling);
             this.Controls.Add(this.lblTuition);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnEnroll);
-            this.Controls.Add(this.pnlBilling);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.cmbStudentNo);
             this.Controls.Add(this.btnSearchStudent);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.cmbSubjects);
             this.Controls.Add(this.txtDateOfRegistration);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtCourse);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.label3);
@@ -729,6 +735,7 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentScheduling";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -742,6 +749,7 @@ namespace SchoolManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -791,14 +799,14 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox cmbCategoryFee;
         public System.Windows.Forms.DataGridView dgvCategories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         public FontAwesome.Sharp.IconButton btnEnroll;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button button1;
         public FontAwesome.Sharp.IconButton btnPreview;
         private System.Windows.Forms.Label lblTuition;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

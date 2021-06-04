@@ -32,6 +32,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
 
         private void displayData()
         {
+            textBox2.KeyPress += Validator.ValidateKeypressNumber;
             struc.structureID = id;
             struc.viewfees();
 
@@ -73,12 +74,38 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            struc.amount = textBox2.Text;
-            struc.categoryID = categoryid;
-            struc.structureID = id;
+            try
+            {
+                DBContext.GetContext().Query("totalfee").Where("categoryID", categoryid).First();
+                Validator.AlertDanger("Category fee is already existed!");
+            }
+            catch (Exception)
+            {
+                if (comboBox1.Text.Equals(""))
+                {
+                    Validator.AlertDanger("Please select catageory!");
+                }
+                else if (textBox2.Text.Equals(string.Empty))
+                {
+                    Validator.AlertDanger("Please enter an amount!");
+                }
+                else if (Convert.ToInt32(textBox2.Text) == 0)
+                {
+                    Validator.AlertDanger("Please enter an amount!");
+                }
 
-            struc.insertfee();
-            displayData();
+                else
+                {
+                    struc.amount = textBox2.Text;
+                    struc.categoryID = categoryid;
+                    struc.structureID = id;
+
+                    struc.insertfee();
+                    displayData();
+                }
+            }
+
+            
         }
 
         private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,7 +113,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // DataGridViewRow rows = dgvCategories.Rows[e.RowIndex];
             string aaa = dgvCategories.SelectedRows[0].Cells[2].Value.ToString();
 
-            if (aaa.Equals("Delete") && Validator.DeleteConfirmation()) 
+            if (aaa.Equals("Delete") && Validator.DeleteConfirmation())
             {
                 deleteFees();
                 displayData();
@@ -109,20 +136,30 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
                 structureID = id,
                 total = amount,
             }).First();
-            
+
             int selTot = value.totalFeeID;
             // MessageBox.Show("aa");
             DBContext.GetContext().Query("totalfee").Where("totalFeeID", selTot).Delete();
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-          
+
 
 
 
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

@@ -118,7 +118,46 @@ namespace SchoolManagementSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            try
+            {
+                aa = 0;
+
+                amount = 0;
+
+                var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
+                string getid = value.tuitionCatID.ToString();
+
+                dgvStudentSched.Rows.Clear();
+
+                sched.category = getid;
+
+                dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+                dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+
+                sched.display();
+
+                foreach (DataRow Drow in sched.dt.Rows)
+                {
+                    int num = dgvStudentSched.Rows.Add();
+                    dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                    dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                    dgvStudentSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                    dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                    dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                    dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                    dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
+                    dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
+                    dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
+                    aa += Convert.ToDouble(Drow["total"].ToString());
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                Validator.AlertDanger("Please add tuition charges!");
+            }
 
 
         }
@@ -382,7 +421,42 @@ namespace SchoolManagementSystem
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
+            amount = 0;
             pnlBilling.SetBounds(203, 100, 795, 462);
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            {
+
+                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
+                };
+
+                foreach (string aa in wew)
+                {
+                    storeID += (" " + aa);
+                }
+            }
+            if (storeID == " ")
+            {
+            }
+            else
+            {
+                string str = storeID;
+                var words = str.Split(' ');
+
+                for (int i = 1; i < words.Length; i++)
+                {
+                    string individualSubj = words[i];
+                    stud.indsub = individualSubj;
+
+                    stud.viewSubj();
+
+                    foreach (DataRow Drow in stud.dt.Rows)
+                    {
+                        amount += Convert.ToDouble(Drow["Amount"].ToString());
+
+                    }
+                }
+                storeID = "";
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -534,79 +608,8 @@ namespace SchoolManagementSystem
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                aa = 0;
-
-                amount = 0;
-
-                var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
-                string getid = value.tuitionCatID.ToString();
-
-                dgvStudentSched.Rows.Clear();
-
-                sched.category = getid;
-
-                dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
-                dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-
-                sched.display();
-
-                foreach (DataRow Drow in sched.dt.Rows)
-                {
-                    int num = dgvStudentSched.Rows.Add();
-                    dgvStudentSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
-                    dgvStudentSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                    dgvStudentSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
-                    dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
-                    dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
-                    dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
-                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
-                    dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
-                    dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
-                    dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
-                    aa += Convert.ToDouble(Drow["total"].ToString());
-                }
-
-                for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
-                {
-
-                    wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
-
-                    foreach (string aa in wew)
-                    {
-                        storeID += (" " + aa);
-                    }
-                }
-                if (storeID == " ")
-                {
-                }
-                else
-                {
-                    string str = storeID;
-                    var words = str.Split(' ');
-
-                    for (int i = 1; i < words.Length; i++)
-                    {
-                        string individualSubj = words[i];
-                        stud.indsub = individualSubj;
-
-                        stud.viewSubj();
-
-                        foreach (DataRow Drow in stud.dt.Rows)
-                        {
-                            amount += Convert.ToDouble(Drow["Amount"].ToString());
-
-                        }
-                    }
-                    storeID = "";
-                }
-            }
-            catch (NullReferenceException)
-            {
-                Validator.AlertDanger("Please add tuition charges!");
-            }
+          
+    
         }
 
         private void cmbSubjects_KeyPress(object sender, KeyPressEventArgs e)

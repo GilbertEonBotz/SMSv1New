@@ -33,19 +33,17 @@ namespace SchoolManagementSystem
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
             TextBox[] inputs = { txtDescription, txtAbbreviation };
+            ComboBox[] cmb = { cmbDepartment };
 
-            var value = DBContext.GetContext().Query("department").Where("description", cmbDepartment.Text).First();
             
             if (btnSave.Text.Equals("Update"))
             {
-                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                if (Validator.isEmptyCmb(cmb) && Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
                     DBContext.GetContext().Query("course").Where("courseId", lblIDD.Text).Update(new
                     {
-                        courseCode = txtCourseCode.Text,
                         description = txtDescription.Text,
                         abbreviation = txtAbbreviation.Text,
-                        
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -53,11 +51,12 @@ namespace SchoolManagementSystem
             }
             else if (btnSave.Text.Equals("Save"))
             {
-                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
+                if (Validator.isEmptyCmb(cmb) && Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
+                    var value = DBContext.GetContext().Query("department").Where("description", cmbDepartment.Text).First();
+
                     DBContext.GetContext().Query("course").Insert(new
                     {
-                        courseCode = txtCourseCode.Text,
                         description = txtDescription.Text,
                         abbreviation = txtAbbreviation.Text,
                         deptID = value.deptID,

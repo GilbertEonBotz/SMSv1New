@@ -70,8 +70,10 @@ namespace SchoolManagementSystem
             this.pnlBilling = new System.Windows.Forms.Panel();
             this.btnPreview = new FontAwesome.Sharp.IconButton();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.dgvCategories = new System.Windows.Forms.DataGridView();
             this.cmbCategoryFee = new System.Windows.Forms.ComboBox();
+            this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -82,8 +84,6 @@ namespace SchoolManagementSystem
             this.button1 = new System.Windows.Forms.Button();
             this.lblTuition = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).BeginInit();
@@ -120,6 +120,8 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.AllowUserToResizeColumns = false;
             this.dgvStudentSched.AllowUserToResizeRows = false;
             this.dgvStudentSched.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudentSched.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvStudentSched.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +165,6 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.TabIndex = 3;
             this.dgvStudentSched.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentSched_CellContentClick);
             this.dgvStudentSched.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentSched_CellMouseDoubleClick);
-            this.dgvStudentSched.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentSched_CellValueChanged);
             this.dgvStudentSched.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStudentSched_RowsAdded);
             this.dgvStudentSched.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvStudentSched_RowsRemoved);
             // 
@@ -227,7 +228,7 @@ namespace SchoolManagementSystem
             this.Column9.HeaderText = "Status";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 71;
+            this.Column9.Width = 70;
             // 
             // Column3
             // 
@@ -430,11 +431,11 @@ namespace SchoolManagementSystem
             this.cmbSubjects.Size = new System.Drawing.Size(288, 29);
             this.cmbSubjects.TabIndex = 21;
             this.cmbSubjects.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            this.cmbSubjects.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbSubjects_KeyPress);
             // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnPrint.Enabled = false;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -504,6 +505,7 @@ namespace SchoolManagementSystem
             // btnPreview
             // 
             this.btnPreview.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnPreview.Enabled = false;
             this.btnPreview.FlatAppearance.BorderSize = 0;
             this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreview.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -528,6 +530,16 @@ namespace SchoolManagementSystem
             this.lblTotal.Size = new System.Drawing.Size(49, 16);
             this.lblTotal.TabIndex = 29;
             this.lblTotal.Text = "label9";
+            // 
+            // cmbCategoryFee
+            // 
+            this.cmbCategoryFee.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoryFee.FormattingEnabled = true;
+            this.cmbCategoryFee.Location = new System.Drawing.Point(14, 85);
+            this.cmbCategoryFee.Name = "cmbCategoryFee";
+            this.cmbCategoryFee.Size = new System.Drawing.Size(347, 30);
+            this.cmbCategoryFee.TabIndex = 25;
+            this.cmbCategoryFee.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryFee_SelectedIndexChanged);
             // 
             // dgvCategories
             // 
@@ -565,16 +577,21 @@ namespace SchoolManagementSystem
             this.dgvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategories.Size = new System.Drawing.Size(768, 291);
             this.dgvCategories.TabIndex = 27;
+            this.dgvCategories.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCategories_RowsAdded);
             // 
-            // cmbCategoryFee
+            // Column13
             // 
-            this.cmbCategoryFee.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategoryFee.FormattingEnabled = true;
-            this.cmbCategoryFee.Location = new System.Drawing.Point(14, 85);
-            this.cmbCategoryFee.Name = "cmbCategoryFee";
-            this.cmbCategoryFee.Size = new System.Drawing.Size(347, 30);
-            this.cmbCategoryFee.TabIndex = 25;
-            this.cmbCategoryFee.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryFee_SelectedIndexChanged);
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "Category";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // panel6
             // 
@@ -670,7 +687,6 @@ namespace SchoolManagementSystem
             this.button1.TabIndex = 33;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTuition
             // 
@@ -693,20 +709,6 @@ namespace SchoolManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1107, 439);
             this.panel1.TabIndex = 35;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "Category";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // StudentScheduling
             // 
@@ -777,16 +779,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.ComboBox cmbStudentNo;
         private System.Windows.Forms.ComboBox cmbSubjects;
         public FontAwesome.Sharp.IconButton btnPrint;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel pnlBilling;
@@ -803,9 +795,19 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Button button1;
         public FontAwesome.Sharp.IconButton btnPreview;
         private System.Windows.Forms.Label lblTuition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
     }
 }

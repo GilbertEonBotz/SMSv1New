@@ -18,16 +18,16 @@ namespace SchoolManagementSystem
         string storeID;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
-        public StudentScheduling()
+
+        Form1 reload;
+        public StudentScheduling(Form1 reload)
         {
             InitializeComponent();
-
+            this.reload = reload;
         }
 
         private void StudentScheduling_Load(object sender, EventArgs e)
         {
-
-
             panel1.Enabled = false;
             //pnlBilling.SetBounds(0, 0, 0, 0);
             displayDataCmb();
@@ -62,7 +62,7 @@ namespace SchoolManagementSystem
                 cmbStudentNo.Items.Add(value.studentId);
             }
 
-            var fee = DBContext.GetContext().Query("feestructure").Get();
+            var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
 
             foreach (var value in fee)
             {
@@ -167,7 +167,6 @@ namespace SchoolManagementSystem
 
         }
         public string[] wew;
-
         StudentTuition stud = new StudentTuition();
         Double amount;
 
@@ -177,7 +176,6 @@ namespace SchoolManagementSystem
         ReportDataSource rsExams = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
             List<Schedulings> lst = new List<Schedulings>();
             lst.Clear();
 
@@ -230,8 +228,6 @@ namespace SchoolManagementSystem
                             schedId = storeID
                         });
                     }
-
-
 
                     List<feeBillings> bills = new List<feeBillings>();
                     bills.Clear();
@@ -321,6 +317,7 @@ namespace SchoolManagementSystem
                             date = DateTime.Now
                         });
                         MessageBox.Show("succes bllling");
+                        reload.displayStudentScheduling();
                     }
                     catch (Exception)
                     {
@@ -606,25 +603,6 @@ namespace SchoolManagementSystem
                 MessageBox.Show(fResult);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-          
-    
-        }
-
-        private void cmbSubjects_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvStudentSched_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvStudentSched_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -647,6 +625,15 @@ namespace SchoolManagementSystem
             if (dgvStudentSched.Rows.Count == 0)
             {
                 btnEnroll.Enabled = false;
+            }
+        }
+
+        private void dgvCategories_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvStudentSched.Rows.Count != 0)
+            {
+                btnPrint.Enabled = true;
+                btnPreview.Enabled = true;
             }
         }
     }

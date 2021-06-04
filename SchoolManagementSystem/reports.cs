@@ -81,7 +81,6 @@ namespace SchoolManagementSystem
 
 
             total = amount;
-            MessageBox.Show(total.ToString());
         }
 
         private void chart1_Click(object sender, EventArgs e)

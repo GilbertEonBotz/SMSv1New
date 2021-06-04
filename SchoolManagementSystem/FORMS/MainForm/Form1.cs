@@ -182,7 +182,7 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
-        private void displayScheduling()
+        public void displayScheduling()
         {
             var myForm = new Sched();
             pnlShow.Controls.Clear();
@@ -241,9 +241,9 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void displayStudentScheduling()
+        public void displayStudentScheduling()
         {
-            var myForm = new StudentScheduling();
+            var myForm = new StudentScheduling(this);
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;

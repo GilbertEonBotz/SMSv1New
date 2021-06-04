@@ -172,10 +172,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (txtAmount.Text == "")
             {
-                txtchange.Text = "";
+                txtchange.Text = "00.00";
+            }
+
+            else if (Convert.ToDouble(txtAmount.Text) < Convert.ToDouble(lblpaymentfor.Text))
+            {
+                txtchange.Text = "00.00";
             }
             else
             {

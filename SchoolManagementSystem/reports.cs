@@ -14,6 +14,8 @@ namespace SchoolManagementSystem
 {
     public partial class reports : Form
     {
+        double amount;
+        double total;
         Connection connect = new Connection();
         MySqlConnection conn;
         MySqlCommand cmd;
@@ -34,20 +36,52 @@ namespace SchoolManagementSystem
             cmd = new MySqlCommand(" SELECT sum(total),date,TIMESTAMPDIFF(day,date,CURDATE())   FROM Billing    where TIMESTAMPDIFF(week,date,CURDATE())=0 group by date", conn);
             dr = cmd.ExecuteReader();
             int counter = 0;
+    
             while (dr.Read())
             {
+                //amount +=Convert.ToDouble(dr[0]);
+
+
+
+                //decimal value = Convert.ToDecimal(dr[0].ToString());
+                ////MessageBox.Show(value.ToString());
+
+                //DateTime dt = DateTime.Parse(dr[1].ToString());
+                //DayOfWeek day = dt.DayOfWeek;
+                //chart1.Series["Series2"].Points.Add(Convert.ToDouble(value));
+                //chart1.Series["Series2"].Points[counter].Color = Color.SlateBlue;
+                //chart1.Series["Series2"].Points[counter].AxisLabel = day.ToString();
+                ////chart1.Series["Series2"].Points[counter].LegendText = value.ToString();
+                //chart1.Series["Series2"].IsValueShownAsLabel = true;
+                //counter++;
                 decimal value = Convert.ToDecimal(dr[0].ToString());
-                //MessageBox.Show(value.ToString());
+                DateTime birthDate = DateTime.Parse(dr[1].ToString());
+
+                var year = birthDate.Year;
+                var month = birthDate.Month;
+                var days = birthDate.Day;
+
+
+
+
 
                 DateTime dt = DateTime.Parse(dr[1].ToString());
-                DayOfWeek day = dt.DayOfWeek;
+
+
                 chart1.Series["Series2"].Points.Add(Convert.ToDouble(value));
-                chart1.Series["Series2"].Points[counter].Color = Color.SlateBlue;
-                chart1.Series["Series2"].Points[counter].AxisLabel = day.ToString();
-                //chart1.Series["Series2"].Points[counter].LegendText = value.ToString();
+                chart1.Series["Series2"].Points[counter].Color = Color.Red;
+                //   chart1.Series["Series2"].YValueMembers = quantity;
+                chart1.Series["Series2"].Points[counter].AxisLabel = days.ToString();
+                chart1.Series["Series2"].Points[counter].LegendText = month.ToString();
                 chart1.Series["Series2"].IsValueShownAsLabel = true;
+
+
                 counter++;
             }
+
+
+            total = amount;
+            MessageBox.Show(total.ToString());
         }
 
         private void chart1_Click(object sender, EventArgs e)

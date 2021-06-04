@@ -115,14 +115,19 @@ namespace SchoolManagementSystem
                     if (Convert.ToDouble(spd.prelim) <= finalss)
                     {
                         amount = finalss - Convert.ToDouble(spd.prelim);
+                     
+                        myForm.comboBox2.Items.Remove("PRELIM");
 
                         if (Convert.ToDouble(spd.midterm) <= amount)
                         {
 
                             amount = amount - Convert.ToDouble(spd.midterm);
+                            myForm.comboBox2.Items.Remove("MIDTERM");
                             if (Convert.ToDouble(spd.semi) <= amount)
                             {
+                             
                                 amount = amount - Convert.ToDouble(spd.semi);
+                                myForm.comboBox2.Items.Remove("SEMI-FINAL");
                                 if (Convert.ToDouble(spd.final) <= amount)
                                 {
                                     amount = amount - Convert.ToDouble(spd.final);
@@ -130,7 +135,9 @@ namespace SchoolManagementSystem
                                     myForm.lblmid.Text = spd.midterm;
                                     myForm.lblsemi.Text = spd.semi;
                                     myForm.lblfin.Text = spd.final;
-
+                                    myForm.comboBox2.Items.Remove("FINAL");
+                                    myForm.panel3.Controls.Clear();
+                         
                                 }
                                 else
                                 {

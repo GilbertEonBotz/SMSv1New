@@ -531,5 +531,15 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
+
+        private void iconButton16_Click(object sender, EventArgs e)
+        {
+            var myForm = new CourseCode();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
     }
 }

@@ -37,14 +37,14 @@ namespace SchoolManagementSystem
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvCourseCode = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAdmin = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,6 +90,7 @@ namespace SchoolManagementSystem
             this.btnAddRoom.Text = "Add New";
             this.btnAddRoom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // tabControl1
             // 
@@ -153,6 +154,32 @@ namespace SchoolManagementSystem
             this.dgvCourseCode.Size = new System.Drawing.Size(1090, 482);
             this.dgvCourseCode.TabIndex = 0;
             // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "ID";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Assigned Course";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Course Code";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Remarks";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
@@ -205,32 +232,6 @@ namespace SchoolManagementSystem
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1384, 1);
             this.panel2.TabIndex = 10;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "ID";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Assigned Course";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Course Code";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Remarks";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // CourseCode
             // 

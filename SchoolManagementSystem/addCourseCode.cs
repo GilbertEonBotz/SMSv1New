@@ -14,9 +14,11 @@ namespace SchoolManagementSystem
 {
     public partial class addCourseCode : Form
     {
-        public addCourseCode()
+        CourseCode reloadDatagrid;
+        public addCourseCode(CourseCode reloadDatagrid)
         {
             InitializeComponent();
+            this.reloadDatagrid = reloadDatagrid;
         }
 
         int selCourseID;
@@ -58,12 +60,12 @@ namespace SchoolManagementSystem
                             status = "enable"
                         });
                         Validator.AlertSuccess("Course code inserted");
+                        reloadDatagrid.displayData();
                         this.Close();
                     }
                 }
                 else
                 {
-                    Validator.AlertDanger("qwe");
                 }
             }
         }

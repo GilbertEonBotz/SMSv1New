@@ -132,11 +132,11 @@ namespace SchoolManagementSystem
 
         public void displayCourse()
         {
-            var values = DBContext.GetContext().Query("course").Get();
+            var values = DBContext.GetContext().Query("coursecode").Get();
 
             foreach(var value in values)
             {
-                cmbCourseCode.Items.Add(value.courseCode);
+                cmbCourseCode.Items.Add(value.coursecode);
             }
         }
         private void txtLab_KeyPress(object sender, KeyPressEventArgs e)
@@ -217,7 +217,7 @@ namespace SchoolManagementSystem
         private void cmbCourseCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var values = DBContext.GetContext().Query("subjects").Join("course", "course.courseCode", "subjects.courseCode").Where("subjects.courseCode", cmbCourseCode.Text).Get();
+            var values = DBContext.GetContext().Query("subjects").Join("coursecode", "coursecode.coursecode", "subjects.courseCode").Where("subjects.courseCode", cmbCourseCode.Text).Get();
 
             cmbPreReq.Items.Clear();
             foreach(var value in values)

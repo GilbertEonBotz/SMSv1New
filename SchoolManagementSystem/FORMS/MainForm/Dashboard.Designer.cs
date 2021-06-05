@@ -272,6 +272,7 @@ namespace SchoolManagementSystem
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(799, 315);
             this.pnlShow.TabIndex = 13;
+            this.pnlShow.Visible = false;
             this.pnlShow.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // Dashboard

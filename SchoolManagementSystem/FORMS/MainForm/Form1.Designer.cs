@@ -39,6 +39,7 @@ namespace SchoolManagementSystem
             this.pnlShow = new System.Windows.Forms.Panel();
             this.pnlSideMenu = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExamPercent = new FontAwesome.Sharp.IconButton();
             this.iconButton15 = new FontAwesome.Sharp.IconButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.iconButton14 = new FontAwesome.Sharp.IconButton();
@@ -82,7 +83,7 @@ namespace SchoolManagementSystem
             this.btnManageSession = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExamPercent = new FontAwesome.Sharp.IconButton();
+            this.iconButton16 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.pnlSideMenu.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -213,6 +214,7 @@ namespace SchoolManagementSystem
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.iconButton16);
             this.pnlMenu.Controls.Add(this.btnExamPercent);
             this.pnlMenu.Controls.Add(this.iconButton15);
             this.pnlMenu.Controls.Add(this.panel6);
@@ -241,6 +243,30 @@ namespace SchoolManagementSystem
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(221, 1442);
             this.pnlMenu.TabIndex = 1;
+            // 
+            // btnExamPercent
+            // 
+            this.btnExamPercent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExamPercent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExamPercent.FlatAppearance.BorderSize = 0;
+            this.btnExamPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamPercent.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnExamPercent.ForeColor = System.Drawing.Color.Gray;
+            this.btnExamPercent.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
+            this.btnExamPercent.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnExamPercent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExamPercent.IconSize = 20;
+            this.btnExamPercent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamPercent.Location = new System.Drawing.Point(0, 1318);
+            this.btnExamPercent.Name = "btnExamPercent";
+            this.btnExamPercent.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
+            this.btnExamPercent.Size = new System.Drawing.Size(221, 39);
+            this.btnExamPercent.TabIndex = 63;
+            this.btnExamPercent.Text = "Exam Percentage";
+            this.btnExamPercent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamPercent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExamPercent.UseVisualStyleBackColor = true;
+            this.btnExamPercent.Click += new System.EventHandler(this.btnExamPercent_Click);
             // 
             // iconButton15
             // 
@@ -1133,29 +1159,29 @@ namespace SchoolManagementSystem
             this.panel3.Size = new System.Drawing.Size(221, 65);
             this.panel3.TabIndex = 0;
             // 
-            // btnExamPercent
+            // iconButton16
             // 
-            this.btnExamPercent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExamPercent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExamPercent.FlatAppearance.BorderSize = 0;
-            this.btnExamPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamPercent.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnExamPercent.ForeColor = System.Drawing.Color.Gray;
-            this.btnExamPercent.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
-            this.btnExamPercent.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnExamPercent.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExamPercent.IconSize = 20;
-            this.btnExamPercent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamPercent.Location = new System.Drawing.Point(0, 1318);
-            this.btnExamPercent.Name = "btnExamPercent";
-            this.btnExamPercent.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
-            this.btnExamPercent.Size = new System.Drawing.Size(221, 39);
-            this.btnExamPercent.TabIndex = 63;
-            this.btnExamPercent.Text = "Exam Percentage";
-            this.btnExamPercent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamPercent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExamPercent.UseVisualStyleBackColor = true;
-            this.btnExamPercent.Click += new System.EventHandler(this.btnExamPercent_Click);
+            this.iconButton16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton16.FlatAppearance.BorderSize = 0;
+            this.iconButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton16.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.iconButton16.ForeColor = System.Drawing.Color.Gray;
+            this.iconButton16.IconChar = FontAwesome.Sharp.IconChar.LaptopHouse;
+            this.iconButton16.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton16.IconSize = 20;
+            this.iconButton16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton16.Location = new System.Drawing.Point(0, 1357);
+            this.iconButton16.Name = "iconButton16";
+            this.iconButton16.Padding = new System.Windows.Forms.Padding(17, 0, 17, 0);
+            this.iconButton16.Size = new System.Drawing.Size(221, 39);
+            this.iconButton16.TabIndex = 64;
+            this.iconButton16.Text = "CourseCode";
+            this.iconButton16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton16.UseVisualStyleBackColor = true;
+            this.iconButton16.Click += new System.EventHandler(this.iconButton16_Click);
             // 
             // Form1
             // 
@@ -1246,6 +1272,7 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton iconButton13;
         private FontAwesome.Sharp.IconButton iconButton15;
         private FontAwesome.Sharp.IconButton btnExamPercent;
+        private FontAwesome.Sharp.IconButton iconButton16;
     }
 }
 

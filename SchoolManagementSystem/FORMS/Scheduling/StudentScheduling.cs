@@ -276,9 +276,9 @@ namespace SchoolManagementSystem
                         var semi = ComputePercentage(extractSemi, "", "", 0);
                         var final = ComputePercentage(extractFinal, "", "", 0);
 
-                        //KUHAON UG I ADD TANAN DECIMAL
+                        // KUHAON UG I ADD TANAN DECIMAL
                         var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-                        var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
+                        var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);    
                         var semiDec = ComputeDecimals(extractSemi, "", "", 0);
                         var finalDec = ComputeDecimals(extractFinal, "", "", 0);
                         var totalDec = prelimDec + midtermDec + semiDec + finalDec;
@@ -303,7 +303,7 @@ namespace SchoolManagementSystem
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
-                        // localReport.Print();
+                        localReport.Print();
 
                         DBContext.GetContext().Query("Billing").Insert(new
                         {

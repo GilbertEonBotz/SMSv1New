@@ -21,6 +21,7 @@ namespace SchoolManagementSystem
         string friday;
         string saturday;
         schedule scheds = new schedule();
+        int courseIdd;
         public addSchedule()
         {
             InitializeComponent();
@@ -51,17 +52,15 @@ namespace SchoolManagementSystem
 
             CbRoomNO.DataSource = scheds.datafillroom;
 
-
-
         }
 
         private void displayCourseCode()
         {
-            var values = DBContext.GetContext().Query("course").Get();
+            var values = DBContext.GetContext().Query("coursecode").Get();
 
             foreach (var value in values)
             {
-                cbCourse.Items.Add(value.courseCode);
+                cbCourse.Items.Add(value.coursecode);
             }
         }
 
@@ -80,56 +79,56 @@ namespace SchoolManagementSystem
         private CheckBox[] checkboxcontrol;
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            checkboxcontrol = new CheckBox[] { cbmon, cbtues, cbwed, cbthu, cbfri, cbsat };
+
+            foreach (CheckBox chk in checkboxcontrol)
             {
-                checkboxcontrol = new CheckBox[] { cbmon, cbtues, cbwed, cbthu, cbfri, cbsat };
 
-                foreach (CheckBox chk in checkboxcontrol)
+                if (chk.Checked)
                 {
-
-                    if (chk.Checked)
-                    {
-                        dateequal += chk.Text;
-                    }
-                }
-
-                dateequal = monday + tuesday + wednesday + thursday + friday + saturday;
-
-                dtpTimstart = dateTimePicker1.Value.ToString("HH:mm");
-                dtpTimeEnd = dateTimePicker2.Value.ToString("HH:mm");
-
-                scheds.timeStart = dtpTimstart;
-                scheds.timeEnd = dtpTimeEnd;
-                scheds.subjcode = cbSubjCode.Text;
-                scheds.subjTitle = txtDescrip.Text;
-                scheds.date = dateequal;
-
-                scheds.viewCourseID();
-                scheds.Viewdescription();
-                scheds.viewroomNum();
-                scheds.times();
-
-
-                if (scheds.timediff == null || scheds.timediff == "")
-                {
-                    save();
-                    Validator.AlertSuccess(" saved");
-
-                }
-                else if (scheds.timeEnd == dtpTimstart)
-                {
-                    // save();
-                    MessageBox.Show("aa");
-                }
-                else
-                {
-                    Validator.AlertDanger("Schedule existed");
+                    dateequal += chk.Text;
                 }
             }
-            catch (Exception)
+
+            dateequal = monday + tuesday + wednesday + thursday + friday + saturday;
+
+            dtpTimstart = dateTimePicker1.Value.ToString("HH:mm");
+            dtpTimeEnd = dateTimePicker2.Value.ToString("HH:mm");
+
+            scheds.timeStart = dtpTimstart;
+            scheds.timeEnd = dtpTimeEnd;
+            scheds.subjcode = cbSubjCode.Text;
+            scheds.subjTitle = txtDescrip.Text;
+            scheds.date = dateequal;
+
+            scheds.viewCourseID();
+            scheds.Viewdescription();
+            scheds.viewroomNum();
+            scheds.times();
+
+
+            if (scheds.timediff == null || scheds.timediff == "")
             {
-                Validator.AlertDanger("Please fill up the following fields");
+                save();
+                Validator.AlertSuccess(" saved");
+
             }
+            else if (scheds.timeEnd == dtpTimstart)
+            {
+                // save();
+                MessageBox.Show("aa");
+            }
+            else
+            {
+                Validator.AlertDanger("Schedule existed");
+            }
+            //}
+            //catch (Exception)
+            //{
+            //    Validator.AlertDanger("Please fill up the following fields");
+            //}
 
             scheds.timediff = "";
 
@@ -147,7 +146,7 @@ namespace SchoolManagementSystem
             scheds.timeStart = dtpTimstart;
             scheds.maxStudent = txtMax.Text;
             cbSubjCode.Text = scheds.subjcode;
-            scheds.course = cbCourse.Text;
+            scheds.course = Convert.ToString(courseIdd);
             scheds.insertSched();
         }
 
@@ -158,13 +157,19 @@ namespace SchoolManagementSystem
 
         private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             var values = DBContext.GetContext().Query("subjects").Where("courseCode", cbCourse.Text).Get();
             cbSubjCode.Text = "";
             cbSubjCode.Items.Clear();
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cbSubjCode.Items.Add(value.subjectCode);
+
+
             }
+
+            var idd = DBContext.GetContext().Query("coursecode").Where("coursecode", cbCourse.Text).First();
+            courseIdd = idd.courseId;
         }
 
         private void button2_Click(object sender, EventArgs e)

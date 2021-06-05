@@ -36,18 +36,19 @@ namespace SchoolManagementSystem
             this.btnAddRoom = new FontAwesome.Sharp.IconButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dgvRooms = new System.Windows.Forms.DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCourseCode = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseCode)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@ namespace SchoolManagementSystem
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dgvRooms);
+            this.tabPage1.Controls.Add(this.dgvCourseCode);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -112,12 +113,12 @@ namespace SchoolManagementSystem
             this.tabPage1.Text = "Course code List";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dgvRooms
+            // dgvCourseCode
             // 
-            this.dgvRooms.AllowUserToAddRows = false;
-            this.dgvRooms.AllowUserToResizeColumns = false;
-            this.dgvRooms.AllowUserToResizeRows = false;
-            this.dgvRooms.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCourseCode.AllowUserToAddRows = false;
+            this.dgvCourseCode.AllowUserToResizeColumns = false;
+            this.dgvCourseCode.AllowUserToResizeRows = false;
+            this.dgvCourseCode.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,13 +126,14 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRooms.ColumnHeadersHeight = 45;
-            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCourseCode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCourseCode.ColumnHeadersHeight = 45;
+            this.dgvCourseCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCourseCode.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
             this.Column2,
-            this.Column1});
+            this.Column1,
+            this.Column3});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,37 +141,17 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRooms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRooms.EnableHeadersVisualStyles = false;
-            this.dgvRooms.Location = new System.Drawing.Point(3, 3);
-            this.dgvRooms.Name = "dgvRooms";
-            this.dgvRooms.ReadOnly = true;
-            this.dgvRooms.RowHeadersVisible = false;
-            this.dgvRooms.RowTemplate.Height = 25;
-            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRooms.Size = new System.Drawing.Size(1090, 482);
-            this.dgvRooms.TabIndex = 0;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "ID";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Assigned Dept.";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Description";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.dgvCourseCode.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCourseCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCourseCode.EnableHeadersVisualStyles = false;
+            this.dgvCourseCode.Location = new System.Drawing.Point(3, 3);
+            this.dgvCourseCode.Name = "dgvCourseCode";
+            this.dgvCourseCode.ReadOnly = true;
+            this.dgvCourseCode.RowHeadersVisible = false;
+            this.dgvCourseCode.RowTemplate.Height = 25;
+            this.dgvCourseCode.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCourseCode.Size = new System.Drawing.Size(1090, 482);
+            this.dgvCourseCode.TabIndex = 0;
             // 
             // panel3
             // 
@@ -224,6 +206,32 @@ namespace SchoolManagementSystem
             this.panel2.Size = new System.Drawing.Size(1384, 1);
             this.panel2.TabIndex = 10;
             // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "ID";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Assigned Course";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Course Code";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Remarks";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // CourseCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -238,10 +246,11 @@ namespace SchoolManagementSystem
             this.Name = "CourseCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CourseCode";
+            this.Load += new System.EventHandler(this.CourseCode_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseCode)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -255,13 +264,14 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton btnAddRoom;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        public System.Windows.Forms.DataGridView dgvRooms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        public System.Windows.Forms.DataGridView dgvCourseCode;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

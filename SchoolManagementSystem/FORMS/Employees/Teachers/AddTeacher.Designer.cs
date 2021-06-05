@@ -33,6 +33,7 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtReligion = new System.Windows.Forms.TextBox();
             this.txtCitizen = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@ namespace SchoolManagementSystem
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,6 +131,17 @@ namespace SchoolManagementSystem
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(560, 608);
             this.panel6.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label5.Location = new System.Drawing.Point(27, 559);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Department";
+            this.label5.Visible = false;
             // 
             // txtAddress
             // 
@@ -485,16 +496,6 @@ namespace SchoolManagementSystem
             this.label1.Size = new System.Drawing.Size(273, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "School Management System";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label5.Location = new System.Drawing.Point(27, 559);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Department";
             // 
             // AddTeacher
             // 

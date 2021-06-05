@@ -43,13 +43,23 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmptyCmb(cmb))
                 {
-                    DBContext.GetContext().Query("coursecode").Insert(new
+                    try
                     {
-                        coursecode = txtCourseCode.Text,
-                        remarks = txtRemarks.Text,
-                        status = "enable"
-                    });
-                    this.Close();
+                        DBContext.GetContext().Query("coursecode").Where("coursecode", txtCourseCode.Text).First();
+                        Validator.AlertDanger("Course code already existed!");
+                    }
+                    catch (Exception)
+                    {
+                        DBContext.GetContext().Query("coursecode").Insert(new
+                        {
+                            courseId = selCourseID,
+                            coursecode = txtCourseCode.Text,
+                            remarks = txtRemarks.Text,
+                            status = "enable"
+                        });
+                        Validator.AlertSuccess("Course code inserted");
+                        this.Close();
+                    }
                 }
                 else
                 {

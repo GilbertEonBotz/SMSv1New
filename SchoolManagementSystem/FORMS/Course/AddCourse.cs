@@ -53,18 +53,25 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmptyCmb(cmb) && Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    var value = DBContext.GetContext().Query("department").Where("description", cmbDepartment.Text).First();
-
-                    DBContext.GetContext().Query("course").Insert(new
+                    try
                     {
-                        description = txtDescription.Text,
-                        abbreviation = txtAbbreviation.Text,
-                        deptID = value.deptID,
-                        status = "enable"
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        DBContext.GetContext().Query("course").Where("description", txtDescription.Text).OrWhere("abbreviation", txtAbbreviation.Text).First();
+                        Validator.AlertDanger("Please select unique description or abbreviation");
+                    }
+                    catch (Exception)
+                    {
+                        var value = DBContext.GetContext().Query("department").Where("description", cmbDepartment.Text).First();
 
+                        DBContext.GetContext().Query("course").Insert(new
+                        {
+                            description = txtDescription.Text,
+                            abbreviation = txtAbbreviation.Text,
+                            deptID = value.deptID,
+                            status = "enable"
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
+                    }
                 }
             }
         }

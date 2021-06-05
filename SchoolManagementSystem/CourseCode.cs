@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EonBotzLibrary;
+using SqlKata.Execution;
 
 namespace SchoolManagementSystem
 {
@@ -15,6 +17,21 @@ namespace SchoolManagementSystem
         public CourseCode()
         {
             InitializeComponent();
+        }
+
+        private void CourseCode_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void displayData()
+        {
+            var values = DBContext.GetContext().Query("coursecode").Get();
+
+            foreach(var value in values)
+            {
+                dgvCourseCode.Rows.Add(value.courseId, value);
+            }
         }
     }
 }

@@ -69,7 +69,7 @@ namespace SchoolManagementSystem
 
 
                 chart1.Series["Series2"].Points.Add(Convert.ToDouble(value));
-                chart1.Series["Series2"].Points[counter].Color = Color.Red;
+                chart1.Series["Series2"].Points[counter].Color = Color.Blue;
                 //   chart1.Series["Series2"].YValueMembers = quantity;
                 chart1.Series["Series2"].Points[counter].AxisLabel = days.ToString();
                 chart1.Series["Series2"].Points[counter].LegendText = month.ToString();

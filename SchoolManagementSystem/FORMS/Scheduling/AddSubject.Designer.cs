@@ -100,7 +100,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 36);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(560, 486);
+            this.panel6.Size = new System.Drawing.Size(728, 486);
             this.panel6.TabIndex = 10;
             // 
             // label11
@@ -142,7 +142,6 @@ namespace SchoolManagementSystem
             this.lblLectotal.Size = new System.Drawing.Size(19, 21);
             this.lblLectotal.TabIndex = 17;
             this.lblLectotal.Text = "0";
-            this.lblLectotal.Visible = false;
             // 
             // lblabTotal
             // 
@@ -153,7 +152,6 @@ namespace SchoolManagementSystem
             this.lblabTotal.Size = new System.Drawing.Size(19, 21);
             this.lblabTotal.TabIndex = 16;
             this.lblabTotal.Text = "0";
-            this.lblabTotal.Visible = false;
             // 
             // TotalPrice
             // 
@@ -174,7 +172,6 @@ namespace SchoolManagementSystem
             this.txtLabprice.Name = "txtLabprice";
             this.txtLabprice.Size = new System.Drawing.Size(165, 30);
             this.txtLabprice.TabIndex = 9;
-            this.txtLabprice.Text = "0";
             this.txtLabprice.TextChanged += new System.EventHandler(this.txtLabprice_TextChanged);
             // 
             // txtLecPrice
@@ -185,7 +182,6 @@ namespace SchoolManagementSystem
             this.txtLecPrice.Name = "txtLecPrice";
             this.txtLecPrice.Size = new System.Drawing.Size(165, 30);
             this.txtLecPrice.TabIndex = 8;
-            this.txtLecPrice.Text = "0";
             this.txtLecPrice.TextChanged += new System.EventHandler(this.txtLecPrice_TextChanged);
             // 
             // label8
@@ -237,7 +233,6 @@ namespace SchoolManagementSystem
             this.txtLab.Name = "txtLab";
             this.txtLab.Size = new System.Drawing.Size(165, 30);
             this.txtLab.TabIndex = 4;
-            this.txtLab.Text = "0";
             this.txtLab.TextChanged += new System.EventHandler(this.txtLab_TextChanged);
             this.txtLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLab_KeyPress);
             // 
@@ -249,7 +244,6 @@ namespace SchoolManagementSystem
             this.txtLec.Name = "txtLec";
             this.txtLec.Size = new System.Drawing.Size(163, 30);
             this.txtLec.TabIndex = 3;
-            this.txtLec.Text = "0";
             this.txtLec.TextChanged += new System.EventHandler(this.txtLec_TextChanged);
             this.txtLec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLec_KeyPress);
             // 
@@ -337,7 +331,7 @@ namespace SchoolManagementSystem
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(556, 1);
+            this.panel8.Size = new System.Drawing.Size(724, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -348,7 +342,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(556, 49);
+            this.panel7.Size = new System.Drawing.Size(724, 49);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD
@@ -411,14 +405,14 @@ namespace SchoolManagementSystem
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(6, 568);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(560, 6);
+            this.panel4.Size = new System.Drawing.Size(728, 6);
             this.panel4.TabIndex = 9;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(566, 36);
+            this.panel3.Location = new System.Drawing.Point(734, 36);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(6, 538);
             this.panel3.TabIndex = 8;
@@ -440,7 +434,7 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 36);
+            this.panel1.Size = new System.Drawing.Size(740, 36);
             this.panel1.TabIndex = 6;
             // 
             // btnExit
@@ -494,7 +488,7 @@ namespace SchoolManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 574);
+            this.ClientSize = new System.Drawing.Size(740, 574);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);

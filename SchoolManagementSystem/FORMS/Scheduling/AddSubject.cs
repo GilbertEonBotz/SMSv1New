@@ -23,7 +23,7 @@ namespace SchoolManagementSystem
 
         private void btnAddSubjects_Click(object sender, EventArgs e)
         {
-            TextBox[] inputs = { txtSubjectCode , txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits };
+            TextBox[] inputs = { txtSubjectCode, txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits };
 
             if (btnAddSubjects.Text.Equals("Update"))
             {
@@ -52,81 +52,127 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    
-                    DBContext.GetContext().Query("subjects").Insert(new
+                    try
                     {
-                        courseCode = cmbCourseCode.Text,
-                        subjectCode = txtSubjectCode.Text,
-                        subjectTitle = txtDescriptiveTitle.Text,
-                        lec = txtLec.Text,
-                        lab = txtLab.Text,
-                        totalUnits = txtTotalUnits.Text,
-                        prereq = cmbPreReq.Text,
-                        status = "Avail",
-                        totalLecprice = lblLectotal.Text,
-                        totalLabprice = lblabTotal.Text,
-                        labprice = txtLabprice.Text,
-                        lecprice = txtLecPrice.Text,
-                        totalprice = TotalPrice.Text
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        DBContext.GetContext().Query("subjects").Where("subjectCode", txtSubjectCode.Text).First();
+                        Validator.AlertDanger("Subject code already existed");
+                    }
+                    catch (Exception)
+                    {
+
+                        DBContext.GetContext().Query("subjects").Insert(new
+                        {
+                            courseCode = cmbCourseCode.Text,
+                            subjectCode = txtSubjectCode.Text,
+                            subjectTitle = txtDescriptiveTitle.Text,
+                            lec = txtLec.Text,
+                            lab = txtLab.Text,
+                            totalUnits = txtTotalUnits.Text,
+                            prereq = cmbPreReq.Text,
+                            status = "Avail",
+                            totalLecprice = lblLectotal.Text,
+                            totalLabprice = lblabTotal.Text,
+                            labprice = txtLabprice.Text,
+                            lecprice = txtLecPrice.Text,
+                            totalprice = TotalPrice.Text
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
+                    }
                 }
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
         private void txtLab_TextChanged(object sender, EventArgs e)
         {
-           if (txtLab.Text =="")
+            if (txtLab.Text == "")
             {
-                txtTotalUnits.Text = txtLec.Text;
-     
+                lblabTotal.Text = "0";
+                txtTotalUnits.Text = "0";
             }
-            else if(txtLec.Text == "")
-                        
+            else
             {
-                txtTotalUnits.Text = txtLab.Text;
-            }
-           else
-            {
-                int result = Convert.ToInt32(txtLab.Text) + Convert.ToInt32(txtLec.Text);
-                txtTotalUnits.Text = result.ToString();
+                if (txtLabprice.Text == "" || txtLabprice.Text == "0")
+                {
+                    lblabTotal.Text = "0";
+                    TotalPrice.Text = lblLectotal.Text;
+                }
+                else
+                {
 
+                    double total;
+                    double total2;
+                    double num1;
+                    double num2;
+
+                    try
+                    {
+                        total = Convert.ToDouble(txtLabprice.Text) * Convert.ToDouble(txtLab.Text);
+                        lblabTotal.Text = total.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    num1 = Convert.ToDouble(lblabTotal.Text);
+
+                    num2 = Convert.ToDouble(lblLectotal.Text);
+
+                    total2 = num1 + num2;
+                    TotalPrice.Text = total2.ToString();
+                }
             }
         }
 
         private void txtLec_TextChanged(object sender, EventArgs e)
         {
-            if (txtLab.Text == "")
+            if (txtLec.Text == "")
             {
-                txtTotalUnits.Text = txtLec.Text;
-
-            }
-            else if (txtLec.Text == "")
-
-            {
-                txtTotalUnits.Text = txtLab.Text;
+                lblLectotal.Text = "0";
+                txtTotalUnits.Text = "0";
             }
             else
             {
-                int result = Convert.ToInt32(txtLab.Text) + Convert.ToInt32(txtLec.Text);
-                txtTotalUnits.Text = result.ToString();
+                if (txtLecPrice.Text == "" || txtLecPrice.Text == "0")
+                {
+                    lblLectotal.Text = "0";
+                    TotalPrice.Text = lblabTotal.Text;
+                }
+                else
+                {
+                    double total;
+                    double total2;
+                    double num1;
+                    double num2;
+                    try
+                    {
+                        total = Convert.ToDouble(txtLecPrice.Text) * Convert.ToDouble(txtLec.Text);
+                        lblLectotal.Text = total.ToString();
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    num1 = Convert.ToDouble(lblabTotal.Text);
 
+                    num2 = Convert.ToDouble(lblLectotal.Text);
+
+                    total2 = num1 + num2;
+                    TotalPrice.Text = total2.ToString();
+                }
             }
-            //txtTotalUnits.Text = txtLec.Text;
-
-
-            //if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
-            //    txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
+            //    //if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
+            //    //    txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
         }
 
         private void AddSubject_Load(object sender, EventArgs e)
         {
+            txtLecPrice.KeyPress += Validator.ValidateKeypressNumber;
+            txtLabprice.KeyPress += Validator.ValidateKeypressNumber;
             displayCourse();
         }
 
@@ -134,7 +180,7 @@ namespace SchoolManagementSystem
         {
             var values = DBContext.GetContext().Query("coursecode").Get();
 
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cmbCourseCode.Items.Add(value.coursecode);
             }
@@ -156,61 +202,91 @@ namespace SchoolManagementSystem
 
         private void txtLecPrice_TextChanged(object sender, EventArgs e)
         {
-            if(txtLecPrice.Text == "" || txtLecPrice.Text == "0")
+            if (txtLec.Text == "")
             {
-                lblLectotal.Text = "0";
-                TotalPrice.Text = lblabTotal.Text;
+
             }
             else
             {
 
-                //double total;
-                //total = Convert.ToDouble(txtLecPrice.Text) * Convert.ToDouble(txtLec.Text);
 
-                //lblLectotal.Text = total.ToString();
-                double total;
-                double total2;
-                double num1;
-                double num2;
+                if (txtLecPrice.Text == "" || txtLecPrice.Text == "0")
+                {
+                    lblLectotal.Text = "0";
+                    TotalPrice.Text = lblabTotal.Text;
+                }
+                else
+                {
 
-                total = Convert.ToDouble(txtLecPrice.Text) * Convert.ToDouble(txtLec.Text);
-                lblLectotal.Text = total.ToString();
-                num1 = Convert.ToDouble(lblabTotal.Text);
+                    //double total;
+                    //total = Convert.ToDouble(txtLecPrice.Text) * Convert.ToDouble(txtLec.Text);
 
-                num2 = Convert.ToDouble(lblLectotal.Text);
+                    //lblLectotal.Text = total.ToString();
+                    double total;
+                    double total2;
+                    double num1;
+                    double num2;
+                    try
+                    {
+                        total = Convert.ToDouble(txtLecPrice.Text) * Convert.ToDouble(txtLec.Text);
+                        lblLectotal.Text = total.ToString();
+                    }
+                    catch (Exception)
+                    {
+                    }
 
-                total2 = num1 + num2;
-                TotalPrice.Text = total2.ToString();
 
+                    num1 = Convert.ToDouble(lblabTotal.Text);
 
+                    num2 = Convert.ToDouble(lblLectotal.Text);
+
+                    total2 = num1 + num2;
+                    TotalPrice.Text = total2.ToString();
+
+                }
             }
         }
 
         private void txtLabprice_TextChanged(object sender, EventArgs e)
         {
-            if (txtLabprice.Text == "" || txtLabprice.Text == "0")
+
+            if (txtLab.Text == "")
             {
-                lblabTotal.Text = "0";
-                TotalPrice.Text = lblLectotal.Text;
+
             }
             else
             {
 
-                double total;
-                     double total2;
-                double num1;
-                double num2;
-         
-                total = Convert.ToDouble(txtLabprice.Text) * Convert.ToDouble(txtLab.Text);
-                lblabTotal.Text = total.ToString();
-                num1 =Convert.ToDouble(lblabTotal.Text);
+                if (txtLabprice.Text == "" || txtLabprice.Text == "0")
+                {
+                    lblabTotal.Text = "0";
+                    TotalPrice.Text = lblLectotal.Text;
+                }
+                else
+                {
 
-                num2 = Convert.ToDouble(lblLectotal.Text);
-              
-                total2 = num1 + num2;
-                TotalPrice.Text = total2.ToString();
+                    double total;
+                    double total2;
+                    double num1;
+                    double num2;
 
+                    try
+                    {
+                        total = Convert.ToDouble(txtLabprice.Text) * Convert.ToDouble(txtLab.Text);
+                        lblabTotal.Text = total.ToString();
+                    }
+                    catch (Exception)
+                    {
 
+                    }
+                    num1 = Convert.ToDouble(lblabTotal.Text);
+
+                    num2 = Convert.ToDouble(lblLectotal.Text);
+
+                    total2 = num1 + num2;
+                    TotalPrice.Text = total2.ToString();
+
+                }
             }
         }
 
@@ -220,7 +296,7 @@ namespace SchoolManagementSystem
             var values = DBContext.GetContext().Query("subjects").Join("coursecode", "coursecode.coursecode", "subjects.courseCode").Where("subjects.courseCode", cmbCourseCode.Text).Get();
 
             cmbPreReq.Items.Clear();
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cmbPreReq.Items.Add(value.subjectCode);
             }

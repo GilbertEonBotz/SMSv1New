@@ -9,13 +9,19 @@ using EonBotzLibrary;
 using SqlKata.Execution;
 using Microsoft.Reporting.WinForms;
 using System.Linq;
-
+using MySql.Data.MySqlClient;
 namespace SchoolManagementSystem
 {
     public partial class StudentScheduling : Form
     {
+       string academicid;
+        Connection connect = new Connection();
+        MySqlConnection conn;
+        MySqlDataReader dr;
+        MySqlCommand cmd;
         double total2;
               double downpayment;
+        double paidDownpayment;
         double aa;
         string storeID;
         studentSched sched = new studentSched();
@@ -57,11 +63,13 @@ namespace SchoolManagementSystem
                 cmbSubjects.Items.Add(value.category);
             }
 
-            var wew = DBContext.GetContext().Query("student").Get();
-
-            foreach (var value in wew)
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
             {
-                cmbStudentNo.Items.Add(value.studentId);
+                cmbStudentNo.Items.Add(dr[0].ToString());
             }
 
             var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
@@ -178,6 +186,26 @@ namespace SchoolManagementSystem
         ReportDataSource rsExams = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("SELECT id FROM smsdb.academicyear where status = 'Deactivate'", conn);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                academicid = dr[0].ToString();
+            }
+
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("SELECT downpayment FROM smsdb.studentActivation where status = 'Activated' and studentid = '"+cmbStudentNo.Text+"'", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                paidDownpayment =Convert.ToDouble(dr[0]);
+            }
+
+
             List<Schedulings> lst = new List<Schedulings>();
             lst.Clear();
 
@@ -227,8 +255,9 @@ namespace SchoolManagementSystem
                         DBContext.GetContext().Query("studentSched").Insert(new
                         {
                             studentID = cmbStudentNo.Text,
-                            schedId = storeID
-                        });
+                            schedId = storeID,
+                            academicID =academicid
+                        }) ;
                     }
 
                     List<feeBillings> bills = new List<feeBillings>();
@@ -301,13 +330,13 @@ namespace SchoolManagementSystem
                             final = final
                         });
 
-                        LocalReport localReport = new LocalReport();
-                        localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
-                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
-                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
-                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
-                        localReport.Print();
+                        //LocalReport localReport = new LocalReport();
+                        //localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                        //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
+                        //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", bills));
+                        //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", tuit));
+                        //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
+                        //localReport.Print();
 
                         DBContext.GetContext().Query("Billing").Insert(new
                         {
@@ -318,9 +347,11 @@ namespace SchoolManagementSystem
                             midterm = midterm,
                             semi = semi,
                             finals = final,
-                            date = DateTime.Now
+                            date = DateTime.Now,
+                            academicID = academicid
                         });
                         MessageBox.Show("succes bllling");
+                        MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
                         reload.displayStudentScheduling();
                     }
                     catch (Exception)
@@ -564,25 +595,25 @@ namespace SchoolManagementSystem
                 });
 
 
-                rs.Name = "DataSet1";
-                rs.Value = lst;
-                rsBill.Name = "DataSet2";
-                rsBill.Value = bills;
-                rsTuition.Name = "DataSet3";
-                rsTuition.Value = tuit;
-                rsExams.Name = "DataSet4";
-                rsExams.Value = exams;
+             //   rs.Name = "DataSet1";
+             //   rs.Value = lst;
+             //   rsBill.Name = "DataSet2";
+             //   rsBill.Value = bills;
+             //   rsTuition.Name = "DataSet3";
+             //   rsTuition.Value = tuit;
+             //   rsExams.Name = "DataSet4";
+             //   rsExams.Value = exams;
 
-                frm.reportViewer1.LocalReport.DataSources.Clear();
-                frm.reportViewer1.LocalReport.DataSources.Add(rs);
-                frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
-                frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
-                frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
-                frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-                frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                frm.reportViewer1.ZoomMode = ZoomMode.Percent;
-                frm.reportViewer1.ZoomPercent = 100;
-                frm.ShowDialog();
+             //   frm.reportViewer1.LocalReport.DataSources.Clear();
+             //   frm.reportViewer1.LocalReport.DataSources.Add(rs);
+             //   frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
+             //   frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
+             //   frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
+             //   frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+             //   frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+             //   frm.reportViewer1.ZoomMode = ZoomMode.Percent;
+             //   frm.reportViewer1.ZoomPercent = 100;
+             ////   frm.ShowDialog();
             }
             catch (Exception)
             {

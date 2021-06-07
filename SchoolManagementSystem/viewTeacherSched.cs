@@ -31,7 +31,7 @@ namespace SchoolManagementSystem
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             teacherScheds sched = new teacherScheds();
-            dgvSched.Rows.Clear();
+           // dgvSched.Rows.Clear();
 
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
 
@@ -43,7 +43,7 @@ namespace SchoolManagementSystem
                 // dataGridView1.Rows.Add(words[i],aa,name);
                 
                 sched.subjectcode = (words[i].ToString());
-                //  MessageBox.Show(words[i]);
+                  MessageBox.Show(words[i]);
                 dgvSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewteachsubj();

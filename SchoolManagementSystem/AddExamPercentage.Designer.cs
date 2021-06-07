@@ -48,6 +48,8 @@ namespace SchoolManagementSystem
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtdown = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -61,7 +63,7 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 54);
+            this.panel1.Size = new System.Drawing.Size(650, 54);
             this.panel1.TabIndex = 12;
             // 
             // label1
@@ -96,6 +98,10 @@ namespace SchoolManagementSystem
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.txtdown);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.btnSave);
+            this.panel6.Controls.Add(this.iconButton1);
             this.panel6.Controls.Add(this.txtFinal);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.txtSemi);
@@ -110,7 +116,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.panel6.Location = new System.Drawing.Point(0, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(572, 263);
+            this.panel6.Size = new System.Drawing.Size(650, 400);
             this.panel6.TabIndex = 16;
             // 
             // txtFinal
@@ -118,7 +124,7 @@ namespace SchoolManagementSystem
             this.txtFinal.BackColor = System.Drawing.SystemColors.Window;
             this.txtFinal.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFinal.Location = new System.Drawing.Point(129, 204);
+            this.txtFinal.Location = new System.Drawing.Point(171, 296);
             this.txtFinal.Multiline = true;
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(395, 30);
@@ -129,7 +135,7 @@ namespace SchoolManagementSystem
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(23, 204);
+            this.label4.Location = new System.Drawing.Point(65, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 21);
             this.label4.TabIndex = 33;
@@ -140,7 +146,7 @@ namespace SchoolManagementSystem
             this.txtSemi.BackColor = System.Drawing.SystemColors.Window;
             this.txtSemi.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtSemi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSemi.Location = new System.Drawing.Point(129, 162);
+            this.txtSemi.Location = new System.Drawing.Point(171, 254);
             this.txtSemi.Multiline = true;
             this.txtSemi.Name = "txtSemi";
             this.txtSemi.Size = new System.Drawing.Size(395, 30);
@@ -151,7 +157,7 @@ namespace SchoolManagementSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(23, 162);
+            this.label3.Location = new System.Drawing.Point(65, 254);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 31;
@@ -162,7 +168,7 @@ namespace SchoolManagementSystem
             this.txtPrelim.BackColor = System.Drawing.SystemColors.Window;
             this.txtPrelim.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtPrelim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrelim.Location = new System.Drawing.Point(129, 75);
+            this.txtPrelim.Location = new System.Drawing.Point(171, 167);
             this.txtPrelim.Multiline = true;
             this.txtPrelim.Name = "txtPrelim";
             this.txtPrelim.Size = new System.Drawing.Size(395, 30);
@@ -173,7 +179,7 @@ namespace SchoolManagementSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(23, 84);
+            this.label2.Location = new System.Drawing.Point(65, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 21);
             this.label2.TabIndex = 29;
@@ -184,7 +190,7 @@ namespace SchoolManagementSystem
             this.txtMidterm.BackColor = System.Drawing.SystemColors.Window;
             this.txtMidterm.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtMidterm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMidterm.Location = new System.Drawing.Point(129, 117);
+            this.txtMidterm.Location = new System.Drawing.Point(171, 209);
             this.txtMidterm.Multiline = true;
             this.txtMidterm.Name = "txtMidterm";
             this.txtMidterm.Size = new System.Drawing.Size(395, 30);
@@ -195,7 +201,7 @@ namespace SchoolManagementSystem
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(23, 126);
+            this.label6.Location = new System.Drawing.Point(65, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 21);
             this.label6.TabIndex = 6;
@@ -208,7 +214,7 @@ namespace SchoolManagementSystem
             this.panel8.ForeColor = System.Drawing.SystemColors.Control;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(568, 1);
+            this.panel8.Size = new System.Drawing.Size(646, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -219,7 +225,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(568, 49);
+            this.panel7.Size = new System.Drawing.Size(646, 49);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD
@@ -261,9 +267,9 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 370);
+            this.panel4.Location = new System.Drawing.Point(0, 511);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(572, 6);
+            this.panel4.Size = new System.Drawing.Size(650, 6);
             this.panel4.TabIndex = 17;
             // 
             // iconButton1
@@ -277,7 +283,7 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(419, 323);
+            this.iconButton1.Location = new System.Drawing.Point(459, 343);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
             this.iconButton1.TabIndex = 29;
@@ -296,7 +302,7 @@ namespace SchoolManagementSystem
             this.btnSave.IconColor = System.Drawing.Color.White;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 30;
-            this.btnSave.Location = new System.Drawing.Point(306, 323);
+            this.btnSave.Location = new System.Drawing.Point(346, 343);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 32);
             this.btnSave.TabIndex = 28;
@@ -304,13 +310,33 @@ namespace SchoolManagementSystem
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(38, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 21);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "downpayment";
+            // 
+            // txtdown
+            // 
+            this.txtdown.BackColor = System.Drawing.SystemColors.Window;
+            this.txtdown.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtdown.Location = new System.Drawing.Point(171, 120);
+            this.txtdown.Multiline = true;
+            this.txtdown.Name = "txtdown";
+            this.txtdown.Size = new System.Drawing.Size(395, 30);
+            this.txtdown.TabIndex = 36;
+            // 
             // AddExamPercentage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 376);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(650, 517);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
@@ -351,5 +377,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel4;
         public FontAwesome.Sharp.IconButton iconButton1;
         public FontAwesome.Sharp.IconButton btnSave;
+        public System.Windows.Forms.TextBox txtdown;
+        private System.Windows.Forms.Label label5;
     }
 }

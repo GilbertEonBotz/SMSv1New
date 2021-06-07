@@ -14,11 +14,13 @@ namespace SchoolManagementSystem
 {
     public partial class StudentScheduling : Form
     {
+        double total2;
+              double downpayment;
         double aa;
         string storeID;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
-
+        ledgerPercent led = new ledgerPercent();
         Form1 reload;
         public StudentScheduling(Form1 reload)
         {
@@ -259,11 +261,13 @@ namespace SchoolManagementSystem
                         DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
                         ledgerPercent led = new ledgerPercent();
-
+                        downpayment =Convert.ToDouble(led.downpayment);
                         led.selectstudentid = cmbStudentNo.Text;
                         led.selectSchedID();
                         led.percent();
-
+                        double total2 = total - Convert.ToDouble(led.downpayment);
+                        
+           
 
                         double extractPrelim = total * Convert.ToDouble(led.prelim);
                         double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -418,6 +422,8 @@ namespace SchoolManagementSystem
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
+
+
             amount = 0;
             pnlBilling.SetBounds(203, 100, 795, 462);
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
@@ -451,6 +457,7 @@ namespace SchoolManagementSystem
                         amount += Convert.ToDouble(Drow["Amount"].ToString());
 
                     }
+            
                 }
                 storeID = "";
             }
@@ -513,13 +520,15 @@ namespace SchoolManagementSystem
 
             try
             {
-                DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+           DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
-                ledgerPercent led = new ledgerPercent();
+              
+           
 
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
                 led.percent();
+                total = total -Convert.ToDouble(led.downpayment);
 
                 double extractPrelim = total * Convert.ToDouble(led.prelim);
                 double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -579,6 +588,14 @@ namespace SchoolManagementSystem
             {
                 Validator.AlertDanger("Please select an exam percentage on exam percentage menu");
             }
+
+
+            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+
+            downpayment = Convert.ToDouble(downpayments.downpayment);
+            total2 = amount + Convert.ToDouble(lblTotal.Text);
+            double totalamoun = total2 - downpayment;
+            MessageBox.Show(totalamoun.ToString());
         }
 
         public string[] waw;

@@ -28,12 +28,13 @@ namespace SchoolManagementSystem
                 status = "Activate"
             });
 
-            var values = DBContext.GetContext().Query("percentage").Insert(new { 
+            var values = DBContext.GetContext().Query("percentage").Insert(new {
                 prelim = $"0.{txtPrelim.Text}",
                 midterm = $"0.{txtMidterm.Text}",
                 semiFinals = $"0.{txtSemi.Text}",
-                finals = $"0.{txtFinal.Text}"
-            });
+                finals = $"0.{txtFinal.Text}",
+               downpayment = txtdown.Text 
+            }) ;
             MessageBox.Show("Inserted");
             reloadDatagrid.displayData();
             this.Close();

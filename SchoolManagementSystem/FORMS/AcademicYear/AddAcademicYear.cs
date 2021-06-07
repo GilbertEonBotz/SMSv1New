@@ -32,15 +32,40 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    DBContext.GetContext().Query("academicyear").Insert(new
+                    try
                     {
-                        year1 = txtYear1.Text,
-                        year2 = txtYear2.Text,
-                        term = cmbTerm.Text
-                    });
-                    Validator.AlertSuccess("inserted");
-                    reloadDatagrid.displayData();
+                        DBContext.GetContext().Query("academicyear").Where("year1", txtYear1.Text).Where("year2", txtYear2.Text).Where("term", cmbTerm.Text).First();
+                        Validator.AlertDanger("academic year existed!");
+                    }
+                    catch (Exception)
+                    {
+                        DBContext.GetContext().Query("academicyear").Update(new
+                        {
+                            status = "Activate"
+                        });
+
+                        DBContext.GetContext().Query("academicyear").Insert(new
+                        {
+                            year1 = txtYear1.Text,
+                            year2 = txtYear2.Text,
+                            term = cmbTerm.Text
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
+                    }
                 }
+            }
+        }
+
+        private void txtYear1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtYear2.Text = (long.Parse(txtYear1.Text) + 1).ToString();
+            }
+            catch (Exception)
+            {
+                txtYear2.Clear();
             }
         }
     }

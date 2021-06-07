@@ -64,7 +64,6 @@ namespace SchoolManagementSystem
 
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
 
             if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")

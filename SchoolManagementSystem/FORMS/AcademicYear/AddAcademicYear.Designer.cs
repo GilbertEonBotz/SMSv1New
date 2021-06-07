@@ -190,6 +190,7 @@ namespace SchoolManagementSystem
             this.txtYear2.Location = new System.Drawing.Point(100, 122);
             this.txtYear2.Multiline = true;
             this.txtYear2.Name = "txtYear2";
+            this.txtYear2.ReadOnly = true;
             this.txtYear2.Size = new System.Drawing.Size(395, 30);
             this.txtYear2.TabIndex = 2;
             // 
@@ -211,6 +212,7 @@ namespace SchoolManagementSystem
             this.txtYear1.Name = "txtYear1";
             this.txtYear1.Size = new System.Drawing.Size(395, 30);
             this.txtYear1.TabIndex = 1;
+            this.txtYear1.TextChanged += new System.EventHandler(this.txtYear1_TextChanged);
             // 
             // label6
             // 
@@ -264,8 +266,9 @@ namespace SchoolManagementSystem
             this.cmbTerm.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerm.FormattingEnabled = true;
             this.cmbTerm.Items.AddRange(new object[] {
-            "1st Term",
-            "2nd Term"});
+            "1st Semester",
+            "2nd Semester",
+            "Summer"});
             this.cmbTerm.Location = new System.Drawing.Point(100, 164);
             this.cmbTerm.Name = "cmbTerm";
             this.cmbTerm.Size = new System.Drawing.Size(395, 30);

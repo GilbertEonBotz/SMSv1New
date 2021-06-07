@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using EonBotzLibrary;
 using SqlKata.Execution;
 using MySql.Data.MySqlClient;
+using SchoolManagementSystem.FORMS;
 
 namespace SchoolManagementSystem
 {
@@ -136,6 +137,20 @@ namespace SchoolManagementSystem
 
 
 
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvStudents.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("view"))
+            {
+                var myfrm = new studentActivation();
+                myfrm.lblName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
+                myfrm.lblCourse.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
+
+                myfrm.ShowDialog();
+            }
         }
     }
 }

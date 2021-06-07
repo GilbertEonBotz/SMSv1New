@@ -1,4 +1,5 @@
 
+using SchoolManagementSystem.FORMS;
 using SchoolManagementSystem.FORMS.MainForm;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace SchoolManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AcademicYear());
+            Application.Run(new Form1());
         }
     }
 }

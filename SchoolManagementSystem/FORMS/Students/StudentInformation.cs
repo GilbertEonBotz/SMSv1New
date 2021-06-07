@@ -148,8 +148,12 @@ namespace SchoolManagementSystem
                 var myfrm = new studentActivation();
                 myfrm.lblName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
                 myfrm.lblCourse.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
-
+                var aa = DBContext.GetContext().Query("academicyear").Where("status", "Deactivate").First();
+                myfrm.label8.Text = aa.year1 +"-"+aa.year2+ ",  "+aa.term;
+                myfrm.studentid  = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
                 myfrm.ShowDialog();
+
+           
             }
         }
     }

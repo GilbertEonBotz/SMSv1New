@@ -206,6 +206,7 @@ namespace SchoolManagementSystem.FORMS
             this.btnAddAcademicYear.TabIndex = 36;
             this.btnAddAcademicYear.Text = "Activate";
             this.btnAddAcademicYear.UseVisualStyleBackColor = false;
+            this.btnAddAcademicYear.Click += new System.EventHandler(this.btnAddAcademicYear_Click);
             // 
             // label4
             // 
@@ -284,7 +285,6 @@ namespace SchoolManagementSystem.FORMS
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public FontAwesome.Sharp.IconButton btnAddAcademicYear;
@@ -292,5 +292,6 @@ namespace SchoolManagementSystem.FORMS
         private System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.Label lblCourse;
+        public System.Windows.Forms.Label label8;
     }
 }

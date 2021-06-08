@@ -509,6 +509,8 @@ namespace SchoolManagementSystem
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
+
+
             StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
 
             List<Schedulings> lst = new List<Schedulings>();
@@ -557,17 +559,24 @@ namespace SchoolManagementSystem
 
             double total = amount + Convert.ToDouble(lblTotal.Text);
 
+
+
             try
             {
            DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
-              
-           
+
+
+                var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+
+                downpayment = Convert.ToDouble(downpayments.downpayment);
+                total2 = amount + Convert.ToDouble(lblTotal.Text);
+                double totalamoun = total2 - studentdownpayment;
 
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
                 led.percent();
-                total = total -Convert.ToDouble(led.downpayment);
+                total = Convert.ToDouble(led.downpayment) + totalamoun - total;
 
                 double extractPrelim = total * Convert.ToDouble(led.prelim);
                 double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -591,6 +600,8 @@ namespace SchoolManagementSystem
                 //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
                 var amt1 = prelim + totalDec;
 
+
+            
                 List<examDivision> exams = new List<examDivision>();
                 exams.Clear();
 
@@ -629,12 +640,6 @@ namespace SchoolManagementSystem
             }
 
 
-            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
-
-            downpayment = Convert.ToDouble(downpayments.downpayment);
-            total2 = amount + Convert.ToDouble(lblTotal.Text);
-            double totalamoun = total2 - studentdownpayment;
-            MessageBox.Show(totalamoun.ToString());
         }
 
         public string[] waw;

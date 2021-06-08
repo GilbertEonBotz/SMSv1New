@@ -23,6 +23,7 @@ namespace SchoolManagementSystem
               double downpayment;
         double paidDownpayment;
         double aa;
+        double studentdownpayment;
         string storeID;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
@@ -453,7 +454,14 @@ namespace SchoolManagementSystem
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
-
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select b.downpayment from student a, studentActivation b where a.studentId = '"+cmbStudentNo.Text+"' and b.status ='Activated' ", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                studentdownpayment = Convert.ToDouble(dr[0]);
+            }
 
             amount = 0;
             pnlBilling.SetBounds(203, 100, 795, 462);
@@ -595,25 +603,25 @@ namespace SchoolManagementSystem
                 });
 
 
-             //   rs.Name = "DataSet1";
-             //   rs.Value = lst;
-             //   rsBill.Name = "DataSet2";
-             //   rsBill.Value = bills;
-             //   rsTuition.Name = "DataSet3";
-             //   rsTuition.Value = tuit;
-             //   rsExams.Name = "DataSet4";
-             //   rsExams.Value = exams;
+                rs.Name = "DataSet1";
+                rs.Value = lst;
+                rsBill.Name = "DataSet2";
+                rsBill.Value = bills;
+                rsTuition.Name = "DataSet3";
+                rsTuition.Value = tuit;
+                rsExams.Name = "DataSet4";
+                rsExams.Value = exams;
 
-             //   frm.reportViewer1.LocalReport.DataSources.Clear();
-             //   frm.reportViewer1.LocalReport.DataSources.Add(rs);
-             //   frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
-             //   frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
-             //   frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
-             //   frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-             //   frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-             //   frm.reportViewer1.ZoomMode = ZoomMode.Percent;
-             //   frm.reportViewer1.ZoomPercent = 100;
-             ////   frm.ShowDialog();
+                frm.reportViewer1.LocalReport.DataSources.Clear();
+                frm.reportViewer1.LocalReport.DataSources.Add(rs);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
+                frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
+                frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+                frm.reportViewer1.ZoomMode = ZoomMode.Percent;
+                frm.reportViewer1.ZoomPercent = 100;
+                  frm.ShowDialog();
             }
             catch (Exception)
             {
@@ -625,7 +633,7 @@ namespace SchoolManagementSystem
 
             downpayment = Convert.ToDouble(downpayments.downpayment);
             total2 = amount + Convert.ToDouble(lblTotal.Text);
-            double totalamoun = total2 - downpayment;
+            double totalamoun = total2 - studentdownpayment;
             MessageBox.Show(totalamoun.ToString());
         }
 

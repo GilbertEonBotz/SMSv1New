@@ -62,8 +62,8 @@ namespace SchoolManagementSystem
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -98,9 +98,9 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.panel6.Location = new System.Drawing.Point(6, 36);
+            this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(728, 486);
+            this.panel6.Size = new System.Drawing.Size(552, 486);
             this.panel6.TabIndex = 10;
             // 
             // label11
@@ -206,6 +206,7 @@ namespace SchoolManagementSystem
             // 
             // txtTotalUnits
             // 
+            this.txtTotalUnits.Enabled = false;
             this.txtTotalUnits.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtTotalUnits.Location = new System.Drawing.Point(127, 375);
             this.txtTotalUnits.Multiline = true;
@@ -332,7 +333,7 @@ namespace SchoolManagementSystem
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(724, 1);
+            this.panel8.Size = new System.Drawing.Size(548, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -343,7 +344,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(724, 49);
+            this.panel7.Size = new System.Drawing.Size(548, 49);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD
@@ -392,7 +393,7 @@ namespace SchoolManagementSystem
             this.btnAddSubjects.IconColor = System.Drawing.Color.White;
             this.btnAddSubjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSubjects.IconSize = 30;
-            this.btnAddSubjects.Location = new System.Drawing.Point(330, 528);
+            this.btnAddSubjects.Location = new System.Drawing.Point(312, 549);
             this.btnAddSubjects.Name = "btnAddSubjects";
             this.btnAddSubjects.Size = new System.Drawing.Size(107, 32);
             this.btnAddSubjects.TabIndex = 7;
@@ -404,38 +405,38 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 568);
+            this.panel4.Location = new System.Drawing.Point(6, 589);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(728, 6);
+            this.panel4.Size = new System.Drawing.Size(552, 6);
             this.panel4.TabIndex = 9;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(734, 36);
+            this.panel3.Location = new System.Drawing.Point(558, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 538);
+            this.panel3.Size = new System.Drawing.Size(6, 541);
             this.panel3.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 36);
+            this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 538);
+            this.panel2.Size = new System.Drawing.Size(6, 541);
             this.panel2.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 36);
+            this.panel1.Size = new System.Drawing.Size(564, 54);
             this.panel1.TabIndex = 6;
             // 
             // btnExit
@@ -447,7 +448,7 @@ namespace SchoolManagementSystem
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 20;
-            this.btnExit.Location = new System.Drawing.Point(443, 5);
+            this.btnExit.Location = new System.Drawing.Point(518, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -455,17 +456,6 @@ namespace SchoolManagementSystem
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(141, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "School Management System";
             // 
             // iconButton1
             // 
@@ -478,18 +468,29 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(443, 528);
+            this.iconButton1.Location = new System.Drawing.Point(438, 549);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
             this.iconButton1.TabIndex = 8;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(146, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "School Management System";
+            // 
             // AddSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 574);
+            this.ClientSize = new System.Drawing.Size(564, 595);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -534,7 +535,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnExit;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cmbPreReq;
         public System.Windows.Forms.TextBox txtTotalUnits;
         public System.Windows.Forms.Label lblIDD;
@@ -549,5 +549,6 @@ namespace SchoolManagementSystem
         public System.Windows.Forms.ComboBox cmbCourseCode;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label1;
     }
 }

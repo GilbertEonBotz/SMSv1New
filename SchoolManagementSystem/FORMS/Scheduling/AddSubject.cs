@@ -52,32 +52,38 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    try
+                    if (string.IsNullOrEmpty(txtTotalUnits.Text) || txtTotalUnits.Text.Equals("0"))
                     {
-                        DBContext.GetContext().Query("subjects").Where("subjectCode", txtSubjectCode.Text).First();
-                        Validator.AlertDanger("Subject code already existed");
+                        Validator.AlertDanger("Total unit must not be empty");
                     }
-                    catch (Exception)
+                    else
                     {
-
-                        DBContext.GetContext().Query("subjects").Insert(new
+                        try
                         {
-                            courseCode = cmbCourseCode.Text,
-                            subjectCode = txtSubjectCode.Text,
-                            subjectTitle = txtDescriptiveTitle.Text,
-                            lec = txtLec.Text,
-                            lab = txtLab.Text,
-                            totalUnits = txtTotalUnits.Text,
-                            prereq = cmbPreReq.Text,
-                            status = "Avail",
-                            totalLecprice = lblLectotal.Text,
-                            totalLabprice = lblabTotal.Text,
-                            labprice = txtLabprice.Text,
-                            lecprice = txtLecPrice.Text,
-                            totalprice = TotalPrice.Text
-                        });
-                        reloadDatagrid.displayData();
-                        this.Close();
+                            DBContext.GetContext().Query("subjects").Where("subjectCode", txtSubjectCode.Text).First();
+                            Validator.AlertDanger("Subject code already existed");
+                        }
+                        catch (Exception)
+                        {
+                            DBContext.GetContext().Query("subjects").Insert(new
+                            {
+                                courseCode = cmbCourseCode.Text,
+                                subjectCode = txtSubjectCode.Text,
+                                subjectTitle = txtDescriptiveTitle.Text,
+                                lec = txtLec.Text,
+                                lab = txtLab.Text,
+                                totalUnits = txtTotalUnits.Text,
+                                prereq = cmbPreReq.Text,
+                                status = "Avail",
+                                totalLecprice = lblLectotal.Text,
+                                totalLabprice = lblabTotal.Text,
+                                labprice = txtLabprice.Text,
+                                lecprice = txtLecPrice.Text,
+                                totalprice = TotalPrice.Text
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                        }
                     }
                 }
             }
@@ -92,12 +98,19 @@ namespace SchoolManagementSystem
         {
 
 
+            if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
+                txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
 
-            if (txtLab.Text == "")
+            if (string.IsNullOrEmpty(txtLab.Text))
+            {
+                txtTotalUnits.Text = txtLec.Text;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLab.Text))
             {
                 lblabTotal.Text = "0";
-                txtTotalUnits.Text = "0";
             }
+
             else
             {
                 if (txtLabprice.Text == "" || txtLabprice.Text == "0")
@@ -130,15 +143,24 @@ namespace SchoolManagementSystem
                     TotalPrice.Text = total2.ToString();
                 }
             }
+
+
         }
 
         private void txtLec_TextChanged(object sender, EventArgs e)
         {
-            if (txtLec.Text == "")
+            if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
+                txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
+            if (string.IsNullOrEmpty(txtLec.Text))
+            {
+                txtTotalUnits.Text = txtLab.Text;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLec.Text))
             {
                 lblLectotal.Text = "0";
-                txtTotalUnits.Text = "0";
             }
+
             else
             {
                 if (txtLecPrice.Text == "" || txtLecPrice.Text == "0")
@@ -168,8 +190,8 @@ namespace SchoolManagementSystem
                     TotalPrice.Text = total2.ToString();
                 }
             }
-            //    //if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
-            //    //    txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
+
+
         }
 
         private void AddSubject_Load(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
         studentPaymentDisplay spd = new studentPaymentDisplay();
         finalDashboard display;
         double amount;
+        ledgerPercent led = new ledgerPercent();
         public StudentPaymentShow(finalDashboard display)
         {
             InitializeComponent();
@@ -73,8 +74,9 @@ namespace SchoolManagementSystem
             myForm.txt3.Text = spd.semi;
             myForm.txt4.Text = spd.final;
             myForm.billingid = spd.billingid;
-         
-  
+
+            led.percent();
+            myForm.txt0.Text = led.downpayment;
           
             spd.viewtransaction();
           

@@ -96,6 +96,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel5 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt0 = new System.Windows.Forms.TextBox();
+            this.lbldownpayment = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -350,7 +353,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.txt3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt3.Location = new System.Drawing.Point(157, 132);
+            this.txt3.Location = new System.Drawing.Point(157, 158);
             this.txt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt3.Multiline = true;
             this.txt3.Name = "txt3";
@@ -362,7 +365,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(8, 177);
+            this.label16.Location = new System.Drawing.Point(8, 203);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(46, 19);
             this.label16.TabIndex = 38;
@@ -372,7 +375,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(8, 133);
+            this.label17.Location = new System.Drawing.Point(8, 159);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(91, 19);
             this.label17.TabIndex = 37;
@@ -383,7 +386,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(8, 89);
+            this.label18.Location = new System.Drawing.Point(8, 115);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(73, 19);
             this.label18.TabIndex = 36;
@@ -393,7 +396,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(8, 45);
+            this.label19.Location = new System.Drawing.Point(8, 71);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(57, 19);
             this.label19.TabIndex = 35;
@@ -403,7 +406,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.txt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt1.Location = new System.Drawing.Point(157, 44);
+            this.txt1.Location = new System.Drawing.Point(157, 70);
             this.txt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt1.Multiline = true;
             this.txt1.Name = "txt1";
@@ -415,7 +418,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.txt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt2.Location = new System.Drawing.Point(157, 88);
+            this.txt2.Location = new System.Drawing.Point(157, 114);
             this.txt2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt2.Multiline = true;
             this.txt2.Name = "txt2";
@@ -427,7 +430,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.txt4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt4.Location = new System.Drawing.Point(157, 176);
+            this.txt4.Location = new System.Drawing.Point(157, 202);
             this.txt4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt4.Multiline = true;
             this.txt4.Name = "txt4";
@@ -439,7 +442,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lblpre.AutoSize = true;
             this.lblpre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpre.Location = new System.Drawing.Point(339, 43);
+            this.lblpre.Location = new System.Drawing.Point(339, 69);
             this.lblpre.Name = "lblpre";
             this.lblpre.Size = new System.Drawing.Size(41, 21);
             this.lblpre.TabIndex = 42;
@@ -449,7 +452,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lblmid.AutoSize = true;
             this.lblmid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmid.Location = new System.Drawing.Point(339, 88);
+            this.lblmid.Location = new System.Drawing.Point(339, 114);
             this.lblmid.Name = "lblmid";
             this.lblmid.Size = new System.Drawing.Size(41, 21);
             this.lblmid.TabIndex = 43;
@@ -459,7 +462,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lblsemi.AutoSize = true;
             this.lblsemi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsemi.Location = new System.Drawing.Point(339, 132);
+            this.lblsemi.Location = new System.Drawing.Point(339, 158);
             this.lblsemi.Name = "lblsemi";
             this.lblsemi.Size = new System.Drawing.Size(41, 21);
             this.lblsemi.TabIndex = 44;
@@ -469,7 +472,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lblfin.AutoSize = true;
             this.lblfin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfin.Location = new System.Drawing.Point(339, 176);
+            this.lblfin.Location = new System.Drawing.Point(339, 202);
             this.lblfin.Name = "lblfin";
             this.lblfin.Size = new System.Drawing.Size(41, 21);
             this.lblfin.TabIndex = 45;
@@ -481,7 +484,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label25.BackColor = System.Drawing.Color.DimGray;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(3, 17);
+            this.label25.Location = new System.Drawing.Point(9, 6);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(45, 19);
             this.label25.TabIndex = 46;
@@ -493,7 +496,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.ForeColor = System.Drawing.Color.White;
-            this.textBox15.Location = new System.Drawing.Point(158, 11);
+            this.textBox15.Location = new System.Drawing.Point(158, 6);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
@@ -507,7 +510,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.lbltotal.BackColor = System.Drawing.Color.DimGray;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(340, 17);
+            this.lbltotal.Location = new System.Drawing.Point(340, 8);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(46, 21);
             this.lbltotal.TabIndex = 48;
@@ -584,16 +587,16 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.cmbpaymentMethod);
             this.panel3.Controls.Add(this.txtAmount);
-            this.panel3.Location = new System.Drawing.Point(642, 310);
+            this.panel3.Location = new System.Drawing.Point(642, 326);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(463, 287);
+            this.panel3.Size = new System.Drawing.Size(463, 271);
             this.panel3.TabIndex = 54;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(33, 239);
+            this.checkBox1.Location = new System.Drawing.Point(33, 214);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(114, 20);
             this.checkBox1.TabIndex = 63;
@@ -651,7 +654,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(29, 262);
+            this.label11.Location = new System.Drawing.Point(29, 237);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 21);
             this.label11.TabIndex = 59;
@@ -785,6 +788,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbldownpayment);
+            this.panel2.Controls.Add(this.txt0);
+            this.panel2.Controls.Add(this.label26);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.label27);
@@ -802,7 +808,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel2.Controls.Add(this.txt2);
             this.panel2.Location = new System.Drawing.Point(642, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(463, 254);
+            this.panel2.Size = new System.Drawing.Size(463, 276);
             this.panel2.TabIndex = 54;
             // 
             // panel6
@@ -812,9 +818,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel6.Controls.Add(this.lbltotal);
             this.panel6.Controls.Add(this.textBox15);
             this.panel6.Controls.Add(this.label25);
-            this.panel6.Location = new System.Drawing.Point(-2, 199);
+            this.panel6.Location = new System.Drawing.Point(-2, 233);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(463, 48);
+            this.panel6.Size = new System.Drawing.Size(463, 37);
             this.panel6.TabIndex = 44;
             // 
             // panel5
@@ -870,6 +876,38 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.btnAdmin.Text = "Payment Information";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(8, 36);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(124, 19);
+            this.label26.TabIndex = 51;
+            this.label26.Text = "downpayment";
+            // 
+            // txt0
+            // 
+            this.txt0.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt0.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt0.Location = new System.Drawing.Point(157, 35);
+            this.txt0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt0.Multiline = true;
+            this.txt0.Name = "txt0";
+            this.txt0.Size = new System.Drawing.Size(140, 27);
+            this.txt0.TabIndex = 52;
+            this.txt0.Text = "99999";
+            // 
+            // lbldownpayment
+            // 
+            this.lbldownpayment.AutoSize = true;
+            this.lbldownpayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldownpayment.Location = new System.Drawing.Point(339, 34);
+            this.lbldownpayment.Name = "lbldownpayment";
+            this.lbldownpayment.Size = new System.Drawing.Size(41, 21);
+            this.lbldownpayment.TabIndex = 53;
+            this.lbldownpayment.Text = "0.00";
             // 
             // Payment
             // 
@@ -982,5 +1020,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lbldownpayment;
+        public System.Windows.Forms.TextBox txt0;
+        private System.Windows.Forms.Label label26;
     }
 }

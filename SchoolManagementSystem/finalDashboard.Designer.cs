@@ -1027,6 +1027,7 @@ namespace SchoolManagementSystem
             this.btnSignout.Text = "Log out";
             this.btnSignout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSignout.UseVisualStyleBackColor = true;
+            this.btnSignout.Click += new System.EventHandler(this.btnSignout_Click);
             // 
             // panel2
             // 

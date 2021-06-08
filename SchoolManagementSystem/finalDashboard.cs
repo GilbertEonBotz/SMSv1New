@@ -325,5 +325,10 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
+
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

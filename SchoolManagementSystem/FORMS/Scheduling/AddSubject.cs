@@ -90,6 +90,9 @@ namespace SchoolManagementSystem
 
         private void txtLab_TextChanged(object sender, EventArgs e)
         {
+
+
+
             if (txtLab.Text == "")
             {
                 lblabTotal.Text = "0";

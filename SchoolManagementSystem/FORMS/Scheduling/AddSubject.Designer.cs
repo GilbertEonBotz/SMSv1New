@@ -206,7 +206,6 @@ namespace SchoolManagementSystem
             // 
             // txtTotalUnits
             // 
-            this.txtTotalUnits.Enabled = false;
             this.txtTotalUnits.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtTotalUnits.Location = new System.Drawing.Point(127, 375);
             this.txtTotalUnits.Multiline = true;
@@ -233,6 +232,7 @@ namespace SchoolManagementSystem
             this.txtLab.Name = "txtLab";
             this.txtLab.Size = new System.Drawing.Size(165, 30);
             this.txtLab.TabIndex = 4;
+            this.txtLab.Text = "0";
             this.txtLab.TextChanged += new System.EventHandler(this.txtLab_TextChanged);
             this.txtLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLab_KeyPress);
             // 
@@ -244,6 +244,7 @@ namespace SchoolManagementSystem
             this.txtLec.Name = "txtLec";
             this.txtLec.Size = new System.Drawing.Size(163, 30);
             this.txtLec.TabIndex = 3;
+            this.txtLec.Text = "0";
             this.txtLec.TextChanged += new System.EventHandler(this.txtLec_TextChanged);
             this.txtLec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLec_KeyPress);
             // 

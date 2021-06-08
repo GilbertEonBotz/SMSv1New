@@ -28,8 +28,8 @@ namespace SchoolManagementSystem
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
         ledgerPercent led = new ledgerPercent();
-        Form1 reload;
-        public StudentScheduling(Form1 reload)
+        finalDashboard reload;
+        public StudentScheduling(finalDashboard reload)
         {
             InitializeComponent();
             this.reload = reload;

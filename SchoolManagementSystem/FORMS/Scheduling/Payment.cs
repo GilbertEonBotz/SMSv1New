@@ -16,7 +16,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
     {
         studentPaymentDisplay disp = new studentPaymentDisplay();
         public string billingid;
-        Form1 display;
+        finalDashboard display;
         MySqlCommand cmd;
         MySqlDataReader dr;
         MySqlConnection conn;
@@ -27,7 +27,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         double amountmid = 0;
         double amountsemi = 0;
         double amountfinal = 0;
-        public Payment(Form1 display)
+        public Payment(finalDashboard display)
         {
             InitializeComponent();
             this.display = display;

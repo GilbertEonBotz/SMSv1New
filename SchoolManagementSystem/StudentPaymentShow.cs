@@ -17,9 +17,9 @@ namespace SchoolManagementSystem
     {
         string id;
         studentPaymentDisplay spd = new studentPaymentDisplay();
-        Form1 display;
+        finalDashboard display;
         double amount;
-        public StudentPaymentShow(Form1 display)
+        public StudentPaymentShow(finalDashboard display)
         {
             InitializeComponent();
             this.display = display;

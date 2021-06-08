@@ -243,12 +243,12 @@ namespace SchoolManagementSystem
 
         public void displayStudentScheduling()
         {
-            var myForm = new StudentScheduling(this);
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
+            //var myForm = new StudentScheduling(this);
+            //pnlShow.Controls.Clear();
+            //myForm.TopLevel = false;
+            //myForm.AutoScroll = false;
+            //pnlShow.Controls.Add(myForm);
+            //myForm.Show();
         }
 
         private void displayUser()
@@ -514,12 +514,12 @@ namespace SchoolManagementSystem
 
         private void iconButton15_Click(object sender, EventArgs e)
         {
-            var myForm = new StudentPaymentShow(this);
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
+            //var myForm = new StudentPaymentShow(this);
+            //pnlShow.Controls.Clear();
+            //myForm.TopLevel = false;
+            //myForm.AutoScroll = false;
+            //pnlShow.Controls.Add(myForm);
+            //myForm.Show();
         }
 
         private void btnExamPercent_Click(object sender, EventArgs e)

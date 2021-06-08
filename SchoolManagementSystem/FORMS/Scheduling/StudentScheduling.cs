@@ -576,7 +576,7 @@ namespace SchoolManagementSystem
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
                 led.percent();
-                total = Convert.ToDouble(led.downpayment) - totalamoun;
+                total =  totalamoun;
 
                 double extractPrelim = total * Convert.ToDouble(led.prelim);
                 double extractMidterm = total * Convert.ToDouble(led.midterm);

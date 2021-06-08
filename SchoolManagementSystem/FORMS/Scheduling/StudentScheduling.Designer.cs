@@ -716,7 +716,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnSearchStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 1165);
+            this.ClientSize = new System.Drawing.Size(1108, 1100);
             this.Controls.Add(this.pnlBilling);
             this.Controls.Add(this.lblTuition);
             this.Controls.Add(this.button1);

@@ -14,13 +14,13 @@ namespace SchoolManagementSystem
 {
     public partial class StudentScheduling : Form
     {
-       string academicid;
+        string academicid;
         Connection connect = new Connection();
         MySqlConnection conn;
         MySqlDataReader dr;
         MySqlCommand cmd;
         double total2;
-              double downpayment;
+        double downpayment;
         double paidDownpayment;
         double aa;
         double studentdownpayment;
@@ -68,7 +68,7 @@ namespace SchoolManagementSystem
             conn.Open();
             cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
             dr = cmd.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
                 cmbStudentNo.Items.Add(dr[0].ToString());
             }
@@ -185,6 +185,7 @@ namespace SchoolManagementSystem
         ReportDataSource rsBill = new ReportDataSource();
         ReportDataSource rsTuition = new ReportDataSource();
         ReportDataSource rsExams = new ReportDataSource();
+        ReportDataSource rsPayment = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
@@ -192,18 +193,18 @@ namespace SchoolManagementSystem
             conn.Open();
             cmd = new MySqlCommand("SELECT id FROM smsdb.academicyear where status = 'Deactivate'", conn);
             dr = cmd.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
                 academicid = dr[0].ToString();
             }
 
             conn = connect.getcon();
             conn.Open();
-            cmd = new MySqlCommand("SELECT downpayment FROM smsdb.studentActivation where status = 'Activated' and studentid = '"+cmbStudentNo.Text+"'", conn);
+            cmd = new MySqlCommand("SELECT downpayment FROM smsdb.studentActivation where status = 'Activated' and studentid = '" + cmbStudentNo.Text + "'", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                paidDownpayment =Convert.ToDouble(dr[0]);
+                paidDownpayment = Convert.ToDouble(dr[0]);
             }
 
 
@@ -257,8 +258,8 @@ namespace SchoolManagementSystem
                         {
                             studentID = cmbStudentNo.Text,
                             schedId = storeID,
-                            academicID =academicid
-                        }) ;
+                            academicID = academicid
+                        });
                     }
 
                     List<feeBillings> bills = new List<feeBillings>();
@@ -291,13 +292,13 @@ namespace SchoolManagementSystem
                         DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
                         ledgerPercent led = new ledgerPercent();
-                        downpayment =Convert.ToDouble(led.downpayment);
+                        downpayment = Convert.ToDouble(led.downpayment);
                         led.selectstudentid = cmbStudentNo.Text;
                         led.selectSchedID();
                         led.percent();
                         double total2 = total - Convert.ToDouble(led.downpayment);
-                        
-           
+
+
 
                         double extractPrelim = total * Convert.ToDouble(led.prelim);
                         double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -312,7 +313,7 @@ namespace SchoolManagementSystem
 
                         // KUHAON UG I ADD TANAN DECIMAL
                         var prelimDec = ComputeDecimals(extractPrelim, "", "", 0);
-                        var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);    
+                        var midtermDec = ComputeDecimals(extractMidterm, "", "", 0);
                         var semiDec = ComputeDecimals(extractSemi, "", "", 0);
                         var finalDec = ComputeDecimals(extractFinal, "", "", 0);
                         var totalDec = prelimDec + midtermDec + semiDec + finalDec;
@@ -456,7 +457,7 @@ namespace SchoolManagementSystem
         {
             conn = connect.getcon();
             conn.Open();
-            cmd = new MySqlCommand("select b.downpayment from student a, studentActivation b where a.studentId = '"+cmbStudentNo.Text+"' and b.status ='Activated' ", conn);
+            cmd = new MySqlCommand("select b.downpayment from student a, studentActivation b where a.studentId = '" + cmbStudentNo.Text + "' and b.status ='Activated' ", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -496,7 +497,7 @@ namespace SchoolManagementSystem
                         amount += Convert.ToDouble(Drow["Amount"].ToString());
 
                     }
-            
+
                 }
                 storeID = "";
             }
@@ -509,7 +510,6 @@ namespace SchoolManagementSystem
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-
 
             StudentSchedulesReportViewer frm = new StudentSchedulesReportViewer();
 
@@ -559,24 +559,20 @@ namespace SchoolManagementSystem
 
             double total = amount + Convert.ToDouble(lblTotal.Text);
 
-
-
             try
             {
-           DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
-
-
+                DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
                 var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
                 downpayment = Convert.ToDouble(downpayments.downpayment);
                 total2 = amount + Convert.ToDouble(lblTotal.Text);
                 double totalamoun = total2 - studentdownpayment;
-        
+
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
                 led.percent();
-                total =  totalamoun;
+                total = totalamoun;
 
                 double extractPrelim = total * Convert.ToDouble(led.prelim);
                 double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -601,7 +597,7 @@ namespace SchoolManagementSystem
                 var amt1 = prelim + totalDec;
 
 
-            
+
                 List<examDivision> exams = new List<examDivision>();
                 exams.Clear();
 
@@ -613,6 +609,17 @@ namespace SchoolManagementSystem
                     final = final
                 });
 
+                List<paymentDetails> pds = new List<paymentDetails>();
+                pds.Clear();
+
+                pds.Add(new paymentDetails
+                {
+                    dp = Convert.ToDouble(led.downpayment),
+                    ap = studentdownpayment,
+                    mp = "Cash",
+                    rmk = "N/A"
+                });
+
 
                 rs.Name = "DataSet1";
                 rs.Value = lst;
@@ -622,17 +629,20 @@ namespace SchoolManagementSystem
                 rsTuition.Value = tuit;
                 rsExams.Name = "DataSet4";
                 rsExams.Value = exams;
+                rsPayment.Name = "DataSet5";
+                rsPayment.Value = pds;
 
                 frm.reportViewer1.LocalReport.DataSources.Clear();
                 frm.reportViewer1.LocalReport.DataSources.Add(rs);
                 frm.reportViewer1.LocalReport.DataSources.Add(rsBill);
                 frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
                 frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
+                frm.reportViewer1.LocalReport.DataSources.Add(rsPayment);
                 frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
                 frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 frm.reportViewer1.ZoomMode = ZoomMode.Percent;
                 frm.reportViewer1.ZoomPercent = 100;
-                  frm.ShowDialog();
+                frm.ShowDialog();
             }
             catch (Exception)
             {
@@ -735,5 +745,13 @@ namespace SchoolManagementSystem
         public double midterm { get; set; }
         public double semi { get; set; }
         public double final { get; set; }
+    }
+
+    public class paymentDetails
+    {
+        public double dp { get; set; }
+        public double ap { get; set; }
+        public string mp { get; set; }
+        public string rmk { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace SchoolManagementSystem
         finalDashboard display;
         double amount;
         ledgerPercent led = new ledgerPercent();
+        string studentid;
         public StudentPaymentShow(finalDashboard display)
         {
             InitializeComponent();
@@ -53,6 +54,8 @@ namespace SchoolManagementSystem
 
         private void dgvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+          
+
             var myForm = new Payment(display);
             display.pnlShow.Controls.Clear();
             myForm.TopLevel = false;
@@ -61,25 +64,43 @@ namespace SchoolManagementSystem
             myForm.Show();
             myForm.txtLastname.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
             myForm.studentid.Text = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
-
+ 
             spd.studentID = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
-
-
+            led.percent();
+            studentid = spd.studentID;
             spd.viewPayment();
+            spd.viewPaymentDetailed();
+            spd.studentDOwn();
+
+
+            double finalss = Convert.ToDouble(spd.totalpaid) + 0;
+
+
+            MessageBox.Show(spd.totalpaid.ToString());
+            double minus = Convert.ToDouble(spd.total)- Convert.ToDouble(led.downpayment) ;
+            double first;
+            double second;
+            double third;
+            double fourth;
+            first = minus * Convert.ToDouble(led.prelim);
+            second = minus * Convert.ToDouble(led.midterm);
+            third = minus * Convert.ToDouble(led.semi);
+            fourth = minus * Convert.ToDouble(led.finals);
+
 
             myForm.textBox15.Text = spd.total;
-
-            myForm.txt1.Text = spd.prelim;
-            myForm.txt2.Text = spd.midterm;
-            myForm.txt3.Text = spd.semi;
-            myForm.txt4.Text = spd.final;
+            myForm.txt1.Text =  first.ToString();
+            myForm.txt2.Text = second.ToString();
+            myForm.txt3.Text = third.ToString();
+            myForm.txt4.Text = fourth.ToString();
             myForm.billingid = spd.billingid;
 
             led.percent();
+            //
             myForm.txt0.Text = led.downpayment;
           
             spd.viewtransaction();
-          
+  
 
             foreach (DataRow DROW in spd.dt.Rows)
             {
@@ -91,81 +112,103 @@ namespace SchoolManagementSystem
 
             }
 
-            spd.viewPaymentDetailed();
-            myForm.lbltotal.Text = spd.totalpaid;
+         //   spd.viewPaymentDetailed();
+            //myForm.lbltotal.Text = finalss.ToString();
          
-            myForm.txtcurrentBal.Text = spd.currentbalance;
+            //myForm.txtcurrentBal.Text = spd.currentbalance;
 
-            if(myForm.txtcurrentBal.Text =="0.00")
-            {
-                myForm.button1.Enabled = false;
-            }
+            //if(myForm.txtcurrentBal.Text =="0.00")
+            //{
+            //    myForm.button1.Enabled = false;
+            //}
 
-            Convert.ToDouble(spd.prelim);
-            Convert.ToDouble(spd.midterm);
-            Convert.ToDouble(spd.semi);
+
+           
+
             try
             {
-                double finalss = Convert.ToDouble(spd.totalpaid);
+                //spd.studentDOwn();
+          
+
+                //double finalss = Convert.ToDouble(spd.totalpaid) + Convert.ToDouble(spd.studentdownpayment);
 
 
-                Convert.ToDouble(spd.final);
+                //MessageBox.Show(finalss.ToString());
 
 
                 for (double i = 0; i <= finalss; i++)
                 {
-                    if (Convert.ToDouble(spd.prelim) <= finalss)
+                    if (Convert.ToDouble(led.downpayment) <= finalss)
                     {
-                        amount = finalss - Convert.ToDouble(spd.prelim);
+                 
+                        amount = finalss - Convert.ToDouble(led.downpayment);
                      
-                        myForm.comboBox2.Items.Remove("PRELIM");
+                        myForm.comboBox2.Items.Remove("DOWNPAYMENT");
 
-                        if (Convert.ToDouble(spd.midterm) <= amount)
+                        if (Convert.ToDouble(first) <= amount)
                         {
 
-                            amount = amount - Convert.ToDouble(spd.midterm);
-                            myForm.comboBox2.Items.Remove("MIDTERM");
-                            if (Convert.ToDouble(spd.semi) <= amount)
+                            amount = amount - first;
+                            myForm.comboBox2.Items.Remove("PRELIM");
+                            if (Convert.ToDouble(second) <= amount)
                             {
                              
-                                amount = amount - Convert.ToDouble(spd.semi);
-                                myForm.comboBox2.Items.Remove("SEMI-FINAL");
-                                if (Convert.ToDouble(spd.final) <= amount)
+                                amount = amount - second;
+                                myForm.comboBox2.Items.Remove("MIDTERM");
+                                if (Convert.ToDouble(third) <= amount)
                                 {
-                                    amount = amount - Convert.ToDouble(spd.final);
-                                    myForm.lblpre.Text = spd.prelim;
-                                    myForm.lblmid.Text = spd.midterm;
-                                    myForm.lblsemi.Text = spd.semi;
-                                    myForm.lblfin.Text = spd.final;
-                                    myForm.comboBox2.Items.Remove("FINAL");
-                                    myForm.panel3.Controls.Clear();
+                                    amount = amount -third;
+                               
+                                    myForm.comboBox2.Items.Remove("SEMI-FINAL");
+                                    if(Convert.ToDouble(fourth) <= amount)
+                                    {
+                                        amount = amount - fourth;
+                                        myForm.lbldownpayment.Text = led.downpayment.ToString();
+                                        myForm.lblpre.Text = first.ToString();
+                                        myForm.lblmid.Text = second.ToString();
+                                        myForm.lblsemi.Text = third.ToString();
+                                        myForm.lblfin.Text = fourth.ToString();
+                                        myForm.comboBox2.Items.Remove("FINALE");
+                                    }
+                                    else
+                                    {
+                                        myForm.lbldownpayment.Text = led.downpayment.ToString();
+                                        myForm.lblpre.Text = first.ToString();
+                                        myForm.lblmid.Text = second.ToString();
+                                        myForm.lblsemi.Text = third.ToString();
+                                        myForm.lblfin.Text = amount.ToString();
+
+                                    }
+                                
                          
                                 }
                                 else
                                 {
-                                    myForm.lblpre.Text = spd.prelim;
-                                    myForm.lblmid.Text = spd.midterm;
-                                    myForm.lblsemi.Text = spd.semi;
-                                    myForm.lblfin.Text = Convert.ToString(amount);
+                                    myForm.lbldownpayment.Text = led.downpayment.ToString();
+                                    myForm.lblpre.Text = first.ToString();
+                                    myForm.lblmid.Text = second.ToString();
+                                    myForm.lblsemi.Text = amount.ToString();
+
+
                                 }
                             }
                             else
                             {
-                                myForm.lblpre.Text = spd.prelim;
-                                myForm.lblmid.Text = spd.midterm;
-                                myForm.lblsemi.Text = Convert.ToString(amount);
+                                myForm.lbldownpayment.Text = led.downpayment.ToString();
+                                myForm.lblpre.Text = first.ToString();
+                                myForm.lblmid.Text = amount.ToString();
                             }
                         }
                         else
                         {
-                            myForm.lblpre.Text = spd.prelim;
-                            myForm.lblmid.Text = Convert.ToString(amount);
+                            myForm.lbldownpayment.Text = led.downpayment.ToString();
+                            myForm.lblpre.Text = amount.ToString();
                         }
                     }
                     else
                     {
 
-                        myForm.lblpre.Text = Convert.ToString(finalss);
+                        myForm.lbldownpayment.Text = finalss.ToString() ;
                     }
 
 

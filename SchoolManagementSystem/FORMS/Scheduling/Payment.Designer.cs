@@ -92,13 +92,13 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbldownpayment = new System.Windows.Forms.Label();
+            this.txt0 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt0 = new System.Windows.Forms.TextBox();
-            this.lbldownpayment = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -629,6 +629,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
+            "DOWNPAYMENT",
             "PRELIM",
             "MIDTERM",
             "SEMI-FINAL",
@@ -811,6 +812,38 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.panel2.Size = new System.Drawing.Size(463, 276);
             this.panel2.TabIndex = 54;
             // 
+            // lbldownpayment
+            // 
+            this.lbldownpayment.AutoSize = true;
+            this.lbldownpayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldownpayment.Location = new System.Drawing.Point(339, 34);
+            this.lbldownpayment.Name = "lbldownpayment";
+            this.lbldownpayment.Size = new System.Drawing.Size(41, 21);
+            this.lbldownpayment.TabIndex = 53;
+            this.lbldownpayment.Text = "0.00";
+            // 
+            // txt0
+            // 
+            this.txt0.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt0.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt0.Location = new System.Drawing.Point(157, 35);
+            this.txt0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt0.Multiline = true;
+            this.txt0.Name = "txt0";
+            this.txt0.Size = new System.Drawing.Size(140, 27);
+            this.txt0.TabIndex = 52;
+            this.txt0.Text = "99999";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(8, 36);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(124, 19);
+            this.label26.TabIndex = 51;
+            this.label26.Text = "downpayment";
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DimGray;
@@ -876,38 +909,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.btnAdmin.Text = "Payment Information";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(8, 36);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(124, 19);
-            this.label26.TabIndex = 51;
-            this.label26.Text = "downpayment";
-            // 
-            // txt0
-            // 
-            this.txt0.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt0.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt0.Location = new System.Drawing.Point(157, 35);
-            this.txt0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt0.Multiline = true;
-            this.txt0.Name = "txt0";
-            this.txt0.Size = new System.Drawing.Size(140, 27);
-            this.txt0.TabIndex = 52;
-            this.txt0.Text = "99999";
-            // 
-            // lbldownpayment
-            // 
-            this.lbldownpayment.AutoSize = true;
-            this.lbldownpayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldownpayment.Location = new System.Drawing.Point(339, 34);
-            this.lbldownpayment.Name = "lbldownpayment";
-            this.lbldownpayment.Size = new System.Drawing.Size(41, 21);
-            this.lbldownpayment.TabIndex = 53;
-            this.lbldownpayment.Text = "0.00";
             // 
             // Payment
             // 

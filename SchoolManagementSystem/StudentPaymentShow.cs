@@ -113,9 +113,9 @@ namespace SchoolManagementSystem
             }
 
          //   spd.viewPaymentDetailed();
-            //myForm.lbltotal.Text = finalss.ToString();
-         
-            //myForm.txtcurrentBal.Text = spd.currentbalance;
+            myForm.lbltotal.Text = spd.totalpaid.ToString();
+            double current = Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid) ;
+            myForm.txtcurrentBal.Text = current.ToString();
 
             //if(myForm.txtcurrentBal.Text =="0.00")
             //{

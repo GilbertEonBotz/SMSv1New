@@ -13,10 +13,12 @@ namespace SchoolManagementSystem
     public partial class AddUserRole : Form
     {
         UserRole reloadDatagrid;
-        public AddUserRole(UserRole reloadDatagrid)
+        string idd;
+        public AddUserRole(UserRole reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            this.idd = idd;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -28,11 +30,11 @@ namespace SchoolManagementSystem
                 if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
 
-                    DBContext.GetContext().Query("role").Where("roomId", lblIDD.Text).Update(new
+                    DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
                     {
                         roletype = txtRole.Text,
                     });
-                    //reloadDatagrid.displayData();
+                    reloadDatagrid.displayData();
                     this.Close();
                 }
             }
@@ -42,7 +44,7 @@ namespace SchoolManagementSystem
                 {
                     try
                     {
-                        DBContext.GetContext().Query("role").Where("roletype", txtRole.Text).First();
+                        DBContext.GetContext().Query("role").Where("roletype", txtRole.Text).Where("status", "activate").First();
                         Validator.AlertDanger("Role type exist");
                     }
                     catch (Exception)
@@ -59,6 +61,16 @@ namespace SchoolManagementSystem
         }
 
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AddUserRole_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

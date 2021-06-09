@@ -13,10 +13,12 @@ namespace SchoolManagementSystem
     public partial class AddUser : Form
     {
         Users reloadDatagrid;
-        public AddUser(Users reloadDatagrid)
+        string idd;
+        public AddUser(Users reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            this.idd = idd;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -59,8 +61,6 @@ namespace SchoolManagementSystem
                         reloadDatagrid.displayData();
                         this.Close();
                     }
-                   
-
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace SchoolManagementSystem
 
         private void displayRole()
         {
-            var values = DBContext.GetContext().Query("role").Get();
+            var values = DBContext.GetContext().Query("role").Where("status", "activate").Get();
 
             foreach (var value in values)
             {

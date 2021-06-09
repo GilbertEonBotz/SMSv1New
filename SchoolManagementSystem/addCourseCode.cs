@@ -93,7 +93,12 @@ namespace SchoolManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(selCourseID.ToString());
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

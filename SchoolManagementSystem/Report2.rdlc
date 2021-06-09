@@ -470,7 +470,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.22444in</Top>
+        <Top>1.47444in</Top>
         <Left>0.04167in</Left>
         <Height>0.19792in</Height>
         <Width>1.33333in</Width>
@@ -507,7 +507,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.22444in</Top>
+        <Top>1.47444in</Top>
         <Left>2.04341in</Left>
         <Height>0.19792in</Height>
         <Width>1.39584in</Width>
@@ -523,7 +523,7 @@
         </Style>
       </Textbox>
       <Line Name="Line5">
-        <Top>3.84598in</Top>
+        <Top>4.34598in</Top>
         <Left>0.04167in</Left>
         <Height>0in</Height>
         <Width>7.39585in</Width>
@@ -552,7 +552,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>3.91543in</Top>
+        <Top>4.54043in</Top>
         <Left>2.35292in</Left>
         <Height>0.20833in</Height>
         <Width>2.15626in</Width>
@@ -762,7 +762,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>4.39807in</Top>
+        <Top>5.02307in</Top>
         <Left>2.35292in</Left>
         <Height>0.25in</Height>
         <Width>2.15626in</Width>
@@ -1522,7 +1522,7 @@
           </Line>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>1.47639in</Top>
+        <Top>1.72639in</Top>
         <Left>0.04167in</Left>
         <Height>2.22724in</Height>
         <Width>3.39932in</Width>
@@ -1543,7 +1543,7 @@
                 <Value>DOWNPAYMENT</Value>
                 <Style>
                   <FontFamily>courier New</FontFamily>
-                  <FontSize>11pt</FontSize>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1554,10 +1554,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.95709in</Top>
-        <Left>4.75869in</Left>
+        <Top>1.20708in</Top>
+        <Left>0.05904in</Left>
         <Height>0.19792in</Height>
-        <Width>1.2014in</Width>
+        <Width>1.31596in</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -1590,7 +1590,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.35293in</Top>
+        <Top>3.22793in</Top>
         <Left>4.75869in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>
@@ -1626,7 +1626,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.55085in</Top>
+        <Top>3.42585in</Top>
         <Left>4.75869in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>
@@ -1662,7 +1662,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.18279in</Top>
+        <Top>3.05779in</Top>
         <Left>4.75869in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>
@@ -1687,21 +1687,21 @@
                 <Value>=Sum(Fields!dp.Value, "DataSet5")</Value>
                 <Style>
                   <FontFamily>courier New</FontFamily>
-                  <FontSize>11pt</FontSize>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.95709in</Top>
-        <Left>6.05953in</Left>
+        <Top>1.20708in</Top>
+        <Left>2.04254in</Left>
         <Height>0.19792in</Height>
-        <Width>1.2014in</Width>
+        <Width>1.39845in</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
@@ -1734,7 +1734,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.17585in</Top>
+        <Top>3.05085in</Top>
         <Left>6.05953in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>
@@ -1770,7 +1770,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.35293in</Top>
+        <Top>3.22793in</Top>
         <Left>6.05953in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>
@@ -1806,7 +1806,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.55085in</Top>
+        <Top>3.42585in</Top>
         <Left>6.05953in</Left>
         <Height>0.19792in</Height>
         <Width>1.2014in</Width>

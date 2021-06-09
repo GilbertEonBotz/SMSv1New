@@ -30,6 +30,7 @@ namespace SchoolManagementSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@ namespace SchoolManagementSystem
             this.lblIDD = new System.Windows.Forms.Label();
             this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -68,6 +68,17 @@ namespace SchoolManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 54);
             this.panel1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(150, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "School Management System";
             // 
             // btnExit
             // 
@@ -351,17 +362,6 @@ namespace SchoolManagementSystem
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(150, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "School Management System";
-            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +398,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel2;
         public FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
@@ -415,5 +414,6 @@ namespace SchoolManagementSystem
         public System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cmbRole;
     }
 }

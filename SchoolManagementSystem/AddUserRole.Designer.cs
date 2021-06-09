@@ -44,6 +44,7 @@ namespace SchoolManagementSystem
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -153,6 +154,7 @@ namespace SchoolManagementSystem
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.lblIDD);
             this.panel7.Controls.Add(this.btnAdmissionForm);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -222,6 +224,7 @@ namespace SchoolManagementSystem
             this.iconButton1.TabIndex = 37;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel1
             // 
@@ -245,6 +248,15 @@ namespace SchoolManagementSystem
             this.label1.TabIndex = 6;
             this.label1.Text = "School Management System";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(295, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 22);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "label2";
+            // 
             // AddUserRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +273,7 @@ namespace SchoolManagementSystem
             this.Name = "AddUserRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddUserRole";
+            this.Load += new System.EventHandler(this.AddUserRole_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -288,5 +301,6 @@ namespace SchoolManagementSystem
         public FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
     }
 }

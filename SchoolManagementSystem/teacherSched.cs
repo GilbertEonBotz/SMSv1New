@@ -87,5 +87,10 @@ namespace SchoolManagementSystem
                 txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             }
         }
+
+        private void cmbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

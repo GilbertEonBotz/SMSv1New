@@ -15,6 +15,7 @@ namespace SchoolManagementSystem
     public partial class addTeacherScheduling : Form
     {
         teacherSched teachDgv;
+        schedule sched = new schedule();
         public addTeacherScheduling(teacherSched teachDg)
         {
             InitializeComponent();
@@ -25,16 +26,62 @@ namespace SchoolManagementSystem
 
         public void aa()
         {
-            var values = DBContext.GetContext().Query("schedule").Get();
 
-
-            foreach (var value in values)
+            try
             {
-                dgvSched.Rows.Add(value.schedID, value.subjectCode, value.roomID, value.CourseID, value.date, value.timeStart, value.timeEnd);
+
+
+                dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+                dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+                sched.viewsched();
+
+                dgvSched.Rows.Clear();
+                foreach (DataRow Drow in sched.dt.Rows)
+                {
+                    int num = dgvSched.Rows.Add();
+
+                    dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                    dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                    dgvSched.Rows[num].Cells[2].Value = Drow["SubjTitle"].ToString();
+                    dgvSched.Rows[num].Cells[3].Value = Drow["roomID"].ToString();
+                    dgvSched.Rows[num].Cells[4].Value = Drow["date"].ToString();
+                    dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["time start"].ToString());
+                    dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["time end"].ToString());
+                }
+
+                foreach (DataGridViewRow Myrow in dgvSched.Rows)
+                {            //Here 2 cell is target value and 1 cell is Volume
+                    if (Convert.ToString(Myrow.Cells[6].Value) == "available")// Or your condition 
+                    {
+                        // Myrow.DefaultCellStyle.BackColor = Color.IndianRed;
+                        Myrow.DefaultCellStyle.BackColor = Color.White;
+                    }
+
+                    else if (Convert.ToString(Myrow.Cells[6].Value) == "full")
+                    {
+                        Myrow.DefaultCellStyle.BackColor = Color.Orange;
+                    }
+                }
             }
+            catch (Exception)
+            {
+                Validator.AlertDanger("Conflict on Rooms data. Please contact MSID!");
+            }
+
+            //var values = DBContext.GetContext().Query("schedule")
+            //    .Join("rooms", "rooms.roomId", "schedule.roomID")
+            //    .Get();
+
+
+            //foreach (var value in values)
+            //{
+            //    dgvSched.Rows.Add(value.schedID, value.subjectCode, value.subjectTitle, value.description, value.date, value.timeStart, value.timeEnd);
+            //}
         }
         private void addTeacherScheduling_Load(object sender, EventArgs e)
         {
+            dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
             aa();
         }
 

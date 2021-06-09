@@ -30,8 +30,10 @@ namespace SchoolManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
             teacherScheds sched = new teacherScheds();
-           // dgvSched.Rows.Clear();
+            // dgvSched.Rows.Clear();
 
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
 
@@ -40,10 +42,8 @@ namespace SchoolManagementSystem
 
             for (int i = 1; i < words.Length; i++)
             {
-                // dataGridView1.Rows.Add(words[i],aa,name);
-                
                 sched.subjectcode = (words[i].ToString());
-                  MessageBox.Show(words[i]);
+                MessageBox.Show(words[i]);
                 dgvSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewteachsubj();
@@ -62,7 +62,7 @@ namespace SchoolManagementSystem
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvSched_MouseDoubleClick(object sender, MouseEventArgs e)

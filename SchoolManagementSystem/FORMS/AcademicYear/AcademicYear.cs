@@ -21,7 +21,7 @@ namespace SchoolManagementSystem
         {
             displayData();
 
-           
+
         }
         public void displayData()
         {
@@ -65,25 +65,32 @@ namespace SchoolManagementSystem
 
             if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.ToString() == "Activate")
             {
-                DBContext.GetContext().Query("academicyear").Update(new
+                if (Validator.actYear())
                 {
-                    status = "Activate"
-                });
+                    DBContext.GetContext().Query("academicyear").Update(new
+                    {
+                        status = "Activate"
+                    });
 
-                int id = Convert.ToInt32(dgvAcademicYear.SelectedRows[0].Cells[0].Value);
-                DBContext.GetContext().Query("academicyear").Where("id", id).Update(new
-                {
-                    status = "Deactivate"
-                });
-                displayData();
+                    int id = Convert.ToInt32(dgvAcademicYear.SelectedRows[0].Cells[0].Value);
+                    DBContext.GetContext().Query("academicyear").Where("id", id).Update(new
+                    {
+                        status = "Deactivate"
+                    });
+                    displayData();
+                }
             }
             else if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.ToString() == "Deactivate")
             {
-                DBContext.GetContext().Query("academicyear").Update(new
+                if (Validator.deactYear())
                 {
-                    status = "Activate"
-                });
-                displayData();
+                    DBContext.GetContext().Query("academicyear").Update(new
+                    {
+                        status = "Activate"
+                    });
+                    displayData();
+                }
+
             }
         }
     }

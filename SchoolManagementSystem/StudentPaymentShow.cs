@@ -135,7 +135,7 @@ namespace SchoolManagementSystem
 
                 //MessageBox.Show(finalss.ToString());
 
-                //
+
                 for (double i = 0; i <= finalss; i++)
                 {
                     if (Convert.ToDouble(led.downpayment) <= finalss)

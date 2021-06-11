@@ -27,6 +27,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         double amountmid = 0;
         double amountsemi = 0;
         double amountfinal = 0;
+        double amountDown = 0;
         public Payment(finalDashboard display)
         {
             InitializeComponent();
@@ -201,12 +202,24 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
             for (int i = 0; i < Convert.ToDouble(textBox15.Text); i++)
             {
-            
-                if (comboBox2.Text == "PRELIM")
+                if (comboBox2.Text =="DOWNPAYMENT")
                 {
-                    if (Convert.ToDouble(txt1.Text) > Convert.ToDouble(lblpre.Text))
+                    if (Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text))
                     {
-                        amountprelim = Convert.ToDouble(txt1.Text) - Convert.ToDouble(lblpre.Text);
+                        amountDown = Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text);
+                        lblpaymentfor.Text = amountDown.ToString();
+
+                    }
+                    else
+                    {
+                        lblpaymentfor.Text = 0.ToString();
+                    }
+                }
+                else if (comboBox2.Text == "PRELIM")
+                {
+                    if (Convert.ToDouble(txt1.Text) +Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text)+Convert.ToDouble(lblpre.Text))
+                    {
+                        amountprelim = Convert.ToDouble(txt1.Text) +(Convert.ToDouble(txt0.Text) -Convert.ToDouble(lbldownpayment.Text)+ Convert.ToDouble(lblpre.Text));
                         lblpaymentfor.Text = amountprelim.ToString();
         
                     }
@@ -217,12 +230,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
             else if (comboBox2.Text == "MIDTERM")
                 {
-                    if (Convert.ToDouble(txt1.Text)+ Convert.ToDouble(txt2.Text)  > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)))
+                    if (Convert.ToDouble(txt1.Text)+ Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)))
                     {
                         //amountmid = amount -Convert.ToDouble(lblmid.Text);
                      
                         //amount = amountmid;
-                        amountmid = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text));
+                        amountmid = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + (Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)));
                 
                         lblpaymentfor.Text = amountmid.ToString();
                     }
@@ -235,12 +248,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                 else if (comboBox2.Text == "SEMI-FINAL")
                 {
-                    if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) ))
+                    if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) ))
                     {
                         //amountmid = amount -Convert.ToDouble(lblmid.Text);
 
                         //amount = amountmid;
-                        amountsemi = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text));
+                        amountsemi = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + (Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text)));
                      
 
                         lblpaymentfor.Text = amountsemi.ToString();
@@ -253,12 +266,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
                 else if (comboBox2.Text == "FINAL")
                 {
-                    if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) +Convert.ToDouble(txt4.Text) > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text)+ Convert.ToDouble(lblfin.Text)))
+                    if (Convert.ToDouble(txt0.Text) + Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text) > (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lbldownpayment.Text) +Convert.ToDouble(lblfin.Text)))
                     {
-                        //amountmid = amount -Convert.ToDouble(lblmid.Text);
+                     
 
-                        //amount = amountmid;
-                        amountfinal = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text) - (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text));
+                        amountfinal =Convert.ToDouble(txt0.Text)+ Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text) -Convert.ToDouble(lbldownpayment.Text)+ (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text));
 
 
                         lblpaymentfor.Text = amountfinal.ToString();

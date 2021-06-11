@@ -200,8 +200,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
             
 
-            for (int i = 0; i < Convert.ToDouble(textBox15.Text); i++)
-            {
                 if (comboBox2.Text =="DOWNPAYMENT")
                 {
                     if (Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text))
@@ -217,9 +215,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
                 else if (comboBox2.Text == "PRELIM")
                 {
-                    if (Convert.ToDouble(txt1.Text) +Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text)+Convert.ToDouble(lblpre.Text))
+                    if (Convert.ToDouble(txt0.Text)+Convert.ToDouble(txt1.Text) > Convert.ToDouble(lbldownpayment.Text)+Convert.ToDouble(lblpre.Text))
                     {
-                        amountprelim = Convert.ToDouble(txt1.Text) +(Convert.ToDouble(txt0.Text) -Convert.ToDouble(lbldownpayment.Text)+ Convert.ToDouble(lblpre.Text));
+                        amountprelim = (Convert.ToDouble(txt1.Text) +(Convert.ToDouble(txt0.Text)) -(Convert.ToDouble(lbldownpayment.Text)+ Convert.ToDouble(lblpre.Text)));
                         lblpaymentfor.Text = amountprelim.ToString();
         
                     }
@@ -235,7 +233,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         //amountmid = amount -Convert.ToDouble(lblmid.Text);
                      
                         //amount = amountmid;
-                        amountmid = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + (Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)));
+                        amountmid = (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text))));
                 
                         lblpaymentfor.Text = amountmid.ToString();
                     }
@@ -253,7 +251,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         //amountmid = amount -Convert.ToDouble(lblmid.Text);
 
                         //amount = amountmid;
-                        amountsemi = Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + (Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text)));
+                        amountsemi = (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text))));
                      
 
                         lblpaymentfor.Text = amountsemi.ToString();
@@ -270,7 +268,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                     {
                      
 
-                        amountfinal =Convert.ToDouble(txt0.Text)+ Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text) -Convert.ToDouble(lbldownpayment.Text)+ (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text));
+                        amountfinal =(Convert.ToDouble(txt0.Text)+ Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text)) -(Convert.ToDouble(lbldownpayment.Text)+ (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text)));
 
 
                         lblpaymentfor.Text = amountfinal.ToString();
@@ -283,8 +281,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
 
 
-            }
             
+           
           
 
         }

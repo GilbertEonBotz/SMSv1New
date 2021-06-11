@@ -20,14 +20,22 @@ namespace SchoolManagementSystem
 
         private void viewTeacherSched_Load(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("teachers").Get();
+            displayTeachSched();
+        }
+
+
+        public void displayTeachSched()
+        {
+            var values = DBContext.GetContext().Query("teachers")
+                .Join("teachersched", "teachersched.teacherId", "teachers.teacherId")
+                .WhereNotNull("teachersched.schedId")
+                .Get();
 
             foreach (var value in values)
             {
                 comboBox1.Items.Add(value.teacherId);
             }
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

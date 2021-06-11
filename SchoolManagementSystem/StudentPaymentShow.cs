@@ -71,7 +71,8 @@ namespace SchoolManagementSystem
             spd.viewPayment();
             spd.viewPaymentDetailed();
             spd.studentDOwn();
-
+            myForm.dgv.Rows.Add(spd.studentdownpayment,spd.remarksFordown,spd.dateForDown);
+        
 
             double finalss = Convert.ToDouble(spd.totalpaid) + 0;
 

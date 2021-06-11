@@ -95,7 +95,7 @@ namespace SchoolManagementSystem
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -105,12 +105,12 @@ namespace SchoolManagementSystem
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvUsersRole);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1096, 502);
+            this.tabPage1.Size = new System.Drawing.Size(1096, 501);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "User\'s List";
+            this.tabPage1.Text = "Users List";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dgvUsersRole
@@ -119,12 +119,14 @@ namespace SchoolManagementSystem
             this.dgvUsersRole.AllowUserToResizeColumns = false;
             this.dgvUsersRole.AllowUserToResizeRows = false;
             this.dgvUsersRole.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUsersRole.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvUsersRole.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsersRole.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsersRole.ColumnHeadersHeight = 45;
@@ -134,22 +136,23 @@ namespace SchoolManagementSystem
             this.Column1,
             this.delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUsersRole.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsersRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsersRole.EnableHeadersVisualStyles = false;
+            this.dgvUsersRole.GridColor = System.Drawing.Color.White;
             this.dgvUsersRole.Location = new System.Drawing.Point(3, 3);
             this.dgvUsersRole.Name = "dgvUsersRole";
             this.dgvUsersRole.ReadOnly = true;
             this.dgvUsersRole.RowHeadersVisible = false;
             this.dgvUsersRole.RowTemplate.Height = 25;
             this.dgvUsersRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsersRole.Size = new System.Drawing.Size(1090, 496);
+            this.dgvUsersRole.Size = new System.Drawing.Size(1090, 495);
             this.dgvUsersRole.TabIndex = 0;
             this.dgvUsersRole.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsersRole_CellContentClick);
             this.dgvUsersRole.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsersRole_CellMouseDoubleClick);
@@ -163,7 +166,7 @@ namespace SchoolManagementSystem
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Role";
+            this.Column1.HeaderText = "ROLE";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 

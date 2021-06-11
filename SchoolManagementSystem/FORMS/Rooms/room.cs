@@ -43,15 +43,31 @@ namespace SchoolManagementSystem
 
         private void dgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var myfrm = new AddRoom(this);
-            int id = Convert.ToInt32(dgvRooms.Rows[dgvRooms.CurrentRow.Index].Cells[0].Value);
-            var rooms = DBContext.GetContext().Query("rooms").Where("roomId", id).First();
+            
+        }
 
-            myfrm.lblIDD.Text = id.ToString();
-            myfrm.txtDescription.Text = rooms.description;
-            myfrm.txtName.Text = rooms.name;
-            myfrm.btnAddRoom.Text = "Update";
-            myfrm.ShowDialog();
+        private void dgvRooms_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+            e.Handled = true;
+        }
+
+        private void dgvRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvRooms.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("edit"))
+            {
+                var myfrm = new AddRoom(this);
+                int id = Convert.ToInt32(dgvRooms.Rows[dgvRooms.CurrentRow.Index].Cells[0].Value);
+                var rooms = DBContext.GetContext().Query("rooms").Where("roomId", id).First();
+
+                myfrm.lblIDD.Text = id.ToString();
+                myfrm.txtDescription.Text = rooms.description;
+                myfrm.txtName.Text = rooms.name;
+                myfrm.btnAddRoom.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
     }
 }

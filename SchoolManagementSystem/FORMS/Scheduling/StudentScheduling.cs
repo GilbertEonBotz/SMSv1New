@@ -119,6 +119,8 @@ namespace SchoolManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            TextBox[] inputs = { txtName, txtCourse, txtGender };
+            Validator.ClearTextField(inputs);
             //var values = DBContext.GetContext().Query("student").Where("studentId", comboBox1.Text).Get();
 
             //foreach (var value in values)
@@ -706,6 +708,12 @@ namespace SchoolManagementSystem
                 btnPrint.Enabled = true;
                 btnPreview.Enabled = true;
             }
+        }
+
+        private void cmbStudentNo_TextChanged(object sender, EventArgs e)
+        {
+            TextBox[] inputs = { txtName, txtCourse, txtGender };
+            Validator.ClearTextField(inputs);
         }
     }
 

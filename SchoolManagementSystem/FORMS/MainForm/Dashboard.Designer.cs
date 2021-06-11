@@ -115,9 +115,9 @@ namespace SchoolManagementSystem
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 23);
+            this.label2.Size = new System.Drawing.Size(79, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "student";
+            this.label2.Text = "Student";
             // 
             // lblStudent
             // 
@@ -160,9 +160,9 @@ namespace SchoolManagementSystem
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(21, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 23);
+            this.label5.Size = new System.Drawing.Size(84, 23);
             this.label5.TabIndex = 4;
-            this.label5.Text = "teacher";
+            this.label5.Text = "Teacher";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblTeacher
@@ -207,9 +207,9 @@ namespace SchoolManagementSystem
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(25, 88);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 23);
+            this.label8.Size = new System.Drawing.Size(90, 23);
             this.label8.TabIndex = 4;
-            this.label8.Text = "librarian";
+            this.label8.Text = "Librarian";
             // 
             // lblLibrarian
             // 
@@ -251,9 +251,9 @@ namespace SchoolManagementSystem
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(18, 88);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(117, 23);
+            this.label11.Size = new System.Drawing.Size(118, 23);
             this.label11.TabIndex = 4;
-            this.label11.Text = "accountant";
+            this.label11.Text = "Accountant";
             // 
             // lblAccountant
             // 

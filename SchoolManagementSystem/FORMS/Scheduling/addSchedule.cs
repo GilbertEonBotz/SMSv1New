@@ -22,9 +22,11 @@ namespace SchoolManagementSystem
         string saturday;
         schedule scheds = new schedule();
         int courseIdd;
-        public addSchedule()
+        Sched reloadDatagrid;
+        public addSchedule(Sched reloadDatagrid)
         {
             InitializeComponent();
+            this.reloadDatagrid = reloadDatagrid;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace SchoolManagementSystem
             dateTimePicker2.Value = dt2;
 
 
-            displayCourseCode();
+            displayCourse();
             scheds.Schedule();
 
 
@@ -54,13 +56,13 @@ namespace SchoolManagementSystem
 
         }
 
-        private void displayCourseCode()
+        private void displayCourse()
         {
-            var values = DBContext.GetContext().Query("coursecode").Get();
+            var values = DBContext.GetContext().Query("course").Get();
 
             foreach (var value in values)
             {
-                cbCourse.Items.Add(value.coursecode);
+                cmbCourse.Items.Add(value.description);
             }
         }
 
@@ -79,56 +81,75 @@ namespace SchoolManagementSystem
         private CheckBox[] checkboxcontrol;
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            checkboxcontrol = new CheckBox[] { cbmon, cbtues, cbwed, cbthu, cbfri, cbsat };
-
-            foreach (CheckBox chk in checkboxcontrol)
+            try
             {
+                checkboxcontrol = new CheckBox[] { cbmon, cbtues, cbwed, cbthu, cbfri, cbsat };
 
-                if (chk.Checked)
+                foreach (CheckBox chk in checkboxcontrol)
                 {
-                    dateequal += chk.Text;
+
+                    if (chk.Checked)
+                    {
+                        dateequal += chk.Text;
+                    }
+                }
+
+                dateequal = monday + tuesday + wednesday + thursday + friday + saturday;
+
+                dtpTimstart = dateTimePicker1.Value.ToString("HH:mm");
+                dtpTimeEnd = dateTimePicker2.Value.ToString("HH:mm");
+
+                scheds.timeStart = dtpTimstart;
+                scheds.timeEnd = dtpTimeEnd;
+                scheds.subjcode = cbSubjCode.Text;
+                scheds.subjTitle = txtDescrip.Text;
+                scheds.date = dateequal;
+
+                scheds.viewCourseID();
+                scheds.Viewdescription();
+                scheds.viewroomNum();
+                scheds.times();
+
+                if (dateTimePicker1.Value.TimeOfDay > dateTimePicker2.Value.TimeOfDay)
+                {
+                    Validator.AlertDanger("Schedule time-start must not be advance to schedule time-end!");
+                }
+                else if (string.IsNullOrEmpty(cmbCourse.Text))
+                {
+                    Validator.AlertDanger("Please select Course!");
+                }
+                else if (string.IsNullOrEmpty(cbCourseCode.Text))
+                {
+                    Validator.AlertDanger("Please select Course code!");
+                }
+                else if (string.IsNullOrEmpty(cbSubjCode.Text))
+                {
+                    Validator.AlertDanger("Please select Subject code!");
+                }
+                else if (dateTimePicker1.Value.TimeOfDay.Equals(dateTimePicker2.Value.TimeOfDay))
+                {
+                    Validator.AlertDanger("Schedule time-start must not be equal to schedule time-end!");
+                }
+                else if (scheds.timeEnd == dtpTimstart)
+                {
+                    Validator.AlertDanger("Schedule time-start must not be equal to schedule time-end!");
+                }
+                else if (scheds.timediff == null || scheds.timediff == "")
+                {
+                    save();
+                    Validator.AlertSuccess("Schedule successfully created");
+                    reloadDatagrid.displayData();
+                    this.Close();
+                }
+                else
+                {
+                    Validator.AlertDanger("Schedule existed");
                 }
             }
-
-            dateequal = monday + tuesday + wednesday + thursday + friday + saturday;
-
-            dtpTimstart = dateTimePicker1.Value.ToString("HH:mm");
-            dtpTimeEnd = dateTimePicker2.Value.ToString("HH:mm");
-
-            scheds.timeStart = dtpTimstart;
-            scheds.timeEnd = dtpTimeEnd;
-            scheds.subjcode = cbSubjCode.Text;
-            scheds.subjTitle = txtDescrip.Text;
-            scheds.date = dateequal;
-
-            scheds.viewCourseID();
-            scheds.Viewdescription();
-            scheds.viewroomNum();
-            scheds.times();
-
-
-            if (scheds.timediff == null || scheds.timediff == "")
+            catch (Exception)
             {
-                save();
-                Validator.AlertSuccess(" saved");
-
+                Validator.AlertDanger("Please fill up the following fields");
             }
-            else if (scheds.timeEnd == dtpTimstart)
-            {
-                // save();
-                MessageBox.Show("aa");
-            }
-            else
-            {
-                Validator.AlertDanger("Schedule existed");
-            }
-            //}
-            //catch (Exception)
-            //{
-            //    Validator.AlertDanger("Please fill up the following fields");
-            //}
 
             scheds.timediff = "";
 
@@ -157,8 +178,10 @@ namespace SchoolManagementSystem
 
         private void cbCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbSubjCode.Text = "";
+            txtDescrip.Text = "";
 
-            var values = DBContext.GetContext().Query("subjects").Where("courseCode", cbCourse.Text).Get();
+            var values = DBContext.GetContext().Query("subjects").Where("courseCode", cbCourseCode.Text).Get();
             cbSubjCode.Text = "";
             cbSubjCode.Items.Clear();
             foreach (var value in values)
@@ -168,7 +191,7 @@ namespace SchoolManagementSystem
 
             }
 
-            var idd = DBContext.GetContext().Query("coursecode").Where("coursecode", cbCourse.Text).First();
+            var idd = DBContext.GetContext().Query("coursecode").Where("coursecode", cbCourseCode.Text).First();
             courseIdd = idd.courseId;
         }
 
@@ -274,6 +297,37 @@ namespace SchoolManagementSystem
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        int idd;
+        private void cmbCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbCourseCode.Text = "";
+            cbSubjCode.Text = "";
+            txtDescrip.Text = "";
+           
+            var getID = DBContext.GetContext().Query("course").Where("description", cmbCourse.Text).First();
+
+            idd = getID.courseId;
+
+            var values = DBContext.GetContext().Query("coursecode")
+                .Join("course", "course.courseId", "coursecode.courseId")
+                .Where("coursecode.courseId", idd.ToString())
+                .Get();
+            cbCourseCode.Items.Clear();
+            foreach (var value in values)
+            {
+                cbCourseCode.Items.Add(value.coursecode);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbCourse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

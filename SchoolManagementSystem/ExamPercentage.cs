@@ -66,34 +66,51 @@ namespace SchoolManagementSystem
         {
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
 
-            if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
+            if (colName.Equals("status"))
             {
-                DBContext.GetContext().Query("percentage").Update(new
+                if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
                 {
-                    status = "Activate"
-                });
+                    if (Validator.actYear())
+                    {
+                        DBContext.GetContext().Query("percentage").Update(new
+                        {
+                            status = "Activate"
+                        });
 
-                int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
-                DBContext.GetContext().Query("percentage").Where("id", id).Update(new
+                        int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
+                        DBContext.GetContext().Query("percentage").Where("id", id).Update(new
+                        {
+                            status = "Deactivate"
+                        });
+                        displayData();
+                    }
+
+                }
+                else if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
                 {
-                    status = "Deactivate"
-                });
-                displayData();
-            }
-            else if(dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
-            {
-                DBContext.GetContext().Query("percentage").Update(new
-                {
-                    status = "Activate"
-                });
-                displayData();
+                    if (Validator.deactYear())
+                    {
+                        DBContext.GetContext().Query("percentage").Update(new
+                        {
+                            status = "Activate"
+                        });
+                        displayData();
+                    }
+
+                }
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+
+        }
+
+        private void dgvPercentage_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+            e.Handled = true;
         }
     }
 }

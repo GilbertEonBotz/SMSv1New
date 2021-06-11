@@ -138,7 +138,7 @@ namespace SchoolManagementSystem
             this.btnExamPercentage.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnExamPercentage.FlatAppearance.BorderSize = 0;
             this.btnExamPercentage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamPercentage.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnExamPercentage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamPercentage.ForeColor = System.Drawing.Color.LightGray;
             this.btnExamPercentage.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnExamPercentage.IconColor = System.Drawing.Color.Gainsboro;
@@ -163,7 +163,7 @@ namespace SchoolManagementSystem
             this.btnClassrooms.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClassrooms.FlatAppearance.BorderSize = 0;
             this.btnClassrooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClassrooms.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnClassrooms.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClassrooms.ForeColor = System.Drawing.Color.LightGray;
             this.btnClassrooms.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnClassrooms.IconColor = System.Drawing.Color.Gainsboro;
@@ -175,7 +175,7 @@ namespace SchoolManagementSystem
             this.btnClassrooms.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
             this.btnClassrooms.Size = new System.Drawing.Size(233, 39);
             this.btnClassrooms.TabIndex = 37;
-            this.btnClassrooms.Text = "Classrooms";
+            this.btnClassrooms.Text = "Room Management";
             this.btnClassrooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClassrooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClassrooms.UseVisualStyleBackColor = false;
@@ -188,7 +188,7 @@ namespace SchoolManagementSystem
             this.btnCourseCode.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCourseCode.FlatAppearance.BorderSize = 0;
             this.btnCourseCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourseCode.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnCourseCode.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourseCode.ForeColor = System.Drawing.Color.LightGray;
             this.btnCourseCode.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnCourseCode.IconColor = System.Drawing.Color.Gainsboro;
@@ -213,7 +213,7 @@ namespace SchoolManagementSystem
             this.btnCourse.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCourse.FlatAppearance.BorderSize = 0;
             this.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourse.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnCourse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourse.ForeColor = System.Drawing.Color.LightGray;
             this.btnCourse.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnCourse.IconColor = System.Drawing.Color.Gainsboro;
@@ -238,7 +238,7 @@ namespace SchoolManagementSystem
             this.btnDepartment.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDepartment.FlatAppearance.BorderSize = 0;
             this.btnDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepartment.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnDepartment.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepartment.ForeColor = System.Drawing.Color.LightGray;
             this.btnDepartment.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnDepartment.IconColor = System.Drawing.Color.Gainsboro;
@@ -263,7 +263,7 @@ namespace SchoolManagementSystem
             this.btnTerm.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTerm.FlatAppearance.BorderSize = 0;
             this.btnTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerm.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnTerm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerm.ForeColor = System.Drawing.Color.LightGray;
             this.btnTerm.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnTerm.IconColor = System.Drawing.Color.Gainsboro;
@@ -323,7 +323,7 @@ namespace SchoolManagementSystem
             this.btnAddUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddUsers.FlatAppearance.BorderSize = 0;
             this.btnAddUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsers.ForeColor = System.Drawing.Color.LightGray;
             this.btnAddUsers.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnAddUsers.IconColor = System.Drawing.Color.Gainsboro;
@@ -335,7 +335,7 @@ namespace SchoolManagementSystem
             this.btnAddUsers.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
             this.btnAddUsers.Size = new System.Drawing.Size(233, 39);
             this.btnAddUsers.TabIndex = 34;
-            this.btnAddUsers.Text = "Add User\'s";
+            this.btnAddUsers.Text = "Add Users";
             this.btnAddUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddUsers.UseVisualStyleBackColor = false;
@@ -348,7 +348,7 @@ namespace SchoolManagementSystem
             this.btnManageRole.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageRole.FlatAppearance.BorderSize = 0;
             this.btnManageRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageRole.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnManageRole.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageRole.ForeColor = System.Drawing.Color.LightGray;
             this.btnManageRole.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnManageRole.IconColor = System.Drawing.Color.Gainsboro;
@@ -384,7 +384,7 @@ namespace SchoolManagementSystem
             this.btnMngUser.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnMngUser.Size = new System.Drawing.Size(233, 39);
             this.btnMngUser.TabIndex = 63;
-            this.btnMngUser.Text = "Manage User             ▸";
+            this.btnMngUser.Text = "Manage User              ▸";
             this.btnMngUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMngUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMngUser.UseVisualStyleBackColor = true;
@@ -408,7 +408,7 @@ namespace SchoolManagementSystem
             this.btnHandledStudents.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHandledStudents.FlatAppearance.BorderSize = 0;
             this.btnHandledStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHandledStudents.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnHandledStudents.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHandledStudents.ForeColor = System.Drawing.Color.LightGray;
             this.btnHandledStudents.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnHandledStudents.IconColor = System.Drawing.Color.Gainsboro;
@@ -433,7 +433,7 @@ namespace SchoolManagementSystem
             this.btnSubjectLoads.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubjectLoads.FlatAppearance.BorderSize = 0;
             this.btnSubjectLoads.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubjectLoads.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSubjectLoads.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjectLoads.ForeColor = System.Drawing.Color.LightGray;
             this.btnSubjectLoads.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnSubjectLoads.IconColor = System.Drawing.Color.Gainsboro;
@@ -469,7 +469,7 @@ namespace SchoolManagementSystem
             this.btnTeacherLoads.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnTeacherLoads.Size = new System.Drawing.Size(233, 39);
             this.btnTeacherLoads.TabIndex = 61;
-            this.btnTeacherLoads.Text = "Teacher Loads           ▸";
+            this.btnTeacherLoads.Text = "Teacher Loads            ▸";
             this.btnTeacherLoads.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTeacherLoads.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTeacherLoads.UseVisualStyleBackColor = true;
@@ -493,7 +493,7 @@ namespace SchoolManagementSystem
             this.btnClassScgedule.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClassScgedule.FlatAppearance.BorderSize = 0;
             this.btnClassScgedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClassScgedule.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnClassScgedule.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClassScgedule.ForeColor = System.Drawing.Color.LightGray;
             this.btnClassScgedule.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnClassScgedule.IconColor = System.Drawing.Color.Gainsboro;
@@ -518,7 +518,7 @@ namespace SchoolManagementSystem
             this.btnSubjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubjects.FlatAppearance.BorderSize = 0;
             this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubjects.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSubjects.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.Color.LightGray;
             this.btnSubjects.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnSubjects.IconColor = System.Drawing.Color.Gainsboro;
@@ -554,7 +554,7 @@ namespace SchoolManagementSystem
             this.btnAcademicMngmt.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnAcademicMngmt.Size = new System.Drawing.Size(233, 39);
             this.btnAcademicMngmt.TabIndex = 59;
-            this.btnAcademicMngmt.Text = "Academic Settings   ▸";
+            this.btnAcademicMngmt.Text = "Academic Settings    ▸";
             this.btnAcademicMngmt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcademicMngmt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAcademicMngmt.UseVisualStyleBackColor = true;
@@ -604,7 +604,7 @@ namespace SchoolManagementSystem
             this.btnTuitionStructure.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTuitionStructure.FlatAppearance.BorderSize = 0;
             this.btnTuitionStructure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTuitionStructure.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnTuitionStructure.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTuitionStructure.ForeColor = System.Drawing.Color.LightGray;
             this.btnTuitionStructure.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnTuitionStructure.IconColor = System.Drawing.Color.Gainsboro;
@@ -629,7 +629,7 @@ namespace SchoolManagementSystem
             this.btnTuitionCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTuitionCategory.FlatAppearance.BorderSize = 0;
             this.btnTuitionCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTuitionCategory.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnTuitionCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTuitionCategory.ForeColor = System.Drawing.Color.LightGray;
             this.btnTuitionCategory.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnTuitionCategory.IconColor = System.Drawing.Color.Gainsboro;
@@ -654,7 +654,7 @@ namespace SchoolManagementSystem
             this.btnFeeStructure.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFeeStructure.FlatAppearance.BorderSize = 0;
             this.btnFeeStructure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeStructure.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnFeeStructure.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeeStructure.ForeColor = System.Drawing.Color.LightGray;
             this.btnFeeStructure.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnFeeStructure.IconColor = System.Drawing.Color.Gainsboro;
@@ -679,7 +679,7 @@ namespace SchoolManagementSystem
             this.btnFeeCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFeeCategory.FlatAppearance.BorderSize = 0;
             this.btnFeeCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeCategory.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnFeeCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeeCategory.ForeColor = System.Drawing.Color.LightGray;
             this.btnFeeCategory.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnFeeCategory.IconColor = System.Drawing.Color.Gainsboro;
@@ -715,7 +715,7 @@ namespace SchoolManagementSystem
             this.btnFeesManagement.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnFeesManagement.Size = new System.Drawing.Size(233, 39);
             this.btnFeesManagement.TabIndex = 55;
-            this.btnFeesManagement.Text = "Fees Management ▸";
+            this.btnFeesManagement.Text = "Fees Management  ▸";
             this.btnFeesManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFeesManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFeesManagement.UseVisualStyleBackColor = true;
@@ -740,7 +740,7 @@ namespace SchoolManagementSystem
             this.btnLibrarian.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLibrarian.FlatAppearance.BorderSize = 0;
             this.btnLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibrarian.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnLibrarian.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibrarian.ForeColor = System.Drawing.Color.LightGray;
             this.btnLibrarian.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnLibrarian.IconColor = System.Drawing.Color.Gainsboro;
@@ -765,7 +765,7 @@ namespace SchoolManagementSystem
             this.btnAccountant.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccountant.FlatAppearance.BorderSize = 0;
             this.btnAccountant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountant.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnAccountant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountant.ForeColor = System.Drawing.Color.LightGray;
             this.btnAccountant.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnAccountant.IconColor = System.Drawing.Color.Gainsboro;
@@ -790,7 +790,7 @@ namespace SchoolManagementSystem
             this.btnTeacher.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTeacher.FlatAppearance.BorderSize = 0;
             this.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacher.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnTeacher.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTeacher.ForeColor = System.Drawing.Color.LightGray;
             this.btnTeacher.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnTeacher.IconColor = System.Drawing.Color.Gainsboro;
@@ -826,7 +826,7 @@ namespace SchoolManagementSystem
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnEmployees.Size = new System.Drawing.Size(233, 39);
             this.btnEmployees.TabIndex = 53;
-            this.btnEmployees.Text = "Employees                ▸";
+            this.btnEmployees.Text = "Employees                 ▸";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmployees.UseVisualStyleBackColor = true;
@@ -849,7 +849,7 @@ namespace SchoolManagementSystem
             this.btnAdmitStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAdmitStudent.FlatAppearance.BorderSize = 0;
             this.btnAdmitStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmitStudent.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnAdmitStudent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmitStudent.ForeColor = System.Drawing.Color.LightGray;
             this.btnAdmitStudent.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnAdmitStudent.IconColor = System.Drawing.Color.Gainsboro;
@@ -908,7 +908,7 @@ namespace SchoolManagementSystem
             this.btnStudentSchedule.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStudentSchedule.FlatAppearance.BorderSize = 0;
             this.btnStudentSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentSchedule.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnStudentSchedule.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudentSchedule.ForeColor = System.Drawing.Color.LightGray;
             this.btnStudentSchedule.IconChar = FontAwesome.Sharp.IconChar.DotCircle;
             this.btnStudentSchedule.IconColor = System.Drawing.Color.Gainsboro;
@@ -968,7 +968,7 @@ namespace SchoolManagementSystem
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnDashboard.Size = new System.Drawing.Size(233, 39);
             this.btnDashboard.TabIndex = 29;
-            this.btnDashboard.Text = "dashboard";
+            this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = true;

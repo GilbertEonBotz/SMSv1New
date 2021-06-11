@@ -26,12 +26,14 @@ namespace SchoolManagementSystem
 
         public void displayData()
         {
-            var values = DBContext.GetContext().Query("coursecode").Get();
+            var values = DBContext.GetContext().Query("coursecode")
+                .Join("course", "course.courseId", "coursecode.courseId")
+                .Get();
 
             dgvCourseCode.Rows.Clear();
             foreach(var value in values)
             {
-                dgvCourseCode.Rows.Add(value.courseId, value.courseId, value.coursecode, value.remarks);
+                dgvCourseCode.Rows.Add(value.courseId, value.coursecode, value.description,  value.remarks);
             }
         }
 
@@ -39,6 +41,12 @@ namespace SchoolManagementSystem
         {
             var myfrm = new addCourseCode(this);
             myfrm.ShowDialog();
+        }
+
+        private void dgvCourseCode_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+            e.Handled = true;
         }
     }
 }

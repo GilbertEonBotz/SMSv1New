@@ -399,6 +399,7 @@ namespace SchoolManagementSystem
             this.cmbStudentNo.Size = new System.Drawing.Size(220, 30);
             this.cmbStudentNo.TabIndex = 28;
             this.cmbStudentNo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbStudentNo.TextChanged += new System.EventHandler(this.cmbStudentNo_TextChanged);
             // 
             // btnSearchStudent
             // 

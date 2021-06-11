@@ -23,7 +23,7 @@ namespace SchoolManagementSystem
 
         private void btnAddSubjects_Click(object sender, EventArgs e)
         {
-            TextBox[] inputs = { txtSubjectCode, txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits };
+            TextBox[] inputs = { txtSubjectCode, txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits, txtLecPrice, txtLabprice };
 
             if (btnAddSubjects.Text.Equals("Update"))
             {
@@ -55,6 +55,18 @@ namespace SchoolManagementSystem
                     if (string.IsNullOrEmpty(txtTotalUnits.Text) || txtTotalUnits.Text.Equals("0"))
                     {
                         Validator.AlertDanger("Total unit must not be empty");
+                    }
+                    else if(lblLectotal.Text.Equals("0") && lblabTotal.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Please enter an amount for lecture and lab!");
+                    }
+                    else if (string.IsNullOrEmpty(cmbCourse.Text))
+                    {
+                        Validator.AlertDanger("Please select course!");
+                    }
+                    else if (string.IsNullOrEmpty(cmbCourseCode.Text))
+                    {
+                        Validator.AlertDanger("Please select course code!");
                     }
                     else
                     {
@@ -201,13 +213,14 @@ namespace SchoolManagementSystem
             displayCourse();
         }
 
+
         public void displayCourse()
         {
-            var values = DBContext.GetContext().Query("coursecode").Get();
+            var values = DBContext.GetContext().Query("course").Get();
 
             foreach (var value in values)
             {
-                cmbCourseCode.Items.Add(value.coursecode);
+                cmbCourse.Items.Add(value.description);
             }
         }
         private void txtLab_KeyPress(object sender, KeyPressEventArgs e)
@@ -227,7 +240,7 @@ namespace SchoolManagementSystem
 
         private void txtLecPrice_TextChanged(object sender, EventArgs e)
         {
-            if (txtLec.Text == "")
+            if (string.IsNullOrEmpty(txtLec.Text))
             {
 
             }
@@ -318,7 +331,9 @@ namespace SchoolManagementSystem
         private void cmbCourseCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var values = DBContext.GetContext().Query("subjects").Join("coursecode", "coursecode.coursecode", "subjects.courseCode").Where("subjects.courseCode", cmbCourseCode.Text).Get();
+            var values = DBContext.GetContext().Query("subjects")
+                .Join("coursecode", "coursecode.coursecode", "subjects.courseCode")
+                .Where("subjects.courseCode", cmbCourseCode.Text).Get();
 
             cmbPreReq.Items.Clear();
             foreach (var value in values)
@@ -326,6 +341,35 @@ namespace SchoolManagementSystem
                 cmbPreReq.Items.Add(value.subjectCode);
             }
 
+        }
+        int idd;
+        private void cmbCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbCourseCode.Text = "";
+            var getID = DBContext.GetContext().Query("course").Where("description", cmbCourse.Text).First();
+
+            idd = getID.courseId;
+
+            var values = DBContext.GetContext().Query("coursecode")
+                .Join("course", "course.courseId", "coursecode.courseId")
+                .Where("coursecode.courseId", idd.ToString())
+                .Get();
+            cmbCourseCode.Items.Clear();
+            foreach(var value in values)
+            {
+                cmbCourseCode.Items.Add(value.coursecode);
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbCourse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            
         }
     }
 }

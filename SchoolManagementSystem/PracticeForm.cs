@@ -23,5 +23,15 @@ namespace SchoolManagementSystem
         {
            
         }
+
+        private void PracticeForm_Load(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("rooms").Get();
+
+            foreach(var value in values)
+            {
+                dataGridView1.Rows.Add(value.name, value.description);
+            }
+        }
     }
 }

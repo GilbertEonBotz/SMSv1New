@@ -57,5 +57,11 @@ namespace SchoolManagementSystem
             myfrm.btnSave.Text = "Update";
             myfrm.ShowDialog();
         }
+
+        private void dgvCourse_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+            e.Handled = true;
+        }
     }
 }

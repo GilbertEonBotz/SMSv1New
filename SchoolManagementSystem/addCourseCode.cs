@@ -81,13 +81,13 @@ namespace SchoolManagementSystem
 
             foreach (var value in values)
             {
-                cmbDepartment.Items.Add(value.abbreviation);
+                cmbDepartment.Items.Add(value.description);
             }
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var value = DBContext.GetContext().Query("course").Where("abbreviation", cmbDepartment.Text).First();
+            var value = DBContext.GetContext().Query("course").Where("description", cmbDepartment.Text).First();
             selCourseID = value.courseId;
         }
 

@@ -17,6 +17,11 @@ namespace SchoolManagementSystem
 
         private void Sched_Load(object sender, EventArgs e)
         {
+            displayData();
+        }
+
+        public void displayData()
+        {
             try
             {
                 schedule sched = new schedule();
@@ -61,10 +66,9 @@ namespace SchoolManagementSystem
                 Validator.AlertDanger("Conflict on Rooms data. Please contact MSID!");
             }
         }
-
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
-            addSchedule s = new addSchedule();
+            addSchedule s = new addSchedule(this);
             s.ShowDialog();
         }
     }

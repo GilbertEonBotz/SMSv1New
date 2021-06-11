@@ -142,16 +142,31 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         }
                         else
                         {
-                            disp.billingid = billingid;
+                            if ( comboBox2.Text == "FINAL" && Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
+                            {
+                                disp.billingid = billingid;
+                                disp.amount = lblpaymentfor.Text;
+                                disp.remarks = txtRemarks.Text;
+                                disp.status = "paid";
+                                disp.paymentMethod = cmbpaymentMethod.Text;
 
+                                disp.insertpayment();
+                                MessageBox.Show("success");
+                            }
+                            else
+                            {
+                                disp.billingid = billingid;
+                              
 
-                            disp.amount = txtAmount.Text;
-                            disp.remarks = txtRemarks.Text;
-                            disp.status = "paid";
-                            disp.paymentMethod = cmbpaymentMethod.Text;
+                                disp.amount = txtAmount.Text;
+                                disp.remarks = txtRemarks.Text;
+                                disp.status = "paid";
+                                disp.paymentMethod = cmbpaymentMethod.Text;
 
-                            disp.insertpayment();
-                            MessageBox.Show("success");
+                                disp.insertpayment();
+                                MessageBox.Show("success");
+                            }
+                       
                         }
 
 
@@ -290,6 +305,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void txtAmount_Click(object sender, EventArgs e)
         {
             txtAmount.Text = "";
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

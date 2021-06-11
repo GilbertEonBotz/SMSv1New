@@ -113,7 +113,7 @@ namespace SchoolManagementSystem
             this.pnlBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBanner.Location = new System.Drawing.Point(0, 108);
             this.pnlBanner.Name = "pnlBanner";
-            this.pnlBanner.Size = new System.Drawing.Size(233, 1500);
+            this.pnlBanner.Size = new System.Drawing.Size(250, 660);
             this.pnlBanner.TabIndex = 0;
             // 
             // pnlSchoolSettings
@@ -128,7 +128,7 @@ namespace SchoolManagementSystem
             this.pnlSchoolSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSchoolSettings.Location = new System.Drawing.Point(0, 975);
             this.pnlSchoolSettings.Name = "pnlSchoolSettings";
-            this.pnlSchoolSettings.Size = new System.Drawing.Size(233, 234);
+            this.pnlSchoolSettings.Size = new System.Drawing.Size(250, 234);
             this.pnlSchoolSettings.TabIndex = 62;
             // 
             // btnExamPercentage
@@ -148,7 +148,7 @@ namespace SchoolManagementSystem
             this.btnExamPercentage.Location = new System.Drawing.Point(0, 195);
             this.btnExamPercentage.Name = "btnExamPercentage";
             this.btnExamPercentage.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnExamPercentage.Size = new System.Drawing.Size(233, 39);
+            this.btnExamPercentage.Size = new System.Drawing.Size(250, 39);
             this.btnExamPercentage.TabIndex = 38;
             this.btnExamPercentage.Text = "Exam Percentage";
             this.btnExamPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@ namespace SchoolManagementSystem
             this.btnClassrooms.Location = new System.Drawing.Point(0, 156);
             this.btnClassrooms.Name = "btnClassrooms";
             this.btnClassrooms.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnClassrooms.Size = new System.Drawing.Size(233, 39);
+            this.btnClassrooms.Size = new System.Drawing.Size(250, 39);
             this.btnClassrooms.TabIndex = 37;
             this.btnClassrooms.Text = "Room Management";
             this.btnClassrooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,7 +198,7 @@ namespace SchoolManagementSystem
             this.btnCourseCode.Location = new System.Drawing.Point(0, 117);
             this.btnCourseCode.Name = "btnCourseCode";
             this.btnCourseCode.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnCourseCode.Size = new System.Drawing.Size(233, 39);
+            this.btnCourseCode.Size = new System.Drawing.Size(250, 39);
             this.btnCourseCode.TabIndex = 36;
             this.btnCourseCode.Text = "Course Code";
             this.btnCourseCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,7 +223,7 @@ namespace SchoolManagementSystem
             this.btnCourse.Location = new System.Drawing.Point(0, 78);
             this.btnCourse.Name = "btnCourse";
             this.btnCourse.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnCourse.Size = new System.Drawing.Size(233, 39);
+            this.btnCourse.Size = new System.Drawing.Size(250, 39);
             this.btnCourse.TabIndex = 35;
             this.btnCourse.Text = "Course";
             this.btnCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,7 +248,7 @@ namespace SchoolManagementSystem
             this.btnDepartment.Location = new System.Drawing.Point(0, 39);
             this.btnDepartment.Name = "btnDepartment";
             this.btnDepartment.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnDepartment.Size = new System.Drawing.Size(233, 39);
+            this.btnDepartment.Size = new System.Drawing.Size(250, 39);
             this.btnDepartment.TabIndex = 34;
             this.btnDepartment.Text = "Department";
             this.btnDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,7 +273,7 @@ namespace SchoolManagementSystem
             this.btnTerm.Location = new System.Drawing.Point(0, 0);
             this.btnTerm.Name = "btnTerm";
             this.btnTerm.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnTerm.Size = new System.Drawing.Size(233, 39);
+            this.btnTerm.Size = new System.Drawing.Size(250, 39);
             this.btnTerm.TabIndex = 33;
             this.btnTerm.Text = "Terms Management";
             this.btnTerm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,7 +297,7 @@ namespace SchoolManagementSystem
             this.btnSchoolSettings.Location = new System.Drawing.Point(0, 936);
             this.btnSchoolSettings.Name = "btnSchoolSettings";
             this.btnSchoolSettings.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnSchoolSettings.Size = new System.Drawing.Size(233, 39);
+            this.btnSchoolSettings.Size = new System.Drawing.Size(250, 39);
             this.btnSchoolSettings.TabIndex = 67;
             this.btnSchoolSettings.Text = "School Settings           ▸";
             this.btnSchoolSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,7 +313,7 @@ namespace SchoolManagementSystem
             this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUser.Location = new System.Drawing.Point(0, 858);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(233, 78);
+            this.pnlUser.Size = new System.Drawing.Size(250, 78);
             this.pnlUser.TabIndex = 64;
             // 
             // btnAddUsers
@@ -333,7 +333,7 @@ namespace SchoolManagementSystem
             this.btnAddUsers.Location = new System.Drawing.Point(0, 39);
             this.btnAddUsers.Name = "btnAddUsers";
             this.btnAddUsers.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnAddUsers.Size = new System.Drawing.Size(233, 39);
+            this.btnAddUsers.Size = new System.Drawing.Size(250, 39);
             this.btnAddUsers.TabIndex = 34;
             this.btnAddUsers.Text = "Add Users";
             this.btnAddUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,7 +358,7 @@ namespace SchoolManagementSystem
             this.btnManageRole.Location = new System.Drawing.Point(0, 0);
             this.btnManageRole.Name = "btnManageRole";
             this.btnManageRole.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnManageRole.Size = new System.Drawing.Size(233, 39);
+            this.btnManageRole.Size = new System.Drawing.Size(250, 39);
             this.btnManageRole.TabIndex = 33;
             this.btnManageRole.Text = "Manage Role";
             this.btnManageRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -382,7 +382,7 @@ namespace SchoolManagementSystem
             this.btnMngUser.Location = new System.Drawing.Point(0, 819);
             this.btnMngUser.Name = "btnMngUser";
             this.btnMngUser.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnMngUser.Size = new System.Drawing.Size(233, 39);
+            this.btnMngUser.Size = new System.Drawing.Size(250, 39);
             this.btnMngUser.TabIndex = 63;
             this.btnMngUser.Text = "Manage User              ▸";
             this.btnMngUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,7 +398,7 @@ namespace SchoolManagementSystem
             this.pnlLoads.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLoads.Location = new System.Drawing.Point(0, 741);
             this.pnlLoads.Name = "pnlLoads";
-            this.pnlLoads.Size = new System.Drawing.Size(233, 78);
+            this.pnlLoads.Size = new System.Drawing.Size(250, 78);
             this.pnlLoads.TabIndex = 62;
             // 
             // btnHandledStudents
@@ -418,7 +418,7 @@ namespace SchoolManagementSystem
             this.btnHandledStudents.Location = new System.Drawing.Point(0, 39);
             this.btnHandledStudents.Name = "btnHandledStudents";
             this.btnHandledStudents.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnHandledStudents.Size = new System.Drawing.Size(233, 39);
+            this.btnHandledStudents.Size = new System.Drawing.Size(250, 39);
             this.btnHandledStudents.TabIndex = 34;
             this.btnHandledStudents.Text = "Handled Students";
             this.btnHandledStudents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -443,7 +443,7 @@ namespace SchoolManagementSystem
             this.btnSubjectLoads.Location = new System.Drawing.Point(0, 0);
             this.btnSubjectLoads.Name = "btnSubjectLoads";
             this.btnSubjectLoads.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnSubjectLoads.Size = new System.Drawing.Size(233, 39);
+            this.btnSubjectLoads.Size = new System.Drawing.Size(250, 39);
             this.btnSubjectLoads.TabIndex = 33;
             this.btnSubjectLoads.Text = "Subject Loads";
             this.btnSubjectLoads.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -467,7 +467,7 @@ namespace SchoolManagementSystem
             this.btnTeacherLoads.Location = new System.Drawing.Point(0, 702);
             this.btnTeacherLoads.Name = "btnTeacherLoads";
             this.btnTeacherLoads.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnTeacherLoads.Size = new System.Drawing.Size(233, 39);
+            this.btnTeacherLoads.Size = new System.Drawing.Size(250, 39);
             this.btnTeacherLoads.TabIndex = 61;
             this.btnTeacherLoads.Text = "Teacher Loads            ▸";
             this.btnTeacherLoads.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,7 +483,7 @@ namespace SchoolManagementSystem
             this.pnlAcademic.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAcademic.Location = new System.Drawing.Point(0, 624);
             this.pnlAcademic.Name = "pnlAcademic";
-            this.pnlAcademic.Size = new System.Drawing.Size(233, 78);
+            this.pnlAcademic.Size = new System.Drawing.Size(250, 78);
             this.pnlAcademic.TabIndex = 60;
             // 
             // btnClassScgedule
@@ -503,7 +503,7 @@ namespace SchoolManagementSystem
             this.btnClassScgedule.Location = new System.Drawing.Point(0, 39);
             this.btnClassScgedule.Name = "btnClassScgedule";
             this.btnClassScgedule.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnClassScgedule.Size = new System.Drawing.Size(233, 39);
+            this.btnClassScgedule.Size = new System.Drawing.Size(250, 39);
             this.btnClassScgedule.TabIndex = 34;
             this.btnClassScgedule.Text = "Class Schedule";
             this.btnClassScgedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -528,7 +528,7 @@ namespace SchoolManagementSystem
             this.btnSubjects.Location = new System.Drawing.Point(0, 0);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnSubjects.Size = new System.Drawing.Size(233, 39);
+            this.btnSubjects.Size = new System.Drawing.Size(250, 39);
             this.btnSubjects.TabIndex = 33;
             this.btnSubjects.Text = "Subjects";
             this.btnSubjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -552,7 +552,7 @@ namespace SchoolManagementSystem
             this.btnAcademicMngmt.Location = new System.Drawing.Point(0, 585);
             this.btnAcademicMngmt.Name = "btnAcademicMngmt";
             this.btnAcademicMngmt.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnAcademicMngmt.Size = new System.Drawing.Size(233, 39);
+            this.btnAcademicMngmt.Size = new System.Drawing.Size(250, 39);
             this.btnAcademicMngmt.TabIndex = 59;
             this.btnAcademicMngmt.Text = "Academic Settings    ▸";
             this.btnAcademicMngmt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -576,7 +576,7 @@ namespace SchoolManagementSystem
             this.btnPayment.Location = new System.Drawing.Point(0, 546);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnPayment.Size = new System.Drawing.Size(233, 39);
+            this.btnPayment.Size = new System.Drawing.Size(250, 39);
             this.btnPayment.TabIndex = 58;
             this.btnPayment.Text = "Payment";
             this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -594,7 +594,7 @@ namespace SchoolManagementSystem
             this.pnlFeesMngmnt.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFeesMngmnt.Location = new System.Drawing.Point(0, 390);
             this.pnlFeesMngmnt.Name = "pnlFeesMngmnt";
-            this.pnlFeesMngmnt.Size = new System.Drawing.Size(233, 156);
+            this.pnlFeesMngmnt.Size = new System.Drawing.Size(250, 156);
             this.pnlFeesMngmnt.TabIndex = 56;
             // 
             // btnTuitionStructure
@@ -614,7 +614,7 @@ namespace SchoolManagementSystem
             this.btnTuitionStructure.Location = new System.Drawing.Point(0, 117);
             this.btnTuitionStructure.Name = "btnTuitionStructure";
             this.btnTuitionStructure.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnTuitionStructure.Size = new System.Drawing.Size(233, 39);
+            this.btnTuitionStructure.Size = new System.Drawing.Size(250, 39);
             this.btnTuitionStructure.TabIndex = 36;
             this.btnTuitionStructure.Text = "Tuition Structure";
             this.btnTuitionStructure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -639,7 +639,7 @@ namespace SchoolManagementSystem
             this.btnTuitionCategory.Location = new System.Drawing.Point(0, 78);
             this.btnTuitionCategory.Name = "btnTuitionCategory";
             this.btnTuitionCategory.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnTuitionCategory.Size = new System.Drawing.Size(233, 39);
+            this.btnTuitionCategory.Size = new System.Drawing.Size(250, 39);
             this.btnTuitionCategory.TabIndex = 35;
             this.btnTuitionCategory.Text = "Tuition Category";
             this.btnTuitionCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,7 +664,7 @@ namespace SchoolManagementSystem
             this.btnFeeStructure.Location = new System.Drawing.Point(0, 39);
             this.btnFeeStructure.Name = "btnFeeStructure";
             this.btnFeeStructure.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnFeeStructure.Size = new System.Drawing.Size(233, 39);
+            this.btnFeeStructure.Size = new System.Drawing.Size(250, 39);
             this.btnFeeStructure.TabIndex = 34;
             this.btnFeeStructure.Text = "Fee Structure";
             this.btnFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -689,7 +689,7 @@ namespace SchoolManagementSystem
             this.btnFeeCategory.Location = new System.Drawing.Point(0, 0);
             this.btnFeeCategory.Name = "btnFeeCategory";
             this.btnFeeCategory.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnFeeCategory.Size = new System.Drawing.Size(233, 39);
+            this.btnFeeCategory.Size = new System.Drawing.Size(250, 39);
             this.btnFeeCategory.TabIndex = 33;
             this.btnFeeCategory.Text = "Fee Category";
             this.btnFeeCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -713,7 +713,7 @@ namespace SchoolManagementSystem
             this.btnFeesManagement.Location = new System.Drawing.Point(0, 351);
             this.btnFeesManagement.Name = "btnFeesManagement";
             this.btnFeesManagement.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnFeesManagement.Size = new System.Drawing.Size(233, 39);
+            this.btnFeesManagement.Size = new System.Drawing.Size(250, 39);
             this.btnFeesManagement.TabIndex = 55;
             this.btnFeesManagement.Text = "Fees Management  ▸";
             this.btnFeesManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -730,7 +730,7 @@ namespace SchoolManagementSystem
             this.pnlEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEmployees.Location = new System.Drawing.Point(0, 234);
             this.pnlEmployees.Name = "pnlEmployees";
-            this.pnlEmployees.Size = new System.Drawing.Size(233, 117);
+            this.pnlEmployees.Size = new System.Drawing.Size(250, 117);
             this.pnlEmployees.TabIndex = 54;
             // 
             // btnLibrarian
@@ -750,7 +750,7 @@ namespace SchoolManagementSystem
             this.btnLibrarian.Location = new System.Drawing.Point(0, 78);
             this.btnLibrarian.Name = "btnLibrarian";
             this.btnLibrarian.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnLibrarian.Size = new System.Drawing.Size(233, 39);
+            this.btnLibrarian.Size = new System.Drawing.Size(250, 39);
             this.btnLibrarian.TabIndex = 35;
             this.btnLibrarian.Text = "Librarian";
             this.btnLibrarian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -775,7 +775,7 @@ namespace SchoolManagementSystem
             this.btnAccountant.Location = new System.Drawing.Point(0, 39);
             this.btnAccountant.Name = "btnAccountant";
             this.btnAccountant.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnAccountant.Size = new System.Drawing.Size(233, 39);
+            this.btnAccountant.Size = new System.Drawing.Size(250, 39);
             this.btnAccountant.TabIndex = 34;
             this.btnAccountant.Text = "Accountant";
             this.btnAccountant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -800,7 +800,7 @@ namespace SchoolManagementSystem
             this.btnTeacher.Location = new System.Drawing.Point(0, 0);
             this.btnTeacher.Name = "btnTeacher";
             this.btnTeacher.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnTeacher.Size = new System.Drawing.Size(233, 39);
+            this.btnTeacher.Size = new System.Drawing.Size(250, 39);
             this.btnTeacher.TabIndex = 33;
             this.btnTeacher.Text = "Teacher";
             this.btnTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -824,7 +824,7 @@ namespace SchoolManagementSystem
             this.btnEmployees.Location = new System.Drawing.Point(0, 195);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnEmployees.Size = new System.Drawing.Size(233, 39);
+            this.btnEmployees.Size = new System.Drawing.Size(250, 39);
             this.btnEmployees.TabIndex = 53;
             this.btnEmployees.Text = "Employees                 ▸";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -839,7 +839,7 @@ namespace SchoolManagementSystem
             this.pnlStudentRecords.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStudentRecords.Location = new System.Drawing.Point(0, 156);
             this.pnlStudentRecords.Name = "pnlStudentRecords";
-            this.pnlStudentRecords.Size = new System.Drawing.Size(233, 39);
+            this.pnlStudentRecords.Size = new System.Drawing.Size(250, 39);
             this.pnlStudentRecords.TabIndex = 52;
             // 
             // btnAdmitStudent
@@ -859,7 +859,7 @@ namespace SchoolManagementSystem
             this.btnAdmitStudent.Location = new System.Drawing.Point(0, 0);
             this.btnAdmitStudent.Name = "btnAdmitStudent";
             this.btnAdmitStudent.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnAdmitStudent.Size = new System.Drawing.Size(233, 39);
+            this.btnAdmitStudent.Size = new System.Drawing.Size(250, 39);
             this.btnAdmitStudent.TabIndex = 33;
             this.btnAdmitStudent.Text = "Admit Student";
             this.btnAdmitStudent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -883,7 +883,7 @@ namespace SchoolManagementSystem
             this.btnStudentRecords.Location = new System.Drawing.Point(0, 117);
             this.btnStudentRecords.Name = "btnStudentRecords";
             this.btnStudentRecords.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnStudentRecords.Size = new System.Drawing.Size(233, 39);
+            this.btnStudentRecords.Size = new System.Drawing.Size(250, 39);
             this.btnStudentRecords.TabIndex = 51;
             this.btnStudentRecords.Text = "Student Records       ▸";
             this.btnStudentRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -898,7 +898,7 @@ namespace SchoolManagementSystem
             this.pnlEnrollment.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEnrollment.Location = new System.Drawing.Point(0, 78);
             this.pnlEnrollment.Name = "pnlEnrollment";
-            this.pnlEnrollment.Size = new System.Drawing.Size(233, 39);
+            this.pnlEnrollment.Size = new System.Drawing.Size(250, 39);
             this.pnlEnrollment.TabIndex = 50;
             // 
             // btnStudentSchedule
@@ -918,7 +918,7 @@ namespace SchoolManagementSystem
             this.btnStudentSchedule.Location = new System.Drawing.Point(0, 0);
             this.btnStudentSchedule.Name = "btnStudentSchedule";
             this.btnStudentSchedule.Padding = new System.Windows.Forms.Padding(25, 0, 17, 0);
-            this.btnStudentSchedule.Size = new System.Drawing.Size(233, 39);
+            this.btnStudentSchedule.Size = new System.Drawing.Size(250, 39);
             this.btnStudentSchedule.TabIndex = 33;
             this.btnStudentSchedule.Text = "Student schedule";
             this.btnStudentSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -942,7 +942,7 @@ namespace SchoolManagementSystem
             this.btnEnrollment.Location = new System.Drawing.Point(0, 39);
             this.btnEnrollment.Name = "btnEnrollment";
             this.btnEnrollment.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnEnrollment.Size = new System.Drawing.Size(233, 39);
+            this.btnEnrollment.Size = new System.Drawing.Size(250, 39);
             this.btnEnrollment.TabIndex = 30;
             this.btnEnrollment.Text = "Enrollment                 ▸";
             this.btnEnrollment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -966,7 +966,7 @@ namespace SchoolManagementSystem
             this.btnDashboard.Location = new System.Drawing.Point(0, 0);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(233, 39);
+            this.btnDashboard.Size = new System.Drawing.Size(250, 39);
             this.btnDashboard.TabIndex = 29;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -991,7 +991,7 @@ namespace SchoolManagementSystem
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(233, 108);
+            this.panel4.Size = new System.Drawing.Size(250, 108);
             this.panel4.TabIndex = 3;
             // 
             // panel3

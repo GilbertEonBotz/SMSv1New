@@ -58,6 +58,7 @@ namespace SchoolManagementSystem
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.panel6.SuspendLayout();
@@ -136,13 +137,13 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategories.EnableHeadersVisualStyles = false;
-            this.dgvCategories.Location = new System.Drawing.Point(22, 334);
+            this.dgvCategories.Location = new System.Drawing.Point(13, 342);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.ReadOnly = true;
             this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.RowTemplate.Height = 25;
             this.dgvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategories.Size = new System.Drawing.Size(1044, 212);
+            this.dgvCategories.Size = new System.Drawing.Size(1062, 212);
             this.dgvCategories.TabIndex = 12;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);
             // 
@@ -179,6 +180,7 @@ namespace SchoolManagementSystem
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.textboxWatermark1);
             this.panel6.Controls.Add(this.dgvSched);
             this.panel6.Controls.Add(this.dgvCategories);
             this.panel6.Controls.Add(this.label6);
@@ -224,14 +226,14 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSched.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSched.EnableHeadersVisualStyles = false;
-            this.dgvSched.Location = new System.Drawing.Point(22, 63);
+            this.dgvSched.Location = new System.Drawing.Point(13, 106);
             this.dgvSched.Name = "dgvSched";
             this.dgvSched.ReadOnly = true;
             this.dgvSched.RowHeadersVisible = false;
             this.dgvSched.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSched.RowTemplate.Height = 25;
             this.dgvSched.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSched.Size = new System.Drawing.Size(1044, 193);
+            this.dgvSched.Size = new System.Drawing.Size(1062, 218);
             this.dgvSched.TabIndex = 13;
             this.dgvSched.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSched_MouseDoubleClick);
             // 
@@ -284,7 +286,7 @@ namespace SchoolManagementSystem
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(135, 31);
+            this.textBox1.Size = new System.Drawing.Size(144, 31);
             this.textBox1.TabIndex = 3;
             // 
             // panel8
@@ -362,6 +364,17 @@ namespace SchoolManagementSystem
             this.label1.TabIndex = 8;
             this.label1.Text = "School Management System";
             // 
+            // textboxWatermark1
+            // 
+            this.textboxWatermark1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(13, 69);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(267, 31);
+            this.textboxWatermark1.TabIndex = 14;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
+            // 
             // viewTuitionStruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,7 +407,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label struckname;
         public System.Windows.Forms.DataGridView dgvCategories;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox1;
@@ -416,5 +428,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        public System.Windows.Forms.Label struckname;
+        private UITools.TextboxWatermark textboxWatermark1;
     }
 }

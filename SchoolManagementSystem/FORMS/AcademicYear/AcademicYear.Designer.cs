@@ -90,9 +90,9 @@ namespace SchoolManagementSystem
             this.btnAddNew.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnAddNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddNew.IconSize = 20;
-            this.btnAddNew.Location = new System.Drawing.Point(144, 76);
+            this.btnAddNew.Location = new System.Drawing.Point(131, 76);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(95, 23);
+            this.btnAddNew.Size = new System.Drawing.Size(95, 25);
             this.btnAddNew.TabIndex = 2;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,7 +137,7 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAcademicYear.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAcademicYear.ColumnHeadersHeight = 45;
+            this.dgvAcademicYear.ColumnHeadersHeight = 35;
             this.dgvAcademicYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAcademicYear.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,

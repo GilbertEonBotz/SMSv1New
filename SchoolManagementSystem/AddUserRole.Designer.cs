@@ -37,6 +37,7 @@ namespace SchoolManagementSystem
             this.txtRole = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@ namespace SchoolManagementSystem
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,6 +163,16 @@ namespace SchoolManagementSystem
             this.panel7.Size = new System.Drawing.Size(556, 49);
             this.panel7.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(295, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 22);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
@@ -247,15 +257,6 @@ namespace SchoolManagementSystem
             this.label1.Size = new System.Drawing.Size(273, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "School Management System";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(295, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 22);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "label2";
             // 
             // AddUserRole
             // 

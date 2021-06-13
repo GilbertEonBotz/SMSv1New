@@ -140,6 +140,7 @@ namespace SchoolManagementSystem
             this.dgvSched.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSched.Size = new System.Drawing.Size(1007, 398);
             this.dgvSched.TabIndex = 26;
+            this.dgvSched.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSched_CellContentClick);
             // 
             // Column10
             // 

@@ -159,7 +159,7 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCourse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCourse.ColumnHeadersHeight = 45;
+            this.dgvCourse.ColumnHeadersHeight = 35;
             this.dgvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,

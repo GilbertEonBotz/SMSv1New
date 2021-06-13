@@ -55,7 +55,7 @@ namespace SchoolManagementSystem
                         DBContext.GetContext().Query("coursecode").Insert(new
                         {
                             courseId = selCourseID,
-                            coursecode = txtCourseCode.Text,
+                            coursecode = txtCourseCode.Text.ToUpper(),
                             remarks = txtRemarks.Text,
                             status = "enable"
                         });

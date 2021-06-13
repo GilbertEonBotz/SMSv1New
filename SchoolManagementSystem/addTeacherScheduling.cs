@@ -22,15 +22,10 @@ namespace SchoolManagementSystem
 
             this.teachDgv = teachDg;
         }
-
-
         public void aa()
         {
-
             try
             {
-
-
                 dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewsched();
@@ -138,17 +133,18 @@ namespace SchoolManagementSystem
 
         private void dgvSched_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //foreach (DataGridViewRow row in teachDgv.dgvStudentSched.Rows)
-            //{
-            //    if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
-            //    {
-            //        Validator.AlertDanger("Subject existed");
-            //        return; 
-            //    }
-            //}
-            teachDgv.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(), dgvSched.SelectedRows[0].Cells[2].Value.ToString()
-                
-              );
+            foreach (DataGridViewRow row in teachDgv.dgvStudentSched.Rows)
+            {
+                if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+                {
+                    Validator.AlertDanger("Subject existed");
+                    return;
+                }
+            }
+            teachDgv.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(), 
+                dgvSched.SelectedRows[0].Cells[2].Value.ToString(), dgvSched.SelectedRows[0].Cells[3].Value.ToString()
+                , dgvSched.SelectedRows[0].Cells[4].Value.ToString(), dgvSched.SelectedRows[0].Cells[5].FormattedValue.ToString()
+                , dgvSched.SelectedRows[0].Cells[6].FormattedValue.ToString());
         }
     }
 }

@@ -25,6 +25,7 @@ namespace SchoolManagementSystem
         public void displaydata()
         {
             tuit.view();
+            dgvTuition.Rows.Clear();
             foreach (DataRow Drow in tuit.dt.Rows)
             {
                 int num = dgvTuition.Rows.Add();
@@ -52,7 +53,7 @@ namespace SchoolManagementSystem
 
         private void dgvTuition_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            viewTuitionStruc tui = new viewTuitionStruc(dgvTuition.SelectedRows[0].Cells[0].Value.ToString());
+            viewTuitionStruc tui = new viewTuitionStruc(dgvTuition.SelectedRows[0].Cells[0].Value.ToString(), this);
             tui.struckname.Text = dgvTuition.SelectedRows[0].Cells[1].Value.ToString();
             tui.ShowDialog();
         }

@@ -49,5 +49,10 @@ namespace SchoolManagementSystem
         {
             this.Close();
         }
+
+        private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

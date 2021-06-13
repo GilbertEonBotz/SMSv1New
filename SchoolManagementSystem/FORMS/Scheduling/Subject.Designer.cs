@@ -164,7 +164,7 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSubjects.ColumnHeadersHeight = 45;
+            this.dgvSubjects.ColumnHeadersHeight = 35;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSubjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
@@ -209,7 +209,7 @@ namespace SchoolManagementSystem
             this.Column1.HeaderText = "SUBJECT CODE";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 110;
+            this.Column1.Width = 120;
             // 
             // Column2
             // 
@@ -240,7 +240,7 @@ namespace SchoolManagementSystem
             this.Column5.HeaderText = "TOTAL UNITS";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 99;
+            this.Column5.Width = 108;
             // 
             // Column6
             // 

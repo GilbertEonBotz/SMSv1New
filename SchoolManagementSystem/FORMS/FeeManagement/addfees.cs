@@ -32,7 +32,6 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
 
         private void displayData()
         {
-            textBox2.KeyPress += Validator.ValidateKeypressNumber;
             struc.structureID = id;
             struc.viewfees();
 

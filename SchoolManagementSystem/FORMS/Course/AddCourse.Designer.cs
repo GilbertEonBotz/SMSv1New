@@ -83,11 +83,11 @@ namespace SchoolManagementSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label3.Location = new System.Drawing.Point(14, 91);
+            this.label3.Location = new System.Drawing.Point(9, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Department";
+            this.label3.Text = "DEPARTMENT";
             // 
             // txtAbbreviation
             // 
@@ -102,11 +102,11 @@ namespace SchoolManagementSystem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label2.Location = new System.Drawing.Point(14, 175);
+            this.label2.Location = new System.Drawing.Point(9, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Abbreviation";
+            this.label2.Text = "ABBREVIATION";
             // 
             // txtDescription
             // 
@@ -122,11 +122,11 @@ namespace SchoolManagementSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label6.Location = new System.Drawing.Point(14, 133);
+            this.label6.Location = new System.Drawing.Point(9, 133);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 20);
+            this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Description";
+            this.label6.Text = "COURSE NAME";
             // 
             // panel8
             // 

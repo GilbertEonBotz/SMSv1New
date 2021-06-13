@@ -95,7 +95,7 @@ namespace SchoolManagementSystem
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSched.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSched.ColumnHeadersHeight = 45;
+            this.dgvSched.ColumnHeadersHeight = 35;
             this.dgvSched.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSched.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -154,7 +154,7 @@ namespace SchoolManagementSystem
             this.Column3.HeaderText = "ROOM #";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 76;
+            this.Column3.Width = 83;
             // 
             // Column4
             // 
@@ -177,7 +177,7 @@ namespace SchoolManagementSystem
             this.Column6.HeaderText = "MAX ENROLLEES";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 121;
+            this.Column6.Width = 132;
             // 
             // Column7
             // 
@@ -185,7 +185,7 @@ namespace SchoolManagementSystem
             this.Column7.HeaderText = "TIME START";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 94;
+            this.Column7.Width = 102;
             // 
             // Column8
             // 
@@ -193,7 +193,7 @@ namespace SchoolManagementSystem
             this.Column8.HeaderText = "TIME END";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 84;
+            this.Column8.Width = 91;
             // 
             // Column9
             // 

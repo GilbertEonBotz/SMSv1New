@@ -470,9 +470,7 @@ namespace SchoolManagementSystem
             pnlBilling.SetBounds(203, 100, 795, 462);
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
-
-                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()
-                };
+                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()};
 
                 foreach (string aa in wew)
                 {

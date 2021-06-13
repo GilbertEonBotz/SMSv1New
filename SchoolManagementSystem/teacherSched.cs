@@ -44,20 +44,18 @@ namespace SchoolManagementSystem
 
         }
 
+
+        string upSched;
         private void btnPrint_Click_1(object sender, EventArgs e)
         {
-            int i;
-            for (i = 0; i < dgvStudentSched.Rows.Count; i++)
-            { 
-
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            {
                 wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString() };
 
                 foreach (string aa in wew)
                 {
-                    storeID += (" " + aa);
-
+                    storeID += (aa + " ");
                 }
-
             }
             if (storeID == "")
             {
@@ -65,32 +63,121 @@ namespace SchoolManagementSystem
             }
             else
             {
-
-                DBContext.GetContext().Query("teachersched").Insert(new
+                try
                 {
-                    teacherid = cmbTeacher.Text,
-                    schedid = storeID
-                });
-                MessageBox.Show("success");
-                storeID = "";
+                    var value = DBContext.GetContext().Query("teachersched").Where("teacherId", cmbTeacher.Text).First();
+                    upSched = value.schedId.ToString();
+
+                    DBContext.GetContext().Query("teachersched").Where("teacherId", cmbTeacher.Text).Update(new
+                    {
+                        schedId = storeID
+                    });
+                    storeID = "";
+                }
+                catch (Exception)
+                {
+                    DBContext.GetContext().Query("teachersched").Insert(new
+                    {
+                        teacherid = cmbTeacher.Text,
+                        schedid = storeID
+                    });
+                    MessageBox.Show("success");
+                    storeID = "";
+                }
             }
         }
 
+        string splitSched;
+
+        teacherScheds teach = new teacherScheds();
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("teachers").Where("teacherId", cmbTeacher.Text).Get();
 
-            foreach (var value in values)
+            dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            try
             {
-                txtName.Text = $"{value.Firstname} {value.Lastname}";
-                txtGender.Text = value.Gender;
-                txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                var value = DBContext.GetContext().Query("teachersched").Where("teacherId", cmbTeacher.Text).First();
+
+                splitSched = value.schedId;
+                var words = splitSched.Split(' ');
+
+                dgvStudentSched.Rows.Clear();
+                for (int i = 0; i < words.Length - 1; i++)
+                {
+                    string indSubj = words[i];
+                    teach.getSchedID = indSubj;
+                    teach.teacherID = cmbTeacher.Text;
+                    teach.viewSchedTeach();
+
+                    foreach (DataRow drow in teach.dt.Rows)
+                    {
+                        int num = dgvStudentSched.Rows.Add();
+
+                        dgvStudentSched.Rows[num].Cells[0].Value = drow["schedID"].ToString();
+                        dgvStudentSched.Rows[num].Cells[1].Value = drow["subjCode"].ToString();
+                        dgvStudentSched.Rows[num].Cells[2].Value = drow["subjTitle"].ToString();
+                        dgvStudentSched.Rows[num].Cells[3].Value = drow["roomName"].ToString();
+                        dgvStudentSched.Rows[num].Cells[4].Value = drow["day"].ToString();
+                        dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(drow["timestart"].ToString());
+                        dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(drow["timeend"].ToString());
+                        txtName.Text = drow["fName"].ToString();
+                        txtGender.Text = drow["gender"].ToString();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                var values = DBContext.GetContext().Query("teachers").Where("teacherId", cmbTeacher.Text).Get();
+
+                foreach (var value in values)
+                {
+                    txtName.Text = $"{value.Firstname} {value.Lastname}";
+                    txtGender.Text = value.Gender;
+                    txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                }
             }
         }
 
         private void cmbSubjects_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvStudentSched.Rows.Clear();
+            TextBox[] inputs = { txtName, txtCourse };
+
+            Validator.ClearTextField(inputs);
+        }
+
+        private void cmbTeacher_TextChanged(object sender, EventArgs e)
+        {
+            dgvStudentSched.Rows.Clear();
+            TextBox[] inputs = { txtName, txtCourse };
+
+            Validator.ClearTextField(inputs);
+
+        }
+
+        private void dgvStudentSched_RowDefaultCellStyleChanged(object sender, DataGridViewRowEventArgs e)
+        {
+
+           
+        }
+
+        private void dgvStudentSched_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvStudentSched.Rows.Count > 0)
+                btnPrint.Enabled = true;
+        }
+
+        private void dgvStudentSched_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvStudentSched.Rows.Count <= 0)
+                btnPrint.Enabled = false;
+            
         }
     }
 }

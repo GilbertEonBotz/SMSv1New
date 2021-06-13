@@ -54,13 +54,16 @@ namespace SchoolManagementSystem
 
         private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string aaa = dgvCategories.SelectedRows[0].Cells[2].Value.ToString();
+            string colName = dgvCategories.Columns[e.ColumnIndex].Name;
 
-            if (aaa.Equals("Delete") && Validator.DeleteConfirmation())
+            if (colName.Equals("delete"))
             {
-                DBContext.GetContext().Query("categoryfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
-                DBContext.GetContext().Query("totalfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
-                MessageBox.Show("aa");
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("categoryfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
+                    DBContext.GetContext().Query("totalfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
+                    displayData();
+                }
             }
         }
     }

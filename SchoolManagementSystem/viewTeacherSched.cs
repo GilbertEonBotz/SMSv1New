@@ -38,20 +38,17 @@ namespace SchoolManagementSystem
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
+            dgvSched.Rows.Clear();
             teacherScheds sched = new teacherScheds();
-            // dgvSched.Rows.Clear();
 
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
 
             string str = values.schedId;
             var words = str.Split(' ');
 
-            for (int i = 1; i < words.Length; i++)
+            for (int i = 0; i < words.Length-1; i++)
             {
                 sched.subjectcode = (words[i].ToString());
-                MessageBox.Show(words[i]);
                 dgvSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewteachsubj();

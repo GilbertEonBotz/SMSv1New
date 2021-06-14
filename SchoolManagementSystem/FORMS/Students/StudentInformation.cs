@@ -46,9 +46,7 @@ namespace SchoolManagementSystem
                 dgvStudents.Rows.Clear();
                 foreach (var value in values)
                 {
-                    string id = value.course;
-                    var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
-                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
+                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.course);
                 }
             }
             catch (Exception)

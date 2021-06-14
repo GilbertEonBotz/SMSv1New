@@ -94,7 +94,6 @@ namespace SchoolManagementSystem
                     password = txtPassword.Text,
                 }).FirstOrDefault();
 
-
                 if (query.userrole.Equals(1) && query.macAddress.Equals(GetMacAddress()))
                 {
                     this.Hide();

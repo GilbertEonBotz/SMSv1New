@@ -105,12 +105,12 @@ namespace SchoolManagementSystem
         }
         private void displayAcademicYear()
         {
-            var myForm = new AcademicYear();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
+            //    var myForm = new AcademicYear();
+            //    pnlShow.Controls.Clear();
+            //    myForm.TopLevel = false;
+            //    myForm.AutoScroll = false;
+            //    pnlShow.Controls.Add(myForm);
+            //    myForm.Show();
         }
 
         private void displayStudent()

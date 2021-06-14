@@ -98,11 +98,10 @@ namespace SchoolManagementSystem
                 else
                 {
                     var value = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).First();
-                    string id = value.course;
-                    var desc = DBContext.GetContext().Query("course").Where("courseId", id).First();
+
                     txtName.Text = $"{value.firstname} {value.lastname}";
                     txtGender.Text = value.gender;
-                    txtCourse.Text = desc.abbreviation;
+                    txtCourse.Text = value.course;
                     txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
                     panel1.Enabled = true;
                 }
@@ -300,8 +299,6 @@ namespace SchoolManagementSystem
                         led.percent();
                         double total2 = total - Convert.ToDouble(led.downpayment);
 
-
-
                         double extractPrelim = total * Convert.ToDouble(led.prelim);
                         double extractMidterm = total * Convert.ToDouble(led.midterm);
                         double extractSemi = total * Convert.ToDouble(led.semi);
@@ -470,7 +467,7 @@ namespace SchoolManagementSystem
             pnlBilling.SetBounds(203, 100, 795, 462);
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
-                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString()};
+                wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString() };
 
                 foreach (string aa in wew)
                 {

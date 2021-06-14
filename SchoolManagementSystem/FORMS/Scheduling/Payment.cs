@@ -54,7 +54,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
             txt4.Text = disp.final;
 
-
             lbltotal.Text = disp.total;
         }
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -99,7 +98,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                     if (number > Convert.ToDouble(dr[1].ToString()))
                     {
-
                         disp.billingid = billingid;
 
                         double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
@@ -111,14 +109,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                         disp.insertpayment();
                         MessageBox.Show("success");
-
                     }
                     else
                     {
 
                         if (checkBox1.Checked)
                         {
-
                             disp.billingid = billingid;
 
                             double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
@@ -148,7 +144,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                             else
                             {
                                 disp.billingid = billingid;
-
 
                                 disp.amount = txtAmount.Text;
                                 disp.remarks = txtRemarks.Text;
@@ -200,17 +195,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-
-
             if (comboBox2.Text == "DOWNPAYMENT")
             {
                 if (Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text))
                 {
                     amountDown = Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text);
                     lblpaymentfor.Text = amountDown.ToString();
-
                 }
                 else
                 {
@@ -235,7 +225,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 if (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text)))
                 {
                     //amountmid = amount -Convert.ToDouble(lblmid.Text);
-
                     //amount = amountmid;
                     amountmid = (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text))));
 

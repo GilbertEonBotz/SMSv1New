@@ -1141,7 +1141,6 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton btnClassrooms;
         private FontAwesome.Sharp.IconButton btnCourseCode;
         private FontAwesome.Sharp.IconButton btnCourse;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnSignout;
@@ -1155,5 +1154,6 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton btnMngUser;
         private FontAwesome.Sharp.IconButton btnSchoolSettings;
         private System.Windows.Forms.Panel pnlUser;
+        public System.Windows.Forms.Label label1;
     }
 }

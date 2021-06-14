@@ -20,8 +20,6 @@ namespace SchoolManagementSystem
         private void AcademicYear_Load(object sender, EventArgs e)
         {
             displayData();
-
-
         }
         public void displayData()
         {
@@ -95,6 +93,11 @@ namespace SchoolManagementSystem
 
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

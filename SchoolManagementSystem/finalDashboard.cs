@@ -258,9 +258,14 @@ namespace SchoolManagementSystem
 
         private void finalDashboard_Load(object sender, EventArgs e)
         {
+            displayYr();
             displayDashboard();
         }
 
+        public void displayYr()
+        {
+            label1.Text = "aawit";
+        }
         private void btnExamPercentage_Click(object sender, EventArgs e)
         {
             var myForm = new ExamPercentage();

@@ -185,7 +185,6 @@ namespace SchoolManagementSystem
                 myForm.dgv.Rows[num].Cells[1].Value = DROW["remarks"].ToString();
                 myForm.dgv.Rows[num].Cells[2].Value = DROW["date"].ToString();
             }
-
             //   spd.viewPaymentDetailed();
             myForm.lbltotal.Text = spd.totalpaid.ToString();
             double current = Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);

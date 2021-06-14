@@ -104,7 +104,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(635, 493);
+            this.panel6.Size = new System.Drawing.Size(608, 493);
             this.panel6.TabIndex = 10;
             // 
             // cmbCourse
@@ -166,7 +166,7 @@ namespace SchoolManagementSystem
             // 
             this.lblLectotal.AutoSize = true;
             this.lblLectotal.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblLectotal.Location = new System.Drawing.Point(567, 344);
+            this.lblLectotal.Location = new System.Drawing.Point(558, 317);
             this.lblLectotal.Name = "lblLectotal";
             this.lblLectotal.Size = new System.Drawing.Size(19, 21);
             this.lblLectotal.TabIndex = 17;
@@ -176,7 +176,7 @@ namespace SchoolManagementSystem
             // 
             this.lblabTotal.AutoSize = true;
             this.lblabTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblabTotal.Location = new System.Drawing.Point(567, 383);
+            this.lblabTotal.Location = new System.Drawing.Point(558, 355);
             this.lblabTotal.Name = "lblabTotal";
             this.lblabTotal.Size = new System.Drawing.Size(19, 21);
             this.lblabTotal.TabIndex = 16;
@@ -344,7 +344,7 @@ namespace SchoolManagementSystem
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(631, 1);
+            this.panel8.Size = new System.Drawing.Size(604, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -355,7 +355,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(631, 49);
+            this.panel7.Size = new System.Drawing.Size(604, 49);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD
@@ -438,14 +438,14 @@ namespace SchoolManagementSystem
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(6, 593);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(635, 6);
+            this.panel4.Size = new System.Drawing.Size(608, 6);
             this.panel4.TabIndex = 9;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(641, 54);
+            this.panel3.Location = new System.Drawing.Point(614, 54);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(6, 545);
             this.panel3.TabIndex = 8;
@@ -467,7 +467,7 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(647, 54);
+            this.panel1.Size = new System.Drawing.Size(620, 54);
             this.panel1.TabIndex = 6;
             // 
             // label1
@@ -490,7 +490,7 @@ namespace SchoolManagementSystem
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 20;
-            this.btnExit.Location = new System.Drawing.Point(603, 12);
+            this.btnExit.Location = new System.Drawing.Point(570, 8);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -522,7 +522,7 @@ namespace SchoolManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 599);
+            this.ClientSize = new System.Drawing.Size(620, 599);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);

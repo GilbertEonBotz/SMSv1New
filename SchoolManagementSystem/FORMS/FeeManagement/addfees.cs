@@ -88,7 +88,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
                 {
                     Validator.AlertDanger("Please enter an amount!");
                 }
-                else if (Convert.ToInt32(textBox2.Text) == 0)
+                else if (Convert.ToDouble(textBox2.Text) == 0)
                 {
                     Validator.AlertDanger("Please enter an amount!");
                 }

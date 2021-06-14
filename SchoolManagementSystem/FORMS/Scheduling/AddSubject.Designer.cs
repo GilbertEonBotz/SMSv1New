@@ -104,17 +104,19 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(635, 551);
+            this.panel6.Size = new System.Drawing.Size(635, 493);
             this.panel6.TabIndex = 10;
             // 
             // cmbCourse
             // 
             this.cmbCourse.BackColor = System.Drawing.Color.White;
             this.cmbCourse.DropDownWidth = 419;
+            this.cmbCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourse.FormattingEnabled = true;
+            this.cmbCourse.ItemHeight = 21;
             this.cmbCourse.Location = new System.Drawing.Point(136, 74);
             this.cmbCourse.Name = "cmbCourse";
-            this.cmbCourse.Size = new System.Drawing.Size(419, 30);
+            this.cmbCourse.Size = new System.Drawing.Size(419, 29);
             this.cmbCourse.TabIndex = 22;
             this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.cmbCourse_SelectedIndexChanged);
             this.cmbCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCourse_KeyPress);
@@ -123,7 +125,7 @@ namespace SchoolManagementSystem
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label12.Location = new System.Drawing.Point(20, 84);
+            this.label12.Location = new System.Drawing.Point(18, 84);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 20);
             this.label12.TabIndex = 21;
@@ -133,7 +135,7 @@ namespace SchoolManagementSystem
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(392, 513);
+            this.label11.Location = new System.Drawing.Point(392, 457);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 23);
             this.label11.TabIndex = 20;
@@ -142,10 +144,11 @@ namespace SchoolManagementSystem
             // 
             // cmbCourseCode
             // 
+            this.cmbCourseCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseCode.FormattingEnabled = true;
-            this.cmbCourseCode.Location = new System.Drawing.Point(136, 129);
+            this.cmbCourseCode.Location = new System.Drawing.Point(136, 113);
             this.cmbCourseCode.Name = "cmbCourseCode";
-            this.cmbCourseCode.Size = new System.Drawing.Size(419, 30);
+            this.cmbCourseCode.Size = new System.Drawing.Size(419, 29);
             this.cmbCourseCode.TabIndex = 19;
             this.cmbCourseCode.SelectedIndexChanged += new System.EventHandler(this.cmbCourseCode_SelectedIndexChanged);
             // 
@@ -153,7 +156,7 @@ namespace SchoolManagementSystem
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label10.Location = new System.Drawing.Point(18, 139);
+            this.label10.Location = new System.Drawing.Point(18, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 20);
             this.label10.TabIndex = 18;
@@ -183,7 +186,7 @@ namespace SchoolManagementSystem
             // 
             this.TotalPrice.AutoSize = true;
             this.TotalPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.TotalPrice.Location = new System.Drawing.Point(452, 513);
+            this.TotalPrice.Location = new System.Drawing.Point(452, 457);
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.Size = new System.Drawing.Size(103, 22);
             this.TotalPrice.TabIndex = 14;
@@ -193,7 +196,7 @@ namespace SchoolManagementSystem
             // txtLabprice
             // 
             this.txtLabprice.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLabprice.Location = new System.Drawing.Point(390, 379);
+            this.txtLabprice.Location = new System.Drawing.Point(390, 345);
             this.txtLabprice.Multiline = true;
             this.txtLabprice.Name = "txtLabprice";
             this.txtLabprice.Size = new System.Drawing.Size(165, 30);
@@ -204,7 +207,7 @@ namespace SchoolManagementSystem
             // txtLecPrice
             // 
             this.txtLecPrice.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLecPrice.Location = new System.Drawing.Point(390, 341);
+            this.txtLecPrice.Location = new System.Drawing.Point(390, 308);
             this.txtLecPrice.Multiline = true;
             this.txtLecPrice.Name = "txtLecPrice";
             this.txtLecPrice.Size = new System.Drawing.Size(165, 30);
@@ -216,7 +219,7 @@ namespace SchoolManagementSystem
             // 
             this.txtTotalUnits.Enabled = false;
             this.txtTotalUnits.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtTotalUnits.Location = new System.Drawing.Point(136, 420);
+            this.txtTotalUnits.Location = new System.Drawing.Point(136, 383);
             this.txtTotalUnits.Multiline = true;
             this.txtTotalUnits.Name = "txtTotalUnits";
             this.txtTotalUnits.Size = new System.Drawing.Size(419, 30);
@@ -228,7 +231,7 @@ namespace SchoolManagementSystem
             this.cmbPreReq.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbPreReq.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPreReq.FormattingEnabled = true;
-            this.cmbPreReq.Location = new System.Drawing.Point(136, 462);
+            this.cmbPreReq.Location = new System.Drawing.Point(136, 419);
             this.cmbPreReq.Name = "cmbPreReq";
             this.cmbPreReq.Size = new System.Drawing.Size(419, 30);
             this.cmbPreReq.TabIndex = 6;
@@ -236,7 +239,7 @@ namespace SchoolManagementSystem
             // txtLab
             // 
             this.txtLab.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLab.Location = new System.Drawing.Point(136, 380);
+            this.txtLab.Location = new System.Drawing.Point(136, 345);
             this.txtLab.Multiline = true;
             this.txtLab.Name = "txtLab";
             this.txtLab.Size = new System.Drawing.Size(165, 30);
@@ -248,7 +251,7 @@ namespace SchoolManagementSystem
             // txtLec
             // 
             this.txtLec.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLec.Location = new System.Drawing.Point(136, 341);
+            this.txtLec.Location = new System.Drawing.Point(136, 308);
             this.txtLec.Multiline = true;
             this.txtLec.Name = "txtLec";
             this.txtLec.Size = new System.Drawing.Size(163, 30);
@@ -260,7 +263,7 @@ namespace SchoolManagementSystem
             // txtDescriptiveTitle
             // 
             this.txtDescriptiveTitle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtDescriptiveTitle.Location = new System.Drawing.Point(136, 259);
+            this.txtDescriptiveTitle.Location = new System.Drawing.Point(136, 230);
             this.txtDescriptiveTitle.Multiline = true;
             this.txtDescriptiveTitle.Name = "txtDescriptiveTitle";
             this.txtDescriptiveTitle.Size = new System.Drawing.Size(419, 68);
@@ -269,7 +272,7 @@ namespace SchoolManagementSystem
             // txtSubjectCode
             // 
             this.txtSubjectCode.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtSubjectCode.Location = new System.Drawing.Point(136, 175);
+            this.txtSubjectCode.Location = new System.Drawing.Point(136, 153);
             this.txtSubjectCode.Multiline = true;
             this.txtSubjectCode.Name = "txtSubjectCode";
             this.txtSubjectCode.Size = new System.Drawing.Size(419, 68);
@@ -279,7 +282,7 @@ namespace SchoolManagementSystem
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label7.Location = new System.Drawing.Point(18, 472);
+            this.label7.Location = new System.Drawing.Point(19, 429);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 7;
@@ -289,7 +292,7 @@ namespace SchoolManagementSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label6.Location = new System.Drawing.Point(18, 430);
+            this.label6.Location = new System.Drawing.Point(18, 393);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 6;
@@ -299,7 +302,7 @@ namespace SchoolManagementSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label5.Location = new System.Drawing.Point(18, 390);
+            this.label5.Location = new System.Drawing.Point(18, 355);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 5;
@@ -309,7 +312,7 @@ namespace SchoolManagementSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label4.Location = new System.Drawing.Point(18, 351);
+            this.label4.Location = new System.Drawing.Point(18, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 4;
@@ -319,7 +322,7 @@ namespace SchoolManagementSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label3.Location = new System.Drawing.Point(18, 272);
+            this.label3.Location = new System.Drawing.Point(19, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 3;
@@ -329,7 +332,7 @@ namespace SchoolManagementSystem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.label2.Location = new System.Drawing.Point(18, 185);
+            this.label2.Location = new System.Drawing.Point(18, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 2;
@@ -394,7 +397,7 @@ namespace SchoolManagementSystem
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label9.Location = new System.Drawing.Point(299, 350);
+            this.label9.Location = new System.Drawing.Point(299, 317);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 21);
             this.label9.TabIndex = 10;
@@ -404,7 +407,7 @@ namespace SchoolManagementSystem
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label8.Location = new System.Drawing.Point(299, 390);
+            this.label8.Location = new System.Drawing.Point(299, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 21);
             this.label8.TabIndex = 11;
@@ -421,7 +424,7 @@ namespace SchoolManagementSystem
             this.btnAddSubjects.IconColor = System.Drawing.Color.White;
             this.btnAddSubjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSubjects.IconSize = 30;
-            this.btnAddSubjects.Location = new System.Drawing.Point(343, 611);
+            this.btnAddSubjects.Location = new System.Drawing.Point(343, 553);
             this.btnAddSubjects.Name = "btnAddSubjects";
             this.btnAddSubjects.Size = new System.Drawing.Size(107, 32);
             this.btnAddSubjects.TabIndex = 7;
@@ -433,7 +436,7 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 649);
+            this.panel4.Location = new System.Drawing.Point(6, 593);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(635, 6);
             this.panel4.TabIndex = 9;
@@ -444,7 +447,7 @@ namespace SchoolManagementSystem
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(641, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 601);
+            this.panel3.Size = new System.Drawing.Size(6, 545);
             this.panel3.TabIndex = 8;
             // 
             // panel2
@@ -453,7 +456,7 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 601);
+            this.panel2.Size = new System.Drawing.Size(6, 545);
             this.panel2.TabIndex = 7;
             // 
             // panel1
@@ -507,7 +510,7 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(456, 611);
+            this.iconButton1.Location = new System.Drawing.Point(456, 553);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
             this.iconButton1.TabIndex = 8;
@@ -519,7 +522,7 @@ namespace SchoolManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 655);
+            this.ClientSize = new System.Drawing.Size(647, 599);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);

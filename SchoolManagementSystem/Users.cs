@@ -22,12 +22,10 @@ namespace SchoolManagementSystem
             var myfrm = new AddUser(this, idd);
             myfrm.ShowDialog();
         }
-
         private void Users_Load(object sender, EventArgs e)
         {
             displayData();
         }
-
         public void displayData()
         {
             var values = DBContext.GetContext().Query("users").Get();
@@ -40,7 +38,6 @@ namespace SchoolManagementSystem
 
                 dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
             }
-
             foreach (DataGridViewRow row in dgvUsers.Rows)
             {
                 if (Convert.ToString(row.Cells[3].Value) == "Activate")
@@ -55,7 +52,6 @@ namespace SchoolManagementSystem
                 }
             }
         }
-
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvUsers.Columns[e.ColumnIndex].Name;

@@ -80,7 +80,7 @@ namespace SchoolManagementSystem
                             DBContext.GetContext().Query("subjects").Insert(new
                             {
                                 courseCode = cmbCourseCode.Text,
-                                subjectCode = txtSubjectCode.Text,
+                                subjectCode = txtSubjectCode.Text.ToUpper(),
                                 subjectTitle = txtDescriptiveTitle.Text,
                                 lec = txtLec.Text,
                                 lab = txtLab.Text,

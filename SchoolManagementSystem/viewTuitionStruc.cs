@@ -30,24 +30,26 @@ namespace SchoolManagementSystem
 
         public void displaySched()
         {
-            schedule sched = new schedule();
+            Subjects subjs = new Subjects();
 
-            dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
-            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-            sched.viewsched();
 
             dgvSched.Rows.Clear();
-            foreach (DataRow Drow in sched.dt.Rows)
+            subjs.VIEW_DATA();
+   
+            foreach (DataRow Drow in subjs.dt.Rows)
             {
                 int num = dgvSched.Rows.Add();
 
-                dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
-                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                dgvSched.Rows[num].Cells[2].Value = Drow["SubjTitle"].ToString();
-                dgvSched.Rows[num].Cells[3].Value = Drow["roomID"].ToString();
-                dgvSched.Rows[num].Cells[4].Value = Drow["date"].ToString();
-                dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["time start"].ToString());
-                dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["time end"].ToString());
+ 
+                dgvSched.Rows[num].Cells[0].Value = Drow["SubjectCode"].ToString();
+                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectTitle"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["Lec"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["Lab"].ToString();
+                dgvSched.Rows[num].Cells[4].Value =Drow["LecPrice"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Drow["LabPrice"].ToString();
+                dgvSched.Rows[num].Cells[6].Value = Drow["Total"].ToString();
+           
+
             }
         }
 
@@ -63,13 +65,16 @@ namespace SchoolManagementSystem
             {
                 int num = dgvCategories.Rows.Add();
 
-                dgvCategories.Rows[num].Cells[0].Value = Drow["schedID"].ToString();
-                dgvCategories.Rows[num].Cells[1].Value = Drow["subjectcode"].ToString();
-                dgvCategories.Rows[num].Cells[2].Value = Drow["subjTitle"].ToString();
+                dgvCategories.Rows[num].Cells[0].Value = Drow["subjectcode"].ToString();
+                dgvCategories.Rows[num].Cells[1].Value = Drow["title"].ToString();
+                dgvCategories.Rows[num].Cells[2].Value = Drow["leclab"].ToString();
+                dgvCategories.Rows[num].Cells[3].Value = Drow["labprice"].ToString();
+                dgvCategories.Rows[num].Cells[4].Value = Drow["lecprice"].ToString();
+                dgvCategories.Rows[num].Cells[5].Value = Drow["totalprice"].ToString();
             }
 
-            //tui.selectQuery2();
-            //textBox1.Text = tui.total;
+            tui.selectQuery2();
+            textBox1.Text = tui.total;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -112,9 +117,9 @@ namespace SchoolManagementSystem
 
             DBContext.GetContext().Query("tuition").Insert(new
             {
-                subjTitle = dgvSched.SelectedRows[0].Cells[2].Value.ToString(),
-                subjectCode = dgvSched.SelectedRows[0].Cells[1].Value.ToString(),
-                schedID = dgvSched.SelectedRows[0].Cells[0].Value.ToString(),
+                subjTitle = dgvSched.SelectedRows[0].Cells[1].Value.ToString(),
+                subjectCode = dgvSched.SelectedRows[0].Cells[0].Value.ToString(),
+           
                 tuitionCatID = tuitionID
             });
         }

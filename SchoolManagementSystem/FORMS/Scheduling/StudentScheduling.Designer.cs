@@ -36,16 +36,6 @@ namespace SchoolManagementSystem
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvStudentSched = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNew = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,6 +73,16 @@ namespace SchoolManagementSystem
             this.button1 = new System.Windows.Forms.Button();
             this.lblTuition = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).BeginInit();
@@ -168,75 +168,6 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStudentSched_RowsAdded);
             this.dgvStudentSched.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvStudentSched_RowsRemoved);
             // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "#";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "SUBJECT CODE";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DESCRIPTION";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ROOM";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 260;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.HeaderText = "DAYS";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 64;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "TIME START";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "TIME END";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "MAX ENROLLEES";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column9.HeaderText = "STATUS";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "LEC/LAB";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,7 +175,7 @@ namespace SchoolManagementSystem
             this.btnNew.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNew.IconSize = 20;
-            this.btnNew.Location = new System.Drawing.Point(103, 13);
+            this.btnNew.Location = new System.Drawing.Point(98, 14);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(95, 27);
             this.btnNew.TabIndex = 3;
@@ -417,8 +348,7 @@ namespace SchoolManagementSystem
             // 
             // cmbSubjects
             // 
-            this.cmbSubjects.BackColor = System.Drawing.Color.White;
-            this.cmbSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubjects.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbSubjects.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubjects.FormattingEnabled = true;
@@ -667,7 +597,7 @@ namespace SchoolManagementSystem
             this.btnEnroll.IconColor = System.Drawing.Color.White;
             this.btnEnroll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEnroll.IconSize = 30;
-            this.btnEnroll.Location = new System.Drawing.Point(996, 396);
+            this.btnEnroll.Location = new System.Drawing.Point(994, 402);
             this.btnEnroll.Name = "btnEnroll";
             this.btnEnroll.Size = new System.Drawing.Size(107, 32);
             this.btnEnroll.TabIndex = 32;
@@ -707,11 +637,82 @@ namespace SchoolManagementSystem
             this.panel1.Size = new System.Drawing.Size(1107, 439);
             this.panel1.TabIndex = 35;
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "#";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "SUBJECT CODE";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 180;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DESCRIPTION";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 250;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ROOM";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "DAYS";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 180;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "TIME START";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 180;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "TIME END";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 180;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "MAX ENROLLEES";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "STATUS";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 80;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "LEC/LAB";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 80;
+            // 
             // StudentScheduling
             // 
             this.AcceptButton = this.btnSearchStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1108, 1100);
             this.Controls.Add(this.pnlBilling);
             this.Controls.Add(this.lblTuition);

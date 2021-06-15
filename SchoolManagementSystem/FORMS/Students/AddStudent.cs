@@ -93,8 +93,7 @@ namespace SchoolManagementSystem
                         }
                         catch (Exception)
                         {
-                            var value = DBContext.GetContext().Query("course").Where("description", cmbCourse.Text).First();
-                            int studentId = value.courseId;
+                            
                             DBContext.GetContext().Query("student").Insert(new
                             {
                                 lastname = txtLastname.Text,
@@ -109,7 +108,7 @@ namespace SchoolManagementSystem
                                 citizenship = txtCitizen.Text,
                                 contactno = txtContactNo.Text,
                                 emailAddress = txtEmailAddress.Text,
-                                course = studentId,
+                                course = cmbCourse.Text,
                                 presentAddress = txtAddress.Text,
                                 homeAddress = txtHomeAddress.Text,
                                 fatherLastname = txtFatherLname.Text,

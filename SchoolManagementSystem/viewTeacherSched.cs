@@ -57,10 +57,11 @@ namespace SchoolManagementSystem
                     int num = dgvSched.Rows.Add();
                     dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                     dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                    dgvSched.Rows[num].Cells[2].Value = Drow["Room"].ToString();
-                    dgvSched.Rows[num].Cells[3].Value = Drow["Day"].ToString();
-                    dgvSched.Rows[num].Cells[4].Value = Convert.ToDateTime(Drow["TimeStart"].ToString());
-                    dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["TimeEnd"].ToString());
+                    dgvSched.Rows[num].Cells[2].Value = Drow["SubjectCode"].ToString();
+                    dgvSched.Rows[num].Cells[3].Value = Drow["Room"].ToString();
+                    dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                    dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["TimeStart"].ToString());
+                    dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["TimeEnd"].ToString());
                 }
             }
         }

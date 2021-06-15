@@ -53,7 +53,7 @@ namespace SchoolManagementSystem
 
             foreach (var value in values)
             {
-                dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.unit, value.prereq);
+                dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
             }
         }
 

@@ -33,6 +33,7 @@ namespace SchoolManagementSystem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAddDept = new FontAwesome.Sharp.IconButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
@@ -41,8 +42,8 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddDept = new FontAwesome.Sharp.IconButton();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -72,6 +73,22 @@ namespace SchoolManagementSystem
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1104, 1);
             this.panel4.TabIndex = 3;
+            // 
+            // btnAddDept
+            // 
+            this.btnAddDept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDept.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddDept.IconColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAddDept.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddDept.IconSize = 20;
+            this.btnAddDept.Location = new System.Drawing.Point(85, 75);
+            this.btnAddDept.Name = "btnAddDept";
+            this.btnAddDept.Size = new System.Drawing.Size(95, 27);
+            this.btnAddDept.TabIndex = 2;
+            this.btnAddDept.Text = "Add New";
+            this.btnAddDept.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddDept.UseVisualStyleBackColor = true;
+            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
             // 
             // tabControl1
             // 
@@ -115,7 +132,8 @@ namespace SchoolManagementSystem
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
-            this.Column1});
+            this.Column1,
+            this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,22 +197,6 @@ namespace SchoolManagementSystem
             this.panel2.Size = new System.Drawing.Size(1384, 1);
             this.panel2.TabIndex = 19;
             // 
-            // btnAddDept
-            // 
-            this.btnAddDept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDept.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAddDept.IconColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnAddDept.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddDept.IconSize = 20;
-            this.btnAddDept.Location = new System.Drawing.Point(85, 75);
-            this.btnAddDept.Name = "btnAddDept";
-            this.btnAddDept.Size = new System.Drawing.Size(95, 27);
-            this.btnAddDept.TabIndex = 2;
-            this.btnAddDept.Text = "Add New";
-            this.btnAddDept.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddDept.UseVisualStyleBackColor = true;
-            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
-            // 
             // btnAdmin
             // 
             this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -217,6 +219,12 @@ namespace SchoolManagementSystem
             this.btnAdmin.Text = "Section Category Information";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // SectionCategory
             // 
@@ -254,5 +262,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

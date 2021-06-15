@@ -1,7 +1,7 @@
 ﻿
-namespace SchoolManagementSystem
+namespace SchoolManagementSystem.FORMS.Sectioning
 {
-    partial class SectionCategory
+    partial class Sectioning
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@ namespace SchoolManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAddDept = new FontAwesome.Sharp.IconButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
@@ -41,7 +42,6 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddDept = new FontAwesome.Sharp.IconButton();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -61,7 +61,7 @@ namespace SchoolManagementSystem
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1108, 604);
-            this.panel1.TabIndex = 21;
+            this.panel1.TabIndex = 24;
             // 
             // panel4
             // 
@@ -72,6 +72,22 @@ namespace SchoolManagementSystem
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1104, 1);
             this.panel4.TabIndex = 3;
+            // 
+            // btnAddDept
+            // 
+            this.btnAddDept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDept.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddDept.IconColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAddDept.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddDept.IconSize = 20;
+            this.btnAddDept.Location = new System.Drawing.Point(85, 75);
+            this.btnAddDept.Name = "btnAddDept";
+            this.btnAddDept.Size = new System.Drawing.Size(95, 27);
+            this.btnAddDept.TabIndex = 2;
+            this.btnAddDept.Text = "Add New";
+            this.btnAddDept.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddDept.UseVisualStyleBackColor = true;
+            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
             // 
             // tabControl1
             // 
@@ -103,27 +119,27 @@ namespace SchoolManagementSystem
             this.dgvDepartment.BackgroundColor = System.Drawing.Color.White;
             this.dgvDepartment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDepartment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDepartment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDepartment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDepartment.ColumnHeadersHeight = 35;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
             this.Column1});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDepartment.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDepartment.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartment.EnableHeadersVisualStyles = false;
             this.dgvDepartment.GridColor = System.Drawing.Color.White;
@@ -166,33 +182,18 @@ namespace SchoolManagementSystem
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(9, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 17);
+            this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Section Information Page";
+            this.label1.Text = "Sectioning Information Page";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(-138, 41);
+            this.panel2.Location = new System.Drawing.Point(-138, 39);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1384, 1);
-            this.panel2.TabIndex = 19;
-            // 
-            // btnAddDept
-            // 
-            this.btnAddDept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDept.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAddDept.IconColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnAddDept.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddDept.IconSize = 20;
-            this.btnAddDept.Location = new System.Drawing.Point(85, 75);
-            this.btnAddDept.Name = "btnAddDept";
-            this.btnAddDept.Size = new System.Drawing.Size(95, 27);
-            this.btnAddDept.TabIndex = 2;
-            this.btnAddDept.Text = "Add New";
-            this.btnAddDept.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddDept.UseVisualStyleBackColor = true;
+            this.panel2.TabIndex = 22;
             // 
             // btnAdmin
             // 
@@ -208,27 +209,27 @@ namespace SchoolManagementSystem
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmin.IconSize = 30;
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(-10, 10);
+            this.btnAdmin.Location = new System.Drawing.Point(-10, 3);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(459, 28);
-            this.btnAdmin.TabIndex = 20;
-            this.btnAdmin.Text = "Section Information";
+            this.btnAdmin.TabIndex = 23;
+            this.btnAdmin.Text = "Sectioning Information";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
-            // SectionCategory
+            // Sectioning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 650);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SectionCategory";
+            this.Name = "Sectioning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SectionCategory";
+            this.Text = "Sectioning";
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -251,7 +252,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton btnAdmin;
     }
 }

@@ -149,27 +149,27 @@ namespace SchoolManagementSystem
             fourth = minus * Convert.ToDouble(led.finals);
 
 
-            // KUHAON WHOLE NUMBER EACH EXAM
-            var firstConv = ComputePercentage(first, "", "", 0);
-            var secondConv = ComputePercentage(second, "", "", 0);
-            var thirdConv = ComputePercentage(third, "", "", 0);
-            var fourthConv = ComputePercentage(fourth, "", "", 0);
+            //// KUHAON WHOLE NUMBER EACH EXAM
+            //var firstConv = ComputePercentage(first, "", "", 0);
+            //var secondConv = ComputePercentage(second, "", "", 0);
+            //var thirdConv = ComputePercentage(third, "", "", 0);
+            //var fourthConv = ComputePercentage(fourth, "", "", 0);
 
-            // KUHAON UG I ADD TANAN DECIMAL
-            var firstDec = ComputeDecimals(first, "", "", 0);
-            var secondDec = ComputeDecimals(second, "", "", 0);
-            var thirdDec = ComputeDecimals(third, "", "", 0);
-            var fourthDec = ComputeDecimals(fourth, "", "", 0);
-            var totalDec = firstDec + secondDec + thirdDec + fourthDec;
+            //// KUHAON UG I ADD TANAN DECIMAL
+            //var firstDec = ComputeDecimals(first, "", "", 0);
+            //var secondDec = ComputeDecimals(second, "", "", 0);
+            //var thirdDec = ComputeDecimals(third, "", "", 0);
+            //var fourthDec = ComputeDecimals(fourth, "", "", 0);
+            //var totalDec = firstDec + secondDec + thirdDec + fourthDec;
 
-            //IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-            var amt1 = firstConv + totalDec;
+            ////IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+            //var amt1 = firstConv + totalDec;
 
             myForm.textBox15.Text = spd.total;
-            myForm.txt1.Text = amt1.ToString();
-            myForm.txt2.Text = secondConv.ToString();
-            myForm.txt3.Text = thirdConv.ToString();
-            myForm.txt4.Text = fourthConv.ToString();
+            myForm.txt1.Text = first.ToString();
+            myForm.txt2.Text = second.ToString();
+            myForm.txt3.Text = third.ToString();
+            myForm.txt4.Text = fourth.ToString();
             myForm.billingid = spd.billingid;
 
             led.percent();

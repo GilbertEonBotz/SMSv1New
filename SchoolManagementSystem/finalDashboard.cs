@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystem.FORMS.Sectioning;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -326,6 +327,26 @@ namespace SchoolManagementSystem
         private void btnSignout_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSectionCategory_Click(object sender, EventArgs e)
+        {
+            var myForm = new SectionCategory();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnSectioning_Click(object sender, EventArgs e)
+        {
+            var myForm = new Sectioning();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
         }
     }
 }

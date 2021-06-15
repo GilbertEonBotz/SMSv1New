@@ -77,6 +77,17 @@ namespace SchoolManagementSystem
                         }
                         catch (Exception)
                         {
+                            string value = "";
+
+                            for (int i = 0; i < lstPrereq.Items.Count; i++)
+                            {
+                                if (value != "")
+                                {
+                                    value += ", ";
+                                }
+                                value += lstPrereq.Items[i].ToString();
+                                
+                            }
                             DBContext.GetContext().Query("subjects").Insert(new
                             {
                                 courseCode = cmbCourseCode.Text,
@@ -85,7 +96,7 @@ namespace SchoolManagementSystem
                                 lec = txtLec.Text,
                                 lab = txtLab.Text,
                                 totalUnits = txtTotalUnits.Text,
-                                prereq = cmbPreReq.Text,
+                                prereq = value,
                                 status = "Avail",
                                 totalLecprice = lblLectotal.Text,
                                 totalLabprice = lblabTotal.Text,
@@ -108,8 +119,6 @@ namespace SchoolManagementSystem
 
         private void txtLab_TextChanged(object sender, EventArgs e)
         {
-
-
             if (!string.IsNullOrEmpty(txtLec.Text) && !string.IsNullOrEmpty(txtLab.Text))
                 txtTotalUnits.Text = (Convert.ToInt32(txtLec.Text) + Convert.ToInt32(txtLab.Text)).ToString();
 
@@ -370,6 +379,18 @@ namespace SchoolManagementSystem
         {
             e.Handled = true;
             
+        }
+
+        private void cmbPreReq_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstPrereq.Items.Contains(cmbPreReq.Text))
+            {
+                Validator.AlertDanger("Subject already added in the list!");
+            }
+            else 
+            {
+                lstPrereq.Items.Add(cmbPreReq.SelectedItem);
+            }
         }
     }
 }

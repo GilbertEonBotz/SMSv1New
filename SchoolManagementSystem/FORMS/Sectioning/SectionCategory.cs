@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystem.FORMS.Sectioning;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace SchoolManagementSystem
         public SectionCategory()
         {
             InitializeComponent();
+        }
+
+        private void btnAddDept_Click(object sender, EventArgs e)
+        {
+            var myfrm = new addSectionCategory();
+            myfrm.ShowDialog();
         }
     }
 }

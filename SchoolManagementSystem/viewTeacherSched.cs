@@ -49,15 +49,15 @@ namespace SchoolManagementSystem
             for (int i = 0; i < words.Length-1; i++)
             {
                 sched.subjectcode = (words[i].ToString());
-                dgvSched.Columns[4].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+                dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewteachsubj();
                 foreach (DataRow Drow in sched.dt.Rows)
                 {
                     int num = dgvSched.Rows.Add();
                     dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
                     dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-                    dgvSched.Rows[num].Cells[2].Value = Drow["SubjectCode"].ToString();
+                    dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
                     dgvSched.Rows[num].Cells[3].Value = Drow["Room"].ToString();
                     dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
                     dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["TimeStart"].ToString());

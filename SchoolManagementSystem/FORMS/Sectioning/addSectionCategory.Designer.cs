@@ -36,13 +36,13 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnAddCourse = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel6.SuspendLayout();
@@ -123,6 +123,30 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.panel7.Size = new System.Drawing.Size(556, 49);
             this.panel7.TabIndex = 0;
             // 
+            // btnAdmissionForm
+            // 
+            this.btnAdmissionForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmissionForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdmissionForm.FlatAppearance.BorderSize = 0;
+            this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
+            this.btnAdmissionForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdmissionForm.IconSize = 20;
+            this.btnAdmissionForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmissionForm.Location = new System.Drawing.Point(0, 10);
+            this.btnAdmissionForm.Name = "btnAdmissionForm";
+            this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnAdmissionForm.Size = new System.Drawing.Size(286, 32);
+            this.btnAdmissionForm.TabIndex = 5;
+            this.btnAdmissionForm.Text = "Section Category Form";
+            this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmissionForm.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
@@ -154,6 +178,23 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.label1.TabIndex = 7;
             this.label1.Text = "School Management System";
             // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 25;
+            this.btnExit.Location = new System.Drawing.Point(530, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 31);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
@@ -172,47 +213,6 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.panel3.Size = new System.Drawing.Size(6, 281);
             this.panel3.TabIndex = 32;
             // 
-            // btnAdmissionForm
-            // 
-            this.btnAdmissionForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmissionForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdmissionForm.FlatAppearance.BorderSize = 0;
-            this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
-            this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
-            this.btnAdmissionForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdmissionForm.IconSize = 20;
-            this.btnAdmissionForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmissionForm.Location = new System.Drawing.Point(0, 10);
-            this.btnAdmissionForm.Name = "btnAdmissionForm";
-            this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnAdmissionForm.Size = new System.Drawing.Size(286, 32);
-            this.btnAdmissionForm.TabIndex = 5;
-            this.btnAdmissionForm.Text = "Section Category Form";
-            this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmissionForm.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(530, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(38, 31);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // btnAddCourse
             // 
             this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
@@ -230,6 +230,7 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.btnAddCourse.TabIndex = 35;
             this.btnAddCourse.Text = "Save";
             this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // iconButton1
             // 

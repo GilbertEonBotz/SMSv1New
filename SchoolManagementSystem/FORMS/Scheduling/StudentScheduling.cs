@@ -37,7 +37,7 @@ namespace SchoolManagementSystem
 
         private void StudentScheduling_Load(object sender, EventArgs e)
         {
-            panel1.Enabled = false;
+            //panel1.Enabled = false;
             //pnlBilling.SetBounds(0, 0, 0, 0);
             displayDataCmb();
         }
@@ -57,28 +57,38 @@ namespace SchoolManagementSystem
 
         public void displayDataCmb()
         {
-            var values = DBContext.GetContext().Query("tuitioncategory").Join("tuition", "tuition.tuitionCatID", "tuitioncategory.tuitionCatID").GroupBy("tuitioncategory.tuitionCatID").Get();
+            var values = DBContext.GetContext().Query("sectionCategory")
+                .Join("Sectioning", "Sectioning.SectionCategoryID", "sectionCategory.SectionCategoryID")
+                .GroupBy("sectionCategory.SectionCategoryID")
+                .Get();
 
-            foreach (var value in values)
+            foreach(var value in values)
             {
-                cmbSubjects.Items.Add(value.category);
+                cmbSubjects.Items.Add(value.sectionName);
             }
+            //var values = DBContext.GetContext().Query("tuitioncategory").Join("tuition", "tuition.tuitionCatID", "tuitioncategory.tuitionCatID").GroupBy("tuitioncategory.tuitionCatID").Get();
 
-            conn = connect.getcon();
-            conn.Open();
-            cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbStudentNo.Items.Add(dr[0].ToString());
-            }
+            //foreach (var value in values)
+            //{
+            //    cmbSubjects.Items.Add(value.category);
+            //}
 
-            var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
+            //conn = connect.getcon();
+            //conn.Open();
+            //cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
+            //dr = cmd.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    cmbStudentNo.Items.Add(dr[0].ToString());
+            //}
 
-            foreach (var value in fee)
-            {
-                cmbCategoryFee.Items.Add(value.structureName);
-            }
+            //var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
+
+
+            //foreach (var value in fee)
+            //{
+            //    cmbCategoryFee.Items.Add(value.structureName);
+            //}
 
         }
         private void btnNew_Click(object sender, EventArgs e)
@@ -136,8 +146,8 @@ namespace SchoolManagementSystem
 
                 amount = 0;
 
-                var value = DBContext.GetContext().Query("tuitioncategory").Where("category", cmbSubjects.Text).First();
-                string getid = value.tuitionCatID.ToString();
+                var value = DBContext.GetContext().Query("sectionCategory").Where("sectionName", cmbSubjects.Text).First();
+                string getid = value.SectionCategoryID.ToString();
 
                 dgvStudentSched.Rows.Clear();
 

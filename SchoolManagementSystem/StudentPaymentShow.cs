@@ -48,6 +48,7 @@ namespace SchoolManagementSystem
                 dgvStudents.Rows[num].Cells[0].Value = DROW["StudentID"].ToString();
                 dgvStudents.Rows[num].Cells[1].Value = DROW["Name"].ToString();
                 dgvStudents.Rows[num].Cells[2].Value = DROW["Total"].ToString();
+        
             }
         }
 
@@ -147,29 +148,30 @@ namespace SchoolManagementSystem
             second = minus * Convert.ToDouble(led.midterm);
             third = minus * Convert.ToDouble(led.semi);
             fourth = minus * Convert.ToDouble(led.finals);
+        
 
 
-            //// KUHAON WHOLE NUMBER EACH EXAM
-            //var firstConv = ComputePercentage(first, "", "", 0);
-            //var secondConv = ComputePercentage(second, "", "", 0);
-            //var thirdConv = ComputePercentage(third, "", "", 0);
-            //var fourthConv = ComputePercentage(fourth, "", "", 0);
+            // KUHAON WHOLE NUMBER EACH EXAM
+            var firstConv = ComputePercentage(first, "", "", 0);
+            var secondConv = ComputePercentage(second, "", "", 0);
+            var thirdConv = ComputePercentage(third, "", "", 0);
+            var fourthConv = ComputePercentage(fourth, "", "", 0);
 
-            //// KUHAON UG I ADD TANAN DECIMAL
-            //var firstDec = ComputeDecimals(first, "", "", 0);
-            //var secondDec = ComputeDecimals(second, "", "", 0);
-            //var thirdDec = ComputeDecimals(third, "", "", 0);
-            //var fourthDec = ComputeDecimals(fourth, "", "", 0);
-            //var totalDec = firstDec + secondDec + thirdDec + fourthDec;
+            // KUHAON UG I ADD TANAN DECIMAL
+            var firstDec = ComputeDecimals(first, "", "", 0);
+            var secondDec = ComputeDecimals(second, "", "", 0);
+            var thirdDec = ComputeDecimals(third, "", "", 0);
+            var fourthDec = ComputeDecimals(fourth, "", "", 0);
+            var totalDec = firstDec + secondDec + thirdDec + fourthDec;
 
-            ////IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-            //var amt1 = firstConv + totalDec;
+          //  IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
+            var amt1 = firstConv + totalDec;
 
             myForm.textBox15.Text = spd.total;
-            myForm.txt1.Text = first.ToString();
-            myForm.txt2.Text = second.ToString();
-            myForm.txt3.Text = third.ToString();
-            myForm.txt4.Text = fourth.ToString();
+            myForm.txt1.Text = amt1.ToString();
+            myForm.txt2.Text = secondConv.ToString();
+            myForm.txt3.Text = thirdConv.ToString();
+            myForm.txt4.Text = fourthConv.ToString();
             myForm.billingid = spd.billingid;
 
             led.percent();
@@ -181,9 +183,11 @@ namespace SchoolManagementSystem
             foreach (DataRow DROW in spd.dt.Rows)
             {
                 int num = myForm.dgv.Rows.Add();
-                myForm.dgv.Rows[num].Cells[0].Value = DROW["amount"].ToString();
-                myForm.dgv.Rows[num].Cells[1].Value = DROW["remarks"].ToString();
-                myForm.dgv.Rows[num].Cells[2].Value = DROW["date"].ToString();
+                myForm.dgv.Rows[num].Cells[0].Value = DROW["paymentid"].ToString();
+                myForm.dgv.Rows[num].Cells[1].Value = DROW["amount"].ToString();
+                myForm.dgv.Rows[num].Cells[2].Value = DROW["remarks"].ToString();
+                myForm.dgv.Rows[num].Cells[3].Value = DROW["date"].ToString();
+     
             }
             //   spd.viewPaymentDetailed();
             myForm.lbltotal.Text = spd.totalpaid.ToString();
@@ -204,51 +208,51 @@ namespace SchoolManagementSystem
 
                     myForm.comboBox2.Items.Remove("DOWNPAYMENT");
 
-                    if (Convert.ToDouble(first) <= amount)
+                    if (Convert.ToDouble(myForm.txt1.Text) <= amount)
                     {
 
-                        amount = amount - first;
+                        amount = amount - Convert.ToDouble(myForm.txt1.Text);
                         myForm.comboBox2.Items.Remove("PRELIM");
-                        if (Convert.ToDouble(second) <= amount)
+                        if (Convert.ToDouble(myForm.txt2.Text) <= amount)
                         {
-                            amount = amount - second;
+                            amount = amount - Convert.ToDouble(myForm.txt2.Text);
                             myForm.comboBox2.Items.Remove("MIDTERM");
-                            if (Convert.ToDouble(third) <= amount)
+                            if (Convert.ToDouble(myForm.txt3.Text) <= amount)
                             {
-                                amount = amount - third;
+                                amount = amount - Convert.ToDouble(myForm.txt3.Text);
 
                                 myForm.comboBox2.Items.Remove("SEMI-FINAL");
-                                if (Convert.ToDouble(fourth) <= amount)
+                                if (Convert.ToDouble(myForm.txt4.Text) <= amount)
                                 {
-                                    amount = amount - fourth;
+                                    amount = amount -Convert.ToDouble( myForm.txt4.Text);
                                     myForm.lbldownpayment.Text = led.downpayment.ToString();
-                                    myForm.lblpre.Text = first.ToString();
-                                    myForm.lblmid.Text = second.ToString();
-                                    myForm.lblsemi.Text = third.ToString();
-                                    myForm.lblfin.Text = fourth.ToString();
+                                    myForm.lblpre.Text = myForm.txt1.Text;
+                                    myForm.lblmid.Text = myForm.txt2.Text;
+                                    myForm.lblsemi.Text = myForm.txt3.Text;
+                                    myForm.lblfin.Text = myForm.txt4.Text;
                                     myForm.comboBox2.Items.Remove("FINALE");
                                 }
                                 else
                                 {
                                     myForm.lbldownpayment.Text = led.downpayment.ToString();
-                                    myForm.lblpre.Text = first.ToString();
-                                    myForm.lblmid.Text = second.ToString();
-                                    myForm.lblsemi.Text = third.ToString();
+                                    myForm.lblpre.Text = myForm.txt1.Text;
+                                    myForm.lblmid.Text = myForm.txt2.Text;
+                                    myForm.lblsemi.Text = myForm.txt3.Text;
                                     myForm.lblfin.Text = amount.ToString();
                                 }
                             }
                             else
                             {
                                 myForm.lbldownpayment.Text = led.downpayment.ToString();
-                                myForm.lblpre.Text = first.ToString();
-                                myForm.lblmid.Text = second.ToString();
+                                myForm.lblpre.Text = myForm.txt1.Text;
+                                myForm.lblmid.Text = myForm.txt2.Text;
                                 myForm.lblsemi.Text = amount.ToString();
                             }
                         }
                         else
                         {
                             myForm.lbldownpayment.Text = led.downpayment.ToString();
-                            myForm.lblpre.Text = first.ToString();
+                            myForm.lblpre.Text = myForm.txt1.Text;
                             myForm.lblmid.Text = amount.ToString();
                         }
                     }

@@ -89,7 +89,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                 conn = connect.getcon();
                 conn.Open();
-                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
                 dr = cmd.ExecuteReader();
 
                 while (dr.Read())
@@ -288,6 +288,15 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("update payment set status ='void' where paymentid = '" + dgv.SelectedRows[0].Cells[0].Value + "'", conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("succesfully void");
         }
     }
 }

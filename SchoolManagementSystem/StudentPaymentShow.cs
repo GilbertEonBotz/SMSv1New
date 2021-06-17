@@ -137,41 +137,42 @@ namespace SchoolManagementSystem
 
             double finalss = Convert.ToDouble(spd.totalpaid) + 0;
 
-            MessageBox.Show(spd.totalpaid.ToString());
-            double minus = Convert.ToDouble(spd.total) - Convert.ToDouble(led.downpayment);
-            double first;
-            double second;
-            double third;
-            double fourth;
+            //MessageBox.Show(spd.totalpaid.ToString());
+            //double minus = Convert.ToDouble(spd.total) - Convert.ToDouble(led.downpayment);
+            //double first;
+            //double second;
+            //double third;
+            //double fourth;
 
-            first = minus * Convert.ToDouble(led.prelim);
-            second = minus * Convert.ToDouble(led.midterm);
-            third = minus * Convert.ToDouble(led.semi);
-            fourth = minus * Convert.ToDouble(led.finals);
+            //first = minus * Convert.ToDouble(led.prelim);
+            //second = minus * Convert.ToDouble(led.midterm);
+            //third = minus * Convert.ToDouble(led.semi);
+            //fourth = led.finals;
         
 
 
-            // KUHAON WHOLE NUMBER EACH EXAM
-            var firstConv = ComputePercentage(first, "", "", 0);
-            var secondConv = ComputePercentage(second, "", "", 0);
-            var thirdConv = ComputePercentage(third, "", "", 0);
-            var fourthConv = ComputePercentage(fourth, "", "", 0);
+            //// KUHAON WHOLE NUMBER EACH EXAM
+            //var firstConv = ComputePercentage(first, "", "", 0);
+            //var secondConv = ComputePercentage(second, "", "", 0);
+            //var thirdConv = ComputePercentage(third, "", "", 0);
+            //var fourthConv = ComputePercentage(fourth, "", "", 0);
 
-            // KUHAON UG I ADD TANAN DECIMAL
-            var firstDec = ComputeDecimals(first, "", "", 0);
-            var secondDec = ComputeDecimals(second, "", "", 0);
-            var thirdDec = ComputeDecimals(third, "", "", 0);
-            var fourthDec = ComputeDecimals(fourth, "", "", 0);
-            var totalDec = firstDec + secondDec + thirdDec + fourthDec;
+            //// KUHAON UG I ADD TANAN DECIMAL
+            //var firstDec = ComputeDecimals(first, "", "", 0);
+            //var secondDec = ComputeDecimals(second, "", "", 0);
+            //var thirdDec = ComputeDecimals(third, "", "", 0);
+            //var fourthDec = ComputeDecimals(fourth, "", "", 0);
+            //var totalDec = firstDec + secondDec + thirdDec + fourthDec;
 
           //  IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-            var amt1 = firstConv + totalDec;
+         //   var amt1 = firstConv + totalDec;
+
 
             myForm.textBox15.Text = spd.total;
-            myForm.txt1.Text = amt1.ToString();
-            myForm.txt2.Text = secondConv.ToString();
-            myForm.txt3.Text = thirdConv.ToString();
-            myForm.txt4.Text = fourthConv.ToString();
+            myForm.txt1.Text = spd.prelim;
+            myForm.txt2.Text = spd.midterm;
+            myForm.txt3.Text = spd.semi;
+            myForm.txt4.Text = spd.final;
             myForm.billingid = spd.billingid;
 
             led.percent();

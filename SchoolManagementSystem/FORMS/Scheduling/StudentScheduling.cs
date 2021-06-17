@@ -73,22 +73,22 @@ namespace SchoolManagementSystem
             //    cmbSubjects.Items.Add(value.category);
             //}
 
-            //conn = connect.getcon();
-            //conn.Open();
-            //cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
-            //dr = cmd.ExecuteReader();
-            //while (dr.Read())
-            //{
-            //    cmbStudentNo.Items.Add(dr[0].ToString());
-            //}
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select a.studentid from student a, studentActivation b where a.studentId = b.studentid and b.status ='Activated' ", conn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbStudentNo.Items.Add(dr[0].ToString());
+            }
 
-            //var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
+            var fee = DBContext.GetContext().Query("feestructure").Join("totalfee", "totalfee.structureID", "feestructure.structureID").GroupBy("feestructure.structureID").Get();
 
 
-            //foreach (var value in fee)
-            //{
-            //    cmbCategoryFee.Items.Add(value.structureName);
-            //}
+            foreach (var value in fee)
+            {
+                cmbCategoryFee.Items.Add(value.structureName);
+            }
 
         }
         private void btnNew_Click(object sender, EventArgs e)
@@ -579,7 +579,7 @@ namespace SchoolManagementSystem
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
                 led.percent();
-                total = totalamoun - downpayment;
+                total = totalamoun;
 
                 double extractPrelim = total * Convert.ToDouble(led.prelim);
                 double extractMidterm = total * Convert.ToDouble(led.midterm);

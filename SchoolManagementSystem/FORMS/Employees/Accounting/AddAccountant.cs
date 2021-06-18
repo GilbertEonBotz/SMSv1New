@@ -16,6 +16,8 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(800, 250);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

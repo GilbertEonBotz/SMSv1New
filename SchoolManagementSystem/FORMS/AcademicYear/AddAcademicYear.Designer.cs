@@ -58,7 +58,7 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
@@ -85,7 +85,7 @@ namespace SchoolManagementSystem
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -122,11 +122,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(147, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "School Management System";
             // 
@@ -135,7 +135,7 @@ namespace SchoolManagementSystem
             this.btnAddAcademicYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAddAcademicYear.FlatAppearance.BorderSize = 0;
             this.btnAddAcademicYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAcademicYear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAcademicYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAcademicYear.ForeColor = System.Drawing.Color.White;
             this.btnAddAcademicYear.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAddAcademicYear.IconColor = System.Drawing.Color.White;
@@ -152,10 +152,10 @@ namespace SchoolManagementSystem
             // lblIDD
             // 
             this.lblIDD.AutoSize = true;
-            this.lblIDD.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblIDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblIDD.Location = new System.Drawing.Point(232, 16);
             this.lblIDD.Name = "lblIDD";
-            this.lblIDD.Size = new System.Drawing.Size(117, 21);
+            this.lblIDD.Size = new System.Drawing.Size(105, 20);
             this.lblIDD.TabIndex = 30;
             this.lblIDD.Text = "Subject Code";
             this.lblIDD.Visible = false;
@@ -168,7 +168,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
@@ -187,7 +187,7 @@ namespace SchoolManagementSystem
             // 
             // txtYear2
             // 
-            this.txtYear2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtYear2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtYear2.Location = new System.Drawing.Point(100, 122);
             this.txtYear2.Multiline = true;
             this.txtYear2.Name = "txtYear2";
@@ -198,16 +198,16 @@ namespace SchoolManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.Location = new System.Drawing.Point(32, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 29;
             this.label2.Text = "Year 2";
             // 
             // txtYear1
             // 
-            this.txtYear1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtYear1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtYear1.Location = new System.Drawing.Point(100, 81);
             this.txtYear1.Multiline = true;
             this.txtYear1.Name = "txtYear1";
@@ -218,10 +218,10 @@ namespace SchoolManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.Location = new System.Drawing.Point(32, 90);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(50, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "Year 1";
             // 
@@ -256,7 +256,7 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(7, 54);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(559, 214);
@@ -264,7 +264,7 @@ namespace SchoolManagementSystem
             // 
             // cmbTerm
             // 
-            this.cmbTerm.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerm.FormattingEnabled = true;
             this.cmbTerm.Items.AddRange(new object[] {
             "1st Semester",
@@ -272,16 +272,16 @@ namespace SchoolManagementSystem
             "Summer"});
             this.cmbTerm.Location = new System.Drawing.Point(100, 164);
             this.cmbTerm.Name = "cmbTerm";
-            this.cmbTerm.Size = new System.Drawing.Size(395, 30);
+            this.cmbTerm.Size = new System.Drawing.Size(395, 32);
             this.cmbTerm.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.Location = new System.Drawing.Point(32, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 20);
+            this.label3.Size = new System.Drawing.Size(43, 18);
             this.label3.TabIndex = 31;
             this.label3.Text = "Term";
             // 
@@ -307,8 +307,9 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddAcademicYear";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddAcademicYear";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -73,11 +73,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(110, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "School Management System";
             // 
@@ -85,7 +85,7 @@ namespace SchoolManagementSystem
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -117,7 +117,7 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(7, 54);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(509, 319);
@@ -126,7 +126,7 @@ namespace SchoolManagementSystem
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotal.Location = new System.Drawing.Point(156, 265);
             this.txtTotal.Multiline = true;
@@ -138,18 +138,18 @@ namespace SchoolManagementSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(10, 274);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 21);
+            this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 37;
             this.label7.Text = "TOTAL %";
             // 
             // txtDownpayment
             // 
             this.txtDownpayment.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDownpayment.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDownpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtDownpayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDownpayment.Location = new System.Drawing.Point(156, 71);
             this.txtDownpayment.Multiline = true;
@@ -160,18 +160,18 @@ namespace SchoolManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(10, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 21);
+            this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 35;
             this.label5.Text = "DOWNPAYMENT";
             // 
             // txtFinal
             // 
             this.txtFinal.BackColor = System.Drawing.SystemColors.Window;
-            this.txtFinal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFinal.Location = new System.Drawing.Point(156, 225);
             this.txtFinal.Multiline = true;
@@ -185,18 +185,18 @@ namespace SchoolManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(10, 234);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 21);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 33;
             this.label4.Text = "FINAL %";
             // 
             // txtSemi
             // 
             this.txtSemi.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSemi.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtSemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtSemi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSemi.Location = new System.Drawing.Point(156, 187);
             this.txtSemi.Multiline = true;
@@ -210,18 +210,18 @@ namespace SchoolManagementSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(10, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 31;
             this.label3.Text = "SEMI-FINAL %";
             // 
             // txtPrelim
             // 
             this.txtPrelim.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPrelim.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtPrelim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPrelim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPrelim.Location = new System.Drawing.Point(156, 109);
             this.txtPrelim.Multiline = true;
@@ -235,18 +235,18 @@ namespace SchoolManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(10, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 21);
+            this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "PRELIM %";
             // 
             // txtMidterm
             // 
             this.txtMidterm.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMidterm.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtMidterm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtMidterm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMidterm.Location = new System.Drawing.Point(156, 148);
             this.txtMidterm.Multiline = true;
@@ -260,11 +260,11 @@ namespace SchoolManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(10, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 21);
+            this.label6.Size = new System.Drawing.Size(102, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "MIDTERM %";
             // 
@@ -292,11 +292,11 @@ namespace SchoolManagementSystem
             // lblIDD
             // 
             this.lblIDD.AutoSize = true;
-            this.lblIDD.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblIDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblIDD.ForeColor = System.Drawing.SystemColors.Control;
             this.lblIDD.Location = new System.Drawing.Point(232, 16);
             this.lblIDD.Name = "lblIDD";
-            this.lblIDD.Size = new System.Drawing.Size(117, 21);
+            this.lblIDD.Size = new System.Drawing.Size(105, 20);
             this.lblIDD.TabIndex = 30;
             this.lblIDD.Text = "Subject Code";
             // 
@@ -308,7 +308,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
@@ -330,7 +330,7 @@ namespace SchoolManagementSystem
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSave.IconColor = System.Drawing.Color.White;
@@ -349,7 +349,7 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
@@ -392,7 +392,7 @@ namespace SchoolManagementSystem
             // 
             // AddExamPercentage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 427);
             this.Controls.Add(this.panel4);
@@ -402,12 +402,14 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(550, 180);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddExamPercentage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddExamPercentage";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

@@ -22,8 +22,6 @@ namespace SchoolManagementSystem
         {
             displayTeachSched();
         }
-
-
         public void displayTeachSched()
         {
             var values = DBContext.GetContext().Query("teachers")

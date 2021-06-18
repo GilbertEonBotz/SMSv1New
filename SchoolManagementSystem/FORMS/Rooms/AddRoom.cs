@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            
         }
 
         private void btnAddRoom_Click(object sender, EventArgs e)

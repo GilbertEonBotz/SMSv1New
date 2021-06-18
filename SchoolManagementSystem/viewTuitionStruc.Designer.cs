@@ -42,8 +42,11 @@ namespace SchoolManagementSystem
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.dgvSched = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +63,7 @@ namespace SchoolManagementSystem
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.panel6.SuspendLayout();
@@ -74,12 +74,13 @@ namespace SchoolManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(870, 575);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(689, 487);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 19);
+            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "TOTAL";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel7
             // 
@@ -89,26 +90,26 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1084, 42);
+            this.panel7.Size = new System.Drawing.Size(907, 42);
             this.panel7.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 21);
+            this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fee Structure:";
             // 
             // struckname
             // 
             this.struckname.AutoSize = true;
-            this.struckname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.struckname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.struckname.Location = new System.Drawing.Point(133, 14);
             this.struckname.Name = "struckname";
-            this.struckname.Size = new System.Drawing.Size(117, 18);
+            this.struckname.Size = new System.Drawing.Size(121, 18);
             this.struckname.TabIndex = 5;
             this.struckname.Text = "structurename:";
             // 
@@ -149,13 +150,13 @@ namespace SchoolManagementSystem
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategories.EnableHeadersVisualStyles = false;
             this.dgvCategories.GridColor = System.Drawing.Color.White;
-            this.dgvCategories.Location = new System.Drawing.Point(-8, 330);
+            this.dgvCategories.Location = new System.Drawing.Point(4, 96);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.ReadOnly = true;
             this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.RowTemplate.Height = 25;
             this.dgvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategories.Size = new System.Drawing.Size(1080, 212);
+            this.dgvCategories.Size = new System.Drawing.Size(899, 178);
             this.dgvCategories.TabIndex = 12;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);
             // 
@@ -189,33 +190,46 @@ namespace SchoolManagementSystem
             this.delete.Text = "Delete";
             this.delete.UseColumnTextForLinkValue = true;
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Column12";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.textboxWatermark1);
             this.panel6.Controls.Add(this.dgvSched);
             this.panel6.Controls.Add(this.dgvCategories);
-            this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.label6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1088, 601);
+            this.panel6.Size = new System.Drawing.Size(911, 514);
             this.panel6.TabIndex = 27;
-            // 
-            // textboxWatermark1
-            // 
-            this.textboxWatermark1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
-            this.textboxWatermark1.Location = new System.Drawing.Point(4, 69);
-            this.textboxWatermark1.Name = "textboxWatermark1";
-            this.textboxWatermark1.Size = new System.Drawing.Size(267, 31);
-            this.textboxWatermark1.TabIndex = 14;
-            this.textboxWatermark1.Text = "Search";
-            this.textboxWatermark1.WatermarkText = "Search";
             // 
             // dgvSched
             // 
@@ -253,14 +267,14 @@ namespace SchoolManagementSystem
             this.dgvSched.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSched.EnableHeadersVisualStyles = false;
             this.dgvSched.GridColor = System.Drawing.Color.White;
-            this.dgvSched.Location = new System.Drawing.Point(4, 106);
+            this.dgvSched.Location = new System.Drawing.Point(4, 292);
             this.dgvSched.Name = "dgvSched";
             this.dgvSched.ReadOnly = true;
             this.dgvSched.RowHeadersVisible = false;
             this.dgvSched.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSched.RowTemplate.Height = 25;
             this.dgvSched.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSched.Size = new System.Drawing.Size(1080, 218);
+            this.dgvSched.Size = new System.Drawing.Size(899, 178);
             this.dgvSched.TabIndex = 13;
             this.dgvSched.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSched_CellContentClick);
             this.dgvSched.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSched_MouseDoubleClick);
@@ -310,8 +324,8 @@ namespace SchoolManagementSystem
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(931, 563);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(759, 476);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -324,16 +338,16 @@ namespace SchoolManagementSystem
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 42);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1084, 1);
+            this.panel8.Size = new System.Drawing.Size(907, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 661);
+            this.panel4.Location = new System.Drawing.Point(6, 568);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1088, 6);
+            this.panel4.Size = new System.Drawing.Size(911, 6);
             this.panel4.TabIndex = 26;
             // 
             // panel2
@@ -342,28 +356,28 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 613);
+            this.panel2.Size = new System.Drawing.Size(6, 520);
             this.panel2.TabIndex = 25;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1094, 54);
+            this.panel3.Location = new System.Drawing.Point(917, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 613);
+            this.panel3.Size = new System.Drawing.Size(6, 520);
             this.panel3.TabIndex = 24;
             // 
             // btnExit
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(1062, 12);
+            this.btnExit.Location = new System.Drawing.Point(882, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -379,57 +393,45 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 54);
+            this.panel1.Size = new System.Drawing.Size(923, 54);
             this.panel1.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(416, 13);
+            this.label1.Location = new System.Drawing.Point(346, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "School Management System";
             // 
-            // Column9
+            // textboxWatermark1
             // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Column11";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Column12";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
+            this.textboxWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(4, 62);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(267, 29);
+            this.textboxWatermark1.TabIndex = 14;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
             // 
             // viewTuitionStruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 667);
+            this.ClientSize = new System.Drawing.Size(923, 574);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(350, 100);
             this.Name = "viewTuitionStruc";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "viewTuitionStruc";
             this.Load += new System.EventHandler(this.viewTuitionStruc_Load);
             this.panel7.ResumeLayout(false);

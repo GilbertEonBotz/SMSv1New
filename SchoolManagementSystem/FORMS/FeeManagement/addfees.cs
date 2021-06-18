@@ -17,12 +17,11 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
         FeeStructure reloadDatagrid;
         public addfees(string val, string val2, FeeStructure reloadDatagrid)
         {
-
-
             InitializeComponent();
             id = val;
             struckname.Text = val2;
             this.reloadDatagrid = reloadDatagrid;
+
         }
 
         private void addfees_Load(object sender, EventArgs e)
@@ -159,6 +158,11 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

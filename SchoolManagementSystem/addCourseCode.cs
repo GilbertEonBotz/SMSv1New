@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+           
         }
 
         int selCourseID;

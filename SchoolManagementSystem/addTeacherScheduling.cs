@@ -21,6 +21,8 @@ namespace SchoolManagementSystem
             InitializeComponent();
 
             this.teachDgv = teachDg;
+
+           
         }
         public void aa()
         {
@@ -145,6 +147,16 @@ namespace SchoolManagementSystem
                 dgvSched.SelectedRows[0].Cells[2].Value.ToString(), dgvSched.SelectedRows[0].Cells[3].Value.ToString()
                 , dgvSched.SelectedRows[0].Cells[4].Value.ToString(), dgvSched.SelectedRows[0].Cells[5].FormattedValue.ToString()
                 , dgvSched.SelectedRows[0].Cells[6].FormattedValue.ToString());
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

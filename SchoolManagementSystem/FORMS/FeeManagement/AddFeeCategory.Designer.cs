@@ -38,11 +38,11 @@ namespace SchoolManagementSystem
             this.btnAddCategory = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@ namespace SchoolManagementSystem
             // 
             // txtCategory
             // 
-            this.txtCategory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.Location = new System.Drawing.Point(149, 78);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
@@ -74,10 +74,10 @@ namespace SchoolManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.Location = new System.Drawing.Point(16, 88);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 20);
+            this.label6.Size = new System.Drawing.Size(112, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "Category Name";
             // 
@@ -129,7 +129,7 @@ namespace SchoolManagementSystem
             this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAddCategory.FlatAppearance.BorderSize = 0;
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategory.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
             this.btnAddCategory.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAddCategory.IconColor = System.Drawing.Color.White;
@@ -162,6 +162,17 @@ namespace SchoolManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 54);
             this.panel1.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(147, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(275, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "School Management System";
             // 
             // btnExit
             // 
@@ -203,7 +214,7 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
@@ -215,17 +226,6 @@ namespace SchoolManagementSystem
             this.iconButton1.TabIndex = 28;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(147, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "School Management System";
             // 
             // AddFeeCategory
             // 
@@ -240,8 +240,9 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddFeeCategory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddFeeCategory";
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

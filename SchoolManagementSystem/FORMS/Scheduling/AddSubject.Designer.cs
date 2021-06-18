@@ -30,6 +30,7 @@ namespace SchoolManagementSystem
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lstPrereq = new System.Windows.Forms.ListBox();
             this.cmbCourse = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@ namespace SchoolManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.lstPrereq = new System.Windows.Forms.ListBox();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,22 +103,31 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(593, 583);
+            this.panel6.Size = new System.Drawing.Size(593, 572);
             this.panel6.TabIndex = 10;
+            // 
+            // lstPrereq
+            // 
+            this.lstPrereq.FormattingEnabled = true;
+            this.lstPrereq.ItemHeight = 24;
+            this.lstPrereq.Location = new System.Drawing.Point(136, 455);
+            this.lstPrereq.Name = "lstPrereq";
+            this.lstPrereq.Size = new System.Drawing.Size(419, 76);
+            this.lstPrereq.TabIndex = 23;
             // 
             // cmbCourse
             // 
             this.cmbCourse.BackColor = System.Drawing.Color.White;
             this.cmbCourse.DropDownWidth = 419;
-            this.cmbCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourse.FormattingEnabled = true;
-            this.cmbCourse.ItemHeight = 21;
+            this.cmbCourse.ItemHeight = 20;
             this.cmbCourse.Location = new System.Drawing.Point(136, 74);
             this.cmbCourse.Name = "cmbCourse";
-            this.cmbCourse.Size = new System.Drawing.Size(419, 29);
+            this.cmbCourse.Size = new System.Drawing.Size(419, 28);
             this.cmbCourse.TabIndex = 22;
             this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.cmbCourse_SelectedIndexChanged);
             this.cmbCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCourse_KeyPress);
@@ -126,78 +135,77 @@ namespace SchoolManagementSystem
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label12.Location = new System.Drawing.Point(18, 84);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 20);
+            this.label12.Size = new System.Drawing.Size(73, 18);
             this.label12.TabIndex = 21;
             this.label12.Text = "COURSE";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(392, 556);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(407, 539);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 23);
+            this.label11.Size = new System.Drawing.Size(56, 24);
             this.label11.TabIndex = 20;
             this.label11.Text = "Total";
-            this.label11.Visible = false;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // cmbCourseCode
             // 
-            this.cmbCourseCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCourseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseCode.FormattingEnabled = true;
             this.cmbCourseCode.Location = new System.Drawing.Point(136, 113);
             this.cmbCourseCode.Name = "cmbCourseCode";
-            this.cmbCourseCode.Size = new System.Drawing.Size(419, 29);
+            this.cmbCourseCode.Size = new System.Drawing.Size(419, 28);
             this.cmbCourseCode.TabIndex = 19;
             this.cmbCourseCode.SelectedIndexChanged += new System.EventHandler(this.cmbCourseCode_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label10.Location = new System.Drawing.Point(18, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 20);
+            this.label10.Size = new System.Drawing.Size(121, 18);
             this.label10.TabIndex = 18;
             this.label10.Text = "COURSE CODE";
             // 
             // lblLectotal
             // 
             this.lblLectotal.AutoSize = true;
-            this.lblLectotal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblLectotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblLectotal.Location = new System.Drawing.Point(558, 317);
             this.lblLectotal.Name = "lblLectotal";
-            this.lblLectotal.Size = new System.Drawing.Size(19, 21);
+            this.lblLectotal.Size = new System.Drawing.Size(18, 20);
             this.lblLectotal.TabIndex = 17;
             this.lblLectotal.Text = "0";
             // 
             // lblabTotal
             // 
             this.lblabTotal.AutoSize = true;
-            this.lblabTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblabTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblabTotal.Location = new System.Drawing.Point(558, 355);
             this.lblabTotal.Name = "lblabTotal";
-            this.lblabTotal.Size = new System.Drawing.Size(19, 21);
+            this.lblabTotal.Size = new System.Drawing.Size(18, 20);
             this.lblabTotal.TabIndex = 16;
             this.lblabTotal.Text = "0";
             // 
             // TotalPrice
             // 
             this.TotalPrice.AutoSize = true;
-            this.TotalPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.TotalPrice.Location = new System.Drawing.Point(452, 556);
+            this.TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.TotalPrice.Location = new System.Drawing.Point(465, 539);
             this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Size = new System.Drawing.Size(103, 22);
+            this.TotalPrice.Size = new System.Drawing.Size(90, 24);
             this.TotalPrice.TabIndex = 14;
             this.TotalPrice.Text = "total price";
-            this.TotalPrice.Visible = false;
             // 
             // txtLabprice
             // 
-            this.txtLabprice.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtLabprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLabprice.Location = new System.Drawing.Point(390, 345);
             this.txtLabprice.Multiline = true;
             this.txtLabprice.Name = "txtLabprice";
@@ -208,7 +216,7 @@ namespace SchoolManagementSystem
             // 
             // txtLecPrice
             // 
-            this.txtLecPrice.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtLecPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLecPrice.Location = new System.Drawing.Point(390, 308);
             this.txtLecPrice.Multiline = true;
             this.txtLecPrice.Name = "txtLecPrice";
@@ -220,7 +228,7 @@ namespace SchoolManagementSystem
             // txtTotalUnits
             // 
             this.txtTotalUnits.Enabled = false;
-            this.txtTotalUnits.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtTotalUnits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTotalUnits.Location = new System.Drawing.Point(136, 383);
             this.txtTotalUnits.Multiline = true;
             this.txtTotalUnits.Name = "txtTotalUnits";
@@ -235,13 +243,13 @@ namespace SchoolManagementSystem
             this.cmbPreReq.FormattingEnabled = true;
             this.cmbPreReq.Location = new System.Drawing.Point(136, 419);
             this.cmbPreReq.Name = "cmbPreReq";
-            this.cmbPreReq.Size = new System.Drawing.Size(419, 30);
+            this.cmbPreReq.Size = new System.Drawing.Size(419, 32);
             this.cmbPreReq.TabIndex = 6;
             this.cmbPreReq.SelectedIndexChanged += new System.EventHandler(this.cmbPreReq_SelectedIndexChanged);
             // 
             // txtLab
             // 
-            this.txtLab.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLab.Location = new System.Drawing.Point(136, 345);
             this.txtLab.Multiline = true;
             this.txtLab.Name = "txtLab";
@@ -253,7 +261,7 @@ namespace SchoolManagementSystem
             // 
             // txtLec
             // 
-            this.txtLec.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLec.Location = new System.Drawing.Point(136, 308);
             this.txtLec.Multiline = true;
             this.txtLec.Name = "txtLec";
@@ -265,7 +273,7 @@ namespace SchoolManagementSystem
             // 
             // txtDescriptiveTitle
             // 
-            this.txtDescriptiveTitle.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDescriptiveTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtDescriptiveTitle.Location = new System.Drawing.Point(136, 230);
             this.txtDescriptiveTitle.Multiline = true;
             this.txtDescriptiveTitle.Name = "txtDescriptiveTitle";
@@ -274,7 +282,7 @@ namespace SchoolManagementSystem
             // 
             // txtSubjectCode
             // 
-            this.txtSubjectCode.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtSubjectCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtSubjectCode.Location = new System.Drawing.Point(136, 153);
             this.txtSubjectCode.Multiline = true;
             this.txtSubjectCode.Name = "txtSubjectCode";
@@ -284,60 +292,60 @@ namespace SchoolManagementSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label7.Location = new System.Drawing.Point(19, 429);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.Size = new System.Drawing.Size(85, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "PRE - REQ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.Location = new System.Drawing.Point(18, 393);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 20);
+            this.label6.Size = new System.Drawing.Size(103, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "TOTAL UNITS";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label5.Location = new System.Drawing.Point(18, 355);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.Size = new System.Drawing.Size(108, 18);
             this.label5.TabIndex = 5;
             this.label5.Text = "LABORATORY";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label4.Location = new System.Drawing.Point(18, 318);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "LECTURE";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.Location = new System.Drawing.Point(19, 236);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.Size = new System.Drawing.Size(120, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "SUBJECT TITLE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.Location = new System.Drawing.Point(18, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 20);
+            this.label2.Size = new System.Drawing.Size(125, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "SUBJECT CODE";
             // 
@@ -364,10 +372,10 @@ namespace SchoolManagementSystem
             // lblIDD
             // 
             this.lblIDD.AutoSize = true;
-            this.lblIDD.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblIDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblIDD.Location = new System.Drawing.Point(232, 16);
             this.lblIDD.Name = "lblIDD";
-            this.lblIDD.Size = new System.Drawing.Size(117, 21);
+            this.lblIDD.Size = new System.Drawing.Size(105, 20);
             this.lblIDD.TabIndex = 30;
             this.lblIDD.Text = "Subject Code";
             // 
@@ -379,7 +387,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
@@ -399,20 +407,20 @@ namespace SchoolManagementSystem
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label9.Location = new System.Drawing.Point(299, 317);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 21);
+            this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 10;
             this.label9.Text = "LEC PRICE";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.Location = new System.Drawing.Point(299, 354);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 21);
+            this.label8.Size = new System.Drawing.Size(93, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "LAB PRICE";
             // 
@@ -421,13 +429,13 @@ namespace SchoolManagementSystem
             this.btnAddSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAddSubjects.FlatAppearance.BorderSize = 0;
             this.btnAddSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSubjects.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSubjects.ForeColor = System.Drawing.Color.White;
             this.btnAddSubjects.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAddSubjects.IconColor = System.Drawing.Color.White;
             this.btnAddSubjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSubjects.IconSize = 30;
-            this.btnAddSubjects.Location = new System.Drawing.Point(343, 643);
+            this.btnAddSubjects.Location = new System.Drawing.Point(343, 632);
             this.btnAddSubjects.Name = "btnAddSubjects";
             this.btnAddSubjects.Size = new System.Drawing.Size(107, 32);
             this.btnAddSubjects.TabIndex = 7;
@@ -439,7 +447,7 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 681);
+            this.panel4.Location = new System.Drawing.Point(6, 672);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 6);
             this.panel4.TabIndex = 9;
@@ -450,7 +458,7 @@ namespace SchoolManagementSystem
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(599, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 633);
+            this.panel3.Size = new System.Drawing.Size(6, 624);
             this.panel3.TabIndex = 8;
             // 
             // panel2
@@ -459,7 +467,7 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 633);
+            this.panel2.Size = new System.Drawing.Size(6, 624);
             this.panel2.TabIndex = 7;
             // 
             // panel1
@@ -476,11 +484,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(146, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "School Management System";
             // 
@@ -488,7 +496,7 @@ namespace SchoolManagementSystem
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -507,13 +515,13 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(456, 643);
+            this.iconButton1.Location = new System.Drawing.Point(456, 632);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
             this.iconButton1.TabIndex = 8;
@@ -521,20 +529,11 @@ namespace SchoolManagementSystem
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // lstPrereq
-            // 
-            this.lstPrereq.FormattingEnabled = true;
-            this.lstPrereq.ItemHeight = 22;
-            this.lstPrereq.Location = new System.Drawing.Point(136, 455);
-            this.lstPrereq.Name = "lstPrereq";
-            this.lstPrereq.Size = new System.Drawing.Size(419, 92);
-            this.lstPrereq.TabIndex = 23;
-            // 
             // AddSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 687);
+            this.ClientSize = new System.Drawing.Size(605, 678);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -543,8 +542,9 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(530, 50);
             this.Name = "AddSubject";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddSubject";
             this.Load += new System.EventHandler(this.AddSubject_Load);
             this.panel6.ResumeLayout(false);

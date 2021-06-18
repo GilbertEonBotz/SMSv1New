@@ -18,6 +18,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
             this.idd = idd;
+         
         }
 
         private void btnSave_Click(object sender, EventArgs e)

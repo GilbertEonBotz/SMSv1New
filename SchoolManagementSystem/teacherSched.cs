@@ -26,7 +26,7 @@ namespace SchoolManagementSystem
         private void btnNew_Click(object sender, EventArgs e)
         {
             addTeacherScheduling add = new addTeacherScheduling(this);
-            add.Show();
+            add.ShowDialog();
         }
 
         private void teacherSched_Load(object sender, EventArgs e)

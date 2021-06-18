@@ -88,26 +88,22 @@ namespace SchoolManagementSystem
             //kini mao ning tinuod nga source code
             try
             {
-                var query = DBContext.GetContext().Query("users").Where(new
+                var query = DBContext.GetContext().Query("users")
+                    .Join("role", "role.roleId", "users.userrole")
+                    .Where(new
                 {
                     username = txtUsername.Text,
                     password = txtPassword.Text,
-                }).FirstOrDefault();
+                }).First();
 
-                if (query.userrole.Equals(1) && query.macAddress.Equals(GetMacAddress()))
+                if (query.macAddress.Equals(GetMacAddress()))
                 {
                     this.Hide();
-                    var myfrm = new Form1();
+                    var myfrm = new finalDashboard();
+                    myfrm.btnAdmin.Text = query.roletype;
                     myfrm.Show();
                 }
-                else if (query.userrole == 2)
-                {
-                    MessageBox.Show("Welcome Registrar");
-                }
-                else if (query.userrole == 3)
-                {
-                    MessageBox.Show("Welcome Cashier");
-                }
+               
                 else
                 {
                     Validator.AlertDanger("You cant login other role to another pc");

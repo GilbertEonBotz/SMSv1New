@@ -115,7 +115,7 @@ namespace SchoolManagementSystem
             this.pnlBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBanner.Location = new System.Drawing.Point(0, 108);
             this.pnlBanner.Name = "pnlBanner";
-            this.pnlBanner.Size = new System.Drawing.Size(233, 1000);
+            this.pnlBanner.Size = new System.Drawing.Size(233, 847);
             this.pnlBanner.TabIndex = 0;
             // 
             // pnlSchoolSettings
@@ -289,7 +289,7 @@ namespace SchoolManagementSystem
             this.btnSchoolSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSchoolSettings.FlatAppearance.BorderSize = 0;
             this.btnSchoolSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchoolSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchoolSettings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSchoolSettings.ForeColor = System.Drawing.Color.White;
             this.btnSchoolSettings.IconChar = FontAwesome.Sharp.IconChar.Cogs;
             this.btnSchoolSettings.IconColor = System.Drawing.Color.White;
@@ -608,7 +608,7 @@ namespace SchoolManagementSystem
             this.btnAcademicMngmt.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnAcademicMngmt.Size = new System.Drawing.Size(233, 39);
             this.btnAcademicMngmt.TabIndex = 59;
-            this.btnAcademicMngmt.Text = "Academic Settings    ▸";
+            this.btnAcademicMngmt.Text = "Academic Settings     ▸";
             this.btnAcademicMngmt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcademicMngmt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAcademicMngmt.UseVisualStyleBackColor = true;
@@ -769,7 +769,7 @@ namespace SchoolManagementSystem
             this.btnFeesManagement.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnFeesManagement.Size = new System.Drawing.Size(233, 39);
             this.btnFeesManagement.TabIndex = 55;
-            this.btnFeesManagement.Text = "Fees Management  ▸";
+            this.btnFeesManagement.Text = "Fees Management     ▸";
             this.btnFeesManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFeesManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFeesManagement.UseVisualStyleBackColor = true;
@@ -880,7 +880,7 @@ namespace SchoolManagementSystem
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnEmployees.Size = new System.Drawing.Size(233, 39);
             this.btnEmployees.TabIndex = 53;
-            this.btnEmployees.Text = "Employees                 ▸";
+            this.btnEmployees.Text = "Employees                   ▸";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmployees.UseVisualStyleBackColor = true;
@@ -939,7 +939,7 @@ namespace SchoolManagementSystem
             this.btnStudentRecords.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnStudentRecords.Size = new System.Drawing.Size(233, 39);
             this.btnStudentRecords.TabIndex = 51;
-            this.btnStudentRecords.Text = "Student Records       ▸";
+            this.btnStudentRecords.Text = "Student Records         ▸";
             this.btnStudentRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStudentRecords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStudentRecords.UseVisualStyleBackColor = true;
@@ -998,7 +998,7 @@ namespace SchoolManagementSystem
             this.btnEnrollment.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnEnrollment.Size = new System.Drawing.Size(233, 39);
             this.btnEnrollment.TabIndex = 30;
-            this.btnEnrollment.Text = "Enrollment                 ▸";
+            this.btnEnrollment.Text = "Enrollment                  ▸";
             this.btnEnrollment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnrollment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEnrollment.UseVisualStyleBackColor = true;
@@ -1096,7 +1096,7 @@ namespace SchoolManagementSystem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Location = new System.Drawing.Point(233, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 4;
@@ -1115,7 +1115,7 @@ namespace SchoolManagementSystem
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmin.IconSize = 20;
-            this.btnAdmin.Location = new System.Drawing.Point(200, 73);
+            this.btnAdmin.Location = new System.Drawing.Point(6, 74);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(163, 31);
             this.btnAdmin.TabIndex = 5;
@@ -1196,7 +1196,6 @@ namespace SchoolManagementSystem
         private FontAwesome.Sharp.IconButton btnClassrooms;
         private FontAwesome.Sharp.IconButton btnCourseCode;
         private FontAwesome.Sharp.IconButton btnCourse;
-        private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnSignout;
         private FontAwesome.Sharp.IconButton btnExamPercentage;
@@ -1212,5 +1211,6 @@ namespace SchoolManagementSystem
         public System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnSectioning;
         private FontAwesome.Sharp.IconButton btnSectionCategory;
+        public FontAwesome.Sharp.IconButton btnAdmin;
     }
 }

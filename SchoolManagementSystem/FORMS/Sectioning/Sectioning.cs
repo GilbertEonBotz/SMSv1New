@@ -35,7 +35,7 @@ namespace SchoolManagementSystem.FORMS.Sectioning
         private void dgvDepartment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             addSectioning add = new addSectioning(dgvDepartment.SelectedRows[0].Cells[0].Value.ToString());
-            add.Show();
+            add.ShowDialog();
         }
     }
 }

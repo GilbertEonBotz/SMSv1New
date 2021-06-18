@@ -25,6 +25,7 @@ namespace SchoolManagementSystem
             txtMidterm.KeyPress += Validator.ValidateKeypressNumber;
             txtSemi.KeyPress += Validator.ValidateKeypressNumber;
             txtFinal.KeyPress += Validator.ValidateKeypressNumber;
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

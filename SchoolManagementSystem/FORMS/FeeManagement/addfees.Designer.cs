@@ -61,7 +61,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBox1.Location = new System.Drawing.Point(501, 440);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -72,37 +72,37 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 21);
+            this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fee Structure:";
             // 
             // struckname
             // 
             this.struckname.AutoSize = true;
-            this.struckname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.struckname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.struckname.Location = new System.Drawing.Point(133, 13);
             this.struckname.Name = "struckname";
-            this.struckname.Size = new System.Drawing.Size(117, 18);
+            this.struckname.Size = new System.Drawing.Size(121, 18);
             this.struckname.TabIndex = 5;
             this.struckname.Text = "structurename:";
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(116, 78);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(347, 30);
+            this.comboBox1.Size = new System.Drawing.Size(347, 32);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(116, 117);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -113,20 +113,20 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(24, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 21);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Category";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.Location = new System.Drawing.Point(24, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 21);
+            this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Amount";
             // 
@@ -140,15 +140,16 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 54);
             this.panel1.TabIndex = 17;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(194, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 23);
+            this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "School Management System";
             // 
@@ -156,7 +157,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -201,7 +202,6 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.btnSave);
             this.panel6.Controls.Add(this.dgvCategories);
-            this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
@@ -209,8 +209,9 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.label6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.panel6.Location = new System.Drawing.Point(6, 54);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(648, 479);
@@ -222,7 +223,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSave.IconColor = System.Drawing.Color.White;
@@ -242,12 +243,14 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.dgvCategories.AllowUserToResizeColumns = false;
             this.dgvCategories.AllowUserToResizeRows = false;
             this.dgvCategories.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCategories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCategories.ColumnHeadersHeight = 35;
@@ -258,10 +261,10 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategories.EnableHeadersVisualStyles = false;
@@ -301,10 +304,10 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(440, 452);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 19);
+            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "TOTAL";
             // 
@@ -339,8 +342,9 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(480, 150);
             this.Name = "addfees";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addfees";
             this.Load += new System.EventHandler(this.addfees_Load);
             this.panel1.ResumeLayout(false);

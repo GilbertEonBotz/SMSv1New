@@ -21,6 +21,7 @@ namespace SchoolManagementSystem
             InitializeComponent();
             label1.Text = val;
             value2 = val2;
+            
 
         }
 

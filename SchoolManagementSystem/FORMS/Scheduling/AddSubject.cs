@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+           
         }
 
         private void btnAddSubjects_Click(object sender, EventArgs e)
@@ -391,6 +392,11 @@ namespace SchoolManagementSystem
             {
                 lstPrereq.Items.Add(cmbPreReq.SelectedItem);
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

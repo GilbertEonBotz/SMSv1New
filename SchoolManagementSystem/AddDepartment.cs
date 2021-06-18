@@ -17,6 +17,7 @@ namespace SchoolManagementSystem
         {
             this.reloadDatagrid = reloadDatagrid;
             InitializeComponent();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,6 +53,11 @@ namespace SchoolManagementSystem
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

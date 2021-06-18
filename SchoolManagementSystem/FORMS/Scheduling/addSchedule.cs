@@ -27,6 +27,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            
         }
 
         private void label8_Click(object sender, EventArgs e)

@@ -22,9 +22,6 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             this.addDatagrid = addDatagrid;
-         
-      
-
         }
 
         private void AddStudentScheduling_Load(object sender, EventArgs e)
@@ -107,6 +104,11 @@ namespace SchoolManagementSystem
             dgvSched.SelectedRows[0].Cells[2].Value.ToString(), dgvSched.SelectedRows[0].Cells[3].Value.ToString(), dgvSched.SelectedRows[0].Cells[4].Value,
             dgvSched.SelectedRows[0].Cells[5].FormattedValue.ToString(), dgvSched.SelectedRows[0].Cells[6].FormattedValue.ToString(), dgvSched.SelectedRows[0].Cells[7].Value.ToString(), dgvSched.SelectedRows[0].Cells[8].Value.ToString(),
             dgvSched.SelectedRows[0].Cells[9].Value.ToString());
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -19,6 +19,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             id = val;
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -28,7 +29,6 @@ namespace SchoolManagementSystem
 
         private void addSectioning_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(id);
             var values = DBContext.GetContext().Query("schedule").Get();
             foreach (var value in values)
             {
@@ -51,6 +51,21 @@ namespace SchoolManagementSystem
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
         }

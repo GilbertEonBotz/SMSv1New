@@ -20,6 +20,7 @@ namespace SchoolManagementSystem
             InitializeComponent();
             tuitionID = val;
             this.reloadDatagrid = reloadDatagrid;
+            
         }
 
         private void viewTuitionStruc_Load(object sender, EventArgs e)
@@ -125,6 +126,11 @@ namespace SchoolManagementSystem
         }
 
         private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

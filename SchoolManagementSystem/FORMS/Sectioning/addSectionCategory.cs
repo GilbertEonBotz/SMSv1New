@@ -16,7 +16,7 @@ namespace SchoolManagementSystem.FORMS.Sectioning
         public addSectionCategory()
         {
             InitializeComponent();
-       
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

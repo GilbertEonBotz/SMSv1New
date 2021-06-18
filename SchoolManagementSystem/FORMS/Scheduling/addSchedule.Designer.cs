@@ -507,6 +507,7 @@ namespace SchoolManagementSystem
             this.Name = "addSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addSchedule";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.addSchedule_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

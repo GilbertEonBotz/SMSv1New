@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -40,7 +41,7 @@ namespace SchoolManagementSystem
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             var myfrm = new addCourseCode(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void dgvCourseCode_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

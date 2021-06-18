@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlKata.Execution;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
+
 namespace SchoolManagementSystem.FORMS.Sectioning
 {
     public partial class Sectioning : Form
@@ -35,7 +37,7 @@ namespace SchoolManagementSystem.FORMS.Sectioning
         private void dgvDepartment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             addSectioning add = new addSectioning(dgvDepartment.SelectedRows[0].Cells[0].Value.ToString());
-            add.ShowDialog();
+            FormFade.FadeForm(this, add);
         }
     }
 }

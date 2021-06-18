@@ -268,6 +268,7 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             this.Name = "addSectionCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addSectionCategory";
+            this.TopMost = true;
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

@@ -304,6 +304,7 @@ namespace SchoolManagementSystem
             this.Name = "addTeacherScheduling";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addTeacherScheduling";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.addTeacherScheduling_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

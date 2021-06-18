@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
+
 namespace SchoolManagementSystem
 {
     public partial class Sched : Form
@@ -69,7 +71,12 @@ namespace SchoolManagementSystem
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             addSchedule s = new addSchedule(this);
-            s.ShowDialog();
+            FormFade.FadeForm(this, s);
+        }
+
+        private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -275,6 +275,7 @@ namespace SchoolManagementSystem
             this.Name = "AddUserRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddUserRole";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddUserRole_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

@@ -546,6 +546,7 @@ namespace SchoolManagementSystem
             this.Name = "AddSubject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddSubject";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddSubject_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

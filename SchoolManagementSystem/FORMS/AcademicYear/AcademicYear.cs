@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -49,7 +50,7 @@ namespace SchoolManagementSystem
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             var myfrm = new AddAcademicYear(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void dgvAcademicYear_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

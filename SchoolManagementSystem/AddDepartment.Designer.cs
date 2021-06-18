@@ -263,6 +263,7 @@ namespace SchoolManagementSystem
             this.Name = "AddDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddDepartment";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

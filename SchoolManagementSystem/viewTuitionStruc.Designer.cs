@@ -47,6 +47,7 @@ namespace SchoolManagementSystem
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.dgvSched = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@ namespace SchoolManagementSystem
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.panel6.SuspendLayout();
@@ -230,6 +230,17 @@ namespace SchoolManagementSystem
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(911, 514);
             this.panel6.TabIndex = 27;
+            // 
+            // textboxWatermark1
+            // 
+            this.textboxWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(4, 62);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(267, 29);
+            this.textboxWatermark1.TabIndex = 14;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
             // 
             // dgvSched
             // 
@@ -407,17 +418,6 @@ namespace SchoolManagementSystem
             this.label1.TabIndex = 8;
             this.label1.Text = "School Management System";
             // 
-            // textboxWatermark1
-            // 
-            this.textboxWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
-            this.textboxWatermark1.Location = new System.Drawing.Point(4, 62);
-            this.textboxWatermark1.Name = "textboxWatermark1";
-            this.textboxWatermark1.Size = new System.Drawing.Size(267, 29);
-            this.textboxWatermark1.TabIndex = 14;
-            this.textboxWatermark1.Text = "Search";
-            this.textboxWatermark1.WatermarkText = "Search";
-            // 
             // viewTuitionStruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +433,7 @@ namespace SchoolManagementSystem
             this.Name = "viewTuitionStruc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "viewTuitionStruc";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.viewTuitionStruc_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();

@@ -9,6 +9,7 @@ using EonBotzLibrary;
 using SqlKata.Execution;
 using MySql.Data.MySqlClient;
 using SchoolManagementSystem.FORMS;
+using SchoolManagementSystem.UITools;
 
 namespace SchoolManagementSystem
 {
@@ -28,8 +29,8 @@ namespace SchoolManagementSystem
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            AddStudent myform = new AddStudent(this);
-            myform.ShowDialog();
+            AddStudent myfrm = new AddStudent(this);
+            FormFade.FadeForm(this, myfrm);
         }
         private void StudentInformation_Load(object sender, EventArgs e)
         {

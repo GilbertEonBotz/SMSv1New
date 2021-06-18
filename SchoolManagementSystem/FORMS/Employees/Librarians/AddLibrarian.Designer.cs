@@ -498,6 +498,7 @@ namespace SchoolManagementSystem
             this.Name = "AddLibrarian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddLibrarian";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddLibrarian_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

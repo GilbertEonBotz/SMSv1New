@@ -281,6 +281,7 @@ namespace SchoolManagementSystem
             this.Name = "tuitionCateg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "tuitionCateg";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

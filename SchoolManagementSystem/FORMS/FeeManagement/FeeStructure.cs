@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
 using SchoolManagementSystem.FORMS.FeeManagement;
+using SchoolManagementSystem.UITools;
 
 namespace SchoolManagementSystem
 {
@@ -22,7 +23,7 @@ namespace SchoolManagementSystem
         private void btnAddFeeStruc_Click(object sender, EventArgs e)
         {
             var myfrm = new AddFeeStructure(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void FeeStructure_Load(object sender, EventArgs e)

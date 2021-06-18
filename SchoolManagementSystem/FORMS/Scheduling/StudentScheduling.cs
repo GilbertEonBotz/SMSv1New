@@ -10,6 +10,8 @@ using SqlKata.Execution;
 using Microsoft.Reporting.WinForms;
 using System.Linq;
 using MySql.Data.MySqlClient;
+using SchoolManagementSystem.UITools;
+
 namespace SchoolManagementSystem
 {
     public partial class StudentScheduling : Form
@@ -94,7 +96,7 @@ namespace SchoolManagementSystem
         private void btnNew_Click(object sender, EventArgs e)
         {
             var myfrm = new AddStudentScheduling(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {

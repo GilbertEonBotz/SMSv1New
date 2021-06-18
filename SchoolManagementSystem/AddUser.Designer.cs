@@ -379,6 +379,7 @@ namespace SchoolManagementSystem
             this.Name = "AddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddUser";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

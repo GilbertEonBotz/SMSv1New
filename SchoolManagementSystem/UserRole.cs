@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem
         private void btnNew_Click(object sender, EventArgs e)
         {
             var myfrm = new AddUserRole(this, idd);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void UserRole_Load(object sender, EventArgs e)

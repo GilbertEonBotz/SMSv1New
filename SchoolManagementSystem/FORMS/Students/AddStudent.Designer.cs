@@ -1113,6 +1113,7 @@ namespace SchoolManagementSystem
             this.Name = "AddStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Add Student";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

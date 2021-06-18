@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem
         private void btnAddLibrarian_Click(object sender, EventArgs e)
         {
             var myform = new AddLibrarian(this);
-            myform.ShowDialog();
+            FormFade.FadeForm(this, myform);
         }
 
         private void LibrarianInformation_Load(object sender, EventArgs e)

@@ -304,6 +304,7 @@ namespace SchoolManagementSystem
             this.Name = "AddCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddCourse";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddCourse_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

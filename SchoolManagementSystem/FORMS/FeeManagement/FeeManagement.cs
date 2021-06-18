@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
             var myfrm = new AddFeeCategory(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void FeeManagement_Load(object sender, EventArgs e)

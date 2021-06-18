@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem
         private void btnAddSybject_Click(object sender, EventArgs e)
         {
             var myfrm = new AddSubject(this);
-            myfrm.ShowDialog();
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void dgvSubjects_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

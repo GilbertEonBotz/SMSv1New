@@ -77,13 +77,13 @@ namespace SchoolManagementSystem
             // 
             // btnNew
             // 
-            this.btnNew.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnNew.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNew.IconSize = 20;
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnNew.Location = new System.Drawing.Point(79, 75);
+            this.btnNew.Location = new System.Drawing.Point(75, 74);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(95, 27);
             this.btnNew.TabIndex = 2;
@@ -199,11 +199,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 21);
+            this.label1.Size = new System.Drawing.Size(169, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "User Information Page";
             // 
@@ -215,7 +215,7 @@ namespace SchoolManagementSystem
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlKata.Execution;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
+
 namespace SchoolManagementSystem
 {
     public partial class viewTeacherSched : Form
@@ -34,13 +36,14 @@ namespace SchoolManagementSystem
                 comboBox1.Items.Add(value.teacherId);
             }
         }
+        string teachID;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvSched.Rows.Clear();
             teacherScheds sched = new teacherScheds();
 
             var values = DBContext.GetContext().Query("teachersched").Where("teacherId", comboBox1.Text).First();
-
+            teachID = Convert.ToString(values.teacherId);
             string str = values.schedId;
             var words = str.Split(' ');
 
@@ -71,8 +74,21 @@ namespace SchoolManagementSystem
 
         private void dgvSched_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            viewTeacherStudent v = new viewTeacherStudent(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), comboBox1.Text);
-            v.ShowDialog();
+            try
+            {
+                viewTeacherStudent v = new viewTeacherStudent(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), teachID);
+                var value = DBContext.GetContext().Query("teachers").Where("teacherId", teachID).First();
+                v.txtName.Text = $"{value.Firstname} {value.Lastname}";
+                v.txtSubjName.Text = dgvSched.SelectedRows[0].Cells[2].Value.ToString();
+                v.txtRoom.Text = dgvSched.SelectedRows[0].Cells[3].Value.ToString();
+                v.txtSchedule.Text = $"{dgvSched.SelectedRows[0].Cells[4].Value.ToString()} {dgvSched.SelectedRows[0].Cells[5].FormattedValue} {dgvSched.SelectedRows[0].Cells[6].FormattedValue}";
+                FormFade.FadeForm(this, v);
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 
 
@@ -21,8 +22,9 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            var myrfrm = new AddRoom(this);
-            myrfrm.ShowDialog();
+            var myfrm = new AddRoom(this);
+            FormFade.FadeForm(this,myfrm);
+
         }
 
         private void room_Load(object sender, EventArgs e)

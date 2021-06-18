@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
 using SqlKata.Execution;
 namespace SchoolManagementSystem
 {
@@ -26,7 +27,7 @@ namespace SchoolManagementSystem
         private void btnNew_Click(object sender, EventArgs e)
         {
             addTeacherScheduling add = new addTeacherScheduling(this);
-            add.ShowDialog();
+            FormFade.FadeForm(this, add);
         }
 
         private void teacherSched_Load(object sender, EventArgs e)

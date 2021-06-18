@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.UITools;
+
 namespace SchoolManagementSystem
 {
     public partial class tuition : Form
@@ -55,7 +57,7 @@ namespace SchoolManagementSystem
         {
             viewTuitionStruc tui = new viewTuitionStruc(dgvTuition.SelectedRows[0].Cells[0].Value.ToString(), this);
             tui.struckname.Text = dgvTuition.SelectedRows[0].Cells[1].Value.ToString();
-            tui.ShowDialog();
+            FormFade.FadeForm(this, tui);
         }
     }
 }

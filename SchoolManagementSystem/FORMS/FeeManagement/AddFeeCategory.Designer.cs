@@ -244,6 +244,7 @@ namespace SchoolManagementSystem
             this.Name = "AddFeeCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddFeeCategory";
+            this.TopMost = true;
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

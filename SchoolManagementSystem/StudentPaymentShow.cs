@@ -185,9 +185,9 @@ namespace SchoolManagementSystem
             {
                 int num = myForm.dgv.Rows.Add();
                 myForm.dgv.Rows[num].Cells[0].Value = DROW["paymentid"].ToString();
-                myForm.dgv.Rows[num].Cells[1].Value = DROW["amount"].ToString();
-                myForm.dgv.Rows[num].Cells[2].Value = DROW["remarks"].ToString();
-                myForm.dgv.Rows[num].Cells[3].Value = DROW["date"].ToString();
+                myForm.dgv.Rows[num].Cells[1].Value = DROW["paymentanomount"].ToString();
+                myForm.dgv.Rows[num].Cells[2].Value = DROW["paymentremarks"].ToString();
+                myForm.dgv.Rows[num].Cells[3].Value = DROW["paymentdate"].ToString();
      
             }
             //   spd.viewPaymentDetailed();

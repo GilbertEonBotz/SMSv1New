@@ -22,9 +22,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         MySqlConnection conn;
         Connection connect = new Connection();
 
-        double amount = 0;
-        double amountprelim = 0;
-        double amountmid = 0;
+        double amount;
+        double amountprelim;
+        double amountmid;
         double amountsemi = 0;
         double amountfinal = 0;
         double amountDown = 0;
@@ -76,9 +76,65 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         {
 
         }
+        public void printShow()
+        {
 
+            dgv.Rows.Clear();
+
+
+            disp.studentID = studentid.Text;
+
+            disp.studentDOwn();
+            dgv.Rows.Add("null", disp.studentdownpayment, disp.remarksFordown, disp.dateForDown);
+
+            disp.billingid = billingid;
+            disp.viewtransaction();
+            foreach (DataRow Drow in disp.dt.Rows)
+            {
+                int num = dgv.Rows.Add();
+                dgv.Rows[num].Cells[0].Value = Drow["paymentid"].ToString();
+                dgv.Rows[num].Cells[1].Value = Drow["paymentanomount"].ToString();
+                dgv.Rows[num].Cells[2].Value = Drow["paymentremarks"].ToString();
+                dgv.Rows[num].Cells[3].Value = Drow["paymentdate"].ToString();
+
+            }
+
+
+
+
+
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
+        
+
+            if (txtchange.Text == "00.00")
+            {
+                checkBox1.Checked = false;
+            }
+
+
+             if (lblpaymentfor.Text == "" || lblpaymentfor.Text == null)
+            {
+                MessageBox.Show("please select payment for");
+            }
+
+            else
+            {
+                insert();
+                lblpaymentfor.Text = "";
+                printShow();
+                showw();
+            }
+
+       
+             
+            
+        }
+
+
+        public void insert()
+        {      
             if (txtAmount.Text == "")
             {
                 MessageBox.Show("please input an amount");
@@ -157,6 +213,93 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         }
                     }
                 }
+            }
+        }
+        public void showw()
+        {
+
+            ledgerPercent led = new ledgerPercent();
+            led.percent();
+            disp.viewPayment();
+            disp.viewPaymentDetailed();
+            disp.studentDOwn();
+            double finalss = Convert.ToDouble(disp.totalpaid) + 0;
+            double current = Convert.ToDouble(textBox15.Text) - Convert.ToDouble(disp.totalpaid);
+            lbltotal.Text = disp.totalpaid.ToString();
+            txtcurrentBal.Text = current.ToString();
+            try
+            {
+
+                if (Convert.ToDouble(led.downpayment) <= finalss)
+                {
+                    amount = finalss - Convert.ToDouble(led.downpayment);
+
+                    comboBox2.Items.Remove("DOWNPAYMENT");
+
+                    if (Convert.ToDouble(txt1.Text) <= amount)
+                    {
+
+                        amount = amount - Convert.ToDouble(txt1.Text);
+                        comboBox2.Items.Remove("PRELIM");
+                        if (Convert.ToDouble(txt2.Text) <= amount)
+                        {
+                            amount = amount - Convert.ToDouble(txt2.Text);
+                            comboBox2.Items.Remove("MIDTERM");
+                            if (Convert.ToDouble(txt3.Text) <= amount)
+                            {
+                                amount = amount - Convert.ToDouble(txt3.Text);
+
+                                comboBox2.Items.Remove("SEMI-FINAL");
+                                if (Convert.ToDouble(txt4.Text) <= amount)
+                                {
+                                    amount = amount - Convert.ToDouble(txt4.Text);
+                                    lbldownpayment.Text = led.downpayment.ToString();
+                                    lblpre.Text = txt1.Text;
+                                    lblmid.Text = txt2.Text;
+                                    lblsemi.Text = txt3.Text;
+                                    lblfin.Text = txt4.Text;
+                                    comboBox2.Items.Remove("FINALE");
+                                }
+                                else
+                                {
+                                    lbldownpayment.Text = led.downpayment.ToString();
+                                    lblpre.Text = txt1.Text;
+                                    lblmid.Text = txt2.Text;
+                                    lblsemi.Text = txt3.Text;
+                                    lblfin.Text = amount.ToString();
+                                }
+                            }
+                            else
+                            {
+                                lbldownpayment.Text = led.downpayment.ToString();
+                                lblpre.Text = txt1.Text;
+                                lblmid.Text = txt2.Text;
+                                lblsemi.Text = amount.ToString();
+                            }
+                        }
+                        else
+                        {
+                            lbldownpayment.Text = led.downpayment.ToString();
+                            lblpre.Text = txt1.Text;
+                            lblmid.Text = amount.ToString();
+                        }
+                    }
+                    else
+                    {
+                        lbldownpayment.Text = led.downpayment.ToString();
+                        lblpre.Text = amount.ToString();
+                    }
+                }
+                else
+                {
+
+                    lbldownpayment.Text = finalss.ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtcurrentBal.Text = disp.total;
             }
         }
 

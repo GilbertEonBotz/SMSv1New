@@ -21,6 +21,7 @@ namespace SchoolManagementSystem
         double amount;
         ledgerPercent led = new ledgerPercent();
         string studentid;
+        double totaldownpaymentplus;
         public StudentPaymentShow(finalDashboard display)
         {
             InitializeComponent();
@@ -34,7 +35,10 @@ namespace SchoolManagementSystem
 
         private void StudentPaymentShow_Load(object sender, EventArgs e)
         {
+            
             displayData();
+
+
         }
 
         public void displayData()
@@ -116,7 +120,8 @@ namespace SchoolManagementSystem
             }
             return Convert.ToDouble(calFraction);
         }
-        private void dgvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public  void showStudent()
+        
         {
             var myForm = new Payment(display);
             display.pnlShow.Controls.Clear();
@@ -133,42 +138,15 @@ namespace SchoolManagementSystem
             spd.viewPayment();
             spd.viewPaymentDetailed();
             spd.studentDOwn();
-            myForm.dgv.Rows.Add(spd.studentdownpayment, spd.remarksFordown, spd.dateForDown);
+            myForm.dgv.Rows.Add("nulll", spd.studentdownpayment, spd.remarksFordown, spd.dateForDown);
 
             double finalss = Convert.ToDouble(spd.totalpaid) + 0;
 
-            //MessageBox.Show(spd.totalpaid.ToString());
-            //double minus = Convert.ToDouble(spd.total) - Convert.ToDouble(led.downpayment);
-            //double first;
-            //double second;
-            //double third;
-            //double fourth;
-
-            //first = minus * Convert.ToDouble(led.prelim);
-            //second = minus * Convert.ToDouble(led.midterm);
-            //third = minus * Convert.ToDouble(led.semi);
-            //fourth = led.finals;
-        
 
 
-            //// KUHAON WHOLE NUMBER EACH EXAM
-            //var firstConv = ComputePercentage(first, "", "", 0);
-            //var secondConv = ComputePercentage(second, "", "", 0);
-            //var thirdConv = ComputePercentage(third, "", "", 0);
-            //var fourthConv = ComputePercentage(fourth, "", "", 0);
-
-            //// KUHAON UG I ADD TANAN DECIMAL
-            //var firstDec = ComputeDecimals(first, "", "", 0);
-            //var secondDec = ComputeDecimals(second, "", "", 0);
-            //var thirdDec = ComputeDecimals(third, "", "", 0);
-            //var fourthDec = ComputeDecimals(fourth, "", "", 0);
-            //var totalDec = firstDec + secondDec + thirdDec + fourthDec;
-
-          //  IADD ANG PRELIM RESULT UG ANG TOTAL DECIMAL
-         //   var amt1 = firstConv + totalDec;
-
-
-            myForm.textBox15.Text = spd.total;
+            led.percent();
+             totaldownpaymentplus = Convert.ToDouble(spd.total) + Convert.ToDouble(led.downpayment);
+            myForm.textBox15.Text = totaldownpaymentplus.ToString(); 
             myForm.txt1.Text = spd.prelim;
             myForm.txt2.Text = spd.midterm;
             myForm.txt3.Text = spd.semi;
@@ -185,24 +163,19 @@ namespace SchoolManagementSystem
             {
                 int num = myForm.dgv.Rows.Add();
                 myForm.dgv.Rows[num].Cells[0].Value = DROW["paymentid"].ToString();
-                myForm.dgv.Rows[num].Cells[1].Value = DROW["amount"].ToString();
-                myForm.dgv.Rows[num].Cells[2].Value = DROW["remarks"].ToString();
-                myForm.dgv.Rows[num].Cells[3].Value = DROW["date"].ToString();
-     
+                myForm.dgv.Rows[num].Cells[1].Value = DROW["paymentanomount"].ToString();
+                myForm.dgv.Rows[num].Cells[2].Value = DROW["paymentremarks"].ToString();
+                myForm.dgv.Rows[num].Cells[3].Value = DROW["paymentdate"].ToString();
+
             }
-            //   spd.viewPaymentDetailed();
+
             myForm.lbltotal.Text = spd.totalpaid.ToString();
             double current = Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);
             myForm.txtcurrentBal.Text = current.ToString();
-            //if(myForm.txtcurrentBal.Text =="0.00")
-            //{
-            //    myForm.button1.Enabled = false;
-            //}
+
             try
             {
-                //spd.studentDOwn();
-                //double finalss = Convert.ToDouble(spd.totalpaid) + Convert.ToDouble(spd.studentdownpayment);
-                //MessageBox.Show(finalss.ToString());
+
                 if (Convert.ToDouble(led.downpayment) <= finalss)
                 {
                     amount = finalss - Convert.ToDouble(led.downpayment);
@@ -225,7 +198,7 @@ namespace SchoolManagementSystem
                                 myForm.comboBox2.Items.Remove("SEMI-FINAL");
                                 if (Convert.ToDouble(myForm.txt4.Text) <= amount)
                                 {
-                                    amount = amount -Convert.ToDouble( myForm.txt4.Text);
+                                    amount = amount - Convert.ToDouble(myForm.txt4.Text);
                                     myForm.lbldownpayment.Text = led.downpayment.ToString();
                                     myForm.lblpre.Text = myForm.txt1.Text;
                                     myForm.lblmid.Text = myForm.txt2.Text;
@@ -274,6 +247,10 @@ namespace SchoolManagementSystem
 
                 myForm.txtcurrentBal.Text = spd.total;
             }
+        }
+        private void dgvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            showStudent();
         }
 
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)

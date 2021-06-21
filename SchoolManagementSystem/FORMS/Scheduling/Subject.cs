@@ -58,5 +58,9 @@ namespace SchoolManagementSystem
             }
         }
 
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

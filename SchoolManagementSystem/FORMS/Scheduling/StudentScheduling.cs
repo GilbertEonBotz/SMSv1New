@@ -27,6 +27,10 @@ namespace SchoolManagementSystem
         double aa;
         double studentdownpayment;
         string storeID;
+        double prelim;
+        double final;
+        double semi;
+        double midterm;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
         ledgerPercent led = new ledgerPercent();
@@ -302,14 +306,31 @@ namespace SchoolManagementSystem
 
                     try
                     {
+                        //DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+
+                        //ledgerPercent led = new ledgerPercent();
+                        //downpayment = Convert.ToDouble(led.downpayment);
+                        //led.selectstudentid = cmbStudentNo.Text;
+                        //led.selectSchedID();
+                        //led.percent();
+                        //double total2 = total - Convert.ToDouble(led.downpayment);
+
+
+                        //
                         DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
-                        ledgerPercent led = new ledgerPercent();
-                        downpayment = Convert.ToDouble(led.downpayment);
+                        var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+
+                        downpayment = Convert.ToDouble(downpayments.downpayment);
+                        total2 = amount + Convert.ToDouble(lblTotal.Text);
+                double totalamoun = total2 - studentdownpayment - downpayment;
+
                         led.selectstudentid = cmbStudentNo.Text;
                         led.selectSchedID();
                         led.percent();
-                        double total2 = total - Convert.ToDouble(led.downpayment);
+                        total = totalamoun;
+                        //
+
 
                         double extractPrelim = total * Convert.ToDouble(led.prelim);
                         double extractMidterm = total * Convert.ToDouble(led.midterm);
@@ -363,7 +384,7 @@ namespace SchoolManagementSystem
                             date = DateTime.Now,
                             academicID = academicid
                         });
-                        MessageBox.Show("succes bllling");
+                        MessageBox.Show("success bllling");
                         MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
                         reload.displayStudentScheduling();
                     }
@@ -576,7 +597,7 @@ namespace SchoolManagementSystem
 
                 downpayment = Convert.ToDouble(downpayments.downpayment);
                 total2 = amount + Convert.ToDouble(lblTotal.Text);
-                double totalamoun = total2 - studentdownpayment;
+                 double totalamoun = total2 - studentdownpayment - downpayment;
 
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
@@ -589,10 +610,10 @@ namespace SchoolManagementSystem
                 double extractFinal = total * Convert.ToDouble(led.finals);
 
                 // KUHAON WHOLE NUMBER EACH EXAM
-                var prelim = ComputePercentage(extractPrelim, "", "", 0);
-                var midterm = ComputePercentage(extractMidterm, "", "", 0);
-                var semi = ComputePercentage(extractSemi, "", "", 0);
-                var final = ComputePercentage(extractFinal, "", "", 0);
+                 prelim = ComputePercentage(extractPrelim, "", "", 0);
+                 midterm = ComputePercentage(extractMidterm, "", "", 0);
+                 semi = ComputePercentage(extractSemi, "", "", 0);
+                 final = ComputePercentage(extractFinal, "", "", 0);
 
 
                 //KUHAON UG I ADD TANAN DECIMAL

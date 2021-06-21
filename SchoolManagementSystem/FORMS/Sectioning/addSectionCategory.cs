@@ -13,9 +13,12 @@ namespace SchoolManagementSystem.FORMS.Sectioning
 {
     public partial class addSectionCategory : Form
     {
-        public addSectionCategory()
+
+        SectionCategory reload;
+        public addSectionCategory(SectionCategory reload)
         {
             InitializeComponent();
+            this.reload = reload;
 
         }
 
@@ -35,6 +38,9 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             {
                 sectionName = txtStructure.Text,Description = txtDescription.Text
             }) ;
+
+            reload.displayData();
+            this.Close();
         }
     }
 }

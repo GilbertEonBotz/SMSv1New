@@ -28,14 +28,33 @@ namespace SchoolManagementSystem
 
             if (btnAddRoom.Text.Equals("Update"))
             {
-                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+
+                var value = DBContext.GetContext().Query("rooms").First();
+
+                if(value.roomId == Convert.ToInt32(lblIDD.Text) && value.name.Equals(txtName.Text)) 
                 {
-                    DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
-                    {
-                        description = txtDescription.Text,
-                    });
-                    reloadDatagrid.displayData();
                     this.Close();
+                }
+                else
+                {
+                    try
+                    {
+                        DBContext.GetContext().Query("rooms").Where("name", txtName.Text).First();
+                        Validator.AlertDanger("Room is already existed");
+                    }
+                    catch (Exception)
+                    {
+                        if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                        {
+                            DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
+                            {
+                                name = txtName.Text,
+                                description = txtDescription.Text,
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                        }
+                    }
                 }
             }
             else if (btnAddRoom.Text.Equals("Save"))
@@ -44,14 +63,14 @@ namespace SchoolManagementSystem
                 {
                     try
                     {
-                        DBContext.GetContext().Query("rooms").Where("description", txtDescription.Text).First();
+                        DBContext.GetContext().Query("rooms").Where("name", txtName.Text).First();
                         Validator.AlertDanger("Room is already existed");
                     }
                     catch (Exception)
                     {
                         DBContext.GetContext().Query("rooms").Insert(new
                         {
-                            name = txtName.Text,
+                            name = txtName.Text.ToUpper(),
                             description = txtDescription.Text,
                         });
                         reloadDatagrid.displayData();

@@ -159,7 +159,7 @@ namespace SchoolManagementSystem
 
             foreach (var value in values)
             {
-                cmbCourse.Items.Add(value.description);
+                cmbCourse.Items.Add(value.abbreviation);
             }
         }
 

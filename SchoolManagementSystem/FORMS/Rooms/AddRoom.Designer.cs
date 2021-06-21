@@ -78,7 +78,7 @@ namespace SchoolManagementSystem
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(395, 30);
-            this.txtName.TabIndex = 30;
+            this.txtName.TabIndex = 1;
             // 
             // label2
             // 
@@ -100,7 +100,7 @@ namespace SchoolManagementSystem
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(395, 30);
-            this.txtDescription.TabIndex = 28;
+            this.txtDescription.TabIndex = 2;
             // 
             // label6
             // 
@@ -138,7 +138,7 @@ namespace SchoolManagementSystem
             // 
             this.lblIDD.AutoSize = true;
             this.lblIDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblIDD.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIDD.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblIDD.Location = new System.Drawing.Point(232, 16);
             this.lblIDD.Name = "lblIDD";
             this.lblIDD.Size = new System.Drawing.Size(105, 20);
@@ -165,6 +165,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(226, 32);
             this.btnAdmissionForm.TabIndex = 5;
+            this.btnAdmissionForm.TabStop = false;
             this.btnAdmissionForm.Text = "Room Form";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
@@ -183,7 +184,7 @@ namespace SchoolManagementSystem
             this.btnAddRoom.Location = new System.Drawing.Point(312, 223);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(107, 32);
-            this.btnAddRoom.TabIndex = 26;
+            this.btnAddRoom.TabIndex = 3;
             this.btnAddRoom.Text = "Save";
             this.btnAddRoom.UseVisualStyleBackColor = false;
             this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
@@ -250,6 +251,7 @@ namespace SchoolManagementSystem
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
+            this.btnExit.TabStop = false;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -268,7 +270,7 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(425, 223);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 27;
+            this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);

@@ -39,11 +39,11 @@ namespace SchoolManagementSystem
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -76,7 +76,7 @@ namespace SchoolManagementSystem
             // 
             // btnAddDept
             // 
-            this.btnAddDept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDept.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddDept.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnAddDept.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -167,6 +167,12 @@ namespace SchoolManagementSystem
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
@@ -180,11 +186,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(9, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 17);
+            this.label1.Size = new System.Drawing.Size(157, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Section Information Page";
             // 
@@ -205,7 +211,7 @@ namespace SchoolManagementSystem
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -220,12 +226,6 @@ namespace SchoolManagementSystem
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
             // SectionCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +238,7 @@ namespace SchoolManagementSystem
             this.Name = "SectionCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SectionCategory";
+            this.Load += new System.EventHandler(this.SectionCategory_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

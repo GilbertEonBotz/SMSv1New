@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlKata.Execution;
 using EonBotzLibrary;
+using MySql.Data.MySqlClient;
 namespace SchoolManagementSystem
 {
     public partial class addSectioning : Form
     {
 
+        Connection connect = new Connection();
+        MySqlCommand cmd;
+        MySqlConnection conn;
+        MySqlDataReader dr;
         string id;
         public addSectioning(string val)
         {
@@ -34,10 +39,23 @@ namespace SchoolManagementSystem
             {
                 dgvSched.Rows.Add(value.schedID, value.subjectCode, value.subjectTitle, value.roomID, value.date, value.timeStart, value.timeEnd);
             }
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select a.schedid,a.subjectcode,a.subjectTitle  from schedule a, Sectioning b, sectionCategory c where a.schedID = b.schedID and c.SectionCategoryID = '" + id+"'",conn);
+            dr = cmd.ExecuteReader();
 
-
+            while (dr.Read())
+            {
+                dgvCategories.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
+            }
         }
+       
+        
 
+        //public void displaySectioning()
+        //{
+        //    var values = DBContext.GetContext().Query("sectioning").Where("SectionCategoryID", ).Get
+        //}
         private void dgvSched_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 

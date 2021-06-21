@@ -34,7 +34,7 @@ namespace SchoolManagementSystem
             dgvCourseCode.Rows.Clear();
             foreach(var value in values)
             {
-                dgvCourseCode.Rows.Add(value.courseId, value.coursecode, value.description,  value.remarks);
+                dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description,  value.remarks);
             }
         }
 
@@ -48,6 +48,24 @@ namespace SchoolManagementSystem
         {
             e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
             e.Handled = true;
+        }
+
+        private void dgvCourseCode_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCourseCode.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("edit"))
+            {
+                var myfrm = new addCourseCode(this);
+                int id = Convert.ToInt32(dgvCourseCode.Rows[dgvCourseCode.CurrentRow.Index].Cells[0].Value);
+
+                myfrm.lblIDD.Text = id.ToString();
+                myfrm.cmbDepartment.Text = dgvCourseCode.SelectedRows[0].Cells[2].Value.ToString();
+                myfrm.txtCourseCode.Text = dgvCourseCode.SelectedRows[0].Cells[1].Value.ToString();
+                myfrm.txtRemarks.Text = dgvCourseCode.SelectedRows[0].Cells[3].Value.ToString();
+                myfrm.btnSave.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
     }
 }

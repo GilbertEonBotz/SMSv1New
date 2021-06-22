@@ -41,7 +41,7 @@ namespace SchoolManagementSystem
             }
             conn = connect.getcon();
             conn.Open();
-            cmd = new MySqlCommand("select a.schedid,a.subjectcode,a.subjectTitle  from schedule a, Sectioning b, sectionCategory c where a.schedID = b.schedID and c.SectionCategoryID = '" + id+"'",conn);
+            cmd = new MySqlCommand("select a.schedid,a.subjectcode,a.subjectTitle  from schedule a, Sectioning b, sectionCategory c where a.schedID = b.schedID and b.SectionCategoryID = '"+ id+ "'Group by b.sectionId", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())

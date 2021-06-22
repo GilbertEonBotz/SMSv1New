@@ -28,16 +28,35 @@ namespace SchoolManagementSystem
 
             if (btnSave.Text.Equals("Update"))
             {
+                var values = DBContext.GetContext().Query("role").Get();
                 if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-
-                    DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
+                    foreach (var value in values)
                     {
-                        roletype = txtRole.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        if (value.roleId.Equals(Convert.ToInt32(idd)) && value.roletype.Equals(txtRole.Text))
+                        {
+                            DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
+                            {
+                                roletype = Validator.ToTitleCase(txtRole.Text)
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                            return;
+                        }
+                        else if (value.roleId != Convert.ToInt32(idd) && value.roletype.Equals(Validator.ToTitleCase(txtRole.Text)))
+                        {
+                            Validator.AlertDanger("Role name already existed");
+                            return;
+                        }
+                    }
                 }
+
+                DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
+                {
+                    roletype = Validator.ToTitleCase(txtRole.Text)
+                });
+                reloadDatagrid.displayData();
+                this.Close();
             }
             else if (btnSave.Text.Equals("Save"))
             {
@@ -52,7 +71,7 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("role").Insert(new
                         {
-                            roletype = txtRole.Text,
+                            roletype = Validator.ToTitleCase(txtRole.Text),
                         });
                         reloadDatagrid.displayData();
                         this.Close();

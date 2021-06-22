@@ -22,7 +22,7 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddRoom(this);
+            var myfrm = new AddRoom(this, idd);
             FormFade.FadeForm(this,myfrm);
 
         }
@@ -54,17 +54,18 @@ namespace SchoolManagementSystem
             e.Handled = true;
         }
 
+        string idd;
         private void dgvRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvRooms.Columns[e.ColumnIndex].Name;
 
             if (colName.Equals("edit"))
             {
-                var myfrm = new AddRoom(this);
                 int id = Convert.ToInt32(dgvRooms.Rows[dgvRooms.CurrentRow.Index].Cells[0].Value);
+                idd = id.ToString();
+                var myfrm = new AddRoom(this, idd);
                 var rooms = DBContext.GetContext().Query("rooms").Where("roomId", id).First();
 
-                myfrm.lblIDD.Text = id.ToString();
                 myfrm.txtDescription.Text = rooms.description;
                 myfrm.txtName.Text = rooms.name;
                 myfrm.btnAddRoom.Text = "Update";

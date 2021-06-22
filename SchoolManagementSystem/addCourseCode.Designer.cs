@@ -67,7 +67,7 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(427, 324);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 34;
+            this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -79,7 +79,7 @@ namespace SchoolManagementSystem
             this.txtCourseCode.Multiline = true;
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(395, 30);
-            this.txtCourseCode.TabIndex = 34;
+            this.txtCourseCode.TabIndex = 2;
             // 
             // cmbDepartment
             // 
@@ -88,7 +88,7 @@ namespace SchoolManagementSystem
             this.cmbDepartment.Location = new System.Drawing.Point(131, 66);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(395, 32);
-            this.cmbDepartment.TabIndex = 32;
+            this.cmbDepartment.TabIndex = 1;
             this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // label3
@@ -108,7 +108,7 @@ namespace SchoolManagementSystem
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(395, 90);
-            this.txtRemarks.TabIndex = 28;
+            this.txtRemarks.TabIndex = 3;
             // 
             // label6
             // 
@@ -162,6 +162,7 @@ namespace SchoolManagementSystem
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
+            this.btnExit.TabStop = false;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -219,6 +220,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(196, 31);
             this.btnAdmissionForm.TabIndex = 5;
+            this.btnAdmissionForm.TabStop = false;
             this.btnAdmissionForm.Text = "Course Form";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
@@ -237,7 +239,7 @@ namespace SchoolManagementSystem
             this.btnSave.Location = new System.Drawing.Point(309, 324);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 32);
-            this.btnSave.TabIndex = 33;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

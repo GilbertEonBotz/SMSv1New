@@ -170,7 +170,7 @@ namespace SchoolManagementSystem
             // txtMacAddress
             // 
             this.txtMacAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMacAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtMacAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMacAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMacAddress.Location = new System.Drawing.Point(124, 276);
             this.txtMacAddress.Multiline = true;
@@ -181,11 +181,12 @@ namespace SchoolManagementSystem
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtConfirmPassword.Location = new System.Drawing.Point(123, 236);
             this.txtConfirmPassword.Multiline = true;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '●';
             this.txtConfirmPassword.Size = new System.Drawing.Size(376, 30);
             this.txtConfirmPassword.TabIndex = 36;
             // 
@@ -203,11 +204,12 @@ namespace SchoolManagementSystem
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.Location = new System.Drawing.Point(123, 198);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(376, 30);
             this.txtPassword.TabIndex = 34;
             // 
@@ -224,11 +226,11 @@ namespace SchoolManagementSystem
             // 
             // cmbRole
             // 
-            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Location = new System.Drawing.Point(123, 80);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(377, 32);
+            this.cmbRole.Size = new System.Drawing.Size(377, 29);
             this.cmbRole.TabIndex = 32;
             this.cmbRole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbRole_KeyPress);
             // 
@@ -246,7 +248,7 @@ namespace SchoolManagementSystem
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtName.Location = new System.Drawing.Point(123, 119);
             this.txtName.Multiline = true;
@@ -268,7 +270,7 @@ namespace SchoolManagementSystem
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.Location = new System.Drawing.Point(124, 159);
             this.txtUsername.Multiline = true;

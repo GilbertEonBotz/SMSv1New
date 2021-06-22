@@ -36,7 +36,6 @@ namespace SchoolManagementSystem
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblIDD = new System.Windows.Forms.Label();
             this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
             this.btnAddRoom = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -126,24 +125,12 @@ namespace SchoolManagementSystem
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.panel7.Controls.Add(this.lblIDD);
             this.panel7.Controls.Add(this.btnAdmissionForm);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(556, 49);
             this.panel7.TabIndex = 0;
-            // 
-            // lblIDD
-            // 
-            this.lblIDD.AutoSize = true;
-            this.lblIDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblIDD.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIDD.Location = new System.Drawing.Point(232, 16);
-            this.lblIDD.Name = "lblIDD";
-            this.lblIDD.Size = new System.Drawing.Size(105, 20);
-            this.lblIDD.TabIndex = 30;
-            this.lblIDD.Text = "Subject Code";
             // 
             // btnAdmissionForm
             // 
@@ -297,7 +284,6 @@ namespace SchoolManagementSystem
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -312,7 +298,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Label lblIDD;
         private FontAwesome.Sharp.IconButton btnAdmissionForm;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;

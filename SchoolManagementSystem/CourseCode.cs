@@ -40,7 +40,7 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            var myfrm = new addCourseCode(this);
+            var myfrm = new addCourseCode(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
 
@@ -50,16 +50,18 @@ namespace SchoolManagementSystem
             e.Handled = true;
         }
 
+
+        string idd;
         private void dgvCourseCode_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvCourseCode.Columns[e.ColumnIndex].Name;
 
             if (colName.Equals("edit"))
             {
-                var myfrm = new addCourseCode(this);
                 int id = Convert.ToInt32(dgvCourseCode.Rows[dgvCourseCode.CurrentRow.Index].Cells[0].Value);
-
-                myfrm.lblIDD.Text = id.ToString();
+                idd = id.ToString();
+                var myfrm = new addCourseCode(this, idd);
+                
                 myfrm.cmbDepartment.Text = dgvCourseCode.SelectedRows[0].Cells[2].Value.ToString();
                 myfrm.txtCourseCode.Text = dgvCourseCode.SelectedRows[0].Cells[1].Value.ToString();
                 myfrm.txtRemarks.Text = dgvCourseCode.SelectedRows[0].Cells[3].Value.ToString();

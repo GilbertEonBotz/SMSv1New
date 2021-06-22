@@ -39,6 +39,7 @@ namespace SchoolManagementSystem
             }
         }
 
+        string idd;
         private void dgvUsersRole_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvUsersRole.Columns[e.ColumnIndex].Name;
@@ -54,17 +55,19 @@ namespace SchoolManagementSystem
                     displayData();
                 }
             }
+            else if (colName.Equals("edit"))
+            {
+                int id = Convert.ToInt32(dgvUsersRole.Rows[dgvUsersRole.CurrentRow.Index].Cells[0].Value);
+                idd = id.ToString();
+                var myfrm = new AddUserRole(this, idd);
+                myfrm.txtRole.Text = dgvUsersRole.Rows[dgvUsersRole.CurrentRow.Index].Cells[1].Value.ToString();
+                myfrm.btnSave.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
-        string idd;
         private void dgvUsersRole_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(dgvUsersRole.Rows[dgvUsersRole.CurrentRow.Index].Cells[0].Value);
-            idd = id.ToString();
-            var myfrm = new AddUserRole(this, idd);
-            var value = DBContext.GetContext().Query("role").Where("roleId", id).First();
-            myfrm.txtRole.Text = value.roletype;
-            myfrm.btnSave.Text = "Update";
-            myfrm.ShowDialog();
+            
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddDepartment(this);
+            var myfrm = new AddDepartment(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
 
@@ -31,7 +31,7 @@ namespace SchoolManagementSystem
 
             foreach (var dept in depts)
             {
-                dgvDepartment.Rows.Add(dept.deptID, dept.description);
+                dgvDepartment.Rows.Add(dept.deptID, dept.deptName);
             }
         }
 
@@ -43,20 +43,30 @@ namespace SchoolManagementSystem
 
         private void dgvDepartment_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var myfrm = new AddDepartment(this);
-            int id = Convert.ToInt32(dgvDepartment.Rows[dgvDepartment.CurrentRow.Index].Cells[0].Value);
-            var depts = DBContext.GetContext().Query("department").Where("deptID", id).First();
-
-            myfrm.lblIDD.Text = id.ToString();
-            myfrm.txtDeptName.Text = depts.description;
-            myfrm.btnSave.Text = "Update";
-            myfrm.ShowDialog();
+            
         }
 
         private void dgvDepartment_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
             e.Handled = true;
+        }
+
+        string idd;
+        private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvDepartment.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("edit"))
+            {
+                int id = Convert.ToInt32(dgvDepartment.Rows[dgvDepartment.CurrentRow.Index].Cells[0].Value);
+                idd = id.ToString();
+                var myfrm = new AddDepartment(this, idd);
+
+                myfrm.txtDeptName.Text = dgvDepartment.Rows[dgvDepartment.CurrentRow.Index].Cells[1].Value.ToString();
+                myfrm.btnSave.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
     }
 }

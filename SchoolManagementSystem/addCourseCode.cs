@@ -14,46 +14,59 @@ namespace SchoolManagementSystem
 {
     public partial class addCourseCode : Form
     {
+
+        string idd;
         CourseCode reloadDatagrid;
-        public addCourseCode(CourseCode reloadDatagrid)
+        public addCourseCode(CourseCode reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-
+            this.idd = idd;
         }
 
         int selCourseID;
         private void btnSave_Click(object sender, EventArgs e)
         {
+            TextBox[] inputs = { txtCourseCode };
             ComboBox[] cmb = { cmbDepartment };
 
             if (btnSave.Text.Equals("Update"))
             {
-                if (Validator.isEmptyCmb(cmb))
+                var values = DBContext.GetContext().Query("coursecode").Get();
+                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-                    if (Validator.UpdateConfirmation())
+                    foreach (var value in values)
                     {
-                        try
+
+                        if (value.coursecodeId.Equals(Convert.ToInt32(idd)) && value.coursecode.Equals(txtCourseCode.Text))
                         {
-                            DBContext.GetContext().Query("coursecode").Where("coursecode", txtCourseCode.Text).First();
-                            Validator.AlertDanger("Course code already existed!");
-                        }
-                        catch (Exception)
-                        {
-                            DBContext.GetContext().Query("coursecode").Where("coursecodeId", lblIDD.Text).Update(new
+                            DBContext.GetContext().Query("coursecode").Where("coursecodeId", idd).Update(new
                             {
                                 courseId = selCourseID,
                                 coursecode = txtCourseCode.Text.ToUpper(),
                                 remarks = txtRemarks.Text,
                                 status = "enable"
                             });
-                            Validator.AlertSuccess("Course code updated");
                             reloadDatagrid.displayData();
                             this.Close();
+                            return;
+                        }
+                        else if (value.coursecodeId != Convert.ToInt32(idd) && value.coursecode.Equals(txtCourseCode.Text))
+                        {
+                            Validator.AlertDanger("Course code already existed");
+                            return;
                         }
                     }
-
                 }
+                DBContext.GetContext().Query("coursecode").Where("coursecodeId", idd).Update(new
+                {
+                    courseId = selCourseID,
+                    coursecode = txtCourseCode.Text.ToUpper(),
+                    remarks = txtRemarks.Text,
+                    status = "enable"
+                });
+                reloadDatagrid.displayData();
+                this.Close();
             }
             else if (btnSave.Text.Equals("Save"))
             {
@@ -77,9 +90,6 @@ namespace SchoolManagementSystem
                         reloadDatagrid.displayData();
                         this.Close();
                     }
-                }
-                else
-                {
                 }
             }
         }

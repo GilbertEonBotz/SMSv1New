@@ -20,26 +20,13 @@ namespace SchoolManagementSystem
 
         private void btnAddSybject_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddSubject(this);
+            var myfrm = new AddSubject(this, getId);
             FormFade.FadeForm(this, myfrm);
         }
 
         private void dgvSubjects_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var myfrm = new AddSubject(this);
-            int id = Convert.ToInt32(dgvSubjects.Rows[dgvSubjects.CurrentRow.Index].Cells[0].Value);
-            var value = DBContext.GetContext().Query("subjects").Where("subjectId", id).First();
 
-            myfrm.lblIDD.Text = id.ToString();
-            myfrm.cmbCourseCode.Text = value.courseCode;
-            myfrm.txtSubjectCode.Text = value.subjectCode;
-            myfrm.txtDescriptiveTitle.Text = value.subjectTitle;
-            myfrm.txtLec.Text = Convert.ToString(value.lec);
-            myfrm.txtLab.Text = Convert.ToString(value.lab);
-            myfrm.txtTotalUnits.Text = Convert.ToString(value.unit);
-            myfrm.cmbPreReq.Text = value.prereq;
-            myfrm.btnAddSubjects.Text = "Update";
-            myfrm.ShowDialog();
         }
 
         private void Subject_Load(object sender, EventArgs e)
@@ -58,9 +45,49 @@ namespace SchoolManagementSystem
             }
         }
 
+        string getId;
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colName = dgvSubjects.Columns[e.ColumnIndex].Name;
+            if (colName.Equals("edit"))
+            {
+                getId = dgvSubjects.Rows[dgvSubjects.CurrentRow.Index].Cells[0].Value.ToString();
+                var myfrm = new AddSubject(this, getId);
 
+                var value = DBContext.GetContext().Query("subjects")
+                    .Join("coursecode", "coursecode.coursecode", "subjects.courseCode")
+                    .Join("course", "course.courseId", "coursecode.courseId")
+                    .Where("subjectId", getId).First();
+
+                myfrm.cmbCourse.Text = value.description;
+                myfrm.cmbCourseCode.Text = value.courseCode;
+                myfrm.txtSubjectCode.Text = value.subjectCode;
+                myfrm.txtDescriptiveTitle.Text = value.subjectTitle;
+                myfrm.txtLec.Text = Convert.ToString(value.lec);
+                myfrm.txtLecPrice.Text = Convert.ToString(value.lecPrice);
+                myfrm.txtLab.Text = Convert.ToString(value.lab);
+                myfrm.txtLabprice.Text = Convert.ToString(value.labPrice);
+                myfrm.txtTotalUnits.Text = Convert.ToString(value.totalUnits);
+
+                if (value.prereq == "")
+                {
+                    myfrm.lstPrereq.Items.Clear();
+                    myfrm.btnAddSubjects.Text = "Update";
+                    myfrm.ShowDialog();
+                }
+                else
+                {
+                    var word = value.prereq.Split(',');
+
+                    foreach (var splitWord in word)
+                    {
+                        myfrm.lstPrereq.Items.Add(splitWord);
+                    }
+                    myfrm.btnAddSubjects.Text = "Update";
+                    myfrm.ShowDialog();
+                }
+                
+            }
         }
     }
 }

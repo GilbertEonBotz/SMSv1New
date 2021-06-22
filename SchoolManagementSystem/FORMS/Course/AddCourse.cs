@@ -12,13 +12,13 @@ namespace SchoolManagementSystem
 {
     public partial class AddCourse : Form
     {
-        Course course = new Course();
         CourseInformation reloadDatagrid;
-        public AddCourse(CourseInformation reloadDatagrid)
+        string idd;
+        public AddCourse(CourseInformation reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-            
+            this.idd = idd;
         }
 
 
@@ -28,7 +28,7 @@ namespace SchoolManagementSystem
 
             foreach (var value in values)
             {
-                cmbDepartment.Items.Add(value.description);
+                cmbDepartment.Items.Add(value.deptName);
             }
         }
         private void btnAddCourse_Click(object sender, EventArgs e)
@@ -36,19 +36,47 @@ namespace SchoolManagementSystem
             TextBox[] inputs = { txtDescription, txtAbbreviation };
             ComboBox[] cmb = { cmbDepartment };
 
-            
             if (btnSave.Text.Equals("Update"))
             {
-                if (Validator.isEmptyCmb(cmb) && Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                var values = DBContext.GetContext().Query("course").Get();
+                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-                    DBContext.GetContext().Query("course").Where("courseId", lblIDD.Text).Update(new
+                    foreach (var value in values)
                     {
-                        description = txtDescription.Text,
-                        abbreviation = txtAbbreviation.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        if (value.courseId.Equals(Convert.ToInt32(idd)) && value.abbreviation.Equals(txtAbbreviation.Text) && value.description.Equals(txtAbbreviation.Text))
+                        {
+                            var getId = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text.ToUpper()).First();
+                            DBContext.GetContext().Query("course").Where("courseId", idd).Update(new
+                            {
+                                description = Validator.ToTitleCase(txtDescription.Text),
+                                abbreviation = txtAbbreviation.Text.ToUpper(),
+                                deptID = getId.deptID,
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                        }
+                        else if (value.courseId != Convert.ToInt32(idd) && value.abbreviation.Equals(txtAbbreviation.Text.ToUpper()))
+                        {
+                            Validator.AlertDanger("Abbreviation name already existed");
+                            return;
+                        }
+                        else if (value.courseId != Convert.ToInt32(idd) && value.description.Equals(Validator.ToTitleCase(txtDescription.Text)))
+                        {
+                            Validator.AlertDanger("Description name already existed");
+                            return;
+                        }
+                    }
                 }
+                var getsId = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text.ToUpper()).First();
+                DBContext.GetContext().Query("course").Where("courseId", idd).Update(new
+                {
+                    description = Validator.ToTitleCase(txtDescription.Text),
+                    abbreviation = txtAbbreviation.Text.ToUpper(),
+                    deptID = getsId.deptID,
+
+                });
+                reloadDatagrid.displayData();
+                this.Close();
             }
             else if (btnSave.Text.Equals("Save"))
             {
@@ -61,12 +89,12 @@ namespace SchoolManagementSystem
                     }
                     catch (Exception)
                     {
-                        var value = DBContext.GetContext().Query("department").Where("description", cmbDepartment.Text).First();
+                        var value = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text).First();
 
                         DBContext.GetContext().Query("course").Insert(new
                         {
-                            description = txtDescription.Text,
-                            abbreviation = txtAbbreviation.Text,
+                            description = Validator.ToTitleCase(txtDescription.Text),
+                            abbreviation = txtAbbreviation.Text.ToUpper(),
                             deptID = value.deptID,
                             status = "enable"
                         });
@@ -94,6 +122,11 @@ namespace SchoolManagementSystem
         private void AddCourse_Load(object sender, EventArgs e)
         {
             displayDepartments();
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -82,24 +82,31 @@ namespace SchoolManagementSystem
                     }
                 }
             }
+            else if (colName.Equals("edit"))
+            {
+                idd = dgvUsers.Rows[dgvUsers.CurrentRow.Index].Cells[0].Value.ToString();
+                var myfrm = new AddUser(this, idd);
+
+                var values = DBContext.GetContext().Query("users")
+                    .Join("role", "role.roleId", "users.userrole")
+                    .Where("id", idd).Get();
+                foreach (var value in values)
+                {
+                    myfrm.cmbRole.Text = value.roletype;
+                    myfrm.txtName.Text = value.name;
+                    myfrm.txtUsername.Text = value.username;
+                    myfrm.txtPassword.Text = value.password;
+                    myfrm.txtMacAddress.Text = value.macAddress;
+                }
+                myfrm.btnSave.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
 
         string idd;
         private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(dgvUsers.Rows[dgvUsers.CurrentRow.Index].Cells[0].Value);
-            idd = id.ToString();
-            var myfrm = new AddUser(this, idd);
-
-            var values = DBContext.GetContext().Query("users").Where("id", id).Get();
-            foreach(var value in values)
-            {
-                myfrm.txtName.Text = value.name;
-                myfrm.txtUsername.Text = value.username;
-                myfrm.txtPassword.Text = value.password;
-                myfrm.txtMacAddress.Text = value.macAddress;
-            }
-            myfrm.ShowDialog();
+            
         }
     }
 }

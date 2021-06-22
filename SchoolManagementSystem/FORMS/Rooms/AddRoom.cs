@@ -12,15 +12,16 @@ namespace SchoolManagementSystem
 {
     public partial class AddRoom : Form
     {
-        Room room = new Room();
-
         room reloadDatagrid;
-        public AddRoom(room reloadDatagrid)
+        string idd;
+        public AddRoom(room reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            this.idd = idd;
 
         }
+
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             TextBox[] inputs = { txtDescription };
@@ -28,81 +29,36 @@ namespace SchoolManagementSystem
             if (btnAddRoom.Text.Equals("Update"))
             {
                 var values = DBContext.GetContext().Query("rooms").Get();
-
-                foreach (var value in values)
+                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-
-                    if (value.roomId.Equals(Convert.ToInt32(lblIDD.Text)) && value.name.Equals(txtName.Text))
+                    foreach (var value in values)
                     {
-                        DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
+                        if (value.roomId.Equals(Convert.ToInt32(idd)) && value.name.Equals(txtName.Text))
                         {
-                            name = txtName.Text,
-                            description = txtDescription.Text
-                        });
-                        reloadDatagrid.displayData();
-                        this.Close();
-                        return;
-                    }
-                    else if(value.roomId != Convert.ToInt32(lblIDD.Text) && value.name.Equals(txtName.Text))
-                    {
-                        Validator.AlertDanger("Room name already existed");
-                        return;
+                            DBContext.GetContext().Query("rooms").Where("roomId", idd).Update(new
+                            {
+                                name = txtName.Text,
+                                description = txtDescription.Text
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                            return;
+                        }
+                        else if (value.roomId != Convert.ToInt32(idd) && value.name.Equals(txtName.Text))
+                        {
+                            Validator.AlertDanger("Room name already existed");
+                            return;
+                        }
                     }
                 }
 
-                DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
+                DBContext.GetContext().Query("rooms").Where("roomId", idd).Update(new
                 {
                     name = txtName.Text,
                     description = txtDescription.Text
                 });
                 reloadDatagrid.displayData();
                 this.Close();
-
-
-
-
-                //try
-                //{
-                //    var value = DBContext.GetContext().Query("rooms")
-                //   .Where("roomId", lblIDD.Text)
-                //   .Where("name", txtName.Text)
-                //   .First();
-
-                //    DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
-                //    {
-                //        name = txtName.Text,
-                //        description = txtDescription.Text
-                //    });
-                //    reloadDatagrid.displayData();
-                //    this.Close();
-
-                //}
-                //catch (Exception)
-                //{
-                //    Validator.AlertDanger("Room name already existed");
-
-                //}
-                //else
-                //{
-                //    try
-                //    {
-                //        DBContext.GetContext().Query("rooms").Where("name", txtName.Text).First();
-                //        Validator.AlertDanger("Room name already existed");
-                //    }
-                //    catch (Exception)
-                //    {
-                //        if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
-                //        {
-                //            DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
-                //            {
-                //                name = txtName.Text,
-                //                description = txtDescription.Text
-                //            });
-                //            reloadDatagrid.displayData();
-                //            this.Close();
-                //        }
-                //    }
-                //}
             }
             else if (btnAddRoom.Text.Equals("Save"))
             {
@@ -124,7 +80,6 @@ namespace SchoolManagementSystem
                         this.Close();
 
                     }
-
                 }
             }
         }

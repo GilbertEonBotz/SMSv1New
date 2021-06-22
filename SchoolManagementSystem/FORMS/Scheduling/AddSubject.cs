@@ -15,39 +15,127 @@ namespace SchoolManagementSystem
         Subjects subj = new Subjects();
 
         Subject reloadDatagrid;
-        public AddSubject(Subject reloadDatagrid)
+        string getId;
+        public AddSubject(Subject reloadDatagrid, string getId)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-           
+            this.getId = getId;
         }
 
         private void btnAddSubjects_Click(object sender, EventArgs e)
         {
-            TextBox[] inputs = { txtSubjectCode, txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits, txtLecPrice, txtLabprice };
+            string value = "";
 
+            TextBox[] inputs = { txtSubjectCode, txtDescriptiveTitle, txtLec, txtLab, txtTotalUnits, txtLecPrice, txtLabprice };
             if (btnAddSubjects.Text.Equals("Update"))
             {
-                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                var values = DBContext.GetContext().Query("subjects").Get();
+                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-                    DBContext.GetContext().Query("subjects").Where("subjectId", lblIDD.Text).Update(new
+                    if (string.IsNullOrEmpty(txtTotalUnits.Text) || txtTotalUnits.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Total unit must not be empty");
+                        return;
+                    }
+                    else if (lblLectotal.Text.Equals("0") && lblabTotal.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Please enter an amount for lecture and lab!");
+                        return;
+                    }
+                    else if (string.IsNullOrEmpty(cmbCourse.Text))
+                    {
+                        Validator.AlertDanger("Please select course!");
+                        return;
+                    }
+                    else if (string.IsNullOrEmpty(cmbCourseCode.Text))
+                    {
+                        Validator.AlertDanger("Please select course code!");
+                        return;
+                    }
+                    else if (Convert.ToDouble(txtLecPrice.Text) > 0 && txtLec.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Lecture price must not be equal to 0");
+                        return;
+                    }
+                    else if (Convert.ToDouble(txtLabprice.Text) > 0 && txtLab.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Laboratory price must not be equal to 0");
+                        return;
+                    }
+                    else
+                    {
+                        foreach (var val in values)
+                        {
+                            if (val.subjectId.Equals(Convert.ToInt32(getId)) && val.subjectCode.Equals(txtSubjectCode.Text))
+                            {
+                                for (int i = 0; i < lstPrereq.Items.Count; i++)
+                                {
+                                    if (value != "")
+                                    {
+                                        value += ",";
+                                    }
+                                    value += lstPrereq.Items[i].ToString();
+                                }
+                                DBContext.GetContext().Query("subjects")
+                                    .Where("subjectId", getId)
+                                    .Update(new
+                                    {
+                                        courseCode = cmbCourseCode.Text,
+                                        subjectCode = txtSubjectCode.Text.ToUpper(),
+                                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
+                                        lec = txtLec.Text,
+                                        lab = txtLab.Text,
+                                        totalUnits = txtTotalUnits.Text,
+                                        prereq = value,
+                                        status = "Avail",
+                                        totalLecprice = lblLectotal.Text,
+                                        totalLabprice = lblabTotal.Text,
+                                        labprice = txtLabprice.Text,
+                                        lecprice = txtLecPrice.Text,
+                                        totalprice = TotalPrice.Text
+                                    });
+                                reloadDatagrid.displayData();
+                                this.Close();
+                                return;
+                            }
+                            else if (val.subjectId != Convert.ToInt32(idd) && val.subjectCode.Equals(txtSubjectCode.Text))
+                            {
+                                Validator.AlertDanger("Subject code already existed");
+                                return;
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i < lstPrereq.Items.Count; i++)
+                {
+                    if (value != "")
+                    {
+                        value += ",";
+                    }
+                    value += lstPrereq.Items[i].ToString();
+                }
+                DBContext.GetContext().Query("subjects")
+                    .Where("subjectId", getId)
+                    .Update(new
                     {
                         courseCode = cmbCourseCode.Text,
-                        subjectCode = txtSubjectCode.Text,
-                        subjectTitle = txtDescriptiveTitle.Text,
+                        subjectCode = txtSubjectCode.Text.ToUpper(),
+                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
                         lec = txtLec.Text,
                         lab = txtLab.Text,
                         totalUnits = txtTotalUnits.Text,
-                        prereq = cmbPreReq.Text,
+                        prereq = value,
+                        status = "Avail",
                         totalLecprice = lblLectotal.Text,
                         totalLabprice = lblabTotal.Text,
                         labprice = txtLabprice.Text,
                         lecprice = txtLecPrice.Text,
                         totalprice = TotalPrice.Text
                     });
-                    reloadDatagrid.displayData();
-                    this.Close();
-                }
+                reloadDatagrid.displayData();
+                this.Close();
+
             }
             else if (btnAddSubjects.Text.Equals("Save"))
             {
@@ -57,7 +145,7 @@ namespace SchoolManagementSystem
                     {
                         Validator.AlertDanger("Total unit must not be empty");
                     }
-                    else if(lblLectotal.Text.Equals("0") && lblabTotal.Text.Equals("0"))
+                    else if (lblLectotal.Text.Equals("0") && lblabTotal.Text.Equals("0"))
                     {
                         Validator.AlertDanger("Please enter an amount for lecture and lab!");
                     }
@@ -69,6 +157,14 @@ namespace SchoolManagementSystem
                     {
                         Validator.AlertDanger("Please select course code!");
                     }
+                    else if (Convert.ToDouble(txtLecPrice.Text) > 0 && txtLec.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Lecture price must not be equal to 0");
+                    }
+                    else if(Convert.ToDouble(txtLabprice.Text) > 0 && txtLab.Text.Equals("0"))
+                    {
+                        Validator.AlertDanger("Laboratory price must not be equal to 0");
+                    }
                     else
                     {
                         try
@@ -78,22 +174,22 @@ namespace SchoolManagementSystem
                         }
                         catch (Exception)
                         {
-                            string value = "";
+                            value="";
 
                             for (int i = 0; i < lstPrereq.Items.Count; i++)
                             {
                                 if (value != "")
                                 {
-                                    value += ", ";
+                                    value += ",";
                                 }
                                 value += lstPrereq.Items[i].ToString();
-                                
+
                             }
                             DBContext.GetContext().Query("subjects").Insert(new
                             {
                                 courseCode = cmbCourseCode.Text,
                                 subjectCode = txtSubjectCode.Text.ToUpper(),
-                                subjectTitle = txtDescriptiveTitle.Text,
+                                subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
                                 lec = txtLec.Text,
                                 lab = txtLab.Text,
                                 totalUnits = txtTotalUnits.Text,
@@ -218,6 +314,22 @@ namespace SchoolManagementSystem
 
         private void AddSubject_Load(object sender, EventArgs e)
         {
+            if (cmbCourseCode.Text.Equals(""))
+            {
+                cmbPreReq.Items.Clear();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("subjects")
+               .Join("coursecode", "coursecode.coursecode", "subjects.courseCode")
+               .Where("subjects.courseCode", cmbCourseCode.Text).Get();
+
+                cmbPreReq.Items.Clear();
+                foreach (var value in values)
+                {
+                    cmbPreReq.Items.Add(value.subjectCode);
+                }
+            }
             txtLecPrice.KeyPress += Validator.ValidateKeypressNumber;
             txtLabprice.KeyPress += Validator.ValidateKeypressNumber;
             displayCourse();
@@ -365,7 +477,7 @@ namespace SchoolManagementSystem
                 .Where("coursecode.courseId", idd.ToString())
                 .Get();
             cmbCourseCode.Items.Clear();
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cmbCourseCode.Items.Add(value.coursecode);
             }
@@ -379,7 +491,7 @@ namespace SchoolManagementSystem
         private void cmbCourse_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-            
+
         }
 
         private void cmbPreReq_SelectedIndexChanged(object sender, EventArgs e)
@@ -388,7 +500,7 @@ namespace SchoolManagementSystem
             {
                 Validator.AlertDanger("Subject already added in the list!");
             }
-            else 
+            else
             {
                 lstPrereq.Items.Add(cmbPreReq.SelectedItem);
             }
@@ -397,6 +509,17 @@ namespace SchoolManagementSystem
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstPrereq_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lstPrereq.SelectedItems.Count != 0)
+            {
+                while (lstPrereq.SelectedIndex != -1)
+                {
+                    lstPrereq.Items.RemoveAt(lstPrereq.SelectedIndex);
+                }
+            }
         }
     }
 }

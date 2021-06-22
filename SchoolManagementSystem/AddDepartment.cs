@@ -13,11 +13,13 @@ namespace SchoolManagementSystem
     public partial class AddDepartment : Form
     {
         Department reloadDatagrid;
-        public AddDepartment(Department reloadDatagrid)
+        string idd;
+        public AddDepartment(Department reloadDatagrid, string idd)
         {
-            this.reloadDatagrid = reloadDatagrid;
             InitializeComponent();
-            
+            this.reloadDatagrid = reloadDatagrid;
+            this.idd = idd;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -26,28 +28,56 @@ namespace SchoolManagementSystem
 
             if (btnSave.Text.Equals("Update"))
             {
+                var values = DBContext.GetContext().Query("department").Get();
                 if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-                    DBContext.GetContext().Query("department").Where("deptID", lblIDD.Text).Update(new
+                    foreach (var value in values)
                     {
-                        description = txtDeptName.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+
+                        if (value.deptID.Equals(Convert.ToInt32(idd)) && value.deptName.Equals(txtDeptName.Text))
+                        {
+                            DBContext.GetContext().Query("department").Where("deptID", idd).Update(new
+                            {
+                                deptName = Validator.ToTitleCase(txtDeptName.Text)
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                            return;
+                        }
+                        else if (value.deptID != Convert.ToInt32(idd) && value.deptName.Equals(Validator.ToTitleCase(txtDeptName.Text)))
+                        {
+                            Validator.AlertDanger("Department name already existed");
+                            return;
+                        }
+                    }
                 }
+
+                DBContext.GetContext().Query("department").Where("deptID", idd).Update(new
+                {
+                    deptName = Validator.ToTitleCase(txtDeptName.Text)
+                });
+                reloadDatagrid.displayData();
+                this.Close();
             }
             else if (btnSave.Text.Equals("Save"))
             {
                 if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
-
-                    DBContext.GetContext().Query("department").Insert(new
+                    try
                     {
-                        description = txtDeptName.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        DBContext.GetContext().Query("department").Where("deptName", txtDeptName.Text).First();
+                        Validator.AlertDanger("Department name already existed");
+                    }
+                    catch (Exception)
+                    {
+                        DBContext.GetContext().Query("rooms").Insert(new
+                        {
+                            deptName = Validator.ToTitleCase(txtDeptName.Text)
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
 
+                    }
                 }
             }
         }

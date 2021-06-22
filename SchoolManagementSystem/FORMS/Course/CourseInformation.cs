@@ -20,7 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddCourse(this);
+            var myfrm = new AddCourse(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
 
@@ -36,33 +36,46 @@ namespace SchoolManagementSystem
 
             foreach (var courses in course)
             {
-                dgvCourse.Rows.Add(courses.courseId , $"{courses.description}({courses.abbreviation})");
+                dgvCourse.Rows.Add(courses.courseId, $"{courses.description}({courses.abbreviation})");
             }
         }
 
         private void dgvCourse_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var myfrm = new AddCourse(this);
-            int id = Convert.ToInt32(dgvCourse.Rows[dgvCourse.CurrentRow.Index].Cells[0].Value);
-            var value = DBContext.GetContext().Query("course").Where("courseId", id).First();
-            string getDescID = value.deptID;
 
-            var selDept = DBContext.GetContext().Query("department").Where("deptID", getDescID).First();
 
-            myfrm.lblIDD.Text = id.ToString();
-
-            myfrm.cmbDepartment.Text = selDept.description;
-            myfrm.txtDescription.Text = value.description;
-            myfrm.txtAbbreviation.Text = value.abbreviation;
-         
-            myfrm.btnSave.Text = "Update";
-            myfrm.ShowDialog();
         }
 
         private void dgvCourse_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
             e.Handled = true;
+        }
+
+        string idd;
+
+        private void dgvCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCourse.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("edit"))
+            {
+                idd = dgvCourse.Rows[dgvCourse.CurrentRow.Index].Cells[0].Value.ToString();
+
+                var value = DBContext.GetContext().Query("course")
+                    .Join("department", "department.deptID", "course.deptID")
+                    .Where("courseId", idd)
+                    .First();
+
+                var myfrm = new AddCourse(this, idd);
+
+                myfrm.cmbDepartment.Text = value.deptName;
+                myfrm.txtDescription.Text = value.description;
+                myfrm.txtAbbreviation.Text = value.abbreviation;
+
+                myfrm.btnSave.Text = "Update";
+                myfrm.ShowDialog();
+            }
         }
     }
 }

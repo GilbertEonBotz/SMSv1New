@@ -15,11 +15,12 @@ namespace SchoolManagementSystem.FORMS.Sectioning
     {
 
         SectionCategory reload;
-        public addSectionCategory(SectionCategory reload)
+        string idd;
+        public addSectionCategory(SectionCategory reload, string idd)
         {
             InitializeComponent();
             this.reload = reload;
-
+            this.idd = idd;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -34,13 +35,61 @@ namespace SchoolManagementSystem.FORMS.Sectioning
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            DBContext.GetContext().Query("sectionCategory").Insert(new
-            {
-                sectionName = txtStructure.Text,Description = txtDescription.Text
-            }) ;
+            TextBox[] inputs = { txtStructure };
 
-            reload.displayData();
-            this.Close();
+            if (btnAddCourse.Text.Equals("Update"))
+            {
+                var values = DBContext.GetContext().Query("sectionCategory").Get();
+                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                {
+                    foreach (var value in values)
+                    {
+                        if (value.SectionCategoryID.Equals(Convert.ToInt32(idd)) && value.sectionName.Equals(txtStructure.Text))
+                        {
+                            DBContext.GetContext().Query("sectionCategory").Where("SectionCategoryID", idd).Update(new
+                            {
+                                sectionName = Validator.ToTitleCase(txtStructure.Text),
+                                Description = txtDescription.Text
+                            });
+                            reload.displayData();
+                            this.Close();
+                            return;
+                        }
+                        else if (value.SectionCategoryID != Convert.ToInt32(idd) && value.sectionName.Equals(Validator.ToTitleCase(txtStructure.Text)))
+                        {
+                            Validator.AlertDanger("Section name already existed");
+                            return;
+                        }
+                    }
+                }
+
+                DBContext.GetContext().Query("sectionCategory").Where("SectionCategoryID", idd).Update(new
+                {
+                    sectionName = Validator.ToTitleCase(txtStructure.Text),
+                    Description = txtDescription.Text
+                });
+                reload.displayData();
+                this.Close();
+            }
+            else if (btnAddCourse.Text.Equals("Save"))
+            {
+                try
+                {
+                    DBContext.GetContext().Query("sectionCategory").Where("sectionName", txtStructure.Text).First();
+                    Validator.AlertDanger("Section name already existed");
+                }
+                catch (Exception)
+                {
+                    DBContext.GetContext().Query("sectionCategory").Insert(new
+                    {
+                        sectionName = Validator.ToTitleCase(txtStructure.Text),
+                        Description = txtDescription.Text
+                    });
+
+                    reload.displayData();
+                    this.Close();
+                }
+            }
         }
     }
 }

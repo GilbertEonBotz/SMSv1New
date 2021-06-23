@@ -238,7 +238,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                     if (Convert.ToDouble(txt1.Text) <= amount)
                     {
-
                         amount = amount - Convert.ToDouble(txt1.Text);
                         comboBox2.Items.Remove("PRELIM");
                         if (Convert.ToDouble(txt2.Text) <= amount)

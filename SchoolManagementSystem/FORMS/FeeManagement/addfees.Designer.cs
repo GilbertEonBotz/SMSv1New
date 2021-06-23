@@ -50,9 +50,9 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
@@ -72,20 +72,20 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 20);
+            this.label2.Size = new System.Drawing.Size(112, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fee Structure:";
             // 
             // struckname
             // 
             this.struckname.AutoSize = true;
-            this.struckname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.struckname.Location = new System.Drawing.Point(133, 13);
+            this.struckname.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.struckname.Location = new System.Drawing.Point(127, 12);
             this.struckname.Name = "struckname";
-            this.struckname.Size = new System.Drawing.Size(121, 18);
+            this.struckname.Size = new System.Drawing.Size(112, 20);
             this.struckname.TabIndex = 5;
             this.struckname.Text = "structurename:";
             // 
@@ -301,16 +301,6 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.Column2.Text = "Delete";
             this.Column2.UseColumnTextForButtonValue = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(440, 452);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "TOTAL";
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
@@ -330,6 +320,16 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(644, 42);
             this.panel7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(440, 452);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "TOTAL";
             // 
             // addfees
             // 

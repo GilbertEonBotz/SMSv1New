@@ -368,8 +368,6 @@ namespace SchoolManagementSystem
             }
             else
             {
-
-
                 if (txtLecPrice.Text == "" || txtLecPrice.Text == "0")
                 {
                     lblLectotal.Text = "0";
@@ -520,6 +518,59 @@ namespace SchoolManagementSystem
                     lstPrereq.Items.RemoveAt(lstPrereq.SelectedIndex);
                 }
             }
+        }
+
+        private void txtLec_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLec.Text))
+            {
+                txtLec.Text = "0";
+            }
+        }
+
+        private void txtLab_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLab.Text))
+            {
+                txtLab.Text = "0";
+            }
+        }
+
+        private void txtLecPrice_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLecPrice.Text))
+            {
+               txtLecPrice.Text = "0";
+            }
+        }
+
+        private void txtLabprice_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLabprice.Text))
+            {
+                txtLabprice.Text = "0";
+            }
+        }
+
+        private void txtLab_Enter(object sender, EventArgs e)
+        {
+            txtLab.Text = "";
+        }
+
+        private void txtLecPrice_Enter(object sender, EventArgs e)
+        {
+            txtLecPrice.Text = "";
+
+        }
+
+        private void txtLec_Enter(object sender, EventArgs e)
+        {
+            txtLec.Text = "";
+        }
+
+        private void txtLabprice_Enter(object sender, EventArgs e)
+        {
+            txtLabprice.Text = "";
         }
     }
 }

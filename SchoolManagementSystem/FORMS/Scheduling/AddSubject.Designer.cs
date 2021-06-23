@@ -129,7 +129,7 @@ namespace SchoolManagementSystem
             this.cmbCourse.Location = new System.Drawing.Point(136, 74);
             this.cmbCourse.Name = "cmbCourse";
             this.cmbCourse.Size = new System.Drawing.Size(419, 28);
-            this.cmbCourse.TabIndex = 22;
+            this.cmbCourse.TabIndex = 1;
             this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.cmbCourse_SelectedIndexChanged);
             this.cmbCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCourse_KeyPress);
             // 
@@ -161,7 +161,7 @@ namespace SchoolManagementSystem
             this.cmbCourseCode.Location = new System.Drawing.Point(136, 113);
             this.cmbCourseCode.Name = "cmbCourseCode";
             this.cmbCourseCode.Size = new System.Drawing.Size(419, 28);
-            this.cmbCourseCode.TabIndex = 19;
+            this.cmbCourseCode.TabIndex = 2;
             this.cmbCourseCode.SelectedIndexChanged += new System.EventHandler(this.cmbCourseCode_SelectedIndexChanged);
             // 
             // label10
@@ -211,9 +211,11 @@ namespace SchoolManagementSystem
             this.txtLabprice.Multiline = true;
             this.txtLabprice.Name = "txtLabprice";
             this.txtLabprice.Size = new System.Drawing.Size(165, 30);
-            this.txtLabprice.TabIndex = 9;
+            this.txtLabprice.TabIndex = 8;
             this.txtLabprice.Text = "0";
             this.txtLabprice.TextChanged += new System.EventHandler(this.txtLabprice_TextChanged);
+            this.txtLabprice.Enter += new System.EventHandler(this.txtLabprice_Enter);
+            this.txtLabprice.Leave += new System.EventHandler(this.txtLabprice_Leave);
             // 
             // txtLecPrice
             // 
@@ -222,9 +224,11 @@ namespace SchoolManagementSystem
             this.txtLecPrice.Multiline = true;
             this.txtLecPrice.Name = "txtLecPrice";
             this.txtLecPrice.Size = new System.Drawing.Size(165, 30);
-            this.txtLecPrice.TabIndex = 8;
+            this.txtLecPrice.TabIndex = 6;
             this.txtLecPrice.Text = "0";
             this.txtLecPrice.TextChanged += new System.EventHandler(this.txtLecPrice_TextChanged);
+            this.txtLecPrice.Enter += new System.EventHandler(this.txtLecPrice_Enter);
+            this.txtLecPrice.Leave += new System.EventHandler(this.txtLecPrice_Leave);
             // 
             // txtTotalUnits
             // 
@@ -234,7 +238,7 @@ namespace SchoolManagementSystem
             this.txtTotalUnits.Multiline = true;
             this.txtTotalUnits.Name = "txtTotalUnits";
             this.txtTotalUnits.Size = new System.Drawing.Size(419, 30);
-            this.txtTotalUnits.TabIndex = 5;
+            this.txtTotalUnits.TabIndex = 9;
             this.txtTotalUnits.TextChanged += new System.EventHandler(this.txtTotalUnits_TextChanged);
             // 
             // cmbPreReq
@@ -245,7 +249,7 @@ namespace SchoolManagementSystem
             this.cmbPreReq.Location = new System.Drawing.Point(136, 419);
             this.cmbPreReq.Name = "cmbPreReq";
             this.cmbPreReq.Size = new System.Drawing.Size(419, 32);
-            this.cmbPreReq.TabIndex = 6;
+            this.cmbPreReq.TabIndex = 10;
             this.cmbPreReq.SelectedIndexChanged += new System.EventHandler(this.cmbPreReq_SelectedIndexChanged);
             // 
             // txtLab
@@ -255,10 +259,12 @@ namespace SchoolManagementSystem
             this.txtLab.Multiline = true;
             this.txtLab.Name = "txtLab";
             this.txtLab.Size = new System.Drawing.Size(165, 30);
-            this.txtLab.TabIndex = 4;
+            this.txtLab.TabIndex = 7;
             this.txtLab.Text = "0";
             this.txtLab.TextChanged += new System.EventHandler(this.txtLab_TextChanged);
+            this.txtLab.Enter += new System.EventHandler(this.txtLab_Enter);
             this.txtLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLab_KeyPress);
+            this.txtLab.Leave += new System.EventHandler(this.txtLab_Leave);
             // 
             // txtLec
             // 
@@ -267,10 +273,12 @@ namespace SchoolManagementSystem
             this.txtLec.Multiline = true;
             this.txtLec.Name = "txtLec";
             this.txtLec.Size = new System.Drawing.Size(163, 30);
-            this.txtLec.TabIndex = 3;
+            this.txtLec.TabIndex = 5;
             this.txtLec.Text = "0";
             this.txtLec.TextChanged += new System.EventHandler(this.txtLec_TextChanged);
+            this.txtLec.Enter += new System.EventHandler(this.txtLec_Enter);
             this.txtLec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLec_KeyPress);
+            this.txtLec.Leave += new System.EventHandler(this.txtLec_Leave);
             // 
             // txtDescriptiveTitle
             // 
@@ -279,7 +287,7 @@ namespace SchoolManagementSystem
             this.txtDescriptiveTitle.Multiline = true;
             this.txtDescriptiveTitle.Name = "txtDescriptiveTitle";
             this.txtDescriptiveTitle.Size = new System.Drawing.Size(419, 68);
-            this.txtDescriptiveTitle.TabIndex = 2;
+            this.txtDescriptiveTitle.TabIndex = 4;
             // 
             // txtSubjectCode
             // 
@@ -288,7 +296,7 @@ namespace SchoolManagementSystem
             this.txtSubjectCode.Multiline = true;
             this.txtSubjectCode.Name = "txtSubjectCode";
             this.txtSubjectCode.Size = new System.Drawing.Size(419, 68);
-            this.txtSubjectCode.TabIndex = 1;
+            this.txtSubjectCode.TabIndex = 3;
             // 
             // label7
             // 
@@ -440,7 +448,7 @@ namespace SchoolManagementSystem
             this.btnAddSubjects.Location = new System.Drawing.Point(343, 632);
             this.btnAddSubjects.Name = "btnAddSubjects";
             this.btnAddSubjects.Size = new System.Drawing.Size(107, 32);
-            this.btnAddSubjects.TabIndex = 7;
+            this.btnAddSubjects.TabIndex = 11;
             this.btnAddSubjects.Text = "Save";
             this.btnAddSubjects.UseVisualStyleBackColor = false;
             this.btnAddSubjects.Click += new System.EventHandler(this.btnAddSubjects_Click);
@@ -526,7 +534,7 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(456, 632);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 8;
+            this.iconButton1.TabIndex = 12;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);

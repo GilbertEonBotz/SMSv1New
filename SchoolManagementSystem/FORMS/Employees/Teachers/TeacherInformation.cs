@@ -64,6 +64,7 @@ namespace SchoolManagementSystem
             myfrm.txtReligion.Text = value.Religion;
             myfrm.txtAddress.Text = value.Address;
             myfrm.btnAddTeachers.Text = "Update";
+            myfrm.cmbDepartment.Text = value.department;
 
             myfrm.ShowDialog();
         }

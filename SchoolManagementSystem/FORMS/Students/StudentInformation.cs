@@ -96,36 +96,18 @@ namespace SchoolManagementSystem
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            var values = DBContext.GetContext().Query("student").WhereLike("studentId", $"%{txtSearch.Text}%").OrWhereLike("firstname", $"%{txtSearch.Text}%").OrWhereLike("lastname", $"%{txtSearch.Text}%").OrWhereLike("presentAddress", $"%{txtSearch.Text}%").Get();
 
-            dt.Columns.Clear();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("NAME");
-            dt.Columns.Add("GENDER");
-            dt.Columns.Add("ADDRESS");
-            dt.Columns.Add("COURSE");
-
-            foreach (var value in values)
-            {
-                string id = value.course;
-                var course = DBContext.GetContext().Query("course").Where("courseId", id).First();
-                dt.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, course.abbreviation);
-            }
+            var values = DBContext.GetContext().Query("student").WhereLike("studentId", $"{txtSearch.Text}").OrWhereLike("firstname", $"%{txtSearch.Text}%")
+                .OrWhereLike("lastname", $"%{txtSearch.Text}%")
+                .OrWhereLike("presentAddress", $"%{txtSearch.Text}%")
+                .OrWhereLike("course", $"%{txtSearch.Text}%")
+                .Get();
 
             dgvStudents.Rows.Clear();
-            foreach(DataRow drow in dt.Rows)
+            foreach(var value in values)
             {
-                int num = dgvStudents.Rows.Add();
-
-                dgvStudents.Rows[num].Cells[0].Value = drow["ID"].ToString();
-                dgvStudents.Rows[num].Cells[1].Value = drow["NAME"].ToString();
-                dgvStudents.Rows[num].Cells[2].Value = drow["GENDER"].ToString();
-                dgvStudents.Rows[num].Cells[3].Value = drow["ADDRESS"].ToString();
-                dgvStudents.Rows[num].Cells[4].Value = drow["COURSE"].ToString();
+                dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.course);
             }
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -48,8 +48,8 @@ namespace SchoolManagementSystem
                             var getId = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text.ToUpper()).First();
                             DBContext.GetContext().Query("course").Where("courseId", idd).Update(new
                             {
-                                description = Validator.ToTitleCase(txtDescription.Text),
-                                abbreviation = txtAbbreviation.Text.ToUpper(),
+                                description = Validator.ToTitleCase(txtDescription.Text.Trim()),
+                                abbreviation = txtAbbreviation.Text.Trim().ToUpper(),
                                 deptID = getId.deptID,
                             });
                             reloadDatagrid.displayData();
@@ -70,8 +70,8 @@ namespace SchoolManagementSystem
                 var getsId = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text.ToUpper()).First();
                 DBContext.GetContext().Query("course").Where("courseId", idd).Update(new
                 {
-                    description = Validator.ToTitleCase(txtDescription.Text),
-                    abbreviation = txtAbbreviation.Text.ToUpper(),
+                    description = Validator.ToTitleCase(txtDescription.Text.Trim()),
+                    abbreviation = txtAbbreviation.Text.Trim().ToUpper(),
                     deptID = getsId.deptID,
 
                 });
@@ -82,6 +82,7 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmptyCmb(cmb) && Validator.isEmpty(inputs) && Validator.AddConfirmation())
                 {
+
                     try
                     {
                         DBContext.GetContext().Query("course").Where("description", txtDescription.Text).OrWhere("abbreviation", txtAbbreviation.Text).First();
@@ -91,15 +92,20 @@ namespace SchoolManagementSystem
                     {
                         var value = DBContext.GetContext().Query("department").Where("deptName", cmbDepartment.Text).First();
 
-                        DBContext.GetContext().Query("course").Insert(new
-                        {
-                            description = Validator.ToTitleCase(txtDescription.Text),
-                            abbreviation = txtAbbreviation.Text.ToUpper(),
-                            deptID = value.deptID,
-                            status = "enable"
-                        });
-                        reloadDatagrid.displayData();
-                        this.Close();
+                      
+                        
+                            DBContext.GetContext().Query("course").Insert(new
+                            {
+                                description = Validator.ToTitleCase(txtDescription.Text.Trim()),
+                                abbreviation = txtAbbreviation.Text.Trim().ToUpper(),
+                                deptID = value.deptID,
+                                status = "enable"
+                            });
+                            reloadDatagrid.displayData();
+                            this.Close();
+                        
+
+                        
                     }
                 }
             }

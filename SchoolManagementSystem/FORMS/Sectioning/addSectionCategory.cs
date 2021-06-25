@@ -48,8 +48,8 @@ namespace SchoolManagementSystem.FORMS.Sectioning
                         {
                             DBContext.GetContext().Query("sectionCategory").Where("SectionCategoryID", idd).Update(new
                             {
-                                sectionName = Validator.ToTitleCase(txtStructure.Text),
-                                Description = txtDescription.Text
+                                sectionName = Validator.ToTitleCase(txtStructure.Text.Trim()),
+                                Description = txtDescription.Text.Trim()
                             });
                             reload.displayData();
                             this.Close();
@@ -65,8 +65,8 @@ namespace SchoolManagementSystem.FORMS.Sectioning
 
                 DBContext.GetContext().Query("sectionCategory").Where("SectionCategoryID", idd).Update(new
                 {
-                    sectionName = Validator.ToTitleCase(txtStructure.Text),
-                    Description = txtDescription.Text
+                    sectionName = Validator.ToTitleCase(txtStructure.Text.Trim()),
+                    Description = txtDescription.Text.Trim()
                 });
                 reload.displayData();
                 this.Close();

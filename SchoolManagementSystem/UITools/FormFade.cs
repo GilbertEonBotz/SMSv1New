@@ -19,7 +19,6 @@ namespace SchoolManagementSystem.UITools
             bgFade.Opacity = .50d;
             bgFade.BackColor = Color.Black;
             bgFade.WindowState = FormWindowState.Maximized;
-            bgFade.TopMost = true;
             bgFade.Location = value.Location;
             bgFade.ShowInTaskbar = false;
             bgFade.Show();

@@ -43,8 +43,8 @@ namespace SchoolManagementSystem
                             DBContext.GetContext().Query("coursecode").Where("coursecodeId", idd).Update(new
                             {
                                 courseId = selCourseID,
-                                coursecode = txtCourseCode.Text.ToUpper(),
-                                remarks = txtRemarks.Text,
+                                coursecode = txtCourseCode.Text.Trim().ToUpper(),
+                                remarks = txtRemarks.Text.Trim(),
                                 status = "enable"
                             });
                             reloadDatagrid.displayData();
@@ -61,8 +61,8 @@ namespace SchoolManagementSystem
                 DBContext.GetContext().Query("coursecode").Where("coursecodeId", idd).Update(new
                 {
                     courseId = selCourseID,
-                    coursecode = txtCourseCode.Text.ToUpper(),
-                    remarks = txtRemarks.Text,
+                    coursecode = txtCourseCode.Text.Trim().ToUpper(),
+                    remarks = txtRemarks.Text.Trim(),
                     status = "enable"
                 });
                 reloadDatagrid.displayData();
@@ -82,8 +82,8 @@ namespace SchoolManagementSystem
                         DBContext.GetContext().Query("coursecode").Insert(new
                         {
                             courseId = selCourseID,
-                            coursecode = txtCourseCode.Text.ToUpper(),
-                            remarks = txtRemarks.Text,
+                            coursecode = txtCourseCode.Text.Trim().ToUpper(),
+                            remarks = txtRemarks.Text.Trim(),
                             status = "enable"
                         });
                         Validator.AlertSuccess("Course code inserted");

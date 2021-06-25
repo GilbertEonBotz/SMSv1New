@@ -40,8 +40,8 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("feestructure").Insert(new
                         {
-                            structurename = txtStructure.Text,
-                            description = txtDescription.Text,
+                            structurename = txtStructure.Text.Trim(),
+                            description = txtDescription.Text.Trim(),
 
                         });
                         var rooms = DBContext.GetContext().Query("feestructure").Where("structureName", txtStructure.Text).First();

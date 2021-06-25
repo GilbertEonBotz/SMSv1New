@@ -131,6 +131,7 @@ namespace SchoolManagementSystem
             this.txtTotal.Location = new System.Drawing.Point(156, 265);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(311, 30);
             this.txtTotal.TabIndex = 6;
             this.txtTotal.Text = "0";
@@ -409,7 +410,6 @@ namespace SchoolManagementSystem
             this.Name = "AddExamPercentage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddExamPercentage";
-            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

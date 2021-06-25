@@ -33,7 +33,7 @@ namespace SchoolManagementSystem
         ReportDataSource test = new ReportDataSource();
         private void button1_Click(object sender, EventArgs e)
         {
-            var getSched = DBContext.GetContext().Query("studentSched").Where("studentID", "43").First();
+            var getSched = DBContext.GetContext().Query("studentSched").Where("studentID", "1").First();
             double[] catID = { };
 
             int strucID = 0;
@@ -54,14 +54,11 @@ namespace SchoolManagementSystem
 
                 foreach (var value in values)
                 {
-                    int courseID = Convert.ToInt32(value.course);
                     strucID = value.structureID;
 
-                    var courseName = DBContext.GetContext().Query("course").Where("courseId", courseID).First();
                     var aa = DBContext.GetContext().Query("feestructure").Where("structureID", strucID).First();
 
                     txtName.Text = $"{value.firstname} {value.lastname}";
-                    txtCourse.Text = courseName.abbreviation;
                     txtGender.Text = value.gender;
                     txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
                     dgvStudentSched.Rows.Add(allScheds, value.subjectCode, value.subjectTitle, value.date, value.roomID, value.timeStart, value.timeEnd, $"{value.lec}/{value.lab}");

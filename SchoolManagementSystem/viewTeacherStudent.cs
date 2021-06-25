@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using Microsoft.Reporting.WinForms;
 using SqlKata.Execution;
 namespace SchoolManagementSystem
 {
@@ -55,5 +56,49 @@ namespace SchoolManagementSystem
         {
 
         }
+        ReportDataSource rsStud = new ReportDataSource();
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            var frm = new TeacherSchedReportViewer();
+
+            List<StudentDetails> lst = new List<StudentDetails>();
+            lst.Clear();
+
+            for (int i=0; i <dgvSched.Rows.Count; i++)
+            {
+                lst.Add(new StudentDetails
+                {
+                    teachName = txtName.Text,
+                    subjName = txtSubjName.Text,
+                    room = txtRoom.Text,
+                    schedule = txtSchedule.Text,
+                    studName = dgvSched.Rows[i].Cells[1].Value.ToString(),
+                    studCourse = dgvSched.Rows[i].Cells[2].Value.ToString()
+                });
+            }
+
+            rsStud.Name = "DataSet1";
+            rsStud.Value = lst;
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rsStud);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report3.rdlc";
+            frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            frm.reportViewer1.ZoomMode = ZoomMode.Percent;
+            frm.reportViewer1.ZoomPercent = 100;
+            frm.ShowDialog();
+        }
+    }
+
+    public class StudentDetails
+    {
+        public string teachName { get; set; }
+        public string subjName { get; set; }
+        public string room { get; set; }
+        public string schedule { get; set; }
+        public string studName { get; set; }
+        public string studCourse { get; set; }
+
+
     }
 }

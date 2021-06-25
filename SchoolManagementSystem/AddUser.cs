@@ -32,12 +32,23 @@ namespace SchoolManagementSystem
             {
                 if (Validator.isEmptyCmb(selCmb) && Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
                 {
-                    DBContext.GetContext().Query("rooms").Where("roomId", lblIDD.Text).Update(new
+                    if (txtConfirmPassword.Text != txtPassword.Text)
                     {
-                        description = txtUsername.Text,
-                    });
-                    reloadDatagrid.displayData();
-                    this.Close();
+                        Validator.AlertDanger("Confirm password doesn't match");
+                    }
+                    else
+                    {
+                        DBContext.GetContext().Query("users").Where("id", idd).Update(new
+                        {
+                            name = txtName.Text.Trim(),
+                            username = txtUsername.Text.Trim(),
+                            password = txtPassword.Text.Trim(),
+                            macAddress = txtMacAddress.Text.Trim()
+                        });
+                        reloadDatagrid.displayData();
+                        this.Close();
+                    }
+                   
                 }
             }
             else if (btnSave.Text.Equals("Save"))
@@ -53,11 +64,11 @@ namespace SchoolManagementSystem
                         var value = DBContext.GetContext().Query("role").Where("roletype", cmbRole.Text).First();
                         DBContext.GetContext().Query("users").Insert(new
                         {
-                            name = txtName.Text,
-                            username = txtUsername.Text,
-                            password = txtPassword.Text,
+                            name = txtName.Text.Trim(),
+                            username = txtUsername.Text.Trim(),
+                            password = txtPassword.Text.Trim(),
                             userrole = value.roleId,
-                            macAddress = txtMacAddress.Text
+                            macAddress = txtMacAddress.Text.Trim()
                         });
                         reloadDatagrid.displayData();
                         this.Close();

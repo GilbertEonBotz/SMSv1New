@@ -195,7 +195,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(184, 31);
             this.btnAdmissionForm.TabIndex = 5;
-            this.btnAdmissionForm.Text = "Course Form";
+            this.btnAdmissionForm.Text = "Tuition Category";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
             // 

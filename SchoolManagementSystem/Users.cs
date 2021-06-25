@@ -108,5 +108,22 @@ namespace SchoolManagementSystem
         {
             
         }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            //var values = DBContext.GetContext().Query("users").WhereLike("id", $"{textboxWatermark1.Text}")
+            //    .OrWhereLike("userrole", $"%{textboxWatermark1.Text}%")
+            // .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
+            // .Get();
+
+            //dgvUsers.Rows.Clear();
+            //foreach (var value in values)
+            //{
+            //    int id = value.userrole;
+            //    var role = DBContext.GetContext().Query("role").Where("roleId", id).First();
+
+            //    dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
+            //}
+        }
     }
 }

@@ -1034,6 +1034,7 @@ namespace SchoolManagementSystem
             this.lblID.Size = new System.Drawing.Size(26, 20);
             this.lblID.TabIndex = 27;
             this.lblID.Text = "ID";
+            this.lblID.Visible = false;
             // 
             // btnAddStudent
             // 

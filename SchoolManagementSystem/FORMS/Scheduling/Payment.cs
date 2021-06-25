@@ -160,9 +160,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.viewPayment();
                         disp.billingid = billingid;
 
-                        double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
-
-                        disp.amount = disp.total;
+                        double total = Convert.ToDouble(disp.total)- Convert.ToDouble(dr[0].ToString()+0);
+                        MessageBox.Show(total.ToString());
+                        disp.amount = total.ToString();
                         disp.remarks = txtRemarks.Text;
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;

@@ -21,7 +21,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         MySqlDataReader dr;
         MySqlConnection conn;
         Connection connect = new Connection();
-
+        string number2;
         double amount;
         double amountprelim;
         double amountmid;
@@ -106,7 +106,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-        
+
 
             if (txtchange.Text == "00.00")
             {
@@ -114,7 +114,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             }
 
 
-             if (lblpaymentfor.Text == "" || lblpaymentfor.Text == null)
+            if (lblpaymentfor.Text == "" || lblpaymentfor.Text == null)
             {
                 MessageBox.Show("please select payment for");
             }
@@ -128,14 +128,13 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             }
 
        
-             
-            
+
         }
 
 
         public void insert()
-        {      
-            if (txtAmount.Text == "")
+        {
+            if (txtAmount.Text == "" || lblpaymentfor.Text =="")
             {
                 MessageBox.Show("please input an amount");
             }
@@ -154,17 +153,22 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                     if (number > Convert.ToDouble(dr[1].ToString()))
                     {
+
+                    
+                      
+                        disp.studentID = studentid.Text;
+                        disp.viewPayment();
                         disp.billingid = billingid;
 
                         double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
 
-                        disp.amount = lblpaymentfor.Text.ToString();
+                        disp.amount = disp.total;
                         disp.remarks = txtRemarks.Text;
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
 
                         disp.insertpayment();
-                        MessageBox.Show("success");
+
                     }
                     else
                     {
@@ -181,7 +185,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                             disp.paymentMethod = cmbpaymentMethod.Text;
 
                             disp.insertpayment();
-                            MessageBox.Show("success");
+                            MessageBox.Show("2");
 
                         }
                         else
@@ -195,7 +199,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                 disp.paymentMethod = cmbpaymentMethod.Text;
 
                                 disp.insertpayment();
-                                MessageBox.Show("success");
+                                MessageBox.Show("3");
                             }
                             else
                             {
@@ -207,7 +211,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                 disp.paymentMethod = cmbpaymentMethod.Text;
 
                                 disp.insertpayment();
-                                MessageBox.Show("success");
+                                MessageBox.Show("4");
                             }
 
                         }
@@ -215,6 +219,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
             }
         }
+
+        
         public void showw()
         {
 
@@ -257,7 +263,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblmid.Text = txt2.Text;
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = txt4.Text;
-                                    comboBox2.Items.Remove("FINALE");
+                                    comboBox2.Items.Remove("FINAL");
                                 }
                                 else
                                 {
@@ -434,11 +440,24 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void button2_Click(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
             conn = connect.getcon();
             conn.Open();
             cmd = new MySqlCommand("update payment set status ='void' where paymentid = '" + dgv.SelectedRows[0].Cells[0].Value + "'", conn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("succesfully void");
+            lbldownpayment.Text = "";
+            lblpre.Text = "0.00";
+            lblsemi.Text = "0.00";
+            lblfin.Text = "0.00";
+            lblmid.Text = "0.00";
+            comboBox2.Items.Add("DOWNPAYMENT");
+            comboBox2.Items.Add("PRELIM");
+            comboBox2.Items.Add("MIDTERM");
+            comboBox2.Items.Add("SEMI-FINAL");
+            comboBox2.Items.Add("FINAL");
+            printShow();
+            showw();
         }
     }
 }

@@ -68,7 +68,7 @@ namespace SchoolManagementSystem
                 .GroupBy("sectionCategory.SectionCategoryID")
                 .Get();
 
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 cmbSubjects.Items.Add(value.sectionName);
             }
@@ -323,19 +323,20 @@ namespace SchoolManagementSystem
 
                         downpayment = Convert.ToDouble(downpayments.downpayment);
                         total2 = amount + Convert.ToDouble(lblTotal.Text);
-                double totalamoun = total2 - studentdownpayment - downpayment;
+                        double totalamoun = total2 - studentdownpayment- downpayment;
+                        double totalAmount2 = total2 - studentdownpayment;
 
                         led.selectstudentid = cmbStudentNo.Text;
                         led.selectSchedID();
                         led.percent();
-                        total = totalamoun;
+                        total = totalAmount2;
                         //
 
 
-                        double extractPrelim = total * Convert.ToDouble(led.prelim);
-                        double extractMidterm = total * Convert.ToDouble(led.midterm);
-                        double extractSemi = total * Convert.ToDouble(led.semi);
-                        double extractFinal = total * Convert.ToDouble(led.finals);
+                        double extractPrelim = totalamoun * Convert.ToDouble(led.prelim);
+                        double extractMidterm = totalamoun * Convert.ToDouble(led.midterm);
+                        double extractSemi = totalamoun * Convert.ToDouble(led.semi);
+                        double extractFinal = totalamoun * Convert.ToDouble(led.finals);
 
                         // KUHAON WHOLE NUMBER EACH EXAM
                         var prelim = ComputePercentage(extractPrelim, "", "", 0);
@@ -497,7 +498,7 @@ namespace SchoolManagementSystem
             }
 
             amount = 0;
-            pnlBilling.SetBounds(203, 100, 795, 462);
+            pnlBilling.SetBounds(180, 50, 795, 462);
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
                 wew = new string[] { dgvStudentSched.Rows[i].Cells[0].Value.ToString() };
@@ -597,7 +598,7 @@ namespace SchoolManagementSystem
 
                 downpayment = Convert.ToDouble(downpayments.downpayment);
                 total2 = amount + Convert.ToDouble(lblTotal.Text);
-                 double totalamoun = total2 - studentdownpayment - downpayment;
+                double totalamoun = total2 - studentdownpayment - downpayment;
 
                 led.selectstudentid = cmbStudentNo.Text;
                 led.selectSchedID();
@@ -610,10 +611,10 @@ namespace SchoolManagementSystem
                 double extractFinal = total * Convert.ToDouble(led.finals);
 
                 // KUHAON WHOLE NUMBER EACH EXAM
-                 prelim = ComputePercentage(extractPrelim, "", "", 0);
-                 midterm = ComputePercentage(extractMidterm, "", "", 0);
-                 semi = ComputePercentage(extractSemi, "", "", 0);
-                 final = ComputePercentage(extractFinal, "", "", 0);
+                prelim = ComputePercentage(extractPrelim, "", "", 0);
+                midterm = ComputePercentage(extractMidterm, "", "", 0);
+                semi = ComputePercentage(extractSemi, "", "", 0);
+                final = ComputePercentage(extractFinal, "", "", 0);
 
 
                 //KUHAON UG I ADD TANAN DECIMAL
@@ -672,7 +673,7 @@ namespace SchoolManagementSystem
                 frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 frm.reportViewer1.ZoomMode = ZoomMode.Percent;
                 frm.reportViewer1.ZoomPercent = 100;
-                frm.ShowDialog();
+                FormFade.FadeForm(this, frm);
             }
             catch (Exception)
             {

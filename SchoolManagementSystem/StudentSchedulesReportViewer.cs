@@ -33,7 +33,7 @@ namespace SchoolManagementSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void reportViewer1_Print(object sender, Microsoft.Reporting.WinForms.ReportPrintEventArgs e)

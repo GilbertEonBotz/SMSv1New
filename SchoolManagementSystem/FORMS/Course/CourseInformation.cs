@@ -77,5 +77,19 @@ namespace SchoolManagementSystem
                 myfrm.ShowDialog();
             }
         }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("course").WhereLike("courseId", $"{textboxWatermark1.Text}")
+               .OrWhereLike("description", $"%{textboxWatermark1.Text}%")
+               .OrWhereLike("abbreviation", $"%{textboxWatermark1.Text}%")
+               .Get();
+
+            dgvCourse.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvCourse.Rows.Add(value.courseId, $"{value.description}({value.abbreviation})");
+            }
+        }
     }
 }

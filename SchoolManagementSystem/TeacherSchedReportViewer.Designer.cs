@@ -1,7 +1,7 @@
 ﻿
 namespace SchoolManagementSystem
 {
-    partial class StudentSchedulesReportViewer
+    partial class TeacherSchedReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,32 +30,17 @@ namespace SchoolManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.SchedulingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).BeginInit();
+            this.SchedulingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.SchedulingsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(11, 65);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(926, 500);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Print += new Microsoft.Reporting.WinForms.ReportPrintEventHandler(this.reportViewer1_Print);
             // 
             // panel1
             // 
@@ -63,17 +48,17 @@ namespace SchoolManagementSystem
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(7, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(951, 58);
-            this.panel1.TabIndex = 18;
+            this.panel1.Size = new System.Drawing.Size(1011, 58);
+            this.panel1.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(317, 16);
+            this.label1.Location = new System.Drawing.Point(376, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 24);
             this.label1.TabIndex = 8;
@@ -88,7 +73,7 @@ namespace SchoolManagementSystem
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(902, 11);
+            this.btnExit.Location = new System.Drawing.Point(962, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(44, 38);
             this.btnExit.TabIndex = 3;
@@ -100,62 +85,69 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(7, 568);
+            this.panel4.Location = new System.Drawing.Point(7, 566);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(937, 7);
-            this.panel4.TabIndex = 25;
+            this.panel4.Size = new System.Drawing.Size(1011, 7);
+            this.panel4.TabIndex = 30;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 58);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(7, 517);
-            this.panel2.TabIndex = 23;
+            this.panel2.Size = new System.Drawing.Size(7, 573);
+            this.panel2.TabIndex = 28;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(944, 58);
+            this.panel3.Location = new System.Drawing.Point(1018, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(7, 517);
-            this.panel3.TabIndex = 24;
+            this.panel3.Size = new System.Drawing.Size(7, 573);
+            this.panel3.TabIndex = 29;
             // 
-            // StudentSchedulesReportViewer
+            // reportViewer1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 63);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(999, 500);
+            this.reportViewer1.TabIndex = 31;
+            // 
+            // TeacherSchedReportViewer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 575);
+            this.ClientSize = new System.Drawing.Size(1025, 573);
+            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.reportViewer1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(350, 110);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "StudentSchedulesReportViewer";
+            this.Location = new System.Drawing.Point(300, 120);
+            this.Name = "TeacherSchedReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "StudentSchedulesReportViewer";
-            this.Load += new System.EventHandler(this.StudentSchedulesReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).EndInit();
+            this.Text = "TeacherSchedReportViewer";
+            this.Load += new System.EventHandler(this.TeacherSchedReportViewer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SchedulingsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.BindingSource SchedulingsBindingSource;
-        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

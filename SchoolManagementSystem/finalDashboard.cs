@@ -186,7 +186,7 @@ namespace SchoolManagementSystem
 
         private void btnTerm_Click(object sender, EventArgs e)
         {
-            var myForm = new AcademicYear();
+            var myForm = new Department();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -196,12 +196,15 @@ namespace SchoolManagementSystem
 
         private void btnDepartment_Click(object sender, EventArgs e)
         {
-            var myForm = new Department();
+            var myForm = new AcademicYear();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
             pnlShow.Controls.Add(myForm);
             myForm.Show();
+
+
+            
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
@@ -216,7 +219,7 @@ namespace SchoolManagementSystem
 
         private void btnCourseCode_Click(object sender, EventArgs e)
         {
-            var myForm = new CourseCode();
+            var myForm = new room();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -226,12 +229,14 @@ namespace SchoolManagementSystem
 
         private void btnClassrooms_Click(object sender, EventArgs e)
         {
-            var myForm = new room();
+            var myForm = new CourseCode();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
             pnlShow.Controls.Add(myForm);
             myForm.Show();
+
+            
         }
 
         private void btnExamPercentage_Click(object sender, EventArgs e)

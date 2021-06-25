@@ -38,7 +38,7 @@ namespace SchoolManagementSystem
                 {
                     Validator.AlertDanger("Total percentage must not be equal to zero");
                 }
-                else if (Convert.ToInt32(txtTotal.Text) > 100 || Convert.ToInt32(txtTotal.Text) < 100)
+                else if (Convert.ToDouble(txtTotal.Text) > 100 || Convert.ToDouble(txtTotal.Text) < 100)
                 {
                     Validator.AlertDanger("Total percentage must be equal to 100%");
                 }
@@ -51,11 +51,11 @@ namespace SchoolManagementSystem
 
                     var values = DBContext.GetContext().Query("percentage").Insert(new
                     {
-                        prelim = $"0.{txtPrelim.Text}",
-                        midterm = $"0.{txtMidterm.Text}",
-                        semiFinals = $"0.{txtSemi.Text}",
-                        finals = $"0.{txtFinal.Text}",
-                        downpayment = txtDownpayment.Text
+                        prelim = $"0.{txtPrelim.Text.Trim()}",
+                        midterm = $"0.{txtMidterm.Text.Trim()}",
+                        semiFinals = $"0.{txtSemi.Text.Trim()}",
+                        finals = $"0.{txtFinal.Text.Trim()}",
+                        downpayment = txtDownpayment.Text.Trim()
                     });
                     MessageBox.Show("Inserted");
                     reloadDatagrid.displayData();
@@ -76,26 +76,34 @@ namespace SchoolManagementSystem
 
         private void txtPrelim_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPrelim.Text) && !string.IsNullOrEmpty(txtMidterm.Text) && !string.IsNullOrEmpty(txtSemi.Text) && !string.IsNullOrEmpty(txtFinal.Text))
-                txtTotal.Text = (Convert.ToInt32(txtPrelim.Text) + Convert.ToInt32(txtMidterm.Text) + Convert.ToInt32(txtSemi.Text) + Convert.ToInt32(txtFinal.Text)).ToString();
+            try
+            {
+                if (!string.IsNullOrEmpty(txtPrelim.Text) && !string.IsNullOrEmpty(txtMidterm.Text) && !string.IsNullOrEmpty(txtSemi.Text) && !string.IsNullOrEmpty(txtFinal.Text))
+                    txtTotal.Text = (Convert.ToDouble(txtPrelim.Text) + Convert.ToDouble(txtMidterm.Text) + Convert.ToDouble(txtSemi.Text) + Convert.ToDouble(txtFinal.Text)).ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void txtMidterm_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPrelim.Text) && !string.IsNullOrEmpty(txtMidterm.Text) && !string.IsNullOrEmpty(txtSemi.Text) && !string.IsNullOrEmpty(txtFinal.Text))
-                txtTotal.Text = (Convert.ToInt32(txtPrelim.Text) + Convert.ToInt32(txtMidterm.Text) + Convert.ToInt32(txtSemi.Text) + Convert.ToInt32(txtFinal.Text)).ToString();
+                txtTotal.Text = (Convert.ToDouble(txtPrelim.Text) + Convert.ToDouble(txtMidterm.Text) + Convert.ToDouble(txtSemi.Text) + Convert.ToDouble(txtFinal.Text)).ToString();
         }
 
         private void txtSemi_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPrelim.Text) && !string.IsNullOrEmpty(txtMidterm.Text) && !string.IsNullOrEmpty(txtSemi.Text) && !string.IsNullOrEmpty(txtFinal.Text))
-                txtTotal.Text = (Convert.ToInt32(txtPrelim.Text) + Convert.ToInt32(txtMidterm.Text) + Convert.ToInt32(txtSemi.Text) + Convert.ToInt32(txtFinal.Text)).ToString();
+                txtTotal.Text = (Convert.ToDouble(txtPrelim.Text) + Convert.ToDouble(txtMidterm.Text) + Convert.ToDouble(txtSemi.Text) + Convert.ToDouble(txtFinal.Text)).ToString();
         }
 
         private void txtFinal_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPrelim.Text) && !string.IsNullOrEmpty(txtMidterm.Text) && !string.IsNullOrEmpty(txtSemi.Text) && !string.IsNullOrEmpty(txtFinal.Text))
-                txtTotal.Text = (Convert.ToInt32(txtPrelim.Text) + Convert.ToInt32(txtMidterm.Text) + Convert.ToInt32(txtSemi.Text) + Convert.ToInt32(txtFinal.Text)).ToString();
+                txtTotal.Text = (Convert.ToDouble(txtPrelim.Text) + Convert.ToDouble(txtMidterm.Text) + Convert.ToDouble(txtSemi.Text) + Convert.ToDouble(txtFinal.Text)).ToString();
         }
 
         private void txtPrelim_Leave(object sender, EventArgs e)

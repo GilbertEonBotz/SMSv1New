@@ -96,7 +96,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
                     }
                     else
                     {
-                        struc.amount = textBox2.Text;
+                        struc.amount = textBox2.Text.Trim();
                         struc.categoryID = categoryid;
                         struc.structureID = id;
 

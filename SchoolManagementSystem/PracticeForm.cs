@@ -26,12 +26,9 @@ namespace SchoolManagementSystem
 
         private void PracticeForm_Load(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("rooms").Get();
 
-            foreach(var value in values)
-            {
-                dataGridView1.Rows.Add(value.name, value.description);
-            }
+
+           
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -34,8 +34,8 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("tuitioncategory").Where("tuitionCatID", lblIDD.Text).Update(new
                     {
-                        category = txtCategory.Text,
-                        description = txtDescription.Text
+                        category = txtCategory.Text.Trim(),
+                        description = txtDescription.Text.Trim()
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -47,8 +47,8 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("tuitioncategory").Insert(new
                     {
-                        category = txtCategory.Text,
-                        description = txtDescription.Text
+                        category = txtCategory.Text.Trim(),
+                        description = txtDescription.Text.Trim()
                     });
                     reloadDatagrid.displayData();
                     this.Close();

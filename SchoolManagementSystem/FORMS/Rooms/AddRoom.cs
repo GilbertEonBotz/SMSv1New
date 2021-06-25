@@ -37,8 +37,8 @@ namespace SchoolManagementSystem
                         {
                             DBContext.GetContext().Query("rooms").Where("roomId", idd).Update(new
                             {
-                                name = txtName.Text,
-                                description = txtDescription.Text
+                                name = txtName.Text.Trim().ToUpper(),
+                                description = txtDescription.Text.Trim()
                             });
                             reloadDatagrid.displayData();
                             this.Close();
@@ -54,8 +54,8 @@ namespace SchoolManagementSystem
 
                 DBContext.GetContext().Query("rooms").Where("roomId", idd).Update(new
                 {
-                    name = txtName.Text,
-                    description = txtDescription.Text
+                    name = txtName.Text.Trim().ToUpper(),
+                    description = txtDescription.Text.Trim()
                 });
                 reloadDatagrid.displayData();
                 this.Close();
@@ -73,8 +73,8 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("rooms").Insert(new
                         {
-                            name = txtName.Text.ToUpper(),
-                            description = txtDescription.Text,
+                            name = txtName.Text.Trim().ToUpper(),
+                            description = txtDescription.Text.Trim(),
                         });
                         reloadDatagrid.displayData();
                         this.Close();

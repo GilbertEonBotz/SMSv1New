@@ -43,7 +43,7 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("categoryfee").Insert(new
                         {
-                            category = txtCategory.Text,
+                            category = txtCategory.Text.Trim(),
                         });
                         Validator.AlertSuccess("successfully added");
                         reloadDatagrid.displayData();

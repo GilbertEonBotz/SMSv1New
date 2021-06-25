@@ -82,17 +82,17 @@ namespace SchoolManagementSystem
                                     .Update(new
                                     {
                                         courseCode = cmbCourseCode.Text,
-                                        subjectCode = txtSubjectCode.Text.ToUpper(),
-                                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
-                                        lec = txtLec.Text,
-                                        lab = txtLab.Text,
+                                        subjectCode = txtSubjectCode.Text.Trim().ToUpper(),
+                                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text.Trim()),
+                                        lec = txtLec.Text.Trim(),
+                                        lab = txtLab.Text.Trim(),
                                         totalUnits = txtTotalUnits.Text,
                                         prereq = value,
                                         status = "Avail",
-                                        totalLecprice = lblLectotal.Text,
-                                        totalLabprice = lblabTotal.Text,
-                                        labprice = txtLabprice.Text,
-                                        lecprice = txtLecPrice.Text,
+                                        totalLecprice = lblLectotal.Text.Trim(),
+                                        totalLabprice = lblabTotal.Text.Trim(),
+                                        labprice = txtLabprice.Text.Trim(),
+                                        lecprice = txtLecPrice.Text.Trim(),
                                         totalprice = TotalPrice.Text
                                     });
                                 reloadDatagrid.displayData();
@@ -120,17 +120,17 @@ namespace SchoolManagementSystem
                     .Update(new
                     {
                         courseCode = cmbCourseCode.Text,
-                        subjectCode = txtSubjectCode.Text.ToUpper(),
-                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
-                        lec = txtLec.Text,
-                        lab = txtLab.Text,
+                        subjectCode = txtSubjectCode.Text.Trim().ToUpper(),
+                        subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text.Trim()),
+                        lec = txtLec.Text.Trim(),
+                        lab = txtLab.Text.Trim(),
                         totalUnits = txtTotalUnits.Text,
                         prereq = value,
                         status = "Avail",
-                        totalLecprice = lblLectotal.Text,
-                        totalLabprice = lblabTotal.Text,
-                        labprice = txtLabprice.Text,
-                        lecprice = txtLecPrice.Text,
+                        totalLecprice = lblLectotal.Text.Trim(),
+                        totalLabprice = lblabTotal.Text.Trim(),
+                        labprice = txtLabprice.Text.Trim(),
+                        lecprice = txtLecPrice.Text.Trim(),
                         totalprice = TotalPrice.Text
                     });
                 reloadDatagrid.displayData();
@@ -188,17 +188,17 @@ namespace SchoolManagementSystem
                             DBContext.GetContext().Query("subjects").Insert(new
                             {
                                 courseCode = cmbCourseCode.Text,
-                                subjectCode = txtSubjectCode.Text.ToUpper(),
-                                subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text),
-                                lec = txtLec.Text,
-                                lab = txtLab.Text,
+                                subjectCode = txtSubjectCode.Text.Trim().ToUpper(),
+                                subjectTitle = Validator.ToTitleCase(txtDescriptiveTitle.Text.Trim()),
+                                lec = txtLec.Text.Trim(),
+                                lab = txtLab.Text.Trim(),
                                 totalUnits = txtTotalUnits.Text,
                                 prereq = value,
                                 status = "Avail",
-                                totalLecprice = lblLectotal.Text,
-                                totalLabprice = lblabTotal.Text,
-                                labprice = txtLabprice.Text,
-                                lecprice = txtLecPrice.Text,
+                                totalLecprice = lblLectotal.Text.Trim(),
+                                totalLabprice = lblabTotal.Text.Trim(),
+                                labprice = txtLabprice.Text.Trim(),
+                                lecprice = txtLecPrice.Text.Trim(),
                                 totalprice = TotalPrice.Text
                             });
                             reloadDatagrid.displayData();

@@ -37,7 +37,7 @@ namespace SchoolManagementSystem
                         {
                             DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
                             {
-                                roletype = Validator.ToTitleCase(txtRole.Text)
+                                roletype = Validator.ToTitleCase(txtRole.Text.Trim())
                             });
                             reloadDatagrid.displayData();
                             this.Close();
@@ -53,7 +53,7 @@ namespace SchoolManagementSystem
 
                 DBContext.GetContext().Query("role").Where("roleId", idd).Update(new
                 {
-                    roletype = Validator.ToTitleCase(txtRole.Text)
+                    roletype = Validator.ToTitleCase(txtRole.Text.Trim())
                 });
                 reloadDatagrid.displayData();
                 this.Close();
@@ -71,7 +71,7 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("role").Insert(new
                         {
-                            roletype = Validator.ToTitleCase(txtRole.Text),
+                            roletype = Validator.ToTitleCase(txtRole.Text.Trim()),
                         });
                         reloadDatagrid.displayData();
                         this.Close();

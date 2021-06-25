@@ -74,6 +74,7 @@ namespace SchoolManagementSystem
                         schedId = storeID
                     });
                     storeID = "";
+                    MessageBox.Show("Updated");
                 }
                 catch (Exception)
                 {
@@ -99,7 +100,7 @@ namespace SchoolManagementSystem
             try
             {
                 var value = DBContext.GetContext().Query("teachersched").Where("teacherId", cmbTeacher.Text).First();
-
+                
                 splitSched = value.schedId;
                 var words = splitSched.Split(' ');
 
@@ -124,6 +125,9 @@ namespace SchoolManagementSystem
                         dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(drow["timeend"].ToString());
                         txtName.Text = drow["fName"].ToString();
                         txtGender.Text = drow["gender"].ToString();
+                        txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                        txtDepartment.Text = drow["department"].ToString();
+                        
                     }
                 }
             }
@@ -136,6 +140,8 @@ namespace SchoolManagementSystem
                     txtName.Text = $"{value.Firstname} {value.Lastname}";
                     txtGender.Text = value.Gender;
                     txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                    txtDepartment.Text = value.department;
+                   
                 }
             }
         }
@@ -148,7 +154,7 @@ namespace SchoolManagementSystem
         private void cmbTeacher_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvStudentSched.Rows.Clear();
-            TextBox[] inputs = { txtName, txtCourse };
+            TextBox[] inputs = { txtName, txtDepartment };
 
             Validator.ClearTextField(inputs);
         }
@@ -156,7 +162,7 @@ namespace SchoolManagementSystem
         private void cmbTeacher_TextChanged(object sender, EventArgs e)
         {
             dgvStudentSched.Rows.Clear();
-            TextBox[] inputs = { txtName, txtCourse };
+            TextBox[] inputs = { txtName, txtDepartment };
 
             Validator.ClearTextField(inputs);
 
@@ -179,6 +185,23 @@ namespace SchoolManagementSystem
             if (dgvStudentSched.Rows.Count <= 0)
                 btnPrint.Enabled = false;
 
+        }
+
+        private void dgvStudentSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvStudentSched_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (Validator.RemoveSubject()) 
+            {
+                foreach (DataGridViewRow item in this.dgvStudentSched.SelectedRows)
+                {
+                    dgvStudentSched.Rows.RemoveAt(item.Index);
+                }
+            }
+            
         }
     }
 }

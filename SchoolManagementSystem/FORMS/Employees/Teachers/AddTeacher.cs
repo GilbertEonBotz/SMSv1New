@@ -33,17 +33,18 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("teachers").Where("teacherId", lblID.Text).Update(new
                     {
-                        Lastname = txtLastname.Text,
-                        Firstname = txtFirstname.Text,
-                        Middlename = txtMiddlename.Text,
+                        Lastname = txtLastname.Text.Trim(),
+                        Firstname = txtFirstname.Text.Trim(),
+                        Middlename = txtMiddlename.Text.Trim(),
                         Dateofbirth = dtpDateofbirth.Value.ToString("MM/dd/yyyy"),
-                        Placeofbirth = txtPlaceofbirth.Text,
+                        Placeofbirth = txtPlaceofbirth.Text.Trim(),
                         ContactNo = txtContactNo.Text,
                         Gender = cmbGender.Text,
                         MaritalStatus = cmbMaritalStatus.Text,
-                        Citizenship = txtCitizen.Text,
-                        Religion = txtReligion.Text,
-                        Address = txtAddress.Text,
+                        Citizenship = txtCitizen.Text.Trim(),
+                        Religion = txtReligion.Text.Trim(),
+                        Address = txtAddress.Text.Trim(),
+                        department = cmbDepartment.Text
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -55,17 +56,18 @@ namespace SchoolManagementSystem
                 {
                     DBContext.GetContext().Query("teachers").Insert(new
                     {
-                        Lastname = txtLastname.Text,
-                        Firstname = txtFirstname.Text,
-                        Middlename = txtMiddlename.Text,
+                        Lastname = txtLastname.Text.Trim(),
+                        Firstname = txtFirstname.Text.Trim(),
+                        Middlename = txtMiddlename.Text.Trim(),
                         Dateofbirth = dtpDateofbirth.Value.ToString("MM/dd/yyyy"),
-                        Placeofbirth = txtPlaceofbirth.Text,
+                        Placeofbirth = txtPlaceofbirth.Text.Trim(),
                         ContactNo = txtContactNo.Text,
                         Gender = cmbGender.Text,
                         MaritalStatus = cmbMaritalStatus.Text,
-                        Citizenship = txtCitizen.Text,
-                        Religion = txtReligion.Text,
-                        Address = txtAddress.Text,
+                        Citizenship = txtCitizen.Text.Trim(),
+                        Religion = txtReligion.Text.Trim(),
+                        Address = txtAddress.Text.Trim(),
+                        department = cmbDepartment.Text
                     });
                     reloadDatagrid.displayData();
                     this.Close();
@@ -96,6 +98,21 @@ namespace SchoolManagementSystem
         private void dtpDateofbirth_ValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void AddTeacher_Load(object sender, EventArgs e)
+        {
+            displayDept();
+        }
+
+        public void displayDept()
+        {
+            var values = DBContext.GetContext().Query("department").Get();
+
+            foreach(var value in values)
+            {
+                cmbDepartment.Items.Add(value.deptName);
+            }
         }
     }
 }

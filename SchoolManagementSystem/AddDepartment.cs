@@ -38,7 +38,7 @@ namespace SchoolManagementSystem
                         {
                             DBContext.GetContext().Query("department").Where("deptID", idd).Update(new
                             {
-                                deptName = Validator.ToTitleCase(txtDeptName.Text)
+                                deptName = Validator.ToTitleCase(txtDeptName.Text.Trim())
                             });
                             reloadDatagrid.displayData();
                             this.Close();
@@ -54,7 +54,7 @@ namespace SchoolManagementSystem
 
                 DBContext.GetContext().Query("department").Where("deptID", idd).Update(new
                 {
-                    deptName = Validator.ToTitleCase(txtDeptName.Text)
+                    deptName = Validator.ToTitleCase(txtDeptName.Text.Trim())
                 });
                 reloadDatagrid.displayData();
                 this.Close();
@@ -72,7 +72,7 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("department").Insert(new
                         {
-                            deptName = Validator.ToTitleCase(txtDeptName.Text)
+                            deptName = Validator.ToTitleCase(txtDeptName.Text.Trim())
                         });
                         reloadDatagrid.displayData();
                         this.Close();

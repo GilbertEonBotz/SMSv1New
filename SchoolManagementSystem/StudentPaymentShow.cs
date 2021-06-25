@@ -145,7 +145,7 @@ namespace SchoolManagementSystem
 
 
             led.percent();
-             totaldownpaymentplus = Convert.ToDouble(spd.total) + Convert.ToDouble(led.downpayment);
+             totaldownpaymentplus = Convert.ToDouble(spd.total);
             myForm.textBox15.Text = totaldownpaymentplus.ToString(); 
             myForm.txt1.Text = spd.prelim;
             myForm.txt2.Text = spd.midterm;

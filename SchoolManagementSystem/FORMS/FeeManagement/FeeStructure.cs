@@ -51,5 +51,23 @@ namespace SchoolManagementSystem
             var add = new addfees(dgvFee.SelectedRows[0].Cells[0].Value.ToString(), dgvFee.SelectedRows[0].Cells[1].Value.ToString(), this);
             add.ShowDialog();
         }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            fee.textvalue = textboxWatermark1.Text;
+            fee.filterView();
+
+            dgvFee.Rows.Clear();
+            foreach (DataRow Drow in fee.dtFilter.Rows)
+            {
+                int num = dgvFee.Rows.Add();
+
+                dgvFee.Rows[num].Cells[0].Value = Drow["ID"].ToString();
+                dgvFee.Rows[num].Cells[1].Value = Drow["structurename"].ToString();
+                dgvFee.Rows[num].Cells[2].Value = Drow["Description"].ToString();
+                dgvFee.Rows[num].Cells[3].Value = Drow["count"].ToString();
+                dgvFee.Rows[num].Cells[4].Value = Drow["total"].ToString();
+            }
+        }
     }
 }

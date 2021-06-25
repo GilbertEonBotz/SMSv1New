@@ -20,6 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new AddDepartment(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
@@ -66,6 +67,19 @@ namespace SchoolManagementSystem
                 myfrm.txtDeptName.Text = dgvDepartment.Rows[dgvDepartment.CurrentRow.Index].Cells[1].Value.ToString();
                 myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
+            }
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("department").WhereLike("deptID", $"{textboxWatermark1.Text}")
+               .OrWhereLike("deptName", $"%{textboxWatermark1.Text}%")
+               .Get();
+
+            dgvDepartment.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvDepartment.Rows.Add(value.deptID, value.deptName);
             }
         }
     }

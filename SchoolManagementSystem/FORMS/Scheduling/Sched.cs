@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SqlKata.Execution;
 using SchoolManagementSystem.UITools;
 
 namespace SchoolManagementSystem
 {
     public partial class Sched : Form
     {
+        schedule sched = new schedule();
+
         public Sched()
         {
             InitializeComponent();
@@ -26,13 +29,12 @@ namespace SchoolManagementSystem
         {
             try
             {
-                schedule sched = new schedule();
 
                 dgvSched.Columns[7].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[8].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewsched();
 
-                dgvSched.Rows.Clear();
+   
                 foreach (DataRow Drow in sched.dt.Rows)
                 {
                     int num = dgvSched.Rows.Add();
@@ -77,6 +79,46 @@ namespace SchoolManagementSystem
         private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            dgvSched.Rows.Clear();
+            
+            sched.textValue = textboxWatermark1.Text;
+            sched.filterSched();
+            dgvSched.Columns[7].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[8].DefaultCellStyle.Format = "hh:mm tt";
+            foreach (DataRow Drow in sched.dtFilter.Rows)
+            {
+            
+                int num = dgvSched.Rows.Add();
+
+                dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["SubjTitle"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["roomID"].ToString();
+                dgvSched.Rows[num].Cells[4].Value = Drow["courseID"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Drow["date"].ToString();
+                dgvSched.Rows[num].Cells[6].Value = Drow["maxStudent"].ToString();
+                dgvSched.Rows[num].Cells[7].Value = Convert.ToDateTime(Drow["time start"].ToString());
+                dgvSched.Rows[num].Cells[8].Value = Convert.ToDateTime(Drow["time end"].ToString());
+                dgvSched.Rows[num].Cells[9].Value = Drow["status"].ToString();
+            }
+           
+        }
+
+        private void textboxWatermark1_Leave(object sender, EventArgs e)
+        {
+            if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
         }
     }
 }

@@ -106,24 +106,38 @@ namespace SchoolManagementSystem
         string idd;
         private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            //var values = DBContext.GetContext().Query("users").WhereLike("id", $"{textboxWatermark1.Text}")
-            //    .OrWhereLike("userrole", $"%{textboxWatermark1.Text}%")
-            // .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
-            // .Get();
+            var values = DBContext.GetContext().Query("users").WhereLike("id", $"{textboxWatermark1.Text}")
+             .OrWhereLike("userrole", $"%{textboxWatermark1.Text}%")
+             .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
+             .Get();
 
-            //dgvUsers.Rows.Clear();
-            //foreach (var value in values)
-            //{
-            //    int id = value.userrole;
-            //    var role = DBContext.GetContext().Query("role").Where("roleId", id).First();
+            dgvUsers.Rows.Clear();
+            foreach (var value in values)
+            {
+                int id = value.userrole;
+                var role = DBContext.GetContext().Query("role").Where("roleId", id).First();
 
-            //    dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
-            //}
+                dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
+            }
+
+            foreach (DataGridViewRow row in dgvUsers.Rows)
+            {
+                if (Convert.ToString(row.Cells[3].Value) == "Activate")
+                {
+                    row.Cells[3].Style.ForeColor = Color.Blue;
+                    row.Cells[3].Style.SelectionForeColor = Color.Blue;
+                }
+                else
+                {
+                    row.Cells[3].Style.ForeColor = Color.Red;
+                    row.Cells[3].Style.SelectionForeColor = Color.Red;
+                }
+            }
         }
     }
 }

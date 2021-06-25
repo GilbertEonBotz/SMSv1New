@@ -34,6 +34,7 @@ namespace SchoolManagementSystem
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddCourse = new FontAwesome.Sharp.IconButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -44,7 +45,6 @@ namespace SchoolManagementSystem
             this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -98,6 +98,18 @@ namespace SchoolManagementSystem
             this.panel1.Size = new System.Drawing.Size(1108, 597);
             this.panel1.TabIndex = 15;
             // 
+            // textboxWatermark1
+            // 
+            this.textboxWatermark1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(839, 78);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(258, 29);
+            this.textboxWatermark1.TabIndex = 4;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
+            this.textboxWatermark1.TextChanged += new System.EventHandler(this.textboxWatermark1_TextChanged);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DimGray;
@@ -110,14 +122,15 @@ namespace SchoolManagementSystem
             // 
             // btnAddCourse
             // 
-            this.btnAddCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCourse.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddCourse.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnAddCourse.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddCourse.IconSize = 20;
-            this.btnAddCourse.Location = new System.Drawing.Point(87, 75);
+            this.btnAddCourse.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAddCourse.Location = new System.Drawing.Point(84, 76);
             this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(95, 27);
+            this.btnAddCourse.Size = new System.Drawing.Size(92, 32);
             this.btnAddCourse.TabIndex = 2;
             this.btnAddCourse.Text = "Add New";
             this.btnAddCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -129,6 +142,7 @@ namespace SchoolManagementSystem
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ItemSize = new System.Drawing.Size(78, 30);
             this.tabControl1.Location = new System.Drawing.Point(0, 76);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -138,10 +152,10 @@ namespace SchoolManagementSystem
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvCourse);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1096, 487);
+            this.tabPage1.Size = new System.Drawing.Size(1096, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Course List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -185,7 +199,7 @@ namespace SchoolManagementSystem
             this.dgvCourse.RowHeadersVisible = false;
             this.dgvCourse.RowTemplate.Height = 25;
             this.dgvCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourse.Size = new System.Drawing.Size(1090, 481);
+            this.dgvCourse.Size = new System.Drawing.Size(1090, 473);
             this.dgvCourse.TabIndex = 1;
             this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             this.dgvCourse.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCourse_CellMouseDoubleClick);
@@ -232,18 +246,6 @@ namespace SchoolManagementSystem
             this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Course Information Page";
-            // 
-            // textboxWatermark1
-            // 
-            this.textboxWatermark1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
-            this.textboxWatermark1.Location = new System.Drawing.Point(839, 69);
-            this.textboxWatermark1.Name = "textboxWatermark1";
-            this.textboxWatermark1.Size = new System.Drawing.Size(258, 29);
-            this.textboxWatermark1.TabIndex = 4;
-            this.textboxWatermark1.Text = "Search";
-            this.textboxWatermark1.WatermarkText = "Search";
-            this.textboxWatermark1.TextChanged += new System.EventHandler(this.textboxWatermark1_TextChanged);
             // 
             // CourseInformation
             // 

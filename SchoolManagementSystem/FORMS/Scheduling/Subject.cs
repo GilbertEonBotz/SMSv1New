@@ -20,6 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddSybject_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new AddSubject(this, getId);
             FormFade.FadeForm(this, myfrm);
         }
@@ -87,6 +88,20 @@ namespace SchoolManagementSystem
                     myfrm.ShowDialog();
                 }
                 
+            }
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("subjects").WhereLike("subjectId", $"{textboxWatermark1.Text}")
+              .OrWhereLike("subjectCode", $"%{textboxWatermark1.Text}%")
+              .OrWhereLike("subjectTitle", $"%{textboxWatermark1.Text}%")
+              .Get();
+
+            dgvSubjects.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
             }
         }
     }

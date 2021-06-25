@@ -36,6 +36,8 @@ namespace SchoolManagementSystem
         }
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
+            displayData();
+
             var myfrm = new AddTeacher(this);
             FormFade.FadeForm(this, myfrm);
         }
@@ -67,6 +69,25 @@ namespace SchoolManagementSystem
             myfrm.cmbDepartment.Text = value.department;
 
             myfrm.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("teachers").WhereLike("teacherId", $"{textboxWatermark1.Text}")
+             .OrWhereLike("Firstname", $"%{textboxWatermark1.Text}%")
+             .OrWhereLike("Lastname", $"%{textboxWatermark1.Text}%")
+             .Get();
+
+            dgvTeachers.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvTeachers.Rows.Add(value.teacherId, $"{value.Firstname} {value.Middlename} {value.Lastname}", value.ContactNo, value.Gender, value.Address);
+            }
         }
     }
 }

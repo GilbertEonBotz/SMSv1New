@@ -49,6 +49,7 @@ namespace SchoolManagementSystem
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new AddAcademicYear(this);
             FormFade.FadeForm(this, myfrm);
         }
@@ -97,7 +98,42 @@ namespace SchoolManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("academicyear").WhereLike("id", $"{textboxWatermark1.Text}")
+                .OrWhereLike("year1", $"%{textboxWatermark1.Text}%")
+                .OrWhereLike("term", $"%{textboxWatermark1.Text}%")
+                .Get();
+
+                dgvAcademicYear.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvAcademicYear.Rows.Add(value.id, $"{value.year1}-{value.year2} {value.term}", value.status);
+                }
+
+                foreach (DataGridViewRow row in dgvAcademicYear.Rows)
+                {
+                    if (Convert.ToString(row.Cells[2].Value) == "Activate")
+                    {
+                        row.Cells[2].Style.ForeColor = Color.Blue;
+                        row.Cells[2].Style.SelectionForeColor = Color.Blue;
+                    }
+                    else
+                    {
+                        row.Cells[2].Style.ForeColor = Color.Red;
+                        row.Cells[2].Style.SelectionForeColor = Color.Red;
+                    }
+                }
+            }
         }
     }
 }

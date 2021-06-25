@@ -42,16 +42,15 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("academicyear").Update(new
                         {
-                            year1 = txtYear1.Text.Trim(),
-                            year2 = txtYear2.Text.Trim(),
-                            term = cmbTerm.Text.Trim()
+                            status = "Activate"
                         });
 
                         DBContext.GetContext().Query("academicyear").Insert(new
                         {
                             year1 = txtYear1.Text.Trim(),
                             year2 = txtYear2.Text.Trim(),
-                            term = cmbTerm.Text.Trim()
+                            term = cmbTerm.Text.Trim(),
+                            status = "Deactivate"
                         });
                         reloadDatagrid.displayData();
                         this.Close();

@@ -70,7 +70,7 @@ namespace SchoolManagementSystem
                     }
                     catch (Exception)
                     {
-                        DBContext.GetContext().Query("rooms").Insert(new
+                        DBContext.GetContext().Query("department").Insert(new
                         {
                             deptName = Validator.ToTitleCase(txtDeptName.Text)
                         });

@@ -136,11 +136,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(236, 33);
+            this.label5.Size = new System.Drawing.Size(218, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Current Balance:";
             // 
@@ -148,7 +148,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.txtcurrentBal.BackColor = System.Drawing.Color.DimGray;
             this.txtcurrentBal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcurrentBal.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcurrentBal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcurrentBal.ForeColor = System.Drawing.Color.White;
             this.txtcurrentBal.Location = new System.Drawing.Point(253, 6);
             this.txtcurrentBal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -168,7 +168,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -183,7 +183,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.dataGridViewTextBoxColumn2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -231,31 +231,31 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // studentid
             // 
             this.studentid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.studentid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentid.Location = new System.Drawing.Point(336, 70);
             this.studentid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.studentid.Name = "studentid";
-            this.studentid.Size = new System.Drawing.Size(296, 20);
+            this.studentid.Size = new System.Drawing.Size(296, 19);
             this.studentid.TabIndex = 1;
             this.studentid.Text = "100048790";
             // 
             // txtLastname
             // 
             this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.Location = new System.Drawing.Point(232, 6);
             this.txtLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(398, 30);
+            this.txtLastname.Size = new System.Drawing.Size(398, 28);
             this.txtLastname.TabIndex = 0;
             this.txtLastname.Text = "Acosta,";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(927, 600);
+            this.button1.Location = new System.Drawing.Point(914, 600);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 44);
             this.button1.TabIndex = 43;
@@ -273,14 +273,14 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Cash",
             "Cheque"});
             this.comboBox1.Location = new System.Drawing.Point(189, 120);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(370, 32);
+            this.comboBox1.Size = new System.Drawing.Size(370, 33);
             this.comboBox1.TabIndex = 7;
             // 
             // textBox2
@@ -294,7 +294,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(19, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 22);
@@ -304,7 +304,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(19, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(128, 22);
@@ -314,7 +314,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(19, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 44);
@@ -323,17 +323,17 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(189, 20);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(370, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(370, 29);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(19, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 22);
@@ -351,7 +351,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(19, 234);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 22);
@@ -361,7 +361,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // txt3
             // 
             this.txt3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt3.Location = new System.Drawing.Point(157, 158);
             this.txt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt3.Multiline = true;
@@ -373,20 +373,20 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(8, 203);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 19);
+            this.label16.Size = new System.Drawing.Size(48, 20);
             this.label16.TabIndex = 38;
             this.label16.Text = "Final";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(8, 159);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 19);
+            this.label17.Size = new System.Drawing.Size(94, 20);
             this.label17.TabIndex = 37;
             this.label17.Text = "Semi-Final";
             this.label17.Click += new System.EventHandler(this.label17_Click);
@@ -394,27 +394,27 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(8, 115);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 19);
+            this.label18.Size = new System.Drawing.Size(73, 20);
             this.label18.TabIndex = 36;
             this.label18.Text = "Midterm";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(8, 71);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(57, 19);
+            this.label19.Size = new System.Drawing.Size(58, 20);
             this.label19.TabIndex = 35;
             this.label19.Text = "Prelim";
             // 
             // txt1
             // 
             this.txt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt1.Location = new System.Drawing.Point(157, 70);
             this.txt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt1.Multiline = true;
@@ -426,7 +426,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // txt2
             // 
             this.txt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt2.Location = new System.Drawing.Point(157, 114);
             this.txt2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt2.Multiline = true;
@@ -438,7 +438,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // txt4
             // 
             this.txt4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt4.Location = new System.Drawing.Point(157, 202);
             this.txt4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt4.Multiline = true;
@@ -450,40 +450,40 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // lblpre
             // 
             this.lblpre.AutoSize = true;
-            this.lblpre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpre.Location = new System.Drawing.Point(339, 69);
             this.lblpre.Name = "lblpre";
-            this.lblpre.Size = new System.Drawing.Size(41, 21);
+            this.lblpre.Size = new System.Drawing.Size(40, 20);
             this.lblpre.TabIndex = 42;
             this.lblpre.Text = "0.00";
             // 
             // lblmid
             // 
             this.lblmid.AutoSize = true;
-            this.lblmid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmid.Location = new System.Drawing.Point(339, 114);
             this.lblmid.Name = "lblmid";
-            this.lblmid.Size = new System.Drawing.Size(41, 21);
+            this.lblmid.Size = new System.Drawing.Size(40, 20);
             this.lblmid.TabIndex = 43;
             this.lblmid.Text = "0.00";
             // 
             // lblsemi
             // 
             this.lblsemi.AutoSize = true;
-            this.lblsemi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsemi.Location = new System.Drawing.Point(339, 158);
             this.lblsemi.Name = "lblsemi";
-            this.lblsemi.Size = new System.Drawing.Size(41, 21);
+            this.lblsemi.Size = new System.Drawing.Size(40, 20);
             this.lblsemi.TabIndex = 44;
             this.lblsemi.Text = "0.00";
             // 
             // lblfin
             // 
             this.lblfin.AutoSize = true;
-            this.lblfin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfin.Location = new System.Drawing.Point(339, 202);
             this.lblfin.Name = "lblfin";
-            this.lblfin.Size = new System.Drawing.Size(41, 21);
+            this.lblfin.Size = new System.Drawing.Size(40, 20);
             this.lblfin.TabIndex = 45;
             this.lblfin.Text = "0.00";
             // 
@@ -491,11 +491,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.DimGray;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(9, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(45, 19);
+            this.label25.Size = new System.Drawing.Size(49, 20);
             this.label25.TabIndex = 46;
             this.label25.Text = "Total";
             // 
@@ -503,7 +503,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.textBox15.BackColor = System.Drawing.Color.DimGray;
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.ForeColor = System.Drawing.Color.White;
             this.textBox15.Location = new System.Drawing.Point(158, 6);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -517,37 +517,37 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.BackColor = System.Drawing.Color.DimGray;
-            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.White;
             this.lbltotal.Location = new System.Drawing.Point(340, 8);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(46, 21);
+            this.lbltotal.Size = new System.Drawing.Size(45, 20);
             this.lbltotal.TabIndex = 48;
             this.lbltotal.Text = "1000";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(153, 6);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(144, 19);
+            this.label27.Size = new System.Drawing.Size(143, 20);
             this.label27.TabIndex = 49;
             this.label27.Text = "Account Payable";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(339, 5);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(110, 19);
+            this.label28.Size = new System.Drawing.Size(111, 20);
             this.label28.TabIndex = 50;
             this.label28.Text = "Amount Paid";
             // 
             // txtAmount
             // 
-            this.txtAmount.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.Location = new System.Drawing.Point(165, 125);
             this.txtAmount.Multiline = true;
             this.txtAmount.Name = "txtAmount";
@@ -560,19 +560,19 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // cmbpaymentMethod
             // 
             this.cmbpaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbpaymentMethod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbpaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbpaymentMethod.FormattingEnabled = true;
             this.cmbpaymentMethod.Items.AddRange(new object[] {
             "CASH",
             "CHEQUE"});
             this.cmbpaymentMethod.Location = new System.Drawing.Point(165, 77);
             this.cmbpaymentMethod.Name = "cmbpaymentMethod";
-            this.cmbpaymentMethod.Size = new System.Drawing.Size(284, 29);
+            this.cmbpaymentMethod.Size = new System.Drawing.Size(284, 28);
             this.cmbpaymentMethod.TabIndex = 52;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemarks.Location = new System.Drawing.Point(165, 179);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
@@ -607,7 +607,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(33, 214);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 20);
+            this.checkBox1.Size = new System.Drawing.Size(98, 17);
             this.checkBox1.TabIndex = 63;
             this.checkBox1.Text = "accept change";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -616,27 +616,27 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // lblpaymentfor
             // 
             this.lblpaymentfor.AutoSize = true;
-            this.lblpaymentfor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpaymentfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpaymentfor.Location = new System.Drawing.Point(408, 46);
             this.lblpaymentfor.Name = "lblpaymentfor";
-            this.lblpaymentfor.Size = new System.Drawing.Size(41, 21);
+            this.lblpaymentfor.Size = new System.Drawing.Size(40, 20);
             this.lblpaymentfor.TabIndex = 51;
             this.lblpaymentfor.Text = "0.00";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 62;
             this.label4.Text = "pay for :";
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "DOWNPAYMENT",
@@ -646,13 +646,13 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             "FINAL"});
             this.comboBox2.Location = new System.Drawing.Point(165, 14);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 29);
+            this.comboBox2.Size = new System.Drawing.Size(284, 28);
             this.comboBox2.TabIndex = 61;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // txtchange
             // 
-            this.txtchange.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtchange.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtchange.Location = new System.Drawing.Point(165, 239);
             this.txtchange.Multiline = true;
             this.txtchange.Name = "txtchange";
@@ -664,40 +664,40 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(29, 237);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 21);
+            this.label11.Size = new System.Drawing.Size(65, 20);
             this.label11.TabIndex = 59;
             this.label11.Text = "Change";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(29, 179);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 21);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 57;
             this.label3.Text = "Remarks";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(29, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 21);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 56;
             this.label2.Text = "Amount";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 21);
+            this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 55;
             this.label1.Text = "Payment method:";
             // 
@@ -705,50 +705,50 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             this.textBox10.BackColor = System.Drawing.Color.White;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.Location = new System.Drawing.Point(232, 36);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(398, 24);
+            this.textBox10.Size = new System.Drawing.Size(398, 22);
             this.textBox10.TabIndex = 44;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(232, 70);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(103, 21);
+            this.label20.Size = new System.Drawing.Size(94, 20);
             this.label20.TabIndex = 46;
             this.label20.Text = "Student No.";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(232, 96);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 21);
+            this.label21.Size = new System.Drawing.Size(60, 20);
             this.label21.TabIndex = 47;
             this.label21.Text = "Course";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(234, 128);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 21);
+            this.label22.Size = new System.Drawing.Size(63, 20);
             this.label22.TabIndex = 48;
             this.label22.Text = "Gender";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(234, 160);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(72, 21);
+            this.label23.Size = new System.Drawing.Size(68, 20);
             this.label23.TabIndex = 49;
             this.label23.Text = "Address";
             // 
@@ -765,7 +765,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // textBox11
             // 
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.Location = new System.Drawing.Point(336, 160);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
@@ -776,22 +776,22 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // textBox12
             // 
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox12.Location = new System.Drawing.Point(336, 96);
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(294, 20);
+            this.textBox12.Size = new System.Drawing.Size(294, 19);
             this.textBox12.TabIndex = 52;
             this.textBox12.Text = "BSIT";
             // 
             // textBox13
             // 
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox13.Location = new System.Drawing.Point(336, 128);
             this.textBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(294, 20);
+            this.textBox13.Size = new System.Drawing.Size(294, 19);
             this.textBox13.TabIndex = 53;
             this.textBox13.Text = "Female";
             // 
@@ -825,17 +825,17 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // lbldownpayment
             // 
             this.lbldownpayment.AutoSize = true;
-            this.lbldownpayment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldownpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldownpayment.Location = new System.Drawing.Point(339, 34);
             this.lbldownpayment.Name = "lbldownpayment";
-            this.lbldownpayment.Size = new System.Drawing.Size(41, 21);
+            this.lbldownpayment.Size = new System.Drawing.Size(40, 20);
             this.lbldownpayment.TabIndex = 53;
             this.lbldownpayment.Text = "0.00";
             // 
             // txt0
             // 
             this.txt0.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt0.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt0.Location = new System.Drawing.Point(157, 35);
             this.txt0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt0.Multiline = true;
@@ -847,10 +847,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(8, 36);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(124, 19);
+            this.label26.Size = new System.Drawing.Size(119, 20);
             this.label26.TabIndex = 51;
             this.label26.Text = "downpayment";
             // 
@@ -890,10 +890,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(503, 39);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(46, 21);
+            this.label24.Size = new System.Drawing.Size(45, 20);
             this.label24.TabIndex = 54;
             this.label24.Text = "1000";
             // 
@@ -905,7 +905,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -923,11 +923,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SeaGreen;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(645, 600);
+            this.button2.Location = new System.Drawing.Point(642, 600);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 44);
+            this.button2.Size = new System.Drawing.Size(178, 44);
             this.button2.TabIndex = 56;
             this.button2.Text = "void";
             this.button2.UseVisualStyleBackColor = false;
@@ -935,7 +935,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             // 
             // Payment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1108, 650);
@@ -946,7 +946,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Payment";

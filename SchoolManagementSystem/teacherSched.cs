@@ -165,7 +165,7 @@ namespace SchoolManagementSystem
         private void dgvStudentSched_RowDefaultCellStyleChanged(object sender, DataGridViewRowEventArgs e)
         {
 
-           
+
         }
 
         private void dgvStudentSched_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -178,7 +178,7 @@ namespace SchoolManagementSystem
         {
             if (dgvStudentSched.Rows.Count <= 0)
                 btnPrint.Enabled = false;
-            
+
         }
     }
 }

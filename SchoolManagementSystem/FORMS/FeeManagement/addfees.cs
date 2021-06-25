@@ -27,6 +27,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
         private void addfees_Load(object sender, EventArgs e)
         {
             displayData();
+            textBox2.KeyPress += Validator.ValidateKeypressNumber;
         }
 
         private void displayData()
@@ -79,28 +80,35 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             }
             catch (Exception)
             {
-                if (comboBox1.Text.Equals(""))
+                try
                 {
-                    Validator.AlertDanger("Please select catageory!");
+                    if (comboBox1.Text.Equals(""))
+                    {
+                        Validator.AlertDanger("Please select catageory!");
+                    }
+                    else if (textBox2.Text.Equals(string.Empty))
+                    {
+                        Validator.AlertDanger("Please enter an amount!");
+                    }
+                    else if (Convert.ToDouble(textBox2.Text) == 0)
+                    {
+                        Validator.AlertDanger("Please enter an amount!");
+                    }
+                    else
+                    {
+                        struc.amount = textBox2.Text;
+                        struc.categoryID = categoryid;
+                        struc.structureID = id;
+
+                        struc.insertfee();
+                        displayData();
+                    }
                 }
-                else if (textBox2.Text.Equals(string.Empty))
+                catch (Exception)
                 {
                     Validator.AlertDanger("Please enter an amount!");
                 }
-                else if (Convert.ToDouble(textBox2.Text) == 0)
-                {
-                    Validator.AlertDanger("Please enter an amount!");
-                }
-
-                else
-                {
-                    struc.amount = textBox2.Text;
-                    struc.categoryID = categoryid;
-                    struc.structureID = id;
-
-                    struc.insertfee();
-                    displayData();
-                }
+                
             }
 
             

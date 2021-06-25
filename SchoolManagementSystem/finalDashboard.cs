@@ -42,32 +42,10 @@ namespace SchoolManagementSystem
                 subMenu.Visible = false;
         }
 
-        private void btnEnrollment_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlEnrollment);
-        }
-
-        private void btnStudentRecords_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlStudentRecords);
-        }
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            showSubMenu(pnlEmployees);
         }
-
-        private void btnFeesManagement_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlFeesMngmnt);
-        }
-
-        private void btnAcademicMngmt_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlAcademic);
-        }
-
-
 
         public void displayStudentScheduling()
         {
@@ -78,10 +56,7 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
-        private void btnStudentSchedule_Click(object sender, EventArgs e)
-        {
-            displayStudentScheduling();
-        }
+
 
         private void displayDashboard()
         {
@@ -92,14 +67,66 @@ namespace SchoolManagementSystem
             pnlShow.Controls.Add(myForm);
             myForm.Show();
         }
-        private void btnDashboard_Click(object sender, EventArgs e)
+
+        private void finalDashboard_Load(object sender, EventArgs e)
         {
             displayDashboard();
         }
 
-        private void btnAdmitStudent_Click(object sender, EventArgs e)
+        private void btnSignout_Click(object sender, EventArgs e)
         {
-            var myForm = new StudentInformation();
+            Application.Exit();
+        }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pnlUser);
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+            displayDashboard();
+        }
+
+        private void btnEmployees_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlEmployees);
+
+        }
+
+        private void btnSchoolSettings_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlSchoolSettings);
+        }
+
+        private void btnAcademicMngmt_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlAcademic);
+        }
+
+        private void btnFeesManagement_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlFeesMngmnt);
+        }
+
+        private void btnEnrollment_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pnlEnrollment);
+        }
+
+        private void btnStudentRecords_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlStudentRecords);
+        }
+
+        private void btnTeacherLoads_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(pnlLoads);
+        }
+
+        private void btnPayment_Click_1(object sender, EventArgs e)
+        {
+            var myForm = new StudentPaymentShow(this);
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -107,7 +134,27 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void btnTeacher_Click(object sender, EventArgs e)
+        private void btnManageRole_Click(object sender, EventArgs e)
+        {
+            var myForm = new UserRole();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnAddUsers_Click(object sender, EventArgs e)
+        {
+            var myForm = new Users();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnTeachers_Click(object sender, EventArgs e)
         {
             var myForm = new TeacherInformation();
             pnlShow.Controls.Clear();
@@ -130,6 +177,96 @@ namespace SchoolManagementSystem
         private void btnLibrarian_Click(object sender, EventArgs e)
         {
             var myForm = new LibrarianInformation();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnTerm_Click(object sender, EventArgs e)
+        {
+            var myForm = new AcademicYear();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnDepartment_Click(object sender, EventArgs e)
+        {
+            var myForm = new Department();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnCourse_Click(object sender, EventArgs e)
+        {
+            var myForm = new CourseInformation();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnCourseCode_Click(object sender, EventArgs e)
+        {
+            var myForm = new CourseCode();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnClassrooms_Click(object sender, EventArgs e)
+        {
+            var myForm = new room();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnExamPercentage_Click(object sender, EventArgs e)
+        {
+            var myForm = new ExamPercentage();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnSubjects_Click(object sender, EventArgs e)
+        {
+            var myForm = new Subject();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnSectionCategory_Click(object sender, EventArgs e)
+        {
+            var myForm = new SectionCategory();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnSectioning_Click(object sender, EventArgs e)
+        {
+            var myForm = new Sectioning();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -177,9 +314,9 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void btnPayment_Click(object sender, EventArgs e)
+        private void btnAdmitStudent_Click(object sender, EventArgs e)
         {
-            var myForm = new StudentPaymentShow(this);
+            var myForm = new StudentInformation();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -187,101 +324,9 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void btnSubjects_Click(object sender, EventArgs e)
+        private void btnStudentsSchedule_Click(object sender, EventArgs e)
         {
-            var myForm = new Subject();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnClassScgedule_Click(object sender, EventArgs e)
-        {
-            var myForm = new Sched();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnTerm_Click(object sender, EventArgs e)
-        {
-            var myForm = new AcademicYear();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnDepartment_Click(object sender, EventArgs e)
-        {
-            var myForm = new Department();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnCourse_Click(object sender, EventArgs e)
-        {
-            var myForm = new CourseInformation();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnCourseCode_Click(object sender, EventArgs e)
-        {
-            var myForm = new CourseCode();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-        private void btnClassrooms_Click(object sender, EventArgs e)
-        {
-            var myForm = new room();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-        private void finalDashboard_Load(object sender, EventArgs e)
-        {
-            displayDashboard();
-        }
-        private void btnExamPercentage_Click(object sender, EventArgs e)
-        {
-            var myForm = new ExamPercentage();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnSchoolSettings_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlSchoolSettings);
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlUser);
-        }
-
-        private void btnTeacherLoads_Click(object sender, EventArgs e)
-        {
-            showSubMenu(pnlLoads);
+            displayStudentScheduling();
         }
 
         private void btnSubjectLoads_Click(object sender, EventArgs e)
@@ -294,7 +339,7 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void btnHandledStudents_Click(object sender, EventArgs e)
+        private void btnHandleStudents_Click(object sender, EventArgs e)
         {
             var myForm = new viewTeacherSched();
             pnlShow.Controls.Clear();
@@ -304,44 +349,9 @@ namespace SchoolManagementSystem
             myForm.Show();
         }
 
-        private void btnManageRole_Click(object sender, EventArgs e)
+        private void btnClassSchedule_Click(object sender, EventArgs e)
         {
-            var myForm = new UserRole();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnAddUsers_Click(object sender, EventArgs e)
-        {
-            var myForm = new Users();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnSignout_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnSectionCategory_Click(object sender, EventArgs e)
-        {
-            var myForm = new SectionCategory();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
-        }
-
-        private void btnSectioning_Click(object sender, EventArgs e)
-        {
-            var myForm = new Sectioning();
+            var myForm = new Sched();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;

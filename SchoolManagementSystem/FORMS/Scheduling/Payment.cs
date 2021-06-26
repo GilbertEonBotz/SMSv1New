@@ -144,14 +144,14 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                 conn = connect.getcon();
                 conn.Open();
-                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+                cmd = new MySqlCommand("select sum(b.amount) ,a.total +c.downpayment  from percentage c, Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid = '" + billingid + "'", conn);
                 dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
                     number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(txtAmount.Text);
 
-                    if (number > Convert.ToDouble(dr[1].ToString()))
+                    if (number > Convert.ToDouble(dr[1].ToString() +0))
                     {
 
                     

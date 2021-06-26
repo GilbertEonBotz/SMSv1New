@@ -344,6 +344,9 @@ namespace SchoolManagementSystem
                         led.selectSchedID();
                         led.percent();
                         total = totalamoun;
+                        totalaaa = total + downpayment;
+                        
+                        MessageBox.Show(totalaaa.ToString());
                         //
 
 
@@ -404,7 +407,7 @@ namespace SchoolManagementSystem
                             {
                                 studentSchedid = led.selectStudentSchedid,
                                 structureid = structureid,
-                                total = total,
+                                total = totalaaa,
                                 prelim = amt1,
                                 midterm = midterm,
                                 semi = semi,
@@ -566,6 +569,8 @@ namespace SchoolManagementSystem
                             led.selectSchedID();
                             led.percent();
                             total = totalamoun;
+                            totalaaa = total + downpayment;
+                            MessageBox.Show(totalaaa.ToString());
                             //
 
 
@@ -613,7 +618,7 @@ namespace SchoolManagementSystem
                             {
                                 studentSchedid = led.selectStudentSchedid,
                                 structureid = structureid,
-                                total = total,
+                                total = totalaaa,
                                 prelim = amt1,
                                 midterm = midterm,
                                 semi = semi,
@@ -845,12 +850,14 @@ namespace SchoolManagementSystem
             total2 = amount + Convert.ToDouble(lblTotal.Text);
             totaldiscount = amount * discount;
             double totalamoun = total2 - studentdownpayment - downpayment - totaldiscount;
-            MessageBox.Show(totaldiscount.ToString());
+        
             led.selectstudentid = cmbStudentNo.Text;
             led.selectSchedID();
             led.percent();
             total = totalamoun;
             totalaaa = total + downpayment;
+            MessageBox.Show(totalaaa.ToString());
+           
             double extractPrelim = total * Convert.ToDouble(led.prelim);
             double extractMidterm = total * Convert.ToDouble(led.midterm);
             double extractSemi = total * Convert.ToDouble(led.semi);

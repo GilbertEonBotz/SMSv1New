@@ -20,6 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new AddCourse(this, idd);
             FormFade.FadeForm(this, myfrm);
         }

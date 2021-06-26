@@ -40,6 +40,7 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new addCourseCode(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
@@ -67,6 +68,21 @@ namespace SchoolManagementSystem
                 myfrm.txtRemarks.Text = dgvCourseCode.SelectedRows[0].Cells[3].Value.ToString();
                 myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
+            }
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("coursecode")
+              .Join("course", "course.courseId", "coursecode.courseId")
+              .WhereLike("coursecodeId", $"{textboxWatermark1.Text}")
+              .OrWhereLike("coursecode", $"%{textboxWatermark1.Text}%")
+              .Get();
+
+            dgvCourseCode.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description, value.remarks);
             }
         }
     }

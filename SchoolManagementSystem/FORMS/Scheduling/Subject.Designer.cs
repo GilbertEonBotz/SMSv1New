@@ -29,8 +29,8 @@ namespace SchoolManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,8 +39,6 @@ namespace SchoolManagementSystem
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,9 @@ namespace SchoolManagementSystem
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -91,6 +92,7 @@ namespace SchoolManagementSystem
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.textboxWatermark1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnAddSybject);
             this.panel1.Controls.Add(this.tabControl1);
@@ -118,9 +120,10 @@ namespace SchoolManagementSystem
             this.btnAddSybject.IconColor = System.Drawing.Color.DarkOliveGreen;
             this.btnAddSybject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSybject.IconSize = 20;
-            this.btnAddSybject.Location = new System.Drawing.Point(89, 74);
+            this.btnAddSybject.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAddSybject.Location = new System.Drawing.Point(86, 76);
             this.btnAddSybject.Name = "btnAddSybject";
-            this.btnAddSybject.Size = new System.Drawing.Size(95, 27);
+            this.btnAddSybject.Size = new System.Drawing.Size(95, 32);
             this.btnAddSybject.TabIndex = 2;
             this.btnAddSybject.Text = "Add New";
             this.btnAddSybject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -132,6 +135,7 @@ namespace SchoolManagementSystem
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ItemSize = new System.Drawing.Size(80, 30);
             this.tabControl1.Location = new System.Drawing.Point(0, 76);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -141,10 +145,10 @@ namespace SchoolManagementSystem
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvSubjects);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1096, 487);
+            this.tabPage1.Size = new System.Drawing.Size(1096, 479);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Subject List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -157,14 +161,14 @@ namespace SchoolManagementSystem
             this.dgvSubjects.BackgroundColor = System.Drawing.Color.White;
             this.dgvSubjects.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSubjects.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSubjects.ColumnHeadersHeight = 35;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSubjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -176,14 +180,14 @@ namespace SchoolManagementSystem
             this.Column5,
             this.Column6,
             this.edit});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSubjects.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(227)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSubjects.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSubjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSubjects.EnableHeadersVisualStyles = false;
             this.dgvSubjects.GridColor = System.Drawing.Color.White;
@@ -193,31 +197,10 @@ namespace SchoolManagementSystem
             this.dgvSubjects.RowHeadersVisible = false;
             this.dgvSubjects.RowTemplate.Height = 25;
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubjects.Size = new System.Drawing.Size(1090, 481);
+            this.dgvSubjects.Size = new System.Drawing.Size(1090, 473);
             this.dgvSubjects.TabIndex = 1;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             this.dgvSubjects.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubjects_CellMouseDoubleClick);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1104, 40);
-            this.panel3.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(9, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Subject Information Page";
             // 
             // Column13
             // 
@@ -277,6 +260,39 @@ namespace SchoolManagementSystem
             this.edit.Text = "EDIT";
             this.edit.UseColumnTextForLinkValue = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1104, 40);
+            this.panel3.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Subject Information Page";
+            // 
+            // textboxWatermark1
+            // 
+            this.textboxWatermark1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(840, 79);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(258, 29);
+            this.textboxWatermark1.TabIndex = 6;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
+            this.textboxWatermark1.TextChanged += new System.EventHandler(this.textboxWatermark1_TextChanged);
+            // 
             // Subject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +307,7 @@ namespace SchoolManagementSystem
             this.Text = "Unit";
             this.Load += new System.EventHandler(this.Subject_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
@@ -320,5 +337,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
+        private UITools.TextboxWatermark textboxWatermark1;
     }
 }

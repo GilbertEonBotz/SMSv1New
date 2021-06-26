@@ -67,5 +67,18 @@ namespace SchoolManagementSystem
                 }
             }
         }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("categoryfee").WhereLike("categoryID", $"{textboxWatermark1.Text}")
+             .OrWhereLike("category", $"%{textboxWatermark1.Text}%")
+             .Get();
+
+            dgvCategories.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvCategories.Rows.Add(value.categoryID, value.category);
+            }
+        }
     }
 }

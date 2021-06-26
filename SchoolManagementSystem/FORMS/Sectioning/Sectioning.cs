@@ -39,5 +39,19 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             addSectioning add = new addSectioning(dgvDepartment.SelectedRows[0].Cells[0].Value.ToString());
             FormFade.FadeForm(this, add);
         }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            //var values = DBContext.GetContext().Query("subjects").WhereLike("subjectId", $"{textboxWatermark1.Text}")
+            // .OrWhereLike("subjectCode", $"%{textboxWatermark1.Text}%")
+            // .OrWhereLike("subjectTitle", $"%{textboxWatermark1.Text}%")
+            // .Get();
+
+            //dgvSubjects.Rows.Clear();
+            //foreach (var value in values)
+            //{
+            //    dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
+            //}
+        }
     }
 }

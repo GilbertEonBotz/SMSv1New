@@ -22,6 +22,7 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
+            displayData();
             var myfrm = new AddRoom(this, idd);
             FormFade.FadeForm(this,myfrm);
 
@@ -70,6 +71,19 @@ namespace SchoolManagementSystem
                 myfrm.txtName.Text = rooms.name;
                 myfrm.btnAddRoom.Text = "Update";
                 myfrm.ShowDialog();
+            }
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            var values = DBContext.GetContext().Query("rooms").WhereLike("roomId", $"{textboxWatermark1.Text}")
+               .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
+               .Get();
+
+            dgvRooms.Rows.Clear();
+            foreach (var value in values)
+            {
+                dgvRooms.Rows.Add(value.roomId, value.name, value.description);
             }
         }
     }

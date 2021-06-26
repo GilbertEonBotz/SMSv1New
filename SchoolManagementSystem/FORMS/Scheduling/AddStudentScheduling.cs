@@ -31,7 +31,7 @@ namespace SchoolManagementSystem
 
         public void displayDataCmb()
         {
-            var values = DBContext.GetContext().Query("schedule").Get();
+            var values = DBContext.GetContext().Query("schedule").Where("status","available").Get();
 
 
             foreach (var value in values)

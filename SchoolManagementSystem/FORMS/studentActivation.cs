@@ -14,7 +14,9 @@ namespace SchoolManagementSystem.FORMS
     public partial class studentActivation : Form
     {
      public  string studentid;
-       
+
+        double discount;
+     
         public studentActivation()
         {
             InitializeComponent();
@@ -41,14 +43,32 @@ namespace SchoolManagementSystem.FORMS
                     downpayment = textBox1.Text,
                     note = comboBox2.Text,
                     paymentMethod = comboBox1.Text,
-                    status = "Activated"
+                    status = "Activated",
+                    discount = discount,
+                    discountDescription = comboBox3.Text
 
-                });
+                }) ;
                 MessageBox.Show("Success");
             }
 
             else { MessageBox.Show("else"); }
 
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox3.Text == "blood related")
+            {
+                discount = 20;
+            }
+            else if (comboBox3.Text == "loyalty")
+            {
+                discount = 100;
+            }
+            else if (comboBox3.Text == "employee")
+            {
+                discount = 20;
+            }
         }
     }
 }

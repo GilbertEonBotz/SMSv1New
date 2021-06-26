@@ -336,7 +336,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 //{
                 //    txtAmount.Text = lblpaymentfor.Text;
                 //}    
-                double aa = Convert.ToDouble(lblpaymentfor.Text) - Convert.ToDouble(txtAmount.Text);
+                double aa = Convert.ToDouble(txtAmount.Text) -Convert.ToDouble(lblpaymentfor.Text) ;
                 txtchange.Text = aa.ToString();
             }
         }

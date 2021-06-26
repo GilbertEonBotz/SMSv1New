@@ -968,7 +968,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=ReportItems!Textbox9.Value + ReportItems!Textbox19.Value + ReportItems!Textbox12.Value + ReportItems!Textbox21.Value</Value>
+                <Value>=ReportItems!Textbox9.Value + ReportItems!Textbox19.Value + ReportItems!Textbox12.Value + ReportItems!Textbox21.Value + Sum(Fields!dp.Value, "DataSet5")</Value>
                 <Style>
                   <FontFamily>courier New</FontFamily>
                   <FontSize>12pt</FontSize>

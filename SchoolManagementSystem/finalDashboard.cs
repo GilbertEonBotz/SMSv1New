@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EonBotzLibrary;
 
 namespace SchoolManagementSystem
 {
@@ -70,12 +71,25 @@ namespace SchoolManagementSystem
 
         private void finalDashboard_Load(object sender, EventArgs e)
         {
+            Button[] allBtn = { btnManageUser, btnEmployees, btnSchoolSettings, btnAcademicMngmt,btnStudentRecords,btnEnrollment, btnTeacherLoads , btnPayment, iconButton1};
+            if (btnAdmin.Text.Equals("Cashier"))
+            {
+                Validator.hideButton(allBtn);
+
+            }
+            else
+            {
+
+            }
             displayDashboard();
         }
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var myform = new SelectionForm();
+            this.Close();
+            myform.ShowDialog();
+
         }
 
         private void btnManageUser_Click(object sender, EventArgs e)
@@ -126,7 +140,7 @@ namespace SchoolManagementSystem
 
         private void btnPayment_Click_1(object sender, EventArgs e)
         {
-            var myForm = new StudentPaymentShow(this);
+            var myForm = new StudentActivation();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
@@ -357,6 +371,16 @@ namespace SchoolManagementSystem
         private void btnClassSchedule_Click(object sender, EventArgs e)
         {
             var myForm = new Sched();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            var myForm = new StudentPaymentShow(this);
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;

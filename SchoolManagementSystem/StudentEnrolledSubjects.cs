@@ -43,7 +43,10 @@ namespace SchoolManagementSystem
 
             for (int i = 0; i < words.Length; i++)
             {
+
                 allScheds = words[i];
+                MessageBox.Show(allScheds);
+
                 var values = DBContext.GetContext().Query("studentSched")
                   .CrossJoin("schedule")
                   .Join("Billing", "Billing.studentSchedid", "studentSched.studentSchedID")
@@ -65,17 +68,17 @@ namespace SchoolManagementSystem
                 }
             }
 
+
             var tblTotalfee = DBContext.GetContext().Query("totalfee").Where("structureID", strucID).WhereNotNull("total").WhereNotNull("categoryID").Get();
 
             foreach (var tblFees in tblTotalfee)
             {
-                MessageBox.Show(tblFees.categoryID.ToString());
                 getCategoryID = tblFees.categoryID;
                 var assCategoryID = DBContext.GetContext().Query("categoryfee").Where("categoryID", getCategoryID).Get();
 
                 foreach (var getIds in assCategoryID)
                 {
-                    MessageBox.Show(getIds.category);
+                    
                 }
             }
 

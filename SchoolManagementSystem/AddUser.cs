@@ -61,13 +61,12 @@ namespace SchoolManagementSystem
                     }
                     else
                     {
-                        var value = DBContext.GetContext().Query("role").Where("roletype", cmbRole.Text).First();
                         DBContext.GetContext().Query("users").Insert(new
                         {
                             name = txtName.Text.Trim(),
                             username = txtUsername.Text.Trim(),
                             password = txtPassword.Text.Trim(),
-                            userrole = value.roleId,
+                            userrole = cmbRole.Text,
                             macAddress = txtMacAddress.Text.Trim()
                         });
                         reloadDatagrid.displayData();
@@ -94,12 +93,7 @@ namespace SchoolManagementSystem
 
         private void displayRole()
         {
-            var values = DBContext.GetContext().Query("role").Where("status", "activate").Get();
-
-            foreach (var value in values)
-            {
-                cmbRole.Items.Add(value.roletype);
-            }
+            
         }
 
         private void cmbRole_KeyPress(object sender, KeyPressEventArgs e)

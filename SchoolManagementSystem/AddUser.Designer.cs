@@ -37,6 +37,7 @@ namespace SchoolManagementSystem
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtConfirmPassword = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.txtMacAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@ namespace SchoolManagementSystem
             this.lblIDD = new System.Windows.Forms.Label();
             this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.txtConfirmPassword = new SchoolManagementSystem.UITools.TextboxWatermark();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -169,6 +169,19 @@ namespace SchoolManagementSystem
             this.panel6.Size = new System.Drawing.Size(521, 316);
             this.panel6.TabIndex = 28;
             // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.ForeColor = System.Drawing.Color.LightGray;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(123, 237);
+            this.txtConfirmPassword.Multiline = true;
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '●';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(377, 30);
+            this.txtConfirmPassword.TabIndex = 5;
+            this.txtConfirmPassword.Text = "Confirm Password";
+            this.txtConfirmPassword.WatermarkText = "Confirm Password";
+            // 
             // txtMacAddress
             // 
             this.txtMacAddress.BackColor = System.Drawing.SystemColors.Window;
@@ -221,6 +234,9 @@ namespace SchoolManagementSystem
             this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "Admin",
+            "Cashier"});
             this.cmbRole.Location = new System.Drawing.Point(123, 80);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(377, 28);
@@ -357,19 +373,6 @@ namespace SchoolManagementSystem
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.ForeColor = System.Drawing.Color.LightGray;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(123, 237);
-            this.txtConfirmPassword.Multiline = true;
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '●';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(377, 30);
-            this.txtConfirmPassword.TabIndex = 5;
-            this.txtConfirmPassword.Text = "Confirm Password";
-            this.txtConfirmPassword.WatermarkText = "Confirm Password";
             // 
             // AddUser
             // 

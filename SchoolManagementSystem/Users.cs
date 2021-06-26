@@ -34,10 +34,8 @@ namespace SchoolManagementSystem
             dgvUsers.Rows.Clear();
             foreach (var value in values)
             {
-                int id = value.userrole;
-                var role = DBContext.GetContext().Query("role").Where("roleId", id).First();
 
-                dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
+                dgvUsers.Rows.Add(value.id, value.name, value.userrole, value.status);
             }
             foreach (DataGridViewRow row in dgvUsers.Rows)
             {

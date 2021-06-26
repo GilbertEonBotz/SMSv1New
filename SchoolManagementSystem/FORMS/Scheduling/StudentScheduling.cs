@@ -344,6 +344,7 @@ namespace SchoolManagementSystem
                         led.selectSchedID();
                         led.percent();
                         total = totalamoun;
+                        
                         //
 
 
@@ -797,12 +798,12 @@ namespace SchoolManagementSystem
                     date = txtDateOfRegistration.Text,
                     schedID = dgvStudentSched.Rows[i].Cells[1].Value.ToString(),
                     subjectCode = dgvStudentSched.Rows[i].Cells[2].Value.ToString(),
-                    //room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
-                    //mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
-                    //capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
-                    //status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
-                    //lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
-                    //totalUnits = Convert.ToString($"{aa}.0")
+                    room = dgvStudentSched.Rows[i].Cells[3].FormattedValue.ToString(),
+                    mergeTime = dgvStudentSched.Rows[i].Cells[4].FormattedValue.ToString() + " " + dgvStudentSched.Rows[i].Cells[5].FormattedValue.ToString() + "-" + dgvStudentSched.Rows[i].Cells[6].FormattedValue.ToString(),
+                    capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
+                    status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
+                    lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
+                    totalUnits = Convert.ToString($"{aa}.0")
                 });
             }
 

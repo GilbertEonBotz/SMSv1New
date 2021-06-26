@@ -13,10 +13,10 @@ namespace SchoolManagementSystem.FORMS
 {
     public partial class studentActivation : Form
     {
-     public  string studentid;
+        public string studentid;
 
         double discount;
-     
+
         public studentActivation()
         {
             InitializeComponent();
@@ -34,41 +34,43 @@ namespace SchoolManagementSystem.FORMS
 
         private void btnAddAcademicYear_Click(object sender, EventArgs e)
         {
-          
-            if (btnAddAcademicYear.Text == "Activate")
+
+            DBContext.GetContext().Query("studentActivation").Insert(new
             {
-                DBContext.GetContext().Query("studentActivation").Insert(new
-                {
-                    studentID = studentid,
-                    downpayment = textBox1.Text,
-                    note = comboBox2.Text,
-                    paymentMethod = comboBox1.Text,
-                    status = "Activated",
-                    discount = discount,
-                    discountDescription = comboBox3.Text
-
-                }) ;
-                MessageBox.Show("Success");
-            }
-
-            else { MessageBox.Show("else"); }
-
+                studentID = studentid,
+                downpayment = textBox1.Text,
+                note = comboBox2.Text,
+                paymentMethod = comboBox1.Text,
+                status = "Activated",
+                discount = discount,
+                discountDescription = comboBox3.Text
+            });
+            MessageBox.Show("Success");
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.Text == "blood related")
+
+            
+
+
+            if (comboBox3.Text == "Blood Related")
             {
-                discount = 20;
+                discount = 0.20;
             }
-            else if (comboBox3.Text == "loyalty")
+            else if (comboBox3.Text == "Loyalty")
             {
-                discount = 100;
+                discount = 0.100;
             }
-            else if (comboBox3.Text == "employee")
+            else if (comboBox3.Text == "Employee")
             {
-                discount = 20;
+                discount = 0.20;
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

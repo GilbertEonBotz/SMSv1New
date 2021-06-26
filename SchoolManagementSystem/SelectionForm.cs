@@ -83,13 +83,14 @@ namespace SchoolManagementSystem
             }
             return sMacAddress;
         }
+
         private void btnSignin_Click(object sender, EventArgs e)
         {
             //kini mao ning tinuod nga source code
             try
             {
                 var query = DBContext.GetContext().Query("users")
-                    .Join("role", "role.roleId", "users.userrole")
+                    .Where("status","Deactivate")
                     .Where(new
                 {
                     username = txtUsername.Text,
@@ -100,7 +101,7 @@ namespace SchoolManagementSystem
                 {
                     this.Hide();
                     var myfrm = new finalDashboard();
-                    myfrm.btnAdmin.Text = query.roletype;
+                    myfrm.btnAdmin.Text = query.userrole;
                     myfrm.Show();
                 }
                

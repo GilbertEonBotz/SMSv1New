@@ -122,20 +122,7 @@ namespace SchoolManagementSystem
 
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dgvStudents.Columns[e.ColumnIndex].Name;
-
-            if (colName.Equals("view"))
-            {
-                var myfrm = new studentActivation();
-                myfrm.lblName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
-                myfrm.lblCourse.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
-                var aa = DBContext.GetContext().Query("academicyear").Where("status", "Deactivate").First();
-                myfrm.label8.Text = aa.year1 +"-"+aa.year2+ ",  "+aa.term;
-                myfrm.studentid  = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
-                myfrm.ShowDialog();
-
            
-            }
         }
     }
 }

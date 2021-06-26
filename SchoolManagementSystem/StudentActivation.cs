@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EonBotzLibrary;
+using SchoolManagementSystem.FORMS;
 using SqlKata.Execution;
 
 namespace SchoolManagementSystem
@@ -21,20 +22,46 @@ namespace SchoolManagementSystem
 
         private void StudentActivation_Load(object sender, EventArgs e)
         {
-
+            displayData();
         }
 
         public void displayData()
         {
+            //select a.studentid,b.status from  student a left join studentActivation b on a.studentid = b.studentid
+
             var values = DBContext.GetContext().Query("student")
-                .Join("studentActivation", "studentActivation.studentID", "student.studentId")
+                .LeftJoin("studentActivation", "student.studentId", "studentActivation.studentID")
                 .Get();
 
-            foreach(var value in values)
+
+            foreach (var value in values)
             {
-                dgvStudents.Rows.Add(); 
+                dgvStudents.Rows.Add(value.studentId, $"{value.firstname} {value.firstname}", value.gender, value.course, value.status);
             }
 
+            foreach (DataGridViewRow row in dgvStudents.Rows)
+            {
+                if (string.IsNullOrEmpty(Convert.ToString(row.Cells[4].Value)))
+                {
+                    row.Cells[4].Value = "Not verified";
+                }
+            }
+
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvStudents.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("activate"))
+            {
+                var myfrm = new studentActivation();
+                myfrm.txtName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
+                myfrm.txtStatus.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
+                
+                myfrm.studentid = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+                myfrm.ShowDialog();
+            }
         }
     }
 }

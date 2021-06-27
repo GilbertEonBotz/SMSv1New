@@ -107,31 +107,87 @@ namespace SchoolManagementSystem
             var myfrm = new AddStudentScheduling(this);
             FormFade.FadeForm(this, myfrm);
         }
+
+        string splitSched;
+        
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
+
+            dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            //try
+            //{
+                var value = DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).First();
+
+                splitSched = value.schedId;
+                var words = splitSched.Split(' ');
+                
+
+                dgvStudentSched.Rows.Clear();
+                for (int i = 0; i < words.Length; i++)
+                {
+                    string indSubj = words[i];
+                    MessageBox.Show(words[i].ToString());
+                sched.getSchedID = indSubj;
+                sched.studentID = cmbStudentNo.Text;
+                sched.viewSchedStudent();
+
+                foreach (DataRow drow in sched.dtStudentSched.Rows)
+                {
+                    int num = dgvStudentSched.Rows.Add();
+
+                    dgvStudentSched.Rows[num].Cells[0].Value = drow["SchedID"].ToString();
+                    dgvStudentSched.Rows[num].Cells[1].Value = drow["SubjectCode"].ToString();
+                    dgvStudentSched.Rows[num].Cells[2].Value = drow["SubjectTitle"].ToString();
+                    dgvStudentSched.Rows[num].Cells[3].Value = drow["RoomName"].ToString();
+                    dgvStudentSched.Rows[num].Cells[4].Value = drow["Day"].ToString();
+                    dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(drow["Timestart"].ToString());
+                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(drow["Timeend"].ToString());
+                    dgvStudentSched.Rows[num].Cells[7].Value = drow["MaxStudent"].ToString();
+                    dgvStudentSched.Rows[num].Cells[8].Value = drow["Status"].ToString();
+                    dgvStudentSched.Rows[num].Cells[9].Value = drow["lablec"].ToString();
+
+
+                }
+            }
+            //}
+            //catch (Exception)
+            //{
+            //    var values = DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).Get();
+
+            //    foreach (var value in values)
+            //    {
+            //        txtName.Text = $"{value.Firstname} {value.Lastname}";
+            //        txtGender.Text = value.Gender;
+            //        txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            //    }
+            //}
             //0, 229
-            try
-            {
-                if (string.IsNullOrWhiteSpace(cmbStudentNo.Text))
-                {
-                    Validator.AlertDanger("Please enter student number");
-                }
-                else
-                {
-                    var value = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).First();
 
-                    txtName.Text = $"{value.firstname} {value.lastname}";
-                    txtGender.Text = value.gender;
-                    txtCourse.Text = value.course;
-                    txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-                    panel1.Enabled = true;
-                }
-            }
 
-            catch (Exception)
-            {
-                Validator.AlertDanger("Student number doesn't exist");
-            }
+
+            //try
+            //{
+            //    if (string.IsNullOrWhiteSpace(cmbStudentNo.Text))
+            //    {
+            //        Validator.AlertDanger("Please enter student number");
+            //    }
+            //    else
+            //    {
+            //        var value = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).First();
+
+            //        txtName.Text = $"{value.firstname} {value.lastname}";
+            //        txtGender.Text = value.gender;
+            //        txtCourse.Text = value.course;
+            //        txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            //        panel1.Enabled = true;
+            //    }
+            //}
+
+            //catch (Exception)
+            //{
+            //    Validator.AlertDanger("Student number doesn't exist");
+            //}
 
 
 
@@ -208,6 +264,7 @@ namespace SchoolManagementSystem
         ReportDataSource rsTuition = new ReportDataSource();
         ReportDataSource rsExams = new ReportDataSource();
         ReportDataSource rsPayment = new ReportDataSource();
+        ReportDataSource rsDiscount = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
             conn = connect.getcon();
@@ -222,8 +279,6 @@ namespace SchoolManagementSystem
                     billingIDS = dr[0].ToString();
 
                 }
-                MessageBox.Show("aa");
-
                 conn = connect.getcon();
                 conn.Open();
                 cmd = new MySqlCommand("SELECT downpayment FROM smsdb.studentActivation where status = 'Activated' and studentid = '" + cmbStudentNo.Text + "'", conn);
@@ -335,8 +390,8 @@ namespace SchoolManagementSystem
                         downpayment = Convert.ToDouble(downpayments.downpayment);
                         total2 = amount + Convert.ToDouble(lblTotal.Text);
                         totaldiscount = amount * discount;
-                        double totalamoun = total2 - studentdownpayment - downpayment - totaldiscount;
-                        MessageBox.Show(totaldiscount.ToString());
+                        double totalamoun = total2 - downpayment - totaldiscount;
+                        //MessageBox.Show(totaldiscount.ToString());
                         //
 
 
@@ -388,7 +443,7 @@ namespace SchoolManagementSystem
                         //localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
                         //localReport.Print();
 
-                        MessageBox.Show(billingIDS);
+                        //MessageBox.Show(billingIDS);
                         conn = connect.getcon();
                         conn.Open();
                         cmd = new MySqlCommand("select billingID from Billing where studentSchedid ='" + billingIDS + "'", conn);
@@ -413,8 +468,8 @@ namespace SchoolManagementSystem
                                 date = DateTime.Now,
                                 academicID = academicid
                             });
-                            MessageBox.Show("success update bllling");
-                            MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
+                            //MessageBox.Show("success update bllling");
+                            //MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
                             reload.displayStudentScheduling();
 
                         }
@@ -560,8 +615,8 @@ namespace SchoolManagementSystem
                             downpayment = Convert.ToDouble(downpayments.downpayment);
                             total2 = amount + Convert.ToDouble(lblTotal.Text);
                             totaldiscount = amount * discount;
-                            double totalamoun = total2 - studentdownpayment - downpayment - totaldiscount;
-                            MessageBox.Show(totaldiscount.ToString());
+                            double totalamoun = total2 - downpayment - totaldiscount;
+                            //MessageBox.Show(totaldiscount.ToString());
 
                             led.selectstudentid = cmbStudentNo.Text;
                             led.selectSchedID();
@@ -622,8 +677,8 @@ namespace SchoolManagementSystem
                                 date = DateTime.Now,
                                 academicID = academicid
                             });
-                            MessageBox.Show("success bllling");
-                            MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
+                            //MessageBox.Show("success bllling");
+                            //MessageBox.Show("downpayment paid is" + paidDownpayment.ToString());
                             reload.displayStudentScheduling();
                         }
                         catch (Exception)
@@ -837,6 +892,8 @@ namespace SchoolManagementSystem
             double total = amount + Convert.ToDouble(lblTotal.Text);
 
 
+
+
             DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
 
             var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
@@ -845,8 +902,19 @@ namespace SchoolManagementSystem
             downpayment = Convert.ToDouble(downpayments.downpayment);
             total2 = amount + Convert.ToDouble(lblTotal.Text);
             totaldiscount = amount * discount;
-            double totalamoun = total2 - studentdownpayment - downpayment - totaldiscount;
+            double totalamoun = total2 - downpayment - totaldiscount;
+
             MessageBox.Show(totaldiscount.ToString());
+            MessageBox.Show(discount.ToString());
+
+            List<discountedPrice> disc = new List<discountedPrice>();
+            disc.Clear();
+            disc.Add(new discountedPrice
+            {
+                discounted = totaldiscount,
+                discPercent = discount * 100,
+            });
+
             led.selectstudentid = cmbStudentNo.Text;
             led.selectSchedID();
             led.percent();
@@ -909,6 +977,8 @@ namespace SchoolManagementSystem
             rsExams.Value = exams;
             rsPayment.Name = "DataSet5";
             rsPayment.Value = pds;
+            rsDiscount.Name = "DataSet6";
+            rsDiscount.Value = disc;
 
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
@@ -916,6 +986,7 @@ namespace SchoolManagementSystem
             frm.reportViewer1.LocalReport.DataSources.Add(rsTuition);
             frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
             frm.reportViewer1.LocalReport.DataSources.Add(rsPayment);
+            frm.reportViewer1.LocalReport.DataSources.Add(rsDiscount);
             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
             frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             frm.reportViewer1.ZoomMode = ZoomMode.Percent;
@@ -1033,5 +1104,10 @@ namespace SchoolManagementSystem
         public double ap { get; set; }
         public string mp { get; set; }
         public string rmk { get; set; }
+    }
+    public class discountedPrice
+    {
+        public double discounted { get; set; }
+        public double discPercent { get; set; }
     }
 }

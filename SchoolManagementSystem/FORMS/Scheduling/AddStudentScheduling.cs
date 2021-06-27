@@ -31,12 +31,23 @@ namespace SchoolManagementSystem
 
         public void displayDataCmb()
         {
-            var values = DBContext.GetContext().Query("schedule").Where("status","available").Get();
+            dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            sched.displayFilter();
 
-
-            foreach (var value in values)
+            foreach (DataRow Drow in sched.dtFilter.Rows)
             {
-                dgvSched.Rows.Add(value.schedID, value.subjectCode, value.subjectTitle, value.roomID, value.date, value.timeStart, value.timeEnd);
+                int num = dgvSched.Rows.Add();
+                dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                dgvSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
+                dgvSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
+                dgvSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
             }
         }
 
@@ -63,31 +74,7 @@ namespace SchoolManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var value = DBContext.GetContext().Query("tuitioncategory").Where("category", comboBox1.Text).First();
-            //string getid = value.tuitionCatID.ToString();
-
-            //dgvSched.Rows.Clear();
-
-            //sched.category = getid;
-
-            //dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
-            //dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-            //sched.display();
-
-            //foreach (DataRow Drow in sched.dt.Rows)
-            //{
-            //    int num = dgvSched.Rows.Add();
-            //    dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
-            //    dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
-            //    dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
-            //    dgvSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
-            //    dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
-            //    dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
-            //    dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
-            //    dgvSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
-            //    dgvSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
-            //    dgvSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
-            //}
+            
         }
 
         private void dgvSched_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -102,10 +89,16 @@ namespace SchoolManagementSystem
             }
             addDatagrid.dgvStudentSched.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value.ToString(), dgvSched.SelectedRows[0].Cells[1].Value.ToString(),
             dgvSched.SelectedRows[0].Cells[2].Value.ToString(), dgvSched.SelectedRows[0].Cells[3].Value.ToString(), dgvSched.SelectedRows[0].Cells[4].Value,
-            dgvSched.SelectedRows[0].Cells[5].FormattedValue.ToString(), dgvSched.SelectedRows[0].Cells[6].FormattedValue.ToString());
+            dgvSched.SelectedRows[0].Cells[5].FormattedValue.ToString(), dgvSched.SelectedRows[0].Cells[6].FormattedValue.ToString(), dgvSched.SelectedRows[0].Cells[7].Value.ToString()
+            , dgvSched.SelectedRows[0].Cells[8].Value.ToString(), dgvSched.SelectedRows[0].Cells[9].Value.ToString());
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

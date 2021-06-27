@@ -167,55 +167,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
 
-                        disp.insertpayment();
+                      //  disp.insertpayment();
 
                     }
-                    else
-                    {
-
-                        if (checkBox1.Checked)
-                        {
-                            disp.billingid = billingid;
-
-                            double total = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(lblpaymentfor.Text);
-
-                            disp.amount = lblpaymentfor.Text.ToString();
-                            disp.remarks = txtRemarks.Text;
-                            disp.status = "paid";
-                            disp.paymentMethod = cmbpaymentMethod.Text;
-
-                            disp.insertpayment();
-                            MessageBox.Show("2");
-
-                        }
-                        else
-                        {
-                            if (comboBox2.Text == "FINAL" && Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
-                            {
-                                disp.billingid = billingid;
-                                disp.amount = lblpaymentfor.Text;
-                                disp.remarks = txtRemarks.Text;
-                                disp.status = "paid";
-                                disp.paymentMethod = cmbpaymentMethod.Text;
-
-                                disp.insertpayment();
-                                MessageBox.Show("3");
-                            }
-                            else
-                            {
-                                disp.billingid = billingid;
-
-                                disp.amount = txtAmount.Text;
-                                disp.remarks = txtRemarks.Text;
-                                disp.status = "paid";
-                                disp.paymentMethod = cmbpaymentMethod.Text;
-
-                                disp.insertpayment();
-                                MessageBox.Show("4");
-                            }
-
-                        }
-                    }
+                  
                 }
             }
         }

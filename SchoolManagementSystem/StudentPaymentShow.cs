@@ -170,7 +170,7 @@ namespace SchoolManagementSystem
             }
 
             myForm.lbltotal.Text = spd.totalpaid.ToString();
-            double current = Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);
+            double current = Convert.ToDouble(spd.studentdownpayment) + Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);
             myForm.txtcurrentBal.Text = current.ToString();
 
             try

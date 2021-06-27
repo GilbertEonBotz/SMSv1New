@@ -344,7 +344,7 @@ namespace SchoolManagementSystem
                         led.selectSchedID();
                         led.percent();
                         total = totalamoun;
-                        
+                        totalaaa = total + downpayment;
                         //
 
 
@@ -405,7 +405,7 @@ namespace SchoolManagementSystem
                             {
                                 studentSchedid = led.selectStudentSchedid,
                                 structureid = structureid,
-                                total = total,
+                                total = totalaaa,
                                 prelim = amt1,
                                 midterm = midterm,
                                 semi = semi,
@@ -568,7 +568,7 @@ namespace SchoolManagementSystem
                             led.percent();
                             total = totalamoun;
                             //
-
+                            totalaaa = total + downpayment;
 
                             double extractPrelim = totalamoun * Convert.ToDouble(led.prelim);
                             double extractMidterm = totalamoun * Convert.ToDouble(led.midterm);
@@ -614,7 +614,7 @@ namespace SchoolManagementSystem
                             {
                                 studentSchedid = led.selectStudentSchedid,
                                 structureid = structureid,
-                                total = total,
+                                total = totalaaa,
                                 prelim = amt1,
                                 midterm = midterm,
                                 semi = semi,
@@ -730,7 +730,7 @@ namespace SchoolManagementSystem
 
             conn = connect.getcon();
             conn.Open();
-            cmd = new MySqlCommand("select b.downpayment from student a, studentActivation b where a.studentId = '" + cmbStudentNo.Text + "' and b.status ='Activated' ", conn);
+            cmd = new MySqlCommand("select b.downpayment from student a, studentActivation b where b.studentId = '" + cmbStudentNo.Text + "' and b.status ='Activated' ", conn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {

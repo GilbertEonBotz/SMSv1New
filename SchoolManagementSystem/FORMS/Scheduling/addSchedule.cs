@@ -23,14 +23,11 @@ namespace SchoolManagementSystem
         schedule scheds = new schedule();
         int courseIdd;
         Sched reloadDatagrid;
-        string idd;
-        public addSchedule(Sched reloadDatagrid, string idd)
+        public addSchedule(Sched reloadDatagrid)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-            this.idd = idd;
         }
-
         private void label8_Click(object sender, EventArgs e)
         {
 

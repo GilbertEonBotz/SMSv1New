@@ -71,11 +71,10 @@ namespace SchoolManagementSystem
         }
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
-            addSchedule s = new addSchedule(this, idd);
+            addSchedule s = new addSchedule(this);
             FormFade.FadeForm(this, s);
         }
 
-        string idd;
         private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //string colName = dgvSched.Columns[e.ColumnIndex].Name;

@@ -19,7 +19,7 @@ namespace SchoolManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PracticeForm());
+            Application.Run(new finalDashboard());
         }
     }
 }

@@ -31,7 +31,6 @@ namespace SchoolManagementSystem
         {
             this.Close();
         }
-
         private void addSectioning_Load(object sender, EventArgs e)
         {
             var values = DBContext.GetContext().Query("schedule").Get();

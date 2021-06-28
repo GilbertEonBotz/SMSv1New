@@ -33,6 +33,8 @@ namespace SchoolManagementSystem
         {
             dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+
+
             sched.displayFilter();
 
             foreach (DataRow Drow in sched.dtFilter.Rows)

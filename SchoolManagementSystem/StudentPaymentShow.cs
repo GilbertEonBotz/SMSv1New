@@ -170,7 +170,7 @@ namespace SchoolManagementSystem
             }
 
             myForm.lbltotal.Text = spd.totalpaid.ToString();
-            double current = Convert.ToDouble(spd.studentdownpayment) + Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);
+            double current = Convert.ToDouble(myForm.textBox15.Text) - Convert.ToDouble(spd.totalpaid);
             myForm.txtcurrentBal.Text = current.ToString();
 
             try
@@ -204,7 +204,10 @@ namespace SchoolManagementSystem
                                     myForm.lblmid.Text = myForm.txt2.Text;
                                     myForm.lblsemi.Text = myForm.txt3.Text;
                                     myForm.lblfin.Text = myForm.txt4.Text;
-                                    myForm.comboBox2.Items.Remove("FINALE");
+                                    myForm.comboBox2.Items.Remove("FINAL");
+                                    myForm.comboBox2.Enabled = false;
+                                    myForm.lblpaymentfor.Text = null;
+                                    myForm.txtAmount.Enabled = false;
                                 }
                                 else
                                 {

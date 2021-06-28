@@ -28,6 +28,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         double amountsemi = 0;
         double amountfinal = 0;
         double amountDown = 0;
+        double number;
         public Payment(finalDashboard display)
         {
             InitializeComponent();
@@ -80,7 +81,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         {
 
             dgv.Rows.Clear();
+            lblpaymentfor.Text = "";
+            txtAmount.Text = "";
+            txtchange.Text = "00.00";
 
+            comboBox2.Text.Trim();
 
             disp.studentID = studentid.Text;
 
@@ -107,24 +112,18 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-
-            if (txtchange.Text == "00.00")
+            if (string.IsNullOrEmpty(txtAmount.Text))
             {
-                checkBox1.Checked = false;
+                MessageBox.Show("please input some amount");
             }
-
-
-            if (lblpaymentfor.Text == "" || lblpaymentfor.Text == null)
-            {
-                MessageBox.Show("please select payment for");
-            }
-
             else
             {
                 insert();
-                lblpaymentfor.Text = "";
+
+
                 printShow();
                 showw();
+
             }
 
        
@@ -134,46 +133,109 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         public void insert()
         {
-            if (txtAmount.Text == "" || lblpaymentfor.Text =="")
-            {
-                MessageBox.Show("please input an amount");
-            }
-            else
-            {
-                double number = 0;
 
-                conn = connect.getcon();
-                conn.Open();
-                cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
-                dr = cmd.ExecuteReader();
 
-                while (dr.Read())
+            disp.billingid = billingid;
+            disp.studentID = studentid.Text;
+            disp.viewPayment();
+            disp.studentDOwn();
+
+
+
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(disp.studentdownpayment) + Convert.ToDouble(txtAmount.Text);
+                if (number > Convert.ToDouble(dr[1].ToString()))
                 {
-                    number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(txtAmount.Text);
 
-                    if (number > Convert.ToDouble(dr[1].ToString()))
+
+
+                    double total = Convert.ToDouble(disp.total) - Convert.ToDouble(dr[0].ToString() + 0) - Convert.ToDouble(disp.studentdownpayment);
+                    MessageBox.Show(total.ToString());
+                    disp.amount = total.ToString();
+                    disp.remarks = txtRemarks.Text;
+                    disp.status = "paid";
+                    disp.paymentMethod = cmbpaymentMethod.Text;
+
+                    disp.insertpayment();
+                    MessageBox.Show("SUCCESS");
+                    comboBox2.Enabled = false;
+
+                }
+                else if (checkBox1.Checked)
+                {
+                    if (checkBox1.Checked && txtchange.Text == "00.00")
                     {
-
-                    
-                      
-                        disp.studentID = studentid.Text;
-                        disp.viewPayment();
-                        disp.billingid = billingid;
-
-                        double total = Convert.ToDouble(disp.total)- Convert.ToDouble(dr[0].ToString()+0);
-                        MessageBox.Show(total.ToString());
-                        disp.amount = total.ToString();
+                        disp.amount = txtAmount.Text.ToString();
                         disp.remarks = txtRemarks.Text;
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
+                        disp.insertpayment();
+                        MessageBox.Show("SUCCESS");
+                    }
+                    else
+                    {
 
-                      //  disp.insertpayment();
+                        if (txtchange.Text == "00.00")
+                        {
+                            disp.amount = txtAmount.Text.ToString();
+                            disp.remarks = txtRemarks.Text;
+                            disp.status = "paid";
+                            disp.paymentMethod = cmbpaymentMethod.Text;
+                            disp.insertpayment();
+                            MessageBox.Show("SUCCESS");
+                        }
+                        else
+                        {
+                            disp.amount = lblpaymentfor.Text.ToString();
+                            disp.remarks = txtRemarks.Text;
+                            disp.status = "paid";
+                            disp.paymentMethod = cmbpaymentMethod.Text;
+                            disp.insertpayment();
+                            MessageBox.Show("SUCCESS");
+                        }
+                    }
+                }
+                else
+                {
+                    if (comboBox2.Text == "FINAL" && Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
+                    {
+                        disp.billingid = billingid;
+                        disp.amount = lblpaymentfor.Text;
+                        disp.remarks = txtRemarks.Text;
+                        disp.status = "paid";
+                        disp.paymentMethod = cmbpaymentMethod.Text;
+                        disp.insertpayment();
+                        MessageBox.Show("SUCCESS");
+                        comboBox2.Enabled = false;
+                    }
+                    else
+                    {
+                        disp.billingid = billingid;
+                        disp.amount = txtAmount.Text;
+                        disp.remarks = txtRemarks.Text;
+                        disp.status = "paid";
+                        disp.paymentMethod = cmbpaymentMethod.Text;
+                        disp.insertpayment();
+                        MessageBox.Show("SUCCESS");
 
                     }
-                  
                 }
+          
+           
+
             }
-        }
+
+
+
+
+                }
 
         
         public void showw()
@@ -184,8 +246,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             disp.viewPayment();
             disp.viewPaymentDetailed();
             disp.studentDOwn();
+
+
             double finalss = Convert.ToDouble(disp.totalpaid) + 0;
-            double current = Convert.ToDouble(textBox15.Text) - Convert.ToDouble(disp.totalpaid);
+            double current =  Convert.ToDouble(textBox15.Text) - Convert.ToDouble(disp.totalpaid);
             lbltotal.Text = disp.totalpaid.ToString();
             txtcurrentBal.Text = current.ToString();
             try
@@ -219,6 +283,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = txt4.Text;
                                     comboBox2.Items.Remove("FINAL");
+                                   
                                 }
                                 else
                                 {
@@ -227,6 +292,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblmid.Text = txt2.Text;
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = amount.ToString();
+                           
                                 }
                             }
                             else
@@ -276,7 +342,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
 
-            if (txtAmount.Text == "")
+            if (string.IsNullOrEmpty(txtAmount.Text))
             {
                 txtchange.Text = "00.00";
             }
@@ -413,6 +479,16 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             comboBox2.Items.Add("FINAL");
             printShow();
             showw();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            insert();
+
+            printShow();
+            showw();
+
         }
     }
 }

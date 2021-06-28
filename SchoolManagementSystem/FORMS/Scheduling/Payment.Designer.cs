@@ -101,6 +101,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.label24 = new System.Windows.Forms.Label();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -553,7 +554,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(284, 48);
             this.txtAmount.TabIndex = 51;
-            this.txtAmount.Text = "0.00";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
             this.txtAmount.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
@@ -934,12 +934,23 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(844, 604);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 57;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1108, 650);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panel5);
@@ -1014,7 +1025,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         public System.Windows.Forms.Label lblsemi;
         public System.Windows.Forms.Label lblfin;
         public System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox cmbpaymentMethod;
         private System.Windows.Forms.TextBox txtRemarks;
         public System.Windows.Forms.Label label11;
@@ -1051,5 +1061,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox txtAmount;
     }
 }

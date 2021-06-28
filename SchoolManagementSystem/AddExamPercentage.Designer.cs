@@ -67,17 +67,17 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 54);
+            this.panel1.Size = new System.Drawing.Size(476, 54);
             this.panel1.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 16);
+            this.label1.Location = new System.Drawing.Point(119, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 24);
+            this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "School Management System";
             // 
@@ -90,7 +90,7 @@ namespace SchoolManagementSystem
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(475, 13);
+            this.btnExit.Location = new System.Drawing.Point(436, 14);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -120,152 +120,157 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(7, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(509, 319);
+            this.panel6.Size = new System.Drawing.Size(509, 306);
             this.panel6.TabIndex = 16;
             // 
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTotal.Location = new System.Drawing.Point(156, 265);
-            this.txtTotal.Multiline = true;
+            this.txtTotal.Location = new System.Drawing.Point(134, 262);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(311, 30);
+            this.txtTotal.Size = new System.Drawing.Size(311, 29);
             this.txtTotal.TabIndex = 6;
             this.txtTotal.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(10, 274);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
+            this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 37;
             this.label7.Text = "TOTAL %";
             // 
             // txtDownpayment
             // 
             this.txtDownpayment.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDownpayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtDownpayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownpayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDownpayment.Location = new System.Drawing.Point(156, 71);
-            this.txtDownpayment.Multiline = true;
+            this.txtDownpayment.Location = new System.Drawing.Point(134, 68);
             this.txtDownpayment.Name = "txtDownpayment";
-            this.txtDownpayment.Size = new System.Drawing.Size(311, 30);
+            this.txtDownpayment.Size = new System.Drawing.Size(311, 29);
             this.txtDownpayment.TabIndex = 1;
+            this.txtDownpayment.Text = "0";
+            this.txtDownpayment.Enter += new System.EventHandler(this.txtDownpayment_Enter);
+            this.txtDownpayment.Leave += new System.EventHandler(this.txtDownpayment_Leave);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(10, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 35;
-            this.label5.Text = "DOWNPAYMENT";
+            this.label5.Text = "REGISTRATION FEE";
             // 
             // txtFinal
             // 
             this.txtFinal.BackColor = System.Drawing.SystemColors.Window;
-            this.txtFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtFinal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFinal.Location = new System.Drawing.Point(156, 225);
-            this.txtFinal.Multiline = true;
+            this.txtFinal.Location = new System.Drawing.Point(134, 222);
+            this.txtFinal.MaxLength = 2;
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(311, 30);
+            this.txtFinal.Size = new System.Drawing.Size(311, 29);
             this.txtFinal.TabIndex = 5;
             this.txtFinal.Text = "0";
             this.txtFinal.TextChanged += new System.EventHandler(this.txtFinal_TextChanged);
+            this.txtFinal.Enter += new System.EventHandler(this.txtFinal_Enter);
             this.txtFinal.Leave += new System.EventHandler(this.txtFinal_Leave);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(10, 234);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 33;
             this.label4.Text = "FINAL %";
             // 
             // txtSemi
             // 
             this.txtSemi.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSemi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSemi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSemi.Location = new System.Drawing.Point(156, 187);
-            this.txtSemi.Multiline = true;
+            this.txtSemi.Location = new System.Drawing.Point(134, 184);
+            this.txtSemi.MaxLength = 2;
             this.txtSemi.Name = "txtSemi";
-            this.txtSemi.Size = new System.Drawing.Size(311, 30);
+            this.txtSemi.Size = new System.Drawing.Size(311, 29);
             this.txtSemi.TabIndex = 4;
             this.txtSemi.Text = "0";
             this.txtSemi.TextChanged += new System.EventHandler(this.txtSemi_TextChanged);
+            this.txtSemi.Enter += new System.EventHandler(this.txtSemi_Enter);
             this.txtSemi.Leave += new System.EventHandler(this.txtSemi_Leave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(10, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 20);
+            this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 31;
             this.label3.Text = "SEMI-FINAL %";
             // 
             // txtPrelim
             // 
             this.txtPrelim.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPrelim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPrelim.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrelim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrelim.Location = new System.Drawing.Point(156, 109);
-            this.txtPrelim.Multiline = true;
+            this.txtPrelim.Location = new System.Drawing.Point(134, 106);
+            this.txtPrelim.MaxLength = 2;
             this.txtPrelim.Name = "txtPrelim";
-            this.txtPrelim.Size = new System.Drawing.Size(311, 30);
+            this.txtPrelim.Size = new System.Drawing.Size(311, 29);
             this.txtPrelim.TabIndex = 2;
             this.txtPrelim.Text = "0";
             this.txtPrelim.TextChanged += new System.EventHandler(this.txtPrelim_TextChanged);
+            this.txtPrelim.Enter += new System.EventHandler(this.txtPrelim_Enter);
             this.txtPrelim.Leave += new System.EventHandler(this.txtPrelim_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(10, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 29;
             this.label2.Text = "PRELIM %";
             // 
             // txtMidterm
             // 
             this.txtMidterm.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMidterm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtMidterm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMidterm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMidterm.Location = new System.Drawing.Point(156, 148);
-            this.txtMidterm.Multiline = true;
+            this.txtMidterm.Location = new System.Drawing.Point(134, 145);
+            this.txtMidterm.MaxLength = 2;
             this.txtMidterm.Name = "txtMidterm";
-            this.txtMidterm.Size = new System.Drawing.Size(311, 30);
+            this.txtMidterm.Size = new System.Drawing.Size(311, 29);
             this.txtMidterm.TabIndex = 3;
             this.txtMidterm.Text = "0";
             this.txtMidterm.TextChanged += new System.EventHandler(this.txtMidterm_TextChanged);
+            this.txtMidterm.Enter += new System.EventHandler(this.txtMidterm_Enter);
             this.txtMidterm.Leave += new System.EventHandler(this.txtMidterm_Leave);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(10, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 20);
+            this.label6.Size = new System.Drawing.Size(80, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "MIDTERM %";
             // 
@@ -309,7 +314,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
@@ -331,13 +336,13 @@ namespace SchoolManagementSystem
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSave.IconColor = System.Drawing.Color.White;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 30;
-            this.btnSave.Location = new System.Drawing.Point(249, 379);
+            this.btnSave.Location = new System.Drawing.Point(232, 365);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 32);
             this.btnSave.TabIndex = 7;
@@ -350,13 +355,13 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(362, 379);
+            this.iconButton1.Location = new System.Drawing.Point(345, 365);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
             this.iconButton1.TabIndex = 8;
@@ -368,18 +373,18 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 421);
+            this.panel4.Location = new System.Drawing.Point(6, 404);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(507, 6);
+            this.panel4.Size = new System.Drawing.Size(464, 6);
             this.panel4.TabIndex = 32;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(513, 54);
+            this.panel3.Location = new System.Drawing.Point(470, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 373);
+            this.panel3.Size = new System.Drawing.Size(6, 356);
             this.panel3.TabIndex = 31;
             // 
             // panel2
@@ -388,14 +393,15 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 373);
+            this.panel2.Size = new System.Drawing.Size(6, 356);
             this.panel2.TabIndex = 30;
             // 
             // AddExamPercentage
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 427);
+            this.ClientSize = new System.Drawing.Size(476, 410);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -405,11 +411,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(550, 180);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddExamPercentage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddExamPercentage";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddExamPercentage_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

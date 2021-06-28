@@ -93,7 +93,6 @@ namespace SchoolManagementSystem
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
-            this.btnExit.TabStop = false;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -376,6 +375,7 @@ namespace SchoolManagementSystem
             // 
             // AddUser
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 428);
@@ -391,8 +391,9 @@ namespace SchoolManagementSystem
             this.Name = "AddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddUser";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddUser_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddUser_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddUser_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

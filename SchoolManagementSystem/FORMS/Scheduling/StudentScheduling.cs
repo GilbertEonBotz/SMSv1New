@@ -115,8 +115,8 @@ namespace SchoolManagementSystem
 
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-            //try
-            //{
+            try
+            {
                 var value = DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).First();
 
                 splitSched = value.schedId;
@@ -124,7 +124,7 @@ namespace SchoolManagementSystem
                 
 
                 dgvStudentSched.Rows.Clear();
-                for (int i = 0; i < words.Length; i++)
+                for (int i = 0; i < words.Length -1; i++)
                 {
                     string indSubj = words[i];
                     MessageBox.Show(words[i].ToString());
@@ -146,22 +146,25 @@ namespace SchoolManagementSystem
                     dgvStudentSched.Rows[num].Cells[7].Value = drow["MaxStudent"].ToString();
                     dgvStudentSched.Rows[num].Cells[8].Value = drow["Status"].ToString();
                     dgvStudentSched.Rows[num].Cells[9].Value = drow["lablec"].ToString();
-
+                    txtName.Text = drow["Name"].ToString();
+                    txtGender.Text = drow["Gender"].ToString();
+                    txtCourse.Text = drow["Course"].ToString();
 
                 }
             }
-            //}
-            //catch (Exception)
-            //{
-            //    var values = DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).Get();
+            }
+            catch (Exception)
+            {
+                var values = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).Get();
 
-            //    foreach (var value in values)
-            //    {
-            //        txtName.Text = $"{value.Firstname} {value.Lastname}";
-            //        txtGender.Text = value.Gender;
-            //        txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-            //    }
-            //}
+                foreach (var value in values)
+                {
+                    txtName.Text = $"{value.firstname} {value.lastname}";
+                    txtGender.Text = value.gender;
+                    txtCourse.Text = value.course;
+                    txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                }
+            }
             //0, 229
 
 
@@ -321,7 +324,7 @@ namespace SchoolManagementSystem
                     };
                         foreach (string aa in wew)
                         {
-                            storeID += (" " + aa);
+                            storeID += (aa + " ");
                         }
                     }
                     if (storeID == "")
@@ -335,6 +338,7 @@ namespace SchoolManagementSystem
                             schedId = storeID,
 
                         });
+                        storeID = "";
                     }
 
                     List<feeBillings> bills = new List<feeBillings>();
@@ -545,7 +549,7 @@ namespace SchoolManagementSystem
                     };
                             foreach (string aa in wew)
                             {
-                                storeID += (" " + aa);
+                                storeID += (aa + " ");
                             }
                         }
                         if (storeID == "")
@@ -559,6 +563,7 @@ namespace SchoolManagementSystem
                                 schedId = storeID,
                                 academicID = academicid
                             });
+                            storeID = "";
                         }
 
                         List<feeBillings> bills = new List<feeBillings>();

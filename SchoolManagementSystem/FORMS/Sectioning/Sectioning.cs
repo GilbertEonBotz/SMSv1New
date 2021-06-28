@@ -22,7 +22,8 @@ namespace SchoolManagementSystem.FORMS.Sectioning
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
-          
+            //var myfrm = new addSectionCategory();
+            //FormFade.FadeForm(this, myfrm);
         }
 
         private void Sectioning_Load(object sender, EventArgs e)

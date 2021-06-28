@@ -541,6 +541,7 @@ namespace SchoolManagementSystem
             // 
             // AddSubject
             // 
+            this.AcceptButton = this.btnAddSubjects;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 678);
@@ -552,12 +553,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(530, 50);
             this.Name = "AddSubject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddSubject";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddSubject_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddSubject_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

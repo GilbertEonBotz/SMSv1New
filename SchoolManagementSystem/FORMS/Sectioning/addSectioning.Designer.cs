@@ -403,12 +403,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(350, 120);
             this.Name = "addSectioning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addSectioning";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.addSectioning_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addSectioning_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

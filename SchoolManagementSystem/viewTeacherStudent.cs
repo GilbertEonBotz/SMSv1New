@@ -88,6 +88,14 @@ namespace SchoolManagementSystem
             frm.reportViewer1.ZoomPercent = 100;
             frm.ShowDialog();
         }
+
+        private void viewTeacherStudent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
+        }
     }
 
     public class StudentDetails

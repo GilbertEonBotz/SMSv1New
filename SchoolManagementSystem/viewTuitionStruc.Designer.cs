@@ -433,7 +433,6 @@ namespace SchoolManagementSystem
             this.Name = "viewTuitionStruc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "viewTuitionStruc";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.viewTuitionStruc_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();

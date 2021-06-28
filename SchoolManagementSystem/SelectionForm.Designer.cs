@@ -93,10 +93,10 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.label1.Location = new System.Drawing.Point(359, 235);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(682, 36);
+            this.label1.Size = new System.Drawing.Size(695, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "DR. P. OCAMPO COLLEGE ADMISSIONS PORTAL";
             // 
@@ -113,10 +113,10 @@ namespace SchoolManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(0, 249);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 25);
+            this.label2.Size = new System.Drawing.Size(280, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "COLLEGE DEPARTMENT";
             // 
@@ -134,21 +134,21 @@ namespace SchoolManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(34, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(272, 24);
+            this.label4.Size = new System.Drawing.Size(282, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "NOT AVAILABLE FOR NOW";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(0, 249);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 25);
+            this.label3.Size = new System.Drawing.Size(217, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "BASIC EDUCATION";
             // 
@@ -227,11 +227,11 @@ namespace SchoolManagementSystem
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(397, 238);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 21);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 42;
             this.label5.Text = "Password";
             // 
@@ -278,11 +278,11 @@ namespace SchoolManagementSystem
             // 
             this.username_label.AutoSize = true;
             this.username_label.BackColor = System.Drawing.Color.Transparent;
-            this.username_label.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.username_label.ForeColor = System.Drawing.Color.DimGray;
             this.username_label.Location = new System.Drawing.Point(394, 112);
             this.username_label.Name = "username_label";
-            this.username_label.Size = new System.Drawing.Size(88, 21);
+            this.username_label.Size = new System.Drawing.Size(83, 20);
             this.username_label.TabIndex = 37;
             this.username_label.Text = "Username";
             // 
@@ -313,7 +313,7 @@ namespace SchoolManagementSystem
             this.btnSignin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(7)))), ((int)(((byte)(66)))));
             this.btnSignin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(66)))));
             this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignin.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSignin.ForeColor = System.Drawing.Color.White;
             this.btnSignin.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSignin.IconColor = System.Drawing.Color.Black;
@@ -330,7 +330,7 @@ namespace SchoolManagementSystem
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtUsername.Location = new System.Drawing.Point(277, 152);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -344,7 +344,7 @@ namespace SchoolManagementSystem
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtPassword.Location = new System.Drawing.Point(277, 272);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -365,7 +365,8 @@ namespace SchoolManagementSystem
             // 
             // SelectionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 39F);
+            this.AcceptButton = this.btnSignin;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
@@ -373,7 +374,7 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

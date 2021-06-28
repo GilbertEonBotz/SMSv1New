@@ -572,5 +572,13 @@ namespace SchoolManagementSystem
         {
             txtLabprice.Text = "";
         }
+
+        private void AddSubject_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
+        }
     }
 }

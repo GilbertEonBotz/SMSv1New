@@ -32,6 +32,8 @@ namespace SchoolManagementSystem
         {
             TextBox[] inputs = { txtDownpayment, txtPrelim, txtMidterm, txtSemi, txtFinal };
 
+            TextBox[] inputss = {txtPrelim, txtMidterm, txtSemi, txtFinal };
+
             if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
             {
                 if (txtTotal.Text.Equals("0"))
@@ -44,6 +46,10 @@ namespace SchoolManagementSystem
                 }
                 else
                 {
+                    if (Validator.removeZero(inputss))
+                    {
+
+                    }
                     DBContext.GetContext().Query("percentage").Update(new
                     {
                         status = "Activate"
@@ -60,6 +66,7 @@ namespace SchoolManagementSystem
                     MessageBox.Show("Inserted");
                     reloadDatagrid.displayData();
                     this.Close();
+
                 }
             }
         }
@@ -135,6 +142,47 @@ namespace SchoolManagementSystem
             if (string.IsNullOrEmpty(txtFinal.Text))
             {
                 txtFinal.Text = "0";
+            }
+        }
+
+        private void txtDownpayment_Enter(object sender, EventArgs e)
+        {
+            txtDownpayment.Text = "";
+        }
+
+        private void txtPrelim_Enter(object sender, EventArgs e)
+        {
+            txtPrelim.Text = "";
+        }
+
+        private void txtMidterm_Enter(object sender, EventArgs e)
+        {
+            txtMidterm.Text = "";
+        }
+
+        private void txtSemi_Enter(object sender, EventArgs e)
+        {
+            txtSemi.Text = "";
+        }
+
+        private void txtFinal_Enter(object sender, EventArgs e)
+        {
+            txtFinal.Text = "";
+        }
+
+        private void txtDownpayment_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDownpayment.Text))
+            {
+                txtDownpayment.Text = "0";
+            }
+        }
+
+        private void AddExamPercentage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
             }
         }
     }

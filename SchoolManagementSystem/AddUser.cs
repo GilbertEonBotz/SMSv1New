@@ -88,6 +88,7 @@ namespace SchoolManagementSystem
 
         private void AddUser_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             displayRole();
         }
 
@@ -99,6 +100,19 @@ namespace SchoolManagementSystem
         private void cmbRole_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void AddUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void AddUser_KeyDown(object sender, KeyEventArgs e)
+        {
+          if(e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
         }
     }
 }

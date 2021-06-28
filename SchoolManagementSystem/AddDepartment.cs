@@ -91,5 +91,13 @@ namespace SchoolManagementSystem
         {
             this.Close();
         }
+
+        private void AddDepartment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
+        }
     }
 }

@@ -145,7 +145,7 @@ namespace SchoolManagementSystem
             this.cmbCourse.Location = new System.Drawing.Point(162, 86);
             this.cmbCourse.Name = "cmbCourse";
             this.cmbCourse.Size = new System.Drawing.Size(410, 33);
-            this.cmbCourse.TabIndex = 49;
+            this.cmbCourse.TabIndex = 1;
             this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.cmbCourse_SelectedIndexChanged);
             this.cmbCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCourse_KeyPress);
             // 
@@ -178,7 +178,7 @@ namespace SchoolManagementSystem
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(197, 29);
-            this.dateTimePicker2.TabIndex = 46;
+            this.dateTimePicker2.TabIndex = 12;
             this.dateTimePicker2.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
             // 
             // dateTimePicker1
@@ -190,7 +190,7 @@ namespace SchoolManagementSystem
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 29);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.Value = new System.DateTime(2021, 5, 4, 0, 0, 0, 0);
             // 
             // cbsat
@@ -200,7 +200,7 @@ namespace SchoolManagementSystem
             this.cbsat.Location = new System.Drawing.Point(458, 388);
             this.cbsat.Name = "cbsat";
             this.cbsat.Size = new System.Drawing.Size(66, 28);
-            this.cbsat.TabIndex = 42;
+            this.cbsat.TabIndex = 10;
             this.cbsat.Text = "SAT";
             this.cbsat.UseVisualStyleBackColor = true;
             this.cbsat.CheckedChanged += new System.EventHandler(this.cbsat_CheckedChanged);
@@ -212,7 +212,7 @@ namespace SchoolManagementSystem
             this.cbfri.Location = new System.Drawing.Point(458, 353);
             this.cbfri.Name = "cbfri";
             this.cbfri.Size = new System.Drawing.Size(58, 28);
-            this.cbfri.TabIndex = 41;
+            this.cbfri.TabIndex = 7;
             this.cbfri.Text = "FRI";
             this.cbfri.UseVisualStyleBackColor = true;
             this.cbfri.CheckedChanged += new System.EventHandler(this.cbfri_CheckedChanged);
@@ -224,7 +224,7 @@ namespace SchoolManagementSystem
             this.cbthu.Location = new System.Drawing.Point(303, 388);
             this.cbthu.Name = "cbthu";
             this.cbthu.Size = new System.Drawing.Size(68, 28);
-            this.cbthu.TabIndex = 40;
+            this.cbthu.TabIndex = 9;
             this.cbthu.Text = "THU";
             this.cbthu.UseVisualStyleBackColor = true;
             this.cbthu.CheckedChanged += new System.EventHandler(this.cbthu_CheckedChanged);
@@ -236,7 +236,7 @@ namespace SchoolManagementSystem
             this.cbwed.Location = new System.Drawing.Point(303, 353);
             this.cbwed.Name = "cbwed";
             this.cbwed.Size = new System.Drawing.Size(73, 28);
-            this.cbwed.TabIndex = 39;
+            this.cbwed.TabIndex = 6;
             this.cbwed.Text = "WED";
             this.cbwed.UseVisualStyleBackColor = true;
             this.cbwed.CheckedChanged += new System.EventHandler(this.cbwed_CheckedChanged);
@@ -248,7 +248,7 @@ namespace SchoolManagementSystem
             this.cbtues.Location = new System.Drawing.Point(162, 388);
             this.cbtues.Name = "cbtues";
             this.cbtues.Size = new System.Drawing.Size(67, 28);
-            this.cbtues.TabIndex = 38;
+            this.cbtues.TabIndex = 8;
             this.cbtues.Text = "TUE";
             this.cbtues.UseVisualStyleBackColor = true;
             this.cbtues.CheckedChanged += new System.EventHandler(this.cbtues_CheckedChanged);
@@ -260,7 +260,7 @@ namespace SchoolManagementSystem
             this.cbmon.Location = new System.Drawing.Point(162, 356);
             this.cbmon.Name = "cbmon";
             this.cbmon.Size = new System.Drawing.Size(74, 28);
-            this.cbmon.TabIndex = 37;
+            this.cbmon.TabIndex = 5;
             this.cbmon.Text = "MON";
             this.cbmon.UseVisualStyleBackColor = true;
             this.cbmon.CheckedChanged += new System.EventHandler(this.cbmon_CheckedChanged);
@@ -272,7 +272,7 @@ namespace SchoolManagementSystem
             this.txtMax.Multiline = true;
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(410, 30);
-            this.txtMax.TabIndex = 34;
+            this.txtMax.TabIndex = 13;
             // 
             // label10
             // 
@@ -291,7 +291,7 @@ namespace SchoolManagementSystem
             this.cbCourseCode.Location = new System.Drawing.Point(162, 133);
             this.cbCourseCode.Name = "cbCourseCode";
             this.cbCourseCode.Size = new System.Drawing.Size(410, 33);
-            this.cbCourseCode.TabIndex = 30;
+            this.cbCourseCode.TabIndex = 2;
             this.cbCourseCode.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
             // 
             // CbRoomNO
@@ -301,7 +301,7 @@ namespace SchoolManagementSystem
             this.CbRoomNO.Location = new System.Drawing.Point(162, 307);
             this.CbRoomNO.Name = "CbRoomNO";
             this.CbRoomNO.Size = new System.Drawing.Size(410, 32);
-            this.CbRoomNO.TabIndex = 28;
+            this.CbRoomNO.TabIndex = 4;
             this.CbRoomNO.SelectedIndexChanged += new System.EventHandler(this.CbRoomNO_SelectedIndexChanged);
             // 
             // cbSubjCode
@@ -311,7 +311,7 @@ namespace SchoolManagementSystem
             this.cbSubjCode.Location = new System.Drawing.Point(162, 181);
             this.cbSubjCode.Name = "cbSubjCode";
             this.cbSubjCode.Size = new System.Drawing.Size(410, 33);
-            this.cbSubjCode.TabIndex = 27;
+            this.cbSubjCode.TabIndex = 3;
             this.cbSubjCode.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtDescrip
@@ -405,7 +405,7 @@ namespace SchoolManagementSystem
             this.button1.Location = new System.Drawing.Point(360, 594);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 32);
-            this.button1.TabIndex = 35;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -492,6 +492,7 @@ namespace SchoolManagementSystem
             // 
             // addSchedule
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 646);
@@ -503,12 +504,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(530, 80);
             this.Name = "addSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "addSchedule";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.addSchedule_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addSchedule_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -557,7 +559,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox cmbCourse;
+        public System.Windows.Forms.Label label7;
     }
 }

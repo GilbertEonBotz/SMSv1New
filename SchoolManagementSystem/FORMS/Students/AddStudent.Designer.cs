@@ -146,6 +146,7 @@ namespace SchoolManagementSystem
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
+            this.btnExit.TabStop = false;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -304,7 +305,7 @@ namespace SchoolManagementSystem
             this.dtpLast.Location = new System.Drawing.Point(140, 1525);
             this.dtpLast.Name = "dtpLast";
             this.dtpLast.Size = new System.Drawing.Size(376, 29);
-            this.dtpLast.TabIndex = 27;
+            this.dtpLast.TabIndex = 26;
             // 
             // label36
             // 
@@ -393,7 +394,7 @@ namespace SchoolManagementSystem
             this.txtSchooLast.Multiline = true;
             this.txtSchooLast.Name = "txtSchooLast";
             this.txtSchooLast.Size = new System.Drawing.Size(376, 30);
-            this.txtSchooLast.TabIndex = 26;
+            this.txtSchooLast.TabIndex = 25;
             // 
             // txtFatherOccupation
             // 
@@ -402,7 +403,7 @@ namespace SchoolManagementSystem
             this.txtFatherOccupation.Multiline = true;
             this.txtFatherOccupation.Name = "txtFatherOccupation";
             this.txtFatherOccupation.Size = new System.Drawing.Size(376, 30);
-            this.txtFatherOccupation.TabIndex = 21;
+            this.txtFatherOccupation.TabIndex = 20;
             // 
             // txtMotherOccupation
             // 
@@ -411,7 +412,7 @@ namespace SchoolManagementSystem
             this.txtMotherOccupation.Multiline = true;
             this.txtMotherOccupation.Name = "txtMotherOccupation";
             this.txtMotherOccupation.Size = new System.Drawing.Size(376, 30);
-            this.txtMotherOccupation.TabIndex = 25;
+            this.txtMotherOccupation.TabIndex = 24;
             // 
             // txtMotherMname
             // 
@@ -420,7 +421,7 @@ namespace SchoolManagementSystem
             this.txtMotherMname.Multiline = true;
             this.txtMotherMname.Name = "txtMotherMname";
             this.txtMotherMname.Size = new System.Drawing.Size(376, 30);
-            this.txtMotherMname.TabIndex = 24;
+            this.txtMotherMname.TabIndex = 23;
             // 
             // txtFatherMname
             // 
@@ -429,7 +430,7 @@ namespace SchoolManagementSystem
             this.txtFatherMname.Multiline = true;
             this.txtFatherMname.Name = "txtFatherMname";
             this.txtFatherMname.Size = new System.Drawing.Size(376, 30);
-            this.txtFatherMname.TabIndex = 20;
+            this.txtFatherMname.TabIndex = 19;
             // 
             // txtMotherFname
             // 
@@ -438,7 +439,7 @@ namespace SchoolManagementSystem
             this.txtMotherFname.Multiline = true;
             this.txtMotherFname.Name = "txtMotherFname";
             this.txtMotherFname.Size = new System.Drawing.Size(376, 30);
-            this.txtMotherFname.TabIndex = 23;
+            this.txtMotherFname.TabIndex = 22;
             // 
             // txtFatherFname
             // 
@@ -447,7 +448,7 @@ namespace SchoolManagementSystem
             this.txtFatherFname.Multiline = true;
             this.txtFatherFname.Name = "txtFatherFname";
             this.txtFatherFname.Size = new System.Drawing.Size(376, 30);
-            this.txtFatherFname.TabIndex = 19;
+            this.txtFatherFname.TabIndex = 18;
             // 
             // txtMotherLname
             // 
@@ -456,7 +457,7 @@ namespace SchoolManagementSystem
             this.txtMotherLname.Multiline = true;
             this.txtMotherLname.Name = "txtMotherLname";
             this.txtMotherLname.Size = new System.Drawing.Size(376, 30);
-            this.txtMotherLname.TabIndex = 22;
+            this.txtMotherLname.TabIndex = 21;
             // 
             // label33
             // 
@@ -475,7 +476,7 @@ namespace SchoolManagementSystem
             this.txtFatherLname.Multiline = true;
             this.txtFatherLname.Name = "txtFatherLname";
             this.txtFatherLname.Size = new System.Drawing.Size(376, 30);
-            this.txtFatherLname.TabIndex = 18;
+            this.txtFatherLname.TabIndex = 17;
             // 
             // label30
             // 
@@ -504,7 +505,7 @@ namespace SchoolManagementSystem
             this.txtHomeAddress.Multiline = true;
             this.txtHomeAddress.Name = "txtHomeAddress";
             this.txtHomeAddress.Size = new System.Drawing.Size(376, 66);
-            this.txtHomeAddress.TabIndex = 17;
+            this.txtHomeAddress.TabIndex = 16;
             // 
             // label28
             // 
@@ -614,7 +615,7 @@ namespace SchoolManagementSystem
             this.checkBox1.Location = new System.Drawing.Point(142, 848);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 16;
+            this.checkBox1.TabIndex = 15;
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -626,7 +627,7 @@ namespace SchoolManagementSystem
             this.txtEmailAddress.Multiline = true;
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(376, 30);
-            this.txtEmailAddress.TabIndex = 13;
+            this.txtEmailAddress.TabIndex = 12;
             // 
             // label23
             // 
@@ -655,7 +656,7 @@ namespace SchoolManagementSystem
             this.cmbCourse.Location = new System.Drawing.Point(140, 674);
             this.cmbCourse.Name = "cmbCourse";
             this.cmbCourse.Size = new System.Drawing.Size(376, 32);
-            this.cmbCourse.TabIndex = 14;
+            this.cmbCourse.TabIndex = 13;
             // 
             // label40
             // 
@@ -795,7 +796,7 @@ namespace SchoolManagementSystem
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(376, 69);
-            this.txtAddress.TabIndex = 15;
+            this.txtAddress.TabIndex = 14;
             // 
             // label12
             // 
@@ -833,7 +834,7 @@ namespace SchoolManagementSystem
             this.txtReligion.Multiline = true;
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.Size = new System.Drawing.Size(376, 30);
-            this.txtReligion.TabIndex = 8;
+            this.txtReligion.TabIndex = 7;
             // 
             // label11
             // 
@@ -862,7 +863,7 @@ namespace SchoolManagementSystem
             this.txtCitizen.Multiline = true;
             this.txtCitizen.Name = "txtCitizen";
             this.txtCitizen.Size = new System.Drawing.Size(376, 30);
-            this.txtCitizen.TabIndex = 11;
+            this.txtCitizen.TabIndex = 10;
             // 
             // label10
             // 
@@ -896,7 +897,7 @@ namespace SchoolManagementSystem
             this.cmbMaritalStatus.Location = new System.Drawing.Point(140, 397);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
             this.cmbMaritalStatus.Size = new System.Drawing.Size(376, 32);
-            this.cmbMaritalStatus.TabIndex = 10;
+            this.cmbMaritalStatus.TabIndex = 9;
             // 
             // label9
             // 
@@ -925,7 +926,7 @@ namespace SchoolManagementSystem
             this.txtPlaceofbirth.Multiline = true;
             this.txtPlaceofbirth.Name = "txtPlaceofbirth";
             this.txtPlaceofbirth.Size = new System.Drawing.Size(376, 30);
-            this.txtPlaceofbirth.TabIndex = 7;
+            this.txtPlaceofbirth.TabIndex = 6;
             // 
             // cmbGender
             // 
@@ -937,7 +938,7 @@ namespace SchoolManagementSystem
             this.cmbGender.Location = new System.Drawing.Point(140, 356);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(376, 32);
-            this.cmbGender.TabIndex = 9;
+            this.cmbGender.TabIndex = 8;
             // 
             // label8
             // 
@@ -967,7 +968,7 @@ namespace SchoolManagementSystem
             this.txtContactNo.Multiline = true;
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(376, 30);
-            this.txtContactNo.TabIndex = 12;
+            this.txtContactNo.TabIndex = 11;
             this.txtContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactNo_KeyPress);
             // 
             // label18
@@ -1050,7 +1051,7 @@ namespace SchoolManagementSystem
             this.btnAddStudent.Location = new System.Drawing.Point(304, 563);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(107, 32);
-            this.btnAddStudent.TabIndex = 26;
+            this.btnAddStudent.TabIndex = 31;
             this.btnAddStudent.Text = "Save";
             this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
@@ -1090,13 +1091,15 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(419, 563);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 28;
+            this.iconButton1.TabIndex = 32;
+            this.iconButton1.TabStop = false;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // AddStudent
             // 
+            this.AcceptButton = this.btnAddStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 610);
@@ -1110,12 +1113,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 100);
             this.Name = "AddStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Add Student";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddStudent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddStudent_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

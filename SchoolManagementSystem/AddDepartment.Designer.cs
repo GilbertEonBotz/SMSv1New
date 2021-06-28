@@ -139,7 +139,7 @@ namespace SchoolManagementSystem
             this.txtDeptName.Multiline = true;
             this.txtDeptName.Name = "txtDeptName";
             this.txtDeptName.Size = new System.Drawing.Size(376, 30);
-            this.txtDeptName.TabIndex = 30;
+            this.txtDeptName.TabIndex = 1;
             // 
             // label2
             // 
@@ -241,13 +241,14 @@ namespace SchoolManagementSystem
             this.btnSave.Location = new System.Drawing.Point(301, 196);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 32);
-            this.btnSave.TabIndex = 28;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddDepartment
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 245);
@@ -259,11 +260,12 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddDepartment";
-            this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddDepartment_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);

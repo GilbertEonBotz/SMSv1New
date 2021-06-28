@@ -264,6 +264,7 @@ namespace SchoolManagementSystem
             // 
             // AddRoom
             // 
+            this.AcceptButton = this.btnAddRoom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -276,11 +277,12 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddRoom";
-            this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddRoom_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

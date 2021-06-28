@@ -296,6 +296,7 @@ namespace SchoolManagementSystem
             // 
             // AddAcademicYear
             // 
+            this.AcceptButton = this.btnAddAcademicYear;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 336);
@@ -307,10 +308,12 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddAcademicYear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddAcademicYear";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddAcademicYear_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);

@@ -73,7 +73,7 @@ namespace SchoolManagementSystem
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(376, 30);
-            this.txtDescription.TabIndex = 38;
+            this.txtDescription.TabIndex = 2;
             // 
             // txtStructure
             // 
@@ -82,7 +82,7 @@ namespace SchoolManagementSystem
             this.txtStructure.Multiline = true;
             this.txtStructure.Name = "txtStructure";
             this.txtStructure.Size = new System.Drawing.Size(376, 30);
-            this.txtStructure.TabIndex = 37;
+            this.txtStructure.TabIndex = 1;
             // 
             // label3
             // 
@@ -143,6 +143,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(286, 32);
             this.btnAdmissionForm.TabIndex = 5;
+            this.btnAdmissionForm.TabStop = false;
             this.btnAdmissionForm.Text = "Fee Structure Form";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
@@ -161,7 +162,7 @@ namespace SchoolManagementSystem
             this.btnAddCourse.Location = new System.Drawing.Point(317, 231);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(107, 32);
-            this.btnAddCourse.TabIndex = 26;
+            this.btnAddCourse.TabIndex = 3;
             this.btnAddCourse.Text = "Save";
             this.btnAddCourse.UseVisualStyleBackColor = false;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
@@ -246,13 +247,14 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(430, 231);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 29;
+            this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // AddFeeStructure
             // 
+            this.AcceptButton = this.btnAddCourse;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 281);
@@ -264,11 +266,12 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddFeeStructure";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddFeeStructure";
-            this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddFeeStructure_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

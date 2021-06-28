@@ -297,6 +297,7 @@ namespace SchoolManagementSystem
             // 
             // AddCourse
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 358);
@@ -308,11 +309,13 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddCourse";
             this.Load += new System.EventHandler(this.AddCourse_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCourse_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

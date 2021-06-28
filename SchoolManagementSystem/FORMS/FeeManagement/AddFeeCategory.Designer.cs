@@ -69,7 +69,7 @@ namespace SchoolManagementSystem
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(376, 30);
-            this.txtCategory.TabIndex = 28;
+            this.txtCategory.TabIndex = 1;
             // 
             // label6
             // 
@@ -120,6 +120,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(277, 32);
             this.btnAdmissionForm.TabIndex = 5;
+            this.btnAdmissionForm.TabStop = false;
             this.btnAdmissionForm.Text = "Fee Categories Form";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
@@ -138,7 +139,7 @@ namespace SchoolManagementSystem
             this.btnAddCategory.Location = new System.Drawing.Point(313, 198);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(107, 32);
-            this.btnAddCategory.TabIndex = 26;
+            this.btnAddCategory.TabIndex = 2;
             this.btnAddCategory.Text = "Save";
             this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCourse_Click);
@@ -223,12 +224,13 @@ namespace SchoolManagementSystem
             this.iconButton1.Location = new System.Drawing.Point(426, 198);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(107, 32);
-            this.iconButton1.TabIndex = 28;
+            this.iconButton1.TabIndex = 3;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // AddFeeCategory
             // 
+            this.AcceptButton = this.btnAddCategory;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 244);
@@ -240,11 +242,12 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(500, 230);
             this.Name = "AddFeeCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddFeeCategory";
-            this.TopMost = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddFeeCategory_KeyDown);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

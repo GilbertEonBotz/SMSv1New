@@ -29,12 +29,11 @@ namespace SchoolManagementSystem
         {
             try
             {
-
                 dgvSched.Columns[7].DefaultCellStyle.Format = "hh:mm tt";
                 dgvSched.Columns[8].DefaultCellStyle.Format = "hh:mm tt";
                 sched.viewsched();
 
-   
+                dgvSched.Rows.Clear();
                 foreach (DataRow Drow in sched.dt.Rows)
                 {
                     int num = dgvSched.Rows.Add();
@@ -72,13 +71,24 @@ namespace SchoolManagementSystem
         }
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
-            addSchedule s = new addSchedule(this);
+            addSchedule s = new addSchedule(this, idd);
             FormFade.FadeForm(this, s);
         }
 
+        string idd;
         private void dgvSched_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //string colName = dgvSched.Columns[e.ColumnIndex].Name;
 
+            //if (colName.Equals("edit"))
+            //{
+            //    idd = dgvSched.Rows[dgvSched.CurrentRow.Index].Cells[0].Value.ToString();
+            //    var myfrm = new addSchedule(this, idd);
+
+            //    var value = DBContext.GetContext().Query("schedule").First();
+
+            //    myfrm.label7.Text = value.
+            //}
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

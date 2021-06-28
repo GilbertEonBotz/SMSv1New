@@ -25,6 +25,7 @@ namespace SchoolManagementSystem
         }
         private void Users_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             displayData();
         }
         public void displayData()
@@ -117,10 +118,7 @@ namespace SchoolManagementSystem
             dgvUsers.Rows.Clear();
             foreach (var value in values)
             {
-                int id = value.userrole;
-                var role = DBContext.GetContext().Query("role").Where("roleId", id).First();
-
-                dgvUsers.Rows.Add(value.id, value.name, role.roletype, value.status);
+                dgvUsers.Rows.Add(value.id, value.name, value.userrole, value.status);
             }
 
             foreach (DataGridViewRow row in dgvUsers.Rows)
@@ -135,6 +133,14 @@ namespace SchoolManagementSystem
                     row.Cells[3].Style.ForeColor = Color.Red;
                     row.Cells[3].Style.SelectionForeColor = Color.Red;
                 }
+            }
+        }
+
+        private void Users_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                btnNew.PerformClick();
             }
         }
     }

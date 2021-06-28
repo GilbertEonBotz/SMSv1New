@@ -80,15 +80,28 @@ namespace SchoolManagementSystem.FORMS.Sectioning
                 }
                 catch (Exception)
                 {
-                    DBContext.GetContext().Query("sectionCategory").Insert(new
+                    if (Validator.isEmpty(inputs))
                     {
-                        sectionName = Validator.ToTitleCase(txtStructure.Text),
-                        Description = txtDescription.Text
-                    });
+                        DBContext.GetContext().Query("sectionCategory").Insert(new
+                        {
+                            sectionName = Validator.ToTitleCase(txtStructure.Text),
+                            Description = txtDescription.Text
+                        });
 
-                    reload.displayData();
-                    this.Close();
+                        reload.displayData();
+                        this.Close();
+                    }
+                    
+                   
                 }
+            }
+        }
+
+        private void addSectionCategory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
             }
         }
     }

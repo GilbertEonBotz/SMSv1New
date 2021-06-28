@@ -23,11 +23,12 @@ namespace SchoolManagementSystem
         schedule scheds = new schedule();
         int courseIdd;
         Sched reloadDatagrid;
-        public addSchedule(Sched reloadDatagrid)
+        string idd;
+        public addSchedule(Sched reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-            
+            this.idd = idd;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -88,7 +89,6 @@ namespace SchoolManagementSystem
 
                 foreach (CheckBox chk in checkboxcontrol)
                 {
-
                     if (chk.Checked)
                     {
                         dateequal += chk.Text;
@@ -329,6 +329,14 @@ namespace SchoolManagementSystem
         private void cmbCourse_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void addSchedule_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
         }
     }
 }

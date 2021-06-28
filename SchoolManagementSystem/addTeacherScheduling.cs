@@ -158,5 +158,13 @@ namespace SchoolManagementSystem
         {
 
         }
+
+        private void addTeacherScheduling_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnExit.PerformClick();
+            }
+        }
     }
 }

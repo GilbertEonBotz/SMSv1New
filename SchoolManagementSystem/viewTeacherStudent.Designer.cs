@@ -368,12 +368,14 @@ namespace SchoolManagementSystem
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(300, 150);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "viewTeacherStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "viewTeacherStudent";
             this.Load += new System.EventHandler(this.viewTeacherStudent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.viewTeacherStudent_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSched)).EndInit();

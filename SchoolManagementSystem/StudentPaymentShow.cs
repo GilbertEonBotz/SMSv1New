@@ -206,7 +206,7 @@ namespace SchoolManagementSystem
                                     myForm.lblfin.Text = myForm.txt4.Text;
                                     myForm.comboBox2.Items.Remove("FINAL");
                                     myForm.comboBox2.Enabled = false;
-                                    myForm.lblpaymentfor.Text = null;
+                                    myForm.txtTotal.Text = null;
                                     myForm.txtAmount.Enabled = false;
                                 }
                                 else

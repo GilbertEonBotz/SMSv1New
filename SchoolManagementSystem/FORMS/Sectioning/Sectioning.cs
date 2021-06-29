@@ -54,5 +54,10 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             //    dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
             //}
         }
+
+        private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace SchoolManagementSystem
         ReportDataSource test = new ReportDataSource();
         private void button1_Click(object sender, EventArgs e)
         {
-            var getSched = DBContext.GetContext().Query("studentSched").Where("studentID", "1").First();
+            var getSched = DBContext.GetContext().Query("studentSched").Where("studentID", "3").First();
             double[] catID = { };
 
             int strucID = 0;

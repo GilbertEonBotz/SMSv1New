@@ -909,8 +909,8 @@ namespace SchoolManagementSystem
             totaldiscount = amount * discount;
             double totalamoun = total2 - downpayment - totaldiscount;
 
-            MessageBox.Show(totaldiscount.ToString());
-            MessageBox.Show(discount.ToString());
+            //MessageBox.Show(totaldiscount.ToString());
+            //MessageBox.Show(discount.ToString());
 
             List<discountedPrice> disc = new List<discountedPrice>();
             disc.Clear();

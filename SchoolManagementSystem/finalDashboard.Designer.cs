@@ -138,7 +138,7 @@ namespace SchoolManagementSystem
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 20;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 1131);
+            this.iconButton1.Location = new System.Drawing.Point(0, 1050);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.iconButton1.Size = new System.Drawing.Size(233, 39);
@@ -163,7 +163,7 @@ namespace SchoolManagementSystem
             this.btnPayment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPayment.IconSize = 20;
             this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayment.Location = new System.Drawing.Point(0, 1092);
+            this.btnPayment.Location = new System.Drawing.Point(0, 1011);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnPayment.Size = new System.Drawing.Size(233, 39);
@@ -181,7 +181,7 @@ namespace SchoolManagementSystem
             this.pnlLoads.Controls.Add(this.btnHandleStudents);
             this.pnlLoads.Controls.Add(this.btnSubjectLoads);
             this.pnlLoads.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLoads.Location = new System.Drawing.Point(0, 975);
+            this.pnlLoads.Location = new System.Drawing.Point(0, 894);
             this.pnlLoads.Name = "pnlLoads";
             this.pnlLoads.Size = new System.Drawing.Size(233, 117);
             this.pnlLoads.TabIndex = 70;
@@ -275,7 +275,7 @@ namespace SchoolManagementSystem
             this.btnTeacherLoads.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTeacherLoads.IconSize = 20;
             this.btnTeacherLoads.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeacherLoads.Location = new System.Drawing.Point(0, 936);
+            this.btnTeacherLoads.Location = new System.Drawing.Point(0, 855);
             this.btnTeacherLoads.Name = "btnTeacherLoads";
             this.btnTeacherLoads.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnTeacherLoads.Size = new System.Drawing.Size(233, 39);
@@ -291,7 +291,7 @@ namespace SchoolManagementSystem
             this.pnlEnrollment.BackColor = System.Drawing.Color.Red;
             this.pnlEnrollment.Controls.Add(this.btnStudentsSchedule);
             this.pnlEnrollment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEnrollment.Location = new System.Drawing.Point(0, 897);
+            this.pnlEnrollment.Location = new System.Drawing.Point(0, 816);
             this.pnlEnrollment.Name = "pnlEnrollment";
             this.pnlEnrollment.Size = new System.Drawing.Size(233, 39);
             this.pnlEnrollment.TabIndex = 70;
@@ -335,7 +335,7 @@ namespace SchoolManagementSystem
             this.btnEnrollment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEnrollment.IconSize = 20;
             this.btnEnrollment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnrollment.Location = new System.Drawing.Point(0, 858);
+            this.btnEnrollment.Location = new System.Drawing.Point(0, 777);
             this.btnEnrollment.Name = "btnEnrollment";
             this.btnEnrollment.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnEnrollment.Size = new System.Drawing.Size(233, 39);
@@ -351,7 +351,7 @@ namespace SchoolManagementSystem
             this.pnlStudentRecords.BackColor = System.Drawing.Color.Red;
             this.pnlStudentRecords.Controls.Add(this.btnAdmitStudent);
             this.pnlStudentRecords.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlStudentRecords.Location = new System.Drawing.Point(0, 819);
+            this.pnlStudentRecords.Location = new System.Drawing.Point(0, 738);
             this.pnlStudentRecords.Name = "pnlStudentRecords";
             this.pnlStudentRecords.Size = new System.Drawing.Size(233, 39);
             this.pnlStudentRecords.TabIndex = 70;
@@ -395,7 +395,7 @@ namespace SchoolManagementSystem
             this.btnStudentRecords.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStudentRecords.IconSize = 20;
             this.btnStudentRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudentRecords.Location = new System.Drawing.Point(0, 780);
+            this.btnStudentRecords.Location = new System.Drawing.Point(0, 699);
             this.btnStudentRecords.Name = "btnStudentRecords";
             this.btnStudentRecords.Padding = new System.Windows.Forms.Padding(13, 0, 17, 0);
             this.btnStudentRecords.Size = new System.Drawing.Size(233, 39);
@@ -416,7 +416,7 @@ namespace SchoolManagementSystem
             this.pnlFeesMngmnt.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFeesMngmnt.Location = new System.Drawing.Point(0, 624);
             this.pnlFeesMngmnt.Name = "pnlFeesMngmnt";
-            this.pnlFeesMngmnt.Size = new System.Drawing.Size(233, 156);
+            this.pnlFeesMngmnt.Size = new System.Drawing.Size(233, 75);
             this.pnlFeesMngmnt.TabIndex = 70;
             // 
             // btnTuitionStructure
@@ -442,6 +442,7 @@ namespace SchoolManagementSystem
             this.btnTuitionStructure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTuitionStructure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTuitionStructure.UseVisualStyleBackColor = false;
+            this.btnTuitionStructure.Visible = false;
             this.btnTuitionStructure.Click += new System.EventHandler(this.btnTuitionStructure_Click);
             // 
             // btnTuitionCategory
@@ -467,6 +468,7 @@ namespace SchoolManagementSystem
             this.btnTuitionCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTuitionCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTuitionCategory.UseVisualStyleBackColor = false;
+            this.btnTuitionCategory.Visible = false;
             this.btnTuitionCategory.Click += new System.EventHandler(this.btnTuitionCategory_Click);
             // 
             // btnFeeStructure

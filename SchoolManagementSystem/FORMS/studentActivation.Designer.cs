@@ -48,6 +48,7 @@ namespace SchoolManagementSystem.FORMS
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -274,12 +275,21 @@ namespace SchoolManagementSystem.FORMS
             this.label6.Text = "Status";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(448, 166);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 45;
+            // 
             // studentActivation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(479, 399);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtName);
@@ -331,5 +341,6 @@ namespace SchoolManagementSystem.FORMS
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }

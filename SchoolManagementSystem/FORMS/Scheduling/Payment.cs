@@ -81,7 +81,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         {
 
             dgv.Rows.Clear();
-            lblpaymentfor.Text = "";
+            txtTotal.Text = "";
             txtAmount.Text = "";
             txtchange.Text = "00.00";
 
@@ -193,7 +193,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         }
                         else
                         {
-                            disp.amount = lblpaymentfor.Text.ToString();
+                            disp.amount = txtTotal.Text.ToString();
                             disp.remarks = txtRemarks.Text;
                             disp.status = "paid";
                             disp.paymentMethod = cmbpaymentMethod.Text;
@@ -204,10 +204,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 }
                 else
                 {
-                    if (comboBox2.Text == "FINAL" && Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
+                    if (comboBox2.Text == "FINAL" && Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(txtTotal.Text))
                     {
                         disp.billingid = billingid;
-                        disp.amount = lblpaymentfor.Text;
+                        disp.amount = txtTotal.Text;
                         disp.remarks = txtRemarks.Text;
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
@@ -347,7 +347,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 txtchange.Text = "00.00";
             }
 
-            else if (Convert.ToDouble(txtAmount.Text) < Convert.ToDouble(lblpaymentfor.Text))
+            else if (Convert.ToDouble(txtAmount.Text) < Convert.ToDouble(txtTotal.Text))
             {
                 txtchange.Text = "00.00";
             }
@@ -357,7 +357,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 //{
                 //    txtAmount.Text = lblpaymentfor.Text;
                 //}    
-                double aa = Convert.ToDouble(txtAmount.Text) -Convert.ToDouble(lblpaymentfor.Text) ;
+                double aa = Convert.ToDouble(txtAmount.Text) -Convert.ToDouble(txtTotal.Text) ;
                 txtchange.Text = aa.ToString();
             }
         }
@@ -369,11 +369,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 if (Convert.ToDouble(txt0.Text) > Convert.ToDouble(lbldownpayment.Text))
                 {
                     amountDown = Convert.ToDouble(txt0.Text) - Convert.ToDouble(lbldownpayment.Text);
-                    lblpaymentfor.Text = amountDown.ToString();
+                    txtTotal.Text = amountDown.ToString();
                 }
                 else
                 {
-                    lblpaymentfor.Text = 0.ToString();
+                    txtTotal.Text = 0.ToString();
                 }
             }
             else if (comboBox2.Text == "PRELIM")
@@ -381,12 +381,12 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 if (Convert.ToDouble(txt0.Text) + Convert.ToDouble(txt1.Text) > Convert.ToDouble(lbldownpayment.Text) + Convert.ToDouble(lblpre.Text))
                 {
                     amountprelim = (Convert.ToDouble(txt1.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + Convert.ToDouble(lblpre.Text)));
-                    lblpaymentfor.Text = amountprelim.ToString();
+                    txtTotal.Text = amountprelim.ToString();
 
                 }
                 else
                 {
-                    lblpaymentfor.Text = 0.ToString();
+                    txtTotal.Text = 0.ToString();
                 }
             }
             else if (comboBox2.Text == "MIDTERM")
@@ -397,11 +397,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                     //amount = amountmid;
                     amountmid = (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text))));
 
-                    lblpaymentfor.Text = amountmid.ToString();
+                    txtTotal.Text = amountmid.ToString();
                 }
                 else
                 {
-                    lblpaymentfor.Text = "0";
+                    txtTotal.Text = "0";
                 }
 
             }
@@ -416,11 +416,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                     amountsemi = (Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + (Convert.ToDouble(txt0.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text))));
 
 
-                    lblpaymentfor.Text = amountsemi.ToString();
+                    txtTotal.Text = amountsemi.ToString();
                 }
                 else
                 {
-                    lblpaymentfor.Text = "0";
+                    txtTotal.Text = "0";
                 }
 
             }
@@ -433,11 +433,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                     amountfinal = (Convert.ToDouble(txt0.Text) + Convert.ToDouble(txt1.Text) + Convert.ToDouble(txt2.Text) + Convert.ToDouble(txt3.Text) + Convert.ToDouble(txt4.Text)) - (Convert.ToDouble(lbldownpayment.Text) + (Convert.ToDouble(lblpre.Text) + Convert.ToDouble(lblmid.Text) + Convert.ToDouble(lblsemi.Text) + Convert.ToDouble(lblfin.Text)));
 
 
-                    lblpaymentfor.Text = amountfinal.ToString();
+                    txtTotal.Text = amountfinal.ToString();
                 }
                 else
                 {
-                    lblpaymentfor.Text = "0";
+                    txtTotal.Text = "0";
                 }
 
             }
@@ -484,11 +484,41 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void button3_Click(object sender, EventArgs e)
         {
 
-            insert();
+            //insert();
 
-            printShow();
-            showw();
+            //printShow();
+            //showw();
 
+        }
+
+        private void cmbpaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbpaymentMethod.Text.Equals("PROMISORY"))
+            {
+                txtTotal.Text = "0";
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                foreach(var cell in row.Cells)
+                {
+                    DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
+                    //if(row.Cells[0].Value.ToString() == "null")
+                    //{
+
+                    //}
+                    //if (linkCell.)
+                    //{
+                    //    linkCell.UseColumnTextForLinkValue = false;
+                        
+                        
+                    //}
+                }
+            }
         }
     }
 }

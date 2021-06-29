@@ -31,24 +31,72 @@ namespace SchoolManagementSystem
         {
             this.Close();
         }
+        studentSched sched = new studentSched();
         private void addSectioning_Load(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("schedule").Get();
-            foreach (var value in values)
-            {
-                dgvSched.Rows.Add(value.schedID, value.subjectCode, value.subjectTitle, value.roomID, value.date, value.timeStart, value.timeEnd);
-            }
-            conn = connect.getcon();
-            conn.Open();
-            cmd = new MySqlCommand("select a.schedid,a.subjectcode,a.subjectTitle  from schedule a, Sectioning b, sectionCategory c where a.schedID = b.schedID and b.SectionCategoryID = '"+ id+ "'Group by b.sectionId", conn);
-            dr = cmd.ExecuteReader();
 
-            while (dr.Read())
-            {
-                dgvCategories.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
-            }
+            display();
+            displaySectioning();
+
+            //var values = DBContext.GetContext().Query("schedule").Get();
+            //foreach (var value in values)
+            //{
+            //    dgvSched.Rows.Add(value.schedID, value.subjectCode, value.subjectTitle, value.roomID, value.date, value.timeStart, value.timeEnd);
+            //}
+            //conn = connect.getcon();
+            //conn.Open();
+            //cmd = new MySqlCommand("select a.schedid,a.subjectcode,a.subjectTitle  from schedule a, Sectioning b, sectionCategory c where a.schedID = b.schedID and b.SectionCategoryID = '"+ id+ "'Group by b.sectionId", conn);
+            //dr = cmd.ExecuteReader();
+
+            //while (dr.Read())
+            //{
+            //    dgvCategories.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
+            //}
         }
        
+        public void displaySectioning()
+        {
+            dgvCategories.Rows.Clear();
+
+            sched.category = id;
+            sched.viewSectiong();
+
+            //dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            //dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            foreach (DataRow Drow in sched.dt.Rows)
+            {
+                int num = dgvCategories.Rows.Add();
+
+                dgvCategories.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                dgvCategories.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                dgvCategories.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                dgvCategories.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                dgvCategories.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                dgvCategories.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                dgvCategories.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                textBox1.Text = Drow["total"].ToString();
+            }
+        }
+        public void display()
+        {
+
+            sched.displayFilter();
+            dgvSched.Rows.Clear();
+            dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            foreach (DataRow Drow in sched.dtFilter.Rows)
+            {
+                int num = dgvSched.Rows.Add();
+
+                dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+            }
+        }
         
 
         //public void displaySectioning()
@@ -58,13 +106,15 @@ namespace SchoolManagementSystem
         private void dgvSched_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            dgvCategories.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value, dgvSched.SelectedRows[0].Cells[1].Value);
-            DBContext.GetContext().Query("Sectioning").Insert(new
-            {
-                SectionCategoryID = id,
-               schedID = dgvSched.SelectedRows[0].Cells[0].Value
-            });
-            MessageBox.Show("success");
+           
+                //}
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+           
+          
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -93,6 +143,40 @@ namespace SchoolManagementSystem
             {
                 btnExit.PerformClick();
             }
+        }
+
+        private void dgvSched_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvCategories.Rows)
+            {
+                if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+                {
+                    Validator.AlertDanger("Subject existed");
+                    return;
+                }
+            }
+            //try
+            //{
+            //    if (dgvSched.Rows[0].Cells[0].Value.ToString() == dgvCategories.Rows[0].Cells[0].Value.ToString())
+            //    {
+            //        Validator.AlertDanger("Schedule already existed!");
+            //    }
+            //    else
+            //    {
+            dgvCategories.Rows.Add(dgvSched.SelectedRows[0].Cells[0].Value, dgvSched.SelectedRows[0].Cells[1].Value, dgvSched.SelectedRows[0].Cells[2].Value
+                  , dgvSched.SelectedRows[0].Cells[3].Value, dgvSched.SelectedRows[0].Cells[4].Value, dgvSched.SelectedRows[0].Cells[5].Value, dgvSched.SelectedRows[0].Cells[6].Value);
+
+            DBContext.GetContext().Query("Sectioning").Insert(new
+            {
+                SectionCategoryID = id,
+                schedID = dgvSched.SelectedRows[0].Cells[0].Value
+            });
+            displaySectioning();
+        }
+
+        private void dgvCategories_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

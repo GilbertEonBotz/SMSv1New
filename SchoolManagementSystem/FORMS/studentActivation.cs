@@ -46,25 +46,26 @@ namespace SchoolManagementSystem.FORMS
                 discountDescription = comboBox3.Text
             });
             MessageBox.Show("Success");
+            this.Close();
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
-
-
             if (comboBox3.Text == "Blood Related")
             {
                 discount = 0.20;
+                label8.Text = "20%";
             }
             else if (comboBox3.Text == "Loyalty")
             {
                 discount = 0.100;
+                label8.Text = "100%";
             }
             else if (comboBox3.Text == "Employee")
             {
                 discount = 0.20;
+                label8.Text = "20%";
             }
         }
 

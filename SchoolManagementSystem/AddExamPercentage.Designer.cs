@@ -120,7 +120,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(7, 54);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(509, 306);
+            this.panel6.Size = new System.Drawing.Size(469, 306);
             this.panel6.TabIndex = 16;
             // 
             // txtTotal
@@ -166,9 +166,9 @@ namespace SchoolManagementSystem
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(10, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 17);
+            this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 35;
-            this.label5.Text = "REGISTRATION FEE";
+            this.label5.Text = "DOWNPAYMENT";
             // 
             // txtFinal
             // 
@@ -281,7 +281,7 @@ namespace SchoolManagementSystem
             this.panel8.ForeColor = System.Drawing.SystemColors.Control;
             this.panel8.Location = new System.Drawing.Point(0, 49);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(505, 1);
+            this.panel8.Size = new System.Drawing.Size(465, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -292,7 +292,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(505, 49);
+            this.panel7.Size = new System.Drawing.Size(465, 49);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD

@@ -38,7 +38,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void Payment_Load(object sender, EventArgs e)
         {
             displayData();
-
+            txtAmount.KeyPress += Validator.ValidateKeypressNumber;
         }
 
         public void displayData()
@@ -56,6 +56,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             txt4.Text = disp.final;
 
             lbltotal.Text = disp.total;
+
+
         }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -90,7 +92,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
             disp.studentID = studentid.Text;
 
             disp.studentDOwn();
-            dgv.Rows.Add("null", disp.studentdownpayment, disp.remarksFordown, disp.dateForDown);
+            dgv.Rows.Add("0", disp.studentdownpayment, disp.remarksFordown, disp.dateForDown);
 
             disp.billingid = billingid;
             disp.viewtransaction();
@@ -111,36 +113,47 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(txtAmount.Text))
-            {
-                MessageBox.Show("please input some amount");
-            }
-            else
+            
+            try
             {
                 insert();
-
-
                 printShow();
                 showw();
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.Cells[0].Value.ToString() == "0")
+                    {
+                        foreach (var cell in row.Cells)
+                        {
+                            DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
 
+                            if (linkCell != null)
+                            {
+                                linkCell.UseColumnTextForLinkValue = false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Validator.AlertDanger("Please enter an amount!");
             }
 
-       
+
+
+
+
 
         }
 
 
         public void insert()
         {
-
-
             disp.billingid = billingid;
             disp.studentID = studentid.Text;
             disp.viewPayment();
             disp.studentDOwn();
-
-
 
             conn = connect.getcon();
             conn.Open();
@@ -153,9 +166,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(disp.studentdownpayment) + Convert.ToDouble(txtAmount.Text);
                 if (number > Convert.ToDouble(dr[1].ToString()))
                 {
-
-
-
                     double total = Convert.ToDouble(disp.total) - Convert.ToDouble(dr[0].ToString() + 0) - Convert.ToDouble(disp.studentdownpayment);
                     MessageBox.Show(total.ToString());
                     disp.amount = total.ToString();
@@ -227,17 +237,10 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
                     }
                 }
-          
-           
-
             }
+        }
 
 
-
-
-                }
-
-        
         public void showw()
         {
 
@@ -249,7 +252,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
 
             double finalss = Convert.ToDouble(disp.totalpaid) + 0;
-            double current =  Convert.ToDouble(textBox15.Text) - Convert.ToDouble(disp.totalpaid);
+            double current = Convert.ToDouble(textBox15.Text) - Convert.ToDouble(disp.totalpaid);
             lbltotal.Text = disp.totalpaid.ToString();
             txtcurrentBal.Text = current.ToString();
             try
@@ -283,7 +286,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = txt4.Text;
                                     comboBox2.Items.Remove("FINAL");
-                                   
+
                                 }
                                 else
                                 {
@@ -292,7 +295,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblmid.Text = txt2.Text;
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = amount.ToString();
-                           
+
                                 }
                             }
                             else
@@ -342,24 +345,32 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtAmount.Text))
+            try
             {
-                txtchange.Text = "00.00";
+                if (string.IsNullOrEmpty(txtAmount.Text))
+                {
+                    txtchange.Text = "00.00";
+                }
+
+                else if (Convert.ToDouble(txtAmount.Text) < Convert.ToDouble(txtTotal.Text))
+                {
+                    txtchange.Text = "00.00";
+                }
+                else
+                {
+                    //if (Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
+                    //{
+                    //    txtAmount.Text = lblpaymentfor.Text;
+                    //}    
+                    double aa = Convert.ToDouble(txtAmount.Text) - Convert.ToDouble(txtTotal.Text);
+                    txtchange.Text = aa.ToString();
+                }
+            }
+            catch (Exception)
+            {
+
             }
 
-            else if (Convert.ToDouble(txtAmount.Text) < Convert.ToDouble(txtTotal.Text))
-            {
-                txtchange.Text = "00.00";
-            }
-            else
-            {
-                //if (Convert.ToDouble(txtAmount.Text) > Convert.ToDouble(lblpaymentfor.Text))
-                //{
-                //    txtAmount.Text = lblpaymentfor.Text;
-                //}    
-                double aa = Convert.ToDouble(txtAmount.Text) -Convert.ToDouble(txtTotal.Text) ;
-                txtchange.Text = aa.ToString();
-            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -502,22 +513,60 @@ namespace SchoolManagementSystem.FORMS.Scheduling
         private void button3_Click_1(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void Payment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
             foreach (DataGridViewRow row in dgv.Rows)
             {
-                foreach(var cell in row.Cells)
-                {
-                    DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
-                    //if(row.Cells[0].Value.ToString() == "null")
-                    //{
 
-                    //}
-                    //if (linkCell.)
-                    //{
-                    //    linkCell.UseColumnTextForLinkValue = false;
-                        
-                        
-                    //}
+                if (row.Cells[0].Value.ToString() == "0")
+                {
+                    foreach (var cell in row.Cells)
+                    {
+                        DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
+
+                        if (linkCell != null)
+                        {
+                            linkCell.UseColumnTextForLinkValue = false;
+                        }
+                    }
                 }
+            }
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtchange_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgv.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("action"))
+            {
+                var myfrm = new voidNotification(this);
+                myfrm.ShowDialog();
             }
         }
     }

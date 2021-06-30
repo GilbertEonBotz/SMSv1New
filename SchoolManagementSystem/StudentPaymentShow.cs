@@ -35,7 +35,7 @@ namespace SchoolManagementSystem
 
         private void StudentPaymentShow_Load(object sender, EventArgs e)
         {
-            
+
             displayData();
 
 
@@ -51,8 +51,10 @@ namespace SchoolManagementSystem
 
                 dgvStudents.Rows[num].Cells[0].Value = DROW["StudentID"].ToString();
                 dgvStudents.Rows[num].Cells[1].Value = DROW["Name"].ToString();
-                dgvStudents.Rows[num].Cells[2].Value = DROW["Total"].ToString();
-        
+                dgvStudents.Rows[num].Cells[3].Value = DROW["Course"].ToString();
+                dgvStudents.Rows[num].Cells[2].Value = DROW["Gender"].ToString();
+                dgvStudents.Rows[num].Cells[4].Value = DROW["PresentAddress"].ToString();
+                dgvStudents.Rows[num].Cells[5].Value = DROW["Total"].ToString();
             }
         }
 
@@ -120,8 +122,8 @@ namespace SchoolManagementSystem
             }
             return Convert.ToDouble(calFraction);
         }
-        public  void showStudent()
-        
+        public void showStudent()
+
         {
             var myForm = new Payment(display);
             display.pnlShow.Controls.Clear();
@@ -131,6 +133,9 @@ namespace SchoolManagementSystem
             myForm.Show();
             myForm.txtLastname.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
             myForm.studentid.Text = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+            myForm.txtCourse.Text = dgvStudents.SelectedRows[0].Cells[2].Value.ToString();
+            myForm.txtGender.Text = dgvStudents.SelectedRows[0].Cells[3].Value.ToString();
+            myForm.txtAddress.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
 
             spd.studentID = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
             led.percent();
@@ -138,15 +143,27 @@ namespace SchoolManagementSystem
             spd.viewPayment();
             spd.viewPaymentDetailed();
             spd.studentDOwn();
-            myForm.dgv.Rows.Add("nulll", spd.studentdownpayment, spd.remarksFordown, spd.dateForDown);
+            myForm.dgv.Rows.Add("0", spd.studentdownpayment, spd.remarksFordown, spd.dateForDown);
+            foreach (DataGridViewRow row in myForm.dgv.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == "0")
+                {
+                    foreach (var cell in row.Cells)
+                    {
+                        DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
+
+                        if (linkCell != null)
+                        {
+                            linkCell.UseColumnTextForLinkValue = false;
+                        }
+                    }
+                }
+            }
 
             double finalss = Convert.ToDouble(spd.totalpaid) + 0;
-
-
-
             led.percent();
-             totaldownpaymentplus = Convert.ToDouble(spd.total);
-            myForm.textBox15.Text = totaldownpaymentplus.ToString(); 
+            totaldownpaymentplus = Convert.ToDouble(spd.total);
+            myForm.textBox15.Text = totaldownpaymentplus.ToString();
             myForm.txt1.Text = spd.prelim;
             myForm.txt2.Text = spd.midterm;
             myForm.txt3.Text = spd.semi;
@@ -253,12 +270,17 @@ namespace SchoolManagementSystem
         }
         private void dgvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            showStudent();
+            //showStudent();
         }
 
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colName = dgvStudents.Columns[e.ColumnIndex].Name;
 
+            if (colName.Equals("balance"))
+            {
+                showStudent();
+            }
         }
     }
 }

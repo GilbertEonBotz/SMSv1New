@@ -33,7 +33,7 @@ namespace SchoolManagementSystem
                 .LeftJoin("studentActivation", "student.studentId", "studentActivation.studentID")
                 .Get();
 
-
+            dgvStudents.Rows.Clear();
             foreach (var value in values)
             {
                 dgvStudents.Rows.Add(value.studentId, $"{value.firstname} {value.firstname}", value.gender, value.course, value.status);
@@ -53,14 +53,25 @@ namespace SchoolManagementSystem
         {
             string colName = dgvStudents.Columns[e.ColumnIndex].Name;
 
+
             if (colName.Equals("activate"))
             {
-                var myfrm = new studentActivation();
-                myfrm.txtName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
-                myfrm.txtStatus.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
-                
-                myfrm.studentid = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
-                myfrm.ShowDialog();
+                if (dgvStudents.SelectedRows[0].Cells[4].Value.Equals("Activated"))
+                {
+                    Validator.AlertDanger("This student is already activated!");
+                    return;
+                }
+                else
+                {
+                    var myfrm = new studentActivation(this);
+                    myfrm.txtName.Text = dgvStudents.SelectedRows[0].Cells[1].Value.ToString();
+                    myfrm.txtStatus.Text = dgvStudents.SelectedRows[0].Cells[4].Value.ToString();
+
+                    myfrm.studentid = dgvStudents.SelectedRows[0].Cells[0].Value.ToString();
+                    myfrm.ShowDialog();
+                }
+
+
             }
         }
     }

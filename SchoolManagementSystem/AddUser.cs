@@ -114,5 +114,10 @@ namespace SchoolManagementSystem
                 btnExit.PerformClick();
             }
         }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -132,7 +132,7 @@ namespace SchoolManagementSystem
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void AddCourse_KeyDown(object sender, KeyEventArgs e)
@@ -146,6 +146,11 @@ namespace SchoolManagementSystem
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbDepartment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

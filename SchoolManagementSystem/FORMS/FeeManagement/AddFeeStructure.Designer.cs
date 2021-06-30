@@ -61,56 +61,54 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.panel6.Location = new System.Drawing.Point(6, 54);
+            this.panel6.Location = new System.Drawing.Point(6, 42);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(560, 171);
+            this.panel6.Size = new System.Drawing.Size(402, 138);
             this.panel6.TabIndex = 25;
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtDescription.Location = new System.Drawing.Point(153, 118);
-            this.txtDescription.Multiline = true;
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(133, 87);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(376, 30);
+            this.txtDescription.Size = new System.Drawing.Size(261, 27);
             this.txtDescription.TabIndex = 2;
             // 
             // txtStructure
             // 
-            this.txtStructure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtStructure.Location = new System.Drawing.Point(153, 76);
-            this.txtStructure.Multiline = true;
+            this.txtStructure.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStructure.Location = new System.Drawing.Point(133, 52);
             this.txtStructure.Name = "txtStructure";
-            this.txtStructure.Size = new System.Drawing.Size(376, 30);
+            this.txtStructure.Size = new System.Drawing.Size(261, 27);
             this.txtStructure.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(13, 127);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 36;
-            this.label3.Text = "Description";
+            this.label3.Text = "DESCRIPTION";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(13, 85);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
+            this.label6.Size = new System.Drawing.Size(119, 17);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Structure Name";
+            this.label6.Text = "STRUCTURE NAME";
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 49);
+            this.panel8.Location = new System.Drawing.Point(0, 35);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(556, 1);
+            this.panel8.Size = new System.Drawing.Size(398, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -120,7 +118,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(556, 49);
+            this.panel7.Size = new System.Drawing.Size(398, 35);
             this.panel7.TabIndex = 0;
             // 
             // btnAdmissionForm
@@ -138,7 +136,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmissionForm.IconSize = 20;
             this.btnAdmissionForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmissionForm.Location = new System.Drawing.Point(0, 10);
+            this.btnAdmissionForm.Location = new System.Drawing.Point(-10, 3);
             this.btnAdmissionForm.Name = "btnAdmissionForm";
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(286, 32);
@@ -153,15 +151,15 @@ namespace SchoolManagementSystem
             this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAddCourse.FlatAppearance.BorderSize = 0;
             this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCourse.ForeColor = System.Drawing.Color.White;
             this.btnAddCourse.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAddCourse.IconColor = System.Drawing.Color.White;
             this.btnAddCourse.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddCourse.IconSize = 30;
-            this.btnAddCourse.Location = new System.Drawing.Point(317, 231);
+            this.btnAddCourse.Location = new System.Drawing.Point(236, 186);
             this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(107, 32);
+            this.btnAddCourse.Size = new System.Drawing.Size(80, 28);
             this.btnAddCourse.TabIndex = 3;
             this.btnAddCourse.Text = "Save";
             this.btnAddCourse.UseVisualStyleBackColor = false;
@@ -171,9 +169,9 @@ namespace SchoolManagementSystem
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 54);
+            this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 221);
+            this.panel2.Size = new System.Drawing.Size(6, 178);
             this.panel2.TabIndex = 22;
             // 
             // panel1
@@ -184,17 +182,17 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 54);
+            this.panel1.Size = new System.Drawing.Size(408, 42);
             this.panel1.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(147, 16);
+            this.label1.Location = new System.Drawing.Point(102, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 24);
+            this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "School Management System";
             // 
@@ -206,8 +204,8 @@ namespace SchoolManagementSystem
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(530, 12);
+            this.btnExit.IconSize = 20;
+            this.btnExit.Location = new System.Drawing.Point(373, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -219,18 +217,18 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 275);
+            this.panel4.Location = new System.Drawing.Point(0, 220);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(566, 6);
+            this.panel4.Size = new System.Drawing.Size(408, 6);
             this.panel4.TabIndex = 24;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(566, 0);
+            this.panel3.Location = new System.Drawing.Point(408, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 281);
+            this.panel3.Size = new System.Drawing.Size(6, 226);
             this.panel3.TabIndex = 23;
             // 
             // iconButton1
@@ -238,15 +236,15 @@ namespace SchoolManagementSystem
             this.iconButton1.BackColor = System.Drawing.Color.Tomato;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(430, 231);
+            this.iconButton1.Location = new System.Drawing.Point(322, 186);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(107, 32);
+            this.iconButton1.Size = new System.Drawing.Size(80, 28);
             this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
@@ -257,7 +255,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnAddCourse;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 281);
+            this.ClientSize = new System.Drawing.Size(414, 226);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);

@@ -29,9 +29,10 @@ namespace SchoolManagementSystem
         private void btnAddAcademicYear_Click(object sender, EventArgs e)
         {
             TextBox[] inputs = { txtYear1, txtYear2 };
+            ComboBox[] cmb = { cmbTerm };
             if (btnAddAcademicYear.Text.Equals("Save"))
             {
-                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
+                if (Validator.isEmpty(inputs) && Validator.isEmptyCmb(cmb) && Validator.AddConfirmation())
                 {
                     try
                     {
@@ -107,6 +108,11 @@ namespace SchoolManagementSystem
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbTerm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

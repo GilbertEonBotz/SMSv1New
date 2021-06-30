@@ -278,6 +278,7 @@ namespace SchoolManagementSystem
             this.cmbTerm.Name = "cmbTerm";
             this.cmbTerm.Size = new System.Drawing.Size(310, 28);
             this.cmbTerm.TabIndex = 3;
+            this.cmbTerm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTerm_KeyPress);
             // 
             // label3
             // 

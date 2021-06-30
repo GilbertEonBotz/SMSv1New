@@ -226,7 +226,7 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
 
-                sched.display();
+                sched.showMaxenrolled();
 
                 foreach (DataRow Drow in sched.dt.Rows)
                 {
@@ -237,7 +237,7 @@ namespace SchoolManagementSystem
                     dgvStudentSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
                     dgvStudentSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
                     dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
-                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                   // dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
                     dgvStudentSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
                     dgvStudentSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
                     dgvStudentSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();

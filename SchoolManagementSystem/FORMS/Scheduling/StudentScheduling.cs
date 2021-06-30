@@ -227,7 +227,7 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
 
-                sched.viewSectiong();
+                sched.display();
 
                 foreach (DataRow Drow in sched.dt.Rows)
                 {

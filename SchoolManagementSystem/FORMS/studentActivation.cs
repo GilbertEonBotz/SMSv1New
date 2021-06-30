@@ -16,10 +16,11 @@ namespace SchoolManagementSystem.FORMS
         public string studentid;
 
         double discount;
-
-        public studentActivation()
+        StudentActivation reloadDatagrid;
+        public studentActivation(StudentActivation reloadDatagrid)
         {
             InitializeComponent();
+            this.reloadDatagrid = reloadDatagrid;
         }
 
         private void studentActivation_Load(object sender, EventArgs e)
@@ -34,7 +35,6 @@ namespace SchoolManagementSystem.FORMS
 
         private void btnAddAcademicYear_Click(object sender, EventArgs e)
         {
-
             DBContext.GetContext().Query("studentActivation").Insert(new
             {
                 studentID = studentid,
@@ -43,15 +43,16 @@ namespace SchoolManagementSystem.FORMS
                 paymentMethod = comboBox1.Text,
                 status = "Activated",
                 discount = discount,
+                date = DateTime.Now,
                 discountDescription = comboBox3.Text
             });
-            MessageBox.Show("Success");
+            MessageBox.Show("Student successfully activated");
+            reloadDatagrid.displayData();
             this.Close();
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (comboBox3.Text == "Blood Related")
             {
                 discount = 0.20;
@@ -70,6 +71,11 @@ namespace SchoolManagementSystem.FORMS
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

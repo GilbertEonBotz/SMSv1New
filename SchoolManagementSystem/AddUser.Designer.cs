@@ -180,6 +180,7 @@ namespace SchoolManagementSystem
             this.txtConfirmPassword.TabIndex = 5;
             this.txtConfirmPassword.Text = "Confirm Password";
             this.txtConfirmPassword.WatermarkText = "Confirm Password";
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // txtMacAddress
             // 

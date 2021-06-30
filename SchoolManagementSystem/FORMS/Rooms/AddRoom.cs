@@ -106,5 +106,10 @@ namespace SchoolManagementSystem
                 btnExit.PerformClick();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

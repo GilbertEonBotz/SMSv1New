@@ -56,7 +56,7 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 86);
+            this.label1.Location = new System.Drawing.Point(23, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 1;
@@ -65,11 +65,11 @@ namespace SchoolManagementSystem.FORMS
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(101, 199);
+            this.textBox1.Location = new System.Drawing.Point(101, 272);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(344, 43);
+            this.textBox1.Size = new System.Drawing.Size(344, 57);
             this.textBox1.TabIndex = 4;
             // 
             // comboBox2
@@ -83,7 +83,7 @@ namespace SchoolManagementSystem.FORMS
             "Downpayment",
             "Promisory",
             "Scholarship"});
-            this.comboBox2.Location = new System.Drawing.Point(101, 250);
+            this.comboBox2.Location = new System.Drawing.Point(101, 186);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(344, 29);
@@ -97,7 +97,7 @@ namespace SchoolManagementSystem.FORMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 48);
+            this.panel1.Size = new System.Drawing.Size(490, 48);
             this.panel1.TabIndex = 29;
             // 
             // label7
@@ -105,7 +105,7 @@ namespace SchoolManagementSystem.FORMS
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(106, 11);
+            this.label7.Location = new System.Drawing.Point(135, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(227, 21);
             this.label7.TabIndex = 4;
@@ -120,7 +120,7 @@ namespace SchoolManagementSystem.FORMS
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(431, 8);
+            this.btnExit.Location = new System.Drawing.Point(446, 8);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -135,14 +135,14 @@ namespace SchoolManagementSystem.FORMS
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(6, 393);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(467, 6);
+            this.panel4.Size = new System.Drawing.Size(478, 6);
             this.panel4.TabIndex = 32;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(473, 48);
+            this.panel3.Location = new System.Drawing.Point(484, 48);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(6, 351);
             this.panel3.TabIndex = 31;
@@ -160,7 +160,7 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 202);
+            this.label2.Location = new System.Drawing.Point(23, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
             this.label2.TabIndex = 34;
@@ -170,7 +170,7 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 253);
+            this.label3.Location = new System.Drawing.Point(23, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 21);
             this.label3.TabIndex = 35;
@@ -187,7 +187,7 @@ namespace SchoolManagementSystem.FORMS
             this.btnAddAcademicYear.IconColor = System.Drawing.Color.White;
             this.btnAddAcademicYear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddAcademicYear.IconSize = 30;
-            this.btnAddAcademicYear.Location = new System.Drawing.Point(196, 345);
+            this.btnAddAcademicYear.Location = new System.Drawing.Point(204, 345);
             this.btnAddAcademicYear.Name = "btnAddAcademicYear";
             this.btnAddAcademicYear.Size = new System.Drawing.Size(137, 32);
             this.btnAddAcademicYear.TabIndex = 36;
@@ -198,12 +198,13 @@ namespace SchoolManagementSystem.FORMS
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 290);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 226);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 42);
+            this.label4.Size = new System.Drawing.Size(57, 34);
             this.label4.TabIndex = 37;
             this.label4.Text = "Payment\r\nMethod\r\n";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
@@ -213,7 +214,7 @@ namespace SchoolManagementSystem.FORMS
             this.comboBox1.Items.AddRange(new object[] {
             "Cash",
             "Cheque"});
-            this.comboBox1.Location = new System.Drawing.Point(101, 300);
+            this.comboBox1.Location = new System.Drawing.Point(101, 226);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(344, 29);
@@ -231,7 +232,7 @@ namespace SchoolManagementSystem.FORMS
             "Blood Related",
             "Employee",
             "Loyalty"});
-            this.comboBox3.Location = new System.Drawing.Point(101, 158);
+            this.comboBox3.Location = new System.Drawing.Point(101, 145);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(344, 29);
@@ -242,7 +243,7 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 166);
+            this.label5.Location = new System.Drawing.Point(23, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 21);
             this.label5.TabIndex = 41;
@@ -251,7 +252,7 @@ namespace SchoolManagementSystem.FORMS
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(101, 78);
+            this.txtName.Location = new System.Drawing.Point(101, 66);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(344, 29);
             this.txtName.TabIndex = 1;
@@ -259,7 +260,7 @@ namespace SchoolManagementSystem.FORMS
             // txtStatus
             // 
             this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(101, 118);
+            this.txtStatus.Location = new System.Drawing.Point(101, 106);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(344, 29);
             this.txtStatus.TabIndex = 2;
@@ -268,7 +269,7 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 126);
+            this.label6.Location = new System.Drawing.Point(23, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 21);
             this.label6.TabIndex = 44;
@@ -278,7 +279,7 @@ namespace SchoolManagementSystem.FORMS
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(448, 166);
+            this.label8.Location = new System.Drawing.Point(449, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 45;
@@ -288,7 +289,7 @@ namespace SchoolManagementSystem.FORMS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(479, 399);
+            this.ClientSize = new System.Drawing.Size(490, 399);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtStatus);

@@ -216,9 +216,9 @@ namespace SchoolManagementSystem
             this.panel9.AutoScroll = true;
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 44);
+            this.panel9.Location = new System.Drawing.Point(0, 39);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(541, 449);
+            this.panel9.Size = new System.Drawing.Size(541, 454);
             this.panel9.TabIndex = 2;
             // 
             // panel10
@@ -294,7 +294,7 @@ namespace SchoolManagementSystem
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(524, 1733);
+            this.panel10.Size = new System.Drawing.Size(524, 1571);
             this.panel10.TabIndex = 26;
             this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
@@ -527,6 +527,7 @@ namespace SchoolManagementSystem
             this.label43.TabIndex = 36;
             this.label43.Text = "Honorable Dismissal";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label43.Visible = false;
             // 
             // label42
             // 
@@ -538,6 +539,7 @@ namespace SchoolManagementSystem
             this.label42.TabIndex = 36;
             this.label42.Text = "Report Card (Form 138) / Information copy of TOR\r\n";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label42.Visible = false;
             // 
             // chkHonorable
             // 
@@ -550,6 +552,7 @@ namespace SchoolManagementSystem
             this.chkHonorable.TabIndex = 30;
             this.chkHonorable.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.chkHonorable.UseVisualStyleBackColor = true;
+            this.chkHonorable.Visible = false;
             // 
             // label41
             // 
@@ -561,6 +564,7 @@ namespace SchoolManagementSystem
             this.label41.TabIndex = 36;
             this.label41.Text = "PSA BIRTH CERTIFICATE";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label41.Visible = false;
             // 
             // chkReportCard
             // 
@@ -573,6 +577,7 @@ namespace SchoolManagementSystem
             this.chkReportCard.TabIndex = 29;
             this.chkReportCard.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.chkReportCard.UseVisualStyleBackColor = true;
+            this.chkReportCard.Visible = false;
             // 
             // label25
             // 
@@ -596,6 +601,7 @@ namespace SchoolManagementSystem
             this.chkPsa.TabIndex = 28;
             this.chkPsa.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.chkPsa.UseVisualStyleBackColor = true;
+            this.chkPsa.Visible = false;
             // 
             // label24
             // 
@@ -666,6 +672,7 @@ namespace SchoolManagementSystem
             this.label40.Size = new System.Drawing.Size(188, 20);
             this.label40.TabIndex = 29;
             this.label40.Text = "Necessary Documents";
+            this.label40.Visible = false;
             // 
             // label37
             // 
@@ -752,10 +759,10 @@ namespace SchoolManagementSystem
             // 
             // txtLastname
             // 
-            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtLastname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.Location = new System.Drawing.Point(140, 51);
             this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(376, 26);
+            this.txtLastname.Size = new System.Drawing.Size(376, 27);
             this.txtLastname.TabIndex = 1;
             // 
             // label13
@@ -772,7 +779,7 @@ namespace SchoolManagementSystem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 61);
+            this.label2.Location = new System.Drawing.Point(21, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 2;
@@ -809,7 +816,7 @@ namespace SchoolManagementSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 102);
+            this.label3.Location = new System.Drawing.Point(21, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 3;
@@ -845,7 +852,7 @@ namespace SchoolManagementSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 145);
+            this.label4.Location = new System.Drawing.Point(21, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 4;
@@ -977,7 +984,7 @@ namespace SchoolManagementSystem
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 43);
+            this.panel8.Location = new System.Drawing.Point(0, 38);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(541, 1);
             this.panel8.TabIndex = 1;
@@ -990,7 +997,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(541, 43);
+            this.panel7.Size = new System.Drawing.Size(541, 38);
             this.panel7.TabIndex = 0;
             // 
             // btnAdmissionForm
@@ -1001,14 +1008,14 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmissionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissionForm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissionForm.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAdmissionForm.IconColor = System.Drawing.Color.DimGray;
             this.btnAdmissionForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmissionForm.IconSize = 20;
             this.btnAdmissionForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmissionForm.Location = new System.Drawing.Point(-8, 9);
+            this.btnAdmissionForm.Location = new System.Drawing.Point(-8, 6);
             this.btnAdmissionForm.Name = "btnAdmissionForm";
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(189, 25);

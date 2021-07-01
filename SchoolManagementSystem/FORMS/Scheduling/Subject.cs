@@ -93,16 +93,31 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("subjects").WhereLike("subjectId", $"{textboxWatermark1.Text}")
-              .OrWhereLike("subjectCode", $"%{textboxWatermark1.Text}%")
-              .OrWhereLike("subjectTitle", $"%{textboxWatermark1.Text}%")
-              .Get();
-
-            dgvSubjects.Rows.Clear();
-            foreach (var value in values)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
+                displayData();
             }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                dgvSubjects.Rows.Clear();
+                var values = DBContext.GetContext().Query("subjects").WhereLike("subjectId", $"{textboxWatermark1.Text}")
+                  .OrWhereLike("subjectCode", $"%{textboxWatermark1.Text}%")
+                  .OrWhereLike("subjectTitle", $"%{textboxWatermark1.Text}%")
+                  .Get();
+
+                foreach (var value in values)
+                {
+                    dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
+                }
+            }
+        }
+
+        private void dgvSubjects_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

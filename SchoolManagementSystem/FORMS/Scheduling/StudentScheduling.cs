@@ -106,6 +106,7 @@ namespace SchoolManagementSystem
         {
             var myfrm = new AddStudentScheduling(this);
             FormFade.FadeForm(this, myfrm);
+            cmbSubjects.Text = "";
         }
 
         string splitSched;
@@ -337,8 +338,9 @@ namespace SchoolManagementSystem
                         {
 
                             schedId = storeID,
+                            section = cmbSubjects
 
-                        });
+                        }) ;
                         storeID = "";
                     }
 
@@ -558,13 +560,28 @@ namespace SchoolManagementSystem
                         }
                         else
                         {
-                            DBContext.GetContext().Query("studentSched").Insert(new
+                            if (string.IsNullOrEmpty(cmbSubjects.Text))
                             {
-                                studentID = cmbStudentNo.Text,
-                                schedId = storeID,
-                                academicID = academicid
-                            });
-                            storeID = "";
+                                DBContext.GetContext().Query("studentSched").Insert(new
+                                {
+                                    studentID = cmbStudentNo.Text,
+                                    schedId = storeID,
+                                    academicID = academicid,
+                                    section = "irreg"+" " + txtYear.Text
+                                }) ;
+                                storeID = "";
+                            }
+                            else
+                            {
+                                DBContext.GetContext().Query("studentSched").Insert(new
+                                {
+                                    studentID = cmbStudentNo.Text,
+                                    schedId = storeID,
+                                    academicID = academicid,
+                                    section = cmbSubjects.Text
+                                });
+                                storeID = "";
+                            }
                         }
 
                         List<feeBillings> bills = new List<feeBillings>();

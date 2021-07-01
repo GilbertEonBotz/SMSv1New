@@ -322,7 +322,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmissionForm.IconSize = 20;
             this.btnAdmissionForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmissionForm.Location = new System.Drawing.Point(-9, 3);
+            this.btnAdmissionForm.Location = new System.Drawing.Point(-9, 2);
             this.btnAdmissionForm.Name = "btnAdmissionForm";
             this.btnAdmissionForm.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAdmissionForm.Size = new System.Drawing.Size(226, 32);
@@ -331,6 +331,7 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.Text = "Percentage Form";
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
+            this.btnAdmissionForm.Click += new System.EventHandler(this.btnAdmissionForm_Click);
             // 
             // btnSave
             // 

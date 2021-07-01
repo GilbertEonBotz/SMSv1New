@@ -190,5 +190,10 @@ namespace SchoolManagementSystem
         {
 
         }
+
+        private void btnAdmissionForm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

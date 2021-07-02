@@ -37,15 +37,15 @@ namespace SchoolManagementSystem
 
             foreach (DataGridViewRow row in dgvPercentage.Rows)
             {
-                if (Convert.ToString(row.Cells[5].Value) == "Activate")
+                if (Convert.ToString(row.Cells[6].Value) == "Active")
                 {
-                    row.Cells[5].Style.ForeColor = Color.Blue;
-                    row.Cells[5].Style.SelectionForeColor = Color.Blue;
+                    row.Cells[6].Style.ForeColor = Color.Blue;
+                    row.Cells[6].Style.SelectionForeColor = Color.Blue;
                 }
                 else
                 {
-                    row.Cells[5].Style.ForeColor = Color.Red;
-                    row.Cells[5].Style.SelectionForeColor = Color.Red;
+                    row.Cells[6].Style.ForeColor = Color.Red;
+                    row.Cells[6].Style.SelectionForeColor = Color.Red;
                 }
             }
         }
@@ -58,10 +58,11 @@ namespace SchoolManagementSystem
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddExamPercentage(this);
+            var myfrm = new AddExamPercentage(this,idd);
             FormFade.FadeForm(this, myfrm);
         }
 
+        string idd;
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -108,15 +109,17 @@ namespace SchoolManagementSystem
             }
             else if (colName.Equals("edit"))
             {
-                var myfrm = new AddExamPercentage(this);
+                idd = dgvPercentage.SelectedRows[0].Cells[0].Value.ToString();
+                var myfrm = new AddExamPercentage(this, idd);
                 var value = DBContext.GetContext().Query("percentage").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).First();
 
+                
                 myfrm.txtDownpayment.Text = value.downpayment.ToString();
                 myfrm.txtPrelim.Text = value.prelim.ToString();
-                myfrm.txtMidterm.Text = value.midterm.ToString();
+                myfrm.txtMidterm.Text =  value.midterm.ToString();
                 myfrm.txtSemi.Text = value.semiFinals.ToString();
                 myfrm.txtFinal.Text = value.finals.ToString();
-
+                myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
             }
             //string colName = dgvPercentage.Columns[e.ColumnIndex].Name;

@@ -936,13 +936,9 @@ namespace SchoolManagementSystem
 
             double total = amount + Convert.ToDouble(lblTotal.Text);
 
-
-
-
             DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
             var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Active").First();
-
 
             downpayment = Convert.ToDouble(downpayments.downpayment);
             total2 = amount + Convert.ToDouble(lblTotal.Text);

@@ -101,7 +101,7 @@ namespace SchoolManagementSystem
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.txtTotal);
             this.panel6.Controls.Add(this.label7);
@@ -403,6 +403,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(406, 354);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -419,6 +420,7 @@ namespace SchoolManagementSystem
             this.Name = "AddExamPercentage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddExamPercentage";
+            this.Load += new System.EventHandler(this.AddExamPercentage_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddExamPercentage_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

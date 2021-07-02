@@ -358,10 +358,11 @@ namespace SchoolManagementSystem
                         {
 
                             schedId = storeID,
-                            section = cmbSubjects
+                            section = cmbSubjects.Text
 
                         }) ;
                         storeID = "";
+                        Validator.AlertSuccess("Student schedule updated");
                     }
 
                     List<feeBillings> bills = new List<feeBillings>();
@@ -602,6 +603,7 @@ namespace SchoolManagementSystem
                                 }); 
                                 storeID = "";
                             }
+                            Validator.AlertSuccess("Student Enrolled");
                         }
 
                         List<feeBillings> bills = new List<feeBillings>();
@@ -937,9 +939,9 @@ namespace SchoolManagementSystem
 
 
 
-            DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+            DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
-            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
 
             downpayment = Convert.ToDouble(downpayments.downpayment);

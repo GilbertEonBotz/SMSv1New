@@ -71,7 +71,7 @@ namespace SchoolManagementSystem
             {
                 if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Activated"))
                 {
-                    Validator.AlertDanger("You can't delete activated price");
+                    Validator.AlertDanger("Unable to delete this price unit because status is active!");
                     return;
                 }
                 else

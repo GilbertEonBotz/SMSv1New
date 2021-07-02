@@ -90,6 +90,35 @@ namespace SchoolManagementSystem
                     }
                 }
             }
+            else if (colName.Equals("delete"))
+            {
+                if (dgvPercentage.SelectedRows[0].Cells[6].Value.Equals("Active"))
+                {
+                    Validator.AlertDanger("Unable to delete this exam percentage because status is active!");
+                    return;
+                }
+                else
+                {
+                    if (Validator.deletePercentage())
+                    {
+                        DBContext.GetContext().Query("percentage").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).Delete();
+                        displayData();
+                    }
+                }
+            }
+            else if (colName.Equals("edit"))
+            {
+                var myfrm = new AddExamPercentage(this);
+                var value = DBContext.GetContext().Query("percentage").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).First();
+
+                myfrm.txtDownpayment.Text = value.downpayment.ToString();
+                myfrm.txtPrelim.Text = value.prelim;
+                myfrm.txtMidterm.Text = value.midterm;
+                myfrm.txtSemi.Text = value.semifinals;
+                myfrm.txtFinal.Text = value.finals;
+
+                myfrm.ShowDialog();
+            }
             //string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
 
             //if (colName.Equals("edit"))

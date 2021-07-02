@@ -272,6 +272,9 @@ namespace SchoolManagementSystem
         ReportDataSource rsDiscount = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
+
+
             conn = connect.getcon();
             conn.Open();
             cmd = new MySqlCommand("select studentschedID from studentSched where studentid ='" + cmbStudentNo.Text + "'", conn);
@@ -579,7 +582,7 @@ namespace SchoolManagementSystem
                                     schedId = storeID,
                                     academicID = academicid,
                                     section = cmbSubjects.Text
-                                });
+                                }); 
                                 storeID = "";
                             }
                         }

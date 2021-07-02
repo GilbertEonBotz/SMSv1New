@@ -112,10 +112,10 @@ namespace SchoolManagementSystem
                 var value = DBContext.GetContext().Query("percentage").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).First();
 
                 myfrm.txtDownpayment.Text = value.downpayment.ToString();
-                myfrm.txtPrelim.Text = value.prelim;
-                myfrm.txtMidterm.Text = value.midterm;
-                myfrm.txtSemi.Text = value.semifinals;
-                myfrm.txtFinal.Text = value.finals;
+                myfrm.txtPrelim.Text = value.prelim.ToString();
+                myfrm.txtMidterm.Text = value.midterm.ToString();
+                myfrm.txtSemi.Text = value.semiFinals.ToString();
+                myfrm.txtFinal.Text = value.finals.ToString();
 
                 myfrm.ShowDialog();
             }

@@ -113,48 +113,57 @@ namespace SchoolManagementSystem
         
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
+            dgvStudentSched.Rows.Clear();
 
             dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
             dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
-            try
+       
+            conn = connect.getcon();
+            conn.Open();
+            cmd = new MySqlCommand("select studentID from studentSched where studentID = '" + cmbStudentNo.Text + "'",conn);
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
             {
                 var value = DBContext.GetContext().Query("studentSched").Where("studentID", cmbStudentNo.Text).First();
 
                 splitSched = value.schedId;
                 var words = splitSched.Split(' ');
-                
 
-                dgvStudentSched.Rows.Clear();
+            
+
                 for (int i = 0; i < words.Length -1; i++)
                 {
+                   
                     string indSubj = words[i];
                     MessageBox.Show(words[i].ToString());
-                sched.getSchedID = indSubj;
-                sched.studentID = cmbStudentNo.Text;
-                sched.viewSchedStudent();
+                    sched.getSchedID = indSubj;
+                    sched.studentID = cmbStudentNo.Text;
+                    sched.viewSchedStudent();
 
-                foreach (DataRow drow in sched.dtStudentSched.Rows)
-                {
-                    int num = dgvStudentSched.Rows.Add();
+                    foreach (DataRow drow in sched.dtStudentSched.Rows)
+                    {
+                        int num = dgvStudentSched.Rows.Add();
 
-                    dgvStudentSched.Rows[num].Cells[0].Value = drow["SchedID"].ToString();
-                    dgvStudentSched.Rows[num].Cells[1].Value = drow["SubjectCode"].ToString();
-                    dgvStudentSched.Rows[num].Cells[2].Value = drow["SubjectTitle"].ToString();
-                    dgvStudentSched.Rows[num].Cells[3].Value = drow["RoomName"].ToString();
-                    dgvStudentSched.Rows[num].Cells[4].Value = drow["Day"].ToString();
-                    dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(drow["Timestart"].ToString());
-                    dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(drow["Timeend"].ToString());
-                    dgvStudentSched.Rows[num].Cells[7].Value = drow["MaxStudent"].ToString();
-                    dgvStudentSched.Rows[num].Cells[8].Value = drow["Status"].ToString();
-                    dgvStudentSched.Rows[num].Cells[9].Value = drow["lablec"].ToString();
-                    txtName.Text = drow["Name"].ToString();
-                    txtGender.Text = drow["Gender"].ToString();
-                    txtCourse.Text = drow["Course"].ToString();
+                        dgvStudentSched.Rows[num].Cells[0].Value = drow["SchedID"].ToString();
+                        dgvStudentSched.Rows[num].Cells[1].Value = drow["SubjectCode"].ToString();
+                        dgvStudentSched.Rows[num].Cells[2].Value = drow["SubjectTitle"].ToString();
+                        dgvStudentSched.Rows[num].Cells[3].Value = drow["RoomName"].ToString();
+                        dgvStudentSched.Rows[num].Cells[4].Value = drow["Day"].ToString();
+                        dgvStudentSched.Rows[num].Cells[5].Value = Convert.ToDateTime(drow["Timestart"].ToString());
+                        dgvStudentSched.Rows[num].Cells[6].Value = Convert.ToDateTime(drow["Timeend"].ToString());
+                        dgvStudentSched.Rows[num].Cells[7].Value = drow["MaxStudent"].ToString();
+                        dgvStudentSched.Rows[num].Cells[8].Value = drow["Status"].ToString();
+                        dgvStudentSched.Rows[num].Cells[9].Value = drow["lablec"].ToString();
+                        txtName.Text = drow["Name"].ToString();
+                        txtGender.Text = drow["Gender"].ToString();
+                        txtCourse.Text = drow["Course"].ToString();
+
+                    }
 
                 }
+            
             }
-            }
-            catch (Exception)
+            else
             {
                 var values = DBContext.GetContext().Query("student").Where("studentId", cmbStudentNo.Text).Get();
 
@@ -165,7 +174,15 @@ namespace SchoolManagementSystem
                     txtCourse.Text = value.course;
                     txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
                 }
-            }
+           
+
+                    }
+
+
+
+
+
+
             //0, 229
 
 
@@ -638,7 +655,7 @@ namespace SchoolManagementSystem
                             var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
 
-                            downpayment = Convert.ToDouble(downpayments.downpayment);
+                            downpayment = Convert.ToDouble(led.downpayment) ;
                             total2 = amount + Convert.ToDouble(lblTotal.Text);
                             totaldiscount = amount * discount;
                             double totalamoun = total2 - downpayment - totaldiscount;

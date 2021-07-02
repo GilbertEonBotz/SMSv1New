@@ -223,7 +223,7 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows.Clear();
                 
                 sched.category = getid;
-                MessageBox.Show(getid);
+                //MessageBox.Show(getid);
 
                 dgvStudentSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
                 dgvStudentSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
@@ -392,9 +392,9 @@ namespace SchoolManagementSystem
 
 
                         //
-                        DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+                        DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
-                        var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+                        var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
 
                         downpayment = Convert.ToDouble(downpayments.downpayment);
@@ -633,9 +633,9 @@ namespace SchoolManagementSystem
 
 
                             //
-                            DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+                            DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
-                            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Deactivate").First();
+                            var downpayments = DBContext.GetContext().Query("percentage").Where("status", "Active").First();
 
 
                             downpayment = Convert.ToDouble(downpayments.downpayment);

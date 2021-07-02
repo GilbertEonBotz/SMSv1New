@@ -33,11 +33,8 @@ namespace SchoolManagementSystem
             this.lstPrereq = new System.Windows.Forms.ListBox();
             this.cmbCourse = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.cmbCourseCode = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblLectotal = new System.Windows.Forms.Label();
-            this.lblabTotal = new System.Windows.Forms.Label();
             this.TotalPrice = new System.Windows.Forms.Label();
             this.txtLabprice = new System.Windows.Forms.TextBox();
             this.txtLecPrice = new System.Windows.Forms.TextBox();
@@ -57,8 +54,11 @@ namespace SchoolManagementSystem
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblIDD = new System.Windows.Forms.Label();
             this.btnAdmissionForm = new FontAwesome.Sharp.IconButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblLectotal = new System.Windows.Forms.Label();
+            this.lblabTotal = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnAddSubjects = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -125,12 +125,12 @@ namespace SchoolManagementSystem
             // 
             this.cmbCourse.BackColor = System.Drawing.Color.White;
             this.cmbCourse.DropDownWidth = 200;
-            this.cmbCourse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCourse.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourse.FormattingEnabled = true;
-            this.cmbCourse.ItemHeight = 17;
+            this.cmbCourse.ItemHeight = 20;
             this.cmbCourse.Location = new System.Drawing.Point(104, 58);
             this.cmbCourse.Name = "cmbCourse";
-            this.cmbCourse.Size = new System.Drawing.Size(316, 25);
+            this.cmbCourse.Size = new System.Drawing.Size(316, 28);
             this.cmbCourse.TabIndex = 1;
             this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.cmbCourse_SelectedIndexChanged);
             this.cmbCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCourse_KeyPress);
@@ -144,17 +144,6 @@ namespace SchoolManagementSystem
             this.label12.Size = new System.Drawing.Size(57, 17);
             this.label12.TabIndex = 21;
             this.label12.Text = "COURSE";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(274, 467);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 25);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Total:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // cmbCourseCode
             // 
@@ -176,28 +165,6 @@ namespace SchoolManagementSystem
             this.label10.TabIndex = 18;
             this.label10.Text = "COURSE CODE";
             // 
-            // lblLectotal
-            // 
-            this.lblLectotal.AutoSize = true;
-            this.lblLectotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblLectotal.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblLectotal.Location = new System.Drawing.Point(419, 273);
-            this.lblLectotal.Name = "lblLectotal";
-            this.lblLectotal.Size = new System.Drawing.Size(18, 20);
-            this.lblLectotal.TabIndex = 17;
-            this.lblLectotal.Text = "0";
-            // 
-            // lblabTotal
-            // 
-            this.lblabTotal.AutoSize = true;
-            this.lblabTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblabTotal.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblabTotal.Location = new System.Drawing.Point(419, 305);
-            this.lblabTotal.Name = "lblabTotal";
-            this.lblabTotal.Size = new System.Drawing.Size(18, 20);
-            this.lblabTotal.TabIndex = 16;
-            this.lblabTotal.Text = "0";
-            // 
             // TotalPrice
             // 
             this.TotalPrice.AutoSize = true;
@@ -213,9 +180,10 @@ namespace SchoolManagementSystem
             this.txtLabprice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLabprice.Location = new System.Drawing.Point(302, 302);
             this.txtLabprice.Name = "txtLabprice";
+            this.txtLabprice.ReadOnly = true;
             this.txtLabprice.Size = new System.Drawing.Size(118, 27);
             this.txtLabprice.TabIndex = 8;
-            this.txtLabprice.Text = "0";
+            this.txtLabprice.TabStop = false;
             this.txtLabprice.TextChanged += new System.EventHandler(this.txtLabprice_TextChanged);
             this.txtLabprice.Enter += new System.EventHandler(this.txtLabprice_Enter);
             this.txtLabprice.Leave += new System.EventHandler(this.txtLabprice_Leave);
@@ -225,9 +193,10 @@ namespace SchoolManagementSystem
             this.txtLecPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLecPrice.Location = new System.Drawing.Point(302, 269);
             this.txtLecPrice.Name = "txtLecPrice";
+            this.txtLecPrice.ReadOnly = true;
             this.txtLecPrice.Size = new System.Drawing.Size(118, 27);
             this.txtLecPrice.TabIndex = 6;
-            this.txtLecPrice.Text = "0";
+            this.txtLecPrice.TabStop = false;
             this.txtLecPrice.TextChanged += new System.EventHandler(this.txtLecPrice_TextChanged);
             this.txtLecPrice.Enter += new System.EventHandler(this.txtLecPrice_Enter);
             this.txtLecPrice.Leave += new System.EventHandler(this.txtLecPrice_Leave);
@@ -302,7 +271,7 @@ namespace SchoolManagementSystem
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 399);
+            this.label7.Location = new System.Drawing.Point(4, 376);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 7;
@@ -312,7 +281,7 @@ namespace SchoolManagementSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 374);
+            this.label6.Location = new System.Drawing.Point(4, 345);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 6;
@@ -324,9 +293,9 @@ namespace SchoolManagementSystem
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(4, 313);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 17);
+            this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 5;
-            this.label5.Text = "LABORATORY";
+            this.label5.Text = "LAB UNITS";
             // 
             // label4
             // 
@@ -334,9 +303,9 @@ namespace SchoolManagementSystem
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 279);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(100, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "LECTURE";
+            this.label4.Text = "LECTURE UNITS";
             // 
             // label3
             // 
@@ -414,6 +383,16 @@ namespace SchoolManagementSystem
             this.btnAdmissionForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmissionForm.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(230, 312);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "LAB PRICE";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -424,15 +403,38 @@ namespace SchoolManagementSystem
             this.label9.TabIndex = 10;
             this.label9.Text = "LEC PRICE";
             // 
-            // label8
+            // lblLectotal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(230, 312);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "LAB PRICE";
+            this.lblLectotal.AutoSize = true;
+            this.lblLectotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblLectotal.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblLectotal.Location = new System.Drawing.Point(419, 273);
+            this.lblLectotal.Name = "lblLectotal";
+            this.lblLectotal.Size = new System.Drawing.Size(18, 20);
+            this.lblLectotal.TabIndex = 17;
+            this.lblLectotal.Text = "0";
+            // 
+            // lblabTotal
+            // 
+            this.lblabTotal.AutoSize = true;
+            this.lblabTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblabTotal.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblabTotal.Location = new System.Drawing.Point(419, 305);
+            this.lblabTotal.Name = "lblabTotal";
+            this.lblabTotal.Size = new System.Drawing.Size(18, 20);
+            this.lblabTotal.TabIndex = 16;
+            this.lblabTotal.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(274, 467);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 25);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Total:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // btnAddSubjects
             // 

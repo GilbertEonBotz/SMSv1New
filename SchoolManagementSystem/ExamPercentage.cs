@@ -68,23 +68,23 @@ namespace SchoolManagementSystem
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
             if (colName.Equals("activate"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Activated"))
+                if (dgvPercentage.SelectedRows[0].Cells[6].Value.Equals("Active"))
                 {
-                    Validator.AlertDanger("This unit price is already activated");
+                    Validator.AlertDanger("This exam percentage is already activated");
                     return;
                 }
                 else
                 {
-                    if (Validator.openUnit())
+                    if (Validator.openPercentage())
                     {
-                        DBContext.GetContext().Query("unitPrice").Update(new
+                        DBContext.GetContext().Query("percentage").Update(new
                         {
-                            status = "Deactivated",
+                            status = "Inactive",
                         });
 
-                        DBContext.GetContext().Query("unitPrice").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).Update(new
+                        DBContext.GetContext().Query("percentage").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).Update(new
                         {
-                            status = "Activated",
+                            status = "Active",
                         });
                         displayData();
                     }

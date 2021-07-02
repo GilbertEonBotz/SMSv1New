@@ -63,7 +63,7 @@ namespace SchoolManagementSystem
                         finals = $"0.{txtFinal.Text.Trim()}",
                         downpayment = txtDownpayment.Text.Trim()
                     });
-                    MessageBox.Show("Inserted");
+                    Validator.AlertSuccess("Exam percentage inserted");
                     reloadDatagrid.displayData();
                     this.Close();
 

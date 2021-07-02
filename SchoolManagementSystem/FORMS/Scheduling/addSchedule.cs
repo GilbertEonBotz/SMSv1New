@@ -110,7 +110,7 @@ namespace SchoolManagementSystem
 
                 if (dateTimePicker1.Value.TimeOfDay > dateTimePicker2.Value.TimeOfDay)
                 {
-                    Validator.AlertDanger("Schedule time-start must not be advance to schedule time-end!");
+                    Validator.AlertDanger("Time-start must not be advance to schedule Time-end!");
                 }
                 else if (string.IsNullOrEmpty(cmbCourse.Text))
                 {
@@ -126,11 +126,11 @@ namespace SchoolManagementSystem
                 }
                 else if (dateTimePicker1.Value.TimeOfDay.Equals(dateTimePicker2.Value.TimeOfDay))
                 {
-                    Validator.AlertDanger("Schedule time-start must not be equal to schedule time-end!");
+                    Validator.AlertDanger("Time-start must not be equal to schedule Time-end!");
                 }
                 else if (scheds.timeEnd == dtpTimstart)
                 {
-                    Validator.AlertDanger("Schedule time-start must not be equal to schedule time-end!");
+                    Validator.AlertDanger("Time-start must not be equal to schedule Time-end!");
                 }
                 else if (scheds.timediff == null || scheds.timediff == "")
                 {
@@ -141,7 +141,7 @@ namespace SchoolManagementSystem
                 }
                 else
                 {
-                    Validator.AlertDanger("Schedule existed");
+                    Validator.AlertDanger("Schedule Conflict");
                 }
             }
             catch (Exception)

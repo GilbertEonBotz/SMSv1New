@@ -127,7 +127,7 @@ namespace SchoolManagementSystem
                                 honorableDismissal = honorable,
 
                             });
-                            Validator.AlertSuccess("Success");
+                            Validator.AlertSuccess("Student Added");
                             reloadDatagrid.displayData();
                             this.Close();
                         }

@@ -28,12 +28,11 @@ namespace SchoolManagementSystem
         {
             dgvPercentage.Rows.Clear();
 
-
             var values = DBContext.GetContext().Query("percentage").Get();
             foreach (var value in values)
             {
                 dgvPercentage.Rows.Add(value.id, $"{strDisplayPercentage(value.prelim).ToString("N0")} %", $"{strDisplayPercentage(value.midterm).ToString("N0")} %"
-                    , $"{strDisplayPercentage(value.semiFinals).ToString("N0")} %", $"{strDisplayPercentage(value.finals).ToString("N0")} %", value.status);
+                    , $"{strDisplayPercentage(value.semiFinals).ToString("N0")} %", $"{strDisplayPercentage(value.finals).ToString("N0")} %", value.downpayment, value.status);
             }
 
             foreach (DataGridViewRow row in dgvPercentage.Rows)
@@ -65,42 +64,55 @@ namespace SchoolManagementSystem
 
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
-
-            if (colName.Equals("status"))
+            if (colName.Equals("activate"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Activate")
+                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Activated"))
                 {
-                    if (Validator.actYear())
-                    {
-                        DBContext.GetContext().Query("percentage").Update(new
-                        {
-                            status = "Activate"
-                        });
-
-                        int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
-                        DBContext.GetContext().Query("percentage").Where("id", id).Update(new
-                        {
-                            status = "Deactivate"
-                        });
-                        displayData();
-                    }
-
+                    Validator.AlertDanger("This unit price is already activated");
+                    return;
                 }
-                else if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString() == "Deactivate")
+                else
                 {
-                    if (Validator.deactYear())
+                    if (Validator.openUnit())
                     {
-                        DBContext.GetContext().Query("percentage").Update(new
+                        DBContext.GetContext().Query("unitPrice").Update(new
                         {
-                            status = "Activate"
+                            status = "Deactivated",
+                        });
+
+                        DBContext.GetContext().Query("unitPrice").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).Update(new
+                        {
+                            status = "Activated",
                         });
                         displayData();
                     }
-
                 }
             }
+            //string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
 
+            //if (colName.Equals("edit"))
+            //{
+            //    if (dgvPercentage.SelectedRows[0].Cells[5].Value.ToString().Equals(""))
+            //    {
+            //        if (Validator.actYear())
+            //        {
+            //            DBContext.GetContext().Query("percentage").Update(new
+            //            {
+            //                status = "Activate"
+            //            });
+
+            //            int id = Convert.ToInt32(dgvPercentage.SelectedRows[0].Cells[0].Value);
+            //            DBContext.GetContext().Query("percentage").Where("id", id).Update(new
+            //            {
+            //                status = "Deactivate"
+            //            });
+            //            displayData();
+            //        }
+            //    }
+
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -49,7 +49,6 @@ namespace SchoolManagementSystem
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            displayData();
             var myfrm = new AddAcademicYear(this);
             FormFade.FadeForm(this, myfrm);
         }
@@ -104,6 +103,10 @@ namespace SchoolManagementSystem
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textboxWatermark1.Text))
+            {
+                displayData();
+            }
+            else if (textboxWatermark1.Text.Equals("Search"))
             {
                 displayData();
             }

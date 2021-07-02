@@ -20,7 +20,6 @@ namespace SchoolManagementSystem
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
-            displayData();
             var myfrm = new AddDepartment(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
@@ -39,12 +38,12 @@ namespace SchoolManagementSystem
         private void Department_Load(object sender, EventArgs e)
         {
             displayData();
-            
+
         }
 
         private void dgvDepartment_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
         private void dgvDepartment_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -72,15 +71,28 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("department").WhereLike("deptID", $"{textboxWatermark1.Text}")
-               .OrWhereLike("deptName", $"%{textboxWatermark1.Text}%")
-               .Get();
-
-            dgvDepartment.Rows.Clear();
-            foreach (var value in values)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                dgvDepartment.Rows.Add(value.deptID, value.deptName);
+                displayData();
             }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("department").WhereLike("deptID", $"{textboxWatermark1.Text}")
+                  .OrWhereLike("deptName", $"%{textboxWatermark1.Text}%")
+                  .Get();
+
+                dgvDepartment.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvDepartment.Rows.Add(value.deptID, value.deptName);
+                }
+            }
+
+
         }
     }
 }

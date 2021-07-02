@@ -32,15 +32,14 @@ namespace SchoolManagementSystem
                 .Get();
 
             dgvCourseCode.Rows.Clear();
-            foreach(var value in values)
+            foreach (var value in values)
             {
-                dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description,  value.remarks);
+                dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description, value.remarks);
             }
         }
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            displayData();
             var myfrm = new addCourseCode(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
@@ -62,7 +61,7 @@ namespace SchoolManagementSystem
                 int id = Convert.ToInt32(dgvCourseCode.Rows[dgvCourseCode.CurrentRow.Index].Cells[0].Value);
                 idd = id.ToString();
                 var myfrm = new addCourseCode(this, idd);
-                
+
                 myfrm.cmbDepartment.Text = dgvCourseCode.SelectedRows[0].Cells[2].Value.ToString();
                 myfrm.txtCourseCode.Text = dgvCourseCode.SelectedRows[0].Cells[1].Value.ToString();
                 myfrm.txtRemarks.Text = dgvCourseCode.SelectedRows[0].Cells[3].Value.ToString();
@@ -73,16 +72,27 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("coursecode")
-              .Join("course", "course.courseId", "coursecode.courseId")
-              .WhereLike("coursecodeId", $"{textboxWatermark1.Text}")
-              .OrWhereLike("coursecode", $"%{textboxWatermark1.Text}%")
-              .Get();
-
-            dgvCourseCode.Rows.Clear();
-            foreach (var value in values)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description, value.remarks);
+                displayData();
+            }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("coursecode")
+               .Join("course", "course.courseId", "coursecode.courseId")
+               .WhereLike("coursecodeId", $"{textboxWatermark1.Text}")
+               .OrWhereLike("coursecode", $"%{textboxWatermark1.Text}%")
+               .Get();
+
+                dgvCourseCode.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvCourseCode.Rows.Add(value.coursecodeId, value.coursecode, value.description, value.remarks);
+                }
             }
         }
     }

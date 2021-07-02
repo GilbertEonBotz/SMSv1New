@@ -24,7 +24,7 @@ namespace SchoolManagementSystem
         {
             displayData();
             var myfrm = new AddRoom(this, idd);
-            FormFade.FadeForm(this,myfrm);
+            FormFade.FadeForm(this, myfrm);
 
         }
 
@@ -32,21 +32,21 @@ namespace SchoolManagementSystem
         {
             displayData();
         }
-                
+
         public void displayData()
         {
             dgvRooms.Rows.Clear();
             var rooms = DBContext.GetContext().Query("rooms").Get();
-            
+
             foreach (var room in rooms)
             {
-                dgvRooms.Rows.Add(room.roomId,room.name, room.description);         
+                dgvRooms.Rows.Add(room.roomId, room.name, room.description);
             }
         }
 
         private void dgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
         private void dgvRooms_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -76,14 +76,25 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("rooms").WhereLike("roomId", $"{textboxWatermark1.Text}")
-               .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
-               .Get();
-
-            dgvRooms.Rows.Clear();
-            foreach (var value in values)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                dgvRooms.Rows.Add(value.roomId, value.name, value.description);
+                displayData();
+            }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("rooms").WhereLike("roomId", $"{textboxWatermark1.Text}")
+              .OrWhereLike("name", $"%{textboxWatermark1.Text}%")
+              .Get();
+
+                dgvRooms.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvRooms.Rows.Add(value.roomId, value.name, value.description);
+                }
             }
         }
     }

@@ -1851,10 +1851,11 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>= "-" &amp; Sum(Fields!discounted.Value, "DataSet6")</Value>
+                    <Value>=Sum(Fields!discounted.Value, "DataSet6")</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontWeight>Bold</FontWeight>
+                      <Format>0.00;(0.00)</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>

@@ -295,7 +295,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                                     lblmid.Text = txt2.Text;
                                     lblsemi.Text = txt3.Text;
                                     lblfin.Text = amount.ToString();
-
                                 }
                             }
                             else
@@ -504,10 +503,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void cmbpaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbpaymentMethod.Text.Equals("PROMISORY"))
-            {
-                txtTotal.Text = "0";
-            }
+            
         }
 
         private void button3_Click_1(object sender, EventArgs e)

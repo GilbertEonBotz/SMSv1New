@@ -81,15 +81,26 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("course").WhereLike("courseId", $"{textboxWatermark1.Text}")
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
+            {
+                displayData();
+            }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("course").WhereLike("courseId", $"{textboxWatermark1.Text}")
                .OrWhereLike("description", $"%{textboxWatermark1.Text}%")
                .OrWhereLike("abbreviation", $"%{textboxWatermark1.Text}%")
                .Get();
 
-            dgvCourse.Rows.Clear();
-            foreach (var value in values)
-            {
-                dgvCourse.Rows.Add(value.courseId, $"{value.description}({value.abbreviation})");
+                dgvCourse.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvCourse.Rows.Add(value.courseId, $"{value.description}({value.abbreviation})");
+                }
             }
         }
     }

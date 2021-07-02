@@ -76,7 +76,7 @@ namespace SchoolManagementSystem.FORMS.FeeManagement
             try
             {
                 DBContext.GetContext().Query("totalfee").Where("categoryID", categoryid).Where("structureID", id).First();
-                Validator.AlertDanger("Category fee is already existed!");
+                Validator.AlertDanger("Category fee is already exist!");
             }
             catch (Exception)
             {

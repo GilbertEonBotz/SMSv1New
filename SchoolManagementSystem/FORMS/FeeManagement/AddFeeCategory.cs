@@ -32,7 +32,7 @@ namespace SchoolManagementSystem
 
             if (btnAddCategory.Text.Equals("Save"))
             {
-                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
+                if (Validator.isEmpty(inputs))
                 {
                     try
                     {
@@ -45,11 +45,10 @@ namespace SchoolManagementSystem
                         {
                             category = txtCategory.Text.Trim(),
                         });
-                        Validator.AlertSuccess("successfully added");
+                        Validator.AlertSuccess("Category Added");
                         reloadDatagrid.displayData();
-                        this.Close();
                     }
-                  
+                    txtCategory.Text = "";
                 }
             }
         }

@@ -53,7 +53,6 @@ namespace SchoolManagementSystem
             }
         }
 
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,8 +69,6 @@ namespace SchoolManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,9 +80,9 @@ namespace SchoolManagementSystem
         {
             foreach (DataGridViewRow row in addDatagrid.dgvStudentSched.Rows)
             {
-                if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+                if ((string)row.Cells[1].Value == dgvSched.SelectedRows[0].Cells[1].Value.ToString())
                 {
-                    Validator.AlertDanger("Subject existed");
+                    Validator.AlertDanger("Unable to add same subject code!");
                     return;
                 }
             }

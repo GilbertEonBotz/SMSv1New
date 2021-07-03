@@ -57,11 +57,11 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("unitPrice").Update(new
                         {
-                            status = "Deactivated",
+                            status = "Inactive",
                         });
 
                         DBContext.GetContext().Query("unitPrice").Where("id", dgvPercentage.SelectedRows[0].Cells[0].Value).Update(new { 
-                            status = "Activated",
+                            status = "Active",
                         });
                         displayData();
                     }

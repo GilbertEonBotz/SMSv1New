@@ -29,11 +29,9 @@ namespace SchoolManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -48,7 +46,6 @@ namespace SchoolManagementSystem
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDateOfRegistration = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,8 +62,9 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
+            this.textboxWatermark1 = new SchoolManagementSystem.UITools.TextboxWatermark();
+            this.btnSearchStudent = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).BeginInit();
@@ -77,7 +75,8 @@ namespace SchoolManagementSystem
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.btnSearchStudent);
+            this.panel1.Controls.Add(this.textboxWatermark1);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Controls.Add(this.panel2);
@@ -88,33 +87,7 @@ namespace SchoolManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1108, 597);
             this.panel1.TabIndex = 17;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.iconButton1);
-            this.panel6.Location = new System.Drawing.Point(641, 47);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(374, 29);
-            this.panel6.TabIndex = 6;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton1.Enabled = false;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 15;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(26, 27);
-            this.iconButton1.TabIndex = 8;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnPrint
             // 
@@ -123,25 +96,26 @@ namespace SchoolManagementSystem
             this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.btnPrint.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPrint.IconSize = 25;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnPrint.Location = new System.Drawing.Point(99, 215);
+            this.btnPrint.Location = new System.Drawing.Point(108, 213);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(150, 28);
+            this.btnPrint.Size = new System.Drawing.Size(142, 29);
             this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "Print Schedule";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(96, 25);
             this.tabControl1.Location = new System.Drawing.Point(-2, 215);
             this.tabControl1.Name = "tabControl1";
@@ -168,14 +142,14 @@ namespace SchoolManagementSystem
             this.dgvStudentSched.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudentSched.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvStudentSched.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentSched.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentSched.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvStudentSched.ColumnHeadersHeight = 40;
             this.dgvStudentSched.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStudentSched.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -187,14 +161,14 @@ namespace SchoolManagementSystem
             this.Column6,
             this.Column9,
             this.Column3});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentSched.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentSched.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvStudentSched.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudentSched.EnableHeadersVisualStyles = false;
             this.dgvStudentSched.GridColor = System.Drawing.Color.White;
@@ -270,7 +244,6 @@ namespace SchoolManagementSystem
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Controls.Add(this.txtDateOfRegistration);
             this.panel2.Controls.Add(this.label7);
@@ -287,29 +260,20 @@ namespace SchoolManagementSystem
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1104, 131);
             this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(532, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(663, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtName.Location = new System.Drawing.Point(125, 12);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
@@ -319,7 +283,7 @@ namespace SchoolManagementSystem
             // 
             // txtDateOfRegistration
             // 
-            this.txtDateOfRegistration.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDateOfRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtDateOfRegistration.Location = new System.Drawing.Point(860, 12);
             this.txtDateOfRegistration.Multiline = true;
             this.txtDateOfRegistration.Name = "txtDateOfRegistration";
@@ -330,26 +294,26 @@ namespace SchoolManagementSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(465, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 21);
+            this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 27;
             this.label7.Text = "Gender";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(697, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 21);
+            this.label8.Size = new System.Drawing.Size(44, 20);
             this.label8.TabIndex = 30;
             this.label8.Text = "Date";
             // 
             // txtYear
             // 
-            this.txtYear.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtYear.Location = new System.Drawing.Point(535, 53);
             this.txtYear.Multiline = true;
             this.txtYear.Name = "txtYear";
@@ -359,7 +323,7 @@ namespace SchoolManagementSystem
             // 
             // txtCourse
             // 
-            this.txtCourse.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCourse.Location = new System.Drawing.Point(125, 53);
             this.txtCourse.Multiline = true;
             this.txtCourse.Name = "txtCourse";
@@ -370,16 +334,16 @@ namespace SchoolManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 21);
+            this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 22;
             this.label4.Text = "Course";
             // 
             // txtGender
             // 
-            this.txtGender.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtGender.Location = new System.Drawing.Point(535, 12);
             this.txtGender.Multiline = true;
             this.txtGender.Name = "txtGender";
@@ -390,26 +354,26 @@ namespace SchoolManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(697, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 21);
+            this.label6.Size = new System.Drawing.Size(122, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "Type of Student";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(7, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 20;
             this.label3.Text = "Name";
             // 
             // txtTypeofStudent
             // 
-            this.txtTypeofStudent.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtTypeofStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTypeofStudent.Location = new System.Drawing.Point(860, 53);
             this.txtTypeofStudent.Multiline = true;
             this.txtTypeofStudent.Name = "txtTypeofStudent";
@@ -420,10 +384,10 @@ namespace SchoolManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(465, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 21);
+            this.label5.Size = new System.Drawing.Size(43, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "Year";
             // 
@@ -450,11 +414,11 @@ namespace SchoolManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(9, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 17);
+            this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Student Subjects Page";
             // 
@@ -466,7 +430,7 @@ namespace SchoolManagementSystem
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -481,14 +445,45 @@ namespace SchoolManagementSystem
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
+            // textboxWatermark1
+            // 
+            this.textboxWatermark1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxWatermark1.ForeColor = System.Drawing.Color.LightGray;
+            this.textboxWatermark1.Location = new System.Drawing.Point(2, 46);
+            this.textboxWatermark1.Name = "textboxWatermark1";
+            this.textboxWatermark1.Size = new System.Drawing.Size(265, 29);
+            this.textboxWatermark1.TabIndex = 9;
+            this.textboxWatermark1.Text = "Search";
+            this.textboxWatermark1.WatermarkText = "Search";
+            // 
+            // btnSearchStudent
+            // 
+            this.btnSearchStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnSearchStudent.FlatAppearance.BorderSize = 0;
+            this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnSearchStudent.ForeColor = System.Drawing.Color.White;
+            this.btnSearchStudent.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSearchStudent.IconColor = System.Drawing.Color.White;
+            this.btnSearchStudent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearchStudent.IconSize = 30;
+            this.btnSearchStudent.Location = new System.Drawing.Point(273, 50);
+            this.btnSearchStudent.Name = "btnSearchStudent";
+            this.btnSearchStudent.Size = new System.Drawing.Size(92, 25);
+            this.btnSearchStudent.TabIndex = 28;
+            this.btnSearchStudent.Text = "Search";
+            this.btnSearchStudent.UseVisualStyleBackColor = false;
+            this.btnSearchStudent.Click += new System.EventHandler(this.btnSearchStudent_Click);
+            // 
             // StudentEnrolledSubjects
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1108, 650);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAdmin);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StudentEnrolledSubjects";
@@ -496,7 +491,7 @@ namespace SchoolManagementSystem
             this.Text = "StudentEnrolledSubjects";
             this.Load += new System.EventHandler(this.StudentEnrolledSubjects_Load);
             this.panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSched)).EndInit();
@@ -516,8 +511,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel6;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDateOfRegistration;
         private System.Windows.Forms.Label label7;
@@ -535,7 +528,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.TabPage tabPage1;
         public System.Windows.Forms.DataGridView dgvStudentSched;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -544,5 +536,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private UITools.TextboxWatermark textboxWatermark1;
+        public FontAwesome.Sharp.IconButton btnSearchStudent;
     }
 }

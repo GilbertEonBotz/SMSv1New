@@ -30,7 +30,7 @@ namespace SchoolManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SchedulingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,9 +45,9 @@ namespace SchoolManagementSystem
             // 
             // reportViewer1
             // 
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.SchedulingsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.SchedulingsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(11, 65);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);

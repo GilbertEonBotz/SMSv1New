@@ -46,7 +46,7 @@ namespace SchoolManagementSystem.FORMS
                 date = DateTime.Now,
                 discountDescription = comboBox3.Text
             });
-            MessageBox.Show("Student successfully activated");
+            Validator.AlertSuccess("Student activated");
             reloadDatagrid.displayData();
             this.Close();
         }
@@ -78,6 +78,11 @@ namespace SchoolManagementSystem.FORMS
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

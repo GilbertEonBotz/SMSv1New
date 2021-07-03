@@ -43,12 +43,12 @@ namespace SchoolManagementSystem
             if (Validator.isEmpty(inputs))
             {
                 DBContext.GetContext().Query("unitPrice").Update(new { 
-                    status = "Deactivated"
+                    status = "Inactive"
                 });
 
                 DBContext.GetContext().Query("unitPrice").Insert(new { 
                     amount = txtName.Text.Trim(),
-                    status = "Activated"
+                    status = "Active"
                 });
 
                 reloadDatagrid.displayData();

@@ -1045,6 +1045,7 @@ namespace SchoolManagementSystem
             this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Running Session: 2021-2022";
+            this.label1.Visible = false;
             // 
             // btnAdmin
             // 
@@ -1059,7 +1060,7 @@ namespace SchoolManagementSystem
             this.btnAdmin.IconColor = System.Drawing.Color.Black;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmin.IconSize = 20;
-            this.btnAdmin.Location = new System.Drawing.Point(6, 74);
+            this.btnAdmin.Location = new System.Drawing.Point(-11, 74);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(163, 31);
             this.btnAdmin.TabIndex = 5;

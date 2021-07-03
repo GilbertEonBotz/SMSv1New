@@ -447,10 +447,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.59598in</Height>
+    <Height>3in</Height>
     <Style />
   </Body>
-  <Width>8.7175in</Width>
+  <Width>7.5in</Width>
   <Page>
     <PageHeader>
       <Height>1.9236in</Height>
@@ -927,10 +927,11 @@
         </Border>
       </Style>
     </PageHeader>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>13in</PageHeight>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>

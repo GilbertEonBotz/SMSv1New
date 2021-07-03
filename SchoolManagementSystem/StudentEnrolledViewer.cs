@@ -22,5 +22,10 @@ namespace SchoolManagementSystem
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -490,7 +490,7 @@ namespace SchoolManagementSystem
 
         public void displayUnit()
         {
-            var value = DBContext.GetContext().Query("unitPrice").Where("status", "Activated").First();
+            var value = DBContext.GetContext().Query("unitPrice").Where("status", "Active").First();
             txtLecPrice.Text = value.amount.ToString();
             txtLabprice.Text = value.amount.ToString();
 

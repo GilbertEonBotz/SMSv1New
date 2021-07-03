@@ -61,8 +61,8 @@ namespace SchoolManagementSystem
             sched.category = id;
             sched.viewSectiong();
 
-            //dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
-            //dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            dgvCategories.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvCategories.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
             foreach (DataRow Drow in sched.dt.Rows)
             {
                 int num = dgvCategories.Rows.Add();
@@ -149,9 +149,9 @@ namespace SchoolManagementSystem
         {
             foreach (DataGridViewRow row in dgvCategories.Rows)
             {
-                if ((string)row.Cells[0].Value == dgvSched.SelectedRows[0].Cells[0].Value.ToString())
+                if ((string)row.Cells[1].Value == dgvSched.SelectedRows[0].Cells[1].Value.ToString())
                 {
-                    Validator.AlertDanger("Subject existed");
+                    Validator.AlertDanger("Subject schedule exist!");
                     return;
                 }
             }

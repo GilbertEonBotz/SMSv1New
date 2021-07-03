@@ -128,6 +128,7 @@ namespace SchoolManagementSystem
             {
                 displayData();
             }
+            
         }
     }
 }

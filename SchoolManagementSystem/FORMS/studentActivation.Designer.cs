@@ -49,6 +49,7 @@ namespace SchoolManagementSystem.FORMS
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,6 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
@@ -97,7 +97,7 @@ namespace SchoolManagementSystem.FORMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 48);
+            this.panel1.Size = new System.Drawing.Size(489, 48);
             this.panel1.TabIndex = 29;
             // 
             // label7
@@ -105,7 +105,7 @@ namespace SchoolManagementSystem.FORMS
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(135, 11);
+            this.label7.Location = new System.Drawing.Point(126, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(227, 21);
             this.label7.TabIndex = 4;
@@ -120,7 +120,7 @@ namespace SchoolManagementSystem.FORMS
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(446, 8);
+            this.btnExit.Location = new System.Drawing.Point(448, 9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 31);
             this.btnExit.TabIndex = 3;
@@ -133,18 +133,18 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 393);
+            this.panel4.Location = new System.Drawing.Point(6, 378);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(478, 6);
+            this.panel4.Size = new System.Drawing.Size(477, 6);
             this.panel4.TabIndex = 32;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(484, 48);
+            this.panel3.Location = new System.Drawing.Point(483, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 351);
+            this.panel3.Size = new System.Drawing.Size(6, 336);
             this.panel3.TabIndex = 31;
             // 
             // panel2
@@ -153,7 +153,7 @@ namespace SchoolManagementSystem.FORMS
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 351);
+            this.panel2.Size = new System.Drawing.Size(6, 336);
             this.panel2.TabIndex = 30;
             // 
             // label2
@@ -181,15 +181,15 @@ namespace SchoolManagementSystem.FORMS
             this.btnAddAcademicYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
             this.btnAddAcademicYear.FlatAppearance.BorderSize = 0;
             this.btnAddAcademicYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAcademicYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAcademicYear.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnAddAcademicYear.ForeColor = System.Drawing.Color.White;
             this.btnAddAcademicYear.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAddAcademicYear.IconColor = System.Drawing.Color.White;
             this.btnAddAcademicYear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddAcademicYear.IconSize = 30;
-            this.btnAddAcademicYear.Location = new System.Drawing.Point(204, 345);
+            this.btnAddAcademicYear.Location = new System.Drawing.Point(279, 336);
             this.btnAddAcademicYear.Name = "btnAddAcademicYear";
-            this.btnAddAcademicYear.Size = new System.Drawing.Size(137, 32);
+            this.btnAddAcademicYear.Size = new System.Drawing.Size(80, 28);
             this.btnAddAcademicYear.TabIndex = 36;
             this.btnAddAcademicYear.Text = "Activate";
             this.btnAddAcademicYear.UseVisualStyleBackColor = false;
@@ -208,7 +208,6 @@ namespace SchoolManagementSystem.FORMS
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -224,7 +223,6 @@ namespace SchoolManagementSystem.FORMS
             // 
             this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
@@ -284,12 +282,32 @@ namespace SchoolManagementSystem.FORMS
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 45;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Tomato;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.Location = new System.Drawing.Point(365, 336);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(80, 28);
+            this.iconButton1.TabIndex = 46;
+            this.iconButton1.Text = "Cancel";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // studentActivation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(490, 399);
+            this.ClientSize = new System.Drawing.Size(489, 384);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtStatus);
@@ -343,5 +361,6 @@ namespace SchoolManagementSystem.FORMS
         public System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
+        public FontAwesome.Sharp.IconButton iconButton1;
     }
 }

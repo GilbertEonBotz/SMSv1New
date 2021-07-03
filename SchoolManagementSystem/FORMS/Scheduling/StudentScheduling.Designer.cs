@@ -425,7 +425,7 @@ namespace SchoolManagementSystem
             this.cmbSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubjects.FormattingEnabled = true;
-            this.cmbSubjects.Location = new System.Drawing.Point(812, 6);
+            this.cmbSubjects.Location = new System.Drawing.Point(812, 8);
             this.cmbSubjects.Name = "cmbSubjects";
             this.cmbSubjects.Size = new System.Drawing.Size(288, 28);
             this.cmbSubjects.TabIndex = 21;

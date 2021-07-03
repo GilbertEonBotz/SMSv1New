@@ -203,7 +203,6 @@ namespace SchoolManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(idd.ToString());
             this.Close();
         }
 

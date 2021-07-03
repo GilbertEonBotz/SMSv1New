@@ -89,6 +89,8 @@ namespace SchoolManagementSystem
                 var values = DBContext.GetContext().Query("users")
                     .Join("role", "role.roleId", "users.userrole")
                     .Where("id", idd).Get();
+
+
                 foreach (var value in values)
                 {
                     myfrm.cmbRole.Text = value.roletype;

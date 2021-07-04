@@ -36,6 +36,7 @@ namespace SchoolManagementSystem
         double prelim;
         double final;
         double semi;
+        int trapmaxStud;
         double midterm;
         studentSched sched = new studentSched();
         feeStruc struc = new feeStruc();
@@ -288,6 +289,7 @@ namespace SchoolManagementSystem
         ReportDataSource rsExams = new ReportDataSource();
         ReportDataSource rsPayment = new ReportDataSource();
         ReportDataSource rsDiscount = new ReportDataSource();
+        ReportDataSource rsYrType = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
             conn = connect.getcon();
@@ -642,7 +644,7 @@ namespace SchoolManagementSystem
                                     studentID = cmbStudentNo.Text,
                                     schedId = storeID,
                                     academicID = academicid,
-                                    section = "irreg" + " " + txtYear.Text
+                                    section = "irreg" + " " + cmbYear.Text
                                 });
                                 storeID = "";
                             }
@@ -894,11 +896,10 @@ namespace SchoolManagementSystem
 
             lblTotal.Text = struc.total;
         }
-
+        int[] arrayContainer;
+        string[] subjectCodeArray;
         private void btnEnroll_Click(object sender, EventArgs e)
         {
-
-
 
             conn = connect.getcon();
             conn.Open();
@@ -944,6 +945,8 @@ namespace SchoolManagementSystem
                 }
                 storeID = "";
             }
+
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -958,6 +961,30 @@ namespace SchoolManagementSystem
 
             List<Schedulings> lst = new List<Schedulings>();
             lst.Clear();
+
+            int stored = 0;
+            string wewww = "";
+            string getSchedule = "";
+
+            for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
+            {
+                getSchedule = dgvStudentSched.Rows[i].Cells[0].Value.ToString();
+
+                conn = connect.getcon();
+                conn.Open();
+
+                cmd = new MySqlCommand("select Sum(b.totalUnits) from schedule a, subjects b where a.subjectCode = b.subjectCode and a.schedID = '" + getSchedule + "'", conn);
+
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    xxxx = new string[] { Convert.ToString(dr[0]) };
+                    foreach (string aa in xxxx)
+                    {
+                        stored += Convert.ToInt32(aa);
+                    }
+                }
+            }
 
             for (int i = 0; i < dgvStudentSched.Rows.Count; i++)
             {
@@ -975,7 +1002,7 @@ namespace SchoolManagementSystem
                     capacity = dgvStudentSched.Rows[i].Cells[7].Value.ToString(),
                     status = dgvStudentSched.Rows[i].Cells[8].Value.ToString(),
                     lablec = dgvStudentSched.Rows[i].Cells[9].Value.ToString(),
-                    totalUnits = Convert.ToString($"{aa}.0")
+                    totalUnits = Convert.ToString($"{stored}.0")
                 });
             }
 
@@ -1079,6 +1106,15 @@ namespace SchoolManagementSystem
                 rmk = "N/A"
             });
 
+            List<YearType> typeYr = new List<YearType>();
+            typeYr.Clear();
+
+            typeYr.Add(new YearType
+            {
+                yrLevel = cmbYear.Text,
+                studentType = cmbTypeStudent.Text
+            });
+
 
             rs.Name = "DataSet1";
             rs.Value = lst;
@@ -1092,6 +1128,8 @@ namespace SchoolManagementSystem
             rsPayment.Value = pds;
             rsDiscount.Name = "DataSet6";
             rsDiscount.Value = disc;
+            rsYrType.Name = "DataSet7";
+            rsYrType.Value = typeYr;
 
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
@@ -1100,6 +1138,7 @@ namespace SchoolManagementSystem
             frm.reportViewer1.LocalReport.DataSources.Add(rsExams);
             frm.reportViewer1.LocalReport.DataSources.Add(rsPayment);
             frm.reportViewer1.LocalReport.DataSources.Add(rsDiscount);
+            frm.reportViewer1.LocalReport.DataSources.Add(rsYrType);
             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
             frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             frm.reportViewer1.ZoomMode = ZoomMode.Percent;
@@ -1230,5 +1269,11 @@ namespace SchoolManagementSystem
     {
         public double discounted { get; set; }
         public double discPercent { get; set; }
+    }
+
+    public class YearType
+    {
+        public string yrLevel { get; set; }
+        public string studentType { get; set; }
     }
 }

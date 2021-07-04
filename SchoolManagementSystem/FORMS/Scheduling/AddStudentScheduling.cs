@@ -109,6 +109,33 @@ namespace SchoolManagementSystem
                 btnExit.PerformClick();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+
+            dgvSched.Rows.Clear();
+            dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            sched.textvalue = textBox1.Text;
+
+            sched.displaytextShow();
+
+            foreach (DataRow Drow in sched.dtFilter.Rows)
+            {
+                int num = dgvSched.Rows.Add();
+                dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+                dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+                dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+                dgvSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+                dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+                dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+                dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+                dgvSched.Rows[num].Cells[7].Value = Drow["MaxStudent"].ToString();
+                dgvSched.Rows[num].Cells[8].Value = Drow["Status"].ToString();
+                dgvSched.Rows[num].Cells[9].Value = Drow["lablec"].ToString();
+            }
+        }
     }
 }
 

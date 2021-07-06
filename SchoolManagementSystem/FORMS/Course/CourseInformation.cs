@@ -17,7 +17,6 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
         }
-
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
             displayData();
@@ -76,6 +75,14 @@ namespace SchoolManagementSystem
 
                 myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
+            }
+            else if (colName.Equals("delete"))
+            {
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("course").Where("courseId", dgvCourse.SelectedRows[0].Cells[0].Value.ToString()).Delete();
+                    displayData();
+                }
             }
         }
 

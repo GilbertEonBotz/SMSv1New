@@ -75,16 +75,18 @@ namespace SchoolManagementSystem
             // txtCourseCode
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseCode.Location = new System.Drawing.Point(93, 92);
+            this.txtCourseCode.Location = new System.Drawing.Point(98, 92);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(296, 27);
             this.txtCourseCode.TabIndex = 2;
             // 
             // cmbDepartment
             // 
+            this.cmbDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDepartment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Location = new System.Drawing.Point(93, 55);
+            this.cmbDepartment.Location = new System.Drawing.Point(98, 55);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(296, 25);
             this.cmbDepartment.TabIndex = 1;
@@ -96,14 +98,14 @@ namespace SchoolManagementSystem
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Course";
+            this.label3.Text = "COURSE";
             // 
             // txtRemarks
             // 
             this.txtRemarks.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemarks.Location = new System.Drawing.Point(93, 128);
+            this.txtRemarks.Location = new System.Drawing.Point(98, 128);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(296, 90);
@@ -115,9 +117,9 @@ namespace SchoolManagementSystem
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(4, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 17);
+            this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Remarks";
+            this.label6.Text = "REMARKS";
             // 
             // panel8
             // 
@@ -247,7 +249,6 @@ namespace SchoolManagementSystem
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.txtCourseCode);
             this.panel6.Controls.Add(this.cmbDepartment);
             this.panel6.Controls.Add(this.label3);
@@ -255,11 +256,13 @@ namespace SchoolManagementSystem
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.label2);
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 44);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(402, 230);
             this.panel6.TabIndex = 32;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label2
             // 
@@ -267,9 +270,9 @@ namespace SchoolManagementSystem
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 17);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 35;
-            this.label2.Text = "Course Code";
+            this.label2.Text = "COURSE CODE";
             // 
             // panel2
             // 

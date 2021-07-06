@@ -89,6 +89,15 @@ namespace SchoolManagementSystem
                 }
                 
             }
+            if (colName.Equals("delete"))
+            {
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("subjects").Where("subjectId", dgvSubjects.SelectedRows[0].Cells[0].Value).Delete();
+                    displayData();
+                }
+
+            }
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)

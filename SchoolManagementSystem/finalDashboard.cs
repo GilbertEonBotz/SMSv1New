@@ -366,16 +366,18 @@ namespace SchoolManagementSystem
            
         }
 
-        private void btnHandleStudents_Click(object sender, EventArgs e)
+        public void displayTeacherSchedule()
         {
-            var myForm = new teacherSched();
+            var myForm = new teacherSched(this);
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;
             pnlShow.Controls.Add(myForm);
             myForm.Show();
-
-           
+        }
+        private void btnHandleStudents_Click(object sender, EventArgs e)
+        {
+            displayTeacherSchedule();
         }
 
         private void btnClassSchedule_Click(object sender, EventArgs e)
@@ -404,6 +406,16 @@ namespace SchoolManagementSystem
         private void iconButton2_Click(object sender, EventArgs e)
         {
             var myForm = new AddUnitPrice();
+            pnlShow.Controls.Clear();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = false;
+            pnlShow.Controls.Add(myForm);
+            myForm.Show();
+        }
+
+        private void btnOrNumber_Click(object sender, EventArgs e)
+        {
+            var myForm = new OrNumberMaintenance();
             pnlShow.Controls.Clear();
             myForm.TopLevel = false;
             myForm.AutoScroll = false;

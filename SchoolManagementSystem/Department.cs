@@ -67,6 +67,14 @@ namespace SchoolManagementSystem
                 myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
             }
+            else if (colName.Equals("delete"))
+            {
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("department").Where("deptID", dgvDepartment.SelectedRows[0].Cells[0].Value.ToString()).Delete();
+                    displayData();
+                }
+            }
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
@@ -92,6 +100,11 @@ namespace SchoolManagementSystem
                 }
             }
 
+
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
 
         }
     }

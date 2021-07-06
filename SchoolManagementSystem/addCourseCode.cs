@@ -106,7 +106,6 @@ namespace SchoolManagementSystem
             {
                 selCourseID = 0;
             }
-
         }
 
         public void displayData()
@@ -144,6 +143,11 @@ namespace SchoolManagementSystem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
         }

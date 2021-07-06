@@ -18,7 +18,6 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
         }
-
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             var myfrm = new AddPerUnit(this);
@@ -39,14 +38,29 @@ namespace SchoolManagementSystem
             {
                 dgvPercentage.Rows.Add(value.id, value.amount, value.status);
             }
-        }
 
+            foreach (DataGridViewRow row in dgvPercentage.Rows)
+            {
+                if (Convert.ToString(row.Cells[2].Value) == "Active")
+                {
+                    row.Cells[2].Style.ForeColor = Color.Blue;
+                    row.Cells[2].Style.SelectionForeColor = Color.Blue;
+                }
+                else
+                {
+                    row.Cells[2].Style.ForeColor = Color.Red;
+                    row.Cells[2].Style.SelectionForeColor = Color.Red;
+                }
+            }
+        }
         private void dgvPercentage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
             if (colName.Equals("open"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Activated"))
+                
+
+                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Active"))
                 {
                     Validator.AlertDanger("This unit price is already activated");
                     return;
@@ -69,7 +83,7 @@ namespace SchoolManagementSystem
             }
             else if (colName.Equals("delete"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Activated"))
+                if (dgvPercentage.SelectedRows[0].Cells[2].Value.Equals("Active"))
                 {
                     Validator.AlertDanger("Unable to delete this price unit because status is active!");
                     return;

@@ -68,6 +68,14 @@ namespace SchoolManagementSystem
                 myfrm.btnSave.Text = "Update";
                 myfrm.ShowDialog();
             }
+            else if (colName.Equals("delete"))
+            {
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("coursecode").Where("coursecodeId", dgvCourseCode.SelectedRows[0].Cells[0].Value).Delete();
+                    displayData();
+                }
+            }
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)

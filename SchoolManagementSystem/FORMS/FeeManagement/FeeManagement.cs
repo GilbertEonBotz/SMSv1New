@@ -20,7 +20,7 @@ namespace SchoolManagementSystem
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddFeeCategory(this);
+            var myfrm = new AddFeeCategory(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
 
@@ -52,9 +52,10 @@ namespace SchoolManagementSystem
         {
 
         }
-
+        string idd;
         private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            idd = dgvCategories.SelectedRows[0].Cells[0].Value.ToString();
             string colName = dgvCategories.Columns[e.ColumnIndex].Name;
 
             if (colName.Equals("delete"))
@@ -65,6 +66,13 @@ namespace SchoolManagementSystem
                     DBContext.GetContext().Query("totalfee").Where("categoryID", dgvCategories.SelectedRows[0].Cells[0].Value).Delete();
                     displayData();
                 }
+            }
+            else if (colName.Equals("edit"))
+            {
+                AddFeeCategory add = new AddFeeCategory(this, idd);
+                add.txtCategory.Text = dgvCategories.SelectedRows[0].Cells[1].Value.ToString();
+                add.btnAddCategory.Text = "Update";
+                FormFade.FadeForm(this, add);
             }
         }
 

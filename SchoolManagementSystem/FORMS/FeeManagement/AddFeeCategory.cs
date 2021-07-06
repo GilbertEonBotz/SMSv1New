@@ -14,11 +14,12 @@ namespace SchoolManagementSystem
     {
 
         FeeManagement reloadDatagrid;
-        public AddFeeCategory(FeeManagement reloadDatagrid)
+        string idd;
+        public AddFeeCategory(FeeManagement reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
-            
+            this.idd = idd;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -50,6 +51,20 @@ namespace SchoolManagementSystem
                     }
                     txtCategory.Text = "";
                 }
+            }
+            else if (btnAddCategory.Text.Equals("Update"))
+            {
+                if (Validator.isEmpty(inputs) && Validator.UpdateConfirmation())
+                {
+                    DBContext.GetContext().Query("categoryfee").Where("categoryID", idd).Update(new
+                    {
+                        category = txtCategory.Text.Trim(),
+                    });
+                    reloadDatagrid.displayData();
+                    Validator.AlertSuccess("Category Updated");
+                    this.Close();
+                }
+
             }
         }
 

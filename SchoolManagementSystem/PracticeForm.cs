@@ -32,39 +32,39 @@ namespace SchoolManagementSystem
 
         private void PracticeForm_Load(object sender, EventArgs e)
         {
-            conn = connect.getcon();
-            conn.Open();
+            //conn = connect.getcon();
+            //conn.Open();
 
-            cmd = new MySqlCommand("select b.schedID, b.subjectCode,b.maxStudent, count(a.schedId) from studentSched a, schedule b where a.schedID regexp b.schedid group by b.schedid", conn);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                aa = dr[2].ToString();
+            //cmd = new MySqlCommand("select b.schedID, b.subjectCode,b.maxStudent, count(a.schedId) from studentSched a, schedule b where a.schedID regexp b.schedid group by b.schedid", conn);
+            //dr = cmd.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    aa = dr[2].ToString();
 
 
-                conn = connect.getcon();
-                conn.Open();
+            //    conn = connect.getcon();
+            //    conn.Open();
 
-                cmd = new MySqlCommand("select subjectcode from schedule where schedid = '" + dr[0].ToString() + "'", conn);
-                dr = cmd.ExecuteReader();
+            //    cmd = new MySqlCommand("select subjectcode from schedule where schedid = '" + dr[0].ToString() + "'", conn);
+            //    dr = cmd.ExecuteReader();
 
-                while (dr.Read())
-                {
-                    MessageBox.Show(dr[0].ToString());
-                }
+            //    while (dr.Read())
+            //    {
+            //        MessageBox.Show(dr[0].ToString());
+            //    }
 
-            }
+            //}
 
 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            double total = 0;
+            //double total = 0;
 
-            total = Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text);
+            //total = Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text);
 
-            label1.Text = total.ToString("N2");
+            //label1.Text = total.ToString("N2");
         }
     }
 }

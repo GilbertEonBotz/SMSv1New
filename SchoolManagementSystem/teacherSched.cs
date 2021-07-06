@@ -17,11 +17,13 @@ namespace SchoolManagementSystem
         string num1 = "";
         string storeID;
         string units;
-        public teacherSched()
+
+        finalDashboard reloadData;
+        public teacherSched(finalDashboard reloadData)
         {
 
             InitializeComponent();
-
+            this.reloadData = reloadData;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -74,7 +76,8 @@ namespace SchoolManagementSystem
                         schedId = storeID
                     });
                     storeID = "";
-                    MessageBox.Show("Updated");
+                    Validator.AlertSuccess("Teacher Schedule updated");
+                    reloadData.displayTeacherSchedule();
                 }
                 catch (Exception)
                 {
@@ -83,7 +86,8 @@ namespace SchoolManagementSystem
                         teacherid = cmbTeacher.Text,
                         schedid = storeID
                     });
-                    MessageBox.Show("success");
+                    Validator.AlertSuccess("Teacher schedule added");
+                    reloadData.displayTeacherSchedule();
                     storeID = "";
                 }
             }

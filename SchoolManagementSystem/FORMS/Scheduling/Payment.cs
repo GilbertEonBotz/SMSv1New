@@ -105,48 +105,28 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 dgv.Rows[num].Cells[3].Value = Drow["paymentdate"].ToString();
 
             }
-
-
-
-
-
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            try
+            insert();
+            printShow();
+            showw();
+            foreach (DataGridViewRow row in dgv.Rows)
             {
-                insert();
-                printShow();
-                showw();
-                foreach (DataGridViewRow row in dgv.Rows)
+                if (row.Cells[0].Value.ToString() == "0")
                 {
-                    if (row.Cells[0].Value.ToString() == "0")
+                    foreach (var cell in row.Cells)
                     {
-                        foreach (var cell in row.Cells)
-                        {
-                            DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
+                        DataGridViewLinkCell linkCell = cell as DataGridViewLinkCell;
 
-                            if (linkCell != null)
-                            {
-                                linkCell.UseColumnTextForLinkValue = false;
-                            }
+                        if (linkCell != null)
+                        {
+                            linkCell.UseColumnTextForLinkValue = false;
                         }
                     }
                 }
             }
-            catch (Exception)
-            {
-                Validator.AlertDanger("Please enter an amount!");
-            }
-
-
-
-
-
-
         }
-
 
         public void insert()
         {
@@ -157,26 +137,23 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
             conn = connect.getcon();
             conn.Open();
-            cmd = new MySqlCommand("select sum(b.amount) ,a.total  from Billing a, payment b where  b.status ='paid' and a.billingid = b.billingid  and a.billingid ='" + billingid + "'", conn);
+            cmd = new MySqlCommand("SELECT total from Billing where billingID ='" + billingid + "'", conn);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-
-                number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(disp.studentdownpayment) + Convert.ToDouble(txtAmount.Text);
-                if (number > Convert.ToDouble(dr[1].ToString()))
+                number = Convert.ToDouble(disp.studentdownpayment) + Convert.ToDouble(txtAmount.Text);
+                //number = Convert.ToDouble(dr[0].ToString() + 0) + Convert.ToDouble(disp.studentdownpayment) + Convert.ToDouble(txtAmount.Text);
+                if (number > Convert.ToDouble(dr[0].ToString()))
                 {
                     double total = Convert.ToDouble(disp.total) - Convert.ToDouble(dr[0].ToString() + 0) - Convert.ToDouble(disp.studentdownpayment);
-                    MessageBox.Show(total.ToString());
+
                     disp.amount = total.ToString();
                     disp.remarks = txtRemarks.Text;
                     disp.status = "paid";
                     disp.paymentMethod = cmbpaymentMethod.Text;
-
                     disp.insertpayment();
-                    MessageBox.Show("SUCCESS");
                     comboBox2.Enabled = false;
-
                 }
                 else if (checkBox1.Checked)
                 {
@@ -187,11 +164,9 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
                         disp.insertpayment();
-                        MessageBox.Show("SUCCESS");
                     }
                     else
                     {
-
                         if (txtchange.Text == "00.00")
                         {
                             disp.amount = txtAmount.Text.ToString();
@@ -199,7 +174,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                             disp.status = "paid";
                             disp.paymentMethod = cmbpaymentMethod.Text;
                             disp.insertpayment();
-                            MessageBox.Show("SUCCESS");
                         }
                         else
                         {
@@ -208,7 +182,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                             disp.status = "paid";
                             disp.paymentMethod = cmbpaymentMethod.Text;
                             disp.insertpayment();
-                            MessageBox.Show("SUCCESS");
                         }
                     }
                 }
@@ -220,9 +193,8 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.amount = txtTotal.Text;
                         disp.remarks = txtRemarks.Text;
                         disp.status = "paid";
-                        disp.paymentMethod = cmbpaymentMethod.Text;
+                        disp.paymentMethod = cmbpaymentMethod.Text; 
                         disp.insertpayment();
-                        MessageBox.Show("SUCCESS");
                         comboBox2.Enabled = false;
                     }
                     else
@@ -233,8 +205,6 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                         disp.status = "paid";
                         disp.paymentMethod = cmbpaymentMethod.Text;
                         disp.insertpayment();
-                        MessageBox.Show("SUCCESS");
-
                     }
                 }
             }
@@ -503,7 +473,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
 
         private void cmbpaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -564,6 +534,11 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 var myfrm = new voidNotification(this);
                 myfrm.ShowDialog();
             }
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

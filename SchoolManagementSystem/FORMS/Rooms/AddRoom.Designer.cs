@@ -52,7 +52,7 @@ namespace SchoolManagementSystem
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.txtName);
             this.panel6.Controls.Add(this.label2);
@@ -266,7 +266,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnAddRoom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(406, 214);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);

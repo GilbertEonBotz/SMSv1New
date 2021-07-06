@@ -263,7 +263,7 @@ namespace SchoolManagementSystem
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(118, 75);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(352, 29);
@@ -271,7 +271,7 @@ namespace SchoolManagementSystem
             // 
             // txtSubjName
             // 
-            this.txtSubjName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubjName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubjName.Location = new System.Drawing.Point(118, 115);
             this.txtSubjName.Name = "txtSubjName";
             this.txtSubjName.Size = new System.Drawing.Size(352, 29);
@@ -279,7 +279,7 @@ namespace SchoolManagementSystem
             // 
             // txtRoom
             // 
-            this.txtRoom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoom.Location = new System.Drawing.Point(118, 150);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.Size = new System.Drawing.Size(352, 29);
@@ -297,7 +297,7 @@ namespace SchoolManagementSystem
             // 
             // txtDepartment
             // 
-            this.txtDepartment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDepartment.Location = new System.Drawing.Point(597, 75);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(352, 29);
@@ -305,7 +305,7 @@ namespace SchoolManagementSystem
             // 
             // txtSchedule
             // 
-            this.txtSchedule.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSchedule.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSchedule.Location = new System.Drawing.Point(597, 110);
             this.txtSchedule.Name = "txtSchedule";
             this.txtSchedule.Size = new System.Drawing.Size(352, 29);

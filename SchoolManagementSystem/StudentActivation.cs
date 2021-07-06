@@ -36,7 +36,7 @@ namespace SchoolManagementSystem
             dgvStudents.Rows.Clear();
             foreach (var value in values)
             {
-                dgvStudents.Rows.Add(value.studentId, $"{value.firstname} {value.firstname}", value.gender, value.course, value.status);
+                dgvStudents.Rows.Add(value.studentId, $"{value.firstname} {value.lastname}", value.gender, value.course, value.status);
             }
 
             foreach (DataGridViewRow row in dgvStudents.Rows)

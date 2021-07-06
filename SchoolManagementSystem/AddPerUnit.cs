@@ -50,7 +50,7 @@ namespace SchoolManagementSystem
                     amount = txtName.Text.Trim(),
                     status = "Active"
                 });
-
+                Validator.AlertSuccess("Price per unit successfully added");
                 reloadDatagrid.displayData();
                 this.Close();
             }

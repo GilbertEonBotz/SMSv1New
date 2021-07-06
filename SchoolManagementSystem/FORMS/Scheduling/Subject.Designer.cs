@@ -50,6 +50,7 @@ namespace SchoolManagementSystem
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -191,7 +192,8 @@ namespace SchoolManagementSystem
             this.Column4,
             this.Column5,
             this.Column6,
-            this.edit});
+            this.edit,
+            this.delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,12 +265,14 @@ namespace SchoolManagementSystem
             this.Column3.HeaderText = "LEC";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 73;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "LAB";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
@@ -286,7 +290,6 @@ namespace SchoolManagementSystem
             // 
             // edit
             // 
-            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
@@ -294,6 +297,16 @@ namespace SchoolManagementSystem
             this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.edit.Text = "EDIT";
             this.edit.UseColumnTextForLinkValue = true;
+            this.edit.Width = 50;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "DELETE";
+            this.delete.UseColumnTextForLinkValue = true;
+            this.delete.Width = 70;
             // 
             // Subject
             // 
@@ -340,5 +353,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
+        private System.Windows.Forms.DataGridViewLinkColumn delete;
     }
 }

@@ -494,12 +494,12 @@ namespace SchoolManagementSystem
 
         private void iconButton11_Click(object sender, EventArgs e)
         {
-            var myForm = new teacherSched();
-            pnlShow.Controls.Clear();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = false;
-            pnlShow.Controls.Add(myForm);
-            myForm.Show();
+            //var myForm = new teacherSched(this);
+            //pnlShow.Controls.Clear();
+            //myForm.TopLevel = false;
+            //myForm.AutoScroll = false;
+            //pnlShow.Controls.Add(myForm);
+            //myForm.Show();
         }
 
         private void iconButton14_Click(object sender, EventArgs e)

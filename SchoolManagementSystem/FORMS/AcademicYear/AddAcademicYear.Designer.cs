@@ -318,6 +318,7 @@ namespace SchoolManagementSystem
             this.Name = "AddAcademicYear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddAcademicYear";
+            this.Load += new System.EventHandler(this.AddAcademicYear_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddAcademicYear_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -34,7 +34,7 @@ namespace SchoolManagementSystem
 
             foreach (DataGridViewRow row in dgvAcademicYear.Rows)
             {
-                if (Convert.ToString(row.Cells[2].Value) == "Activate")
+                if (Convert.ToString(row.Cells[2].Value) == "Active")
                 {
                     row.Cells[2].Style.ForeColor = Color.Blue;
                     row.Cells[2].Style.SelectionForeColor = Color.Blue;
@@ -46,10 +46,10 @@ namespace SchoolManagementSystem
                 }
             }
         }
-
+        
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            var myfrm = new AddAcademicYear(this);
+            var myfrm = new AddAcademicYear(this, idd);
             FormFade.FadeForm(this, myfrm);
         }
 
@@ -58,37 +58,65 @@ namespace SchoolManagementSystem
             int id = Convert.ToInt32(dgvAcademicYear.Rows[dgvAcademicYear.CurrentRow.Index].Cells[0].Value);
         }
 
+
+        string idd;
         private void dgvAcademicYear_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvAcademicYear.Columns[e.ColumnIndex].Name;
 
-            if (colName.Equals("status"))
+            if (colName.Equals("open"))
             {
-                if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.ToString() == "Activate")
+                if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.Equals("Active"))
+                {
+                    Validator.AlertDanger("This academic year is already activated");
+                    return;
+                }
+                else
                 {
                     if (Validator.actYear())
                     {
                         DBContext.GetContext().Query("academicyear").Update(new
                         {
-                            status = "Activate"
+                            status = "Inactive"
                         });
 
-                        int id = Convert.ToInt32(dgvAcademicYear.SelectedRows[0].Cells[0].Value);
-                        DBContext.GetContext().Query("academicyear").Where("id", id).Update(new
+                        DBContext.GetContext().Query("academicyear").Where("id", dgvAcademicYear.SelectedRows[0].Cells[0].Value).Update(new
                         {
-                            status = "Deactivate"
+                            status = "Active"
                         });
                         displayData();
                     }
                 }
-                else if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.ToString() == "Deactivate")
+            }
+            else if (colName.Equals("edit"))
+            {
+                idd = dgvAcademicYear.Rows[dgvAcademicYear.CurrentRow.Index].Cells[0].Value.ToString();
+                var myfrm = new AddAcademicYear(this, idd);
+
+                var values = DBContext.GetContext().Query("academicyear").Where("id", idd).Get();
+
+
+                foreach (var value in values)
                 {
-                    if (Validator.deactYear())
+                    myfrm.txtYear1.Text = value.year1;
+                    myfrm.txtYear2.Text = value.year2;
+                    myfrm.cmbTerm.Text = value.term;
+                }
+                myfrm.btnAddAcademicYear.Text = "Update";
+                myfrm.ShowDialog();
+            }
+            else if (colName.Equals("delete"))
+            {
+                if (dgvAcademicYear.SelectedRows[0].Cells[2].Value.Equals("Active"))
+                {
+                    Validator.AlertDanger("Unable to delete academic year because status is active!");
+                    return;
+                }
+                else
+                {
+                    if (Validator.DeleteConfirmation())
                     {
-                        DBContext.GetContext().Query("academicyear").Update(new
-                        {
-                            status = "Activate"
-                        });
+                        DBContext.GetContext().Query("academicyear").Where("id", dgvAcademicYear.SelectedRows[0].Cells[0].Value.ToString()).Delete();
                         displayData();
                     }
                 }

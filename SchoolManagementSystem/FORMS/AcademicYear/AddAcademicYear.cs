@@ -14,10 +14,12 @@ namespace SchoolManagementSystem
     {
 
         AcademicYear reloadDatagrid;
-        public AddAcademicYear(AcademicYear reloadDatagrid)
+        string idd;
+        public AddAcademicYear(AcademicYear reloadDatagrid, string idd)
         {
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
+            this.idd = idd;
            
         }
 
@@ -43,7 +45,7 @@ namespace SchoolManagementSystem
                     {
                         DBContext.GetContext().Query("academicyear").Update(new
                         {
-                            status = "Activate"
+                            status = "Inactive"
                         });
 
                         DBContext.GetContext().Query("academicyear").Insert(new
@@ -51,12 +53,23 @@ namespace SchoolManagementSystem
                             year1 = txtYear1.Text.Trim(),
                             year2 = txtYear2.Text.Trim(),
                             term = cmbTerm.Text.Trim(),
-                            status = "Deactivate"
+                            status = "Active"
                         });
                         reloadDatagrid.displayData();
                         this.Close();
                     }
                 }
+            }
+            else if (btnAddAcademicYear.Text.Equals("Update"))
+            {
+                DBContext.GetContext().Query("academicyear").Where("id", idd).Update(new
+                {
+                    year1 = txtYear1.Text,
+                    year2 = txtYear2.Text,
+                    term = cmbTerm.Text
+                });
+                reloadDatagrid.displayData();
+                this.Close();
             }
         }
 
@@ -113,6 +126,11 @@ namespace SchoolManagementSystem
         private void cmbTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void AddAcademicYear_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

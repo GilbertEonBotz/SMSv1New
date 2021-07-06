@@ -90,7 +90,7 @@ namespace SchoolManagementSystem
             try
             {
                 var query = DBContext.GetContext().Query("users")
-                    .Where("status","Deactivate")
+                    .Where("status","Active")
                     .Where(new
                 {
                     username = txtUsername.Text,
@@ -124,6 +124,26 @@ namespace SchoolManagementSystem
         private void pnlSlide2_Paint(object sender, PaintEventArgs e)
         {
             txtUsername.Focus();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

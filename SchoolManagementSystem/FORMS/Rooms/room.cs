@@ -72,6 +72,14 @@ namespace SchoolManagementSystem
                 myfrm.btnAddRoom.Text = "Update";
                 myfrm.ShowDialog();
             }
+            else if (colName.Equals("delete"))
+            {
+                if (Validator.DeleteConfirmation())
+                {
+                    DBContext.GetContext().Query("rooms").Where("roomId", dgvRooms.SelectedRows[0].Cells[0].Value.ToString()).Delete();
+                    displayData();
+                }
+            }
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)

@@ -147,11 +147,11 @@ namespace SchoolManagementSystem
             // 
             // cmbCourseCode
             // 
-            this.cmbCourseCode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCourseCode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseCode.FormattingEnabled = true;
             this.cmbCourseCode.Location = new System.Drawing.Point(104, 90);
             this.cmbCourseCode.Name = "cmbCourseCode";
-            this.cmbCourseCode.Size = new System.Drawing.Size(316, 25);
+            this.cmbCourseCode.Size = new System.Drawing.Size(316, 28);
             this.cmbCourseCode.TabIndex = 2;
             this.cmbCourseCode.SelectedIndexChanged += new System.EventHandler(this.cmbCourseCode_SelectedIndexChanged);
             // 

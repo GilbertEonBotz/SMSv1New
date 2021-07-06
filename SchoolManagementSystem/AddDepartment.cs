@@ -61,7 +61,7 @@ namespace SchoolManagementSystem
             }
             else if (btnSave.Text.Equals("Save"))
             {
-                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
+                if (Validator.isEmpty(inputs))
                 {
                     try
                     {
@@ -74,8 +74,9 @@ namespace SchoolManagementSystem
                         {
                             deptName = Validator.ToTitleCase(txtDeptName.Text.Trim())
                         });
+                        Validator.AlertSuccess("New Department added");
+                        txtDeptName.Text = "";
                         reloadDatagrid.displayData();
-                        this.Close();
 
                     }
                 }

@@ -22,24 +22,27 @@ namespace SchoolManagementSystem.FORMS.Sectioning
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
-            //var myfrm = new addSectionCategory();
-            //FormFade.FadeForm(this, myfrm);
+            var myfrm = new addSectionCategory(this, idd);
+            FormFade.FadeForm(this, myfrm);
         }
 
         private void Sectioning_Load(object sender, EventArgs e)
         {
+            displayData();
+        }
+
+        public void displayData()
+        {
+            dgvDepartment.Rows.Clear();
             var values = DBContext.GetContext().Query("sectionCategory").Get();
             foreach (var value in values)
             {
-                dgvDepartment.Rows.Add(value.SectionCategoryID,value.sectionName, value.Description);
+                dgvDepartment.Rows.Add(value.SectionCategoryID, value.sectionName, value.Description);
             }
         }
-
         private void dgvDepartment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            addSectioning add = new addSectioning(dgvDepartment.SelectedRows[0].Cells[0].Value.ToString());
-            add.struckname.Text = dgvDepartment.SelectedRows[0].Cells[1].Value.ToString();
-            FormFade.FadeForm(this, add);
+            
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
@@ -55,10 +58,30 @@ namespace SchoolManagementSystem.FORMS.Sectioning
             //    dgvSubjects.Rows.Add(value.subjectId, value.subjectCode, value.subjectTitle, value.lec, value.lab, value.totalUnits, value.prereq);
             //}
         }
-
+        string idd;
         private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colName = dgvDepartment.Columns[e.ColumnIndex].Name;
+            idd = dgvDepartment.SelectedRows[0].Cells[0].Value.ToString();
+            if (colName.Equals("edit"))
+            {
+                var myfrm = new addSectionCategory(this, idd);
 
+                myfrm.txtStructure.Text = dgvDepartment.SelectedRows[0].Cells[1].Value.ToString();
+                myfrm.txtDescription.Text = dgvDepartment.SelectedRows[0].Cells[2].Value.ToString();
+                myfrm.btnAddCourse.Text = "Update";
+                myfrm.ShowDialog();
+            }
+            else if (colName.Equals("add"))
+            {
+                addSectioning add = new addSectioning(dgvDepartment.SelectedRows[0].Cells[0].Value.ToString());
+                add.struckname.Text = dgvDepartment.SelectedRows[0].Cells[1].Value.ToString();
+                FormFade.FadeForm(this, add);
+            }
+            //else if (colName.Equals("delete"))
+            //{
+            //    DBContext.GetContext().Query("")
+            //}
         }
     }
 }

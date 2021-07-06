@@ -17,7 +17,6 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
         }
-
         private void btnNew_Click(object sender, EventArgs e)
         {
             var myfrm = new AddUser(this, idd);
@@ -40,7 +39,7 @@ namespace SchoolManagementSystem
             }
             foreach (DataGridViewRow row in dgvUsers.Rows)
             {
-                if (Convert.ToString(row.Cells[3].Value) == "Activate")
+                if (Convert.ToString(row.Cells[3].Value) == "Active")
                 {
                     row.Cells[3].Style.ForeColor = Color.Blue;
                     row.Cells[3].Style.SelectionForeColor = Color.Blue;
@@ -56,26 +55,61 @@ namespace SchoolManagementSystem
         {
             string colName = dgvUsers.Columns[e.ColumnIndex].Name;
 
-            if (colName.Equals("archive"))
+            if (colName.Equals("activate"))
             {
-                if (dgvUsers.SelectedRows[0].Cells[3].Value.ToString() == "Activate")
+                if (dgvUsers.SelectedRows[0].Cells[3].Value.Equals("Active"))
+                {
+                    Validator.AlertDanger("This user is already activated");
+                    return;
+                }
+                else
                 {
                     if (Validator.actYear())
                     {
                         DBContext.GetContext().Query("users").Where("id", dgvUsers.SelectedRows[0].Cells[0].Value).Update(new
                         {
-                            status = "Deactivate"
+                            status = "Active"
                         });
                         displayData();
                     }
                 }
-                else if (dgvUsers.SelectedRows[0].Cells[3].Value.ToString() == "Deactivate")
+                //if (dgvUsers.SelectedRows[0].Cells[3].Value.ToString() == "Activate")
+                //{
+                //    if (Validator.actYear())
+                //    {
+                //        DBContext.GetContext().Query("users").Where("id", dgvUsers.SelectedRows[0].Cells[0].Value).Update(new
+                //        {
+                //            status = "Deactivate"
+                //        });
+                //        displayData();
+                //    }
+                //}
+                //else if (dgvUsers.SelectedRows[0].Cells[3].Value.ToString() == "Deactivate")
+                //{
+                //    if (Validator.deactYear())
+                //    {
+                //        DBContext.GetContext().Query("users").Where("id", dgvUsers.SelectedRows[0].Cells[0].Value).Update(new
+                //        {
+                //            status = "Activate"
+                //        });
+                //        displayData();
+                //    }
+                //}
+            }
+            else if (colName.Equals("deactivate"))
+            {
+                if (dgvUsers.SelectedRows[0].Cells[3].Value.Equals("Inactive"))
+                {
+                    Validator.AlertDanger("This user is already deactivated");
+                    return;
+                }
+                else
                 {
                     if (Validator.deactYear())
                     {
                         DBContext.GetContext().Query("users").Where("id", dgvUsers.SelectedRows[0].Cells[0].Value).Update(new
                         {
-                            status = "Activate"
+                            status = "Inactive"
                         });
                         displayData();
                     }

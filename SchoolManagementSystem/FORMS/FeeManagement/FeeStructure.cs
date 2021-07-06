@@ -48,8 +48,7 @@ namespace SchoolManagementSystem
         }
         private void dgvFee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var add = new addfees(dgvFee.SelectedRows[0].Cells[0].Value.ToString(), dgvFee.SelectedRows[0].Cells[1].Value.ToString(), this);
-            add.ShowDialog();
+           
         }
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
@@ -67,6 +66,17 @@ namespace SchoolManagementSystem
                 dgvFee.Rows[num].Cells[2].Value = Drow["Description"].ToString();
                 dgvFee.Rows[num].Cells[3].Value = Drow["count"].ToString();
                 dgvFee.Rows[num].Cells[4].Value = Drow["total"].ToString();
+            }
+        }
+
+        private void dgvFee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvFee.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("add"))
+            {
+                var add = new addfees(dgvFee.SelectedRows[0].Cells[0].Value.ToString(), dgvFee.SelectedRows[0].Cells[1].Value.ToString(), this);
+                add.ShowDialog();
             }
         }
     }

@@ -69,7 +69,6 @@ namespace SchoolManagementSystem
                 dgvStudentSched.Rows.Clear();
                 for (int i = 0; i < words.Length; i++)
                 {
-
                     allScheds = words[i];
 
                     var values = DBContext.GetContext().Query("studentSched")

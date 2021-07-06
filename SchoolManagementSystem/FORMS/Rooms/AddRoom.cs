@@ -62,7 +62,7 @@ namespace SchoolManagementSystem
             }
             else if (btnAddRoom.Text.Equals("Save"))
             {
-                if (Validator.isEmpty(inputs) && Validator.AddConfirmation())
+                if (Validator.isEmpty(inputs))
                 {
                     try
                     {
@@ -76,8 +76,10 @@ namespace SchoolManagementSystem
                             name = txtName.Text.Trim().ToUpper(),
                             description = txtDescription.Text.Trim(),
                         });
+                        Validator.AlertSuccess("Room Added");
+                        txtDescription.Text = "";
+                        txtName.Text = "";
                         reloadDatagrid.displayData();
-                        this.Close();
 
                     }
                 }

@@ -131,13 +131,9 @@ namespace SchoolManagementSystem
                 splitSched = value.schedId;
                 var words = splitSched.Split(' ');
 
-
-
                 for (int i = 0; i < words.Length - 1; i++)
                 {
-
                     string indSubj = words[i];
-                    MessageBox.Show(words[i].ToString());
                     sched.getSchedID = indSubj;
                     sched.studentID = cmbStudentNo.Text;
                     sched.viewSchedStudent();
@@ -159,11 +155,11 @@ namespace SchoolManagementSystem
                         txtName.Text = drow["Name"].ToString();
                         txtGender.Text = drow["Gender"].ToString();
                         txtCourse.Text = drow["Course"].ToString();
-
+                        txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                        cmbYear.Text = "1";
+                        cmbTypeStudent.Text = "New";
                     }
-
                 }
-
             }
             else
             {
@@ -175,6 +171,8 @@ namespace SchoolManagementSystem
                     txtGender.Text = value.gender;
                     txtCourse.Text = value.course;
                     txtDateOfRegistration.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                    cmbYear.Text = "1";
+                    cmbTypeStudent.Text = "New";
                 }
 
 
@@ -495,6 +493,15 @@ namespace SchoolManagementSystem
                             rmk = "N/A"
                         });
 
+                        List<YearType> typeYr = new List<YearType>();
+                        typeYr.Clear();
+
+                        typeYr.Add(new YearType
+                        {
+                            yrLevel = cmbYear.Text,
+                            studentType = cmbTypeStudent.Text
+                        });
+
                         LocalReport localReport = new LocalReport();
                         localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
@@ -503,6 +510,7 @@ namespace SchoolManagementSystem
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet5", pds));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet6", disc));
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet7", typeYr));
                         localReport.Print();
 
                         //MessageBox.Show(billingIDS);
@@ -778,6 +786,15 @@ namespace SchoolManagementSystem
                             rmk = "N/A"
                         });
 
+                        List<YearType> typeYr = new List<YearType>();
+                        typeYr.Clear();
+
+                        typeYr.Add(new YearType
+                        {
+                            yrLevel = cmbYear.Text,
+                            studentType = cmbTypeStudent.Text
+                        });
+
                         LocalReport localReport = new LocalReport();
                         localReport.ReportEmbeddedResource = "SchoolManagementSystem.Report2.rdlc";
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", lst));
@@ -786,6 +803,7 @@ namespace SchoolManagementSystem
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet4", exams));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet5", pds));
                         localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet6", disc));
+                        localReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet7", typeYr));
                         localReport.Print();
 
                         DBContext.GetContext().Query("Billing").Insert(new
@@ -1214,6 +1232,36 @@ namespace SchoolManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void pnlBilling_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

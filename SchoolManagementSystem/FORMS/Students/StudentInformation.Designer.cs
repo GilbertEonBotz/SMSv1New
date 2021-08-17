@@ -48,6 +48,8 @@ namespace SchoolManagementSystem
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.delete = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -159,6 +161,7 @@ namespace SchoolManagementSystem
             this.dgvStudents.AllowUserToAddRows = false;
             this.dgvStudents.AllowUserToResizeColumns = false;
             this.dgvStudents.AllowUserToResizeRows = false;
+            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudents.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvStudents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -177,6 +180,8 @@ namespace SchoolManagementSystem
             this.name,
             this.Gender,
             this.Column2,
+            this.Column1,
+            this.Column4,
             this.Column3,
             this.edit,
             this.delete});
@@ -267,28 +272,37 @@ namespace SchoolManagementSystem
             this.name.HeaderText = "Name";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 287;
             // 
             // Gender
             // 
             this.Gender.HeaderText = "Gender";
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
-            this.Gender.Width = 130;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Address";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 250;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 50F;
+            this.Column1.HeaderText = "Contact Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Email Address";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Course";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
             // 
             // edit
             // 
@@ -299,7 +313,6 @@ namespace SchoolManagementSystem
             this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.edit.Text = "EDIT";
             this.edit.UseColumnTextForLinkValue = true;
-            this.edit.Width = 50;
             // 
             // delete
             // 
@@ -308,7 +321,6 @@ namespace SchoolManagementSystem
             this.delete.ReadOnly = true;
             this.delete.Text = "DELETE";
             this.delete.UseColumnTextForLinkValue = true;
-            this.delete.Width = 70;
             // 
             // StudentInformation
             // 
@@ -356,6 +368,8 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
         private System.Windows.Forms.DataGridViewLinkColumn delete;

@@ -53,20 +53,32 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            fee.textvalue = textboxWatermark1.Text;
-            fee.filterView();
-
-            dgvFee.Rows.Clear();
-            foreach (DataRow Drow in fee.dtFilter.Rows)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                int num = dgvFee.Rows.Add();
-
-                dgvFee.Rows[num].Cells[0].Value = Drow["ID"].ToString();
-                dgvFee.Rows[num].Cells[1].Value = Drow["structurename"].ToString();
-                dgvFee.Rows[num].Cells[2].Value = Drow["Description"].ToString();
-                dgvFee.Rows[num].Cells[3].Value = Drow["count"].ToString();
-                dgvFee.Rows[num].Cells[4].Value = Drow["total"].ToString();
+                displayData();
             }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                fee.textvalue = textboxWatermark1.Text;
+                fee.filterView();
+
+                dgvFee.Rows.Clear();
+                foreach (DataRow Drow in fee.dtFilter.Rows)
+                {
+                    int num = dgvFee.Rows.Add();
+
+                    dgvFee.Rows[num].Cells[0].Value = Drow["ID"].ToString();
+                    dgvFee.Rows[num].Cells[1].Value = Drow["structurename"].ToString();
+                    dgvFee.Rows[num].Cells[2].Value = Drow["Description"].ToString();
+                    dgvFee.Rows[num].Cells[3].Value = Drow["count"].ToString();
+                    dgvFee.Rows[num].Cells[4].Value = Drow["total"].ToString();
+                }
+            }
+            
         }
 
         private void dgvFee_CellContentClick(object sender, DataGridViewCellEventArgs e)

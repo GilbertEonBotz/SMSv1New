@@ -24,7 +24,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
             id = val;
-            
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace SchoolManagementSystem
             //    dgvCategories.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
             //}
         }
-       
+
         public void displaySectioning()
         {
             dgvCategories.Rows.Clear();
@@ -80,6 +80,7 @@ namespace SchoolManagementSystem
         public void display()
         {
 
+
             sched.displayFilter();
             dgvSched.Rows.Clear();
             dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
@@ -97,7 +98,7 @@ namespace SchoolManagementSystem
                 dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
             }
         }
-        
+
 
         //public void displaySectioning()
         //{
@@ -106,15 +107,15 @@ namespace SchoolManagementSystem
         private void dgvSched_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
-                //}
+
+            //}
             //}
             //catch (Exception)
             //{
 
             //}
-           
-          
+
+
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -151,7 +152,7 @@ namespace SchoolManagementSystem
             {
                 if ((string)row.Cells[1].Value == dgvSched.SelectedRows[0].Cells[1].Value.ToString())
                 {
-                    Validator.AlertDanger("Subject schedule exist!");
+                    Validator.AlertDanger("Subject Code exist!");
                     return;
                 }
             }
@@ -177,6 +178,39 @@ namespace SchoolManagementSystem
         private void dgvCategories_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textboxWatermark1_TextChanged(object sender, EventArgs e)
+        {
+            //if (string.IsNullOrEmpty(textboxWatermark1.Text))
+            //{
+            //    displaySectioning();
+            //}
+            //else if (textboxWatermark1.Text.Equals("Search"))
+            //{
+            //    displaySectioning();
+            //}
+            //else
+            //{
+            //    sched.textvalue = textboxWatermark1.Text;
+            //    sched.displayFilter();
+
+            //    dgvSched.Rows.Clear();
+            //    dgvSched.Columns[5].DefaultCellStyle.Format = "hh:mm tt";
+            //    dgvSched.Columns[6].DefaultCellStyle.Format = "hh:mm tt";
+            //    foreach (DataRow Drow in sched.dtFilter.Rows)
+            //    {
+            //        int num = dgvSched.Rows.Add();
+
+            //        dgvSched.Rows[num].Cells[0].Value = Drow["SchedID"].ToString();
+            //        dgvSched.Rows[num].Cells[1].Value = Drow["SubjectCode"].ToString();
+            //        dgvSched.Rows[num].Cells[2].Value = Drow["SubjectTitle"].ToString();
+            //        dgvSched.Rows[num].Cells[3].Value = Drow["RoomName"].ToString();
+            //        dgvSched.Rows[num].Cells[4].Value = Drow["Day"].ToString();
+            //        dgvSched.Rows[num].Cells[5].Value = Convert.ToDateTime(Drow["Timestart"].ToString());
+            //        dgvSched.Rows[num].Cells[6].Value = Convert.ToDateTime(Drow["Timeend"].ToString());
+            //    }
+            //}
         }
     }
 }

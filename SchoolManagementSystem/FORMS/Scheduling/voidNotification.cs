@@ -48,7 +48,7 @@ namespace SchoolManagementSystem.FORMS.Scheduling
                 conn.Open();
                 cmd = new MySqlCommand("update payment set status ='void' where paymentid = '" + getFunction.dgv.SelectedRows[0].Cells[0].Value + "'", conn);
                 cmd.ExecuteNonQuery();
-                Validator.AlertSuccess("Successfully void");
+                Validator.AlertSuccess("Void");
                 getFunction.lbldownpayment.Text = "";
                 getFunction.lblpre.Text = "0.00";
                 getFunction.lblsemi.Text = "0.00";

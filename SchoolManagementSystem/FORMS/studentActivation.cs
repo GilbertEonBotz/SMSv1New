@@ -35,20 +35,45 @@ namespace SchoolManagementSystem.FORMS
 
         private void btnAddAcademicYear_Click(object sender, EventArgs e)
         {
-            DBContext.GetContext().Query("studentActivation").Insert(new
+            if (comboBox2.SelectedItem.Equals("Fullpayment"))
             {
-                studentID = studentid,
-                downpayment = textBox1.Text,
-                note = comboBox2.Text,
-                paymentMethod = comboBox1.Text,
-                status = "Activated",
-                discount = discount,
-                date = DateTime.Now,
-                discountDescription = comboBox3.Text
-            });
-            Validator.AlertSuccess("Student activated");
-            reloadDatagrid.displayData();
-            this.Close();
+                DBContext.GetContext().Query("studentActivation").Insert(new
+                {
+
+                    studentID = studentid,
+                    fullpayment = textBox1.Text,
+                    downpayment = "0.00",
+                    note = comboBox2.Text,
+                    paymentMethod = comboBox1.Text,
+                    status = "Activated",
+                    discount = discount,
+                    date = DateTime.Now,
+                    discountDescription = comboBox3.Text
+                });
+                Validator.AlertSuccess("Student activated");
+                reloadDatagrid.displayData();
+                this.Close();
+            }
+            else
+            {
+                DBContext.GetContext().Query("studentActivation").Insert(new
+                {
+
+                    studentID = studentid,
+                    downpayment = textBox1.Text,
+                    fullpayment = "0.00",
+                    note = comboBox2.Text,
+                    paymentMethod = comboBox1.Text,
+                    status = "Activated",
+                    discount = discount,
+                    date = DateTime.Now,
+                    discountDescription = comboBox3.Text
+                });
+                Validator.AlertSuccess("Student activated");
+                reloadDatagrid.displayData();
+                this.Close();
+            }
+            
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)

@@ -276,6 +276,7 @@ namespace SchoolManagementSystem
             this.Column4.HeaderText = "COURSE CODE";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
             this.Column4.Width = 160;
             // 
             // Column5
@@ -315,12 +316,12 @@ namespace SchoolManagementSystem
             // 
             // edit
             // 
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             this.edit.Text = "EDIT";
             this.edit.UseColumnTextForLinkValue = true;
-            this.edit.Width = 50;
             // 
             // Sched
             // 

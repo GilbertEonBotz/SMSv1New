@@ -1200,10 +1200,14 @@ namespace SchoolManagementSystem
 
         private void dgvStudentSched_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            foreach (DataGridViewRow item in this.dgvStudentSched.SelectedRows)
+            if (Validator.RemoveSubject())
             {
-                dgvStudentSched.Rows.RemoveAt(item.Index);
+                foreach (DataGridViewRow item in this.dgvStudentSched.SelectedRows)
+                {
+                    dgvStudentSched.Rows.RemoveAt(item.Index);
+                }
             }
+
         }
 
         private void dgvStudentSched_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)

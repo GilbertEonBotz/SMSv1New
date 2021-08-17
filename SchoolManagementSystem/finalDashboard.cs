@@ -70,10 +70,17 @@ namespace SchoolManagementSystem
 
         private void finalDashboard_Load(object sender, EventArgs e)
         {
-            Button[] allBtn = { btnManageUser, btnEmployees, btnAcademicMngmt,btnStudentRecords,btnEnrollment, btnTeacherLoads};
+            Button[] allBtn = { btnManageUser, btnAcademicMngmt,btnStudentRecords,btnEnrollment, btnTeacherLoads, btnDepartment, btnTerm, btnCourse, btnCourseCode};
+            Button[] registrarButton = { btnEmployees, btnManageUser, btnFeesManagement, btnPayment, iconButton1 };
             if (btnAdmin.Text.Equals("Cashier"))
             {
                 Validator.hideButton(allBtn);
+                pnlEmployees.SetBounds( 200, 200, 200, 110);
+
+            }
+            else if (btnAdmin.Text.Equals("Registrar"))
+            {
+                Validator.hideButton(registrarButton);
 
             }
             else

@@ -123,7 +123,6 @@ namespace SchoolManagementSystem
             return Convert.ToDouble(calFraction);
         }
         public void showStudent()
-
         {
             var myForm = new Payment(display);
             display.pnlShow.Controls.Clear();
@@ -143,7 +142,8 @@ namespace SchoolManagementSystem
             spd.viewPayment();
             spd.viewPaymentDetailed();
             spd.studentDOwn();
-            myForm.dgv.Rows.Add("0", spd.studentdownpayment, spd.remarksFordown, spd.dateForDown);
+            spd.studentFull();
+            myForm.dgv.Rows.Add("0", spd.studentfullpayment, spd.studentdownpayment, spd.remarksForfull, spd.dateForFull);
             foreach (DataGridViewRow row in myForm.dgv.Rows)
             {
                 if (row.Cells[0].Value.ToString() == "0")
@@ -161,6 +161,7 @@ namespace SchoolManagementSystem
             }
 
             double finalss = Convert.ToDouble(spd.totalpaid) + 0;
+
             led.percent();
             totaldownpaymentplus = Convert.ToDouble(spd.total);
             myForm.textBox15.Text = totaldownpaymentplus.ToString();
@@ -183,7 +184,6 @@ namespace SchoolManagementSystem
                 myForm.dgv.Rows[num].Cells[1].Value = DROW["paymentanomount"].ToString();
                 myForm.dgv.Rows[num].Cells[2].Value = DROW["paymentremarks"].ToString();
                 myForm.dgv.Rows[num].Cells[3].Value = DROW["paymentdate"].ToString();
-
             }
 
             myForm.lbltotal.Text = spd.totalpaid.ToString();
@@ -192,7 +192,6 @@ namespace SchoolManagementSystem
 
             try
             {
-
                 if (Convert.ToDouble(led.downpayment) <= finalss)
                 {
                     amount = finalss - Convert.ToDouble(led.downpayment);
@@ -210,9 +209,11 @@ namespace SchoolManagementSystem
                             myForm.comboBox2.Items.Remove("MIDTERM");
                             if (Convert.ToDouble(myForm.txt3.Text) <= amount)
                             {
-                                amount = amount - Convert.ToDouble(myForm.txt3.Text);
+                               
+                                amount = Convert.ToDouble(myForm.txt3.Text) -amount  ;
 
                                 myForm.comboBox2.Items.Remove("SEMI-FINAL");
+                            
                                 if (Convert.ToDouble(myForm.txt4.Text) <= amount)
                                 {
                                     amount = amount - Convert.ToDouble(myForm.txt4.Text);
@@ -220,11 +221,9 @@ namespace SchoolManagementSystem
                                     myForm.lblpre.Text = myForm.txt1.Text;
                                     myForm.lblmid.Text = myForm.txt2.Text;
                                     myForm.lblsemi.Text = myForm.txt3.Text;
-                                    myForm.lblfin.Text = myForm.txt4.Text;
+                                    myForm.lblfin.Text = "aa";
                                     myForm.comboBox2.Items.Remove("FINAL");
-                                    myForm.comboBox2.Enabled = false;
-                                    myForm.txtTotal.Text = null;
-                                    myForm.txtAmount.Enabled = false;
+                              
                                 }
                                 else
                                 {
@@ -232,7 +231,11 @@ namespace SchoolManagementSystem
                                     myForm.lblpre.Text = myForm.txt1.Text;
                                     myForm.lblmid.Text = myForm.txt2.Text;
                                     myForm.lblsemi.Text = myForm.txt3.Text;
-                                    myForm.lblfin.Text = amount.ToString();
+                                    myForm.lblfin.Text = myForm.txt4.Text;
+                                    myForm.comboBox2.Items.Remove("FINAL");
+                                    myForm.comboBox2.Enabled = true;
+                                    myForm.txtTotal.Text = null;
+                                    myForm.txtAmount.Enabled = true;
                                 }
                             }
                             else
@@ -240,26 +243,25 @@ namespace SchoolManagementSystem
                                 myForm.lbldownpayment.Text = led.downpayment.ToString();
                                 myForm.lblpre.Text = myForm.txt1.Text;
                                 myForm.lblmid.Text = myForm.txt2.Text;
-                                myForm.lblsemi.Text = amount.ToString();
+                                myForm.lblsemi.Text = amount.ToString("F2");
                             }
                         }
                         else
                         {
                             myForm.lbldownpayment.Text = led.downpayment.ToString();
                             myForm.lblpre.Text = myForm.txt1.Text;
-                            myForm.lblmid.Text = amount.ToString();
+                            myForm.lblmid.Text = amount.ToString("F2");
                         }
                     }
                     else
                     {
                         myForm.lbldownpayment.Text = led.downpayment.ToString();
-                        myForm.lblpre.Text = amount.ToString();
+                        myForm.lblpre.Text = amount.ToString("F2");
                     }
                 }
                 else
                 {
-
-                    myForm.lbldownpayment.Text = finalss.ToString();
+                    myForm.lbldownpayment.Text = finalss.ToString("F2");
                 }
             }
             catch (Exception)
@@ -281,6 +283,11 @@ namespace SchoolManagementSystem
             {
                 showStudent();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

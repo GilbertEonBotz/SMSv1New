@@ -121,13 +121,11 @@ namespace SchoolManagementSystem
                 var myfrm = new AddUser(this, idd);
 
                 var values = DBContext.GetContext().Query("users")
-                    .Join("role", "role.roleId", "users.userrole")
                     .Where("id", idd).Get();
-
 
                 foreach (var value in values)
                 {
-                    myfrm.cmbRole.Text = value.roletype;
+                    myfrm.cmbRole.Text = value.userrole;
                     myfrm.txtName.Text = value.name;
                     myfrm.txtUsername.Text = value.username;
                     myfrm.txtPassword.Text = value.password;

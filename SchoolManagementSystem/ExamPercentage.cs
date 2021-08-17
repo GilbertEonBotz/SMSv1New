@@ -32,20 +32,20 @@ namespace SchoolManagementSystem
             foreach (var value in values)
             {
                 dgvPercentage.Rows.Add(value.id, $"{strDisplayPercentage(value.prelim).ToString("N0")} %", $"{strDisplayPercentage(value.midterm).ToString("N0")} %"
-                    , $"{strDisplayPercentage(value.semiFinals).ToString("N0")} %", $"{strDisplayPercentage(value.finals).ToString("N0")} %", value.downpayment, value.status);
+                    , $"{strDisplayPercentage(value.semiFinals).ToString("N0")} %", $"{strDisplayPercentage(value.finals).ToString("N0")} %", value.downpayment, value.fullpayment, value.status);
             }
 
             foreach (DataGridViewRow row in dgvPercentage.Rows)
             {
-                if (Convert.ToString(row.Cells[6].Value) == "Active")
+                if (Convert.ToString(row.Cells[7].Value) == "Active")
                 {
-                    row.Cells[6].Style.ForeColor = Color.Blue;
-                    row.Cells[6].Style.SelectionForeColor = Color.Blue;
+                    row.Cells[7].Style.ForeColor = Color.Blue;
+                    row.Cells[7].Style.SelectionForeColor = Color.Blue;
                 }
                 else
                 {
-                    row.Cells[6].Style.ForeColor = Color.Red;
-                    row.Cells[6].Style.SelectionForeColor = Color.Red;
+                    row.Cells[7].Style.ForeColor = Color.Red;
+                    row.Cells[7].Style.SelectionForeColor = Color.Red;
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace SchoolManagementSystem
             string colName = dgvPercentage.Columns[e.ColumnIndex].Name;
             if (colName.Equals("activate"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[6].Value.Equals("Active"))
+                if (dgvPercentage.SelectedRows[0].Cells[7].Value.Equals("Active"))
                 {
                     Validator.AlertDanger("This exam percentage is already activated");
                     return;
@@ -93,7 +93,7 @@ namespace SchoolManagementSystem
             }
             else if (colName.Equals("delete"))
             {
-                if (dgvPercentage.SelectedRows[0].Cells[6].Value.Equals("Active"))
+                if (dgvPercentage.SelectedRows[0].Cells[7].Value.Equals("Active"))
                 {
                     Validator.AlertDanger("Unable to delete this exam percentage because status is active!");
                     return;
@@ -115,6 +115,7 @@ namespace SchoolManagementSystem
 
                 
                 myfrm.txtDownpayment.Text = value.downpayment.ToString();
+                myfrm.txtFullpayment.Text = value.downpayment.ToString();
                 myfrm.txtPrelim.Text = value.prelim.ToString();
                 myfrm.txtMidterm.Text =  value.midterm.ToString();
                 myfrm.txtSemi.Text = value.semiFinals.ToString();

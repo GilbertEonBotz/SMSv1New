@@ -54,6 +54,8 @@ namespace SchoolManagementSystem
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtFullpayment = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -103,6 +105,8 @@ namespace SchoolManagementSystem
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.txtFullpayment);
+            this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.txtTotal);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.txtDownpayment);
@@ -120,7 +124,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(7, 43);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(469, 264);
+            this.panel6.Size = new System.Drawing.Size(469, 291);
             this.panel6.TabIndex = 16;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -129,11 +133,11 @@ namespace SchoolManagementSystem
             this.txtTotal.BackColor = System.Drawing.SystemColors.Window;
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTotal.Location = new System.Drawing.Point(121, 224);
+            this.txtTotal.Location = new System.Drawing.Point(121, 255);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(264, 27);
-            this.txtTotal.TabIndex = 6;
+            this.txtTotal.TabIndex = 7;
             this.txtTotal.Text = "0";
             // 
             // label7
@@ -141,7 +145,7 @@ namespace SchoolManagementSystem
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(10, 224);
+            this.label7.Location = new System.Drawing.Point(56, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 37;
@@ -157,6 +161,7 @@ namespace SchoolManagementSystem
             this.txtDownpayment.Size = new System.Drawing.Size(264, 27);
             this.txtDownpayment.TabIndex = 1;
             this.txtDownpayment.Text = "0";
+            this.txtDownpayment.TextChanged += new System.EventHandler(this.txtDownpayment_TextChanged);
             this.txtDownpayment.Enter += new System.EventHandler(this.txtDownpayment_Enter);
             this.txtDownpayment.Leave += new System.EventHandler(this.txtDownpayment_Leave);
             // 
@@ -165,7 +170,7 @@ namespace SchoolManagementSystem
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(10, 59);
+            this.label5.Location = new System.Drawing.Point(10, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 35;
@@ -176,11 +181,11 @@ namespace SchoolManagementSystem
             this.txtFinal.BackColor = System.Drawing.SystemColors.Window;
             this.txtFinal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFinal.Location = new System.Drawing.Point(121, 188);
+            this.txtFinal.Location = new System.Drawing.Point(121, 219);
             this.txtFinal.MaxLength = 2;
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(264, 27);
-            this.txtFinal.TabIndex = 5;
+            this.txtFinal.TabIndex = 6;
             this.txtFinal.Text = "0";
             this.txtFinal.TextChanged += new System.EventHandler(this.txtFinal_TextChanged);
             this.txtFinal.Enter += new System.EventHandler(this.txtFinal_Enter);
@@ -191,7 +196,7 @@ namespace SchoolManagementSystem
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(10, 188);
+            this.label4.Location = new System.Drawing.Point(58, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 33;
@@ -202,11 +207,11 @@ namespace SchoolManagementSystem
             this.txtSemi.BackColor = System.Drawing.SystemColors.Window;
             this.txtSemi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSemi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSemi.Location = new System.Drawing.Point(121, 155);
+            this.txtSemi.Location = new System.Drawing.Point(121, 186);
             this.txtSemi.MaxLength = 2;
             this.txtSemi.Name = "txtSemi";
             this.txtSemi.Size = new System.Drawing.Size(264, 27);
-            this.txtSemi.TabIndex = 4;
+            this.txtSemi.TabIndex = 5;
             this.txtSemi.Text = "0";
             this.txtSemi.TextChanged += new System.EventHandler(this.txtSemi_TextChanged);
             this.txtSemi.Enter += new System.EventHandler(this.txtSemi_Enter);
@@ -217,7 +222,7 @@ namespace SchoolManagementSystem
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(10, 155);
+            this.label3.Location = new System.Drawing.Point(24, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 31;
@@ -228,11 +233,11 @@ namespace SchoolManagementSystem
             this.txtPrelim.BackColor = System.Drawing.SystemColors.Window;
             this.txtPrelim.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrelim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrelim.Location = new System.Drawing.Point(121, 85);
+            this.txtPrelim.Location = new System.Drawing.Point(121, 116);
             this.txtPrelim.MaxLength = 2;
             this.txtPrelim.Name = "txtPrelim";
             this.txtPrelim.Size = new System.Drawing.Size(264, 27);
-            this.txtPrelim.TabIndex = 2;
+            this.txtPrelim.TabIndex = 3;
             this.txtPrelim.Text = "0";
             this.txtPrelim.TextChanged += new System.EventHandler(this.txtPrelim_TextChanged);
             this.txtPrelim.Enter += new System.EventHandler(this.txtPrelim_Enter);
@@ -243,7 +248,7 @@ namespace SchoolManagementSystem
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(10, 85);
+            this.label2.Location = new System.Drawing.Point(49, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 29;
@@ -254,11 +259,11 @@ namespace SchoolManagementSystem
             this.txtMidterm.BackColor = System.Drawing.SystemColors.Window;
             this.txtMidterm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMidterm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMidterm.Location = new System.Drawing.Point(121, 120);
+            this.txtMidterm.Location = new System.Drawing.Point(121, 151);
             this.txtMidterm.MaxLength = 2;
             this.txtMidterm.Name = "txtMidterm";
             this.txtMidterm.Size = new System.Drawing.Size(264, 27);
-            this.txtMidterm.TabIndex = 3;
+            this.txtMidterm.TabIndex = 4;
             this.txtMidterm.Text = "0";
             this.txtMidterm.TextChanged += new System.EventHandler(this.txtMidterm_TextChanged);
             this.txtMidterm.Enter += new System.EventHandler(this.txtMidterm_Enter);
@@ -269,7 +274,7 @@ namespace SchoolManagementSystem
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(10, 120);
+            this.label6.Location = new System.Drawing.Point(35, 156);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 17);
             this.label6.TabIndex = 6;
@@ -344,10 +349,10 @@ namespace SchoolManagementSystem
             this.btnSave.IconColor = System.Drawing.Color.White;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 30;
-            this.btnSave.Location = new System.Drawing.Point(228, 313);
+            this.btnSave.Location = new System.Drawing.Point(228, 340);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 28);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -363,10 +368,10 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(314, 313);
+            this.iconButton1.Location = new System.Drawing.Point(314, 340);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(80, 28);
-            this.iconButton1.TabIndex = 8;
+            this.iconButton1.TabIndex = 9;
             this.iconButton1.Text = "Cancel";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -375,7 +380,7 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 348);
+            this.panel4.Location = new System.Drawing.Point(6, 375);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(394, 6);
             this.panel4.TabIndex = 32;
@@ -386,7 +391,7 @@ namespace SchoolManagementSystem
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(400, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 312);
+            this.panel3.Size = new System.Drawing.Size(6, 339);
             this.panel3.TabIndex = 31;
             // 
             // panel2
@@ -395,8 +400,33 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 312);
+            this.panel2.Size = new System.Drawing.Size(6, 339);
             this.panel2.TabIndex = 30;
+            // 
+            // txtFullpayment
+            // 
+            this.txtFullpayment.BackColor = System.Drawing.SystemColors.Window;
+            this.txtFullpayment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullpayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFullpayment.Location = new System.Drawing.Point(121, 82);
+            this.txtFullpayment.Name = "txtFullpayment";
+            this.txtFullpayment.Size = new System.Drawing.Size(264, 27);
+            this.txtFullpayment.TabIndex = 2;
+            this.txtFullpayment.Text = "0";
+            this.txtFullpayment.TextChanged += new System.EventHandler(this.txtFullpayment_TextChanged);
+            this.txtFullpayment.Enter += new System.EventHandler(this.txtFullpayment_Enter);
+            this.txtFullpayment.Leave += new System.EventHandler(this.txtFullpayment_Leave);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(24, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 17);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "FULLPAYMENT";
             // 
             // AddExamPercentage
             // 
@@ -404,7 +434,7 @@ namespace SchoolManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(406, 354);
+            this.ClientSize = new System.Drawing.Size(406, 381);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -459,5 +489,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.TextBox txtFullpayment;
+        private System.Windows.Forms.Label label8;
     }
 }

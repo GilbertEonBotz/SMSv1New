@@ -64,7 +64,7 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(317, 280);
+            this.iconButton1.Location = new System.Drawing.Point(322, 179);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(80, 28);
             this.iconButton1.TabIndex = 5;
@@ -110,6 +110,7 @@ namespace SchoolManagementSystem
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(296, 90);
             this.txtRemarks.TabIndex = 3;
+            this.txtRemarks.Visible = false;
             // 
             // label6
             // 
@@ -120,6 +121,7 @@ namespace SchoolManagementSystem
             this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "REMARKS";
+            this.label6.Visible = false;
             // 
             // panel8
             // 
@@ -134,7 +136,7 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 313);
+            this.panel4.Location = new System.Drawing.Point(6, 210);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(402, 6);
             this.panel4.TabIndex = 31;
@@ -238,7 +240,7 @@ namespace SchoolManagementSystem
             this.btnSave.IconColor = System.Drawing.Color.White;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 30;
-            this.btnSave.Location = new System.Drawing.Point(231, 280);
+            this.btnSave.Location = new System.Drawing.Point(236, 179);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 28);
             this.btnSave.TabIndex = 4;
@@ -260,7 +262,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 44);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(402, 230);
+            this.panel6.Size = new System.Drawing.Size(402, 131);
             this.panel6.TabIndex = 32;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -280,7 +282,7 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 319);
+            this.panel2.Size = new System.Drawing.Size(6, 216);
             this.panel2.TabIndex = 29;
             // 
             // panel3
@@ -289,7 +291,7 @@ namespace SchoolManagementSystem
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(408, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 319);
+            this.panel3.Size = new System.Drawing.Size(6, 216);
             this.panel3.TabIndex = 30;
             // 
             // addCourseCode
@@ -297,7 +299,8 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 319);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(414, 216);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);

@@ -232,7 +232,8 @@ namespace SchoolManagementSystem
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Admin",
-            "Cashier"});
+            "Cashier",
+            "Registrar"});
             this.cmbRole.Location = new System.Drawing.Point(92, 69);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(271, 28);

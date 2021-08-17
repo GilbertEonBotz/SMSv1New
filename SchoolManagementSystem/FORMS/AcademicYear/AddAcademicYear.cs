@@ -39,7 +39,7 @@ namespace SchoolManagementSystem
                     try
                     {
                         DBContext.GetContext().Query("academicyear").Where("year1", txtYear1.Text).Where("year2", txtYear2.Text).Where("term", cmbTerm.Text).First();
-                        Validator.AlertDanger("academic year existed!");
+                        Validator.AlertDanger("Academic Year exist!");
                     }
                     catch (Exception)
                     {

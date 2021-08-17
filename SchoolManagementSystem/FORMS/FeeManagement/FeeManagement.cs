@@ -28,14 +28,14 @@ namespace SchoolManagementSystem
         {
             displayData();
         }
-        
+
         public void displayData()
         {
 
-          
+
             dgvCategories.Rows.Clear();
             var values = DBContext.GetContext().Query("categoryfee").Get();
-            
+
             foreach (var value in values)
             {
                 dgvCategories.Rows.Add(value.categoryID, value.category);
@@ -45,7 +45,7 @@ namespace SchoolManagementSystem
 
         private void dgvCategories_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-         
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -78,14 +78,25 @@ namespace SchoolManagementSystem
 
         private void textboxWatermark1_TextChanged(object sender, EventArgs e)
         {
-            var values = DBContext.GetContext().Query("categoryfee").WhereLike("categoryID", $"{textboxWatermark1.Text}")
-             .OrWhereLike("category", $"%{textboxWatermark1.Text}%")
-             .Get();
-
-            dgvCategories.Rows.Clear();
-            foreach (var value in values)
+            if (string.IsNullOrEmpty(textboxWatermark1.Text))
             {
-                dgvCategories.Rows.Add(value.categoryID, value.category);
+                displayData();
+            }
+            else if (textboxWatermark1.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("categoryfee").WhereLike("categoryID", $"{textboxWatermark1.Text}")
+                .OrWhereLike("category", $"%{textboxWatermark1.Text}%")
+                .Get();
+
+                dgvCategories.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvCategories.Rows.Add(value.categoryID, value.category);
+                }
             }
         }
     }

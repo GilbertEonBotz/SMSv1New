@@ -42,16 +42,17 @@ namespace SchoolManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdmin = new FontAwesome.Sharp.IconButton();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activate = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.activate = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -149,6 +150,7 @@ namespace SchoolManagementSystem
             this.Column3,
             this.Column4,
             this.Column5,
+            this.Column6,
             this.status,
             this.activate,
             this.edit,
@@ -240,63 +242,14 @@ namespace SchoolManagementSystem
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
-            // Column13
+            // delete
             // 
-            this.Column13.HeaderText = "#";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "PRELIM";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "MIDTERM";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "SEMI-FINAL";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "FINAL";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "DOWNPAYMENT";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 147;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "STATUS";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 150;
-            // 
-            // activate
-            // 
-            this.activate.HeaderText = "";
-            this.activate.Name = "activate";
-            this.activate.ReadOnly = true;
-            this.activate.Text = "ACTIVATE";
-            this.activate.UseColumnTextForLinkValue = true;
-            this.activate.Width = 80;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "DELETE";
+            this.delete.UseColumnTextForLinkValue = true;
+            this.delete.Width = 96;
             // 
             // edit
             // 
@@ -305,16 +258,73 @@ namespace SchoolManagementSystem
             this.edit.ReadOnly = true;
             this.edit.Text = "EDIT";
             this.edit.UseColumnTextForLinkValue = true;
-            this.edit.Width = 50;
+            this.edit.Width = 97;
             // 
-            // delete
+            // activate
             // 
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "DELETE";
-            this.delete.UseColumnTextForLinkValue = true;
-            this.delete.Width = 80;
+            this.activate.HeaderText = "";
+            this.activate.Name = "activate";
+            this.activate.ReadOnly = true;
+            this.activate.Text = "ACTIVATE";
+            this.activate.UseColumnTextForLinkValue = true;
+            this.activate.Width = 96;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "STATUS";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 96;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "FULLPAYMENT";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 96;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.HeaderText = "DOWNPAYMENT";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "FINAL";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 97;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "SEMI-FINAL";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 96;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "MIDTERM";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 96;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "PRELIM";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 97;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "#";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 96;
             // 
             // ExamPercentage
             // 
@@ -360,6 +370,7 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewLinkColumn activate;
         private System.Windows.Forms.DataGridViewLinkColumn edit;

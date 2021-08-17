@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="addCourseCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddExamPercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="addOrNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddPerUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="addReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="addTeacherScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddUnitPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CourseCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ExamPercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="finalDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FinanceDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\AcademicYear\AcademicYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\AcademicYear\AddAcademicYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Course\AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Course\CourseInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Accounting\AccountantInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Accounting\AddAccountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Librarians\AddLibrarian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Librarians\LibrarianInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Teachers\AddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Employees\Teachers\TeacherInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\FeeManagement\AddFeeCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\FeeManagement\addfees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\FeeManagement\AddFeeStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\FeeManagement\FeeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\FeeManagement\FeeStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\MainForm\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\MainForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\MainForm\login_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\MainForm\login_form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Rooms\AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Rooms\room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\addSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\AddStudentScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\AddSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\Sched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\StudentScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Scheduling\voidNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Sectioning\addSectionCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Sectioning\addSectioning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Sectioning\SectionCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Sectioning\Sectioning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\studentActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Students\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\Students\StudentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\TuitionManagement\tuitionCateg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FORMS\TuitionManagement\TuitionCategoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrNumberMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PracticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReceiptViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegistrarDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentActivationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentEnrolledSubjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentEnrolledViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentPaymentShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="studentRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentSchedulesReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="teacherSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherSchedReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="tuition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="tuitionStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UITools\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UITools\TextboxWatermark.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="viewTeacherSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="viewTeacherStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="viewTuitionStruc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -47,7 +47,7 @@ namespace SchoolManagementSystem
                 dgvStudents.Rows.Clear();
                 foreach (var value in values)
                 {
-                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.course);
+                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.contactno, value.emailAddress, value.course);
                 }
             }
             catch (Exception)
@@ -63,18 +63,32 @@ namespace SchoolManagementSystem
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
-            var values = DBContext.GetContext().Query("student").WhereLike("studentId", $"{txtSearch.Text}").OrWhereLike("firstname", $"%{txtSearch.Text}%")
-                .OrWhereLike("lastname", $"%{txtSearch.Text}%")
-                .OrWhereLike("presentAddress", $"%{txtSearch.Text}%")
-                .OrWhereLike("course", $"%{txtSearch.Text}%")
-                .Get();
-
-            dgvStudents.Rows.Clear();
-            foreach(var value in values)
+            if (string.IsNullOrEmpty(txtSearch.Text))
             {
-                dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.course);
+                displayData();
             }
+            else if (txtSearch.Text.Equals("Search"))
+            {
+                displayData();
+            }
+            else
+            {
+                var values = DBContext.GetContext().Query("student").WhereLike("studentId", $"{txtSearch.Text}").OrWhereLike("firstname", $"%{txtSearch.Text}%")
+                    .OrWhereLike("lastname", $"%{txtSearch.Text}%")
+                    .OrWhereLike("presentAddress", $"%{txtSearch.Text}%")
+                    .OrWhereLike("contactno", $"%{txtSearch.Text}%")
+                    .OrWhereLike("emailAddress", $"%{txtSearch.Text}%")
+                    .OrWhereLike("course", $"%{txtSearch.Text}%")
+                    .Get();
+
+                dgvStudents.Rows.Clear();
+                foreach (var value in values)
+                {
+                    dgvStudents.Rows.Add(value.studentId, $"{value.lastname}, {value.firstname} {value.middlename}", value.gender, value.presentAddress, value.contactno, value.emailAddress, value.course);
+                }
+            }
+
+                
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -128,6 +142,7 @@ namespace SchoolManagementSystem
                 if (Validator.DeleteConfirmation())
                 {
                     DBContext.GetContext().Query("student").Where("studentId", dgvStudents.SelectedRows[0].Cells[0].Value).Delete();
+                    displayData();
                 }
             }
         }

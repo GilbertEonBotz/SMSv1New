@@ -79,6 +79,7 @@ namespace SchoolManagementSystem
             this.btnExit.TabIndex = 3;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel4
             // 

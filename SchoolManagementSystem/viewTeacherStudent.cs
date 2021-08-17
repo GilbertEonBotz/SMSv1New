@@ -57,6 +57,7 @@ namespace SchoolManagementSystem
 
         }
         ReportDataSource rsStud = new ReportDataSource();
+        ReportDataSource rsDept = new ReportDataSource();
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
@@ -78,10 +79,21 @@ namespace SchoolManagementSystem
                 });
             }
 
+
+            List<department> dept = new List<department>();
+            dept.Clear();
+            dept.Add(new department
+            {
+               deptName = txtDepartment.Text
+            });
+
             rsStud.Name = "DataSet1";
             rsStud.Value = lst;
+            rsDept.Name = "DataSet2";
+            rsDept.Value = dept;
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rsStud);
+            frm.reportViewer1.LocalReport.DataSources.Add(rsDept);
             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SchoolManagementSystem.Report3.rdlc";
             frm.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             frm.reportViewer1.ZoomMode = ZoomMode.Percent;
@@ -106,7 +118,10 @@ namespace SchoolManagementSystem
         public string schedule { get; set; }
         public string studName { get; set; }
         public string studCourse { get; set; }
+    }
 
-
+    public class department
+    {
+        public string deptName { get; set; }
     }
 }

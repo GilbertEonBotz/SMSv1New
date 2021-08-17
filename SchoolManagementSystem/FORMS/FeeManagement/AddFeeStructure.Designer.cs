@@ -255,6 +255,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.btnAddCourse;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(414, 226);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel6);

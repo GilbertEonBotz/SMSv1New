@@ -318,7 +318,7 @@ namespace SchoolManagementSystem
             // 
             // txtDescrip
             // 
-            this.txtDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtDescrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescrip.Location = new System.Drawing.Point(118, 165);
             this.txtDescrip.Multiline = true;
             this.txtDescrip.Name = "txtDescrip";
@@ -497,6 +497,7 @@ namespace SchoolManagementSystem
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(463, 500);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel6);

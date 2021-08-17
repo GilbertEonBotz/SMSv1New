@@ -63,7 +63,7 @@ namespace SchoolManagementSystem
                         citizenship = txtCitizen.Text.Trim(),
                         contactno = txtContactNo.Text,
                         emailAddress = txtEmailAddress.Text.Trim(),
-                        course = studentId,
+                        course = cmbCourse.Text.Trim(),
                         presentAddress = txtAddress.Text.Trim(),
                         homeAddress = txtHomeAddress.Text.Trim(),
                         fatherLastname = txtFatherLname.Text.Trim(),

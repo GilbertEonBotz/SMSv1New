@@ -22,6 +22,7 @@ namespace SchoolManagementSystem
             InitializeComponent();
             this.reloadDatagrid = reloadDatagrid;
             txtDownpayment.KeyPress += Validator.ValidateKeypressNumber;
+            txtFullpayment.KeyPress += Validator.ValidateKeypressNumber;
             txtPrelim.KeyPress += Validator.ValidateKeypressNumber;
             txtMidterm.KeyPress += Validator.ValidateKeypressNumber;
             txtSemi.KeyPress += Validator.ValidateKeypressNumber;
@@ -32,7 +33,7 @@ namespace SchoolManagementSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] inputs = { txtDownpayment, txtPrelim, txtMidterm, txtSemi, txtFinal };
+            TextBox[] inputs = { txtFullpayment, txtDownpayment, txtPrelim, txtMidterm, txtSemi, txtFinal };
 
             TextBox[] inputss = { txtPrelim, txtMidterm, txtSemi, txtFinal };
 
@@ -104,6 +105,7 @@ namespace SchoolManagementSystem
                                 semiFinals = semi,
                                 finals = final,
                                 downpayment = txtDownpayment.Text.Trim(),
+                                fullpayment = txtFullpayment.Text.Trim(),
                             });
                             Validator.AlertSuccess("Exam percentage updated");
                             reloadDatagrid.displayData();
@@ -184,6 +186,7 @@ namespace SchoolManagementSystem
                                 semiFinals = semi,
                                 finals = final,
                                 downpayment = txtDownpayment.Text.Trim(),
+                                fullpayment = txtFullpayment.Text.Trim(),
                                 status = "Active"
                             });
                             Validator.AlertSuccess("Exam percentage inserted");
@@ -203,7 +206,9 @@ namespace SchoolManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            txtDownpayment.Enabled = true;
+            txtFullpayment.Enabled = true;
+           // this.Close();
         }
 
         private void txtPrelim_TextChanged(object sender, EventArgs e)
@@ -334,6 +339,29 @@ namespace SchoolManagementSystem
                 txtSemi.Text = Semi.ToString();
                 txtFinal.Text = Final.ToString();
             }
+        }
+
+        private void txtFullpayment_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtDownpayment_TextChanged(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void txtFullpayment_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFullpayment.Text))
+            {
+                txtFullpayment.Text = "0";
+            }
+        }
+
+        private void txtFullpayment_Enter(object sender, EventArgs e)
+        {
+            txtFullpayment.Text = "";
         }
     }
 }

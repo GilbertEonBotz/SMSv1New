@@ -107,7 +107,7 @@ namespace SchoolManagementSystem
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.Location = new System.Drawing.Point(6, 42);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(477, 500);
+            this.panel6.Size = new System.Drawing.Size(439, 474);
             this.panel6.TabIndex = 10;
             // 
             // lstPrereq
@@ -147,6 +147,8 @@ namespace SchoolManagementSystem
             // 
             // cmbCourseCode
             // 
+            this.cmbCourseCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCourseCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCourseCode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourseCode.FormattingEnabled = true;
             this.cmbCourseCode.Location = new System.Drawing.Point(104, 90);
@@ -174,6 +176,7 @@ namespace SchoolManagementSystem
             this.TotalPrice.Size = new System.Drawing.Size(85, 21);
             this.TotalPrice.TabIndex = 14;
             this.TotalPrice.Text = "total price";
+            this.TotalPrice.Visible = false;
             // 
             // txtLabprice
             // 
@@ -184,6 +187,7 @@ namespace SchoolManagementSystem
             this.txtLabprice.Size = new System.Drawing.Size(118, 27);
             this.txtLabprice.TabIndex = 8;
             this.txtLabprice.TabStop = false;
+            this.txtLabprice.Visible = false;
             this.txtLabprice.TextChanged += new System.EventHandler(this.txtLabprice_TextChanged);
             this.txtLabprice.Enter += new System.EventHandler(this.txtLabprice_Enter);
             this.txtLabprice.Leave += new System.EventHandler(this.txtLabprice_Leave);
@@ -197,6 +201,7 @@ namespace SchoolManagementSystem
             this.txtLecPrice.Size = new System.Drawing.Size(118, 27);
             this.txtLecPrice.TabIndex = 6;
             this.txtLecPrice.TabStop = false;
+            this.txtLecPrice.Visible = false;
             this.txtLecPrice.TextChanged += new System.EventHandler(this.txtLecPrice_TextChanged);
             this.txtLecPrice.Enter += new System.EventHandler(this.txtLecPrice_Enter);
             this.txtLecPrice.Leave += new System.EventHandler(this.txtLecPrice_Leave);
@@ -228,7 +233,7 @@ namespace SchoolManagementSystem
             this.txtLab.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLab.Location = new System.Drawing.Point(105, 302);
             this.txtLab.Name = "txtLab";
-            this.txtLab.Size = new System.Drawing.Size(118, 27);
+            this.txtLab.Size = new System.Drawing.Size(315, 27);
             this.txtLab.TabIndex = 7;
             this.txtLab.Text = "0";
             this.txtLab.TextChanged += new System.EventHandler(this.txtLab_TextChanged);
@@ -241,7 +246,7 @@ namespace SchoolManagementSystem
             this.txtLec.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLec.Location = new System.Drawing.Point(105, 269);
             this.txtLec.Name = "txtLec";
-            this.txtLec.Size = new System.Drawing.Size(118, 27);
+            this.txtLec.Size = new System.Drawing.Size(315, 27);
             this.txtLec.TabIndex = 5;
             this.txtLec.Text = "0";
             this.txtLec.TextChanged += new System.EventHandler(this.txtLec_TextChanged);
@@ -333,7 +338,7 @@ namespace SchoolManagementSystem
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 35);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(473, 1);
+            this.panel8.Size = new System.Drawing.Size(435, 1);
             this.panel8.TabIndex = 1;
             // 
             // panel7
@@ -344,7 +349,7 @@ namespace SchoolManagementSystem
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(473, 35);
+            this.panel7.Size = new System.Drawing.Size(435, 35);
             this.panel7.TabIndex = 0;
             // 
             // lblIDD
@@ -392,6 +397,7 @@ namespace SchoolManagementSystem
             this.label8.Size = new System.Drawing.Size(66, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "LAB PRICE";
+            this.label8.Visible = false;
             // 
             // label9
             // 
@@ -402,6 +408,8 @@ namespace SchoolManagementSystem
             this.label9.Size = new System.Drawing.Size(66, 17);
             this.label9.TabIndex = 10;
             this.label9.Text = "LEC PRICE";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Visible = false;
             // 
             // lblLectotal
             // 
@@ -413,6 +421,7 @@ namespace SchoolManagementSystem
             this.lblLectotal.Size = new System.Drawing.Size(18, 20);
             this.lblLectotal.TabIndex = 17;
             this.lblLectotal.Text = "0";
+            this.lblLectotal.Visible = false;
             // 
             // lblabTotal
             // 
@@ -424,6 +433,7 @@ namespace SchoolManagementSystem
             this.lblabTotal.Size = new System.Drawing.Size(18, 20);
             this.lblabTotal.TabIndex = 16;
             this.lblabTotal.Text = "0";
+            this.lblabTotal.Visible = false;
             // 
             // label11
             // 
@@ -434,6 +444,7 @@ namespace SchoolManagementSystem
             this.label11.Size = new System.Drawing.Size(60, 25);
             this.label11.TabIndex = 20;
             this.label11.Text = "Total:";
+            this.label11.Visible = false;
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // btnAddSubjects
@@ -447,7 +458,7 @@ namespace SchoolManagementSystem
             this.btnAddSubjects.IconColor = System.Drawing.Color.White;
             this.btnAddSubjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddSubjects.IconSize = 30;
-            this.btnAddSubjects.Location = new System.Drawing.Point(262, 548);
+            this.btnAddSubjects.Location = new System.Drawing.Point(262, 522);
             this.btnAddSubjects.Name = "btnAddSubjects";
             this.btnAddSubjects.Size = new System.Drawing.Size(80, 28);
             this.btnAddSubjects.TabIndex = 11;
@@ -459,18 +470,18 @@ namespace SchoolManagementSystem
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 582);
+            this.panel4.Location = new System.Drawing.Point(6, 554);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(477, 6);
+            this.panel4.Size = new System.Drawing.Size(439, 6);
             this.panel4.TabIndex = 9;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(483, 42);
+            this.panel3.Location = new System.Drawing.Point(445, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 546);
+            this.panel3.Size = new System.Drawing.Size(6, 518);
             this.panel3.TabIndex = 8;
             // 
             // panel2
@@ -479,7 +490,7 @@ namespace SchoolManagementSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 546);
+            this.panel2.Size = new System.Drawing.Size(6, 518);
             this.panel2.TabIndex = 7;
             // 
             // panel1
@@ -490,7 +501,7 @@ namespace SchoolManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 42);
+            this.panel1.Size = new System.Drawing.Size(451, 42);
             this.panel1.TabIndex = 6;
             // 
             // label1
@@ -498,7 +509,7 @@ namespace SchoolManagementSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(127, 11);
+            this.label1.Location = new System.Drawing.Point(97, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 8;
@@ -513,7 +524,7 @@ namespace SchoolManagementSystem
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 20;
-            this.btnExit.Location = new System.Drawing.Point(454, 10);
+            this.btnExit.Location = new System.Drawing.Point(414, 9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 23);
             this.btnExit.TabIndex = 3;
@@ -533,7 +544,7 @@ namespace SchoolManagementSystem
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(348, 548);
+            this.iconButton1.Location = new System.Drawing.Point(348, 522);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(80, 28);
             this.iconButton1.TabIndex = 12;
@@ -547,7 +558,7 @@ namespace SchoolManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(489, 588);
+            this.ClientSize = new System.Drawing.Size(451, 560);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
